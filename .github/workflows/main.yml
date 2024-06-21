@@ -1,0 +1,52 @@
+name: Generate Client SDK
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to use'
+        required: true
+        default: 'v7.1'
+
+permissions:
+  contents: write
+
+jobs:
+  # fetch swagger, generate sdk for resources api, and push on master
+  generate-sdk:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up OpenAPI Generator
+      run: |
+        wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.3.1/openapi-generator-cli-5.3.1.jar -O openapi-generator-cli.jar
+        alias openapi-generator-cli='java -jar $PWD/openapi-generator-cli.jar'
+
+    - name: Fetch Swagger JSON for resources
+      run: |
+        set -e
+        curl -f -o swagger-resources.json "https://api.ed-fi.org/${{ github.event.inputs.version }}/api/metadata/data/v3/resources/swagger.json"
+
+    - name: Generate PHP client SDK for resources
+      run: |
+        java -jar openapi-generator-cli.jar generate -i swagger-resources.json -g php -o . > /dev/null 2>&1
+
+    - name: Install jq
+      run: sudo apt-get install -y jq
+
+    - name: Update name and version in composer.json
+      run: |
+          jq --arg name "edfi/resources" --arg version "${{ github.event.inputs.version }}" '.name = $name | .version = $version' composer.json > tmp.$$.json && mv tmp.$$.json composer.json
+
+    - name: Commit, push and tag
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add . || echo "nothing to add" || echo "nothing to add"
+        git commit -m "build: generated resources client SDK ${{ github.event.inputs.version }}" || echo "nothing to commit"
+        git push origin master || echo "nothing to push"
+        git tag ${{ github.event.inputs.version }}
+        git push origin ${{ github.event.inputs.version }}
