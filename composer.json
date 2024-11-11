@@ -1,0 +1,44 @@
+{
+  "description": "The Ed-Fi ODS / API enables applications to read and write education data stored in an Ed-Fi ODS through a secure REST interface.  ***  > *Note: Consumers of ODS / API information should sanitize all data for display and storage. The ODS / API provides reasonable safeguards against cross-site scripting attacks and other malicious content, but the platform does not and cannot guarantee that the data it contains is free of all potentially harmful content.*  ***",
+  "keywords": [
+    "openapitools",
+    "openapi-generator",
+    "openapi",
+    "php",
+    "sdk",
+    "rest",
+    "api"
+  ],
+  "homepage": "https://openapi-generator.tech",
+  "license": "unlicense",
+  "authors": [
+    {
+      "name": "OpenAPI",
+      "homepage": "https://openapi-generator.tech"
+    }
+  ],
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "guzzlehttp/guzzle": "^7.3",
+    "guzzlehttp/psr7": "^1.7 || ^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0 || ^9.0",
+    "friendsofphp/php-cs-fixer": "^3.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Resources\\": "lib/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Resources\\Test\\": "test/"
+    }
+  },
+  "name": "edfi/resources",
+  "version": "v2.0-alpha"
+}
