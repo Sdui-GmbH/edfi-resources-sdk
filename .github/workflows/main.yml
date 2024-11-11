@@ -3,10 +3,14 @@ name: Generate Client SDK
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: 'Version to use'
+      edfiVersion:
+        description: 'EdFi version to generate SDK for'
         required: true
         default: 'v7.1'
+      packageVersion:
+        description: 'Package version'
+        required: true
+        default: 'v1.0'
 
 permissions:
   contents: write
@@ -22,31 +26,28 @@ jobs:
 
     - name: Set up OpenAPI Generator
       run: |
-        wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.3.1/openapi-generator-cli-5.3.1.jar -O openapi-generator-cli.jar
-        alias openapi-generator-cli='java -jar $PWD/openapi-generator-cli.jar'
+        wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.9.0/openapi-generator-cli-7.9.0.jar -O ${{ runner.temp }}/openapi-generator-cli.jar
+        java -jar ${{ runner.temp }}/openapi-generator-cli.jar version
 
     - name: Fetch Swagger JSON for resources
       run: |
         set -e
-        curl -f -o swagger-resources.json "https://api.ed-fi.org/${{ github.event.inputs.version }}/api/metadata/data/v3/resources/swagger.json"
+        curl -f -o swagger-resources.json "https://api.ed-fi.org/${{ github.event.inputs.edfiVersion }}/api/metadata/data/v3/resources/swagger.json"
 
     - name: Generate PHP client SDK for resources
       run: |
-        java -jar openapi-generator-cli.jar generate -i swagger-resources.json -g php -o . > /dev/null 2>&1
-
-    - name: Install jq
-      run: sudo apt-get install -y jq
+        java -jar ${{ runner.temp }}/openapi-generator-cli.jar generate -i swagger-resources.json -g php -o . -p phpVersion=8.2
 
     - name: Update name and version in composer.json
       run: |
-          jq --arg name "edfi/resources" --arg version "${{ github.event.inputs.version }}" '.name = $name | .version = $version' composer.json > tmp.$$.json && mv tmp.$$.json composer.json
+          jq --arg name "edfi/resources" --arg version "${{ github.event.inputs.packageVersion }}" '.name = $name | .version = $version' composer.json > tmp.$$.json && mv tmp.$$.json composer.json
 
     - name: Commit, push and tag
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add . || echo "nothing to add" || echo "nothing to add"
-        git commit -m "build: generated resources client SDK ${{ github.event.inputs.version }}" || echo "nothing to commit"
-        git push origin master || echo "nothing to push"
-        git tag ${{ github.event.inputs.version }}
-        git push origin ${{ github.event.inputs.version }}
+        git commit -m "build: generated resources client SDK for EdFi version ${{ github.event.inputs.edfiVersion }}" || echo "nothing to commit"
+        git push origin ${{ github.ref_name }} || echo "nothing to push"
+        git tag ${{ github.event.inputs.packageVersion }}
+        git push origin ${{ github.event.inputs.packageVersion }}
