@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiCourseTranscriptSection Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiCourseTranscriptSection implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'section_reference' => '\OpenAPI\Client\Model\EdFiSectionReference'
+        'section_reference' => '\Resources\Model\EdFiSectionReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiCourseTranscriptSection implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets section_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionReference
+     * @return \Resources\Model\EdFiSectionReference
      */
     public function getSectionReference()
     {
@@ -305,7 +305,7 @@ class EdFiCourseTranscriptSection implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets section_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionReference $section_reference section_reference
+     * @param \Resources\Model\EdFiSectionReference $section_reference section_reference
      *
      * @return self
      */

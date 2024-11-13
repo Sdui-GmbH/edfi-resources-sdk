@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffEducationOrganizationAssignmentAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,10 +60,10 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
         'id' => 'string',
         'begin_date' => '\DateTime',
         'staff_classification_descriptor' => 'string',
-        'credential_reference' => '\OpenAPI\Client\Model\EdFiCredentialReference',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'employment_staff_education_organization_employment_association_reference' => '\OpenAPI\Client\Model\EdFiStaffEducationOrganizationEmploymentAssociationReference',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
+        'credential_reference' => '\Resources\Model\EdFiCredentialReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'employment_staff_education_organization_employment_association_reference' => '\Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociationReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
         'end_date' => '\DateTime',
         'full_time_equivalency' => 'float',
         'order_of_assignment' => 'int',
@@ -489,7 +489,7 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
     /**
      * Gets credential_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCredentialReference|null
+     * @return \Resources\Model\EdFiCredentialReference|null
      */
     public function getCredentialReference()
     {
@@ -499,7 +499,7 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
     /**
      * Sets credential_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCredentialReference|null $credential_reference credential_reference
+     * @param \Resources\Model\EdFiCredentialReference|null $credential_reference credential_reference
      *
      * @return self
      */
@@ -516,7 +516,7 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -526,7 +526,7 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -543,7 +543,7 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
     /**
      * Gets employment_staff_education_organization_employment_association_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffEducationOrganizationEmploymentAssociationReference|null
+     * @return \Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociationReference|null
      */
     public function getEmploymentStaffEducationOrganizationEmploymentAssociationReference()
     {
@@ -553,7 +553,7 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
     /**
      * Sets employment_staff_education_organization_employment_association_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffEducationOrganizationEmploymentAssociationReference|null $employment_staff_education_organization_employment_association_reference employment_staff_education_organization_employment_association_reference
+     * @param \Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociationReference|null $employment_staff_education_organization_employment_association_reference employment_staff_education_organization_employment_association_reference
      *
      * @return self
      */
@@ -570,7 +570,7 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference
+     * @return \Resources\Model\EdFiStaffReference
      */
     public function getStaffReference()
     {
@@ -580,7 +580,7 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference $staff_reference staff_reference
      *
      * @return self
      */

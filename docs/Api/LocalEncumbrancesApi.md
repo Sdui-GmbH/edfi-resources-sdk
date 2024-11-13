@@ -1,4 +1,4 @@
-# OpenAPI\Client\LocalEncumbrancesApi
+# Resources\LocalEncumbrancesApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalEncumbrancesApi(
+$apiInstance = new Resources\Api\LocalEncumbrancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesLocalEncumbrances()`
 
 ```php
-deletesLocalEncumbrances($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceDelete[]
+deletesLocalEncumbrances($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLocalEncumbranceDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalEncumbrancesApi(
+$apiInstance = new Resources\Api\LocalEncumbrancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceDelete[]**](../Model/TrackedChangesEdFiLocalEncumbranceDelete.md)
+[**\Resources\Model\TrackedChangesEdFiLocalEncumbranceDelete[]**](../Model/TrackedChangesEdFiLocalEncumbranceDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getLocalEncumbrances()`
 
 ```php
-getLocalEncumbrances($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $financial_collection_descriptor, $amount, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiLocalEncumbrance[]
+getLocalEncumbrances($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $financial_collection_descriptor, $amount, $id, $use_snapshot): \Resources\Model\EdFiLocalEncumbrance[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalEncumbrancesApi(
+$apiInstance = new Resources\Api\LocalEncumbrancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -213,7 +213,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLocalEncumbrance[]**](../Model/EdFiLocalEncumbrance.md)
+[**\Resources\Model\EdFiLocalEncumbrance[]**](../Model/EdFiLocalEncumbrance.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ try {
 ## `getLocalEncumbrancesById()`
 
 ```php
-getLocalEncumbrancesById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiLocalEncumbrance
+getLocalEncumbrancesById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiLocalEncumbrance
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -246,10 +246,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalEncumbrancesApi(
+$apiInstance = new Resources\Api\LocalEncumbrancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -277,7 +277,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLocalEncumbrance**](../Model/EdFiLocalEncumbrance.md)
+[**\Resources\Model\EdFiLocalEncumbrance**](../Model/EdFiLocalEncumbrance.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ try {
 ## `keyChangesLocalEncumbrances()`
 
 ```php
-keyChangesLocalEncumbrances($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]
+keyChangesLocalEncumbrances($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -310,10 +310,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalEncumbrancesApi(
+$apiInstance = new Resources\Api\LocalEncumbrancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -347,7 +347,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]**](../Model/TrackedChangesEdFiLocalEncumbranceKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]**](../Model/TrackedChangesEdFiLocalEncumbranceKeyChange.md)
 
 ### Authorization
 
@@ -380,16 +380,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalEncumbrancesApi(
+$apiInstance = new Resources\Api\LocalEncumbrancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_local_encumbrance = new \OpenAPI\Client\Model\EdFiLocalEncumbrance(); // \OpenAPI\Client\Model\EdFiLocalEncumbrance | The JSON representation of the \"localEncumbrance\" resource to be created or updated.
+$ed_fi_local_encumbrance = new \Resources\Model\EdFiLocalEncumbrance(); // \Resources\Model\EdFiLocalEncumbrance | The JSON representation of the \"localEncumbrance\" resource to be created or updated.
 
 try {
     $apiInstance->postLocalEncumbrance($ed_fi_local_encumbrance);
@@ -402,7 +402,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_local_encumbrance** | [**\OpenAPI\Client\Model\EdFiLocalEncumbrance**](../Model/EdFiLocalEncumbrance.md)| The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. | |
+| **ed_fi_local_encumbrance** | [**\Resources\Model\EdFiLocalEncumbrance**](../Model/EdFiLocalEncumbrance.md)| The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -439,17 +439,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalEncumbrancesApi(
+$apiInstance = new Resources\Api\LocalEncumbrancesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_local_encumbrance = new \OpenAPI\Client\Model\EdFiLocalEncumbrance(); // \OpenAPI\Client\Model\EdFiLocalEncumbrance | The JSON representation of the \"localEncumbrance\" resource to be created or updated.
+$ed_fi_local_encumbrance = new \Resources\Model\EdFiLocalEncumbrance(); // \Resources\Model\EdFiLocalEncumbrance | The JSON representation of the \"localEncumbrance\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -464,7 +464,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_local_encumbrance** | [**\OpenAPI\Client\Model\EdFiLocalEncumbrance**](../Model/EdFiLocalEncumbrance.md)| The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. | |
+| **ed_fi_local_encumbrance** | [**\Resources\Model\EdFiLocalEncumbrance**](../Model/EdFiLocalEncumbrance.md)| The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

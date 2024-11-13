@@ -1,4 +1,4 @@
-# OpenAPI\Client\CommunityProviderLicensesApi
+# Resources\CommunityProviderLicensesApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CommunityProviderLicensesApi(
+$apiInstance = new Resources\Api\CommunityProviderLicensesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesCommunityProviderLicenses()`
 
 ```php
-deletesCommunityProviderLicenses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]
+deletesCommunityProviderLicenses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CommunityProviderLicensesApi(
+$apiInstance = new Resources\Api\CommunityProviderLicensesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]**](../Model/TrackedChangesEdFiCommunityProviderLicenseDelete.md)
+[**\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]**](../Model/TrackedChangesEdFiCommunityProviderLicenseDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getCommunityProviderLicenses()`
 
 ```php
-getCommunityProviderLicenses($offset, $limit, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot): \OpenAPI\Client\Model\EdFiCommunityProviderLicense[]
+getCommunityProviderLicenses($offset, $limit, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot): \Resources\Model\EdFiCommunityProviderLicense[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CommunityProviderLicensesApi(
+$apiInstance = new Resources\Api\CommunityProviderLicensesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -223,7 +223,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCommunityProviderLicense[]**](../Model/EdFiCommunityProviderLicense.md)
+[**\Resources\Model\EdFiCommunityProviderLicense[]**](../Model/EdFiCommunityProviderLicense.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ try {
 ## `getCommunityProviderLicensesById()`
 
 ```php
-getCommunityProviderLicensesById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiCommunityProviderLicense
+getCommunityProviderLicensesById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiCommunityProviderLicense
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -256,10 +256,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CommunityProviderLicensesApi(
+$apiInstance = new Resources\Api\CommunityProviderLicensesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -287,7 +287,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCommunityProviderLicense**](../Model/EdFiCommunityProviderLicense.md)
+[**\Resources\Model\EdFiCommunityProviderLicense**](../Model/EdFiCommunityProviderLicense.md)
 
 ### Authorization
 
@@ -305,7 +305,7 @@ try {
 ## `keyChangesCommunityProviderLicenses()`
 
 ```php
-keyChangesCommunityProviderLicenses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]
+keyChangesCommunityProviderLicenses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -320,10 +320,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CommunityProviderLicensesApi(
+$apiInstance = new Resources\Api\CommunityProviderLicensesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -357,7 +357,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]**](../Model/TrackedChangesEdFiCommunityProviderLicenseKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]**](../Model/TrackedChangesEdFiCommunityProviderLicenseKeyChange.md)
 
 ### Authorization
 
@@ -390,16 +390,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CommunityProviderLicensesApi(
+$apiInstance = new Resources\Api\CommunityProviderLicensesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_community_provider_license = new \OpenAPI\Client\Model\EdFiCommunityProviderLicense(); // \OpenAPI\Client\Model\EdFiCommunityProviderLicense | The JSON representation of the \"communityProviderLicense\" resource to be created or updated.
+$ed_fi_community_provider_license = new \Resources\Model\EdFiCommunityProviderLicense(); // \Resources\Model\EdFiCommunityProviderLicense | The JSON representation of the \"communityProviderLicense\" resource to be created or updated.
 
 try {
     $apiInstance->postCommunityProviderLicense($ed_fi_community_provider_license);
@@ -412,7 +412,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_community_provider_license** | [**\OpenAPI\Client\Model\EdFiCommunityProviderLicense**](../Model/EdFiCommunityProviderLicense.md)| The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. | |
+| **ed_fi_community_provider_license** | [**\Resources\Model\EdFiCommunityProviderLicense**](../Model/EdFiCommunityProviderLicense.md)| The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -449,17 +449,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CommunityProviderLicensesApi(
+$apiInstance = new Resources\Api\CommunityProviderLicensesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_community_provider_license = new \OpenAPI\Client\Model\EdFiCommunityProviderLicense(); // \OpenAPI\Client\Model\EdFiCommunityProviderLicense | The JSON representation of the \"communityProviderLicense\" resource to be created or updated.
+$ed_fi_community_provider_license = new \Resources\Model\EdFiCommunityProviderLicense(); // \Resources\Model\EdFiCommunityProviderLicense | The JSON representation of the \"communityProviderLicense\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -474,7 +474,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_community_provider_license** | [**\OpenAPI\Client\Model\EdFiCommunityProviderLicense**](../Model/EdFiCommunityProviderLicense.md)| The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. | |
+| **ed_fi_community_provider_license** | [**\Resources\Model\EdFiCommunityProviderLicense**](../Model/EdFiCommunityProviderLicense.md)| The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

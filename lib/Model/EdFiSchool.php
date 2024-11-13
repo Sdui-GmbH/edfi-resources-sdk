@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSchool Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,31 +58,31 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'education_organization_categories' => '\OpenAPI\Client\Model\EdFiEducationOrganizationCategory[]',
-        'grade_levels' => '\OpenAPI\Client\Model\EdFiSchoolGradeLevel[]',
+        'education_organization_categories' => '\Resources\Model\EdFiEducationOrganizationCategory[]',
+        'grade_levels' => '\Resources\Model\EdFiSchoolGradeLevel[]',
         'school_id' => 'int',
-        'charter_approval_school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
-        'local_education_agency_reference' => '\OpenAPI\Client\Model\EdFiLocalEducationAgencyReference',
-        'addresses' => '\OpenAPI\Client\Model\EdFiEducationOrganizationAddress[]',
+        'charter_approval_school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
+        'local_education_agency_reference' => '\Resources\Model\EdFiLocalEducationAgencyReference',
+        'addresses' => '\Resources\Model\EdFiEducationOrganizationAddress[]',
         'administrative_funding_control_descriptor' => 'string',
         'charter_approval_agency_type_descriptor' => 'string',
         'charter_status_descriptor' => 'string',
-        'identification_codes' => '\OpenAPI\Client\Model\EdFiEducationOrganizationIdentificationCode[]',
-        'indicators' => '\OpenAPI\Client\Model\EdFiEducationOrganizationIndicator[]',
-        'institution_telephones' => '\OpenAPI\Client\Model\EdFiEducationOrganizationInstitutionTelephone[]',
-        'international_addresses' => '\OpenAPI\Client\Model\EdFiEducationOrganizationInternationalAddress[]',
+        'identification_codes' => '\Resources\Model\EdFiEducationOrganizationIdentificationCode[]',
+        'indicators' => '\Resources\Model\EdFiEducationOrganizationIndicator[]',
+        'institution_telephones' => '\Resources\Model\EdFiEducationOrganizationInstitutionTelephone[]',
+        'international_addresses' => '\Resources\Model\EdFiEducationOrganizationInternationalAddress[]',
         'internet_access_descriptor' => 'string',
         'magnet_special_program_emphasis_school_descriptor' => 'string',
         'name_of_institution' => 'string',
         'operational_status_descriptor' => 'string',
-        'school_categories' => '\OpenAPI\Client\Model\EdFiSchoolCategory[]',
+        'school_categories' => '\Resources\Model\EdFiSchoolCategory[]',
         'school_type_descriptor' => 'string',
         'short_name_of_institution' => 'string',
         'title_i_part_a_school_designation_descriptor' => 'string',
         'web_site' => 'string',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime',
-        '_ext' => '\OpenAPI\Client\Model\SchoolExtensions'
+        '_ext' => '\Resources\Model\SchoolExtensions'
     ];
 
     /**
@@ -562,7 +562,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets education_organization_categories
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationCategory[]
+     * @return \Resources\Model\EdFiEducationOrganizationCategory[]
      */
     public function getEducationOrganizationCategories()
     {
@@ -572,7 +572,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets education_organization_categories
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationCategory[] $education_organization_categories An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state.
+     * @param \Resources\Model\EdFiEducationOrganizationCategory[] $education_organization_categories An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state.
      *
      * @return self
      */
@@ -589,7 +589,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolGradeLevel[]
+     * @return \Resources\Model\EdFiSchoolGradeLevel[]
      */
     public function getGradeLevels()
     {
@@ -599,7 +599,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolGradeLevel[] $grade_levels An unordered collection of schoolGradeLevels. The grade levels served at the school.
+     * @param \Resources\Model\EdFiSchoolGradeLevel[] $grade_levels An unordered collection of schoolGradeLevels. The grade levels served at the school.
      *
      * @return self
      */
@@ -643,7 +643,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets charter_approval_school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null
+     * @return \Resources\Model\EdFiSchoolYearTypeReference|null
      */
     public function getCharterApprovalSchoolYearTypeReference()
     {
@@ -653,7 +653,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets charter_approval_school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null $charter_approval_school_year_type_reference charter_approval_school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference|null $charter_approval_school_year_type_reference charter_approval_school_year_type_reference
      *
      * @return self
      */
@@ -670,7 +670,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets local_education_agency_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiLocalEducationAgencyReference|null
+     * @return \Resources\Model\EdFiLocalEducationAgencyReference|null
      */
     public function getLocalEducationAgencyReference()
     {
@@ -680,7 +680,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets local_education_agency_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiLocalEducationAgencyReference|null $local_education_agency_reference local_education_agency_reference
+     * @param \Resources\Model\EdFiLocalEducationAgencyReference|null $local_education_agency_reference local_education_agency_reference
      *
      * @return self
      */
@@ -697,7 +697,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets addresses
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationAddress[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationAddress[]|null
      */
     public function getAddresses()
     {
@@ -707,7 +707,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets addresses
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationAddress[]|null $addresses An unordered collection of educationOrganizationAddresses. The set of elements that describes an address for the education entity, including the street address, city, state, ZIP code, and ZIP code + 4.
+     * @param \Resources\Model\EdFiEducationOrganizationAddress[]|null $addresses An unordered collection of educationOrganizationAddresses. The set of elements that describes an address for the education entity, including the street address, city, state, ZIP code, and ZIP code + 4.
      *
      * @return self
      */
@@ -838,7 +838,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets identification_codes
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationIdentificationCode[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationIdentificationCode[]|null
      */
     public function getIdentificationCodes()
     {
@@ -848,7 +848,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identification_codes
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationIdentificationCode[]|null $identification_codes An unordered collection of educationOrganizationIdentificationCodes. A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.
+     * @param \Resources\Model\EdFiEducationOrganizationIdentificationCode[]|null $identification_codes An unordered collection of educationOrganizationIdentificationCodes. A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.
      *
      * @return self
      */
@@ -865,7 +865,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets indicators
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationIndicator[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationIndicator[]|null
      */
     public function getIndicators()
     {
@@ -875,7 +875,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets indicators
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationIndicator[]|null $indicators An unordered collection of educationOrganizationIndicators. An indicator or metric of an education organization.
+     * @param \Resources\Model\EdFiEducationOrganizationIndicator[]|null $indicators An unordered collection of educationOrganizationIndicators. An indicator or metric of an education organization.
      *
      * @return self
      */
@@ -892,7 +892,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets institution_telephones
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationInstitutionTelephone[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationInstitutionTelephone[]|null
      */
     public function getInstitutionTelephones()
     {
@@ -902,7 +902,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets institution_telephones
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationInstitutionTelephone[]|null $institution_telephones An unordered collection of educationOrganizationInstitutionTelephones. The 10-digit telephone number, including the area code, for the education entity.
+     * @param \Resources\Model\EdFiEducationOrganizationInstitutionTelephone[]|null $institution_telephones An unordered collection of educationOrganizationInstitutionTelephones. The 10-digit telephone number, including the area code, for the education entity.
      *
      * @return self
      */
@@ -919,7 +919,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets international_addresses
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationInternationalAddress[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationInternationalAddress[]|null
      */
     public function getInternationalAddresses()
     {
@@ -929,7 +929,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets international_addresses
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationInternationalAddress[]|null $international_addresses An unordered collection of educationOrganizationInternationalAddresses. The set of elements that describes the international physical location of the education entity.
+     * @param \Resources\Model\EdFiEducationOrganizationInternationalAddress[]|null $international_addresses An unordered collection of educationOrganizationInternationalAddresses. The set of elements that describes the international physical location of the education entity.
      *
      * @return self
      */
@@ -1094,7 +1094,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets school_categories
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolCategory[]|null
+     * @return \Resources\Model\EdFiSchoolCategory[]|null
      */
     public function getSchoolCategories()
     {
@@ -1104,7 +1104,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets school_categories
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolCategory[]|null $school_categories An unordered collection of schoolCategories. The one or more categories of school.
+     * @param \Resources\Model\EdFiSchoolCategory[]|null $school_categories An unordered collection of schoolCategories. The one or more categories of school.
      *
      * @return self
      */
@@ -1333,7 +1333,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets _ext
      *
-     * @return \OpenAPI\Client\Model\SchoolExtensions|null
+     * @return \Resources\Model\SchoolExtensions|null
      */
     public function getExt()
     {
@@ -1343,7 +1343,7 @@ class EdFiSchool implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets _ext
      *
-     * @param \OpenAPI\Client\Model\SchoolExtensions|null $_ext _ext
+     * @param \Resources\Model\SchoolExtensions|null $_ext _ext
      *
      * @return self
      */

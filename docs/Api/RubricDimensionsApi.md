@@ -1,4 +1,4 @@
-# OpenAPI\Client\RubricDimensionsApi
+# Resources\RubricDimensionsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RubricDimensionsApi(
+$apiInstance = new Resources\Api\RubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesRubricDimensions()`
 
 ```php
-deletesRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionDelete[]
+deletesRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesTpdmRubricDimensionDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RubricDimensionsApi(
+$apiInstance = new Resources\Api\RubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionDelete[]**](../Model/TrackedChangesTpdmRubricDimensionDelete.md)
+[**\Resources\Model\TrackedChangesTpdmRubricDimensionDelete[]**](../Model/TrackedChangesTpdmRubricDimensionDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getRubricDimensions()`
 
 ```php
-getRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $rubric_rating, $education_organization_id, $evaluation_element_title, $evaluation_objective_title, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $rubric_rating_level_descriptor, $criterion_description, $dimension_order, $id, $use_snapshot): \OpenAPI\Client\Model\TpdmRubricDimension[]
+getRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $rubric_rating, $education_organization_id, $evaluation_element_title, $evaluation_objective_title, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $rubric_rating_level_descriptor, $criterion_description, $dimension_order, $id, $use_snapshot): \Resources\Model\TpdmRubricDimension[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RubricDimensionsApi(
+$apiInstance = new Resources\Api\RubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -227,7 +227,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TpdmRubricDimension[]**](../Model/TpdmRubricDimension.md)
+[**\Resources\Model\TpdmRubricDimension[]**](../Model/TpdmRubricDimension.md)
 
 ### Authorization
 
@@ -245,7 +245,7 @@ try {
 ## `getRubricDimensionsById()`
 
 ```php
-getRubricDimensionsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\TpdmRubricDimension
+getRubricDimensionsById($id, $if_none_match, $use_snapshot): \Resources\Model\TpdmRubricDimension
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -260,10 +260,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RubricDimensionsApi(
+$apiInstance = new Resources\Api\RubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -291,7 +291,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TpdmRubricDimension**](../Model/TpdmRubricDimension.md)
+[**\Resources\Model\TpdmRubricDimension**](../Model/TpdmRubricDimension.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ try {
 ## `keyChangesRubricDimensions()`
 
 ```php
-keyChangesRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionKeyChange[]
+keyChangesRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesTpdmRubricDimensionKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -324,10 +324,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RubricDimensionsApi(
+$apiInstance = new Resources\Api\RubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -361,7 +361,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionKeyChange[]**](../Model/TrackedChangesTpdmRubricDimensionKeyChange.md)
+[**\Resources\Model\TrackedChangesTpdmRubricDimensionKeyChange[]**](../Model/TrackedChangesTpdmRubricDimensionKeyChange.md)
 
 ### Authorization
 
@@ -394,16 +394,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RubricDimensionsApi(
+$apiInstance = new Resources\Api\RubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tpdm_rubric_dimension = new \OpenAPI\Client\Model\TpdmRubricDimension(); // \OpenAPI\Client\Model\TpdmRubricDimension | The JSON representation of the \"rubricDimension\" resource to be created or updated.
+$tpdm_rubric_dimension = new \Resources\Model\TpdmRubricDimension(); // \Resources\Model\TpdmRubricDimension | The JSON representation of the \"rubricDimension\" resource to be created or updated.
 
 try {
     $apiInstance->postRubricDimension($tpdm_rubric_dimension);
@@ -416,7 +416,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **tpdm_rubric_dimension** | [**\OpenAPI\Client\Model\TpdmRubricDimension**](../Model/TpdmRubricDimension.md)| The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. | |
+| **tpdm_rubric_dimension** | [**\Resources\Model\TpdmRubricDimension**](../Model/TpdmRubricDimension.md)| The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -453,17 +453,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RubricDimensionsApi(
+$apiInstance = new Resources\Api\RubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$tpdm_rubric_dimension = new \OpenAPI\Client\Model\TpdmRubricDimension(); // \OpenAPI\Client\Model\TpdmRubricDimension | The JSON representation of the \"rubricDimension\" resource to be created or updated.
+$tpdm_rubric_dimension = new \Resources\Model\TpdmRubricDimension(); // \Resources\Model\TpdmRubricDimension | The JSON representation of the \"rubricDimension\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -478,7 +478,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **tpdm_rubric_dimension** | [**\OpenAPI\Client\Model\TpdmRubricDimension**](../Model/TpdmRubricDimension.md)| The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. | |
+| **tpdm_rubric_dimension** | [**\Resources\Model\TpdmRubricDimension**](../Model/TpdmRubricDimension.md)| The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

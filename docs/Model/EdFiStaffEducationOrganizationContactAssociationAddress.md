@@ -18,6 +18,6 @@ Name | Type | Description | Notes
 **name_of_county** | **string** | The name of the county, parish, borough, or comparable unit (within a state) in                       &#39;which an address is located. | [optional]
 **postal_code** | **string** | The five or nine digit zip code or overseas postal code portion of an address. |
 **street_number_name** | **string** | The street number and street name or post office box number of an address. |
-**periods** | [**\OpenAPI\Client\Model\EdFiStaffEducationOrganizationContactAssociationAddressPeriod[]**](EdFiStaffEducationOrganizationContactAssociationAddressPeriod.md) | An unordered collection of staffEducationOrganizationContactAssociationAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address. | [optional]
+**periods** | [**\Resources\Model\EdFiStaffEducationOrganizationContactAssociationAddressPeriod[]**](EdFiStaffEducationOrganizationContactAssociationAddressPeriod.md) | An unordered collection of staffEducationOrganizationContactAssociationAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

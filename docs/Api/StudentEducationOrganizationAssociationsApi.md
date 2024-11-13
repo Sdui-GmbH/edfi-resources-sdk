@@ -1,4 +1,4 @@
-# OpenAPI\Client\StudentEducationOrganizationAssociationsApi
+# Resources\StudentEducationOrganizationAssociationsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentEducationOrganizationAssociationsApi(
+$apiInstance = new Resources\Api\StudentEducationOrganizationAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesStudentEducationOrganizationAssociations()`
 
 ```php
-deletesStudentEducationOrganizationAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationDelete[]
+deletesStudentEducationOrganizationAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentEducationOrganizationAssociationsApi(
+$apiInstance = new Resources\Api\StudentEducationOrganizationAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationDelete[]**](../Model/TrackedChangesEdFiStudentEducationOrganizationAssociationDelete.md)
+[**\Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationDelete[]**](../Model/TrackedChangesEdFiStudentEducationOrganizationAssociationDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getStudentEducationOrganizationAssociations()`
 
 ```php
-getStudentEducationOrganizationAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociation[]
+getStudentEducationOrganizationAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot): \Resources\Model\EdFiStudentEducationOrganizationAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentEducationOrganizationAssociationsApi(
+$apiInstance = new Resources\Api\StudentEducationOrganizationAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -233,7 +233,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociation[]**](../Model/EdFiStudentEducationOrganizationAssociation.md)
+[**\Resources\Model\EdFiStudentEducationOrganizationAssociation[]**](../Model/EdFiStudentEducationOrganizationAssociation.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ try {
 ## `getStudentEducationOrganizationAssociationsById()`
 
 ```php
-getStudentEducationOrganizationAssociationsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociation
+getStudentEducationOrganizationAssociationsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiStudentEducationOrganizationAssociation
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -266,10 +266,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentEducationOrganizationAssociationsApi(
+$apiInstance = new Resources\Api\StudentEducationOrganizationAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -297,7 +297,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociation**](../Model/EdFiStudentEducationOrganizationAssociation.md)
+[**\Resources\Model\EdFiStudentEducationOrganizationAssociation**](../Model/EdFiStudentEducationOrganizationAssociation.md)
 
 ### Authorization
 
@@ -315,7 +315,7 @@ try {
 ## `keyChangesStudentEducationOrganizationAssociations()`
 
 ```php
-keyChangesStudentEducationOrganizationAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange[]
+keyChangesStudentEducationOrganizationAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -330,10 +330,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentEducationOrganizationAssociationsApi(
+$apiInstance = new Resources\Api\StudentEducationOrganizationAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -367,7 +367,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange[]**](../Model/TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange[]**](../Model/TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange.md)
 
 ### Authorization
 
@@ -400,16 +400,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentEducationOrganizationAssociationsApi(
+$apiInstance = new Resources\Api\StudentEducationOrganizationAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_student_education_organization_association = new \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociation(); // \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociation | The JSON representation of the \"studentEducationOrganizationAssociation\" resource to be created or updated.
+$ed_fi_student_education_organization_association = new \Resources\Model\EdFiStudentEducationOrganizationAssociation(); // \Resources\Model\EdFiStudentEducationOrganizationAssociation | The JSON representation of the \"studentEducationOrganizationAssociation\" resource to be created or updated.
 
 try {
     $apiInstance->postStudentEducationOrganizationAssociation($ed_fi_student_education_organization_association);
@@ -422,7 +422,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_student_education_organization_association** | [**\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociation**](../Model/EdFiStudentEducationOrganizationAssociation.md)| The JSON representation of the \&quot;studentEducationOrganizationAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_student_education_organization_association** | [**\Resources\Model\EdFiStudentEducationOrganizationAssociation**](../Model/EdFiStudentEducationOrganizationAssociation.md)| The JSON representation of the \&quot;studentEducationOrganizationAssociation\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -459,17 +459,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentEducationOrganizationAssociationsApi(
+$apiInstance = new Resources\Api\StudentEducationOrganizationAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_student_education_organization_association = new \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociation(); // \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociation | The JSON representation of the \"studentEducationOrganizationAssociation\" resource to be created or updated.
+$ed_fi_student_education_organization_association = new \Resources\Model\EdFiStudentEducationOrganizationAssociation(); // \Resources\Model\EdFiStudentEducationOrganizationAssociation | The JSON representation of the \"studentEducationOrganizationAssociation\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -484,7 +484,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_student_education_organization_association** | [**\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociation**](../Model/EdFiStudentEducationOrganizationAssociation.md)| The JSON representation of the \&quot;studentEducationOrganizationAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_student_education_organization_association** | [**\Resources\Model\EdFiStudentEducationOrganizationAssociation**](../Model/EdFiStudentEducationOrganizationAssociation.md)| The JSON representation of the \&quot;studentEducationOrganizationAssociation\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

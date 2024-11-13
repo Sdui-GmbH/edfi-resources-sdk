@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiAccountabilityRating Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPITypes = [
         'id' => 'string',
         'rating_title' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
         'rating' => 'string',
         'rating_date' => '\DateTime',
         'rating_organization' => 'string',
@@ -460,7 +460,7 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -470,7 +470,7 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -487,7 +487,7 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference
+     * @return \Resources\Model\EdFiSchoolYearTypeReference
      */
     public function getSchoolYearTypeReference()
     {
@@ -497,7 +497,7 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
      *
      * @return self
      */

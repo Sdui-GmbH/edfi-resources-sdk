@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiCalendarDate Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,9 +58,9 @@ class EdFiCalendarDate implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'calendar_events' => '\OpenAPI\Client\Model\EdFiCalendarDateCalendarEvent[]',
+        'calendar_events' => '\Resources\Model\EdFiCalendarDateCalendarEvent[]',
         'date' => '\DateTime',
-        'calendar_reference' => '\OpenAPI\Client\Model\EdFiCalendarReference',
+        'calendar_reference' => '\Resources\Model\EdFiCalendarReference',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -363,7 +363,7 @@ class EdFiCalendarDate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets calendar_events
      *
-     * @return \OpenAPI\Client\Model\EdFiCalendarDateCalendarEvent[]
+     * @return \Resources\Model\EdFiCalendarDateCalendarEvent[]
      */
     public function getCalendarEvents()
     {
@@ -373,7 +373,7 @@ class EdFiCalendarDate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets calendar_events
      *
-     * @param \OpenAPI\Client\Model\EdFiCalendarDateCalendarEvent[] $calendar_events An unordered collection of calendarDateCalendarEvents. The type of scheduled or unscheduled event for the day.
+     * @param \Resources\Model\EdFiCalendarDateCalendarEvent[] $calendar_events An unordered collection of calendarDateCalendarEvents. The type of scheduled or unscheduled event for the day.
      *
      * @return self
      */
@@ -417,7 +417,7 @@ class EdFiCalendarDate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets calendar_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCalendarReference
+     * @return \Resources\Model\EdFiCalendarReference
      */
     public function getCalendarReference()
     {
@@ -427,7 +427,7 @@ class EdFiCalendarDate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets calendar_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCalendarReference $calendar_reference calendar_reference
+     * @param \Resources\Model\EdFiCalendarReference $calendar_reference calendar_reference
      *
      * @return self
      */

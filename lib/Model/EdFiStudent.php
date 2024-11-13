@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'student_unique_id' => 'string',
-        'person_reference' => '\OpenAPI\Client\Model\EdFiPersonReference',
+        'person_reference' => '\Resources\Model\EdFiPersonReference',
         'birth_city' => 'string',
         'birth_country_descriptor' => 'string',
         'birth_date' => '\DateTime',
@@ -70,17 +70,17 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
         'date_entered_us' => '\DateTime',
         'first_name' => 'string',
         'generation_code_suffix' => 'string',
-        'identification_documents' => '\OpenAPI\Client\Model\EdFiStudentIdentificationDocument[]',
+        'identification_documents' => '\Resources\Model\EdFiStudentIdentificationDocument[]',
         'last_surname' => 'string',
         'maiden_name' => 'string',
         'middle_name' => 'string',
         'multiple_birth_status' => 'bool',
-        'other_names' => '\OpenAPI\Client\Model\EdFiStudentOtherName[]',
-        'personal_identification_documents' => '\OpenAPI\Client\Model\EdFiStudentPersonalIdentificationDocument[]',
+        'other_names' => '\Resources\Model\EdFiStudentOtherName[]',
+        'personal_identification_documents' => '\Resources\Model\EdFiStudentPersonalIdentificationDocument[]',
         'personal_title_prefix' => 'string',
         'preferred_first_name' => 'string',
         'preferred_last_surname' => 'string',
-        'visas' => '\OpenAPI\Client\Model\EdFiStudentVisa[]',
+        'visas' => '\Resources\Model\EdFiStudentVisa[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -644,7 +644,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets person_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiPersonReference|null
+     * @return \Resources\Model\EdFiPersonReference|null
      */
     public function getPersonReference()
     {
@@ -654,7 +654,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets person_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiPersonReference|null $person_reference person_reference
+     * @param \Resources\Model\EdFiPersonReference|null $person_reference person_reference
      *
      * @return self
      */
@@ -1041,7 +1041,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets identification_documents
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentIdentificationDocument[]|null
+     * @return \Resources\Model\EdFiStudentIdentificationDocument[]|null
      */
     public function getIdentificationDocuments()
     {
@@ -1051,7 +1051,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identification_documents
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentIdentificationDocument[]|null $identification_documents An unordered collection of studentIdentificationDocuments. Describe the documentation of citizenship.
+     * @param \Resources\Model\EdFiStudentIdentificationDocument[]|null $identification_documents An unordered collection of studentIdentificationDocuments. Describe the documentation of citizenship.
      *
      * @return self
      */
@@ -1218,7 +1218,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets other_names
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentOtherName[]|null
+     * @return \Resources\Model\EdFiStudentOtherName[]|null
      */
     public function getOtherNames()
     {
@@ -1228,7 +1228,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets other_names
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentOtherName[]|null $other_names An unordered collection of studentOtherNames. Other names (e.g., alias, nickname, previous legal name) associated with a person.
+     * @param \Resources\Model\EdFiStudentOtherName[]|null $other_names An unordered collection of studentOtherNames. Other names (e.g., alias, nickname, previous legal name) associated with a person.
      *
      * @return self
      */
@@ -1245,7 +1245,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets personal_identification_documents
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentPersonalIdentificationDocument[]|null
+     * @return \Resources\Model\EdFiStudentPersonalIdentificationDocument[]|null
      */
     public function getPersonalIdentificationDocuments()
     {
@@ -1255,7 +1255,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets personal_identification_documents
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentPersonalIdentificationDocument[]|null $personal_identification_documents An unordered collection of studentPersonalIdentificationDocuments. The documents presented as evident to verify one's personal identity; for example: drivers license, passport, birth certificate, etc.
+     * @param \Resources\Model\EdFiStudentPersonalIdentificationDocument[]|null $personal_identification_documents An unordered collection of studentPersonalIdentificationDocuments. The documents presented as evident to verify one's personal identity; for example: drivers license, passport, birth certificate, etc.
      *
      * @return self
      */
@@ -1395,7 +1395,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets visas
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentVisa[]|null
+     * @return \Resources\Model\EdFiStudentVisa[]|null
      */
     public function getVisas()
     {
@@ -1405,7 +1405,7 @@ class EdFiStudent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets visas
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentVisa[]|null $visas An unordered collection of studentVisas. An indicator of a non-US citizen's Visa type.
+     * @param \Resources\Model\EdFiStudentVisa[]|null $visas An unordered collection of studentVisas. An indicator of a non-US citizen's Visa type.
      *
      * @return self
      */

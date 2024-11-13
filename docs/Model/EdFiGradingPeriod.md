@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 **grading_period_descriptor** | **string** | The state&#39;s name of the period for which grades are reported. |
 **grading_period_name** | **string** | The school&#39;s descriptive name of the grading period. |
-**school_reference** | [**\OpenAPI\Client\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
-**school_year_type_reference** | [**\OpenAPI\Client\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  |
+**school_reference** | [**\Resources\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
+**school_year_type_reference** | [**\Resources\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  |
 **begin_date** | **\DateTime** | Month, day, and year of the first day of the grading period. |
 **end_date** | **\DateTime** | Month, day, and year of the last day of the grading period. |
 **period_sequence** | **int** | The sequential order of this period relative to other periods. | [optional]

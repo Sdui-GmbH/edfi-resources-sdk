@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiLearningStandard Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,14 +58,14 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'academic_subjects' => '\OpenAPI\Client\Model\EdFiLearningStandardAcademicSubject[]',
-        'grade_levels' => '\OpenAPI\Client\Model\EdFiLearningStandardGradeLevel[]',
+        'academic_subjects' => '\Resources\Model\EdFiLearningStandardAcademicSubject[]',
+        'grade_levels' => '\Resources\Model\EdFiLearningStandardGradeLevel[]',
         'learning_standard_id' => 'string',
-        'parent_learning_standard_reference' => '\OpenAPI\Client\Model\EdFiLearningStandardReference',
-        'content_standard' => '\OpenAPI\Client\Model\EdFiLearningStandardContentStandard',
+        'parent_learning_standard_reference' => '\Resources\Model\EdFiLearningStandardReference',
+        'content_standard' => '\Resources\Model\EdFiLearningStandardContentStandard',
         'course_title' => 'string',
         'description' => 'string',
-        'identification_codes' => '\OpenAPI\Client\Model\EdFiLearningStandardIdentificationCode[]',
+        'identification_codes' => '\Resources\Model\EdFiLearningStandardIdentificationCode[]',
         'learning_standard_category_descriptor' => 'string',
         'learning_standard_item_code' => 'string',
         'learning_standard_scope_descriptor' => 'string',
@@ -513,7 +513,7 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets academic_subjects
      *
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardAcademicSubject[]
+     * @return \Resources\Model\EdFiLearningStandardAcademicSubject[]
      */
     public function getAcademicSubjects()
     {
@@ -523,7 +523,7 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets academic_subjects
      *
-     * @param \OpenAPI\Client\Model\EdFiLearningStandardAcademicSubject[] $academic_subjects An unordered collection of learningStandardAcademicSubjects. Subject area for the learning standard.
+     * @param \Resources\Model\EdFiLearningStandardAcademicSubject[] $academic_subjects An unordered collection of learningStandardAcademicSubjects. Subject area for the learning standard.
      *
      * @return self
      */
@@ -540,7 +540,7 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardGradeLevel[]
+     * @return \Resources\Model\EdFiLearningStandardGradeLevel[]
      */
     public function getGradeLevels()
     {
@@ -550,7 +550,7 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiLearningStandardGradeLevel[] $grade_levels An unordered collection of learningStandardGradeLevels. The grade levels for the specific learning standard.
+     * @param \Resources\Model\EdFiLearningStandardGradeLevel[] $grade_levels An unordered collection of learningStandardGradeLevels. The grade levels for the specific learning standard.
      *
      * @return self
      */
@@ -601,7 +601,7 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets parent_learning_standard_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardReference|null
+     * @return \Resources\Model\EdFiLearningStandardReference|null
      */
     public function getParentLearningStandardReference()
     {
@@ -611,7 +611,7 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets parent_learning_standard_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiLearningStandardReference|null $parent_learning_standard_reference parent_learning_standard_reference
+     * @param \Resources\Model\EdFiLearningStandardReference|null $parent_learning_standard_reference parent_learning_standard_reference
      *
      * @return self
      */
@@ -628,7 +628,7 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets content_standard
      *
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardContentStandard
+     * @return \Resources\Model\EdFiLearningStandardContentStandard
      */
     public function getContentStandard()
     {
@@ -638,7 +638,7 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets content_standard
      *
-     * @param \OpenAPI\Client\Model\EdFiLearningStandardContentStandard $content_standard content_standard
+     * @param \Resources\Model\EdFiLearningStandardContentStandard $content_standard content_standard
      *
      * @return self
      */
@@ -730,7 +730,7 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets identification_codes
      *
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardIdentificationCode[]|null
+     * @return \Resources\Model\EdFiLearningStandardIdentificationCode[]|null
      */
     public function getIdentificationCodes()
     {
@@ -740,7 +740,7 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets identification_codes
      *
-     * @param \OpenAPI\Client\Model\EdFiLearningStandardIdentificationCode[]|null $identification_codes An unordered collection of learningStandardIdentificationCodes. A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a learning standard.
+     * @param \Resources\Model\EdFiLearningStandardIdentificationCode[]|null $identification_codes An unordered collection of learningStandardIdentificationCodes. A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a learning standard.
      *
      * @return self
      */

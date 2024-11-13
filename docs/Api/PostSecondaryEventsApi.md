@@ -1,4 +1,4 @@
-# OpenAPI\Client\PostSecondaryEventsApi
+# Resources\PostSecondaryEventsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostSecondaryEventsApi(
+$apiInstance = new Resources\Api\PostSecondaryEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesPostSecondaryEvents()`
 
 ```php
-deletesPostSecondaryEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventDelete[]
+deletesPostSecondaryEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiPostSecondaryEventDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostSecondaryEventsApi(
+$apiInstance = new Resources\Api\PostSecondaryEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventDelete[]**](../Model/TrackedChangesEdFiPostSecondaryEventDelete.md)
+[**\Resources\Model\TrackedChangesEdFiPostSecondaryEventDelete[]**](../Model/TrackedChangesEdFiPostSecondaryEventDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getPostSecondaryEvents()`
 
 ```php
-getPostSecondaryEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_event_category_descriptor, $event_date, $student_unique_id, $post_secondary_institution_id, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiPostSecondaryEvent[]
+getPostSecondaryEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_event_category_descriptor, $event_date, $student_unique_id, $post_secondary_institution_id, $id, $use_snapshot): \Resources\Model\EdFiPostSecondaryEvent[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostSecondaryEventsApi(
+$apiInstance = new Resources\Api\PostSecondaryEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -209,7 +209,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiPostSecondaryEvent[]**](../Model/EdFiPostSecondaryEvent.md)
+[**\Resources\Model\EdFiPostSecondaryEvent[]**](../Model/EdFiPostSecondaryEvent.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ try {
 ## `getPostSecondaryEventsById()`
 
 ```php
-getPostSecondaryEventsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiPostSecondaryEvent
+getPostSecondaryEventsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiPostSecondaryEvent
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -242,10 +242,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostSecondaryEventsApi(
+$apiInstance = new Resources\Api\PostSecondaryEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -273,7 +273,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiPostSecondaryEvent**](../Model/EdFiPostSecondaryEvent.md)
+[**\Resources\Model\EdFiPostSecondaryEvent**](../Model/EdFiPostSecondaryEvent.md)
 
 ### Authorization
 
@@ -291,7 +291,7 @@ try {
 ## `keyChangesPostSecondaryEvents()`
 
 ```php
-keyChangesPostSecondaryEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]
+keyChangesPostSecondaryEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -306,10 +306,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostSecondaryEventsApi(
+$apiInstance = new Resources\Api\PostSecondaryEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -343,7 +343,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]**](../Model/TrackedChangesEdFiPostSecondaryEventKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]**](../Model/TrackedChangesEdFiPostSecondaryEventKeyChange.md)
 
 ### Authorization
 
@@ -376,16 +376,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostSecondaryEventsApi(
+$apiInstance = new Resources\Api\PostSecondaryEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_post_secondary_event = new \OpenAPI\Client\Model\EdFiPostSecondaryEvent(); // \OpenAPI\Client\Model\EdFiPostSecondaryEvent | The JSON representation of the \"postSecondaryEvent\" resource to be created or updated.
+$ed_fi_post_secondary_event = new \Resources\Model\EdFiPostSecondaryEvent(); // \Resources\Model\EdFiPostSecondaryEvent | The JSON representation of the \"postSecondaryEvent\" resource to be created or updated.
 
 try {
     $apiInstance->postPostSecondaryEvent($ed_fi_post_secondary_event);
@@ -398,7 +398,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_post_secondary_event** | [**\OpenAPI\Client\Model\EdFiPostSecondaryEvent**](../Model/EdFiPostSecondaryEvent.md)| The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. | |
+| **ed_fi_post_secondary_event** | [**\Resources\Model\EdFiPostSecondaryEvent**](../Model/EdFiPostSecondaryEvent.md)| The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -435,17 +435,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostSecondaryEventsApi(
+$apiInstance = new Resources\Api\PostSecondaryEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_post_secondary_event = new \OpenAPI\Client\Model\EdFiPostSecondaryEvent(); // \OpenAPI\Client\Model\EdFiPostSecondaryEvent | The JSON representation of the \"postSecondaryEvent\" resource to be created or updated.
+$ed_fi_post_secondary_event = new \Resources\Model\EdFiPostSecondaryEvent(); // \Resources\Model\EdFiPostSecondaryEvent | The JSON representation of the \"postSecondaryEvent\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -460,7 +460,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_post_secondary_event** | [**\OpenAPI\Client\Model\EdFiPostSecondaryEvent**](../Model/EdFiPostSecondaryEvent.md)| The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. | |
+| **ed_fi_post_secondary_event** | [**\Resources\Model\EdFiPostSecondaryEvent**](../Model/EdFiPostSecondaryEvent.md)| The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

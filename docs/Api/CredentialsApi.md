@@ -1,4 +1,4 @@
-# OpenAPI\Client\CredentialsApi
+# Resources\CredentialsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CredentialsApi(
+$apiInstance = new Resources\Api\CredentialsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesCredentials()`
 
 ```php
-deletesCredentials($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCredentialDelete[]
+deletesCredentials($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCredentialDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CredentialsApi(
+$apiInstance = new Resources\Api\CredentialsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCredentialDelete[]**](../Model/TrackedChangesEdFiCredentialDelete.md)
+[**\Resources\Model\TrackedChangesEdFiCredentialDelete[]**](../Model/TrackedChangesEdFiCredentialDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getCredentials()`
 
 ```php
-getCredentials($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_of_issue_state_abbreviation_descriptor, $credential_identifier, $credential_field_descriptor, $credential_type_descriptor, $teaching_credential_basis_descriptor, $teaching_credential_descriptor, $effective_date, $expiration_date, $id, $issuance_date, $namespace, $use_snapshot): \OpenAPI\Client\Model\EdFiCredential[]
+getCredentials($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_of_issue_state_abbreviation_descriptor, $credential_identifier, $credential_field_descriptor, $credential_type_descriptor, $teaching_credential_basis_descriptor, $teaching_credential_descriptor, $effective_date, $expiration_date, $id, $issuance_date, $namespace, $use_snapshot): \Resources\Model\EdFiCredential[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CredentialsApi(
+$apiInstance = new Resources\Api\CredentialsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -221,7 +221,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCredential[]**](../Model/EdFiCredential.md)
+[**\Resources\Model\EdFiCredential[]**](../Model/EdFiCredential.md)
 
 ### Authorization
 
@@ -239,7 +239,7 @@ try {
 ## `getCredentialsById()`
 
 ```php
-getCredentialsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiCredential
+getCredentialsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiCredential
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -254,10 +254,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CredentialsApi(
+$apiInstance = new Resources\Api\CredentialsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -285,7 +285,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCredential**](../Model/EdFiCredential.md)
+[**\Resources\Model\EdFiCredential**](../Model/EdFiCredential.md)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ try {
 ## `keyChangesCredentials()`
 
 ```php
-keyChangesCredentials($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCredentialKeyChange[]
+keyChangesCredentials($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCredentialKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -318,10 +318,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CredentialsApi(
+$apiInstance = new Resources\Api\CredentialsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -355,7 +355,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCredentialKeyChange[]**](../Model/TrackedChangesEdFiCredentialKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiCredentialKeyChange[]**](../Model/TrackedChangesEdFiCredentialKeyChange.md)
 
 ### Authorization
 
@@ -388,16 +388,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CredentialsApi(
+$apiInstance = new Resources\Api\CredentialsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_credential = new \OpenAPI\Client\Model\EdFiCredential(); // \OpenAPI\Client\Model\EdFiCredential | The JSON representation of the \"credential\" resource to be created or updated.
+$ed_fi_credential = new \Resources\Model\EdFiCredential(); // \Resources\Model\EdFiCredential | The JSON representation of the \"credential\" resource to be created or updated.
 
 try {
     $apiInstance->postCredential($ed_fi_credential);
@@ -410,7 +410,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_credential** | [**\OpenAPI\Client\Model\EdFiCredential**](../Model/EdFiCredential.md)| The JSON representation of the \&quot;credential\&quot; resource to be created or updated. | |
+| **ed_fi_credential** | [**\Resources\Model\EdFiCredential**](../Model/EdFiCredential.md)| The JSON representation of the \&quot;credential\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -447,17 +447,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CredentialsApi(
+$apiInstance = new Resources\Api\CredentialsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_credential = new \OpenAPI\Client\Model\EdFiCredential(); // \OpenAPI\Client\Model\EdFiCredential | The JSON representation of the \"credential\" resource to be created or updated.
+$ed_fi_credential = new \Resources\Model\EdFiCredential(); // \Resources\Model\EdFiCredential | The JSON representation of the \"credential\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -472,7 +472,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_credential** | [**\OpenAPI\Client\Model\EdFiCredential**](../Model/EdFiCredential.md)| The JSON representation of the \&quot;credential\&quot; resource to be created or updated. | |
+| **ed_fi_credential** | [**\Resources\Model\EdFiCredential**](../Model/EdFiCredential.md)| The JSON representation of the \&quot;credential\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

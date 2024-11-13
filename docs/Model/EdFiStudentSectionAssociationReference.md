@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **section_identifier** | **string** | The local identifier assigned to a section. |
 **session_name** | **string** | The identifier for the calendar for the academic session. |
 **student_unique_id** | **string** | A unique alphanumeric code assigned to a student. |
-**link** | [**\OpenAPI\Client\Model\Link**](Link.md) |  | [optional]
+**link** | [**\Resources\Model\Link**](Link.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

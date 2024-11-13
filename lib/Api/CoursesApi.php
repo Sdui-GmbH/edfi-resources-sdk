@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * CoursesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class CoursesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCourseById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class CoursesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCourseById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class CoursesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCourses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCourseDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiCourseDelete[]
      */
     public function deletesCourses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
     {
@@ -407,9 +407,9 @@ class CoursesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCourses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCourseDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCourseDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesCoursesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
     {
@@ -440,11 +440,11 @@ class CoursesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCourseDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCourseDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCourseDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCourseDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class CoursesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCourseDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCourseDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class CoursesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCourseDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCourseDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class CoursesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCourseDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiCourseDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class CoursesApi
      */
     public function deletesCoursesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCourseDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCourseDelete[]';
         $request = $this->deletesCoursesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -786,9 +786,9 @@ class CoursesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCourses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCourse[]
+     * @return \Resources\Model\EdFiCourse[]
      */
     public function getCourses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, string $contentType = self::contentTypes['getCourses'][0])
     {
@@ -828,9 +828,9 @@ class CoursesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCourses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCourse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCourse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCoursesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, string $contentType = self::contentTypes['getCourses'][0])
     {
@@ -861,11 +861,11 @@ class CoursesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCourse[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCourse[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCourse[]' !== 'string') {
+                        if ('\Resources\Model\EdFiCourse[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -883,7 +883,7 @@ class CoursesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCourse[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCourse[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -902,7 +902,7 @@ class CoursesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCourse[]';
+            $returnType = '\Resources\Model\EdFiCourse[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -935,7 +935,7 @@ class CoursesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCourse[]',
+                        '\Resources\Model\EdFiCourse[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1027,7 +1027,7 @@ class CoursesApi
      */
     public function getCoursesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, string $contentType = self::contentTypes['getCourses'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCourse[]';
+        $returnType = '\Resources\Model\EdFiCourse[]';
         $request = $this->getCoursesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $contentType);
 
         return $this->client
@@ -1456,9 +1456,9 @@ class CoursesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCoursesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCourse
+     * @return \Resources\Model\EdFiCourse
      */
     public function getCoursesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCoursesById'][0])
     {
@@ -1476,9 +1476,9 @@ class CoursesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCoursesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCourse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCourse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCoursesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCoursesById'][0])
     {
@@ -1509,11 +1509,11 @@ class CoursesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCourse' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCourse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCourse' !== 'string') {
+                        if ('\Resources\Model\EdFiCourse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1531,7 +1531,7 @@ class CoursesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCourse', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCourse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1550,7 +1550,7 @@ class CoursesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCourse';
+            $returnType = '\Resources\Model\EdFiCourse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1583,7 +1583,7 @@ class CoursesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCourse',
+                        '\Resources\Model\EdFiCourse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1631,7 +1631,7 @@ class CoursesApi
      */
     public function getCoursesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCoursesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCourse';
+        $returnType = '\Resources\Model\EdFiCourse';
         $request = $this->getCoursesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1791,9 +1791,9 @@ class CoursesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCourses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCourseKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiCourseKeyChange[]
      */
     public function keyChangesCourses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
     {
@@ -1814,9 +1814,9 @@ class CoursesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCourses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCourseKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCourseKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesCoursesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
     {
@@ -1847,11 +1847,11 @@ class CoursesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCourseKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCourseKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCourseKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCourseKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1869,7 +1869,7 @@ class CoursesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCourseKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCourseKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1888,7 +1888,7 @@ class CoursesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCourseKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCourseKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1921,7 +1921,7 @@ class CoursesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCourseKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiCourseKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1975,7 +1975,7 @@ class CoursesApi
      */
     public function keyChangesCoursesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCourseKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCourseKeyChange[]';
         $request = $this->keyChangesCoursesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2166,10 +2166,10 @@ class CoursesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCourse'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2183,10 +2183,10 @@ class CoursesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCourse'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2231,7 +2231,7 @@ class CoursesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCourse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2252,7 +2252,7 @@ class CoursesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCourse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2289,7 +2289,7 @@ class CoursesApi
     /**
      * Create request for operation 'postCourse'
      *
-     * @param  \OpenAPI\Client\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCourse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2387,11 +2387,11 @@ class CoursesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCourse'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2406,11 +2406,11 @@ class CoursesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCourse'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2456,7 +2456,7 @@ class CoursesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCourse'] to see the possible values for this operation
      *
@@ -2479,7 +2479,7 @@ class CoursesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCourse'] to see the possible values for this operation
      *
@@ -2518,7 +2518,7 @@ class CoursesApi
      * Create request for operation 'putCourse'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCourse $ed_fi_course The JSON representation of the \&quot;course\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCourse'] to see the possible values for this operation
      *

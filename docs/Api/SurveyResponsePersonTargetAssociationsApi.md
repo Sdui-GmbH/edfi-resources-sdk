@@ -1,4 +1,4 @@
-# OpenAPI\Client\SurveyResponsePersonTargetAssociationsApi
+# Resources\SurveyResponsePersonTargetAssociationsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveyResponsePersonTargetAssociationsApi(
+$apiInstance = new Resources\Api\SurveyResponsePersonTargetAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesSurveyResponsePersonTargetAssociations()`
 
 ```php
-deletesSurveyResponsePersonTargetAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete[]
+deletesSurveyResponsePersonTargetAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveyResponsePersonTargetAssociationsApi(
+$apiInstance = new Resources\Api\SurveyResponsePersonTargetAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete[]**](../Model/TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete.md)
+[**\Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete[]**](../Model/TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getSurveyResponsePersonTargetAssociations()`
 
 ```php
-getSurveyResponsePersonTargetAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot): \OpenAPI\Client\Model\TpdmSurveyResponsePersonTargetAssociation[]
+getSurveyResponsePersonTargetAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot): \Resources\Model\TpdmSurveyResponsePersonTargetAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveyResponsePersonTargetAssociationsApi(
+$apiInstance = new Resources\Api\SurveyResponsePersonTargetAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -211,7 +211,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TpdmSurveyResponsePersonTargetAssociation[]**](../Model/TpdmSurveyResponsePersonTargetAssociation.md)
+[**\Resources\Model\TpdmSurveyResponsePersonTargetAssociation[]**](../Model/TpdmSurveyResponsePersonTargetAssociation.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ try {
 ## `getSurveyResponsePersonTargetAssociationsById()`
 
 ```php
-getSurveyResponsePersonTargetAssociationsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\TpdmSurveyResponsePersonTargetAssociation
+getSurveyResponsePersonTargetAssociationsById($id, $if_none_match, $use_snapshot): \Resources\Model\TpdmSurveyResponsePersonTargetAssociation
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -244,10 +244,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveyResponsePersonTargetAssociationsApi(
+$apiInstance = new Resources\Api\SurveyResponsePersonTargetAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -275,7 +275,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TpdmSurveyResponsePersonTargetAssociation**](../Model/TpdmSurveyResponsePersonTargetAssociation.md)
+[**\Resources\Model\TpdmSurveyResponsePersonTargetAssociation**](../Model/TpdmSurveyResponsePersonTargetAssociation.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ try {
 ## `keyChangesSurveyResponsePersonTargetAssociations()`
 
 ```php
-keyChangesSurveyResponsePersonTargetAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange[]
+keyChangesSurveyResponsePersonTargetAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -308,10 +308,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveyResponsePersonTargetAssociationsApi(
+$apiInstance = new Resources\Api\SurveyResponsePersonTargetAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -345,7 +345,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange[]**](../Model/TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange.md)
+[**\Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange[]**](../Model/TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange.md)
 
 ### Authorization
 
@@ -378,16 +378,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveyResponsePersonTargetAssociationsApi(
+$apiInstance = new Resources\Api\SurveyResponsePersonTargetAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tpdm_survey_response_person_target_association = new \OpenAPI\Client\Model\TpdmSurveyResponsePersonTargetAssociation(); // \OpenAPI\Client\Model\TpdmSurveyResponsePersonTargetAssociation | The JSON representation of the \"surveyResponsePersonTargetAssociation\" resource to be created or updated.
+$tpdm_survey_response_person_target_association = new \Resources\Model\TpdmSurveyResponsePersonTargetAssociation(); // \Resources\Model\TpdmSurveyResponsePersonTargetAssociation | The JSON representation of the \"surveyResponsePersonTargetAssociation\" resource to be created or updated.
 
 try {
     $apiInstance->postSurveyResponsePersonTargetAssociation($tpdm_survey_response_person_target_association);
@@ -400,7 +400,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **tpdm_survey_response_person_target_association** | [**\OpenAPI\Client\Model\TpdmSurveyResponsePersonTargetAssociation**](../Model/TpdmSurveyResponsePersonTargetAssociation.md)| The JSON representation of the \&quot;surveyResponsePersonTargetAssociation\&quot; resource to be created or updated. | |
+| **tpdm_survey_response_person_target_association** | [**\Resources\Model\TpdmSurveyResponsePersonTargetAssociation**](../Model/TpdmSurveyResponsePersonTargetAssociation.md)| The JSON representation of the \&quot;surveyResponsePersonTargetAssociation\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -437,17 +437,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveyResponsePersonTargetAssociationsApi(
+$apiInstance = new Resources\Api\SurveyResponsePersonTargetAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$tpdm_survey_response_person_target_association = new \OpenAPI\Client\Model\TpdmSurveyResponsePersonTargetAssociation(); // \OpenAPI\Client\Model\TpdmSurveyResponsePersonTargetAssociation | The JSON representation of the \"surveyResponsePersonTargetAssociation\" resource to be created or updated.
+$tpdm_survey_response_person_target_association = new \Resources\Model\TpdmSurveyResponsePersonTargetAssociation(); // \Resources\Model\TpdmSurveyResponsePersonTargetAssociation | The JSON representation of the \"surveyResponsePersonTargetAssociation\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -462,7 +462,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **tpdm_survey_response_person_target_association** | [**\OpenAPI\Client\Model\TpdmSurveyResponsePersonTargetAssociation**](../Model/TpdmSurveyResponsePersonTargetAssociation.md)| The JSON representation of the \&quot;surveyResponsePersonTargetAssociation\&quot; resource to be created or updated. | |
+| **tpdm_survey_response_person_target_association** | [**\Resources\Model\TpdmSurveyResponsePersonTargetAssociation**](../Model/TpdmSurveyResponsePersonTargetAssociation.md)| The JSON representation of the \&quot;surveyResponsePersonTargetAssociation\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

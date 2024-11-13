@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmEvaluationElementRating Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,14 +58,14 @@ class TpdmEvaluationElementRating implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'evaluation_element_reference' => '\OpenAPI\Client\Model\TpdmEvaluationElementReference',
-        'evaluation_objective_rating_reference' => '\OpenAPI\Client\Model\TpdmEvaluationObjectiveRatingReference',
+        'evaluation_element_reference' => '\Resources\Model\TpdmEvaluationElementReference',
+        'evaluation_objective_rating_reference' => '\Resources\Model\TpdmEvaluationObjectiveRatingReference',
         'area_of_refinement' => 'string',
         'area_of_reinforcement' => 'string',
         'comments' => 'string',
         'evaluation_element_rating_level_descriptor' => 'string',
         'feedback' => 'string',
-        'results' => '\OpenAPI\Client\Model\TpdmEvaluationElementRatingResult[]',
+        'results' => '\Resources\Model\TpdmEvaluationElementRatingResult[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -431,7 +431,7 @@ class TpdmEvaluationElementRating implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets evaluation_element_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationElementReference
+     * @return \Resources\Model\TpdmEvaluationElementReference
      */
     public function getEvaluationElementReference()
     {
@@ -441,7 +441,7 @@ class TpdmEvaluationElementRating implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets evaluation_element_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationElementReference $evaluation_element_reference evaluation_element_reference
+     * @param \Resources\Model\TpdmEvaluationElementReference $evaluation_element_reference evaluation_element_reference
      *
      * @return self
      */
@@ -458,7 +458,7 @@ class TpdmEvaluationElementRating implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets evaluation_objective_rating_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationObjectiveRatingReference
+     * @return \Resources\Model\TpdmEvaluationObjectiveRatingReference
      */
     public function getEvaluationObjectiveRatingReference()
     {
@@ -468,7 +468,7 @@ class TpdmEvaluationElementRating implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets evaluation_objective_rating_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationObjectiveRatingReference $evaluation_objective_rating_reference evaluation_objective_rating_reference
+     * @param \Resources\Model\TpdmEvaluationObjectiveRatingReference $evaluation_objective_rating_reference evaluation_objective_rating_reference
      *
      * @return self
      */
@@ -687,7 +687,7 @@ class TpdmEvaluationElementRating implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets results
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationElementRatingResult[]|null
+     * @return \Resources\Model\TpdmEvaluationElementRatingResult[]|null
      */
     public function getResults()
     {
@@ -697,7 +697,7 @@ class TpdmEvaluationElementRating implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets results
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationElementRatingResult[]|null $results An unordered collection of evaluationElementRatingResults. The numerical summary rating or score for the evaluation element.
+     * @param \Resources\Model\TpdmEvaluationElementRatingResult[]|null $results An unordered collection of evaluationElementRatingResults. The numerical summary rating or score for the evaluation element.
      *
      * @return self
      */

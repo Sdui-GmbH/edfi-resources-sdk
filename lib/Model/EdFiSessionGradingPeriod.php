@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSessionGradingPeriod Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiSessionGradingPeriod implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'grading_period_reference' => '\OpenAPI\Client\Model\EdFiGradingPeriodReference'
+        'grading_period_reference' => '\Resources\Model\EdFiGradingPeriodReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiSessionGradingPeriod implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets grading_period_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiGradingPeriodReference
+     * @return \Resources\Model\EdFiGradingPeriodReference
      */
     public function getGradingPeriodReference()
     {
@@ -305,7 +305,7 @@ class EdFiSessionGradingPeriod implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets grading_period_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiGradingPeriodReference $grading_period_reference grading_period_reference
+     * @param \Resources\Model\EdFiGradingPeriodReference $grading_period_reference grading_period_reference
      *
      * @return self
      */

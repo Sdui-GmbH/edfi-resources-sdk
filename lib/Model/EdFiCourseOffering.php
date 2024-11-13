@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiCourseOffering Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,14 +59,14 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'id' => 'string',
         'local_course_code' => 'string',
-        'course_reference' => '\OpenAPI\Client\Model\EdFiCourseReference',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'session_reference' => '\OpenAPI\Client\Model\EdFiSessionReference',
-        'course_level_characteristics' => '\OpenAPI\Client\Model\EdFiCourseOfferingCourseLevelCharacteristic[]',
-        'curriculum_useds' => '\OpenAPI\Client\Model\EdFiCourseOfferingCurriculumUsed[]',
+        'course_reference' => '\Resources\Model\EdFiCourseReference',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'session_reference' => '\Resources\Model\EdFiSessionReference',
+        'course_level_characteristics' => '\Resources\Model\EdFiCourseOfferingCourseLevelCharacteristic[]',
+        'curriculum_useds' => '\Resources\Model\EdFiCourseOfferingCurriculumUsed[]',
         'instructional_time_planned' => 'int',
         'local_course_title' => 'string',
-        'offered_grade_levels' => '\OpenAPI\Client\Model\EdFiCourseOfferingOfferedGradeLevel[]',
+        'offered_grade_levels' => '\Resources\Model\EdFiCourseOfferingOfferedGradeLevel[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -462,7 +462,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets course_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseReference
+     * @return \Resources\Model\EdFiCourseReference
      */
     public function getCourseReference()
     {
@@ -472,7 +472,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets course_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseReference $course_reference course_reference
+     * @param \Resources\Model\EdFiCourseReference $course_reference course_reference
      *
      * @return self
      */
@@ -489,7 +489,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -499,7 +499,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */
@@ -516,7 +516,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets session_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSessionReference
+     * @return \Resources\Model\EdFiSessionReference
      */
     public function getSessionReference()
     {
@@ -526,7 +526,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets session_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSessionReference $session_reference session_reference
+     * @param \Resources\Model\EdFiSessionReference $session_reference session_reference
      *
      * @return self
      */
@@ -543,7 +543,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets course_level_characteristics
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseOfferingCourseLevelCharacteristic[]|null
+     * @return \Resources\Model\EdFiCourseOfferingCourseLevelCharacteristic[]|null
      */
     public function getCourseLevelCharacteristics()
     {
@@ -553,7 +553,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets course_level_characteristics
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseOfferingCourseLevelCharacteristic[]|null $course_level_characteristics An unordered collection of courseOfferingCourseLevelCharacteristics. The type of specific program or designation with which the course offering is associated (e.g., AP, IB, Dual Credit, CTE). This collection should only be populated if it differs from the course level characteristics identified at the course level.
+     * @param \Resources\Model\EdFiCourseOfferingCourseLevelCharacteristic[]|null $course_level_characteristics An unordered collection of courseOfferingCourseLevelCharacteristics. The type of specific program or designation with which the course offering is associated (e.g., AP, IB, Dual Credit, CTE). This collection should only be populated if it differs from the course level characteristics identified at the course level.
      *
      * @return self
      */
@@ -570,7 +570,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets curriculum_useds
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseOfferingCurriculumUsed[]|null
+     * @return \Resources\Model\EdFiCourseOfferingCurriculumUsed[]|null
      */
     public function getCurriculumUseds()
     {
@@ -580,7 +580,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets curriculum_useds
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseOfferingCurriculumUsed[]|null $curriculum_useds An unordered collection of courseOfferingCurriculumUseds. The type of curriculum used in an early learning classroom or group.
+     * @param \Resources\Model\EdFiCourseOfferingCurriculumUsed[]|null $curriculum_useds An unordered collection of courseOfferingCurriculumUseds. The type of curriculum used in an early learning classroom or group.
      *
      * @return self
      */
@@ -677,7 +677,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets offered_grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseOfferingOfferedGradeLevel[]|null
+     * @return \Resources\Model\EdFiCourseOfferingOfferedGradeLevel[]|null
      */
     public function getOfferedGradeLevels()
     {
@@ -687,7 +687,7 @@ class EdFiCourseOffering implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets offered_grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseOfferingOfferedGradeLevel[]|null $offered_grade_levels An unordered collection of courseOfferingOfferedGradeLevels. The grade levels in which the course is offered. This collection should only be populated if it differs from the offered grade levels identified at the course level.
+     * @param \Resources\Model\EdFiCourseOfferingOfferedGradeLevel[]|null $offered_grade_levels An unordered collection of courseOfferingOfferedGradeLevels. The grade levels in which the course is offered. This collection should only be populated if it differs from the offered grade levels identified at the course level.
      *
      * @return self
      */

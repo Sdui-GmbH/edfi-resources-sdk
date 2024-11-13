@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiPostSecondaryEvent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,8 +60,8 @@ class EdFiPostSecondaryEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => 'string',
         'event_date' => '\DateTime',
         'post_secondary_event_category_descriptor' => 'string',
-        'post_secondary_institution_reference' => '\OpenAPI\Client\Model\EdFiPostSecondaryInstitutionReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'post_secondary_institution_reference' => '\Resources\Model\EdFiPostSecondaryInstitutionReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -432,7 +432,7 @@ class EdFiPostSecondaryEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets post_secondary_institution_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiPostSecondaryInstitutionReference|null
+     * @return \Resources\Model\EdFiPostSecondaryInstitutionReference|null
      */
     public function getPostSecondaryInstitutionReference()
     {
@@ -442,7 +442,7 @@ class EdFiPostSecondaryEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets post_secondary_institution_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiPostSecondaryInstitutionReference|null $post_secondary_institution_reference post_secondary_institution_reference
+     * @param \Resources\Model\EdFiPostSecondaryInstitutionReference|null $post_secondary_institution_reference post_secondary_institution_reference
      *
      * @return self
      */
@@ -459,7 +459,7 @@ class EdFiPostSecondaryEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -469,7 +469,7 @@ class EdFiPostSecondaryEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */

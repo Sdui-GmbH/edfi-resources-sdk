@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmEvaluationObjective Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,12 +59,12 @@ class TpdmEvaluationObjective implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'id' => 'string',
         'evaluation_objective_title' => 'string',
-        'evaluation_reference' => '\OpenAPI\Client\Model\TpdmEvaluationReference',
+        'evaluation_reference' => '\Resources\Model\TpdmEvaluationReference',
         'evaluation_objective_description' => 'string',
         'evaluation_type_descriptor' => 'string',
         'max_rating' => 'float',
         'min_rating' => 'float',
-        'rating_levels' => '\OpenAPI\Client\Model\TpdmEvaluationObjectiveRatingLevel[]',
+        'rating_levels' => '\Resources\Model\TpdmEvaluationObjectiveRatingLevel[]',
         'sort_order' => 'int',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -445,7 +445,7 @@ class TpdmEvaluationObjective implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets evaluation_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationReference
+     * @return \Resources\Model\TpdmEvaluationReference
      */
     public function getEvaluationReference()
     {
@@ -455,7 +455,7 @@ class TpdmEvaluationObjective implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets evaluation_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationReference $evaluation_reference evaluation_reference
+     * @param \Resources\Model\TpdmEvaluationReference $evaluation_reference evaluation_reference
      *
      * @return self
      */
@@ -616,7 +616,7 @@ class TpdmEvaluationObjective implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets rating_levels
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationObjectiveRatingLevel[]|null
+     * @return \Resources\Model\TpdmEvaluationObjectiveRatingLevel[]|null
      */
     public function getRatingLevels()
     {
@@ -626,7 +626,7 @@ class TpdmEvaluationObjective implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets rating_levels
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationObjectiveRatingLevel[]|null $rating_levels An unordered collection of evaluationObjectiveRatingLevels. The descriptive level(s) of ratings (cut scores) for evaluation Objective.
+     * @param \Resources\Model\TpdmEvaluationObjectiveRatingLevel[]|null $rating_levels An unordered collection of evaluationObjectiveRatingLevels. The descriptive level(s) of ratings (cut scores) for evaluation Objective.
      *
      * @return self
      */

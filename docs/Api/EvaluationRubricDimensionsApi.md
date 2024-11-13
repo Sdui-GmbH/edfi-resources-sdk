@@ -1,4 +1,4 @@
-# OpenAPI\Client\EvaluationRubricDimensionsApi
+# Resources\EvaluationRubricDimensionsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRubricDimensionsApi(
+$apiInstance = new Resources\Api\EvaluationRubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesEvaluationRubricDimensions()`
 
 ```php
-deletesEvaluationRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]
+deletesEvaluationRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRubricDimensionsApi(
+$apiInstance = new Resources\Api\EvaluationRubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]**](../Model/TrackedChangesEdFiEvaluationRubricDimensionDelete.md)
+[**\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]**](../Model/TrackedChangesEdFiEvaluationRubricDimensionDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getEvaluationRubricDimensions()`
 
 ```php
-getEvaluationRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot): \OpenAPI\Client\Model\EdFiEvaluationRubricDimension[]
+getEvaluationRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot): \Resources\Model\EdFiEvaluationRubricDimension[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRubricDimensionsApi(
+$apiInstance = new Resources\Api\EvaluationRubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -223,7 +223,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiEvaluationRubricDimension[]**](../Model/EdFiEvaluationRubricDimension.md)
+[**\Resources\Model\EdFiEvaluationRubricDimension[]**](../Model/EdFiEvaluationRubricDimension.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ try {
 ## `getEvaluationRubricDimensionsById()`
 
 ```php
-getEvaluationRubricDimensionsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiEvaluationRubricDimension
+getEvaluationRubricDimensionsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiEvaluationRubricDimension
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -256,10 +256,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRubricDimensionsApi(
+$apiInstance = new Resources\Api\EvaluationRubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -287,7 +287,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiEvaluationRubricDimension**](../Model/EdFiEvaluationRubricDimension.md)
+[**\Resources\Model\EdFiEvaluationRubricDimension**](../Model/EdFiEvaluationRubricDimension.md)
 
 ### Authorization
 
@@ -305,7 +305,7 @@ try {
 ## `keyChangesEvaluationRubricDimensions()`
 
 ```php
-keyChangesEvaluationRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]
+keyChangesEvaluationRubricDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -320,10 +320,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRubricDimensionsApi(
+$apiInstance = new Resources\Api\EvaluationRubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -357,7 +357,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]**](../Model/TrackedChangesEdFiEvaluationRubricDimensionKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]**](../Model/TrackedChangesEdFiEvaluationRubricDimensionKeyChange.md)
 
 ### Authorization
 
@@ -390,16 +390,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRubricDimensionsApi(
+$apiInstance = new Resources\Api\EvaluationRubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_evaluation_rubric_dimension = new \OpenAPI\Client\Model\EdFiEvaluationRubricDimension(); // \OpenAPI\Client\Model\EdFiEvaluationRubricDimension | The JSON representation of the \"evaluationRubricDimension\" resource to be created or updated.
+$ed_fi_evaluation_rubric_dimension = new \Resources\Model\EdFiEvaluationRubricDimension(); // \Resources\Model\EdFiEvaluationRubricDimension | The JSON representation of the \"evaluationRubricDimension\" resource to be created or updated.
 
 try {
     $apiInstance->postEvaluationRubricDimension($ed_fi_evaluation_rubric_dimension);
@@ -412,7 +412,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_evaluation_rubric_dimension** | [**\OpenAPI\Client\Model\EdFiEvaluationRubricDimension**](../Model/EdFiEvaluationRubricDimension.md)| The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. | |
+| **ed_fi_evaluation_rubric_dimension** | [**\Resources\Model\EdFiEvaluationRubricDimension**](../Model/EdFiEvaluationRubricDimension.md)| The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -449,17 +449,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRubricDimensionsApi(
+$apiInstance = new Resources\Api\EvaluationRubricDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_evaluation_rubric_dimension = new \OpenAPI\Client\Model\EdFiEvaluationRubricDimension(); // \OpenAPI\Client\Model\EdFiEvaluationRubricDimension | The JSON representation of the \"evaluationRubricDimension\" resource to be created or updated.
+$ed_fi_evaluation_rubric_dimension = new \Resources\Model\EdFiEvaluationRubricDimension(); // \Resources\Model\EdFiEvaluationRubricDimension | The JSON representation of the \"evaluationRubricDimension\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -474,7 +474,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_evaluation_rubric_dimension** | [**\OpenAPI\Client\Model\EdFiEvaluationRubricDimension**](../Model/EdFiEvaluationRubricDimension.md)| The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. | |
+| **ed_fi_evaluation_rubric_dimension** | [**\Resources\Model\EdFiEvaluationRubricDimension**](../Model/EdFiEvaluationRubricDimension.md)| The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

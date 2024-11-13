@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiCourse Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,19 +59,19 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'course_code' => 'string',
-        'identification_codes' => '\OpenAPI\Client\Model\EdFiCourseIdentificationCode[]',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'academic_subjects' => '\OpenAPI\Client\Model\EdFiCourseAcademicSubject[]',
+        'identification_codes' => '\Resources\Model\EdFiCourseIdentificationCode[]',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'academic_subjects' => '\Resources\Model\EdFiCourseAcademicSubject[]',
         'career_pathway_descriptor' => 'string',
-        'competency_levels' => '\OpenAPI\Client\Model\EdFiCourseCompetencyLevel[]',
+        'competency_levels' => '\Resources\Model\EdFiCourseCompetencyLevel[]',
         'course_defined_by_descriptor' => 'string',
         'course_description' => 'string',
         'course_gpa_applicability_descriptor' => 'string',
         'course_title' => 'string',
         'date_course_adopted' => '\DateTime',
         'high_school_course_requirement' => 'bool',
-        'learning_standards' => '\OpenAPI\Client\Model\EdFiCourseLearningStandard[]',
-        'level_characteristics' => '\OpenAPI\Client\Model\EdFiCourseLevelCharacteristic[]',
+        'learning_standards' => '\Resources\Model\EdFiCourseLearningStandard[]',
+        'level_characteristics' => '\Resources\Model\EdFiCourseLevelCharacteristic[]',
         'max_completions_for_credit' => 'int',
         'maximum_available_credit_conversion' => 'float',
         'maximum_available_credits' => 'float',
@@ -80,7 +80,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
         'minimum_available_credits' => 'float',
         'minimum_available_credit_type_descriptor' => 'string',
         'number_of_parts' => 'int',
-        'offered_grade_levels' => '\OpenAPI\Client\Model\EdFiCourseOfferedGradeLevel[]',
+        'offered_grade_levels' => '\Resources\Model\EdFiCourseOfferedGradeLevel[]',
         'time_required_for_completion' => 'int',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -618,7 +618,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets identification_codes
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseIdentificationCode[]
+     * @return \Resources\Model\EdFiCourseIdentificationCode[]
      */
     public function getIdentificationCodes()
     {
@@ -628,7 +628,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identification_codes
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseIdentificationCode[] $identification_codes An unordered collection of courseIdentificationCodes. The code that identifies the organization of subject matter and related learning experiences provided for the instruction of students.
+     * @param \Resources\Model\EdFiCourseIdentificationCode[] $identification_codes An unordered collection of courseIdentificationCodes. The code that identifies the organization of subject matter and related learning experiences provided for the instruction of students.
      *
      * @return self
      */
@@ -645,7 +645,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -655,7 +655,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -672,7 +672,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets academic_subjects
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseAcademicSubject[]|null
+     * @return \Resources\Model\EdFiCourseAcademicSubject[]|null
      */
     public function getAcademicSubjects()
     {
@@ -682,7 +682,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets academic_subjects
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseAcademicSubject[]|null $academic_subjects An unordered collection of courseAcademicSubjects. The intended major subject/s area of the course.
+     * @param \Resources\Model\EdFiCourseAcademicSubject[]|null $academic_subjects An unordered collection of courseAcademicSubjects. The intended major subject/s area of the course.
      *
      * @return self
      */
@@ -737,7 +737,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets competency_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseCompetencyLevel[]|null
+     * @return \Resources\Model\EdFiCourseCompetencyLevel[]|null
      */
     public function getCompetencyLevels()
     {
@@ -747,7 +747,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets competency_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseCompetencyLevel[]|null $competency_levels An unordered collection of courseCompetencyLevels. The competency levels defined to rate the student for the course.
+     * @param \Resources\Model\EdFiCourseCompetencyLevel[]|null $competency_levels An unordered collection of courseCompetencyLevels. The competency levels defined to rate the student for the course.
      *
      * @return self
      */
@@ -983,7 +983,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets learning_standards
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseLearningStandard[]|null
+     * @return \Resources\Model\EdFiCourseLearningStandard[]|null
      */
     public function getLearningStandards()
     {
@@ -993,7 +993,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets learning_standards
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseLearningStandard[]|null $learning_standards An unordered collection of courseLearningStandards. Learning standard(s) to be taught by the course.
+     * @param \Resources\Model\EdFiCourseLearningStandard[]|null $learning_standards An unordered collection of courseLearningStandards. Learning standard(s) to be taught by the course.
      *
      * @return self
      */
@@ -1010,7 +1010,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets level_characteristics
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseLevelCharacteristic[]|null
+     * @return \Resources\Model\EdFiCourseLevelCharacteristic[]|null
      */
     public function getLevelCharacteristics()
     {
@@ -1020,7 +1020,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets level_characteristics
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseLevelCharacteristic[]|null $level_characteristics An unordered collection of courseLevelCharacteristics. The type of specific program or designation with which the course is associated (e.g., AP, IB, Dual Credit, CTE).
+     * @param \Resources\Model\EdFiCourseLevelCharacteristic[]|null $level_characteristics An unordered collection of courseLevelCharacteristics. The type of specific program or designation with which the course is associated (e.g., AP, IB, Dual Credit, CTE).
      *
      * @return self
      */
@@ -1333,7 +1333,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offered_grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseOfferedGradeLevel[]|null
+     * @return \Resources\Model\EdFiCourseOfferedGradeLevel[]|null
      */
     public function getOfferedGradeLevels()
     {
@@ -1343,7 +1343,7 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets offered_grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseOfferedGradeLevel[]|null $offered_grade_levels An unordered collection of courseOfferedGradeLevels. The grade levels in which the course is offered.
+     * @param \Resources\Model\EdFiCourseOfferedGradeLevel[]|null $offered_grade_levels An unordered collection of courseOfferedGradeLevels. The grade levels in which the course is offered.
      *
      * @return self
      */

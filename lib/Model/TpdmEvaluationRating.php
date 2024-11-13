@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmEvaluationRating Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,13 +59,13 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPITypes = [
         'id' => 'string',
         'evaluation_date' => '\DateTime',
-        'evaluation_reference' => '\OpenAPI\Client\Model\TpdmEvaluationReference',
-        'performance_evaluation_rating_reference' => '\OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingReference',
-        'section_reference' => '\OpenAPI\Client\Model\EdFiSectionReference',
+        'evaluation_reference' => '\Resources\Model\TpdmEvaluationReference',
+        'performance_evaluation_rating_reference' => '\Resources\Model\TpdmPerformanceEvaluationRatingReference',
+        'section_reference' => '\Resources\Model\EdFiSectionReference',
         'evaluation_rating_level_descriptor' => 'string',
         'evaluation_rating_status_descriptor' => 'string',
-        'results' => '\OpenAPI\Client\Model\TpdmEvaluationRatingResult[]',
-        'reviewers' => '\OpenAPI\Client\Model\TpdmEvaluationRatingReviewer[]',
+        'results' => '\Resources\Model\TpdmEvaluationRatingResult[]',
+        'reviewers' => '\Resources\Model\TpdmEvaluationRatingReviewer[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -433,7 +433,7 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets evaluation_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationReference
+     * @return \Resources\Model\TpdmEvaluationReference
      */
     public function getEvaluationReference()
     {
@@ -443,7 +443,7 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets evaluation_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationReference $evaluation_reference evaluation_reference
+     * @param \Resources\Model\TpdmEvaluationReference $evaluation_reference evaluation_reference
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets performance_evaluation_rating_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingReference
+     * @return \Resources\Model\TpdmPerformanceEvaluationRatingReference
      */
     public function getPerformanceEvaluationRatingReference()
     {
@@ -470,7 +470,7 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets performance_evaluation_rating_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingReference $performance_evaluation_rating_reference performance_evaluation_rating_reference
+     * @param \Resources\Model\TpdmPerformanceEvaluationRatingReference $performance_evaluation_rating_reference performance_evaluation_rating_reference
      *
      * @return self
      */
@@ -487,7 +487,7 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets section_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionReference|null
+     * @return \Resources\Model\EdFiSectionReference|null
      */
     public function getSectionReference()
     {
@@ -497,7 +497,7 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets section_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionReference|null $section_reference section_reference
+     * @param \Resources\Model\EdFiSectionReference|null $section_reference section_reference
      *
      * @return self
      */
@@ -590,7 +590,7 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets results
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationRatingResult[]|null
+     * @return \Resources\Model\TpdmEvaluationRatingResult[]|null
      */
     public function getResults()
     {
@@ -600,7 +600,7 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets results
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationRatingResult[]|null $results An unordered collection of evaluationRatingResults. The numerical summary rating or score for the evaluation.
+     * @param \Resources\Model\TpdmEvaluationRatingResult[]|null $results An unordered collection of evaluationRatingResults. The numerical summary rating or score for the evaluation.
      *
      * @return self
      */
@@ -617,7 +617,7 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets reviewers
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationRatingReviewer[]|null
+     * @return \Resources\Model\TpdmEvaluationRatingReviewer[]|null
      */
     public function getReviewers()
     {
@@ -627,7 +627,7 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets reviewers
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationRatingReviewer[]|null $reviewers An unordered collection of evaluationRatingReviewers. The person(s) that conducted the performance evaluation.
+     * @param \Resources\Model\TpdmEvaluationRatingReviewer[]|null $reviewers An unordered collection of evaluationRatingReviewers. The person(s) that conducted the performance evaluation.
      *
      * @return self
      */

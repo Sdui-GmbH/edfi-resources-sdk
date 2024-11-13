@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * ContactsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class ContactsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteContactById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class ContactsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteContactById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class ContactsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesContacts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiContactDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiContactDelete[]
      */
     public function deletesContacts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
     {
@@ -407,9 +407,9 @@ class ContactsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesContacts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiContactDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiContactDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesContactsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
     {
@@ -440,11 +440,11 @@ class ContactsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiContactDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiContactDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiContactDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiContactDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class ContactsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiContactDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiContactDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class ContactsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiContactDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiContactDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class ContactsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiContactDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiContactDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class ContactsApi
      */
     public function deletesContactsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiContactDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiContactDelete[]';
         $request = $this->deletesContactsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -783,9 +783,9 @@ class ContactsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getContacts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiContact[]
+     * @return \Resources\Model\EdFiContact[]
      */
     public function getContacts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
     {
@@ -822,9 +822,9 @@ class ContactsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getContacts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiContact[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiContact[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getContactsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
     {
@@ -855,11 +855,11 @@ class ContactsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiContact[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiContact[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiContact[]' !== 'string') {
+                        if ('\Resources\Model\EdFiContact[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -877,7 +877,7 @@ class ContactsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiContact[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiContact[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -896,7 +896,7 @@ class ContactsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiContact[]';
+            $returnType = '\Resources\Model\EdFiContact[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -929,7 +929,7 @@ class ContactsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiContact[]',
+                        '\Resources\Model\EdFiContact[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1015,7 +1015,7 @@ class ContactsApi
      */
     public function getContactsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiContact[]';
+        $returnType = '\Resources\Model\EdFiContact[]';
         $request = $this->getContactsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
 
         return $this->client
@@ -1432,9 +1432,9 @@ class ContactsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getContactsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiContact
+     * @return \Resources\Model\EdFiContact
      */
     public function getContactsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getContactsById'][0])
     {
@@ -1452,9 +1452,9 @@ class ContactsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getContactsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiContact, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiContact, HTTP status code, HTTP response headers (array of strings)
      */
     public function getContactsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getContactsById'][0])
     {
@@ -1485,11 +1485,11 @@ class ContactsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiContact' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiContact' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiContact' !== 'string') {
+                        if ('\Resources\Model\EdFiContact' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1507,7 +1507,7 @@ class ContactsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiContact', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiContact', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1526,7 +1526,7 @@ class ContactsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiContact';
+            $returnType = '\Resources\Model\EdFiContact';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1559,7 +1559,7 @@ class ContactsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiContact',
+                        '\Resources\Model\EdFiContact',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1607,7 +1607,7 @@ class ContactsApi
      */
     public function getContactsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getContactsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiContact';
+        $returnType = '\Resources\Model\EdFiContact';
         $request = $this->getContactsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1767,9 +1767,9 @@ class ContactsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesContacts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiContactKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiContactKeyChange[]
      */
     public function keyChangesContacts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
     {
@@ -1790,9 +1790,9 @@ class ContactsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesContacts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiContactKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiContactKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesContactsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
     {
@@ -1823,11 +1823,11 @@ class ContactsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiContactKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiContactKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiContactKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiContactKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1845,7 +1845,7 @@ class ContactsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiContactKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiContactKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1864,7 +1864,7 @@ class ContactsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiContactKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiContactKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1897,7 +1897,7 @@ class ContactsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiContactKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiContactKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1951,7 +1951,7 @@ class ContactsApi
      */
     public function keyChangesContactsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiContactKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiContactKeyChange[]';
         $request = $this->keyChangesContactsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2142,10 +2142,10 @@ class ContactsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postContact'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2159,10 +2159,10 @@ class ContactsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postContact'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2207,7 +2207,7 @@ class ContactsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postContact'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2228,7 +2228,7 @@ class ContactsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postContact'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2265,7 +2265,7 @@ class ContactsApi
     /**
      * Create request for operation 'postContact'
      *
-     * @param  \OpenAPI\Client\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postContact'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2363,11 +2363,11 @@ class ContactsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putContact'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2382,11 +2382,11 @@ class ContactsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putContact'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2432,7 +2432,7 @@ class ContactsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putContact'] to see the possible values for this operation
      *
@@ -2455,7 +2455,7 @@ class ContactsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putContact'] to see the possible values for this operation
      *
@@ -2494,7 +2494,7 @@ class ContactsApi
      * Create request for operation 'putContact'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiContact $ed_fi_contact The JSON representation of the \&quot;contact\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putContact'] to see the possible values for this operation
      *

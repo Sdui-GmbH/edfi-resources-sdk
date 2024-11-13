@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmCandidateEducatorPreparationProgramAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,10 +59,10 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
-        'candidate_reference' => '\OpenAPI\Client\Model\TpdmCandidateReference',
-        'educator_preparation_program_reference' => '\OpenAPI\Client\Model\TpdmEducatorPreparationProgramReference',
-        'cohort_years' => '\OpenAPI\Client\Model\TpdmCandidateEducatorPreparationProgramAssociationCohortYear[]',
-        'degree_specializations' => '\OpenAPI\Client\Model\TpdmCandidateEducatorPreparationProgramAssociationDegreeSpecialization[]',
+        'candidate_reference' => '\Resources\Model\TpdmCandidateReference',
+        'educator_preparation_program_reference' => '\Resources\Model\TpdmEducatorPreparationProgramReference',
+        'cohort_years' => '\Resources\Model\TpdmCandidateEducatorPreparationProgramAssociationCohortYear[]',
+        'degree_specializations' => '\Resources\Model\TpdmCandidateEducatorPreparationProgramAssociationDegreeSpecialization[]',
         'end_date' => '\DateTime',
         'epp_program_pathway_descriptor' => 'string',
         'reason_exited_descriptor' => 'string',
@@ -433,7 +433,7 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     /**
      * Gets candidate_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateReference
+     * @return \Resources\Model\TpdmCandidateReference
      */
     public function getCandidateReference()
     {
@@ -443,7 +443,7 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     /**
      * Sets candidate_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateReference $candidate_reference candidate_reference
+     * @param \Resources\Model\TpdmCandidateReference $candidate_reference candidate_reference
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     /**
      * Gets educator_preparation_program_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmEducatorPreparationProgramReference
+     * @return \Resources\Model\TpdmEducatorPreparationProgramReference
      */
     public function getEducatorPreparationProgramReference()
     {
@@ -470,7 +470,7 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     /**
      * Sets educator_preparation_program_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmEducatorPreparationProgramReference $educator_preparation_program_reference educator_preparation_program_reference
+     * @param \Resources\Model\TpdmEducatorPreparationProgramReference $educator_preparation_program_reference educator_preparation_program_reference
      *
      * @return self
      */
@@ -487,7 +487,7 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     /**
      * Gets cohort_years
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateEducatorPreparationProgramAssociationCohortYear[]|null
+     * @return \Resources\Model\TpdmCandidateEducatorPreparationProgramAssociationCohortYear[]|null
      */
     public function getCohortYears()
     {
@@ -497,7 +497,7 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     /**
      * Sets cohort_years
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateEducatorPreparationProgramAssociationCohortYear[]|null $cohort_years An unordered collection of candidateEducatorPreparationProgramAssociationCohortYears. The type and year of a cohort the student belongs to as determined by the year that student entered a specific grade.
+     * @param \Resources\Model\TpdmCandidateEducatorPreparationProgramAssociationCohortYear[]|null $cohort_years An unordered collection of candidateEducatorPreparationProgramAssociationCohortYears. The type and year of a cohort the student belongs to as determined by the year that student entered a specific grade.
      *
      * @return self
      */
@@ -514,7 +514,7 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     /**
      * Gets degree_specializations
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateEducatorPreparationProgramAssociationDegreeSpecialization[]|null
+     * @return \Resources\Model\TpdmCandidateEducatorPreparationProgramAssociationDegreeSpecialization[]|null
      */
     public function getDegreeSpecializations()
     {
@@ -524,7 +524,7 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     /**
      * Sets degree_specializations
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateEducatorPreparationProgramAssociationDegreeSpecialization[]|null $degree_specializations An unordered collection of candidateEducatorPreparationProgramAssociationDegreeSpecializations. Information around the area(s) of specialization for an individual.
+     * @param \Resources\Model\TpdmCandidateEducatorPreparationProgramAssociationDegreeSpecialization[]|null $degree_specializations An unordered collection of candidateEducatorPreparationProgramAssociationDegreeSpecializations. Information around the area(s) of specialization for an individual.
      *
      * @return self
      */

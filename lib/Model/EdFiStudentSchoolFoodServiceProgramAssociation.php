@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentSchoolFoodServiceProgramAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,14 +59,14 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'program_reference' => '\OpenAPI\Client\Model\EdFiProgramReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'program_reference' => '\Resources\Model\EdFiProgramReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'direct_certification' => 'bool',
         'end_date' => '\DateTime',
-        'program_participation_statuses' => '\OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]',
+        'program_participation_statuses' => '\Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]',
         'reason_exited_descriptor' => 'string',
-        'school_food_service_program_services' => '\OpenAPI\Client\Model\EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramService[]',
+        'school_food_service_program_services' => '\Resources\Model\EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramService[]',
         'served_outside_of_regular_session' => 'bool',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -446,7 +446,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -456,7 +456,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -473,7 +473,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Gets program_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramReference
+     * @return \Resources\Model\EdFiProgramReference
      */
     public function getProgramReference()
     {
@@ -483,7 +483,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Sets program_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramReference $program_reference program_reference
+     * @param \Resources\Model\EdFiProgramReference $program_reference program_reference
      *
      * @return self
      */
@@ -500,7 +500,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -510,7 +510,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -595,7 +595,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Gets program_participation_statuses
      *
-     * @return \OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null
+     * @return \Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null
      */
     public function getProgramParticipationStatuses()
     {
@@ -605,7 +605,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Sets program_participation_statuses
      *
-     * @param \OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null $program_participation_statuses An unordered collection of generalStudentProgramAssociationProgramParticipationStatuses. The status of the student's program participation.
+     * @param \Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null $program_participation_statuses An unordered collection of generalStudentProgramAssociationProgramParticipationStatuses. The status of the student's program participation.
      *
      * @return self
      */
@@ -660,7 +660,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Gets school_food_service_program_services
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramService[]|null
+     * @return \Resources\Model\EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramService[]|null
      */
     public function getSchoolFoodServiceProgramServices()
     {
@@ -670,7 +670,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Sets school_food_service_program_services
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramService[]|null $school_food_service_program_services An unordered collection of studentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServices. Indicates the service(s) being provided to the student by the school food service program.
+     * @param \Resources\Model\EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramService[]|null $school_food_service_program_services An unordered collection of studentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServices. Indicates the service(s) being provided to the student by the school food service program.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiAssessment Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,29 +58,29 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'academic_subjects' => '\OpenAPI\Client\Model\EdFiAssessmentAcademicSubject[]',
+        'academic_subjects' => '\Resources\Model\EdFiAssessmentAcademicSubject[]',
         'assessment_identifier' => 'string',
         'namespace' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
         'adaptive_assessment' => 'bool',
-        'assessed_grade_levels' => '\OpenAPI\Client\Model\EdFiAssessmentAssessedGradeLevel[]',
+        'assessed_grade_levels' => '\Resources\Model\EdFiAssessmentAssessedGradeLevel[]',
         'assessment_category_descriptor' => 'string',
         'assessment_family' => 'string',
         'assessment_form' => 'string',
         'assessment_title' => 'string',
         'assessment_version' => 'int',
-        'content_standard' => '\OpenAPI\Client\Model\EdFiAssessmentContentStandard',
-        'identification_codes' => '\OpenAPI\Client\Model\EdFiAssessmentIdentificationCode[]',
-        'languages' => '\OpenAPI\Client\Model\EdFiAssessmentLanguage[]',
+        'content_standard' => '\Resources\Model\EdFiAssessmentContentStandard',
+        'identification_codes' => '\Resources\Model\EdFiAssessmentIdentificationCode[]',
+        'languages' => '\Resources\Model\EdFiAssessmentLanguage[]',
         'max_raw_score' => 'float',
         'nomenclature' => 'string',
-        'performance_levels' => '\OpenAPI\Client\Model\EdFiAssessmentPerformanceLevel[]',
-        'periods' => '\OpenAPI\Client\Model\EdFiAssessmentPeriod[]',
-        'platform_types' => '\OpenAPI\Client\Model\EdFiAssessmentPlatformType[]',
-        'programs' => '\OpenAPI\Client\Model\EdFiAssessmentProgram[]',
+        'performance_levels' => '\Resources\Model\EdFiAssessmentPerformanceLevel[]',
+        'periods' => '\Resources\Model\EdFiAssessmentPeriod[]',
+        'platform_types' => '\Resources\Model\EdFiAssessmentPlatformType[]',
+        'programs' => '\Resources\Model\EdFiAssessmentProgram[]',
         'revision_date' => '\DateTime',
-        'scores' => '\OpenAPI\Client\Model\EdFiAssessmentScore[]',
-        'sections' => '\OpenAPI\Client\Model\EdFiAssessmentSection[]',
+        'scores' => '\Resources\Model\EdFiAssessmentScore[]',
+        'sections' => '\Resources\Model\EdFiAssessmentSection[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -558,7 +558,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets academic_subjects
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentAcademicSubject[]
+     * @return \Resources\Model\EdFiAssessmentAcademicSubject[]
      */
     public function getAcademicSubjects()
     {
@@ -568,7 +568,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets academic_subjects
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentAcademicSubject[] $academic_subjects An unordered collection of assessmentAcademicSubjects. The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.
+     * @param \Resources\Model\EdFiAssessmentAcademicSubject[] $academic_subjects An unordered collection of assessmentAcademicSubjects. The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.
      *
      * @return self
      */
@@ -653,7 +653,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference|null
+     * @return \Resources\Model\EdFiEducationOrganizationReference|null
      */
     public function getEducationOrganizationReference()
     {
@@ -663,7 +663,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference|null $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference|null $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -714,7 +714,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets assessed_grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentAssessedGradeLevel[]|null
+     * @return \Resources\Model\EdFiAssessmentAssessedGradeLevel[]|null
      */
     public function getAssessedGradeLevels()
     {
@@ -724,7 +724,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets assessed_grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentAssessedGradeLevel[]|null $assessed_grade_levels An unordered collection of assessmentAssessedGradeLevels. The grade level(s) for which an assessment is designed. The semantics of null is assumed to mean that the assessment is not associated with any grade level.
+     * @param \Resources\Model\EdFiAssessmentAssessedGradeLevel[]|null $assessed_grade_levels An unordered collection of assessmentAssessedGradeLevels. The grade level(s) for which an assessment is designed. The semantics of null is assumed to mean that the assessment is not associated with any grade level.
      *
      * @return self
      */
@@ -929,7 +929,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets content_standard
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentContentStandard|null
+     * @return \Resources\Model\EdFiAssessmentContentStandard|null
      */
     public function getContentStandard()
     {
@@ -939,7 +939,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets content_standard
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentContentStandard|null $content_standard content_standard
+     * @param \Resources\Model\EdFiAssessmentContentStandard|null $content_standard content_standard
      *
      * @return self
      */
@@ -956,7 +956,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets identification_codes
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentIdentificationCode[]|null
+     * @return \Resources\Model\EdFiAssessmentIdentificationCode[]|null
      */
     public function getIdentificationCodes()
     {
@@ -966,7 +966,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identification_codes
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentIdentificationCode[]|null $identification_codes An unordered collection of assessmentIdentificationCodes. A unique number or alphanumeric code assigned to an assessment by a school, school system, a state, or other agency or entity.
+     * @param \Resources\Model\EdFiAssessmentIdentificationCode[]|null $identification_codes An unordered collection of assessmentIdentificationCodes. A unique number or alphanumeric code assigned to an assessment by a school, school system, a state, or other agency or entity.
      *
      * @return self
      */
@@ -983,7 +983,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets languages
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentLanguage[]|null
+     * @return \Resources\Model\EdFiAssessmentLanguage[]|null
      */
     public function getLanguages()
     {
@@ -993,7 +993,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets languages
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentLanguage[]|null $languages An unordered collection of assessmentLanguages. An indication of the languages in which the assessment is designed.
+     * @param \Resources\Model\EdFiAssessmentLanguage[]|null $languages An unordered collection of assessmentLanguages. An indication of the languages in which the assessment is designed.
      *
      * @return self
      */
@@ -1085,7 +1085,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets performance_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentPerformanceLevel[]|null
+     * @return \Resources\Model\EdFiAssessmentPerformanceLevel[]|null
      */
     public function getPerformanceLevels()
     {
@@ -1095,7 +1095,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets performance_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentPerformanceLevel[]|null $performance_levels An unordered collection of assessmentPerformanceLevels. Definition of the performance levels and the associated cut scores. Three styles are supported: 1. Specification of performance level by minimum and maximum score, 2. Specification of performance level by cut score, using only minimum score, 3. Specification of performance level without any mapping to scores.
+     * @param \Resources\Model\EdFiAssessmentPerformanceLevel[]|null $performance_levels An unordered collection of assessmentPerformanceLevels. Definition of the performance levels and the associated cut scores. Three styles are supported: 1. Specification of performance level by minimum and maximum score, 2. Specification of performance level by cut score, using only minimum score, 3. Specification of performance level without any mapping to scores.
      *
      * @return self
      */
@@ -1112,7 +1112,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets periods
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentPeriod[]|null
+     * @return \Resources\Model\EdFiAssessmentPeriod[]|null
      */
     public function getPeriods()
     {
@@ -1122,7 +1122,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets periods
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentPeriod[]|null $periods An unordered collection of assessmentPeriods. The period or window in which an assessment is supposed to be administered.
+     * @param \Resources\Model\EdFiAssessmentPeriod[]|null $periods An unordered collection of assessmentPeriods. The period or window in which an assessment is supposed to be administered.
      *
      * @return self
      */
@@ -1139,7 +1139,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets platform_types
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentPlatformType[]|null
+     * @return \Resources\Model\EdFiAssessmentPlatformType[]|null
      */
     public function getPlatformTypes()
     {
@@ -1149,7 +1149,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets platform_types
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentPlatformType[]|null $platform_types An unordered collection of assessmentPlatformTypes. The platforms with which the assessment may be delivered.
+     * @param \Resources\Model\EdFiAssessmentPlatformType[]|null $platform_types An unordered collection of assessmentPlatformTypes. The platforms with which the assessment may be delivered.
      *
      * @return self
      */
@@ -1166,7 +1166,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets programs
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentProgram[]|null
+     * @return \Resources\Model\EdFiAssessmentProgram[]|null
      */
     public function getPrograms()
     {
@@ -1176,7 +1176,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets programs
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentProgram[]|null $programs An unordered collection of assessmentPrograms. The programs associated with the assessment.
+     * @param \Resources\Model\EdFiAssessmentProgram[]|null $programs An unordered collection of assessmentPrograms. The programs associated with the assessment.
      *
      * @return self
      */
@@ -1227,7 +1227,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets scores
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentScore[]|null
+     * @return \Resources\Model\EdFiAssessmentScore[]|null
      */
     public function getScores()
     {
@@ -1237,7 +1237,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets scores
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentScore[]|null $scores An unordered collection of assessmentScores. Definition of the scores to be expected from this assessment.
+     * @param \Resources\Model\EdFiAssessmentScore[]|null $scores An unordered collection of assessmentScores. Definition of the scores to be expected from this assessment.
      *
      * @return self
      */
@@ -1254,7 +1254,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sections
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentSection[]|null
+     * @return \Resources\Model\EdFiAssessmentSection[]|null
      */
     public function getSections()
     {
@@ -1264,7 +1264,7 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sections
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentSection[]|null $sections An unordered collection of assessmentSections. The Section(s) to which the assessment is associated.
+     * @param \Resources\Model\EdFiAssessmentSection[]|null $sections An unordered collection of assessmentSections. The Section(s) to which the assessment is associated.
      *
      * @return self
      */

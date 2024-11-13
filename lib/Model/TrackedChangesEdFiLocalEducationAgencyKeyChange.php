@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiLocalEducationAgencyKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiLocalEducationAgencyKeyChange implements ModelInterface,
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiLocalEducationAgencyKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiLocalEducationAgencyKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiLocalEducationAgencyKeyChange implements ModelInterface,
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKey|null
+     * @return \Resources\Model\TrackedChangesEdFiLocalEducationAgencyKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiLocalEducationAgencyKeyChange implements ModelInterface,
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiLocalEducationAgencyKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiLocalEducationAgencyKeyChange implements ModelInterface,
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKey|null
+     * @return \Resources\Model\TrackedChangesEdFiLocalEducationAgencyKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiLocalEducationAgencyKeyChange implements ModelInterface,
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiLocalEducationAgencyKey|null $new_key_values new_key_values
      *
      * @return self
      */

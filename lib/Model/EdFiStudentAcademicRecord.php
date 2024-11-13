@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentAcademicRecord Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,22 +59,22 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPITypes = [
         'id' => 'string',
         'term_descriptor' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
-        'academic_honors' => '\OpenAPI\Client\Model\EdFiStudentAcademicRecordAcademicHonor[]',
-        'class_ranking' => '\OpenAPI\Client\Model\EdFiStudentAcademicRecordClassRanking',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
+        'academic_honors' => '\Resources\Model\EdFiStudentAcademicRecordAcademicHonor[]',
+        'class_ranking' => '\Resources\Model\EdFiStudentAcademicRecordClassRanking',
         'cumulative_attempted_credit_conversion' => 'float',
         'cumulative_attempted_credits' => 'float',
         'cumulative_attempted_credit_type_descriptor' => 'string',
         'cumulative_earned_credit_conversion' => 'float',
         'cumulative_earned_credits' => 'float',
         'cumulative_earned_credit_type_descriptor' => 'string',
-        'diplomas' => '\OpenAPI\Client\Model\EdFiStudentAcademicRecordDiploma[]',
-        'grade_point_averages' => '\OpenAPI\Client\Model\EdFiStudentAcademicRecordGradePointAverage[]',
+        'diplomas' => '\Resources\Model\EdFiStudentAcademicRecordDiploma[]',
+        'grade_point_averages' => '\Resources\Model\EdFiStudentAcademicRecordGradePointAverage[]',
         'projected_graduation_date' => '\DateTime',
-        'recognitions' => '\OpenAPI\Client\Model\EdFiStudentAcademicRecordRecognition[]',
-        'report_cards' => '\OpenAPI\Client\Model\EdFiStudentAcademicRecordReportCard[]',
+        'recognitions' => '\Resources\Model\EdFiStudentAcademicRecordRecognition[]',
+        'report_cards' => '\Resources\Model\EdFiStudentAcademicRecordReportCard[]',
         'session_attempted_credit_conversion' => 'float',
         'session_attempted_credits' => 'float',
         'session_attempted_credit_type_descriptor' => 'string',
@@ -573,7 +573,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -583,7 +583,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -600,7 +600,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference
+     * @return \Resources\Model\EdFiSchoolYearTypeReference
      */
     public function getSchoolYearTypeReference()
     {
@@ -610,7 +610,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
      *
      * @return self
      */
@@ -627,7 +627,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -637,7 +637,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -654,7 +654,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets academic_honors
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAcademicRecordAcademicHonor[]|null
+     * @return \Resources\Model\EdFiStudentAcademicRecordAcademicHonor[]|null
      */
     public function getAcademicHonors()
     {
@@ -664,7 +664,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets academic_honors
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAcademicRecordAcademicHonor[]|null $academic_honors An unordered collection of studentAcademicRecordAcademicHonors. Academic distinctions earned by or awarded to the student.
+     * @param \Resources\Model\EdFiStudentAcademicRecordAcademicHonor[]|null $academic_honors An unordered collection of studentAcademicRecordAcademicHonors. Academic distinctions earned by or awarded to the student.
      *
      * @return self
      */
@@ -681,7 +681,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets class_ranking
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAcademicRecordClassRanking|null
+     * @return \Resources\Model\EdFiStudentAcademicRecordClassRanking|null
      */
     public function getClassRanking()
     {
@@ -691,7 +691,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets class_ranking
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAcademicRecordClassRanking|null $class_ranking class_ranking
+     * @param \Resources\Model\EdFiStudentAcademicRecordClassRanking|null $class_ranking class_ranking
      *
      * @return self
      */
@@ -930,7 +930,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets diplomas
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAcademicRecordDiploma[]|null
+     * @return \Resources\Model\EdFiStudentAcademicRecordDiploma[]|null
      */
     public function getDiplomas()
     {
@@ -940,7 +940,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets diplomas
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAcademicRecordDiploma[]|null $diplomas An unordered collection of studentAcademicRecordDiplomas. Diploma(s) earned by the student.
+     * @param \Resources\Model\EdFiStudentAcademicRecordDiploma[]|null $diplomas An unordered collection of studentAcademicRecordDiplomas. Diploma(s) earned by the student.
      *
      * @return self
      */
@@ -957,7 +957,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets grade_point_averages
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAcademicRecordGradePointAverage[]|null
+     * @return \Resources\Model\EdFiStudentAcademicRecordGradePointAverage[]|null
      */
     public function getGradePointAverages()
     {
@@ -967,7 +967,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets grade_point_averages
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAcademicRecordGradePointAverage[]|null $grade_point_averages An unordered collection of studentAcademicRecordGradePointAverages. The grade point average for an individual computed as the grade points earned divided by the number of credits attempted.
+     * @param \Resources\Model\EdFiStudentAcademicRecordGradePointAverage[]|null $grade_point_averages An unordered collection of studentAcademicRecordGradePointAverages. The grade point average for an individual computed as the grade points earned divided by the number of credits attempted.
      *
      * @return self
      */
@@ -1018,7 +1018,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets recognitions
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAcademicRecordRecognition[]|null
+     * @return \Resources\Model\EdFiStudentAcademicRecordRecognition[]|null
      */
     public function getRecognitions()
     {
@@ -1028,7 +1028,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets recognitions
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAcademicRecordRecognition[]|null $recognitions An unordered collection of studentAcademicRecordRecognitions. Recognitions given to the student for accomplishments in a co-curricular or extracurricular activity.
+     * @param \Resources\Model\EdFiStudentAcademicRecordRecognition[]|null $recognitions An unordered collection of studentAcademicRecordRecognitions. Recognitions given to the student for accomplishments in a co-curricular or extracurricular activity.
      *
      * @return self
      */
@@ -1045,7 +1045,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets report_cards
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAcademicRecordReportCard[]|null
+     * @return \Resources\Model\EdFiStudentAcademicRecordReportCard[]|null
      */
     public function getReportCards()
     {
@@ -1055,7 +1055,7 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets report_cards
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAcademicRecordReportCard[]|null $report_cards An unordered collection of studentAcademicRecordReportCards. Report cards for the student.
+     * @param \Resources\Model\EdFiStudentAcademicRecordReportCard[]|null $report_cards An unordered collection of studentAcademicRecordReportCards. Report cards for the student.
      *
      * @return self
      */

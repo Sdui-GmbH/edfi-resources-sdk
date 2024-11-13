@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * SurveySectionResponsePersonTargetAssociationsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSurveySectionResponsePersonTargetAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSurveySectionResponsePersonTargetAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSurveySectionResponsePersonTargetAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]
+     * @return \Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]
      */
     public function deletesSurveySectionResponsePersonTargetAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveySectionResponsePersonTargetAssociations'][0])
     {
@@ -407,9 +407,9 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSurveySectionResponsePersonTargetAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesSurveySectionResponsePersonTargetAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveySectionResponsePersonTargetAssociations'][0])
     {
@@ -440,11 +440,11 @@ class SurveySectionResponsePersonTargetAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]',
+                        '\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      */
     public function deletesSurveySectionResponsePersonTargetAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveySectionResponsePersonTargetAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationDelete[]';
         $request = $this->deletesSurveySectionResponsePersonTargetAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveySectionResponsePersonTargetAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation[]
+     * @return \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation[]
      */
     public function getSurveySectionResponsePersonTargetAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $survey_section_title = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveySectionResponsePersonTargetAssociations'][0])
     {
@@ -804,9 +804,9 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveySectionResponsePersonTargetAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSurveySectionResponsePersonTargetAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $survey_section_title = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveySectionResponsePersonTargetAssociations'][0])
     {
@@ -837,11 +837,11 @@ class SurveySectionResponsePersonTargetAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation[]' !== 'string') {
+                        if ('\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation[]';
+            $returnType = '\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation[]',
+                        '\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      */
     public function getSurveySectionResponsePersonTargetAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $survey_section_title = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveySectionResponsePersonTargetAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation[]';
+        $returnType = '\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation[]';
         $request = $this->getSurveySectionResponsePersonTargetAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $survey_section_title, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1270,9 +1270,9 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveySectionResponsePersonTargetAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation
+     * @return \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation
      */
     public function getSurveySectionResponsePersonTargetAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveySectionResponsePersonTargetAssociationsById'][0])
     {
@@ -1290,9 +1290,9 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveySectionResponsePersonTargetAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSurveySectionResponsePersonTargetAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveySectionResponsePersonTargetAssociationsById'][0])
     {
@@ -1323,11 +1323,11 @@ class SurveySectionResponsePersonTargetAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation' !== 'string') {
+                        if ('\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1345,7 +1345,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1364,7 +1364,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation';
+            $returnType = '\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1397,7 +1397,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation',
+                        '\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1445,7 +1445,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      */
     public function getSurveySectionResponsePersonTargetAssociationsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveySectionResponsePersonTargetAssociationsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation';
+        $returnType = '\Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation';
         $request = $this->getSurveySectionResponsePersonTargetAssociationsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1605,9 +1605,9 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSurveySectionResponsePersonTargetAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]
+     * @return \Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]
      */
     public function keyChangesSurveySectionResponsePersonTargetAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveySectionResponsePersonTargetAssociations'][0])
     {
@@ -1628,9 +1628,9 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSurveySectionResponsePersonTargetAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesSurveySectionResponsePersonTargetAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveySectionResponsePersonTargetAssociations'][0])
     {
@@ -1661,11 +1661,11 @@ class SurveySectionResponsePersonTargetAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1683,7 +1683,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1702,7 +1702,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1735,7 +1735,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]',
+                        '\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1789,7 +1789,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      */
     public function keyChangesSurveySectionResponsePersonTargetAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveySectionResponsePersonTargetAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange[]';
         $request = $this->keyChangesSurveySectionResponsePersonTargetAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1980,10 +1980,10 @@ class SurveySectionResponsePersonTargetAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSurveySectionResponsePersonTargetAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1997,10 +1997,10 @@ class SurveySectionResponsePersonTargetAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSurveySectionResponsePersonTargetAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2045,7 +2045,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSurveySectionResponsePersonTargetAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2066,7 +2066,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSurveySectionResponsePersonTargetAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2103,7 +2103,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
     /**
      * Create request for operation 'postSurveySectionResponsePersonTargetAssociation'
      *
-     * @param  \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSurveySectionResponsePersonTargetAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2201,11 +2201,11 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSurveySectionResponsePersonTargetAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2220,11 +2220,11 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSurveySectionResponsePersonTargetAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2270,7 +2270,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSurveySectionResponsePersonTargetAssociation'] to see the possible values for this operation
      *
@@ -2293,7 +2293,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSurveySectionResponsePersonTargetAssociation'] to see the possible values for this operation
      *
@@ -2332,7 +2332,7 @@ class SurveySectionResponsePersonTargetAssociationsApi
      * Create request for operation 'putSurveySectionResponsePersonTargetAssociation'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmSurveySectionResponsePersonTargetAssociation $tpdm_survey_section_response_person_target_association The JSON representation of the \&quot;surveySectionResponsePersonTargetAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSurveySectionResponsePersonTargetAssociation'] to see the possible values for this operation
      *

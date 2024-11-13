@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentSchoolAssociationAlternativeGraduationPlan Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiStudentSchoolAssociationAlternativeGraduationPlan implements ModelInte
       * @var string[]
       */
     protected static $openAPITypes = [
-        'alternative_graduation_plan_reference' => '\OpenAPI\Client\Model\EdFiGraduationPlanReference'
+        'alternative_graduation_plan_reference' => '\Resources\Model\EdFiGraduationPlanReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiStudentSchoolAssociationAlternativeGraduationPlan implements ModelInte
     /**
      * Gets alternative_graduation_plan_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlanReference
+     * @return \Resources\Model\EdFiGraduationPlanReference
      */
     public function getAlternativeGraduationPlanReference()
     {
@@ -305,7 +305,7 @@ class EdFiStudentSchoolAssociationAlternativeGraduationPlan implements ModelInte
     /**
      * Sets alternative_graduation_plan_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiGraduationPlanReference $alternative_graduation_plan_reference alternative_graduation_plan_reference
+     * @param \Resources\Model\EdFiGraduationPlanReference $alternative_graduation_plan_reference alternative_graduation_plan_reference
      *
      * @return self
      */

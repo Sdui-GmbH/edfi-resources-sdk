@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentProgramEvaluationStudentEvaluationObjective Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class EdFiStudentProgramEvaluationStudentEvaluationObjective implements ModelInt
     protected static $openAPITypes = [
         'evaluation_objective_rating_level_descriptor' => 'string',
         'evaluation_objective_numeric_rating' => 'float',
-        'program_evaluation_objective_reference' => '\OpenAPI\Client\Model\EdFiProgramEvaluationObjectiveReference'
+        'program_evaluation_objective_reference' => '\Resources\Model\EdFiProgramEvaluationObjectiveReference'
     ];
 
     /**
@@ -385,7 +385,7 @@ class EdFiStudentProgramEvaluationStudentEvaluationObjective implements ModelInt
     /**
      * Gets program_evaluation_objective_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramEvaluationObjectiveReference
+     * @return \Resources\Model\EdFiProgramEvaluationObjectiveReference
      */
     public function getProgramEvaluationObjectiveReference()
     {
@@ -395,7 +395,7 @@ class EdFiStudentProgramEvaluationStudentEvaluationObjective implements ModelInt
     /**
      * Sets program_evaluation_objective_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramEvaluationObjectiveReference $program_evaluation_objective_reference program_evaluation_objective_reference
+     * @param \Resources\Model\EdFiProgramEvaluationObjectiveReference $program_evaluation_objective_reference program_evaluation_objective_reference
      *
      * @return self
      */

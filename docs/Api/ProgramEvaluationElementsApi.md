@@ -1,4 +1,4 @@
-# OpenAPI\Client\ProgramEvaluationElementsApi
+# Resources\ProgramEvaluationElementsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramEvaluationElementsApi(
+$apiInstance = new Resources\Api\ProgramEvaluationElementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesProgramEvaluationElements()`
 
 ```php
-deletesProgramEvaluationElements($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationElementDelete[]
+deletesProgramEvaluationElements($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiProgramEvaluationElementDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramEvaluationElementsApi(
+$apiInstance = new Resources\Api\ProgramEvaluationElementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationElementDelete[]**](../Model/TrackedChangesEdFiProgramEvaluationElementDelete.md)
+[**\Resources\Model\TrackedChangesEdFiProgramEvaluationElementDelete[]**](../Model/TrackedChangesEdFiProgramEvaluationElementDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getProgramEvaluationElements()`
 
 ```php
-getProgramEvaluationElements($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_evaluation_element_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $program_evaluation_objective_title, $element_max_numeric_rating, $element_min_numeric_rating, $element_sort_order, $id, $program_evaluation_element_description, $use_snapshot): \OpenAPI\Client\Model\EdFiProgramEvaluationElement[]
+getProgramEvaluationElements($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_evaluation_element_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $program_evaluation_objective_title, $element_max_numeric_rating, $element_min_numeric_rating, $element_sort_order, $id, $program_evaluation_element_description, $use_snapshot): \Resources\Model\EdFiProgramEvaluationElement[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramEvaluationElementsApi(
+$apiInstance = new Resources\Api\ProgramEvaluationElementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -225,7 +225,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiProgramEvaluationElement[]**](../Model/EdFiProgramEvaluationElement.md)
+[**\Resources\Model\EdFiProgramEvaluationElement[]**](../Model/EdFiProgramEvaluationElement.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ try {
 ## `getProgramEvaluationElementsById()`
 
 ```php
-getProgramEvaluationElementsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiProgramEvaluationElement
+getProgramEvaluationElementsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiProgramEvaluationElement
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -258,10 +258,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramEvaluationElementsApi(
+$apiInstance = new Resources\Api\ProgramEvaluationElementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -289,7 +289,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiProgramEvaluationElement**](../Model/EdFiProgramEvaluationElement.md)
+[**\Resources\Model\EdFiProgramEvaluationElement**](../Model/EdFiProgramEvaluationElement.md)
 
 ### Authorization
 
@@ -307,7 +307,7 @@ try {
 ## `keyChangesProgramEvaluationElements()`
 
 ```php
-keyChangesProgramEvaluationElements($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationElementKeyChange[]
+keyChangesProgramEvaluationElements($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiProgramEvaluationElementKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -322,10 +322,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramEvaluationElementsApi(
+$apiInstance = new Resources\Api\ProgramEvaluationElementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -359,7 +359,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationElementKeyChange[]**](../Model/TrackedChangesEdFiProgramEvaluationElementKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiProgramEvaluationElementKeyChange[]**](../Model/TrackedChangesEdFiProgramEvaluationElementKeyChange.md)
 
 ### Authorization
 
@@ -392,16 +392,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramEvaluationElementsApi(
+$apiInstance = new Resources\Api\ProgramEvaluationElementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_program_evaluation_element = new \OpenAPI\Client\Model\EdFiProgramEvaluationElement(); // \OpenAPI\Client\Model\EdFiProgramEvaluationElement | The JSON representation of the \"programEvaluationElement\" resource to be created or updated.
+$ed_fi_program_evaluation_element = new \Resources\Model\EdFiProgramEvaluationElement(); // \Resources\Model\EdFiProgramEvaluationElement | The JSON representation of the \"programEvaluationElement\" resource to be created or updated.
 
 try {
     $apiInstance->postProgramEvaluationElement($ed_fi_program_evaluation_element);
@@ -414,7 +414,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_program_evaluation_element** | [**\OpenAPI\Client\Model\EdFiProgramEvaluationElement**](../Model/EdFiProgramEvaluationElement.md)| The JSON representation of the \&quot;programEvaluationElement\&quot; resource to be created or updated. | |
+| **ed_fi_program_evaluation_element** | [**\Resources\Model\EdFiProgramEvaluationElement**](../Model/EdFiProgramEvaluationElement.md)| The JSON representation of the \&quot;programEvaluationElement\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -451,17 +451,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramEvaluationElementsApi(
+$apiInstance = new Resources\Api\ProgramEvaluationElementsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_program_evaluation_element = new \OpenAPI\Client\Model\EdFiProgramEvaluationElement(); // \OpenAPI\Client\Model\EdFiProgramEvaluationElement | The JSON representation of the \"programEvaluationElement\" resource to be created or updated.
+$ed_fi_program_evaluation_element = new \Resources\Model\EdFiProgramEvaluationElement(); // \Resources\Model\EdFiProgramEvaluationElement | The JSON representation of the \"programEvaluationElement\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -476,7 +476,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_program_evaluation_element** | [**\OpenAPI\Client\Model\EdFiProgramEvaluationElement**](../Model/EdFiProgramEvaluationElement.md)| The JSON representation of the \&quot;programEvaluationElement\&quot; resource to be created or updated. | |
+| **ed_fi_program_evaluation_element** | [**\Resources\Model\EdFiProgramEvaluationElement**](../Model/EdFiProgramEvaluationElement.md)| The JSON representation of the \&quot;programEvaluationElement\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

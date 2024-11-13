@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiProgramEvaluation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,10 +61,10 @@ class EdFiProgramEvaluation implements ModelInterface, ArrayAccess, \JsonSeriali
         'program_evaluation_period_descriptor' => 'string',
         'program_evaluation_title' => 'string',
         'program_evaluation_type_descriptor' => 'string',
-        'program_reference' => '\OpenAPI\Client\Model\EdFiProgramReference',
+        'program_reference' => '\Resources\Model\EdFiProgramReference',
         'evaluation_max_numeric_rating' => 'float',
         'evaluation_min_numeric_rating' => 'float',
-        'levels' => '\OpenAPI\Client\Model\EdFiProgramEvaluationLevel[]',
+        'levels' => '\Resources\Model\EdFiProgramEvaluationLevel[]',
         'program_evaluation_description' => 'string',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -510,7 +510,7 @@ class EdFiProgramEvaluation implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets program_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramReference
+     * @return \Resources\Model\EdFiProgramReference
      */
     public function getProgramReference()
     {
@@ -520,7 +520,7 @@ class EdFiProgramEvaluation implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets program_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramReference $program_reference program_reference
+     * @param \Resources\Model\EdFiProgramReference $program_reference program_reference
      *
      * @return self
      */
@@ -605,7 +605,7 @@ class EdFiProgramEvaluation implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets levels
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramEvaluationLevel[]|null
+     * @return \Resources\Model\EdFiProgramEvaluationLevel[]|null
      */
     public function getLevels()
     {
@@ -615,7 +615,7 @@ class EdFiProgramEvaluation implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets levels
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramEvaluationLevel[]|null $levels An unordered collection of programEvaluationLevels. The descriptive level(s) of ratings (cut scores) for the program evaluation.
+     * @param \Resources\Model\EdFiProgramEvaluationLevel[]|null $levels An unordered collection of programEvaluationLevels. The descriptive level(s) of ratings (cut scores) for the program evaluation.
      *
      * @return self
      */

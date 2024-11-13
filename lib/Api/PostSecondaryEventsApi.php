@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * PostSecondaryEventsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class PostSecondaryEventsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePostSecondaryEventById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class PostSecondaryEventsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePostSecondaryEventById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class PostSecondaryEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesPostSecondaryEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiPostSecondaryEventDelete[]
      */
     public function deletesPostSecondaryEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesPostSecondaryEvents'][0])
     {
@@ -407,9 +407,9 @@ class PostSecondaryEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesPostSecondaryEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiPostSecondaryEventDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesPostSecondaryEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesPostSecondaryEvents'][0])
     {
@@ -440,11 +440,11 @@ class PostSecondaryEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiPostSecondaryEventDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiPostSecondaryEventDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class PostSecondaryEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiPostSecondaryEventDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class PostSecondaryEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiPostSecondaryEventDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class PostSecondaryEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiPostSecondaryEventDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class PostSecondaryEventsApi
      */
     public function deletesPostSecondaryEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesPostSecondaryEvents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiPostSecondaryEventDelete[]';
         $request = $this->deletesPostSecondaryEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -772,9 +772,9 @@ class PostSecondaryEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiPostSecondaryEvent[]
+     * @return \Resources\Model\EdFiPostSecondaryEvent[]
      */
     public function getPostSecondaryEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_event_category_descriptor = null, $event_date = null, $student_unique_id = null, $post_secondary_institution_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryEvents'][0])
     {
@@ -800,9 +800,9 @@ class PostSecondaryEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiPostSecondaryEvent[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiPostSecondaryEvent[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPostSecondaryEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_event_category_descriptor = null, $event_date = null, $student_unique_id = null, $post_secondary_institution_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryEvents'][0])
     {
@@ -833,11 +833,11 @@ class PostSecondaryEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiPostSecondaryEvent[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiPostSecondaryEvent[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiPostSecondaryEvent[]' !== 'string') {
+                        if ('\Resources\Model\EdFiPostSecondaryEvent[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -855,7 +855,7 @@ class PostSecondaryEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiPostSecondaryEvent[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiPostSecondaryEvent[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -874,7 +874,7 @@ class PostSecondaryEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiPostSecondaryEvent[]';
+            $returnType = '\Resources\Model\EdFiPostSecondaryEvent[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -907,7 +907,7 @@ class PostSecondaryEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiPostSecondaryEvent[]',
+                        '\Resources\Model\EdFiPostSecondaryEvent[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -971,7 +971,7 @@ class PostSecondaryEventsApi
      */
     public function getPostSecondaryEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_event_category_descriptor = null, $event_date = null, $student_unique_id = null, $post_secondary_institution_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryEvents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiPostSecondaryEvent[]';
+        $returnType = '\Resources\Model\EdFiPostSecondaryEvent[]';
         $request = $this->getPostSecondaryEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_event_category_descriptor, $event_date, $student_unique_id, $post_secondary_institution_id, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1228,9 +1228,9 @@ class PostSecondaryEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryEventsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiPostSecondaryEvent
+     * @return \Resources\Model\EdFiPostSecondaryEvent
      */
     public function getPostSecondaryEventsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryEventsById'][0])
     {
@@ -1248,9 +1248,9 @@ class PostSecondaryEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryEventsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiPostSecondaryEvent, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiPostSecondaryEvent, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPostSecondaryEventsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryEventsById'][0])
     {
@@ -1281,11 +1281,11 @@ class PostSecondaryEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiPostSecondaryEvent' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiPostSecondaryEvent' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiPostSecondaryEvent' !== 'string') {
+                        if ('\Resources\Model\EdFiPostSecondaryEvent' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1303,7 +1303,7 @@ class PostSecondaryEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiPostSecondaryEvent', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiPostSecondaryEvent', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1322,7 +1322,7 @@ class PostSecondaryEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiPostSecondaryEvent';
+            $returnType = '\Resources\Model\EdFiPostSecondaryEvent';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1355,7 +1355,7 @@ class PostSecondaryEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiPostSecondaryEvent',
+                        '\Resources\Model\EdFiPostSecondaryEvent',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1403,7 +1403,7 @@ class PostSecondaryEventsApi
      */
     public function getPostSecondaryEventsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryEventsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiPostSecondaryEvent';
+        $returnType = '\Resources\Model\EdFiPostSecondaryEvent';
         $request = $this->getPostSecondaryEventsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1563,9 +1563,9 @@ class PostSecondaryEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesPostSecondaryEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]
      */
     public function keyChangesPostSecondaryEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesPostSecondaryEvents'][0])
     {
@@ -1586,9 +1586,9 @@ class PostSecondaryEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesPostSecondaryEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesPostSecondaryEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesPostSecondaryEvents'][0])
     {
@@ -1619,11 +1619,11 @@ class PostSecondaryEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1641,7 +1641,7 @@ class PostSecondaryEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1660,7 +1660,7 @@ class PostSecondaryEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1693,7 +1693,7 @@ class PostSecondaryEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1747,7 +1747,7 @@ class PostSecondaryEventsApi
      */
     public function keyChangesPostSecondaryEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesPostSecondaryEvents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiPostSecondaryEventKeyChange[]';
         $request = $this->keyChangesPostSecondaryEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1938,10 +1938,10 @@ class PostSecondaryEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPostSecondaryEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1955,10 +1955,10 @@ class PostSecondaryEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPostSecondaryEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2003,7 +2003,7 @@ class PostSecondaryEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPostSecondaryEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2024,7 +2024,7 @@ class PostSecondaryEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPostSecondaryEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2061,7 +2061,7 @@ class PostSecondaryEventsApi
     /**
      * Create request for operation 'postPostSecondaryEvent'
      *
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPostSecondaryEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2159,11 +2159,11 @@ class PostSecondaryEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPostSecondaryEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2178,11 +2178,11 @@ class PostSecondaryEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPostSecondaryEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2228,7 +2228,7 @@ class PostSecondaryEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPostSecondaryEvent'] to see the possible values for this operation
      *
@@ -2251,7 +2251,7 @@ class PostSecondaryEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPostSecondaryEvent'] to see the possible values for this operation
      *
@@ -2290,7 +2290,7 @@ class PostSecondaryEventsApi
      * Create request for operation 'putPostSecondaryEvent'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryEvent $ed_fi_post_secondary_event The JSON representation of the \&quot;postSecondaryEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPostSecondaryEvent'] to see the possible values for this operation
      *

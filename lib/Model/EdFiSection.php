@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSection Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,22 +59,22 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'section_identifier' => 'string',
-        'course_offering_reference' => '\OpenAPI\Client\Model\EdFiCourseOfferingReference',
-        'location_reference' => '\OpenAPI\Client\Model\EdFiLocationReference',
-        'location_school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
+        'course_offering_reference' => '\Resources\Model\EdFiCourseOfferingReference',
+        'location_reference' => '\Resources\Model\EdFiLocationReference',
+        'location_school_reference' => '\Resources\Model\EdFiSchoolReference',
         'available_credit_conversion' => 'float',
         'available_credits' => 'float',
         'available_credit_type_descriptor' => 'string',
-        'characteristics' => '\OpenAPI\Client\Model\EdFiSectionCharacteristic[]',
-        'class_periods' => '\OpenAPI\Client\Model\EdFiSectionClassPeriod[]',
-        'course_level_characteristics' => '\OpenAPI\Client\Model\EdFiSectionCourseLevelCharacteristic[]',
+        'characteristics' => '\Resources\Model\EdFiSectionCharacteristic[]',
+        'class_periods' => '\Resources\Model\EdFiSectionClassPeriod[]',
+        'course_level_characteristics' => '\Resources\Model\EdFiSectionCourseLevelCharacteristic[]',
         'educational_environment_descriptor' => 'string',
         'instruction_language_descriptor' => 'string',
         'medium_of_instruction_descriptor' => 'string',
-        'offered_grade_levels' => '\OpenAPI\Client\Model\EdFiSectionOfferedGradeLevel[]',
+        'offered_grade_levels' => '\Resources\Model\EdFiSectionOfferedGradeLevel[]',
         'official_attendance_period' => 'bool',
         'population_served_descriptor' => 'string',
-        'programs' => '\OpenAPI\Client\Model\EdFiSectionProgram[]',
+        'programs' => '\Resources\Model\EdFiSectionProgram[]',
         'section_name' => 'string',
         'section_type_descriptor' => 'string',
         'sequence_of_course' => 'int',
@@ -565,7 +565,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets course_offering_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseOfferingReference
+     * @return \Resources\Model\EdFiCourseOfferingReference
      */
     public function getCourseOfferingReference()
     {
@@ -575,7 +575,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets course_offering_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseOfferingReference $course_offering_reference course_offering_reference
+     * @param \Resources\Model\EdFiCourseOfferingReference $course_offering_reference course_offering_reference
      *
      * @return self
      */
@@ -592,7 +592,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets location_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiLocationReference|null
+     * @return \Resources\Model\EdFiLocationReference|null
      */
     public function getLocationReference()
     {
@@ -602,7 +602,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets location_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiLocationReference|null $location_reference location_reference
+     * @param \Resources\Model\EdFiLocationReference|null $location_reference location_reference
      *
      * @return self
      */
@@ -619,7 +619,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets location_school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference|null
+     * @return \Resources\Model\EdFiSchoolReference|null
      */
     public function getLocationSchoolReference()
     {
@@ -629,7 +629,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets location_school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference|null $location_school_reference location_school_reference
+     * @param \Resources\Model\EdFiSchoolReference|null $location_school_reference location_school_reference
      *
      * @return self
      */
@@ -757,7 +757,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets characteristics
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionCharacteristic[]|null
+     * @return \Resources\Model\EdFiSectionCharacteristic[]|null
      */
     public function getCharacteristics()
     {
@@ -767,7 +767,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets characteristics
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionCharacteristic[]|null $characteristics An unordered collection of sectionCharacteristics. Reflects important characteristics of the section, such as whether or not attendance is taken and the section is graded.
+     * @param \Resources\Model\EdFiSectionCharacteristic[]|null $characteristics An unordered collection of sectionCharacteristics. Reflects important characteristics of the section, such as whether or not attendance is taken and the section is graded.
      *
      * @return self
      */
@@ -784,7 +784,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets class_periods
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionClassPeriod[]|null
+     * @return \Resources\Model\EdFiSectionClassPeriod[]|null
      */
     public function getClassPeriods()
     {
@@ -794,7 +794,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets class_periods
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionClassPeriod[]|null $class_periods An unordered collection of sectionClassPeriods. The class period during which the section meets.
+     * @param \Resources\Model\EdFiSectionClassPeriod[]|null $class_periods An unordered collection of sectionClassPeriods. The class period during which the section meets.
      *
      * @return self
      */
@@ -811,7 +811,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets course_level_characteristics
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionCourseLevelCharacteristic[]|null
+     * @return \Resources\Model\EdFiSectionCourseLevelCharacteristic[]|null
      */
     public function getCourseLevelCharacteristics()
     {
@@ -821,7 +821,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets course_level_characteristics
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionCourseLevelCharacteristic[]|null $course_level_characteristics An unordered collection of sectionCourseLevelCharacteristics. The type of specific program or designation with which the section is associated. This collection should only be populated if it differs from the course level characteristics identified at the course offering level.
+     * @param \Resources\Model\EdFiSectionCourseLevelCharacteristic[]|null $course_level_characteristics An unordered collection of sectionCourseLevelCharacteristics. The type of specific program or designation with which the section is associated. This collection should only be populated if it differs from the course level characteristics identified at the course offering level.
      *
      * @return self
      */
@@ -952,7 +952,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offered_grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionOfferedGradeLevel[]|null
+     * @return \Resources\Model\EdFiSectionOfferedGradeLevel[]|null
      */
     public function getOfferedGradeLevels()
     {
@@ -962,7 +962,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets offered_grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionOfferedGradeLevel[]|null $offered_grade_levels An unordered collection of sectionOfferedGradeLevels. The grade levels in which the section is offered. This collection should only be populated if it differs from the Offered Grade Levels identified at the course offering level.
+     * @param \Resources\Model\EdFiSectionOfferedGradeLevel[]|null $offered_grade_levels An unordered collection of sectionOfferedGradeLevels. The grade levels in which the section is offered. This collection should only be populated if it differs from the Offered Grade Levels identified at the course offering level.
      *
      * @return self
      */
@@ -1051,7 +1051,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets programs
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionProgram[]|null
+     * @return \Resources\Model\EdFiSectionProgram[]|null
      */
     public function getPrograms()
     {
@@ -1061,7 +1061,7 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets programs
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionProgram[]|null $programs An unordered collection of sectionPrograms. Optional reference to program to which the section is associated.
+     * @param \Resources\Model\EdFiSectionProgram[]|null $programs An unordered collection of sectionPrograms. Optional reference to program to which the section is associated.
      *
      * @return self
      */

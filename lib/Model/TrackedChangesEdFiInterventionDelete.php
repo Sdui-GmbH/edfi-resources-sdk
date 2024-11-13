@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiInterventionDelete Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class TrackedChangesEdFiInterventionDelete implements ModelInterface, ArrayAcces
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiInterventionKey'
+        'key_values' => '\Resources\Model\TrackedChangesEdFiInterventionKey'
     ];
 
     /**
@@ -360,7 +360,7 @@ class TrackedChangesEdFiInterventionDelete implements ModelInterface, ArrayAcces
     /**
      * Gets key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiInterventionKey|null
+     * @return \Resources\Model\TrackedChangesEdFiInterventionKey|null
      */
     public function getKeyValues()
     {
@@ -370,7 +370,7 @@ class TrackedChangesEdFiInterventionDelete implements ModelInterface, ArrayAcces
     /**
      * Sets key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiInterventionKey|null $key_values key_values
+     * @param \Resources\Model\TrackedChangesEdFiInterventionKey|null $key_values key_values
      *
      * @return self
      */

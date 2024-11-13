@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmCredentialStudentAcademicRecord Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class TpdmCredentialStudentAcademicRecord implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'student_academic_record_reference' => '\OpenAPI\Client\Model\EdFiStudentAcademicRecordReference'
+        'student_academic_record_reference' => '\Resources\Model\EdFiStudentAcademicRecordReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class TpdmCredentialStudentAcademicRecord implements ModelInterface, ArrayAccess
     /**
      * Gets student_academic_record_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAcademicRecordReference
+     * @return \Resources\Model\EdFiStudentAcademicRecordReference
      */
     public function getStudentAcademicRecordReference()
     {
@@ -305,7 +305,7 @@ class TpdmCredentialStudentAcademicRecord implements ModelInterface, ArrayAccess
     /**
      * Sets student_academic_record_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAcademicRecordReference $student_academic_record_reference student_academic_record_reference
+     * @param \Resources\Model\EdFiStudentAcademicRecordReference $student_academic_record_reference student_academic_record_reference
      *
      * @return self
      */

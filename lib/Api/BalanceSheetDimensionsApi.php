@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * BalanceSheetDimensionsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class BalanceSheetDimensionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBalanceSheetDimensionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class BalanceSheetDimensionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBalanceSheetDimensionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class BalanceSheetDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesBalanceSheetDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]
      */
     public function deletesBalanceSheetDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBalanceSheetDimensions'][0])
     {
@@ -407,9 +407,9 @@ class BalanceSheetDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesBalanceSheetDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesBalanceSheetDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBalanceSheetDimensions'][0])
     {
@@ -440,11 +440,11 @@ class BalanceSheetDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class BalanceSheetDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class BalanceSheetDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class BalanceSheetDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class BalanceSheetDimensionsApi
      */
     public function deletesBalanceSheetDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBalanceSheetDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionDelete[]';
         $request = $this->deletesBalanceSheetDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -771,9 +771,9 @@ class BalanceSheetDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBalanceSheetDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiBalanceSheetDimension[]
+     * @return \Resources\Model\EdFiBalanceSheetDimension[]
      */
     public function getBalanceSheetDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $code = null, $fiscal_year = null, $code_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getBalanceSheetDimensions'][0])
     {
@@ -798,9 +798,9 @@ class BalanceSheetDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBalanceSheetDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiBalanceSheetDimension[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiBalanceSheetDimension[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBalanceSheetDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $code = null, $fiscal_year = null, $code_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getBalanceSheetDimensions'][0])
     {
@@ -831,11 +831,11 @@ class BalanceSheetDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiBalanceSheetDimension[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiBalanceSheetDimension[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiBalanceSheetDimension[]' !== 'string') {
+                        if ('\Resources\Model\EdFiBalanceSheetDimension[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -853,7 +853,7 @@ class BalanceSheetDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiBalanceSheetDimension[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiBalanceSheetDimension[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -872,7 +872,7 @@ class BalanceSheetDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiBalanceSheetDimension[]';
+            $returnType = '\Resources\Model\EdFiBalanceSheetDimension[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -905,7 +905,7 @@ class BalanceSheetDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiBalanceSheetDimension[]',
+                        '\Resources\Model\EdFiBalanceSheetDimension[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -967,7 +967,7 @@ class BalanceSheetDimensionsApi
      */
     public function getBalanceSheetDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $code = null, $fiscal_year = null, $code_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getBalanceSheetDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiBalanceSheetDimension[]';
+        $returnType = '\Resources\Model\EdFiBalanceSheetDimension[]';
         $request = $this->getBalanceSheetDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $code, $fiscal_year, $code_name, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1213,9 +1213,9 @@ class BalanceSheetDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBalanceSheetDimensionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiBalanceSheetDimension
+     * @return \Resources\Model\EdFiBalanceSheetDimension
      */
     public function getBalanceSheetDimensionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getBalanceSheetDimensionsById'][0])
     {
@@ -1233,9 +1233,9 @@ class BalanceSheetDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBalanceSheetDimensionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiBalanceSheetDimension, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiBalanceSheetDimension, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBalanceSheetDimensionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getBalanceSheetDimensionsById'][0])
     {
@@ -1266,11 +1266,11 @@ class BalanceSheetDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiBalanceSheetDimension' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiBalanceSheetDimension' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiBalanceSheetDimension' !== 'string') {
+                        if ('\Resources\Model\EdFiBalanceSheetDimension' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1288,7 +1288,7 @@ class BalanceSheetDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiBalanceSheetDimension', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiBalanceSheetDimension', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1307,7 +1307,7 @@ class BalanceSheetDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiBalanceSheetDimension';
+            $returnType = '\Resources\Model\EdFiBalanceSheetDimension';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1340,7 +1340,7 @@ class BalanceSheetDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiBalanceSheetDimension',
+                        '\Resources\Model\EdFiBalanceSheetDimension',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1388,7 +1388,7 @@ class BalanceSheetDimensionsApi
      */
     public function getBalanceSheetDimensionsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getBalanceSheetDimensionsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiBalanceSheetDimension';
+        $returnType = '\Resources\Model\EdFiBalanceSheetDimension';
         $request = $this->getBalanceSheetDimensionsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1548,9 +1548,9 @@ class BalanceSheetDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesBalanceSheetDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]
      */
     public function keyChangesBalanceSheetDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBalanceSheetDimensions'][0])
     {
@@ -1571,9 +1571,9 @@ class BalanceSheetDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesBalanceSheetDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesBalanceSheetDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBalanceSheetDimensions'][0])
     {
@@ -1604,11 +1604,11 @@ class BalanceSheetDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1626,7 +1626,7 @@ class BalanceSheetDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1645,7 +1645,7 @@ class BalanceSheetDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1678,7 +1678,7 @@ class BalanceSheetDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1732,7 +1732,7 @@ class BalanceSheetDimensionsApi
      */
     public function keyChangesBalanceSheetDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBalanceSheetDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiBalanceSheetDimensionKeyChange[]';
         $request = $this->keyChangesBalanceSheetDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1923,10 +1923,10 @@ class BalanceSheetDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postBalanceSheetDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1940,10 +1940,10 @@ class BalanceSheetDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postBalanceSheetDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1988,7 +1988,7 @@ class BalanceSheetDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postBalanceSheetDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2009,7 +2009,7 @@ class BalanceSheetDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postBalanceSheetDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2046,7 +2046,7 @@ class BalanceSheetDimensionsApi
     /**
      * Create request for operation 'postBalanceSheetDimension'
      *
-     * @param  \OpenAPI\Client\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postBalanceSheetDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2144,11 +2144,11 @@ class BalanceSheetDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putBalanceSheetDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2163,11 +2163,11 @@ class BalanceSheetDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putBalanceSheetDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2213,7 +2213,7 @@ class BalanceSheetDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putBalanceSheetDimension'] to see the possible values for this operation
      *
@@ -2236,7 +2236,7 @@ class BalanceSheetDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putBalanceSheetDimension'] to see the possible values for this operation
      *
@@ -2275,7 +2275,7 @@ class BalanceSheetDimensionsApi
      * Create request for operation 'putBalanceSheetDimension'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBalanceSheetDimension $ed_fi_balance_sheet_dimension The JSON representation of the \&quot;balanceSheetDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putBalanceSheetDimension'] to see the possible values for this operation
      *

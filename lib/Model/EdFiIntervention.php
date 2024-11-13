@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiIntervention Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,24 +59,24 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'intervention_identification_code' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'appropriate_grade_levels' => '\OpenAPI\Client\Model\EdFiInterventionAppropriateGradeLevel[]',
-        'appropriate_sexes' => '\OpenAPI\Client\Model\EdFiInterventionAppropriateSex[]',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'appropriate_grade_levels' => '\Resources\Model\EdFiInterventionAppropriateGradeLevel[]',
+        'appropriate_sexes' => '\Resources\Model\EdFiInterventionAppropriateSex[]',
         'begin_date' => '\DateTime',
         'delivery_method_descriptor' => 'string',
-        'diagnoses' => '\OpenAPI\Client\Model\EdFiInterventionDiagnosis[]',
-        'education_contents' => '\OpenAPI\Client\Model\EdFiInterventionEducationContent[]',
+        'diagnoses' => '\Resources\Model\EdFiInterventionDiagnosis[]',
+        'education_contents' => '\Resources\Model\EdFiInterventionEducationContent[]',
         'end_date' => '\DateTime',
         'intervention_class_descriptor' => 'string',
-        'intervention_prescriptions' => '\OpenAPI\Client\Model\EdFiInterventionInterventionPrescription[]',
-        'learning_resource_metadata_uris' => '\OpenAPI\Client\Model\EdFiInterventionLearningResourceMetadataURI[]',
+        'intervention_prescriptions' => '\Resources\Model\EdFiInterventionInterventionPrescription[]',
+        'learning_resource_metadata_uris' => '\Resources\Model\EdFiInterventionLearningResourceMetadataURI[]',
         'max_dosage' => 'int',
-        'meeting_times' => '\OpenAPI\Client\Model\EdFiInterventionMeetingTime[]',
+        'meeting_times' => '\Resources\Model\EdFiInterventionMeetingTime[]',
         'min_dosage' => 'int',
         'namespace' => 'string',
-        'population_serveds' => '\OpenAPI\Client\Model\EdFiInterventionPopulationServed[]',
-        'staffs' => '\OpenAPI\Client\Model\EdFiInterventionStaff[]',
-        'uris' => '\OpenAPI\Client\Model\EdFiInterventionURI[]',
+        'population_serveds' => '\Resources\Model\EdFiInterventionPopulationServed[]',
+        'staffs' => '\Resources\Model\EdFiInterventionStaff[]',
+        'uris' => '\Resources\Model\EdFiInterventionURI[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -539,7 +539,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -549,7 +549,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -566,7 +566,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets appropriate_grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionAppropriateGradeLevel[]|null
+     * @return \Resources\Model\EdFiInterventionAppropriateGradeLevel[]|null
      */
     public function getAppropriateGradeLevels()
     {
@@ -576,7 +576,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets appropriate_grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionAppropriateGradeLevel[]|null $appropriate_grade_levels An unordered collection of interventionAppropriateGradeLevels. Grade levels for the intervention. If omitted, considered generally applicable.
+     * @param \Resources\Model\EdFiInterventionAppropriateGradeLevel[]|null $appropriate_grade_levels An unordered collection of interventionAppropriateGradeLevels. Grade levels for the intervention. If omitted, considered generally applicable.
      *
      * @return self
      */
@@ -593,7 +593,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets appropriate_sexes
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionAppropriateSex[]|null
+     * @return \Resources\Model\EdFiInterventionAppropriateSex[]|null
      */
     public function getAppropriateSexes()
     {
@@ -603,7 +603,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets appropriate_sexes
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionAppropriateSex[]|null $appropriate_sexes An unordered collection of interventionAppropriateSexes. Sexes for the intervention. If omitted, considered generally applicable.
+     * @param \Resources\Model\EdFiInterventionAppropriateSex[]|null $appropriate_sexes An unordered collection of interventionAppropriateSexes. Sexes for the intervention. If omitted, considered generally applicable.
      *
      * @return self
      */
@@ -678,7 +678,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets diagnoses
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionDiagnosis[]|null
+     * @return \Resources\Model\EdFiInterventionDiagnosis[]|null
      */
     public function getDiagnoses()
     {
@@ -688,7 +688,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets diagnoses
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionDiagnosis[]|null $diagnoses An unordered collection of interventionDiagnoses. Targeted purpose of the intervention.
+     * @param \Resources\Model\EdFiInterventionDiagnosis[]|null $diagnoses An unordered collection of interventionDiagnoses. Targeted purpose of the intervention.
      *
      * @return self
      */
@@ -705,7 +705,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets education_contents
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionEducationContent[]|null
+     * @return \Resources\Model\EdFiInterventionEducationContent[]|null
      */
     public function getEducationContents()
     {
@@ -715,7 +715,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets education_contents
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionEducationContent[]|null $education_contents An unordered collection of interventionEducationContents. Relates the education content source to the education content.
+     * @param \Resources\Model\EdFiInterventionEducationContent[]|null $education_contents An unordered collection of interventionEducationContents. Relates the education content source to the education content.
      *
      * @return self
      */
@@ -797,7 +797,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets intervention_prescriptions
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionInterventionPrescription[]|null
+     * @return \Resources\Model\EdFiInterventionInterventionPrescription[]|null
      */
     public function getInterventionPrescriptions()
     {
@@ -807,7 +807,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets intervention_prescriptions
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionInterventionPrescription[]|null $intervention_prescriptions An unordered collection of interventionInterventionPrescriptions. The reference to the intervention prescription being followed in this intervention implementation.
+     * @param \Resources\Model\EdFiInterventionInterventionPrescription[]|null $intervention_prescriptions An unordered collection of interventionInterventionPrescriptions. The reference to the intervention prescription being followed in this intervention implementation.
      *
      * @return self
      */
@@ -824,7 +824,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets learning_resource_metadata_uris
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionLearningResourceMetadataURI[]|null
+     * @return \Resources\Model\EdFiInterventionLearningResourceMetadataURI[]|null
      */
     public function getLearningResourceMetadataUris()
     {
@@ -834,7 +834,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets learning_resource_metadata_uris
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionLearningResourceMetadataURI[]|null $learning_resource_metadata_uris An unordered collection of interventionLearningResourceMetadataURIs. The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item.
+     * @param \Resources\Model\EdFiInterventionLearningResourceMetadataURI[]|null $learning_resource_metadata_uris An unordered collection of interventionLearningResourceMetadataURIs. The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item.
      *
      * @return self
      */
@@ -885,7 +885,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets meeting_times
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionMeetingTime[]|null
+     * @return \Resources\Model\EdFiInterventionMeetingTime[]|null
      */
     public function getMeetingTimes()
     {
@@ -895,7 +895,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meeting_times
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionMeetingTime[]|null $meeting_times An unordered collection of interventionMeetingTimes. The times at which this intervention is scheduled to meet.
+     * @param \Resources\Model\EdFiInterventionMeetingTime[]|null $meeting_times An unordered collection of interventionMeetingTimes. The times at which this intervention is scheduled to meet.
      *
      * @return self
      */
@@ -987,7 +987,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets population_serveds
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionPopulationServed[]|null
+     * @return \Resources\Model\EdFiInterventionPopulationServed[]|null
      */
     public function getPopulationServeds()
     {
@@ -997,7 +997,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets population_serveds
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionPopulationServed[]|null $population_serveds An unordered collection of interventionPopulationServeds. A subset of students that are the focus of the intervention.
+     * @param \Resources\Model\EdFiInterventionPopulationServed[]|null $population_serveds An unordered collection of interventionPopulationServeds. A subset of students that are the focus of the intervention.
      *
      * @return self
      */
@@ -1014,7 +1014,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets staffs
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionStaff[]|null
+     * @return \Resources\Model\EdFiInterventionStaff[]|null
      */
     public function getStaffs()
     {
@@ -1024,7 +1024,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets staffs
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionStaff[]|null $staffs An unordered collection of interventionStaffs. Relates the staff member associated with the Intervention.
+     * @param \Resources\Model\EdFiInterventionStaff[]|null $staffs An unordered collection of interventionStaffs. Relates the staff member associated with the Intervention.
      *
      * @return self
      */
@@ -1041,7 +1041,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets uris
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionURI[]|null
+     * @return \Resources\Model\EdFiInterventionURI[]|null
      */
     public function getUris()
     {
@@ -1051,7 +1051,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets uris
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionURI[]|null $uris An unordered collection of interventionURIs. The URI (typical a URL) pointing to an education content item.
+     * @param \Resources\Model\EdFiInterventionURI[]|null $uris An unordered collection of interventionURIs. The URI (typical a URL) pointing to an education content item.
      *
      * @return self
      */

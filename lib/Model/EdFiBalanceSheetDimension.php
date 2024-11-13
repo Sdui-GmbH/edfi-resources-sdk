@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiBalanceSheetDimension Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class EdFiBalanceSheetDimension implements ModelInterface, ArrayAccess, \JsonSer
         'code' => 'string',
         'fiscal_year' => 'int',
         'code_name' => 'string',
-        'reporting_tags' => '\OpenAPI\Client\Model\EdFiBalanceSheetDimensionReportingTag[]',
+        'reporting_tags' => '\Resources\Model\EdFiBalanceSheetDimensionReportingTag[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -501,7 +501,7 @@ class EdFiBalanceSheetDimension implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets reporting_tags
      *
-     * @return \OpenAPI\Client\Model\EdFiBalanceSheetDimensionReportingTag[]|null
+     * @return \Resources\Model\EdFiBalanceSheetDimensionReportingTag[]|null
      */
     public function getReportingTags()
     {
@@ -511,7 +511,7 @@ class EdFiBalanceSheetDimension implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets reporting_tags
      *
-     * @param \OpenAPI\Client\Model\EdFiBalanceSheetDimensionReportingTag[]|null $reporting_tags An unordered collection of balanceSheetDimensionReportingTags. Optional tag for accountability reporting.
+     * @param \Resources\Model\EdFiBalanceSheetDimensionReportingTag[]|null $reporting_tags An unordered collection of balanceSheetDimensionReportingTags. Optional tag for accountability reporting.
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# OpenAPI\Client\SchoolsApi
+# Resources\SchoolsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SchoolsApi(
+$apiInstance = new Resources\Api\SchoolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesSchools()`
 
 ```php
-deletesSchools($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiSchoolDelete[]
+deletesSchools($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiSchoolDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SchoolsApi(
+$apiInstance = new Resources\Api\SchoolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiSchoolDelete[]**](../Model/TrackedChangesEdFiSchoolDelete.md)
+[**\Resources\Model\TrackedChangesEdFiSchoolDelete[]**](../Model/TrackedChangesEdFiSchoolDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getSchools()`
 
 ```php
-getSchools($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $use_snapshot): \OpenAPI\Client\Model\EdFiSchool[]
+getSchools($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $use_snapshot): \Resources\Model\EdFiSchool[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SchoolsApi(
+$apiInstance = new Resources\Api\SchoolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -219,7 +219,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiSchool[]**](../Model/EdFiSchool.md)
+[**\Resources\Model\EdFiSchool[]**](../Model/EdFiSchool.md)
 
 ### Authorization
 
@@ -237,7 +237,7 @@ try {
 ## `getSchoolsById()`
 
 ```php
-getSchoolsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiSchool
+getSchoolsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiSchool
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -252,10 +252,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SchoolsApi(
+$apiInstance = new Resources\Api\SchoolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -283,7 +283,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiSchool**](../Model/EdFiSchool.md)
+[**\Resources\Model\EdFiSchool**](../Model/EdFiSchool.md)
 
 ### Authorization
 
@@ -301,7 +301,7 @@ try {
 ## `keyChangesSchools()`
 
 ```php
-keyChangesSchools($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiSchoolKeyChange[]
+keyChangesSchools($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiSchoolKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -316,10 +316,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SchoolsApi(
+$apiInstance = new Resources\Api\SchoolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -353,7 +353,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiSchoolKeyChange[]**](../Model/TrackedChangesEdFiSchoolKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiSchoolKeyChange[]**](../Model/TrackedChangesEdFiSchoolKeyChange.md)
 
 ### Authorization
 
@@ -386,16 +386,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SchoolsApi(
+$apiInstance = new Resources\Api\SchoolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_school = new \OpenAPI\Client\Model\EdFiSchool(); // \OpenAPI\Client\Model\EdFiSchool | The JSON representation of the \"school\" resource to be created or updated.
+$ed_fi_school = new \Resources\Model\EdFiSchool(); // \Resources\Model\EdFiSchool | The JSON representation of the \"school\" resource to be created or updated.
 
 try {
     $apiInstance->postSchool($ed_fi_school);
@@ -408,7 +408,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_school** | [**\OpenAPI\Client\Model\EdFiSchool**](../Model/EdFiSchool.md)| The JSON representation of the \&quot;school\&quot; resource to be created or updated. | |
+| **ed_fi_school** | [**\Resources\Model\EdFiSchool**](../Model/EdFiSchool.md)| The JSON representation of the \&quot;school\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -445,17 +445,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SchoolsApi(
+$apiInstance = new Resources\Api\SchoolsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_school = new \OpenAPI\Client\Model\EdFiSchool(); // \OpenAPI\Client\Model\EdFiSchool | The JSON representation of the \"school\" resource to be created or updated.
+$ed_fi_school = new \Resources\Model\EdFiSchool(); // \Resources\Model\EdFiSchool | The JSON representation of the \"school\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -470,7 +470,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_school** | [**\OpenAPI\Client\Model\EdFiSchool**](../Model/EdFiSchool.md)| The JSON representation of the \&quot;school\&quot; resource to be created or updated. | |
+| **ed_fi_school** | [**\Resources\Model\EdFiSchool**](../Model/EdFiSchool.md)| The JSON representation of the \&quot;school\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

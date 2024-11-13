@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentEducationOrganizationAssociationCohortYear Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class EdFiStudentEducationOrganizationAssociationCohortYear implements ModelInte
     protected static $openAPITypes = [
         'cohort_year_type_descriptor' => 'string',
         'term_descriptor' => 'string',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference'
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference'
     ];
 
     /**
@@ -389,7 +389,7 @@ class EdFiStudentEducationOrganizationAssociationCohortYear implements ModelInte
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference
+     * @return \Resources\Model\EdFiSchoolYearTypeReference
      */
     public function getSchoolYearTypeReference()
     {
@@ -399,7 +399,7 @@ class EdFiStudentEducationOrganizationAssociationCohortYear implements ModelInte
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
      *
      * @return self
      */

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * OperationalUnitDimensionsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class OperationalUnitDimensionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOperationalUnitDimensionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class OperationalUnitDimensionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOperationalUnitDimensionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class OperationalUnitDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesOperationalUnitDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]
      */
     public function deletesOperationalUnitDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOperationalUnitDimensions'][0])
     {
@@ -407,9 +407,9 @@ class OperationalUnitDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesOperationalUnitDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesOperationalUnitDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOperationalUnitDimensions'][0])
     {
@@ -440,11 +440,11 @@ class OperationalUnitDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class OperationalUnitDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class OperationalUnitDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class OperationalUnitDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class OperationalUnitDimensionsApi
      */
     public function deletesOperationalUnitDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOperationalUnitDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionDelete[]';
         $request = $this->deletesOperationalUnitDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -771,9 +771,9 @@ class OperationalUnitDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperationalUnitDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiOperationalUnitDimension[]
+     * @return \Resources\Model\EdFiOperationalUnitDimension[]
      */
     public function getOperationalUnitDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $code = null, $fiscal_year = null, $code_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getOperationalUnitDimensions'][0])
     {
@@ -798,9 +798,9 @@ class OperationalUnitDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperationalUnitDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiOperationalUnitDimension[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiOperationalUnitDimension[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getOperationalUnitDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $code = null, $fiscal_year = null, $code_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getOperationalUnitDimensions'][0])
     {
@@ -831,11 +831,11 @@ class OperationalUnitDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiOperationalUnitDimension[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiOperationalUnitDimension[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiOperationalUnitDimension[]' !== 'string') {
+                        if ('\Resources\Model\EdFiOperationalUnitDimension[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -853,7 +853,7 @@ class OperationalUnitDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiOperationalUnitDimension[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiOperationalUnitDimension[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -872,7 +872,7 @@ class OperationalUnitDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiOperationalUnitDimension[]';
+            $returnType = '\Resources\Model\EdFiOperationalUnitDimension[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -905,7 +905,7 @@ class OperationalUnitDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiOperationalUnitDimension[]',
+                        '\Resources\Model\EdFiOperationalUnitDimension[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -967,7 +967,7 @@ class OperationalUnitDimensionsApi
      */
     public function getOperationalUnitDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $code = null, $fiscal_year = null, $code_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getOperationalUnitDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiOperationalUnitDimension[]';
+        $returnType = '\Resources\Model\EdFiOperationalUnitDimension[]';
         $request = $this->getOperationalUnitDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $code, $fiscal_year, $code_name, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1213,9 +1213,9 @@ class OperationalUnitDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperationalUnitDimensionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiOperationalUnitDimension
+     * @return \Resources\Model\EdFiOperationalUnitDimension
      */
     public function getOperationalUnitDimensionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getOperationalUnitDimensionsById'][0])
     {
@@ -1233,9 +1233,9 @@ class OperationalUnitDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOperationalUnitDimensionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiOperationalUnitDimension, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiOperationalUnitDimension, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOperationalUnitDimensionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getOperationalUnitDimensionsById'][0])
     {
@@ -1266,11 +1266,11 @@ class OperationalUnitDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiOperationalUnitDimension' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiOperationalUnitDimension' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiOperationalUnitDimension' !== 'string') {
+                        if ('\Resources\Model\EdFiOperationalUnitDimension' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1288,7 +1288,7 @@ class OperationalUnitDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiOperationalUnitDimension', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiOperationalUnitDimension', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1307,7 +1307,7 @@ class OperationalUnitDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiOperationalUnitDimension';
+            $returnType = '\Resources\Model\EdFiOperationalUnitDimension';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1340,7 +1340,7 @@ class OperationalUnitDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiOperationalUnitDimension',
+                        '\Resources\Model\EdFiOperationalUnitDimension',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1388,7 +1388,7 @@ class OperationalUnitDimensionsApi
      */
     public function getOperationalUnitDimensionsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getOperationalUnitDimensionsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiOperationalUnitDimension';
+        $returnType = '\Resources\Model\EdFiOperationalUnitDimension';
         $request = $this->getOperationalUnitDimensionsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1548,9 +1548,9 @@ class OperationalUnitDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesOperationalUnitDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]
      */
     public function keyChangesOperationalUnitDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOperationalUnitDimensions'][0])
     {
@@ -1571,9 +1571,9 @@ class OperationalUnitDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesOperationalUnitDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesOperationalUnitDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOperationalUnitDimensions'][0])
     {
@@ -1604,11 +1604,11 @@ class OperationalUnitDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1626,7 +1626,7 @@ class OperationalUnitDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1645,7 +1645,7 @@ class OperationalUnitDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1678,7 +1678,7 @@ class OperationalUnitDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1732,7 +1732,7 @@ class OperationalUnitDimensionsApi
      */
     public function keyChangesOperationalUnitDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOperationalUnitDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiOperationalUnitDimensionKeyChange[]';
         $request = $this->keyChangesOperationalUnitDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1923,10 +1923,10 @@ class OperationalUnitDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postOperationalUnitDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1940,10 +1940,10 @@ class OperationalUnitDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postOperationalUnitDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1988,7 +1988,7 @@ class OperationalUnitDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postOperationalUnitDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2009,7 +2009,7 @@ class OperationalUnitDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postOperationalUnitDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2046,7 +2046,7 @@ class OperationalUnitDimensionsApi
     /**
      * Create request for operation 'postOperationalUnitDimension'
      *
-     * @param  \OpenAPI\Client\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postOperationalUnitDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2144,11 +2144,11 @@ class OperationalUnitDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putOperationalUnitDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2163,11 +2163,11 @@ class OperationalUnitDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putOperationalUnitDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2213,7 +2213,7 @@ class OperationalUnitDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putOperationalUnitDimension'] to see the possible values for this operation
      *
@@ -2236,7 +2236,7 @@ class OperationalUnitDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putOperationalUnitDimension'] to see the possible values for this operation
      *
@@ -2275,7 +2275,7 @@ class OperationalUnitDimensionsApi
      * Create request for operation 'putOperationalUnitDimension'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOperationalUnitDimension $ed_fi_operational_unit_dimension The JSON representation of the \&quot;operationalUnitDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putOperationalUnitDimension'] to see the possible values for this operation
      *

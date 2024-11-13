@@ -1,4 +1,4 @@
-# OpenAPI\Client\LocalPayrollsApi
+# Resources\LocalPayrollsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalPayrollsApi(
+$apiInstance = new Resources\Api\LocalPayrollsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesLocalPayrolls()`
 
 ```php
-deletesLocalPayrolls($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollDelete[]
+deletesLocalPayrolls($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLocalPayrollDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalPayrollsApi(
+$apiInstance = new Resources\Api\LocalPayrollsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollDelete[]**](../Model/TrackedChangesEdFiLocalPayrollDelete.md)
+[**\Resources\Model\TrackedChangesEdFiLocalPayrollDelete[]**](../Model/TrackedChangesEdFiLocalPayrollDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getLocalPayrolls()`
 
 ```php
-getLocalPayrolls($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $staff_unique_id, $financial_collection_descriptor, $amount, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiLocalPayroll[]
+getLocalPayrolls($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $staff_unique_id, $financial_collection_descriptor, $amount, $id, $use_snapshot): \Resources\Model\EdFiLocalPayroll[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalPayrollsApi(
+$apiInstance = new Resources\Api\LocalPayrollsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -215,7 +215,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLocalPayroll[]**](../Model/EdFiLocalPayroll.md)
+[**\Resources\Model\EdFiLocalPayroll[]**](../Model/EdFiLocalPayroll.md)
 
 ### Authorization
 
@@ -233,7 +233,7 @@ try {
 ## `getLocalPayrollsById()`
 
 ```php
-getLocalPayrollsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiLocalPayroll
+getLocalPayrollsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiLocalPayroll
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -248,10 +248,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalPayrollsApi(
+$apiInstance = new Resources\Api\LocalPayrollsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -279,7 +279,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLocalPayroll**](../Model/EdFiLocalPayroll.md)
+[**\Resources\Model\EdFiLocalPayroll**](../Model/EdFiLocalPayroll.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ try {
 ## `keyChangesLocalPayrolls()`
 
 ```php
-keyChangesLocalPayrolls($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollKeyChange[]
+keyChangesLocalPayrolls($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLocalPayrollKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -312,10 +312,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalPayrollsApi(
+$apiInstance = new Resources\Api\LocalPayrollsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -349,7 +349,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollKeyChange[]**](../Model/TrackedChangesEdFiLocalPayrollKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiLocalPayrollKeyChange[]**](../Model/TrackedChangesEdFiLocalPayrollKeyChange.md)
 
 ### Authorization
 
@@ -382,16 +382,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalPayrollsApi(
+$apiInstance = new Resources\Api\LocalPayrollsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_local_payroll = new \OpenAPI\Client\Model\EdFiLocalPayroll(); // \OpenAPI\Client\Model\EdFiLocalPayroll | The JSON representation of the \"localPayroll\" resource to be created or updated.
+$ed_fi_local_payroll = new \Resources\Model\EdFiLocalPayroll(); // \Resources\Model\EdFiLocalPayroll | The JSON representation of the \"localPayroll\" resource to be created or updated.
 
 try {
     $apiInstance->postLocalPayroll($ed_fi_local_payroll);
@@ -404,7 +404,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_local_payroll** | [**\OpenAPI\Client\Model\EdFiLocalPayroll**](../Model/EdFiLocalPayroll.md)| The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. | |
+| **ed_fi_local_payroll** | [**\Resources\Model\EdFiLocalPayroll**](../Model/EdFiLocalPayroll.md)| The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -441,17 +441,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalPayrollsApi(
+$apiInstance = new Resources\Api\LocalPayrollsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_local_payroll = new \OpenAPI\Client\Model\EdFiLocalPayroll(); // \OpenAPI\Client\Model\EdFiLocalPayroll | The JSON representation of the \"localPayroll\" resource to be created or updated.
+$ed_fi_local_payroll = new \Resources\Model\EdFiLocalPayroll(); // \Resources\Model\EdFiLocalPayroll | The JSON representation of the \"localPayroll\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -466,7 +466,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_local_payroll** | [**\OpenAPI\Client\Model\EdFiLocalPayroll**](../Model/EdFiLocalPayroll.md)| The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. | |
+| **ed_fi_local_payroll** | [**\Resources\Model\EdFiLocalPayroll**](../Model/EdFiLocalPayroll.md)| The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * DisciplineActionsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class DisciplineActionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDisciplineActionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class DisciplineActionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDisciplineActionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class DisciplineActionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineActions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]
      */
     public function deletesDisciplineActions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
     {
@@ -407,9 +407,9 @@ class DisciplineActionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineActions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiDisciplineActionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesDisciplineActionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
     {
@@ -440,11 +440,11 @@ class DisciplineActionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class DisciplineActionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class DisciplineActionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class DisciplineActionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class DisciplineActionsApi
      */
     public function deletesDisciplineActionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]';
         $request = $this->deletesDisciplineActionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -778,9 +778,9 @@ class DisciplineActionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineActions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiDisciplineAction[]
+     * @return \Resources\Model\EdFiDisciplineAction[]
      */
     public function getDisciplineActions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
     {
@@ -812,9 +812,9 @@ class DisciplineActionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineActions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiDisciplineAction[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiDisciplineAction[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getDisciplineActionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
     {
@@ -845,11 +845,11 @@ class DisciplineActionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiDisciplineAction[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiDisciplineAction[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiDisciplineAction[]' !== 'string') {
+                        if ('\Resources\Model\EdFiDisciplineAction[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -867,7 +867,7 @@ class DisciplineActionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiDisciplineAction[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiDisciplineAction[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -886,7 +886,7 @@ class DisciplineActionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiDisciplineAction[]';
+            $returnType = '\Resources\Model\EdFiDisciplineAction[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -919,7 +919,7 @@ class DisciplineActionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiDisciplineAction[]',
+                        '\Resources\Model\EdFiDisciplineAction[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -995,7 +995,7 @@ class DisciplineActionsApi
      */
     public function getDisciplineActionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiDisciplineAction[]';
+        $returnType = '\Resources\Model\EdFiDisciplineAction[]';
         $request = $this->getDisciplineActionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType);
 
         return $this->client
@@ -1321,9 +1321,9 @@ class DisciplineActionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineActionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiDisciplineAction
+     * @return \Resources\Model\EdFiDisciplineAction
      */
     public function getDisciplineActionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActionsById'][0])
     {
@@ -1341,9 +1341,9 @@ class DisciplineActionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineActionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiDisciplineAction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiDisciplineAction, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDisciplineActionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActionsById'][0])
     {
@@ -1374,11 +1374,11 @@ class DisciplineActionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiDisciplineAction' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiDisciplineAction' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiDisciplineAction' !== 'string') {
+                        if ('\Resources\Model\EdFiDisciplineAction' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1396,7 +1396,7 @@ class DisciplineActionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiDisciplineAction', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiDisciplineAction', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1415,7 +1415,7 @@ class DisciplineActionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiDisciplineAction';
+            $returnType = '\Resources\Model\EdFiDisciplineAction';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1448,7 +1448,7 @@ class DisciplineActionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiDisciplineAction',
+                        '\Resources\Model\EdFiDisciplineAction',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1496,7 +1496,7 @@ class DisciplineActionsApi
      */
     public function getDisciplineActionsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActionsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiDisciplineAction';
+        $returnType = '\Resources\Model\EdFiDisciplineAction';
         $request = $this->getDisciplineActionsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1656,9 +1656,9 @@ class DisciplineActionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineActions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]
      */
     public function keyChangesDisciplineActions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
     {
@@ -1679,9 +1679,9 @@ class DisciplineActionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineActions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesDisciplineActionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
     {
@@ -1712,11 +1712,11 @@ class DisciplineActionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1734,7 +1734,7 @@ class DisciplineActionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1753,7 +1753,7 @@ class DisciplineActionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1786,7 +1786,7 @@ class DisciplineActionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1840,7 +1840,7 @@ class DisciplineActionsApi
      */
     public function keyChangesDisciplineActionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]';
         $request = $this->keyChangesDisciplineActionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2031,10 +2031,10 @@ class DisciplineActionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDisciplineAction'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2048,10 +2048,10 @@ class DisciplineActionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDisciplineAction'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2096,7 +2096,7 @@ class DisciplineActionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDisciplineAction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2117,7 +2117,7 @@ class DisciplineActionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDisciplineAction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2154,7 +2154,7 @@ class DisciplineActionsApi
     /**
      * Create request for operation 'postDisciplineAction'
      *
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDisciplineAction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2252,11 +2252,11 @@ class DisciplineActionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDisciplineAction'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2271,11 +2271,11 @@ class DisciplineActionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDisciplineAction'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2321,7 +2321,7 @@ class DisciplineActionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDisciplineAction'] to see the possible values for this operation
      *
@@ -2344,7 +2344,7 @@ class DisciplineActionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDisciplineAction'] to see the possible values for this operation
      *
@@ -2383,7 +2383,7 @@ class DisciplineActionsApi
      * Create request for operation 'putDisciplineAction'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineAction $ed_fi_discipline_action The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDisciplineAction'] to see the possible values for this operation
      *

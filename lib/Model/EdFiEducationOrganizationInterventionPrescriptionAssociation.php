@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiEducationOrganizationInterventionPrescriptionAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class EdFiEducationOrganizationInterventionPrescriptionAssociation implements Mo
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'intervention_prescription_reference' => '\OpenAPI\Client\Model\EdFiInterventionPrescriptionReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'intervention_prescription_reference' => '\Resources\Model\EdFiInterventionPrescriptionReference',
         'begin_date' => '\DateTime',
         'end_date' => '\DateTime',
         '_etag' => 'string',
@@ -367,7 +367,7 @@ class EdFiEducationOrganizationInterventionPrescriptionAssociation implements Mo
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -377,7 +377,7 @@ class EdFiEducationOrganizationInterventionPrescriptionAssociation implements Mo
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class EdFiEducationOrganizationInterventionPrescriptionAssociation implements Mo
     /**
      * Gets intervention_prescription_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionPrescriptionReference
+     * @return \Resources\Model\EdFiInterventionPrescriptionReference
      */
     public function getInterventionPrescriptionReference()
     {
@@ -404,7 +404,7 @@ class EdFiEducationOrganizationInterventionPrescriptionAssociation implements Mo
     /**
      * Sets intervention_prescription_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionPrescriptionReference $intervention_prescription_reference intervention_prescription_reference
+     * @param \Resources\Model\EdFiInterventionPrescriptionReference $intervention_prescription_reference intervention_prescription_reference
      *
      * @return self
      */

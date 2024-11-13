@@ -1,4 +1,4 @@
-# OpenAPI\Client\StaffAbsenceEventsApi
+# Resources\StaffAbsenceEventsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffAbsenceEventsApi(
+$apiInstance = new Resources\Api\StaffAbsenceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesStaffAbsenceEvents()`
 
 ```php
-deletesStaffAbsenceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]
+deletesStaffAbsenceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffAbsenceEventsApi(
+$apiInstance = new Resources\Api\StaffAbsenceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]**](../Model/TrackedChangesEdFiStaffAbsenceEventDelete.md)
+[**\Resources\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]**](../Model/TrackedChangesEdFiStaffAbsenceEventDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getStaffAbsenceEvents()`
 
 ```php
-getStaffAbsenceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $absence_event_category_descriptor, $event_date, $staff_unique_id, $absence_event_reason, $hours_absent, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiStaffAbsenceEvent[]
+getStaffAbsenceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $absence_event_category_descriptor, $event_date, $staff_unique_id, $absence_event_reason, $hours_absent, $id, $use_snapshot): \Resources\Model\EdFiStaffAbsenceEvent[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffAbsenceEventsApi(
+$apiInstance = new Resources\Api\StaffAbsenceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -211,7 +211,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStaffAbsenceEvent[]**](../Model/EdFiStaffAbsenceEvent.md)
+[**\Resources\Model\EdFiStaffAbsenceEvent[]**](../Model/EdFiStaffAbsenceEvent.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ try {
 ## `getStaffAbsenceEventsById()`
 
 ```php
-getStaffAbsenceEventsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiStaffAbsenceEvent
+getStaffAbsenceEventsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiStaffAbsenceEvent
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -244,10 +244,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffAbsenceEventsApi(
+$apiInstance = new Resources\Api\StaffAbsenceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -275,7 +275,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStaffAbsenceEvent**](../Model/EdFiStaffAbsenceEvent.md)
+[**\Resources\Model\EdFiStaffAbsenceEvent**](../Model/EdFiStaffAbsenceEvent.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ try {
 ## `keyChangesStaffAbsenceEvents()`
 
 ```php
-keyChangesStaffAbsenceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]
+keyChangesStaffAbsenceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -308,10 +308,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffAbsenceEventsApi(
+$apiInstance = new Resources\Api\StaffAbsenceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -345,7 +345,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]**](../Model/TrackedChangesEdFiStaffAbsenceEventKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]**](../Model/TrackedChangesEdFiStaffAbsenceEventKeyChange.md)
 
 ### Authorization
 
@@ -378,16 +378,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffAbsenceEventsApi(
+$apiInstance = new Resources\Api\StaffAbsenceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_staff_absence_event = new \OpenAPI\Client\Model\EdFiStaffAbsenceEvent(); // \OpenAPI\Client\Model\EdFiStaffAbsenceEvent | The JSON representation of the \"staffAbsenceEvent\" resource to be created or updated.
+$ed_fi_staff_absence_event = new \Resources\Model\EdFiStaffAbsenceEvent(); // \Resources\Model\EdFiStaffAbsenceEvent | The JSON representation of the \"staffAbsenceEvent\" resource to be created or updated.
 
 try {
     $apiInstance->postStaffAbsenceEvent($ed_fi_staff_absence_event);
@@ -400,7 +400,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_staff_absence_event** | [**\OpenAPI\Client\Model\EdFiStaffAbsenceEvent**](../Model/EdFiStaffAbsenceEvent.md)| The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. | |
+| **ed_fi_staff_absence_event** | [**\Resources\Model\EdFiStaffAbsenceEvent**](../Model/EdFiStaffAbsenceEvent.md)| The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -437,17 +437,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffAbsenceEventsApi(
+$apiInstance = new Resources\Api\StaffAbsenceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_staff_absence_event = new \OpenAPI\Client\Model\EdFiStaffAbsenceEvent(); // \OpenAPI\Client\Model\EdFiStaffAbsenceEvent | The JSON representation of the \"staffAbsenceEvent\" resource to be created or updated.
+$ed_fi_staff_absence_event = new \Resources\Model\EdFiStaffAbsenceEvent(); // \Resources\Model\EdFiStaffAbsenceEvent | The JSON representation of the \"staffAbsenceEvent\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -462,7 +462,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_staff_absence_event** | [**\OpenAPI\Client\Model\EdFiStaffAbsenceEvent**](../Model/EdFiStaffAbsenceEvent.md)| The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. | |
+| **ed_fi_staff_absence_event** | [**\Resources\Model\EdFiStaffAbsenceEvent**](../Model/EdFiStaffAbsenceEvent.md)| The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

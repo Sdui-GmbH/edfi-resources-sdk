@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * PostSecondaryInstitutionsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class PostSecondaryInstitutionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePostSecondaryInstitutionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class PostSecondaryInstitutionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePostSecondaryInstitutionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class PostSecondaryInstitutionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesPostSecondaryInstitutions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]
      */
     public function deletesPostSecondaryInstitutions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesPostSecondaryInstitutions'][0])
     {
@@ -407,9 +407,9 @@ class PostSecondaryInstitutionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesPostSecondaryInstitutions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesPostSecondaryInstitutionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesPostSecondaryInstitutions'][0])
     {
@@ -440,11 +440,11 @@ class PostSecondaryInstitutionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class PostSecondaryInstitutionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class PostSecondaryInstitutionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class PostSecondaryInstitutionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class PostSecondaryInstitutionsApi
      */
     public function deletesPostSecondaryInstitutionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesPostSecondaryInstitutions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionDelete[]';
         $request = $this->deletesPostSecondaryInstitutionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -770,9 +770,9 @@ class PostSecondaryInstitutionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryInstitutions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiPostSecondaryInstitution[]
+     * @return \Resources\Model\EdFiPostSecondaryInstitution[]
      */
     public function getPostSecondaryInstitutions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
     {
@@ -796,9 +796,9 @@ class PostSecondaryInstitutionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryInstitutions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiPostSecondaryInstitution[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiPostSecondaryInstitution[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPostSecondaryInstitutionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
     {
@@ -829,11 +829,11 @@ class PostSecondaryInstitutionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiPostSecondaryInstitution[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiPostSecondaryInstitution[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiPostSecondaryInstitution[]' !== 'string') {
+                        if ('\Resources\Model\EdFiPostSecondaryInstitution[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -851,7 +851,7 @@ class PostSecondaryInstitutionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiPostSecondaryInstitution[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiPostSecondaryInstitution[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -870,7 +870,7 @@ class PostSecondaryInstitutionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiPostSecondaryInstitution[]';
+            $returnType = '\Resources\Model\EdFiPostSecondaryInstitution[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -903,7 +903,7 @@ class PostSecondaryInstitutionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiPostSecondaryInstitution[]',
+                        '\Resources\Model\EdFiPostSecondaryInstitution[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -963,7 +963,7 @@ class PostSecondaryInstitutionsApi
      */
     public function getPostSecondaryInstitutionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiPostSecondaryInstitution[]';
+        $returnType = '\Resources\Model\EdFiPostSecondaryInstitution[]';
         $request = $this->getPostSecondaryInstitutionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $use_snapshot, $contentType);
 
         return $this->client
@@ -1198,9 +1198,9 @@ class PostSecondaryInstitutionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryInstitutionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiPostSecondaryInstitution
+     * @return \Resources\Model\EdFiPostSecondaryInstitution
      */
     public function getPostSecondaryInstitutionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutionsById'][0])
     {
@@ -1218,9 +1218,9 @@ class PostSecondaryInstitutionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryInstitutionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiPostSecondaryInstitution, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiPostSecondaryInstitution, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPostSecondaryInstitutionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutionsById'][0])
     {
@@ -1251,11 +1251,11 @@ class PostSecondaryInstitutionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiPostSecondaryInstitution' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiPostSecondaryInstitution' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiPostSecondaryInstitution' !== 'string') {
+                        if ('\Resources\Model\EdFiPostSecondaryInstitution' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1273,7 +1273,7 @@ class PostSecondaryInstitutionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiPostSecondaryInstitution', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiPostSecondaryInstitution', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1292,7 +1292,7 @@ class PostSecondaryInstitutionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiPostSecondaryInstitution';
+            $returnType = '\Resources\Model\EdFiPostSecondaryInstitution';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1325,7 +1325,7 @@ class PostSecondaryInstitutionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiPostSecondaryInstitution',
+                        '\Resources\Model\EdFiPostSecondaryInstitution',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1373,7 +1373,7 @@ class PostSecondaryInstitutionsApi
      */
     public function getPostSecondaryInstitutionsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutionsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiPostSecondaryInstitution';
+        $returnType = '\Resources\Model\EdFiPostSecondaryInstitution';
         $request = $this->getPostSecondaryInstitutionsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1533,9 +1533,9 @@ class PostSecondaryInstitutionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesPostSecondaryInstitutions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]
      */
     public function keyChangesPostSecondaryInstitutions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesPostSecondaryInstitutions'][0])
     {
@@ -1556,9 +1556,9 @@ class PostSecondaryInstitutionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesPostSecondaryInstitutions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesPostSecondaryInstitutionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesPostSecondaryInstitutions'][0])
     {
@@ -1589,11 +1589,11 @@ class PostSecondaryInstitutionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1611,7 +1611,7 @@ class PostSecondaryInstitutionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1630,7 +1630,7 @@ class PostSecondaryInstitutionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1663,7 +1663,7 @@ class PostSecondaryInstitutionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1717,7 +1717,7 @@ class PostSecondaryInstitutionsApi
      */
     public function keyChangesPostSecondaryInstitutionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesPostSecondaryInstitutions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiPostSecondaryInstitutionKeyChange[]';
         $request = $this->keyChangesPostSecondaryInstitutionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1908,10 +1908,10 @@ class PostSecondaryInstitutionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPostSecondaryInstitution'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1925,10 +1925,10 @@ class PostSecondaryInstitutionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPostSecondaryInstitution'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1973,7 +1973,7 @@ class PostSecondaryInstitutionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPostSecondaryInstitution'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1994,7 +1994,7 @@ class PostSecondaryInstitutionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPostSecondaryInstitution'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2031,7 +2031,7 @@ class PostSecondaryInstitutionsApi
     /**
      * Create request for operation 'postPostSecondaryInstitution'
      *
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPostSecondaryInstitution'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2129,11 +2129,11 @@ class PostSecondaryInstitutionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPostSecondaryInstitution'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2148,11 +2148,11 @@ class PostSecondaryInstitutionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPostSecondaryInstitution'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2198,7 +2198,7 @@ class PostSecondaryInstitutionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPostSecondaryInstitution'] to see the possible values for this operation
      *
@@ -2221,7 +2221,7 @@ class PostSecondaryInstitutionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPostSecondaryInstitution'] to see the possible values for this operation
      *
@@ -2260,7 +2260,7 @@ class PostSecondaryInstitutionsApi
      * Create request for operation 'putPostSecondaryInstitution'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPostSecondaryInstitution $ed_fi_post_secondary_institution The JSON representation of the \&quot;postSecondaryInstitution\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPostSecondaryInstitution'] to see the possible values for this operation
      *

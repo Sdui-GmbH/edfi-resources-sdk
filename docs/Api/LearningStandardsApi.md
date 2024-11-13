@@ -1,4 +1,4 @@
-# OpenAPI\Client\LearningStandardsApi
+# Resources\LearningStandardsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardsApi(
+$apiInstance = new Resources\Api\LearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesLearningStandards()`
 
 ```php
-deletesLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardDelete[]
+deletesLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLearningStandardDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardsApi(
+$apiInstance = new Resources\Api\LearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardDelete[]**](../Model/TrackedChangesEdFiLearningStandardDelete.md)
+[**\Resources\Model\TrackedChangesEdFiLearningStandardDelete[]**](../Model/TrackedChangesEdFiLearningStandardDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getLearningStandards()`
 
 ```php
-getLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot): \OpenAPI\Client\Model\EdFiLearningStandard[]
+getLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot): \Resources\Model\EdFiLearningStandard[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardsApi(
+$apiInstance = new Resources\Api\LearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -221,7 +221,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLearningStandard[]**](../Model/EdFiLearningStandard.md)
+[**\Resources\Model\EdFiLearningStandard[]**](../Model/EdFiLearningStandard.md)
 
 ### Authorization
 
@@ -239,7 +239,7 @@ try {
 ## `getLearningStandardsById()`
 
 ```php
-getLearningStandardsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiLearningStandard
+getLearningStandardsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiLearningStandard
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -254,10 +254,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardsApi(
+$apiInstance = new Resources\Api\LearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -285,7 +285,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLearningStandard**](../Model/EdFiLearningStandard.md)
+[**\Resources\Model\EdFiLearningStandard**](../Model/EdFiLearningStandard.md)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ try {
 ## `keyChangesLearningStandards()`
 
 ```php
-keyChangesLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardKeyChange[]
+keyChangesLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -318,10 +318,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardsApi(
+$apiInstance = new Resources\Api\LearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -355,7 +355,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardKeyChange[]**](../Model/TrackedChangesEdFiLearningStandardKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]**](../Model/TrackedChangesEdFiLearningStandardKeyChange.md)
 
 ### Authorization
 
@@ -388,16 +388,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardsApi(
+$apiInstance = new Resources\Api\LearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_learning_standard = new \OpenAPI\Client\Model\EdFiLearningStandard(); // \OpenAPI\Client\Model\EdFiLearningStandard | The JSON representation of the \"learningStandard\" resource to be created or updated.
+$ed_fi_learning_standard = new \Resources\Model\EdFiLearningStandard(); // \Resources\Model\EdFiLearningStandard | The JSON representation of the \"learningStandard\" resource to be created or updated.
 
 try {
     $apiInstance->postLearningStandard($ed_fi_learning_standard);
@@ -410,7 +410,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_learning_standard** | [**\OpenAPI\Client\Model\EdFiLearningStandard**](../Model/EdFiLearningStandard.md)| The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. | |
+| **ed_fi_learning_standard** | [**\Resources\Model\EdFiLearningStandard**](../Model/EdFiLearningStandard.md)| The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -447,17 +447,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardsApi(
+$apiInstance = new Resources\Api\LearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_learning_standard = new \OpenAPI\Client\Model\EdFiLearningStandard(); // \OpenAPI\Client\Model\EdFiLearningStandard | The JSON representation of the \"learningStandard\" resource to be created or updated.
+$ed_fi_learning_standard = new \Resources\Model\EdFiLearningStandard(); // \Resources\Model\EdFiLearningStandard | The JSON representation of the \"learningStandard\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -472,7 +472,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_learning_standard** | [**\OpenAPI\Client\Model\EdFiLearningStandard**](../Model/EdFiLearningStandard.md)| The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. | |
+| **ed_fi_learning_standard** | [**\Resources\Model\EdFiLearningStandard**](../Model/EdFiLearningStandard.md)| The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

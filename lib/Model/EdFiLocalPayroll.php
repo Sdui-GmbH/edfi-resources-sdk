@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiLocalPayroll Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class EdFiLocalPayroll implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'as_of_date' => '\DateTime',
-        'local_account_reference' => '\OpenAPI\Client\Model\EdFiLocalAccountReference',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
+        'local_account_reference' => '\Resources\Model\EdFiLocalAccountReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
         'amount' => 'float',
         'financial_collection_descriptor' => 'string',
         '_etag' => 'string',
@@ -411,7 +411,7 @@ class EdFiLocalPayroll implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets local_account_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiLocalAccountReference
+     * @return \Resources\Model\EdFiLocalAccountReference
      */
     public function getLocalAccountReference()
     {
@@ -421,7 +421,7 @@ class EdFiLocalPayroll implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets local_account_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiLocalAccountReference $local_account_reference local_account_reference
+     * @param \Resources\Model\EdFiLocalAccountReference $local_account_reference local_account_reference
      *
      * @return self
      */
@@ -438,7 +438,7 @@ class EdFiLocalPayroll implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference
+     * @return \Resources\Model\EdFiStaffReference
      */
     public function getStaffReference()
     {
@@ -448,7 +448,7 @@ class EdFiLocalPayroll implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference $staff_reference staff_reference
      *
      * @return self
      */

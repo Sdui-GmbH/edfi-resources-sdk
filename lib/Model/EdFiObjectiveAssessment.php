@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiObjectiveAssessment Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,17 +59,17 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'id' => 'string',
         'identification_code' => 'string',
-        'assessment_reference' => '\OpenAPI\Client\Model\EdFiAssessmentReference',
-        'parent_objective_assessment_reference' => '\OpenAPI\Client\Model\EdFiObjectiveAssessmentReference',
+        'assessment_reference' => '\Resources\Model\EdFiAssessmentReference',
+        'parent_objective_assessment_reference' => '\Resources\Model\EdFiObjectiveAssessmentReference',
         'academic_subject_descriptor' => 'string',
-        'assessment_items' => '\OpenAPI\Client\Model\EdFiObjectiveAssessmentAssessmentItem[]',
+        'assessment_items' => '\Resources\Model\EdFiObjectiveAssessmentAssessmentItem[]',
         'description' => 'string',
-        'learning_standards' => '\OpenAPI\Client\Model\EdFiObjectiveAssessmentLearningStandard[]',
+        'learning_standards' => '\Resources\Model\EdFiObjectiveAssessmentLearningStandard[]',
         'max_raw_score' => 'float',
         'nomenclature' => 'string',
         'percent_of_assessment' => 'float',
-        'performance_levels' => '\OpenAPI\Client\Model\EdFiObjectiveAssessmentPerformanceLevel[]',
-        'scores' => '\OpenAPI\Client\Model\EdFiObjectiveAssessmentScore[]',
+        'performance_levels' => '\Resources\Model\EdFiObjectiveAssessmentPerformanceLevel[]',
+        'scores' => '\Resources\Model\EdFiObjectiveAssessmentScore[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -485,7 +485,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets assessment_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentReference
+     * @return \Resources\Model\EdFiAssessmentReference
      */
     public function getAssessmentReference()
     {
@@ -495,7 +495,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets assessment_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentReference $assessment_reference assessment_reference
+     * @param \Resources\Model\EdFiAssessmentReference $assessment_reference assessment_reference
      *
      * @return self
      */
@@ -512,7 +512,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets parent_objective_assessment_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiObjectiveAssessmentReference|null
+     * @return \Resources\Model\EdFiObjectiveAssessmentReference|null
      */
     public function getParentObjectiveAssessmentReference()
     {
@@ -522,7 +522,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets parent_objective_assessment_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiObjectiveAssessmentReference|null $parent_objective_assessment_reference parent_objective_assessment_reference
+     * @param \Resources\Model\EdFiObjectiveAssessmentReference|null $parent_objective_assessment_reference parent_objective_assessment_reference
      *
      * @return self
      */
@@ -577,7 +577,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets assessment_items
      *
-     * @return \OpenAPI\Client\Model\EdFiObjectiveAssessmentAssessmentItem[]|null
+     * @return \Resources\Model\EdFiObjectiveAssessmentAssessmentItem[]|null
      */
     public function getAssessmentItems()
     {
@@ -587,7 +587,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets assessment_items
      *
-     * @param \OpenAPI\Client\Model\EdFiObjectiveAssessmentAssessmentItem[]|null $assessment_items An unordered collection of objectiveAssessmentAssessmentItems. References individual test items, if appropriate.
+     * @param \Resources\Model\EdFiObjectiveAssessmentAssessmentItem[]|null $assessment_items An unordered collection of objectiveAssessmentAssessmentItems. References individual test items, if appropriate.
      *
      * @return self
      */
@@ -645,7 +645,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets learning_standards
      *
-     * @return \OpenAPI\Client\Model\EdFiObjectiveAssessmentLearningStandard[]|null
+     * @return \Resources\Model\EdFiObjectiveAssessmentLearningStandard[]|null
      */
     public function getLearningStandards()
     {
@@ -655,7 +655,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets learning_standards
      *
-     * @param \OpenAPI\Client\Model\EdFiObjectiveAssessmentLearningStandard[]|null $learning_standards An unordered collection of objectiveAssessmentLearningStandards. Learning standard tested by this objective assessment.
+     * @param \Resources\Model\EdFiObjectiveAssessmentLearningStandard[]|null $learning_standards An unordered collection of objectiveAssessmentLearningStandards. Learning standard tested by this objective assessment.
      *
      * @return self
      */
@@ -781,7 +781,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets performance_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiObjectiveAssessmentPerformanceLevel[]|null
+     * @return \Resources\Model\EdFiObjectiveAssessmentPerformanceLevel[]|null
      */
     public function getPerformanceLevels()
     {
@@ -791,7 +791,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets performance_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiObjectiveAssessmentPerformanceLevel[]|null $performance_levels An unordered collection of objectiveAssessmentPerformanceLevels. Definition of the performance levels and the associated cut scores. Three styles are supported: 1. Specification of performance level by minimum and maximum score, 2. Specification of performance level by cut score, using only minimum score, 3. Specification of performance level without any mapping to scores
+     * @param \Resources\Model\EdFiObjectiveAssessmentPerformanceLevel[]|null $performance_levels An unordered collection of objectiveAssessmentPerformanceLevels. Definition of the performance levels and the associated cut scores. Three styles are supported: 1. Specification of performance level by minimum and maximum score, 2. Specification of performance level by cut score, using only minimum score, 3. Specification of performance level without any mapping to scores
      *
      * @return self
      */
@@ -808,7 +808,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets scores
      *
-     * @return \OpenAPI\Client\Model\EdFiObjectiveAssessmentScore[]|null
+     * @return \Resources\Model\EdFiObjectiveAssessmentScore[]|null
      */
     public function getScores()
     {
@@ -818,7 +818,7 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets scores
      *
-     * @param \OpenAPI\Client\Model\EdFiObjectiveAssessmentScore[]|null $scores An unordered collection of objectiveAssessmentScores. Definition of the scores to be expected from this objective assessment.
+     * @param \Resources\Model\EdFiObjectiveAssessmentScore[]|null $scores An unordered collection of objectiveAssessmentScores. Definition of the scores to be expected from this objective assessment.
      *
      * @return self
      */

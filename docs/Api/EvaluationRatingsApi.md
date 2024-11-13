@@ -1,4 +1,4 @@
-# OpenAPI\Client\EvaluationRatingsApi
+# Resources\EvaluationRatingsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRatingsApi(
+$apiInstance = new Resources\Api\EvaluationRatingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesEvaluationRatings()`
 
 ```php
-deletesEvaluationRatings($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesTpdmEvaluationRatingDelete[]
+deletesEvaluationRatings($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesTpdmEvaluationRatingDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRatingsApi(
+$apiInstance = new Resources\Api\EvaluationRatingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationRatingDelete[]**](../Model/TrackedChangesTpdmEvaluationRatingDelete.md)
+[**\Resources\Model\TrackedChangesTpdmEvaluationRatingDelete[]**](../Model/TrackedChangesTpdmEvaluationRatingDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getEvaluationRatings()`
 
 ```php
-getEvaluationRatings($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $id, $use_snapshot): \OpenAPI\Client\Model\TpdmEvaluationRating[]
+getEvaluationRatings($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $id, $use_snapshot): \Resources\Model\TpdmEvaluationRating[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRatingsApi(
+$apiInstance = new Resources\Api\EvaluationRatingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -233,7 +233,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TpdmEvaluationRating[]**](../Model/TpdmEvaluationRating.md)
+[**\Resources\Model\TpdmEvaluationRating[]**](../Model/TpdmEvaluationRating.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ try {
 ## `getEvaluationRatingsById()`
 
 ```php
-getEvaluationRatingsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\TpdmEvaluationRating
+getEvaluationRatingsById($id, $if_none_match, $use_snapshot): \Resources\Model\TpdmEvaluationRating
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -266,10 +266,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRatingsApi(
+$apiInstance = new Resources\Api\EvaluationRatingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -297,7 +297,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TpdmEvaluationRating**](../Model/TpdmEvaluationRating.md)
+[**\Resources\Model\TpdmEvaluationRating**](../Model/TpdmEvaluationRating.md)
 
 ### Authorization
 
@@ -315,7 +315,7 @@ try {
 ## `keyChangesEvaluationRatings()`
 
 ```php
-keyChangesEvaluationRatings($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesTpdmEvaluationRatingKeyChange[]
+keyChangesEvaluationRatings($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesTpdmEvaluationRatingKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -330,10 +330,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRatingsApi(
+$apiInstance = new Resources\Api\EvaluationRatingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -367,7 +367,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationRatingKeyChange[]**](../Model/TrackedChangesTpdmEvaluationRatingKeyChange.md)
+[**\Resources\Model\TrackedChangesTpdmEvaluationRatingKeyChange[]**](../Model/TrackedChangesTpdmEvaluationRatingKeyChange.md)
 
 ### Authorization
 
@@ -400,16 +400,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRatingsApi(
+$apiInstance = new Resources\Api\EvaluationRatingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tpdm_evaluation_rating = new \OpenAPI\Client\Model\TpdmEvaluationRating(); // \OpenAPI\Client\Model\TpdmEvaluationRating | The JSON representation of the \"evaluationRating\" resource to be created or updated.
+$tpdm_evaluation_rating = new \Resources\Model\TpdmEvaluationRating(); // \Resources\Model\TpdmEvaluationRating | The JSON representation of the \"evaluationRating\" resource to be created or updated.
 
 try {
     $apiInstance->postEvaluationRating($tpdm_evaluation_rating);
@@ -422,7 +422,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **tpdm_evaluation_rating** | [**\OpenAPI\Client\Model\TpdmEvaluationRating**](../Model/TpdmEvaluationRating.md)| The JSON representation of the \&quot;evaluationRating\&quot; resource to be created or updated. | |
+| **tpdm_evaluation_rating** | [**\Resources\Model\TpdmEvaluationRating**](../Model/TpdmEvaluationRating.md)| The JSON representation of the \&quot;evaluationRating\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -459,17 +459,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EvaluationRatingsApi(
+$apiInstance = new Resources\Api\EvaluationRatingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$tpdm_evaluation_rating = new \OpenAPI\Client\Model\TpdmEvaluationRating(); // \OpenAPI\Client\Model\TpdmEvaluationRating | The JSON representation of the \"evaluationRating\" resource to be created or updated.
+$tpdm_evaluation_rating = new \Resources\Model\TpdmEvaluationRating(); // \Resources\Model\TpdmEvaluationRating | The JSON representation of the \"evaluationRating\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -484,7 +484,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **tpdm_evaluation_rating** | [**\OpenAPI\Client\Model\TpdmEvaluationRating**](../Model/TpdmEvaluationRating.md)| The JSON representation of the \&quot;evaluationRating\&quot; resource to be created or updated. | |
+| **tpdm_evaluation_rating** | [**\Resources\Model\TpdmEvaluationRating**](../Model/TpdmEvaluationRating.md)| The JSON representation of the \&quot;evaluationRating\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

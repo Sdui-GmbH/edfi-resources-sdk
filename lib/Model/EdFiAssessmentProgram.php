@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiAssessmentProgram Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiAssessmentProgram implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'program_reference' => '\OpenAPI\Client\Model\EdFiProgramReference'
+        'program_reference' => '\Resources\Model\EdFiProgramReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiAssessmentProgram implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets program_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramReference
+     * @return \Resources\Model\EdFiProgramReference
      */
     public function getProgramReference()
     {
@@ -305,7 +305,7 @@ class EdFiAssessmentProgram implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets program_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramReference $program_reference program_reference
+     * @param \Resources\Model\EdFiProgramReference $program_reference program_reference
      *
      * @return self
      */

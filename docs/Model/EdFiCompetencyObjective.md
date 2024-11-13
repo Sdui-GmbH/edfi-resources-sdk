@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 **objective** | **string** | The designated title of the competency objective. |
 **objective_grade_level_descriptor** | **string** | The grade level for which the competency objective is targeted. |
-**education_organization_reference** | [**\OpenAPI\Client\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  |
+**education_organization_reference** | [**\Resources\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  |
 **competency_objective_id** | **string** | The Identifier for the competency objective. | [optional]
 **description** | **string** | The description of the student competency objective. | [optional]
 **success_criteria** | **string** | One or more statements that describes the criteria used by teachers and students to check for attainment of a competency objective. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the competency objective. | [optional]

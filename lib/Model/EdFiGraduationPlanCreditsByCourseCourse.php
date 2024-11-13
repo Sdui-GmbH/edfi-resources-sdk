@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiGraduationPlanCreditsByCourseCourse Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiGraduationPlanCreditsByCourseCourse implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'course_reference' => '\OpenAPI\Client\Model\EdFiCourseReference'
+        'course_reference' => '\Resources\Model\EdFiCourseReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiGraduationPlanCreditsByCourseCourse implements ModelInterface, ArrayAc
     /**
      * Gets course_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseReference
+     * @return \Resources\Model\EdFiCourseReference
      */
     public function getCourseReference()
     {
@@ -305,7 +305,7 @@ class EdFiGraduationPlanCreditsByCourseCourse implements ModelInterface, ArrayAc
     /**
      * Sets course_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseReference $course_reference course_reference
+     * @param \Resources\Model\EdFiCourseReference $course_reference course_reference
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentDisciplineIncidentBehaviorAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,10 +59,10 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
     protected static $openAPITypes = [
         'id' => 'string',
         'behavior_descriptor' => 'string',
-        'discipline_incident_reference' => '\OpenAPI\Client\Model\EdFiDisciplineIncidentReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'discipline_incident_reference' => '\Resources\Model\EdFiDisciplineIncidentReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'behavior_detailed_description' => 'string',
-        'discipline_incident_participation_codes' => '\OpenAPI\Client\Model\EdFiStudentDisciplineIncidentBehaviorAssociationDisciplineIncidentParticipationCode[]',
+        'discipline_incident_participation_codes' => '\Resources\Model\EdFiStudentDisciplineIncidentBehaviorAssociationDisciplineIncidentParticipationCode[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -420,7 +420,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
     /**
      * Gets discipline_incident_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiDisciplineIncidentReference
+     * @return \Resources\Model\EdFiDisciplineIncidentReference
      */
     public function getDisciplineIncidentReference()
     {
@@ -430,7 +430,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
     /**
      * Sets discipline_incident_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiDisciplineIncidentReference $discipline_incident_reference discipline_incident_reference
+     * @param \Resources\Model\EdFiDisciplineIncidentReference $discipline_incident_reference discipline_incident_reference
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -457,7 +457,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -515,7 +515,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
     /**
      * Gets discipline_incident_participation_codes
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentDisciplineIncidentBehaviorAssociationDisciplineIncidentParticipationCode[]|null
+     * @return \Resources\Model\EdFiStudentDisciplineIncidentBehaviorAssociationDisciplineIncidentParticipationCode[]|null
      */
     public function getDisciplineIncidentParticipationCodes()
     {
@@ -525,7 +525,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
     /**
      * Sets discipline_incident_participation_codes
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentDisciplineIncidentBehaviorAssociationDisciplineIncidentParticipationCode[]|null $discipline_incident_participation_codes An unordered collection of studentDisciplineIncidentBehaviorAssociationDisciplineIncidentParticipationCodes. The role or type of participation of a student in a discipline incident.
+     * @param \Resources\Model\EdFiStudentDisciplineIncidentBehaviorAssociationDisciplineIncidentParticipationCode[]|null $discipline_incident_participation_codes An unordered collection of studentDisciplineIncidentBehaviorAssociationDisciplineIncidentParticipationCodes. The role or type of participation of a student in a discipline incident.
      *
      * @return self
      */

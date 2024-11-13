@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffEducationOrganizationContactAssociationAddress Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -71,7 +71,7 @@ class EdFiStaffEducationOrganizationContactAssociationAddress implements ModelIn
         'name_of_county' => 'string',
         'postal_code' => 'string',
         'street_number_name' => 'string',
-        'periods' => '\OpenAPI\Client\Model\EdFiStaffEducationOrganizationContactAssociationAddressPeriod[]'
+        'periods' => '\Resources\Model\EdFiStaffEducationOrganizationContactAssociationAddressPeriod[]'
     ];
 
     /**
@@ -1020,7 +1020,7 @@ class EdFiStaffEducationOrganizationContactAssociationAddress implements ModelIn
     /**
      * Gets periods
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffEducationOrganizationContactAssociationAddressPeriod[]|null
+     * @return \Resources\Model\EdFiStaffEducationOrganizationContactAssociationAddressPeriod[]|null
      */
     public function getPeriods()
     {
@@ -1030,7 +1030,7 @@ class EdFiStaffEducationOrganizationContactAssociationAddress implements ModelIn
     /**
      * Sets periods
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffEducationOrganizationContactAssociationAddressPeriod[]|null $periods An unordered collection of staffEducationOrganizationContactAssociationAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address.
+     * @param \Resources\Model\EdFiStaffEducationOrganizationContactAssociationAddressPeriod[]|null $periods An unordered collection of staffEducationOrganizationContactAssociationAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address.
      *
      * @return self
      */

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * AccountabilityRatingsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class AccountabilityRatingsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccountabilityRatingById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class AccountabilityRatingsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAccountabilityRatingById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class AccountabilityRatingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAccountabilityRatings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[]
      */
     public function deletesAccountabilityRatings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
     {
@@ -407,9 +407,9 @@ class AccountabilityRatingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAccountabilityRatings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesAccountabilityRatingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
     {
@@ -440,11 +440,11 @@ class AccountabilityRatingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class AccountabilityRatingsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class AccountabilityRatingsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class AccountabilityRatingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class AccountabilityRatingsApi
      */
     public function deletesAccountabilityRatingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[]';
         $request = $this->deletesAccountabilityRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -775,9 +775,9 @@ class AccountabilityRatingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountabilityRatings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiAccountabilityRating[]
+     * @return \Resources\Model\EdFiAccountabilityRating[]
      */
     public function getAccountabilityRatings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
     {
@@ -806,9 +806,9 @@ class AccountabilityRatingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountabilityRatings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiAccountabilityRating[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiAccountabilityRating[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountabilityRatingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
     {
@@ -839,11 +839,11 @@ class AccountabilityRatingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiAccountabilityRating[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiAccountabilityRating[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiAccountabilityRating[]' !== 'string') {
+                        if ('\Resources\Model\EdFiAccountabilityRating[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -861,7 +861,7 @@ class AccountabilityRatingsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiAccountabilityRating[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiAccountabilityRating[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -880,7 +880,7 @@ class AccountabilityRatingsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiAccountabilityRating[]';
+            $returnType = '\Resources\Model\EdFiAccountabilityRating[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -913,7 +913,7 @@ class AccountabilityRatingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiAccountabilityRating[]',
+                        '\Resources\Model\EdFiAccountabilityRating[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -983,7 +983,7 @@ class AccountabilityRatingsApi
      */
     public function getAccountabilityRatingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiAccountabilityRating[]';
+        $returnType = '\Resources\Model\EdFiAccountabilityRating[]';
         $request = $this->getAccountabilityRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType);
 
         return $this->client
@@ -1279,9 +1279,9 @@ class AccountabilityRatingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountabilityRatingsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiAccountabilityRating
+     * @return \Resources\Model\EdFiAccountabilityRating
      */
     public function getAccountabilityRatingsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatingsById'][0])
     {
@@ -1299,9 +1299,9 @@ class AccountabilityRatingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountabilityRatingsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiAccountabilityRating, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiAccountabilityRating, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountabilityRatingsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatingsById'][0])
     {
@@ -1332,11 +1332,11 @@ class AccountabilityRatingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiAccountabilityRating' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiAccountabilityRating' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiAccountabilityRating' !== 'string') {
+                        if ('\Resources\Model\EdFiAccountabilityRating' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1354,7 +1354,7 @@ class AccountabilityRatingsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiAccountabilityRating', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiAccountabilityRating', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1373,7 +1373,7 @@ class AccountabilityRatingsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiAccountabilityRating';
+            $returnType = '\Resources\Model\EdFiAccountabilityRating';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1406,7 +1406,7 @@ class AccountabilityRatingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiAccountabilityRating',
+                        '\Resources\Model\EdFiAccountabilityRating',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1454,7 +1454,7 @@ class AccountabilityRatingsApi
      */
     public function getAccountabilityRatingsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatingsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiAccountabilityRating';
+        $returnType = '\Resources\Model\EdFiAccountabilityRating';
         $request = $this->getAccountabilityRatingsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1614,9 +1614,9 @@ class AccountabilityRatingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAccountabilityRatings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]
      */
     public function keyChangesAccountabilityRatings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
     {
@@ -1637,9 +1637,9 @@ class AccountabilityRatingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAccountabilityRatings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesAccountabilityRatingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
     {
@@ -1670,11 +1670,11 @@ class AccountabilityRatingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1692,7 +1692,7 @@ class AccountabilityRatingsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1711,7 +1711,7 @@ class AccountabilityRatingsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1744,7 +1744,7 @@ class AccountabilityRatingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1798,7 +1798,7 @@ class AccountabilityRatingsApi
      */
     public function keyChangesAccountabilityRatingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]';
         $request = $this->keyChangesAccountabilityRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1989,10 +1989,10 @@ class AccountabilityRatingsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAccountabilityRating'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2006,10 +2006,10 @@ class AccountabilityRatingsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAccountabilityRating'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2054,7 +2054,7 @@ class AccountabilityRatingsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAccountabilityRating'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2075,7 +2075,7 @@ class AccountabilityRatingsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAccountabilityRating'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2112,7 +2112,7 @@ class AccountabilityRatingsApi
     /**
      * Create request for operation 'postAccountabilityRating'
      *
-     * @param  \OpenAPI\Client\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAccountabilityRating'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2210,11 +2210,11 @@ class AccountabilityRatingsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAccountabilityRating'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2229,11 +2229,11 @@ class AccountabilityRatingsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAccountabilityRating'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2279,7 +2279,7 @@ class AccountabilityRatingsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAccountabilityRating'] to see the possible values for this operation
      *
@@ -2302,7 +2302,7 @@ class AccountabilityRatingsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAccountabilityRating'] to see the possible values for this operation
      *
@@ -2341,7 +2341,7 @@ class AccountabilityRatingsApi
      * Create request for operation 'putAccountabilityRating'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAccountabilityRating $ed_fi_accountability_rating The JSON representation of the \&quot;accountabilityRating\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAccountabilityRating'] to see the possible values for this operation
      *

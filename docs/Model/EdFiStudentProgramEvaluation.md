@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **evaluation_date** | **\DateTime** | The month, day, and year on which the evaluation was conducted. |
-**education_organization_reference** | [**\OpenAPI\Client\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  | [optional]
-**program_evaluation_reference** | [**\OpenAPI\Client\Model\EdFiProgramEvaluationReference**](EdFiProgramEvaluationReference.md) |  |
-**staff_evaluator_staff_reference** | [**\OpenAPI\Client\Model\EdFiStaffReference**](EdFiStaffReference.md) |  | [optional]
-**student_reference** | [**\OpenAPI\Client\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
+**education_organization_reference** | [**\Resources\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  | [optional]
+**program_evaluation_reference** | [**\Resources\Model\EdFiProgramEvaluationReference**](EdFiProgramEvaluationReference.md) |  |
+**staff_evaluator_staff_reference** | [**\Resources\Model\EdFiStaffReference**](EdFiStaffReference.md) |  | [optional]
+**student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
 **evaluation_duration** | **int** | The actual or estimated number of clock minutes during which the evaluation was conducted. | [optional]
-**external_evaluators** | [**\OpenAPI\Client\Model\EdFiStudentProgramEvaluationExternalEvaluator[]**](EdFiStudentProgramEvaluationExternalEvaluator.md) | An unordered collection of studentProgramEvaluationExternalEvaluators. The external person(s) - not staff - that conducted the evaluation. | [optional]
-**student_evaluation_elements** | [**\OpenAPI\Client\Model\EdFiStudentProgramEvaluationStudentEvaluationElement[]**](EdFiStudentProgramEvaluationStudentEvaluationElement.md) | An unordered collection of studentProgramEvaluationStudentEvaluationElements. The student&#39;s rating and/or rating levels earned for a program evaluation element. | [optional]
-**student_evaluation_objectives** | [**\OpenAPI\Client\Model\EdFiStudentProgramEvaluationStudentEvaluationObjective[]**](EdFiStudentProgramEvaluationStudentEvaluationObjective.md) | An unordered collection of studentProgramEvaluationStudentEvaluationObjectives. The student&#39;s rating and/or rating levels earned for a program evaluation objective. | [optional]
+**external_evaluators** | [**\Resources\Model\EdFiStudentProgramEvaluationExternalEvaluator[]**](EdFiStudentProgramEvaluationExternalEvaluator.md) | An unordered collection of studentProgramEvaluationExternalEvaluators. The external person(s) - not staff - that conducted the evaluation. | [optional]
+**student_evaluation_elements** | [**\Resources\Model\EdFiStudentProgramEvaluationStudentEvaluationElement[]**](EdFiStudentProgramEvaluationStudentEvaluationElement.md) | An unordered collection of studentProgramEvaluationStudentEvaluationElements. The student&#39;s rating and/or rating levels earned for a program evaluation element. | [optional]
+**student_evaluation_objectives** | [**\Resources\Model\EdFiStudentProgramEvaluationStudentEvaluationObjective[]**](EdFiStudentProgramEvaluationStudentEvaluationObjective.md) | An unordered collection of studentProgramEvaluationStudentEvaluationObjectives. The student&#39;s rating and/or rating levels earned for a program evaluation objective. | [optional]
 **summary_evaluation_comment** | **string** | Any comments about the summary evaluation to be captured. | [optional]
 **summary_evaluation_numeric_rating** | **float** | The numerical summary rating or score for the evaluation. | [optional]
 **summary_evaluation_rating_level_descriptor** | **string** | The summary rating level achieved based upon the rating or score. | [optional]

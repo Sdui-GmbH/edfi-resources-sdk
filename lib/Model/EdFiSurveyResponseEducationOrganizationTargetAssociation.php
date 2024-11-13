@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSurveyResponseEducationOrganizationTargetAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class EdFiSurveyResponseEducationOrganizationTargetAssociation implements ModelI
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'survey_response_reference' => '\OpenAPI\Client\Model\EdFiSurveyResponseReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'survey_response_reference' => '\Resources\Model\EdFiSurveyResponseReference',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -353,7 +353,7 @@ class EdFiSurveyResponseEducationOrganizationTargetAssociation implements ModelI
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -363,7 +363,7 @@ class EdFiSurveyResponseEducationOrganizationTargetAssociation implements ModelI
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -380,7 +380,7 @@ class EdFiSurveyResponseEducationOrganizationTargetAssociation implements ModelI
     /**
      * Gets survey_response_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveyResponseReference
+     * @return \Resources\Model\EdFiSurveyResponseReference
      */
     public function getSurveyResponseReference()
     {
@@ -390,7 +390,7 @@ class EdFiSurveyResponseEducationOrganizationTargetAssociation implements ModelI
     /**
      * Sets survey_response_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveyResponseReference $survey_response_reference survey_response_reference
+     * @param \Resources\Model\EdFiSurveyResponseReference $survey_response_reference survey_response_reference
      *
      * @return self
      */

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * StudentNeglectedOrDelinquentProgramAssociationsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStudentNeglectedOrDelinquentProgramAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStudentNeglectedOrDelinquentProgramAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]
      */
     public function deletesStudentNeglectedOrDelinquentProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
@@ -407,9 +407,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
@@ -440,11 +440,11 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      */
     public function deletesStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]';
         $request = $this->deletesStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -776,9 +776,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]
+     * @return \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]
      */
     public function getStudentNeglectedOrDelinquentProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
@@ -808,9 +808,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
@@ -841,11 +841,11 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]' !== 'string') {
+                        if ('\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -863,7 +863,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -882,7 +882,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]';
+            $returnType = '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -915,7 +915,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]',
+                        '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -987,7 +987,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      */
     public function getStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]';
+        $returnType = '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]';
         $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot, $contentType);
 
         return $this->client
@@ -1300,9 +1300,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation
+     * @return \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation
      */
     public function getStudentNeglectedOrDelinquentProgramAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsById'][0])
     {
@@ -1320,9 +1320,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentNeglectedOrDelinquentProgramAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsById'][0])
     {
@@ -1353,11 +1353,11 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation' !== 'string') {
+                        if ('\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1375,7 +1375,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1394,7 +1394,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation';
+            $returnType = '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1427,7 +1427,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation',
+                        '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1475,7 +1475,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      */
     public function getStudentNeglectedOrDelinquentProgramAssociationsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation';
+        $returnType = '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation';
         $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1635,9 +1635,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]
      */
     public function keyChangesStudentNeglectedOrDelinquentProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
@@ -1658,9 +1658,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
@@ -1691,11 +1691,11 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1713,7 +1713,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1732,7 +1732,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1765,7 +1765,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1819,7 +1819,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      */
     public function keyChangesStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]';
         $request = $this->keyChangesStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2010,10 +2010,10 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentNeglectedOrDelinquentProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2027,10 +2027,10 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentNeglectedOrDelinquentProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2075,7 +2075,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentNeglectedOrDelinquentProgramAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2096,7 +2096,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentNeglectedOrDelinquentProgramAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2133,7 +2133,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
     /**
      * Create request for operation 'postStudentNeglectedOrDelinquentProgramAssociation'
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentNeglectedOrDelinquentProgramAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2231,11 +2231,11 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentNeglectedOrDelinquentProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2250,11 +2250,11 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentNeglectedOrDelinquentProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2300,7 +2300,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentNeglectedOrDelinquentProgramAssociation'] to see the possible values for this operation
      *
@@ -2323,7 +2323,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentNeglectedOrDelinquentProgramAssociation'] to see the possible values for this operation
      *
@@ -2362,7 +2362,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * Create request for operation 'putStudentNeglectedOrDelinquentProgramAssociation'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation $ed_fi_student_neglected_or_delinquent_program_association The JSON representation of the \&quot;studentNeglectedOrDelinquentProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentNeglectedOrDelinquentProgramAssociation'] to see the possible values for this operation
      *

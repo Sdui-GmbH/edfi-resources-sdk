@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * FunctionDimensionsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class FunctionDimensionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFunctionDimensionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class FunctionDimensionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFunctionDimensionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class FunctionDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesFunctionDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiFunctionDimensionDelete[]
      */
     public function deletesFunctionDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFunctionDimensions'][0])
     {
@@ -407,9 +407,9 @@ class FunctionDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesFunctionDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiFunctionDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesFunctionDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFunctionDimensions'][0])
     {
@@ -440,11 +440,11 @@ class FunctionDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiFunctionDimensionDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiFunctionDimensionDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class FunctionDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiFunctionDimensionDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class FunctionDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiFunctionDimensionDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class FunctionDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiFunctionDimensionDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class FunctionDimensionsApi
      */
     public function deletesFunctionDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFunctionDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiFunctionDimensionDelete[]';
         $request = $this->deletesFunctionDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -771,9 +771,9 @@ class FunctionDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFunctionDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiFunctionDimension[]
+     * @return \Resources\Model\EdFiFunctionDimension[]
      */
     public function getFunctionDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $code = null, $fiscal_year = null, $code_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getFunctionDimensions'][0])
     {
@@ -798,9 +798,9 @@ class FunctionDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFunctionDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiFunctionDimension[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiFunctionDimension[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getFunctionDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $code = null, $fiscal_year = null, $code_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getFunctionDimensions'][0])
     {
@@ -831,11 +831,11 @@ class FunctionDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiFunctionDimension[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiFunctionDimension[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiFunctionDimension[]' !== 'string') {
+                        if ('\Resources\Model\EdFiFunctionDimension[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -853,7 +853,7 @@ class FunctionDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiFunctionDimension[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiFunctionDimension[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -872,7 +872,7 @@ class FunctionDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiFunctionDimension[]';
+            $returnType = '\Resources\Model\EdFiFunctionDimension[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -905,7 +905,7 @@ class FunctionDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiFunctionDimension[]',
+                        '\Resources\Model\EdFiFunctionDimension[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -967,7 +967,7 @@ class FunctionDimensionsApi
      */
     public function getFunctionDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $code = null, $fiscal_year = null, $code_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getFunctionDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiFunctionDimension[]';
+        $returnType = '\Resources\Model\EdFiFunctionDimension[]';
         $request = $this->getFunctionDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $code, $fiscal_year, $code_name, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1213,9 +1213,9 @@ class FunctionDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFunctionDimensionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiFunctionDimension
+     * @return \Resources\Model\EdFiFunctionDimension
      */
     public function getFunctionDimensionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getFunctionDimensionsById'][0])
     {
@@ -1233,9 +1233,9 @@ class FunctionDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFunctionDimensionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiFunctionDimension, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiFunctionDimension, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFunctionDimensionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getFunctionDimensionsById'][0])
     {
@@ -1266,11 +1266,11 @@ class FunctionDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiFunctionDimension' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiFunctionDimension' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiFunctionDimension' !== 'string') {
+                        if ('\Resources\Model\EdFiFunctionDimension' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1288,7 +1288,7 @@ class FunctionDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiFunctionDimension', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiFunctionDimension', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1307,7 +1307,7 @@ class FunctionDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiFunctionDimension';
+            $returnType = '\Resources\Model\EdFiFunctionDimension';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1340,7 +1340,7 @@ class FunctionDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiFunctionDimension',
+                        '\Resources\Model\EdFiFunctionDimension',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1388,7 +1388,7 @@ class FunctionDimensionsApi
      */
     public function getFunctionDimensionsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getFunctionDimensionsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiFunctionDimension';
+        $returnType = '\Resources\Model\EdFiFunctionDimension';
         $request = $this->getFunctionDimensionsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1548,9 +1548,9 @@ class FunctionDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesFunctionDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]
      */
     public function keyChangesFunctionDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFunctionDimensions'][0])
     {
@@ -1571,9 +1571,9 @@ class FunctionDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesFunctionDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiFunctionDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesFunctionDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFunctionDimensions'][0])
     {
@@ -1604,11 +1604,11 @@ class FunctionDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1626,7 +1626,7 @@ class FunctionDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1645,7 +1645,7 @@ class FunctionDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1678,7 +1678,7 @@ class FunctionDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1732,7 +1732,7 @@ class FunctionDimensionsApi
      */
     public function keyChangesFunctionDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFunctionDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiFunctionDimensionKeyChange[]';
         $request = $this->keyChangesFunctionDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1923,10 +1923,10 @@ class FunctionDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFunctionDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1940,10 +1940,10 @@ class FunctionDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFunctionDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1988,7 +1988,7 @@ class FunctionDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFunctionDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2009,7 +2009,7 @@ class FunctionDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFunctionDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2046,7 +2046,7 @@ class FunctionDimensionsApi
     /**
      * Create request for operation 'postFunctionDimension'
      *
-     * @param  \OpenAPI\Client\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFunctionDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2144,11 +2144,11 @@ class FunctionDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putFunctionDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2163,11 +2163,11 @@ class FunctionDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putFunctionDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2213,7 +2213,7 @@ class FunctionDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putFunctionDimension'] to see the possible values for this operation
      *
@@ -2236,7 +2236,7 @@ class FunctionDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putFunctionDimension'] to see the possible values for this operation
      *
@@ -2275,7 +2275,7 @@ class FunctionDimensionsApi
      * Create request for operation 'putFunctionDimension'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiFunctionDimension $ed_fi_function_dimension The JSON representation of the \&quot;functionDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putFunctionDimension'] to see the possible values for this operation
      *

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmSurveySectionResponsePersonTargetAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class TpdmSurveySectionResponsePersonTargetAssociation implements ModelInterface
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'person_reference' => '\OpenAPI\Client\Model\EdFiPersonReference',
-        'survey_section_response_reference' => '\OpenAPI\Client\Model\EdFiSurveySectionResponseReference',
+        'person_reference' => '\Resources\Model\EdFiPersonReference',
+        'survey_section_response_reference' => '\Resources\Model\EdFiSurveySectionResponseReference',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -353,7 +353,7 @@ class TpdmSurveySectionResponsePersonTargetAssociation implements ModelInterface
     /**
      * Gets person_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiPersonReference
+     * @return \Resources\Model\EdFiPersonReference
      */
     public function getPersonReference()
     {
@@ -363,7 +363,7 @@ class TpdmSurveySectionResponsePersonTargetAssociation implements ModelInterface
     /**
      * Sets person_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiPersonReference $person_reference person_reference
+     * @param \Resources\Model\EdFiPersonReference $person_reference person_reference
      *
      * @return self
      */
@@ -380,7 +380,7 @@ class TpdmSurveySectionResponsePersonTargetAssociation implements ModelInterface
     /**
      * Gets survey_section_response_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveySectionResponseReference
+     * @return \Resources\Model\EdFiSurveySectionResponseReference
      */
     public function getSurveySectionResponseReference()
     {
@@ -390,7 +390,7 @@ class TpdmSurveySectionResponsePersonTargetAssociation implements ModelInterface
     /**
      * Sets survey_section_response_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveySectionResponseReference $survey_section_response_reference survey_section_response_reference
+     * @param \Resources\Model\EdFiSurveySectionResponseReference $survey_section_response_reference survey_section_response_reference
      *
      * @return self
      */

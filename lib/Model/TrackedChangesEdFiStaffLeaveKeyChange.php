@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiStaffLeaveKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiStaffLeaveKeyChange implements ModelInterface, ArrayAcce
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiStaffLeaveKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiStaffLeaveKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiStaffLeaveKeyChange implements ModelInterface, ArrayAcce
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStaffLeaveKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiStaffLeaveKeyChange implements ModelInterface, ArrayAcce
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiStaffLeaveKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiStaffLeaveKeyChange implements ModelInterface, ArrayAcce
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStaffLeaveKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiStaffLeaveKeyChange implements ModelInterface, ArrayAcce
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiStaffLeaveKey|null $new_key_values new_key_values
      *
      * @return self
      */

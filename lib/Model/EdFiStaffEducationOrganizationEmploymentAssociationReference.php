@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffEducationOrganizationEmploymentAssociationReference Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class EdFiStaffEducationOrganizationEmploymentAssociationReference implements Mo
         'employment_status_descriptor' => 'string',
         'hire_date' => '\DateTime',
         'staff_unique_id' => 'string',
-        'link' => '\OpenAPI\Client\Model\Link'
+        'link' => '\Resources\Model\Link'
     ];
 
     /**
@@ -463,7 +463,7 @@ class EdFiStaffEducationOrganizationEmploymentAssociationReference implements Mo
     /**
      * Gets link
      *
-     * @return \OpenAPI\Client\Model\Link|null
+     * @return \Resources\Model\Link|null
      */
     public function getLink()
     {
@@ -473,7 +473,7 @@ class EdFiStaffEducationOrganizationEmploymentAssociationReference implements Mo
     /**
      * Sets link
      *
-     * @param \OpenAPI\Client\Model\Link|null $link link
+     * @param \Resources\Model\Link|null $link link
      *
      * @return self
      */

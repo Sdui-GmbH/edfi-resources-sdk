@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * StaffAbsenceEventsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class StaffAbsenceEventsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStaffAbsenceEventById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class StaffAbsenceEventsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStaffAbsenceEventById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class StaffAbsenceEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffAbsenceEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]
      */
     public function deletesStaffAbsenceEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffAbsenceEvents'][0])
     {
@@ -407,9 +407,9 @@ class StaffAbsenceEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffAbsenceEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStaffAbsenceEventDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesStaffAbsenceEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffAbsenceEvents'][0])
     {
@@ -440,11 +440,11 @@ class StaffAbsenceEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class StaffAbsenceEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class StaffAbsenceEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class StaffAbsenceEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class StaffAbsenceEventsApi
      */
     public function deletesStaffAbsenceEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffAbsenceEvents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStaffAbsenceEventDelete[]';
         $request = $this->deletesStaffAbsenceEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -773,9 +773,9 @@ class StaffAbsenceEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffAbsenceEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStaffAbsenceEvent[]
+     * @return \Resources\Model\EdFiStaffAbsenceEvent[]
      */
     public function getStaffAbsenceEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $absence_event_category_descriptor = null, $event_date = null, $staff_unique_id = null, $absence_event_reason = null, $hours_absent = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffAbsenceEvents'][0])
     {
@@ -802,9 +802,9 @@ class StaffAbsenceEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffAbsenceEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStaffAbsenceEvent[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStaffAbsenceEvent[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStaffAbsenceEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $absence_event_category_descriptor = null, $event_date = null, $staff_unique_id = null, $absence_event_reason = null, $hours_absent = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffAbsenceEvents'][0])
     {
@@ -835,11 +835,11 @@ class StaffAbsenceEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStaffAbsenceEvent[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStaffAbsenceEvent[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStaffAbsenceEvent[]' !== 'string') {
+                        if ('\Resources\Model\EdFiStaffAbsenceEvent[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -857,7 +857,7 @@ class StaffAbsenceEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStaffAbsenceEvent[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStaffAbsenceEvent[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -876,7 +876,7 @@ class StaffAbsenceEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStaffAbsenceEvent[]';
+            $returnType = '\Resources\Model\EdFiStaffAbsenceEvent[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -909,7 +909,7 @@ class StaffAbsenceEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStaffAbsenceEvent[]',
+                        '\Resources\Model\EdFiStaffAbsenceEvent[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -975,7 +975,7 @@ class StaffAbsenceEventsApi
      */
     public function getStaffAbsenceEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $absence_event_category_descriptor = null, $event_date = null, $staff_unique_id = null, $absence_event_reason = null, $hours_absent = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffAbsenceEvents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStaffAbsenceEvent[]';
+        $returnType = '\Resources\Model\EdFiStaffAbsenceEvent[]';
         $request = $this->getStaffAbsenceEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $absence_event_category_descriptor, $event_date, $staff_unique_id, $absence_event_reason, $hours_absent, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1246,9 +1246,9 @@ class StaffAbsenceEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffAbsenceEventsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStaffAbsenceEvent
+     * @return \Resources\Model\EdFiStaffAbsenceEvent
      */
     public function getStaffAbsenceEventsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffAbsenceEventsById'][0])
     {
@@ -1266,9 +1266,9 @@ class StaffAbsenceEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffAbsenceEventsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStaffAbsenceEvent, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStaffAbsenceEvent, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStaffAbsenceEventsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffAbsenceEventsById'][0])
     {
@@ -1299,11 +1299,11 @@ class StaffAbsenceEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStaffAbsenceEvent' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStaffAbsenceEvent' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStaffAbsenceEvent' !== 'string') {
+                        if ('\Resources\Model\EdFiStaffAbsenceEvent' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1321,7 +1321,7 @@ class StaffAbsenceEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStaffAbsenceEvent', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStaffAbsenceEvent', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1340,7 +1340,7 @@ class StaffAbsenceEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStaffAbsenceEvent';
+            $returnType = '\Resources\Model\EdFiStaffAbsenceEvent';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1373,7 +1373,7 @@ class StaffAbsenceEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStaffAbsenceEvent',
+                        '\Resources\Model\EdFiStaffAbsenceEvent',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1421,7 +1421,7 @@ class StaffAbsenceEventsApi
      */
     public function getStaffAbsenceEventsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffAbsenceEventsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStaffAbsenceEvent';
+        $returnType = '\Resources\Model\EdFiStaffAbsenceEvent';
         $request = $this->getStaffAbsenceEventsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1581,9 +1581,9 @@ class StaffAbsenceEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffAbsenceEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]
      */
     public function keyChangesStaffAbsenceEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffAbsenceEvents'][0])
     {
@@ -1604,9 +1604,9 @@ class StaffAbsenceEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffAbsenceEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesStaffAbsenceEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffAbsenceEvents'][0])
     {
@@ -1637,11 +1637,11 @@ class StaffAbsenceEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1659,7 +1659,7 @@ class StaffAbsenceEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1678,7 +1678,7 @@ class StaffAbsenceEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1711,7 +1711,7 @@ class StaffAbsenceEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1765,7 +1765,7 @@ class StaffAbsenceEventsApi
      */
     public function keyChangesStaffAbsenceEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffAbsenceEvents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStaffAbsenceEventKeyChange[]';
         $request = $this->keyChangesStaffAbsenceEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1956,10 +1956,10 @@ class StaffAbsenceEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffAbsenceEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1973,10 +1973,10 @@ class StaffAbsenceEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffAbsenceEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2021,7 +2021,7 @@ class StaffAbsenceEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffAbsenceEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2042,7 +2042,7 @@ class StaffAbsenceEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffAbsenceEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2079,7 +2079,7 @@ class StaffAbsenceEventsApi
     /**
      * Create request for operation 'postStaffAbsenceEvent'
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffAbsenceEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2177,11 +2177,11 @@ class StaffAbsenceEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffAbsenceEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2196,11 +2196,11 @@ class StaffAbsenceEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffAbsenceEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2246,7 +2246,7 @@ class StaffAbsenceEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffAbsenceEvent'] to see the possible values for this operation
      *
@@ -2269,7 +2269,7 @@ class StaffAbsenceEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffAbsenceEvent'] to see the possible values for this operation
      *
@@ -2308,7 +2308,7 @@ class StaffAbsenceEventsApi
      * Create request for operation 'putStaffAbsenceEvent'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffAbsenceEvent $ed_fi_staff_absence_event The JSON representation of the \&quot;staffAbsenceEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffAbsenceEvent'] to see the possible values for this operation
      *

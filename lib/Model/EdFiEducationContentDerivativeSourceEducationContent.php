@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiEducationContentDerivativeSourceEducationContent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiEducationContentDerivativeSourceEducationContent implements ModelInter
       * @var string[]
       */
     protected static $openAPITypes = [
-        'derivative_source_education_content_reference' => '\OpenAPI\Client\Model\EdFiEducationContentReference'
+        'derivative_source_education_content_reference' => '\Resources\Model\EdFiEducationContentReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiEducationContentDerivativeSourceEducationContent implements ModelInter
     /**
      * Gets derivative_source_education_content_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationContentReference
+     * @return \Resources\Model\EdFiEducationContentReference
      */
     public function getDerivativeSourceEducationContentReference()
     {
@@ -305,7 +305,7 @@ class EdFiEducationContentDerivativeSourceEducationContent implements ModelInter
     /**
      * Sets derivative_source_education_content_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationContentReference $derivative_source_education_content_reference derivative_source_education_content_reference
+     * @param \Resources\Model\EdFiEducationContentReference $derivative_source_education_content_reference derivative_source_education_content_reference
      *
      * @return self
      */

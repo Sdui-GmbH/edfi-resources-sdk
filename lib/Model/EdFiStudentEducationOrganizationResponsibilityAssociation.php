@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentEducationOrganizationResponsibilityAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,8 +60,8 @@ class EdFiStudentEducationOrganizationResponsibilityAssociation implements Model
         'id' => 'string',
         'begin_date' => '\DateTime',
         'responsibility_descriptor' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'end_date' => '\DateTime',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -442,7 +442,7 @@ class EdFiStudentEducationOrganizationResponsibilityAssociation implements Model
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -452,7 +452,7 @@ class EdFiStudentEducationOrganizationResponsibilityAssociation implements Model
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -469,7 +469,7 @@ class EdFiStudentEducationOrganizationResponsibilityAssociation implements Model
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -479,7 +479,7 @@ class EdFiStudentEducationOrganizationResponsibilityAssociation implements Model
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */

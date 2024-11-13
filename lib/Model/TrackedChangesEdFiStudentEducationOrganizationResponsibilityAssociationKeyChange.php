@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey|null $new_key_values new_key_values
      *
      * @return self
      */

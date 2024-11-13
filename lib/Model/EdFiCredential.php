@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiCredential Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,20 +60,20 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'credential_identifier' => 'string',
         'state_of_issue_state_abbreviation_descriptor' => 'string',
-        'academic_subjects' => '\OpenAPI\Client\Model\EdFiCredentialAcademicSubject[]',
+        'academic_subjects' => '\Resources\Model\EdFiCredentialAcademicSubject[]',
         'credential_field_descriptor' => 'string',
         'credential_type_descriptor' => 'string',
         'effective_date' => '\DateTime',
-        'endorsements' => '\OpenAPI\Client\Model\EdFiCredentialEndorsement[]',
+        'endorsements' => '\Resources\Model\EdFiCredentialEndorsement[]',
         'expiration_date' => '\DateTime',
-        'grade_levels' => '\OpenAPI\Client\Model\EdFiCredentialGradeLevel[]',
+        'grade_levels' => '\Resources\Model\EdFiCredentialGradeLevel[]',
         'issuance_date' => '\DateTime',
         'namespace' => 'string',
         'teaching_credential_basis_descriptor' => 'string',
         'teaching_credential_descriptor' => 'string',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime',
-        '_ext' => '\OpenAPI\Client\Model\CredentialExtensions'
+        '_ext' => '\Resources\Model\CredentialExtensions'
     ];
 
     /**
@@ -547,7 +547,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets academic_subjects
      *
-     * @return \OpenAPI\Client\Model\EdFiCredentialAcademicSubject[]|null
+     * @return \Resources\Model\EdFiCredentialAcademicSubject[]|null
      */
     public function getAcademicSubjects()
     {
@@ -557,7 +557,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets academic_subjects
      *
-     * @param \OpenAPI\Client\Model\EdFiCredentialAcademicSubject[]|null $academic_subjects An unordered collection of credentialAcademicSubjects. The academic subjects to which the credential pertains.
+     * @param \Resources\Model\EdFiCredentialAcademicSubject[]|null $academic_subjects An unordered collection of credentialAcademicSubjects. The academic subjects to which the credential pertains.
      *
      * @return self
      */
@@ -677,7 +677,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets endorsements
      *
-     * @return \OpenAPI\Client\Model\EdFiCredentialEndorsement[]|null
+     * @return \Resources\Model\EdFiCredentialEndorsement[]|null
      */
     public function getEndorsements()
     {
@@ -687,7 +687,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets endorsements
      *
-     * @param \OpenAPI\Client\Model\EdFiCredentialEndorsement[]|null $endorsements An unordered collection of credentialEndorsements. Endorsements are attachments to teaching certificates and indicate areas of specialization.
+     * @param \Resources\Model\EdFiCredentialEndorsement[]|null $endorsements An unordered collection of credentialEndorsements. Endorsements are attachments to teaching certificates and indicate areas of specialization.
      *
      * @return self
      */
@@ -738,7 +738,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiCredentialGradeLevel[]|null
+     * @return \Resources\Model\EdFiCredentialGradeLevel[]|null
      */
     public function getGradeLevels()
     {
@@ -748,7 +748,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiCredentialGradeLevel[]|null $grade_levels An unordered collection of credentialGradeLevels. The grade level(s) certified for teaching.
+     * @param \Resources\Model\EdFiCredentialGradeLevel[]|null $grade_levels An unordered collection of credentialGradeLevels. The grade level(s) certified for teaching.
      *
      * @return self
      */
@@ -956,7 +956,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets _ext
      *
-     * @return \OpenAPI\Client\Model\CredentialExtensions|null
+     * @return \Resources\Model\CredentialExtensions|null
      */
     public function getExt()
     {
@@ -966,7 +966,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets _ext
      *
-     * @param \OpenAPI\Client\Model\CredentialExtensions|null $_ext _ext
+     * @param \Resources\Model\CredentialExtensions|null $_ext _ext
      *
      * @return self
      */

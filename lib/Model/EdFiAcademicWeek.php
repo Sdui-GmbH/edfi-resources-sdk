@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiAcademicWeek Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class EdFiAcademicWeek implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'week_identifier' => 'string',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
         'begin_date' => '\DateTime',
         'end_date' => '\DateTime',
         'total_instructional_days' => 'int',
@@ -429,7 +429,7 @@ class EdFiAcademicWeek implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -439,7 +439,7 @@ class EdFiAcademicWeek implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */

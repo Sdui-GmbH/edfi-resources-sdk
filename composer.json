@@ -31,14 +31,14 @@
   },
   "autoload": {
     "psr-4": {
-      "OpenAPI\\Client\\": "lib/"
+      "Resources\\": "lib/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "OpenAPI\\Client\\Test\\": "test/"
+      "Resources\\Test\\": "test/"
     }
   },
   "name": "edfi/resources",
-  "version": "v7.1"
+  "version": "v2.0"
 }

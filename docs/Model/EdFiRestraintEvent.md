@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **restraint_event_identifier** | **string** | A unique number or alphanumeric code assigned to a restraint event by a school, school system, state, or other agency or entity. |
-**school_reference** | [**\OpenAPI\Client\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
-**student_reference** | [**\OpenAPI\Client\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
+**school_reference** | [**\Resources\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
+**student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
 **educational_environment_descriptor** | **string** | The setting where the RestraintEvent was exercised. | [optional]
 **event_date** | **\DateTime** | Month, day, and year of the restraint event. |
-**programs** | [**\OpenAPI\Client\Model\EdFiRestraintEventProgram[]**](EdFiRestraintEventProgram.md) | An unordered collection of restraintEventPrograms. The special education program associated with the restraint event. | [optional]
-**reasons** | [**\OpenAPI\Client\Model\EdFiRestraintEventReason[]**](EdFiRestraintEventReason.md) | An unordered collection of restraintEventReasons. A categorization of the circumstances or reason for the RestraintEvent. | [optional]
+**programs** | [**\Resources\Model\EdFiRestraintEventProgram[]**](EdFiRestraintEventProgram.md) | An unordered collection of restraintEventPrograms. The special education program associated with the restraint event. | [optional]
+**reasons** | [**\Resources\Model\EdFiRestraintEventReason[]**](EdFiRestraintEventReason.md) | An unordered collection of restraintEventReasons. A categorization of the circumstances or reason for the RestraintEvent. | [optional]
 **_etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional]
 **_last_modified_date** | **\DateTime** | The date and time the resource was last modified. | [optional]
 

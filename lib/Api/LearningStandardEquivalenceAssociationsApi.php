@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * LearningStandardEquivalenceAssociationsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class LearningStandardEquivalenceAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLearningStandardEquivalenceAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class LearningStandardEquivalenceAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLearningStandardEquivalenceAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class LearningStandardEquivalenceAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLearningStandardEquivalenceAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]
      */
     public function deletesLearningStandardEquivalenceAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandardEquivalenceAssociations'][0])
     {
@@ -407,9 +407,9 @@ class LearningStandardEquivalenceAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLearningStandardEquivalenceAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesLearningStandardEquivalenceAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandardEquivalenceAssociations'][0])
     {
@@ -440,11 +440,11 @@ class LearningStandardEquivalenceAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class LearningStandardEquivalenceAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class LearningStandardEquivalenceAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class LearningStandardEquivalenceAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class LearningStandardEquivalenceAssociationsApi
      */
     public function deletesLearningStandardEquivalenceAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandardEquivalenceAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]';
         $request = $this->deletesLearningStandardEquivalenceAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class LearningStandardEquivalenceAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardEquivalenceAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation[]
+     * @return \Resources\Model\EdFiLearningStandardEquivalenceAssociation[]
      */
     public function getLearningStandardEquivalenceAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $namespace = null, $source_learning_standard_id = null, $target_learning_standard_id = null, $learning_standard_equivalence_strength_descriptor = null, $effective_date = null, $id = null, $learning_standard_equivalence_strength_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardEquivalenceAssociations'][0])
     {
@@ -804,9 +804,9 @@ class LearningStandardEquivalenceAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardEquivalenceAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLearningStandardEquivalenceAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLearningStandardEquivalenceAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $namespace = null, $source_learning_standard_id = null, $target_learning_standard_id = null, $learning_standard_equivalence_strength_descriptor = null, $effective_date = null, $id = null, $learning_standard_equivalence_strength_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardEquivalenceAssociations'][0])
     {
@@ -837,11 +837,11 @@ class LearningStandardEquivalenceAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLearningStandardEquivalenceAssociation[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation[]' !== 'string') {
+                        if ('\Resources\Model\EdFiLearningStandardEquivalenceAssociation[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class LearningStandardEquivalenceAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLearningStandardEquivalenceAssociation[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class LearningStandardEquivalenceAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation[]';
+            $returnType = '\Resources\Model\EdFiLearningStandardEquivalenceAssociation[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class LearningStandardEquivalenceAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation[]',
+                        '\Resources\Model\EdFiLearningStandardEquivalenceAssociation[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class LearningStandardEquivalenceAssociationsApi
      */
     public function getLearningStandardEquivalenceAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $namespace = null, $source_learning_standard_id = null, $target_learning_standard_id = null, $learning_standard_equivalence_strength_descriptor = null, $effective_date = null, $id = null, $learning_standard_equivalence_strength_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardEquivalenceAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation[]';
+        $returnType = '\Resources\Model\EdFiLearningStandardEquivalenceAssociation[]';
         $request = $this->getLearningStandardEquivalenceAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $namespace, $source_learning_standard_id, $target_learning_standard_id, $learning_standard_equivalence_strength_descriptor, $effective_date, $id, $learning_standard_equivalence_strength_description, $use_snapshot, $contentType);
 
         return $this->client
@@ -1267,9 +1267,9 @@ class LearningStandardEquivalenceAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardEquivalenceAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation
+     * @return \Resources\Model\EdFiLearningStandardEquivalenceAssociation
      */
     public function getLearningStandardEquivalenceAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardEquivalenceAssociationsById'][0])
     {
@@ -1287,9 +1287,9 @@ class LearningStandardEquivalenceAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardEquivalenceAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLearningStandardEquivalenceAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLearningStandardEquivalenceAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardEquivalenceAssociationsById'][0])
     {
@@ -1320,11 +1320,11 @@ class LearningStandardEquivalenceAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLearningStandardEquivalenceAssociation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation' !== 'string') {
+                        if ('\Resources\Model\EdFiLearningStandardEquivalenceAssociation' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1342,7 +1342,7 @@ class LearningStandardEquivalenceAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLearningStandardEquivalenceAssociation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1361,7 +1361,7 @@ class LearningStandardEquivalenceAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation';
+            $returnType = '\Resources\Model\EdFiLearningStandardEquivalenceAssociation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1394,7 +1394,7 @@ class LearningStandardEquivalenceAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation',
+                        '\Resources\Model\EdFiLearningStandardEquivalenceAssociation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1442,7 +1442,7 @@ class LearningStandardEquivalenceAssociationsApi
      */
     public function getLearningStandardEquivalenceAssociationsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardEquivalenceAssociationsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation';
+        $returnType = '\Resources\Model\EdFiLearningStandardEquivalenceAssociation';
         $request = $this->getLearningStandardEquivalenceAssociationsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1602,9 +1602,9 @@ class LearningStandardEquivalenceAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLearningStandardEquivalenceAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]
      */
     public function keyChangesLearningStandardEquivalenceAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandardEquivalenceAssociations'][0])
     {
@@ -1625,9 +1625,9 @@ class LearningStandardEquivalenceAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLearningStandardEquivalenceAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesLearningStandardEquivalenceAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandardEquivalenceAssociations'][0])
     {
@@ -1658,11 +1658,11 @@ class LearningStandardEquivalenceAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1680,7 +1680,7 @@ class LearningStandardEquivalenceAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1699,7 +1699,7 @@ class LearningStandardEquivalenceAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1732,7 +1732,7 @@ class LearningStandardEquivalenceAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1786,7 +1786,7 @@ class LearningStandardEquivalenceAssociationsApi
      */
     public function keyChangesLearningStandardEquivalenceAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandardEquivalenceAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]';
         $request = $this->keyChangesLearningStandardEquivalenceAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1977,10 +1977,10 @@ class LearningStandardEquivalenceAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLearningStandardEquivalenceAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1994,10 +1994,10 @@ class LearningStandardEquivalenceAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLearningStandardEquivalenceAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2042,7 +2042,7 @@ class LearningStandardEquivalenceAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLearningStandardEquivalenceAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2063,7 +2063,7 @@ class LearningStandardEquivalenceAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLearningStandardEquivalenceAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2100,7 +2100,7 @@ class LearningStandardEquivalenceAssociationsApi
     /**
      * Create request for operation 'postLearningStandardEquivalenceAssociation'
      *
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLearningStandardEquivalenceAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2198,11 +2198,11 @@ class LearningStandardEquivalenceAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLearningStandardEquivalenceAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2217,11 +2217,11 @@ class LearningStandardEquivalenceAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLearningStandardEquivalenceAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2267,7 +2267,7 @@ class LearningStandardEquivalenceAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLearningStandardEquivalenceAssociation'] to see the possible values for this operation
      *
@@ -2290,7 +2290,7 @@ class LearningStandardEquivalenceAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLearningStandardEquivalenceAssociation'] to see the possible values for this operation
      *
@@ -2329,7 +2329,7 @@ class LearningStandardEquivalenceAssociationsApi
      * Create request for operation 'putLearningStandardEquivalenceAssociation'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandardEquivalenceAssociation $ed_fi_learning_standard_equivalence_association The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLearningStandardEquivalenceAssociation'] to see the possible values for this operation
      *

@@ -1,4 +1,4 @@
-# OpenAPI\Client\StateEducationAgenciesApi
+# Resources\StateEducationAgenciesApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StateEducationAgenciesApi(
+$apiInstance = new Resources\Api\StateEducationAgenciesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesStateEducationAgencies()`
 
 ```php
-deletesStateEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStateEducationAgencyDelete[]
+deletesStateEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStateEducationAgencyDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StateEducationAgenciesApi(
+$apiInstance = new Resources\Api\StateEducationAgenciesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStateEducationAgencyDelete[]**](../Model/TrackedChangesEdFiStateEducationAgencyDelete.md)
+[**\Resources\Model\TrackedChangesEdFiStateEducationAgencyDelete[]**](../Model/TrackedChangesEdFiStateEducationAgencyDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getStateEducationAgencies()`
 
 ```php
-getStateEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $use_snapshot): \OpenAPI\Client\Model\EdFiStateEducationAgency[]
+getStateEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $use_snapshot): \Resources\Model\EdFiStateEducationAgency[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StateEducationAgenciesApi(
+$apiInstance = new Resources\Api\StateEducationAgenciesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -201,7 +201,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStateEducationAgency[]**](../Model/EdFiStateEducationAgency.md)
+[**\Resources\Model\EdFiStateEducationAgency[]**](../Model/EdFiStateEducationAgency.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ try {
 ## `getStateEducationAgenciesById()`
 
 ```php
-getStateEducationAgenciesById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiStateEducationAgency
+getStateEducationAgenciesById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiStateEducationAgency
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -234,10 +234,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StateEducationAgenciesApi(
+$apiInstance = new Resources\Api\StateEducationAgenciesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -265,7 +265,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStateEducationAgency**](../Model/EdFiStateEducationAgency.md)
+[**\Resources\Model\EdFiStateEducationAgency**](../Model/EdFiStateEducationAgency.md)
 
 ### Authorization
 
@@ -283,7 +283,7 @@ try {
 ## `keyChangesStateEducationAgencies()`
 
 ```php
-keyChangesStateEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStateEducationAgencyKeyChange[]
+keyChangesStateEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStateEducationAgencyKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -298,10 +298,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StateEducationAgenciesApi(
+$apiInstance = new Resources\Api\StateEducationAgenciesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -335,7 +335,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStateEducationAgencyKeyChange[]**](../Model/TrackedChangesEdFiStateEducationAgencyKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiStateEducationAgencyKeyChange[]**](../Model/TrackedChangesEdFiStateEducationAgencyKeyChange.md)
 
 ### Authorization
 
@@ -368,16 +368,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StateEducationAgenciesApi(
+$apiInstance = new Resources\Api\StateEducationAgenciesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_state_education_agency = new \OpenAPI\Client\Model\EdFiStateEducationAgency(); // \OpenAPI\Client\Model\EdFiStateEducationAgency | The JSON representation of the \"stateEducationAgency\" resource to be created or updated.
+$ed_fi_state_education_agency = new \Resources\Model\EdFiStateEducationAgency(); // \Resources\Model\EdFiStateEducationAgency | The JSON representation of the \"stateEducationAgency\" resource to be created or updated.
 
 try {
     $apiInstance->postStateEducationAgency($ed_fi_state_education_agency);
@@ -390,7 +390,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_state_education_agency** | [**\OpenAPI\Client\Model\EdFiStateEducationAgency**](../Model/EdFiStateEducationAgency.md)| The JSON representation of the \&quot;stateEducationAgency\&quot; resource to be created or updated. | |
+| **ed_fi_state_education_agency** | [**\Resources\Model\EdFiStateEducationAgency**](../Model/EdFiStateEducationAgency.md)| The JSON representation of the \&quot;stateEducationAgency\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -427,17 +427,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StateEducationAgenciesApi(
+$apiInstance = new Resources\Api\StateEducationAgenciesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_state_education_agency = new \OpenAPI\Client\Model\EdFiStateEducationAgency(); // \OpenAPI\Client\Model\EdFiStateEducationAgency | The JSON representation of the \"stateEducationAgency\" resource to be created or updated.
+$ed_fi_state_education_agency = new \Resources\Model\EdFiStateEducationAgency(); // \Resources\Model\EdFiStateEducationAgency | The JSON representation of the \"stateEducationAgency\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -452,7 +452,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_state_education_agency** | [**\OpenAPI\Client\Model\EdFiStateEducationAgency**](../Model/EdFiStateEducationAgency.md)| The JSON representation of the \&quot;stateEducationAgency\&quot; resource to be created or updated. | |
+| **ed_fi_state_education_agency** | [**\Resources\Model\EdFiStateEducationAgency**](../Model/EdFiStateEducationAgency.md)| The JSON representation of the \&quot;stateEducationAgency\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffAddress Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -71,7 +71,7 @@ class EdFiStaffAddress implements ModelInterface, ArrayAccess, \JsonSerializable
         'latitude' => 'string',
         'longitude' => 'string',
         'name_of_county' => 'string',
-        'periods' => '\OpenAPI\Client\Model\EdFiStaffAddressPeriod[]'
+        'periods' => '\Resources\Model\EdFiStaffAddressPeriod[]'
     ];
 
     /**
@@ -1020,7 +1020,7 @@ class EdFiStaffAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets periods
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffAddressPeriod[]|null
+     * @return \Resources\Model\EdFiStaffAddressPeriod[]|null
      */
     public function getPeriods()
     {
@@ -1030,7 +1030,7 @@ class EdFiStaffAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets periods
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffAddressPeriod[]|null $periods An unordered collection of staffAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address.
+     * @param \Resources\Model\EdFiStaffAddressPeriod[]|null $periods An unordered collection of staffAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address.
      *
      * @return self
      */

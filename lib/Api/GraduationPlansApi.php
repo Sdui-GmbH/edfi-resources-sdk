@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * GraduationPlansApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class GraduationPlansApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGraduationPlanById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class GraduationPlansApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGraduationPlanById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class GraduationPlansApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesGraduationPlans'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiGraduationPlanDelete[]
      */
     public function deletesGraduationPlans($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGraduationPlans'][0])
     {
@@ -407,9 +407,9 @@ class GraduationPlansApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesGraduationPlans'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiGraduationPlanDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesGraduationPlansWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGraduationPlans'][0])
     {
@@ -440,11 +440,11 @@ class GraduationPlansApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiGraduationPlanDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiGraduationPlanDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class GraduationPlansApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiGraduationPlanDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class GraduationPlansApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiGraduationPlanDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class GraduationPlansApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiGraduationPlanDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class GraduationPlansApi
      */
     public function deletesGraduationPlansAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGraduationPlans'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiGraduationPlanDelete[]';
         $request = $this->deletesGraduationPlansRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -775,9 +775,9 @@ class GraduationPlansApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGraduationPlans'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlan[]
+     * @return \Resources\Model\EdFiGraduationPlan[]
      */
     public function getGraduationPlans($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $graduation_plan_type_descriptor = null, $education_organization_id = null, $graduation_school_year = null, $total_required_credit_type_descriptor = null, $id = null, $individual_plan = null, $total_required_credit_conversion = null, $total_required_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getGraduationPlans'][0])
     {
@@ -806,9 +806,9 @@ class GraduationPlansApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGraduationPlans'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiGraduationPlan[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiGraduationPlan[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getGraduationPlansWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $graduation_plan_type_descriptor = null, $education_organization_id = null, $graduation_school_year = null, $total_required_credit_type_descriptor = null, $id = null, $individual_plan = null, $total_required_credit_conversion = null, $total_required_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getGraduationPlans'][0])
     {
@@ -839,11 +839,11 @@ class GraduationPlansApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiGraduationPlan[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiGraduationPlan[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiGraduationPlan[]' !== 'string') {
+                        if ('\Resources\Model\EdFiGraduationPlan[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -861,7 +861,7 @@ class GraduationPlansApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiGraduationPlan[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiGraduationPlan[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -880,7 +880,7 @@ class GraduationPlansApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiGraduationPlan[]';
+            $returnType = '\Resources\Model\EdFiGraduationPlan[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -913,7 +913,7 @@ class GraduationPlansApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiGraduationPlan[]',
+                        '\Resources\Model\EdFiGraduationPlan[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -983,7 +983,7 @@ class GraduationPlansApi
      */
     public function getGraduationPlansAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $graduation_plan_type_descriptor = null, $education_organization_id = null, $graduation_school_year = null, $total_required_credit_type_descriptor = null, $id = null, $individual_plan = null, $total_required_credit_conversion = null, $total_required_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getGraduationPlans'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiGraduationPlan[]';
+        $returnType = '\Resources\Model\EdFiGraduationPlan[]';
         $request = $this->getGraduationPlansRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $graduation_plan_type_descriptor, $education_organization_id, $graduation_school_year, $total_required_credit_type_descriptor, $id, $individual_plan, $total_required_credit_conversion, $total_required_credits, $use_snapshot, $contentType);
 
         return $this->client
@@ -1273,9 +1273,9 @@ class GraduationPlansApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGraduationPlansById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlan
+     * @return \Resources\Model\EdFiGraduationPlan
      */
     public function getGraduationPlansById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getGraduationPlansById'][0])
     {
@@ -1293,9 +1293,9 @@ class GraduationPlansApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGraduationPlansById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiGraduationPlan, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiGraduationPlan, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGraduationPlansByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getGraduationPlansById'][0])
     {
@@ -1326,11 +1326,11 @@ class GraduationPlansApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiGraduationPlan' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiGraduationPlan' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiGraduationPlan' !== 'string') {
+                        if ('\Resources\Model\EdFiGraduationPlan' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1348,7 +1348,7 @@ class GraduationPlansApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiGraduationPlan', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiGraduationPlan', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1367,7 +1367,7 @@ class GraduationPlansApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiGraduationPlan';
+            $returnType = '\Resources\Model\EdFiGraduationPlan';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1400,7 +1400,7 @@ class GraduationPlansApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiGraduationPlan',
+                        '\Resources\Model\EdFiGraduationPlan',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1448,7 +1448,7 @@ class GraduationPlansApi
      */
     public function getGraduationPlansByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getGraduationPlansById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiGraduationPlan';
+        $returnType = '\Resources\Model\EdFiGraduationPlan';
         $request = $this->getGraduationPlansByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1608,9 +1608,9 @@ class GraduationPlansApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesGraduationPlans'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiGraduationPlanKeyChange[]
      */
     public function keyChangesGraduationPlans($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGraduationPlans'][0])
     {
@@ -1631,9 +1631,9 @@ class GraduationPlansApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesGraduationPlans'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiGraduationPlanKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesGraduationPlansWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGraduationPlans'][0])
     {
@@ -1664,11 +1664,11 @@ class GraduationPlansApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiGraduationPlanKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiGraduationPlanKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1686,7 +1686,7 @@ class GraduationPlansApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiGraduationPlanKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1705,7 +1705,7 @@ class GraduationPlansApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiGraduationPlanKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1738,7 +1738,7 @@ class GraduationPlansApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiGraduationPlanKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1792,7 +1792,7 @@ class GraduationPlansApi
      */
     public function keyChangesGraduationPlansAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGraduationPlans'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiGraduationPlanKeyChange[]';
         $request = $this->keyChangesGraduationPlansRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1983,10 +1983,10 @@ class GraduationPlansApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postGraduationPlan'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2000,10 +2000,10 @@ class GraduationPlansApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postGraduationPlan'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2048,7 +2048,7 @@ class GraduationPlansApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postGraduationPlan'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2069,7 +2069,7 @@ class GraduationPlansApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postGraduationPlan'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2106,7 +2106,7 @@ class GraduationPlansApi
     /**
      * Create request for operation 'postGraduationPlan'
      *
-     * @param  \OpenAPI\Client\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postGraduationPlan'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2204,11 +2204,11 @@ class GraduationPlansApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putGraduationPlan'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2223,11 +2223,11 @@ class GraduationPlansApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putGraduationPlan'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2273,7 +2273,7 @@ class GraduationPlansApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putGraduationPlan'] to see the possible values for this operation
      *
@@ -2296,7 +2296,7 @@ class GraduationPlansApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putGraduationPlan'] to see the possible values for this operation
      *
@@ -2335,7 +2335,7 @@ class GraduationPlansApi
      * Create request for operation 'putGraduationPlan'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGraduationPlan $ed_fi_graduation_plan The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putGraduationPlan'] to see the possible values for this operation
      *

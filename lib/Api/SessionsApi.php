@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * SessionsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class SessionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSessionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class SessionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSessionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class SessionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSessions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSessionDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiSessionDelete[]
      */
     public function deletesSessions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSessions'][0])
     {
@@ -407,9 +407,9 @@ class SessionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSessions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiSessionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiSessionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesSessionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSessions'][0])
     {
@@ -440,11 +440,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiSessionDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiSessionDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiSessionDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiSessionDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiSessionDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiSessionDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class SessionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSessionDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiSessionDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiSessionDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiSessionDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class SessionsApi
      */
     public function deletesSessionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSessions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSessionDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiSessionDelete[]';
         $request = $this->deletesSessionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -775,9 +775,9 @@ class SessionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiSession[]
+     * @return \Resources\Model\EdFiSession[]
      */
     public function getSessions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $session_name = null, $school_id = null, $school_year = null, $term_descriptor = null, $begin_date = null, $end_date = null, $id = null, $total_instructional_days = null, $use_snapshot = false, string $contentType = self::contentTypes['getSessions'][0])
     {
@@ -806,9 +806,9 @@ class SessionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSessions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiSession[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiSession[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSessionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $session_name = null, $school_id = null, $school_year = null, $term_descriptor = null, $begin_date = null, $end_date = null, $id = null, $total_instructional_days = null, $use_snapshot = false, string $contentType = self::contentTypes['getSessions'][0])
     {
@@ -839,11 +839,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiSession[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiSession[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiSession[]' !== 'string') {
+                        if ('\Resources\Model\EdFiSession[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -861,7 +861,7 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiSession[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiSession[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -880,7 +880,7 @@ class SessionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiSession[]';
+            $returnType = '\Resources\Model\EdFiSession[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -913,7 +913,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiSession[]',
+                        '\Resources\Model\EdFiSession[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -983,7 +983,7 @@ class SessionsApi
      */
     public function getSessionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $session_name = null, $school_id = null, $school_year = null, $term_descriptor = null, $begin_date = null, $end_date = null, $id = null, $total_instructional_days = null, $use_snapshot = false, string $contentType = self::contentTypes['getSessions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiSession[]';
+        $returnType = '\Resources\Model\EdFiSession[]';
         $request = $this->getSessionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $session_name, $school_id, $school_year, $term_descriptor, $begin_date, $end_date, $id, $total_instructional_days, $use_snapshot, $contentType);
 
         return $this->client
@@ -1273,9 +1273,9 @@ class SessionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSessionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiSession
+     * @return \Resources\Model\EdFiSession
      */
     public function getSessionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSessionsById'][0])
     {
@@ -1293,9 +1293,9 @@ class SessionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSessionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiSession, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiSession, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSessionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSessionsById'][0])
     {
@@ -1326,11 +1326,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiSession' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiSession' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiSession' !== 'string') {
+                        if ('\Resources\Model\EdFiSession' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1348,7 +1348,7 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiSession', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiSession', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1367,7 +1367,7 @@ class SessionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiSession';
+            $returnType = '\Resources\Model\EdFiSession';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1400,7 +1400,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiSession',
+                        '\Resources\Model\EdFiSession',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1448,7 +1448,7 @@ class SessionsApi
      */
     public function getSessionsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSessionsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiSession';
+        $returnType = '\Resources\Model\EdFiSession';
         $request = $this->getSessionsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1608,9 +1608,9 @@ class SessionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSessions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSessionKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiSessionKeyChange[]
      */
     public function keyChangesSessions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSessions'][0])
     {
@@ -1631,9 +1631,9 @@ class SessionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSessions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiSessionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiSessionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesSessionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSessions'][0])
     {
@@ -1664,11 +1664,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiSessionKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiSessionKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiSessionKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiSessionKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1686,7 +1686,7 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiSessionKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiSessionKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1705,7 +1705,7 @@ class SessionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSessionKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiSessionKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1738,7 +1738,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiSessionKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiSessionKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1792,7 +1792,7 @@ class SessionsApi
      */
     public function keyChangesSessionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSessions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSessionKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiSessionKeyChange[]';
         $request = $this->keyChangesSessionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1983,10 +1983,10 @@ class SessionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSession'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2000,10 +2000,10 @@ class SessionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSession'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2048,7 +2048,7 @@ class SessionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSession'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2069,7 +2069,7 @@ class SessionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSession'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2106,7 +2106,7 @@ class SessionsApi
     /**
      * Create request for operation 'postSession'
      *
-     * @param  \OpenAPI\Client\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSession'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2204,11 +2204,11 @@ class SessionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSession'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2223,11 +2223,11 @@ class SessionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSession'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2273,7 +2273,7 @@ class SessionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSession'] to see the possible values for this operation
      *
@@ -2296,7 +2296,7 @@ class SessionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSession'] to see the possible values for this operation
      *
@@ -2335,7 +2335,7 @@ class SessionsApi
      * Create request for operation 'putSession'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSession $ed_fi_session The JSON representation of the \&quot;session\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSession'] to see the possible values for this operation
      *

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **begin_date** | **\DateTime** | The month, day, and year of the first day of the feeder school association. |
-**feeder_school_reference** | [**\OpenAPI\Client\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
-**school_reference** | [**\OpenAPI\Client\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
+**feeder_school_reference** | [**\Resources\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
+**school_reference** | [**\Resources\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
 **end_date** | **\DateTime** | The month, day, and year of the last day of the feeder school association. | [optional]
 **feeder_relationship_description** | **string** | Describes the relationship from the feeder school to the receiving school, for example by program emphasis, such as special education, language immersion, science, or performing art. | [optional]
 **_etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional]

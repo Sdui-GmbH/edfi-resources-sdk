@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * AcademicWeeksApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class AcademicWeeksApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAcademicWeekById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class AcademicWeeksApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAcademicWeekById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class AcademicWeeksApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAcademicWeeks'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiAcademicWeekDelete[]
      */
     public function deletesAcademicWeeks($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAcademicWeeks'][0])
     {
@@ -407,9 +407,9 @@ class AcademicWeeksApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAcademicWeeks'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiAcademicWeekDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesAcademicWeeksWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAcademicWeeks'][0])
     {
@@ -440,11 +440,11 @@ class AcademicWeeksApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiAcademicWeekDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiAcademicWeekDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class AcademicWeeksApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiAcademicWeekDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class AcademicWeeksApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiAcademicWeekDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class AcademicWeeksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiAcademicWeekDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class AcademicWeeksApi
      */
     public function deletesAcademicWeeksAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAcademicWeeks'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiAcademicWeekDelete[]';
         $request = $this->deletesAcademicWeeksRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -773,9 +773,9 @@ class AcademicWeeksApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAcademicWeeks'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiAcademicWeek[]
+     * @return \Resources\Model\EdFiAcademicWeek[]
      */
     public function getAcademicWeeks($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $week_identifier = null, $school_id = null, $begin_date = null, $end_date = null, $id = null, $total_instructional_days = null, $use_snapshot = false, string $contentType = self::contentTypes['getAcademicWeeks'][0])
     {
@@ -802,9 +802,9 @@ class AcademicWeeksApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAcademicWeeks'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiAcademicWeek[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiAcademicWeek[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAcademicWeeksWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $week_identifier = null, $school_id = null, $begin_date = null, $end_date = null, $id = null, $total_instructional_days = null, $use_snapshot = false, string $contentType = self::contentTypes['getAcademicWeeks'][0])
     {
@@ -835,11 +835,11 @@ class AcademicWeeksApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiAcademicWeek[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiAcademicWeek[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiAcademicWeek[]' !== 'string') {
+                        if ('\Resources\Model\EdFiAcademicWeek[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -857,7 +857,7 @@ class AcademicWeeksApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiAcademicWeek[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiAcademicWeek[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -876,7 +876,7 @@ class AcademicWeeksApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiAcademicWeek[]';
+            $returnType = '\Resources\Model\EdFiAcademicWeek[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -909,7 +909,7 @@ class AcademicWeeksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiAcademicWeek[]',
+                        '\Resources\Model\EdFiAcademicWeek[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -975,7 +975,7 @@ class AcademicWeeksApi
      */
     public function getAcademicWeeksAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $week_identifier = null, $school_id = null, $begin_date = null, $end_date = null, $id = null, $total_instructional_days = null, $use_snapshot = false, string $contentType = self::contentTypes['getAcademicWeeks'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiAcademicWeek[]';
+        $returnType = '\Resources\Model\EdFiAcademicWeek[]';
         $request = $this->getAcademicWeeksRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $week_identifier, $school_id, $begin_date, $end_date, $id, $total_instructional_days, $use_snapshot, $contentType);
 
         return $this->client
@@ -1240,9 +1240,9 @@ class AcademicWeeksApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAcademicWeeksById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiAcademicWeek
+     * @return \Resources\Model\EdFiAcademicWeek
      */
     public function getAcademicWeeksById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAcademicWeeksById'][0])
     {
@@ -1260,9 +1260,9 @@ class AcademicWeeksApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAcademicWeeksById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiAcademicWeek, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiAcademicWeek, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAcademicWeeksByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAcademicWeeksById'][0])
     {
@@ -1293,11 +1293,11 @@ class AcademicWeeksApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiAcademicWeek' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiAcademicWeek' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiAcademicWeek' !== 'string') {
+                        if ('\Resources\Model\EdFiAcademicWeek' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1315,7 +1315,7 @@ class AcademicWeeksApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiAcademicWeek', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiAcademicWeek', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1334,7 +1334,7 @@ class AcademicWeeksApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiAcademicWeek';
+            $returnType = '\Resources\Model\EdFiAcademicWeek';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1367,7 +1367,7 @@ class AcademicWeeksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiAcademicWeek',
+                        '\Resources\Model\EdFiAcademicWeek',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1415,7 +1415,7 @@ class AcademicWeeksApi
      */
     public function getAcademicWeeksByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAcademicWeeksById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiAcademicWeek';
+        $returnType = '\Resources\Model\EdFiAcademicWeek';
         $request = $this->getAcademicWeeksByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1575,9 +1575,9 @@ class AcademicWeeksApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAcademicWeeks'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiAcademicWeekKeyChange[]
      */
     public function keyChangesAcademicWeeks($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAcademicWeeks'][0])
     {
@@ -1598,9 +1598,9 @@ class AcademicWeeksApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAcademicWeeks'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiAcademicWeekKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesAcademicWeeksWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAcademicWeeks'][0])
     {
@@ -1631,11 +1631,11 @@ class AcademicWeeksApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiAcademicWeekKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiAcademicWeekKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1653,7 +1653,7 @@ class AcademicWeeksApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiAcademicWeekKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1672,7 +1672,7 @@ class AcademicWeeksApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiAcademicWeekKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1705,7 +1705,7 @@ class AcademicWeeksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiAcademicWeekKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1759,7 +1759,7 @@ class AcademicWeeksApi
      */
     public function keyChangesAcademicWeeksAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAcademicWeeks'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAcademicWeekKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiAcademicWeekKeyChange[]';
         $request = $this->keyChangesAcademicWeeksRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1950,10 +1950,10 @@ class AcademicWeeksApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAcademicWeek'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1967,10 +1967,10 @@ class AcademicWeeksApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAcademicWeek'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2015,7 +2015,7 @@ class AcademicWeeksApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAcademicWeek'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2036,7 +2036,7 @@ class AcademicWeeksApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAcademicWeek'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2073,7 +2073,7 @@ class AcademicWeeksApi
     /**
      * Create request for operation 'postAcademicWeek'
      *
-     * @param  \OpenAPI\Client\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAcademicWeek'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2171,11 +2171,11 @@ class AcademicWeeksApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAcademicWeek'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2190,11 +2190,11 @@ class AcademicWeeksApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAcademicWeek'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2240,7 +2240,7 @@ class AcademicWeeksApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAcademicWeek'] to see the possible values for this operation
      *
@@ -2263,7 +2263,7 @@ class AcademicWeeksApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAcademicWeek'] to see the possible values for this operation
      *
@@ -2302,7 +2302,7 @@ class AcademicWeeksApi
      * Create request for operation 'putAcademicWeek'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAcademicWeek $ed_fi_academic_week The JSON representation of the \&quot;academicWeek\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAcademicWeek'] to see the possible values for this operation
      *

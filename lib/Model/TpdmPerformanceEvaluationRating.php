@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmPerformanceEvaluationRating Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class TpdmPerformanceEvaluationRating implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'performance_evaluation_reference' => '\OpenAPI\Client\Model\TpdmPerformanceEvaluationReference',
-        'person_reference' => '\OpenAPI\Client\Model\EdFiPersonReference',
+        'performance_evaluation_reference' => '\Resources\Model\TpdmPerformanceEvaluationReference',
+        'person_reference' => '\Resources\Model\EdFiPersonReference',
         'actual_date' => '\DateTime',
         'actual_duration' => 'int',
         'actual_time' => 'string',
@@ -67,8 +67,8 @@ class TpdmPerformanceEvaluationRating implements ModelInterface, ArrayAccess, \J
         'comments' => 'string',
         'coteaching_style_observed_descriptor' => 'string',
         'performance_evaluation_rating_level_descriptor' => 'string',
-        'results' => '\OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingResult[]',
-        'reviewers' => '\OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingReviewer[]',
+        'results' => '\Resources\Model\TpdmPerformanceEvaluationRatingResult[]',
+        'reviewers' => '\Resources\Model\TpdmPerformanceEvaluationRatingReviewer[]',
         'schedule_date' => '\DateTime',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -446,7 +446,7 @@ class TpdmPerformanceEvaluationRating implements ModelInterface, ArrayAccess, \J
     /**
      * Gets performance_evaluation_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmPerformanceEvaluationReference
+     * @return \Resources\Model\TpdmPerformanceEvaluationReference
      */
     public function getPerformanceEvaluationReference()
     {
@@ -456,7 +456,7 @@ class TpdmPerformanceEvaluationRating implements ModelInterface, ArrayAccess, \J
     /**
      * Sets performance_evaluation_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmPerformanceEvaluationReference $performance_evaluation_reference performance_evaluation_reference
+     * @param \Resources\Model\TpdmPerformanceEvaluationReference $performance_evaluation_reference performance_evaluation_reference
      *
      * @return self
      */
@@ -473,7 +473,7 @@ class TpdmPerformanceEvaluationRating implements ModelInterface, ArrayAccess, \J
     /**
      * Gets person_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiPersonReference
+     * @return \Resources\Model\EdFiPersonReference
      */
     public function getPersonReference()
     {
@@ -483,7 +483,7 @@ class TpdmPerformanceEvaluationRating implements ModelInterface, ArrayAccess, \J
     /**
      * Sets person_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiPersonReference $person_reference person_reference
+     * @param \Resources\Model\EdFiPersonReference $person_reference person_reference
      *
      * @return self
      */
@@ -751,7 +751,7 @@ class TpdmPerformanceEvaluationRating implements ModelInterface, ArrayAccess, \J
     /**
      * Gets results
      *
-     * @return \OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingResult[]|null
+     * @return \Resources\Model\TpdmPerformanceEvaluationRatingResult[]|null
      */
     public function getResults()
     {
@@ -761,7 +761,7 @@ class TpdmPerformanceEvaluationRating implements ModelInterface, ArrayAccess, \J
     /**
      * Sets results
      *
-     * @param \OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingResult[]|null $results An unordered collection of performanceEvaluationRatingResults. The numerical summary rating or score for the performance evaluation.
+     * @param \Resources\Model\TpdmPerformanceEvaluationRatingResult[]|null $results An unordered collection of performanceEvaluationRatingResults. The numerical summary rating or score for the performance evaluation.
      *
      * @return self
      */
@@ -778,7 +778,7 @@ class TpdmPerformanceEvaluationRating implements ModelInterface, ArrayAccess, \J
     /**
      * Gets reviewers
      *
-     * @return \OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingReviewer[]|null
+     * @return \Resources\Model\TpdmPerformanceEvaluationRatingReviewer[]|null
      */
     public function getReviewers()
     {
@@ -788,7 +788,7 @@ class TpdmPerformanceEvaluationRating implements ModelInterface, ArrayAccess, \J
     /**
      * Sets reviewers
      *
-     * @param \OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingReviewer[]|null $reviewers An unordered collection of performanceEvaluationRatingReviewers. The person(s) that conducted the performance evaluation.
+     * @param \Resources\Model\TpdmPerformanceEvaluationRatingReviewer[]|null $reviewers An unordered collection of performanceEvaluationRatingReviewers. The person(s) that conducted the performance evaluation.
      *
      * @return self
      */

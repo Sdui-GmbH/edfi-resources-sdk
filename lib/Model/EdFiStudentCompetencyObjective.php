@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentCompetencyObjective Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,13 +58,13 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'grading_period_reference' => '\OpenAPI\Client\Model\EdFiGradingPeriodReference',
-        'objective_competency_objective_reference' => '\OpenAPI\Client\Model\EdFiCompetencyObjectiveReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'grading_period_reference' => '\Resources\Model\EdFiGradingPeriodReference',
+        'objective_competency_objective_reference' => '\Resources\Model\EdFiCompetencyObjectiveReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'competency_level_descriptor' => 'string',
         'diagnostic_statement' => 'string',
-        'general_student_program_associations' => '\OpenAPI\Client\Model\EdFiStudentCompetencyObjectiveGeneralStudentProgramAssociation[]',
-        'student_section_associations' => '\OpenAPI\Client\Model\EdFiStudentCompetencyObjectiveStudentSectionAssociation[]',
+        'general_student_program_associations' => '\Resources\Model\EdFiStudentCompetencyObjectiveGeneralStudentProgramAssociation[]',
+        'student_section_associations' => '\Resources\Model\EdFiStudentCompetencyObjectiveStudentSectionAssociation[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -406,7 +406,7 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets grading_period_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiGradingPeriodReference
+     * @return \Resources\Model\EdFiGradingPeriodReference
      */
     public function getGradingPeriodReference()
     {
@@ -416,7 +416,7 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets grading_period_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiGradingPeriodReference $grading_period_reference grading_period_reference
+     * @param \Resources\Model\EdFiGradingPeriodReference $grading_period_reference grading_period_reference
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets objective_competency_objective_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCompetencyObjectiveReference
+     * @return \Resources\Model\EdFiCompetencyObjectiveReference
      */
     public function getObjectiveCompetencyObjectiveReference()
     {
@@ -443,7 +443,7 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets objective_competency_objective_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCompetencyObjectiveReference $objective_competency_objective_reference objective_competency_objective_reference
+     * @param \Resources\Model\EdFiCompetencyObjectiveReference $objective_competency_objective_reference objective_competency_objective_reference
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -470,7 +470,7 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -559,7 +559,7 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets general_student_program_associations
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentCompetencyObjectiveGeneralStudentProgramAssociation[]|null
+     * @return \Resources\Model\EdFiStudentCompetencyObjectiveGeneralStudentProgramAssociation[]|null
      */
     public function getGeneralStudentProgramAssociations()
     {
@@ -569,7 +569,7 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets general_student_program_associations
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentCompetencyObjectiveGeneralStudentProgramAssociation[]|null $general_student_program_associations An unordered collection of studentCompetencyObjectiveGeneralStudentProgramAssociations. Relates the student and program associated with the competency objective.
+     * @param \Resources\Model\EdFiStudentCompetencyObjectiveGeneralStudentProgramAssociation[]|null $general_student_program_associations An unordered collection of studentCompetencyObjectiveGeneralStudentProgramAssociations. Relates the student and program associated with the competency objective.
      *
      * @return self
      */
@@ -586,7 +586,7 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets student_section_associations
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentCompetencyObjectiveStudentSectionAssociation[]|null
+     * @return \Resources\Model\EdFiStudentCompetencyObjectiveStudentSectionAssociation[]|null
      */
     public function getStudentSectionAssociations()
     {
@@ -596,7 +596,7 @@ class EdFiStudentCompetencyObjective implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets student_section_associations
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentCompetencyObjectiveStudentSectionAssociation[]|null $student_section_associations An unordered collection of studentCompetencyObjectiveStudentSectionAssociations. Relates the student and section associated with the competency objective.
+     * @param \Resources\Model\EdFiStudentCompetencyObjectiveStudentSectionAssociation[]|null $student_section_associations An unordered collection of studentCompetencyObjectiveStudentSectionAssociations. Relates the student and section associated with the competency objective.
      *
      * @return self
      */

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * CandidatesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class CandidatesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCandidateById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class CandidatesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCandidateById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class CandidatesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCandidates'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmCandidateDelete[]
+     * @return \Resources\Model\TrackedChangesTpdmCandidateDelete[]
      */
     public function deletesCandidates($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCandidates'][0])
     {
@@ -407,9 +407,9 @@ class CandidatesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCandidates'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmCandidateDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmCandidateDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesCandidatesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCandidates'][0])
     {
@@ -440,11 +440,11 @@ class CandidatesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmCandidateDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmCandidateDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmCandidateDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmCandidateDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class CandidatesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmCandidateDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmCandidateDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class CandidatesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmCandidateDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmCandidateDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class CandidatesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmCandidateDelete[]',
+                        '\Resources\Model\TrackedChangesTpdmCandidateDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class CandidatesApi
      */
     public function deletesCandidatesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCandidates'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmCandidateDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmCandidateDelete[]';
         $request = $this->deletesCandidatesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -795,9 +795,9 @@ class CandidatesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCandidates'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmCandidate[]
+     * @return \Resources\Model\TpdmCandidate[]
      */
     public function getCandidates($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $candidate_identifier = null, $person_id = null, $source_system_descriptor = null, $birth_country_descriptor = null, $english_language_exam_descriptor = null, $gender_descriptor = null, $limited_english_proficiency_descriptor = null, $sex_descriptor = null, $birth_sex_descriptor = null, $birth_state_abbreviation_descriptor = null, $birth_city = null, $birth_date = null, $birth_international_province = null, $date_entered_us = null, $displacement_status = null, $economic_disadvantaged = null, $first_generation_student = null, $first_name = null, $generation_code_suffix = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $maiden_name = null, $middle_name = null, $multiple_birth_status = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getCandidates'][0])
     {
@@ -846,9 +846,9 @@ class CandidatesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCandidates'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmCandidate[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmCandidate[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCandidatesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $candidate_identifier = null, $person_id = null, $source_system_descriptor = null, $birth_country_descriptor = null, $english_language_exam_descriptor = null, $gender_descriptor = null, $limited_english_proficiency_descriptor = null, $sex_descriptor = null, $birth_sex_descriptor = null, $birth_state_abbreviation_descriptor = null, $birth_city = null, $birth_date = null, $birth_international_province = null, $date_entered_us = null, $displacement_status = null, $economic_disadvantaged = null, $first_generation_student = null, $first_name = null, $generation_code_suffix = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $maiden_name = null, $middle_name = null, $multiple_birth_status = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getCandidates'][0])
     {
@@ -879,11 +879,11 @@ class CandidatesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmCandidate[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmCandidate[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmCandidate[]' !== 'string') {
+                        if ('\Resources\Model\TpdmCandidate[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -901,7 +901,7 @@ class CandidatesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmCandidate[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmCandidate[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -920,7 +920,7 @@ class CandidatesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmCandidate[]';
+            $returnType = '\Resources\Model\TpdmCandidate[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -953,7 +953,7 @@ class CandidatesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmCandidate[]',
+                        '\Resources\Model\TpdmCandidate[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1063,7 +1063,7 @@ class CandidatesApi
      */
     public function getCandidatesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $candidate_identifier = null, $person_id = null, $source_system_descriptor = null, $birth_country_descriptor = null, $english_language_exam_descriptor = null, $gender_descriptor = null, $limited_english_proficiency_descriptor = null, $sex_descriptor = null, $birth_sex_descriptor = null, $birth_state_abbreviation_descriptor = null, $birth_city = null, $birth_date = null, $birth_international_province = null, $date_entered_us = null, $displacement_status = null, $economic_disadvantaged = null, $first_generation_student = null, $first_name = null, $generation_code_suffix = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $maiden_name = null, $middle_name = null, $multiple_birth_status = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getCandidates'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmCandidate[]';
+        $returnType = '\Resources\Model\TpdmCandidate[]';
         $request = $this->getCandidatesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $candidate_identifier, $person_id, $source_system_descriptor, $birth_country_descriptor, $english_language_exam_descriptor, $gender_descriptor, $limited_english_proficiency_descriptor, $sex_descriptor, $birth_sex_descriptor, $birth_state_abbreviation_descriptor, $birth_city, $birth_date, $birth_international_province, $date_entered_us, $displacement_status, $economic_disadvantaged, $first_generation_student, $first_name, $generation_code_suffix, $hispanic_latino_ethnicity, $id, $last_surname, $maiden_name, $middle_name, $multiple_birth_status, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
 
         return $this->client
@@ -1630,9 +1630,9 @@ class CandidatesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCandidatesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmCandidate
+     * @return \Resources\Model\TpdmCandidate
      */
     public function getCandidatesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCandidatesById'][0])
     {
@@ -1650,9 +1650,9 @@ class CandidatesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCandidatesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmCandidate, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmCandidate, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCandidatesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCandidatesById'][0])
     {
@@ -1683,11 +1683,11 @@ class CandidatesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmCandidate' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmCandidate' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmCandidate' !== 'string') {
+                        if ('\Resources\Model\TpdmCandidate' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1705,7 +1705,7 @@ class CandidatesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmCandidate', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmCandidate', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1724,7 +1724,7 @@ class CandidatesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmCandidate';
+            $returnType = '\Resources\Model\TpdmCandidate';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1757,7 +1757,7 @@ class CandidatesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmCandidate',
+                        '\Resources\Model\TpdmCandidate',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1805,7 +1805,7 @@ class CandidatesApi
      */
     public function getCandidatesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCandidatesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmCandidate';
+        $returnType = '\Resources\Model\TpdmCandidate';
         $request = $this->getCandidatesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1965,9 +1965,9 @@ class CandidatesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCandidates'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmCandidateKeyChange[]
+     * @return \Resources\Model\TrackedChangesTpdmCandidateKeyChange[]
      */
     public function keyChangesCandidates($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCandidates'][0])
     {
@@ -1988,9 +1988,9 @@ class CandidatesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCandidates'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmCandidateKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmCandidateKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesCandidatesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCandidates'][0])
     {
@@ -2021,11 +2021,11 @@ class CandidatesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmCandidateKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmCandidateKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmCandidateKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmCandidateKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2043,7 +2043,7 @@ class CandidatesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmCandidateKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmCandidateKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2062,7 +2062,7 @@ class CandidatesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmCandidateKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmCandidateKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2095,7 +2095,7 @@ class CandidatesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmCandidateKeyChange[]',
+                        '\Resources\Model\TrackedChangesTpdmCandidateKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2149,7 +2149,7 @@ class CandidatesApi
      */
     public function keyChangesCandidatesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCandidates'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmCandidateKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmCandidateKeyChange[]';
         $request = $this->keyChangesCandidatesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2340,10 +2340,10 @@ class CandidatesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCandidate'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2357,10 +2357,10 @@ class CandidatesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCandidate'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2405,7 +2405,7 @@ class CandidatesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCandidate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2426,7 +2426,7 @@ class CandidatesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCandidate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2463,7 +2463,7 @@ class CandidatesApi
     /**
      * Create request for operation 'postCandidate'
      *
-     * @param  \OpenAPI\Client\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCandidate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2561,11 +2561,11 @@ class CandidatesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCandidate'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2580,11 +2580,11 @@ class CandidatesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCandidate'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2630,7 +2630,7 @@ class CandidatesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCandidate'] to see the possible values for this operation
      *
@@ -2653,7 +2653,7 @@ class CandidatesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCandidate'] to see the possible values for this operation
      *
@@ -2692,7 +2692,7 @@ class CandidatesApi
      * Create request for operation 'putCandidate'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmCandidate $tpdm_candidate The JSON representation of the \&quot;candidate\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCandidate'] to see the possible values for this operation
      *

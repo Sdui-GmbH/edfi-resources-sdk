@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSurveyResponse Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,19 +59,19 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'id' => 'string',
         'survey_response_identifier' => 'string',
-        'contact_reference' => '\OpenAPI\Client\Model\EdFiContactReference',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
-        'survey_reference' => '\OpenAPI\Client\Model\EdFiSurveyReference',
+        'contact_reference' => '\Resources\Model\EdFiContactReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
+        'survey_reference' => '\Resources\Model\EdFiSurveyReference',
         'electronic_mail_address' => 'string',
         'full_name' => 'string',
         'location' => 'string',
         'response_date' => '\DateTime',
         'response_time' => 'int',
-        'survey_levels' => '\OpenAPI\Client\Model\EdFiSurveyResponseSurveyLevel[]',
+        'survey_levels' => '\Resources\Model\EdFiSurveyResponseSurveyLevel[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime',
-        '_ext' => '\OpenAPI\Client\Model\SurveyResponseExtensions'
+        '_ext' => '\Resources\Model\SurveyResponseExtensions'
     ];
 
     /**
@@ -488,7 +488,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets contact_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiContactReference|null
+     * @return \Resources\Model\EdFiContactReference|null
      */
     public function getContactReference()
     {
@@ -498,7 +498,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets contact_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiContactReference|null $contact_reference contact_reference
+     * @param \Resources\Model\EdFiContactReference|null $contact_reference contact_reference
      *
      * @return self
      */
@@ -515,7 +515,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference|null
+     * @return \Resources\Model\EdFiStaffReference|null
      */
     public function getStaffReference()
     {
@@ -525,7 +525,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference|null $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference|null $staff_reference staff_reference
      *
      * @return self
      */
@@ -542,7 +542,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference|null
+     * @return \Resources\Model\EdFiStudentReference|null
      */
     public function getStudentReference()
     {
@@ -552,7 +552,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference|null $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference|null $student_reference student_reference
      *
      * @return self
      */
@@ -569,7 +569,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets survey_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveyReference
+     * @return \Resources\Model\EdFiSurveyReference
      */
     public function getSurveyReference()
     {
@@ -579,7 +579,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets survey_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveyReference $survey_reference survey_reference
+     * @param \Resources\Model\EdFiSurveyReference $survey_reference survey_reference
      *
      * @return self
      */
@@ -777,7 +777,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets survey_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveyResponseSurveyLevel[]|null
+     * @return \Resources\Model\EdFiSurveyResponseSurveyLevel[]|null
      */
     public function getSurveyLevels()
     {
@@ -787,7 +787,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets survey_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveyResponseSurveyLevel[]|null $survey_levels An unordered collection of surveyResponseSurveyLevels. Provides information about the respondents of a survey and how they can be grouped together.
+     * @param \Resources\Model\EdFiSurveyResponseSurveyLevel[]|null $survey_levels An unordered collection of surveyResponseSurveyLevels. Provides information about the respondents of a survey and how they can be grouped together.
      *
      * @return self
      */
@@ -858,7 +858,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets _ext
      *
-     * @return \OpenAPI\Client\Model\SurveyResponseExtensions|null
+     * @return \Resources\Model\SurveyResponseExtensions|null
      */
     public function getExt()
     {
@@ -868,7 +868,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets _ext
      *
-     * @param \OpenAPI\Client\Model\SurveyResponseExtensions|null $_ext _ext
+     * @param \Resources\Model\SurveyResponseExtensions|null $_ext _ext
      *
      * @return self
      */

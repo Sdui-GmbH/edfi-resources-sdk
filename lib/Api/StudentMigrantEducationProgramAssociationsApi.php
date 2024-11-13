@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * StudentMigrantEducationProgramAssociationsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStudentMigrantEducationProgramAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStudentMigrantEducationProgramAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]
      */
     public function deletesStudentMigrantEducationProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentMigrantEducationProgramAssociations'][0])
     {
@@ -407,9 +407,9 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesStudentMigrantEducationProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentMigrantEducationProgramAssociations'][0])
     {
@@ -440,11 +440,11 @@ class StudentMigrantEducationProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class StudentMigrantEducationProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class StudentMigrantEducationProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class StudentMigrantEducationProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class StudentMigrantEducationProgramAssociationsApi
      */
     public function deletesStudentMigrantEducationProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentMigrantEducationProgramAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationDelete[]';
         $request = $this->deletesStudentMigrantEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -782,9 +782,9 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation[]
+     * @return \Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]
      */
     public function getStudentMigrantEducationProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
     {
@@ -820,9 +820,9 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStudentMigrantEducationProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentMigrantEducationProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
     {
@@ -853,11 +853,11 @@ class StudentMigrantEducationProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation[]' !== 'string') {
+                        if ('\Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -875,7 +875,7 @@ class StudentMigrantEducationProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -894,7 +894,7 @@ class StudentMigrantEducationProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation[]';
+            $returnType = '\Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -927,7 +927,7 @@ class StudentMigrantEducationProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation[]',
+                        '\Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1011,7 +1011,7 @@ class StudentMigrantEducationProgramAssociationsApi
      */
     public function getStudentMigrantEducationProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation[]';
+        $returnType = '\Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]';
         $request = $this->getStudentMigrantEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $use_snapshot, $contentType);
 
         return $this->client
@@ -1384,9 +1384,9 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentMigrantEducationProgramAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation
+     * @return \Resources\Model\EdFiStudentMigrantEducationProgramAssociation
      */
     public function getStudentMigrantEducationProgramAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociationsById'][0])
     {
@@ -1404,9 +1404,9 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentMigrantEducationProgramAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStudentMigrantEducationProgramAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentMigrantEducationProgramAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociationsById'][0])
     {
@@ -1437,11 +1437,11 @@ class StudentMigrantEducationProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStudentMigrantEducationProgramAssociation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation' !== 'string') {
+                        if ('\Resources\Model\EdFiStudentMigrantEducationProgramAssociation' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1459,7 +1459,7 @@ class StudentMigrantEducationProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStudentMigrantEducationProgramAssociation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1478,7 +1478,7 @@ class StudentMigrantEducationProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation';
+            $returnType = '\Resources\Model\EdFiStudentMigrantEducationProgramAssociation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1511,7 +1511,7 @@ class StudentMigrantEducationProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation',
+                        '\Resources\Model\EdFiStudentMigrantEducationProgramAssociation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1559,7 +1559,7 @@ class StudentMigrantEducationProgramAssociationsApi
      */
     public function getStudentMigrantEducationProgramAssociationsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociationsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation';
+        $returnType = '\Resources\Model\EdFiStudentMigrantEducationProgramAssociation';
         $request = $this->getStudentMigrantEducationProgramAssociationsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1719,9 +1719,9 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]
      */
     public function keyChangesStudentMigrantEducationProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentMigrantEducationProgramAssociations'][0])
     {
@@ -1742,9 +1742,9 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesStudentMigrantEducationProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentMigrantEducationProgramAssociations'][0])
     {
@@ -1775,11 +1775,11 @@ class StudentMigrantEducationProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1797,7 +1797,7 @@ class StudentMigrantEducationProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1816,7 +1816,7 @@ class StudentMigrantEducationProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1849,7 +1849,7 @@ class StudentMigrantEducationProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1903,7 +1903,7 @@ class StudentMigrantEducationProgramAssociationsApi
      */
     public function keyChangesStudentMigrantEducationProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentMigrantEducationProgramAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStudentMigrantEducationProgramAssociationKeyChange[]';
         $request = $this->keyChangesStudentMigrantEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2094,10 +2094,10 @@ class StudentMigrantEducationProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentMigrantEducationProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2111,10 +2111,10 @@ class StudentMigrantEducationProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentMigrantEducationProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2159,7 +2159,7 @@ class StudentMigrantEducationProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentMigrantEducationProgramAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2180,7 +2180,7 @@ class StudentMigrantEducationProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentMigrantEducationProgramAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2217,7 +2217,7 @@ class StudentMigrantEducationProgramAssociationsApi
     /**
      * Create request for operation 'postStudentMigrantEducationProgramAssociation'
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentMigrantEducationProgramAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2315,11 +2315,11 @@ class StudentMigrantEducationProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentMigrantEducationProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2334,11 +2334,11 @@ class StudentMigrantEducationProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentMigrantEducationProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2384,7 +2384,7 @@ class StudentMigrantEducationProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentMigrantEducationProgramAssociation'] to see the possible values for this operation
      *
@@ -2407,7 +2407,7 @@ class StudentMigrantEducationProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentMigrantEducationProgramAssociation'] to see the possible values for this operation
      *
@@ -2446,7 +2446,7 @@ class StudentMigrantEducationProgramAssociationsApi
      * Create request for operation 'putStudentMigrantEducationProgramAssociation'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentMigrantEducationProgramAssociation $ed_fi_student_migrant_education_program_association The JSON representation of the \&quot;studentMigrantEducationProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentMigrantEducationProgramAssociation'] to see the possible values for this operation
      *

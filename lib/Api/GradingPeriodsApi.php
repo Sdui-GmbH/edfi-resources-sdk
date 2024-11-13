@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * GradingPeriodsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class GradingPeriodsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGradingPeriodById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class GradingPeriodsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGradingPeriodById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class GradingPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesGradingPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiGradingPeriodDelete[]
      */
     public function deletesGradingPeriods($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGradingPeriods'][0])
     {
@@ -407,9 +407,9 @@ class GradingPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesGradingPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiGradingPeriodDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesGradingPeriodsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGradingPeriods'][0])
     {
@@ -440,11 +440,11 @@ class GradingPeriodsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiGradingPeriodDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiGradingPeriodDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class GradingPeriodsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiGradingPeriodDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class GradingPeriodsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiGradingPeriodDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class GradingPeriodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiGradingPeriodDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class GradingPeriodsApi
      */
     public function deletesGradingPeriodsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGradingPeriods'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiGradingPeriodDelete[]';
         $request = $this->deletesGradingPeriodsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -776,9 +776,9 @@ class GradingPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGradingPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiGradingPeriod[]
+     * @return \Resources\Model\EdFiGradingPeriod[]
      */
     public function getGradingPeriods($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $school_year = null, $begin_date = null, $end_date = null, $id = null, $period_sequence = null, $total_instructional_days = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradingPeriods'][0])
     {
@@ -808,9 +808,9 @@ class GradingPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGradingPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiGradingPeriod[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiGradingPeriod[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getGradingPeriodsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $school_year = null, $begin_date = null, $end_date = null, $id = null, $period_sequence = null, $total_instructional_days = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradingPeriods'][0])
     {
@@ -841,11 +841,11 @@ class GradingPeriodsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiGradingPeriod[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiGradingPeriod[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiGradingPeriod[]' !== 'string') {
+                        if ('\Resources\Model\EdFiGradingPeriod[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -863,7 +863,7 @@ class GradingPeriodsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiGradingPeriod[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiGradingPeriod[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -882,7 +882,7 @@ class GradingPeriodsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiGradingPeriod[]';
+            $returnType = '\Resources\Model\EdFiGradingPeriod[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -915,7 +915,7 @@ class GradingPeriodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiGradingPeriod[]',
+                        '\Resources\Model\EdFiGradingPeriod[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -987,7 +987,7 @@ class GradingPeriodsApi
      */
     public function getGradingPeriodsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $school_year = null, $begin_date = null, $end_date = null, $id = null, $period_sequence = null, $total_instructional_days = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradingPeriods'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiGradingPeriod[]';
+        $returnType = '\Resources\Model\EdFiGradingPeriod[]';
         $request = $this->getGradingPeriodsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $grading_period_descriptor, $grading_period_name, $school_id, $school_year, $begin_date, $end_date, $id, $period_sequence, $total_instructional_days, $use_snapshot, $contentType);
 
         return $this->client
@@ -1288,9 +1288,9 @@ class GradingPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGradingPeriodsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiGradingPeriod
+     * @return \Resources\Model\EdFiGradingPeriod
      */
     public function getGradingPeriodsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradingPeriodsById'][0])
     {
@@ -1308,9 +1308,9 @@ class GradingPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGradingPeriodsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiGradingPeriod, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiGradingPeriod, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGradingPeriodsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradingPeriodsById'][0])
     {
@@ -1341,11 +1341,11 @@ class GradingPeriodsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiGradingPeriod' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiGradingPeriod' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiGradingPeriod' !== 'string') {
+                        if ('\Resources\Model\EdFiGradingPeriod' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1363,7 +1363,7 @@ class GradingPeriodsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiGradingPeriod', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiGradingPeriod', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1382,7 +1382,7 @@ class GradingPeriodsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiGradingPeriod';
+            $returnType = '\Resources\Model\EdFiGradingPeriod';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1415,7 +1415,7 @@ class GradingPeriodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiGradingPeriod',
+                        '\Resources\Model\EdFiGradingPeriod',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1463,7 +1463,7 @@ class GradingPeriodsApi
      */
     public function getGradingPeriodsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradingPeriodsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiGradingPeriod';
+        $returnType = '\Resources\Model\EdFiGradingPeriod';
         $request = $this->getGradingPeriodsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1623,9 +1623,9 @@ class GradingPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesGradingPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiGradingPeriodKeyChange[]
      */
     public function keyChangesGradingPeriods($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGradingPeriods'][0])
     {
@@ -1646,9 +1646,9 @@ class GradingPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesGradingPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiGradingPeriodKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesGradingPeriodsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGradingPeriods'][0])
     {
@@ -1679,11 +1679,11 @@ class GradingPeriodsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiGradingPeriodKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiGradingPeriodKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1701,7 +1701,7 @@ class GradingPeriodsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiGradingPeriodKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1720,7 +1720,7 @@ class GradingPeriodsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiGradingPeriodKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1753,7 +1753,7 @@ class GradingPeriodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiGradingPeriodKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1807,7 +1807,7 @@ class GradingPeriodsApi
      */
     public function keyChangesGradingPeriodsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGradingPeriods'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiGradingPeriodKeyChange[]';
         $request = $this->keyChangesGradingPeriodsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1998,10 +1998,10 @@ class GradingPeriodsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postGradingPeriod'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2015,10 +2015,10 @@ class GradingPeriodsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postGradingPeriod'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2063,7 +2063,7 @@ class GradingPeriodsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postGradingPeriod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2084,7 +2084,7 @@ class GradingPeriodsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postGradingPeriod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2121,7 +2121,7 @@ class GradingPeriodsApi
     /**
      * Create request for operation 'postGradingPeriod'
      *
-     * @param  \OpenAPI\Client\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postGradingPeriod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2219,11 +2219,11 @@ class GradingPeriodsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putGradingPeriod'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2238,11 +2238,11 @@ class GradingPeriodsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putGradingPeriod'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2288,7 +2288,7 @@ class GradingPeriodsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putGradingPeriod'] to see the possible values for this operation
      *
@@ -2311,7 +2311,7 @@ class GradingPeriodsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putGradingPeriod'] to see the possible values for this operation
      *
@@ -2350,7 +2350,7 @@ class GradingPeriodsApi
      * Create request for operation 'putGradingPeriod'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiGradingPeriod $ed_fi_grading_period The JSON representation of the \&quot;gradingPeriod\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putGradingPeriod'] to see the possible values for this operation
      *

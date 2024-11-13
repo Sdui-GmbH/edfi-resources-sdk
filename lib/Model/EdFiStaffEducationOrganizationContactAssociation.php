@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffEducationOrganizationContactAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,12 +59,12 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
     protected static $openAPITypes = [
         'id' => 'string',
         'contact_title' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
-        'address' => '\OpenAPI\Client\Model\EdFiStaffEducationOrganizationContactAssociationAddress',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
+        'address' => '\Resources\Model\EdFiStaffEducationOrganizationContactAssociationAddress',
         'contact_type_descriptor' => 'string',
         'electronic_mail_address' => 'string',
-        'telephones' => '\OpenAPI\Client\Model\EdFiStaffEducationOrganizationContactAssociationTelephone[]',
+        'telephones' => '\Resources\Model\EdFiStaffEducationOrganizationContactAssociationTelephone[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -448,7 +448,7 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -458,7 +458,7 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -475,7 +475,7 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference
+     * @return \Resources\Model\EdFiStaffReference
      */
     public function getStaffReference()
     {
@@ -485,7 +485,7 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference $staff_reference staff_reference
      *
      * @return self
      */
@@ -502,7 +502,7 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
     /**
      * Gets address
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffEducationOrganizationContactAssociationAddress|null
+     * @return \Resources\Model\EdFiStaffEducationOrganizationContactAssociationAddress|null
      */
     public function getAddress()
     {
@@ -512,7 +512,7 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
     /**
      * Sets address
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffEducationOrganizationContactAssociationAddress|null $address address
+     * @param \Resources\Model\EdFiStaffEducationOrganizationContactAssociationAddress|null $address address
      *
      * @return self
      */
@@ -601,7 +601,7 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
     /**
      * Gets telephones
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffEducationOrganizationContactAssociationTelephone[]|null
+     * @return \Resources\Model\EdFiStaffEducationOrganizationContactAssociationTelephone[]|null
      */
     public function getTelephones()
     {
@@ -611,7 +611,7 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
     /**
      * Sets telephones
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffEducationOrganizationContactAssociationTelephone[]|null $telephones An unordered collection of staffEducationOrganizationContactAssociationTelephones. The optional telephone for the contact associated with the education organization.
+     * @param \Resources\Model\EdFiStaffEducationOrganizationContactAssociationTelephone[]|null $telephones An unordered collection of staffEducationOrganizationContactAssociationTelephones. The optional telephone for the contact associated with the education organization.
      *
      * @return self
      */

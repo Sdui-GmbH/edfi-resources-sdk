@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **begin_date** | **\DateTime** | Month, day, and year of a teacher&#39;s assignment to the section. |
-**section_reference** | [**\OpenAPI\Client\Model\EdFiSectionReference**](EdFiSectionReference.md) |  |
-**staff_reference** | [**\OpenAPI\Client\Model\EdFiStaffReference**](EdFiStaffReference.md) |  |
+**section_reference** | [**\Resources\Model\EdFiSectionReference**](EdFiSectionReference.md) |  |
+**staff_reference** | [**\Resources\Model\EdFiStaffReference**](EdFiStaffReference.md) |  |
 **classroom_position_descriptor** | **string** | The type of position the staff member holds in the specific class/section. |
 **end_date** | **\DateTime** | Month, day, and year of the last day of a staff member&#39;s assignment to the section. | [optional]
 **highly_qualified_teacher** | **bool** | An indication of whether a teacher is classified as highly qualified for his/her assignment according to state definition. This attribute indicates the teacher is highly qualified for this section being taught. | [optional]

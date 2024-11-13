@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange implements Mo
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange implements Mo
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange implements Mo
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange implements Mo
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange implements Mo
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKey|null $new_key_values new_key_values
      *
      * @return self
      */

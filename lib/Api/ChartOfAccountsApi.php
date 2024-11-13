@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * ChartOfAccountsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class ChartOfAccountsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChartOfAccountById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class ChartOfAccountsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteChartOfAccountById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class ChartOfAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesChartOfAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiChartOfAccountDelete[]
      */
     public function deletesChartOfAccounts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesChartOfAccounts'][0])
     {
@@ -407,9 +407,9 @@ class ChartOfAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesChartOfAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiChartOfAccountDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesChartOfAccountsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesChartOfAccounts'][0])
     {
@@ -440,11 +440,11 @@ class ChartOfAccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiChartOfAccountDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiChartOfAccountDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class ChartOfAccountsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiChartOfAccountDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class ChartOfAccountsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiChartOfAccountDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class ChartOfAccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiChartOfAccountDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class ChartOfAccountsApi
      */
     public function deletesChartOfAccountsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesChartOfAccounts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiChartOfAccountDelete[]';
         $request = $this->deletesChartOfAccountsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -781,9 +781,9 @@ class ChartOfAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChartOfAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiChartOfAccount[]
+     * @return \Resources\Model\EdFiChartOfAccount[]
      */
     public function getChartOfAccounts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $account_identifier = null, $fiscal_year = null, $education_organization_id = null, $balance_sheet_code = null, $function_code = null, $fund_code = null, $object_code = null, $operational_unit_code = null, $program_code = null, $project_code = null, $source_code = null, $account_type_descriptor = null, $account_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getChartOfAccounts'][0])
     {
@@ -818,9 +818,9 @@ class ChartOfAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChartOfAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiChartOfAccount[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiChartOfAccount[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getChartOfAccountsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $account_identifier = null, $fiscal_year = null, $education_organization_id = null, $balance_sheet_code = null, $function_code = null, $fund_code = null, $object_code = null, $operational_unit_code = null, $program_code = null, $project_code = null, $source_code = null, $account_type_descriptor = null, $account_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getChartOfAccounts'][0])
     {
@@ -851,11 +851,11 @@ class ChartOfAccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiChartOfAccount[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiChartOfAccount[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiChartOfAccount[]' !== 'string') {
+                        if ('\Resources\Model\EdFiChartOfAccount[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -873,7 +873,7 @@ class ChartOfAccountsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiChartOfAccount[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiChartOfAccount[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -892,7 +892,7 @@ class ChartOfAccountsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiChartOfAccount[]';
+            $returnType = '\Resources\Model\EdFiChartOfAccount[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -925,7 +925,7 @@ class ChartOfAccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiChartOfAccount[]',
+                        '\Resources\Model\EdFiChartOfAccount[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1007,7 +1007,7 @@ class ChartOfAccountsApi
      */
     public function getChartOfAccountsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $account_identifier = null, $fiscal_year = null, $education_organization_id = null, $balance_sheet_code = null, $function_code = null, $fund_code = null, $object_code = null, $operational_unit_code = null, $program_code = null, $project_code = null, $source_code = null, $account_type_descriptor = null, $account_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getChartOfAccounts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiChartOfAccount[]';
+        $returnType = '\Resources\Model\EdFiChartOfAccount[]';
         $request = $this->getChartOfAccountsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $account_identifier, $fiscal_year, $education_organization_id, $balance_sheet_code, $function_code, $fund_code, $object_code, $operational_unit_code, $program_code, $project_code, $source_code, $account_type_descriptor, $account_name, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1390,9 +1390,9 @@ class ChartOfAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChartOfAccountsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiChartOfAccount
+     * @return \Resources\Model\EdFiChartOfAccount
      */
     public function getChartOfAccountsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getChartOfAccountsById'][0])
     {
@@ -1410,9 +1410,9 @@ class ChartOfAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getChartOfAccountsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiChartOfAccount, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiChartOfAccount, HTTP status code, HTTP response headers (array of strings)
      */
     public function getChartOfAccountsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getChartOfAccountsById'][0])
     {
@@ -1443,11 +1443,11 @@ class ChartOfAccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiChartOfAccount' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiChartOfAccount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiChartOfAccount' !== 'string') {
+                        if ('\Resources\Model\EdFiChartOfAccount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1465,7 +1465,7 @@ class ChartOfAccountsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiChartOfAccount', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiChartOfAccount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1484,7 +1484,7 @@ class ChartOfAccountsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiChartOfAccount';
+            $returnType = '\Resources\Model\EdFiChartOfAccount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1517,7 +1517,7 @@ class ChartOfAccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiChartOfAccount',
+                        '\Resources\Model\EdFiChartOfAccount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1565,7 +1565,7 @@ class ChartOfAccountsApi
      */
     public function getChartOfAccountsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getChartOfAccountsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiChartOfAccount';
+        $returnType = '\Resources\Model\EdFiChartOfAccount';
         $request = $this->getChartOfAccountsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1725,9 +1725,9 @@ class ChartOfAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesChartOfAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiChartOfAccountKeyChange[]
      */
     public function keyChangesChartOfAccounts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesChartOfAccounts'][0])
     {
@@ -1748,9 +1748,9 @@ class ChartOfAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesChartOfAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiChartOfAccountKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesChartOfAccountsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesChartOfAccounts'][0])
     {
@@ -1781,11 +1781,11 @@ class ChartOfAccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiChartOfAccountKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiChartOfAccountKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1803,7 +1803,7 @@ class ChartOfAccountsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiChartOfAccountKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1822,7 +1822,7 @@ class ChartOfAccountsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiChartOfAccountKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1855,7 +1855,7 @@ class ChartOfAccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiChartOfAccountKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1909,7 +1909,7 @@ class ChartOfAccountsApi
      */
     public function keyChangesChartOfAccountsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesChartOfAccounts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiChartOfAccountKeyChange[]';
         $request = $this->keyChangesChartOfAccountsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2100,10 +2100,10 @@ class ChartOfAccountsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postChartOfAccount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2117,10 +2117,10 @@ class ChartOfAccountsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postChartOfAccount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2165,7 +2165,7 @@ class ChartOfAccountsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postChartOfAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2186,7 +2186,7 @@ class ChartOfAccountsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postChartOfAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2223,7 +2223,7 @@ class ChartOfAccountsApi
     /**
      * Create request for operation 'postChartOfAccount'
      *
-     * @param  \OpenAPI\Client\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postChartOfAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2321,11 +2321,11 @@ class ChartOfAccountsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putChartOfAccount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2340,11 +2340,11 @@ class ChartOfAccountsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putChartOfAccount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2390,7 +2390,7 @@ class ChartOfAccountsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putChartOfAccount'] to see the possible values for this operation
      *
@@ -2413,7 +2413,7 @@ class ChartOfAccountsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putChartOfAccount'] to see the possible values for this operation
      *
@@ -2452,7 +2452,7 @@ class ChartOfAccountsApi
      * Create request for operation 'putChartOfAccount'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiChartOfAccount $ed_fi_chart_of_account The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putChartOfAccount'] to see the possible values for this operation
      *

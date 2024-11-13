@@ -1,4 +1,4 @@
-# OpenAPI\Client\PeopleApi
+# Resources\PeopleApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PeopleApi(
+$apiInstance = new Resources\Api\PeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesPeople()`
 
 ```php
-deletesPeople($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiPersonDelete[]
+deletesPeople($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiPersonDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PeopleApi(
+$apiInstance = new Resources\Api\PeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiPersonDelete[]**](../Model/TrackedChangesEdFiPersonDelete.md)
+[**\Resources\Model\TrackedChangesEdFiPersonDelete[]**](../Model/TrackedChangesEdFiPersonDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getPeople()`
 
 ```php
-getPeople($offset, $limit, $min_change_version, $max_change_version, $total_count, $source_system_descriptor, $person_id, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiPerson[]
+getPeople($offset, $limit, $min_change_version, $max_change_version, $total_count, $source_system_descriptor, $person_id, $id, $use_snapshot): \Resources\Model\EdFiPerson[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PeopleApi(
+$apiInstance = new Resources\Api\PeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -205,7 +205,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiPerson[]**](../Model/EdFiPerson.md)
+[**\Resources\Model\EdFiPerson[]**](../Model/EdFiPerson.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ try {
 ## `getPeopleById()`
 
 ```php
-getPeopleById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiPerson
+getPeopleById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiPerson
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -238,10 +238,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PeopleApi(
+$apiInstance = new Resources\Api\PeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -269,7 +269,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiPerson**](../Model/EdFiPerson.md)
+[**\Resources\Model\EdFiPerson**](../Model/EdFiPerson.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ try {
 ## `keyChangesPeople()`
 
 ```php
-keyChangesPeople($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiPersonKeyChange[]
+keyChangesPeople($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiPersonKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -302,10 +302,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PeopleApi(
+$apiInstance = new Resources\Api\PeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -339,7 +339,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiPersonKeyChange[]**](../Model/TrackedChangesEdFiPersonKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiPersonKeyChange[]**](../Model/TrackedChangesEdFiPersonKeyChange.md)
 
 ### Authorization
 
@@ -372,16 +372,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PeopleApi(
+$apiInstance = new Resources\Api\PeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_person = new \OpenAPI\Client\Model\EdFiPerson(); // \OpenAPI\Client\Model\EdFiPerson | The JSON representation of the \"person\" resource to be created or updated.
+$ed_fi_person = new \Resources\Model\EdFiPerson(); // \Resources\Model\EdFiPerson | The JSON representation of the \"person\" resource to be created or updated.
 
 try {
     $apiInstance->postPerson($ed_fi_person);
@@ -394,7 +394,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_person** | [**\OpenAPI\Client\Model\EdFiPerson**](../Model/EdFiPerson.md)| The JSON representation of the \&quot;person\&quot; resource to be created or updated. | |
+| **ed_fi_person** | [**\Resources\Model\EdFiPerson**](../Model/EdFiPerson.md)| The JSON representation of the \&quot;person\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -431,17 +431,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PeopleApi(
+$apiInstance = new Resources\Api\PeopleApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_person = new \OpenAPI\Client\Model\EdFiPerson(); // \OpenAPI\Client\Model\EdFiPerson | The JSON representation of the \"person\" resource to be created or updated.
+$ed_fi_person = new \Resources\Model\EdFiPerson(); // \Resources\Model\EdFiPerson | The JSON representation of the \"person\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -456,7 +456,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_person** | [**\OpenAPI\Client\Model\EdFiPerson**](../Model/EdFiPerson.md)| The JSON representation of the \&quot;person\&quot; resource to be created or updated. | |
+| **ed_fi_person** | [**\Resources\Model\EdFiPerson**](../Model/EdFiPerson.md)| The JSON representation of the \&quot;person\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

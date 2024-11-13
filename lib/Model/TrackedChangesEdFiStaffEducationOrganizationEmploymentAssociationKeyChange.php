@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey|null $new_key_values new_key_values
      *
      * @return self
      */

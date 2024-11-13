@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **entry_date** | **\DateTime** | The month, day, and year on which an individual enters and begins to receive instructional services in a school. |
-**calendar_reference** | [**\OpenAPI\Client\Model\EdFiCalendarReference**](EdFiCalendarReference.md) |  | [optional]
-**class_of_school_year_type_reference** | [**\OpenAPI\Client\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  | [optional]
-**graduation_plan_reference** | [**\OpenAPI\Client\Model\EdFiGraduationPlanReference**](EdFiGraduationPlanReference.md) |  | [optional]
-**next_year_school_reference** | [**\OpenAPI\Client\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  | [optional]
-**school_reference** | [**\OpenAPI\Client\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
-**school_year_type_reference** | [**\OpenAPI\Client\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  | [optional]
-**student_reference** | [**\OpenAPI\Client\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
-**alternative_graduation_plans** | [**\OpenAPI\Client\Model\EdFiStudentSchoolAssociationAlternativeGraduationPlan[]**](EdFiStudentSchoolAssociationAlternativeGraduationPlan.md) | An unordered collection of studentSchoolAssociationAlternativeGraduationPlans. The secondary graduation plan or plans associated with the student enrolled in the school. | [optional]
-**education_plans** | [**\OpenAPI\Client\Model\EdFiStudentSchoolAssociationEducationPlan[]**](EdFiStudentSchoolAssociationEducationPlan.md) | An unordered collection of studentSchoolAssociationEducationPlans. The type of education plan(s) the student is following, if appropriate. | [optional]
+**calendar_reference** | [**\Resources\Model\EdFiCalendarReference**](EdFiCalendarReference.md) |  | [optional]
+**class_of_school_year_type_reference** | [**\Resources\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  | [optional]
+**graduation_plan_reference** | [**\Resources\Model\EdFiGraduationPlanReference**](EdFiGraduationPlanReference.md) |  | [optional]
+**next_year_school_reference** | [**\Resources\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  | [optional]
+**school_reference** | [**\Resources\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
+**school_year_type_reference** | [**\Resources\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  | [optional]
+**student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
+**alternative_graduation_plans** | [**\Resources\Model\EdFiStudentSchoolAssociationAlternativeGraduationPlan[]**](EdFiStudentSchoolAssociationAlternativeGraduationPlan.md) | An unordered collection of studentSchoolAssociationAlternativeGraduationPlans. The secondary graduation plan or plans associated with the student enrolled in the school. | [optional]
+**education_plans** | [**\Resources\Model\EdFiStudentSchoolAssociationEducationPlan[]**](EdFiStudentSchoolAssociationEducationPlan.md) | An unordered collection of studentSchoolAssociationEducationPlans. The type of education plan(s) the student is following, if appropriate. | [optional]
 **employed_while_enrolled** | **bool** | An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. | [optional]
 **enrollment_type_descriptor** | **string** | The type of enrollment reflected by the StudentSchoolAssociation. | [optional]
 **entry_grade_level_descriptor** | **string** | The grade level or primary instructional level at which a student enters and receives services in a school or an educational institution during a given academic session. |

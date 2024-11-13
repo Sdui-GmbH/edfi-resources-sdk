@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiInterventionStudy Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,19 +59,19 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'id' => 'string',
         'intervention_study_identification_code' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'intervention_prescription_reference' => '\OpenAPI\Client\Model\EdFiInterventionPrescriptionReference',
-        'appropriate_grade_levels' => '\OpenAPI\Client\Model\EdFiInterventionStudyAppropriateGradeLevel[]',
-        'appropriate_sexes' => '\OpenAPI\Client\Model\EdFiInterventionStudyAppropriateSex[]',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'intervention_prescription_reference' => '\Resources\Model\EdFiInterventionPrescriptionReference',
+        'appropriate_grade_levels' => '\Resources\Model\EdFiInterventionStudyAppropriateGradeLevel[]',
+        'appropriate_sexes' => '\Resources\Model\EdFiInterventionStudyAppropriateSex[]',
         'delivery_method_descriptor' => 'string',
-        'education_contents' => '\OpenAPI\Client\Model\EdFiInterventionStudyEducationContent[]',
+        'education_contents' => '\Resources\Model\EdFiInterventionStudyEducationContent[]',
         'intervention_class_descriptor' => 'string',
-        'intervention_effectivenesses' => '\OpenAPI\Client\Model\EdFiInterventionStudyInterventionEffectiveness[]',
-        'learning_resource_metadata_uris' => '\OpenAPI\Client\Model\EdFiInterventionStudyLearningResourceMetadataURI[]',
+        'intervention_effectivenesses' => '\Resources\Model\EdFiInterventionStudyInterventionEffectiveness[]',
+        'learning_resource_metadata_uris' => '\Resources\Model\EdFiInterventionStudyLearningResourceMetadataURI[]',
         'participants' => 'int',
-        'population_serveds' => '\OpenAPI\Client\Model\EdFiInterventionStudyPopulationServed[]',
-        'state_abbreviations' => '\OpenAPI\Client\Model\EdFiInterventionStudyStateAbbreviation[]',
-        'uris' => '\OpenAPI\Client\Model\EdFiInterventionStudyURI[]',
+        'population_serveds' => '\Resources\Model\EdFiInterventionStudyPopulationServed[]',
+        'state_abbreviations' => '\Resources\Model\EdFiInterventionStudyStateAbbreviation[]',
+        'uris' => '\Resources\Model\EdFiInterventionStudyURI[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -499,7 +499,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -509,7 +509,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -526,7 +526,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets intervention_prescription_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionPrescriptionReference
+     * @return \Resources\Model\EdFiInterventionPrescriptionReference
      */
     public function getInterventionPrescriptionReference()
     {
@@ -536,7 +536,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets intervention_prescription_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionPrescriptionReference $intervention_prescription_reference intervention_prescription_reference
+     * @param \Resources\Model\EdFiInterventionPrescriptionReference $intervention_prescription_reference intervention_prescription_reference
      *
      * @return self
      */
@@ -553,7 +553,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets appropriate_grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionStudyAppropriateGradeLevel[]|null
+     * @return \Resources\Model\EdFiInterventionStudyAppropriateGradeLevel[]|null
      */
     public function getAppropriateGradeLevels()
     {
@@ -563,7 +563,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets appropriate_grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionStudyAppropriateGradeLevel[]|null $appropriate_grade_levels An unordered collection of interventionStudyAppropriateGradeLevels. Grade levels participating in this study.
+     * @param \Resources\Model\EdFiInterventionStudyAppropriateGradeLevel[]|null $appropriate_grade_levels An unordered collection of interventionStudyAppropriateGradeLevels. Grade levels participating in this study.
      *
      * @return self
      */
@@ -580,7 +580,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets appropriate_sexes
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionStudyAppropriateSex[]|null
+     * @return \Resources\Model\EdFiInterventionStudyAppropriateSex[]|null
      */
     public function getAppropriateSexes()
     {
@@ -590,7 +590,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets appropriate_sexes
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionStudyAppropriateSex[]|null $appropriate_sexes An unordered collection of interventionStudyAppropriateSexes. Sexes participating in this study. If omitted, considered generally applicable.
+     * @param \Resources\Model\EdFiInterventionStudyAppropriateSex[]|null $appropriate_sexes An unordered collection of interventionStudyAppropriateSexes. Sexes participating in this study. If omitted, considered generally applicable.
      *
      * @return self
      */
@@ -638,7 +638,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets education_contents
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionStudyEducationContent[]|null
+     * @return \Resources\Model\EdFiInterventionStudyEducationContent[]|null
      */
     public function getEducationContents()
     {
@@ -648,7 +648,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets education_contents
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionStudyEducationContent[]|null $education_contents An unordered collection of interventionStudyEducationContents. Relates the education content source to the education content.
+     * @param \Resources\Model\EdFiInterventionStudyEducationContent[]|null $education_contents An unordered collection of interventionStudyEducationContents. Relates the education content source to the education content.
      *
      * @return self
      */
@@ -696,7 +696,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets intervention_effectivenesses
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionStudyInterventionEffectiveness[]|null
+     * @return \Resources\Model\EdFiInterventionStudyInterventionEffectiveness[]|null
      */
     public function getInterventionEffectivenesses()
     {
@@ -706,7 +706,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets intervention_effectivenesses
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionStudyInterventionEffectiveness[]|null $intervention_effectivenesses An unordered collection of interventionStudyInterventionEffectivenesses. Measurement of the effectiveness of the intervention study per diagnosis.
+     * @param \Resources\Model\EdFiInterventionStudyInterventionEffectiveness[]|null $intervention_effectivenesses An unordered collection of interventionStudyInterventionEffectivenesses. Measurement of the effectiveness of the intervention study per diagnosis.
      *
      * @return self
      */
@@ -723,7 +723,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets learning_resource_metadata_uris
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionStudyLearningResourceMetadataURI[]|null
+     * @return \Resources\Model\EdFiInterventionStudyLearningResourceMetadataURI[]|null
      */
     public function getLearningResourceMetadataUris()
     {
@@ -733,7 +733,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets learning_resource_metadata_uris
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionStudyLearningResourceMetadataURI[]|null $learning_resource_metadata_uris An unordered collection of interventionStudyLearningResourceMetadataURIs. The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item.
+     * @param \Resources\Model\EdFiInterventionStudyLearningResourceMetadataURI[]|null $learning_resource_metadata_uris An unordered collection of interventionStudyLearningResourceMetadataURIs. The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item.
      *
      * @return self
      */
@@ -777,7 +777,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets population_serveds
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionStudyPopulationServed[]|null
+     * @return \Resources\Model\EdFiInterventionStudyPopulationServed[]|null
      */
     public function getPopulationServeds()
     {
@@ -787,7 +787,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets population_serveds
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionStudyPopulationServed[]|null $population_serveds An unordered collection of interventionStudyPopulationServeds. A subset of students that are the focus of the intervention study.
+     * @param \Resources\Model\EdFiInterventionStudyPopulationServed[]|null $population_serveds An unordered collection of interventionStudyPopulationServeds. A subset of students that are the focus of the intervention study.
      *
      * @return self
      */
@@ -804,7 +804,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets state_abbreviations
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionStudyStateAbbreviation[]|null
+     * @return \Resources\Model\EdFiInterventionStudyStateAbbreviation[]|null
      */
     public function getStateAbbreviations()
     {
@@ -814,7 +814,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets state_abbreviations
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionStudyStateAbbreviation[]|null $state_abbreviations An unordered collection of interventionStudyStateAbbreviations. The abbreviation for the state (within the United States) or outlying area, the school system of which the participants of the study are considered to be a part.
+     * @param \Resources\Model\EdFiInterventionStudyStateAbbreviation[]|null $state_abbreviations An unordered collection of interventionStudyStateAbbreviations. The abbreviation for the state (within the United States) or outlying area, the school system of which the participants of the study are considered to be a part.
      *
      * @return self
      */
@@ -831,7 +831,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets uris
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionStudyURI[]|null
+     * @return \Resources\Model\EdFiInterventionStudyURI[]|null
      */
     public function getUris()
     {
@@ -841,7 +841,7 @@ class EdFiInterventionStudy implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets uris
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionStudyURI[]|null $uris An unordered collection of interventionStudyURIs. The URI (typical a URL) pointing to an education content item.
+     * @param \Resources\Model\EdFiInterventionStudyURI[]|null $uris An unordered collection of interventionStudyURIs. The URI (typical a URL) pointing to an education content item.
      *
      * @return self
      */

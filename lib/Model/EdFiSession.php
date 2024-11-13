@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSession Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,12 +59,12 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'session_name' => 'string',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
-        'academic_weeks' => '\OpenAPI\Client\Model\EdFiSessionAcademicWeek[]',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
+        'academic_weeks' => '\Resources\Model\EdFiSessionAcademicWeek[]',
         'begin_date' => '\DateTime',
         'end_date' => '\DateTime',
-        'grading_periods' => '\OpenAPI\Client\Model\EdFiSessionGradingPeriod[]',
+        'grading_periods' => '\Resources\Model\EdFiSessionGradingPeriod[]',
         'term_descriptor' => 'string',
         'total_instructional_days' => 'int',
         '_etag' => 'string',
@@ -467,7 +467,7 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -477,7 +477,7 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */
@@ -494,7 +494,7 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference
+     * @return \Resources\Model\EdFiSchoolYearTypeReference
      */
     public function getSchoolYearTypeReference()
     {
@@ -504,7 +504,7 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
      *
      * @return self
      */
@@ -521,7 +521,7 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets academic_weeks
      *
-     * @return \OpenAPI\Client\Model\EdFiSessionAcademicWeek[]|null
+     * @return \Resources\Model\EdFiSessionAcademicWeek[]|null
      */
     public function getAcademicWeeks()
     {
@@ -531,7 +531,7 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets academic_weeks
      *
-     * @param \OpenAPI\Client\Model\EdFiSessionAcademicWeek[]|null $academic_weeks An unordered collection of sessionAcademicWeeks. The academic weeks associated with the school year.
+     * @param \Resources\Model\EdFiSessionAcademicWeek[]|null $academic_weeks An unordered collection of sessionAcademicWeeks. The academic weeks associated with the school year.
      *
      * @return self
      */
@@ -602,7 +602,7 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grading_periods
      *
-     * @return \OpenAPI\Client\Model\EdFiSessionGradingPeriod[]|null
+     * @return \Resources\Model\EdFiSessionGradingPeriod[]|null
      */
     public function getGradingPeriods()
     {
@@ -612,7 +612,7 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grading_periods
      *
-     * @param \OpenAPI\Client\Model\EdFiSessionGradingPeriod[]|null $grading_periods An unordered collection of sessionGradingPeriods. Grading periods associated with the session.
+     * @param \Resources\Model\EdFiSessionGradingPeriod[]|null $grading_periods An unordered collection of sessionGradingPeriods. Grading periods associated with the session.
      *
      * @return self
      */

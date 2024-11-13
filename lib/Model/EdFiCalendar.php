@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiCalendar Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,10 +59,10 @@ class EdFiCalendar implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'calendar_code' => 'string',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
         'calendar_type_descriptor' => 'string',
-        'grade_levels' => '\OpenAPI\Client\Model\EdFiCalendarGradeLevel[]',
+        'grade_levels' => '\Resources\Model\EdFiCalendarGradeLevel[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -426,7 +426,7 @@ class EdFiCalendar implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -436,7 +436,7 @@ class EdFiCalendar implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */
@@ -453,7 +453,7 @@ class EdFiCalendar implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference
+     * @return \Resources\Model\EdFiSchoolYearTypeReference
      */
     public function getSchoolYearTypeReference()
     {
@@ -463,7 +463,7 @@ class EdFiCalendar implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
      *
      * @return self
      */
@@ -511,7 +511,7 @@ class EdFiCalendar implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiCalendarGradeLevel[]|null
+     * @return \Resources\Model\EdFiCalendarGradeLevel[]|null
      */
     public function getGradeLevels()
     {
@@ -521,7 +521,7 @@ class EdFiCalendar implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiCalendarGradeLevel[]|null $grade_levels An unordered collection of calendarGradeLevels. Indicates the grade level associated with the calendar.
+     * @param \Resources\Model\EdFiCalendarGradeLevel[]|null $grade_levels An unordered collection of calendarGradeLevels. Indicates the grade level associated with the calendar.
      *
      * @return self
      */

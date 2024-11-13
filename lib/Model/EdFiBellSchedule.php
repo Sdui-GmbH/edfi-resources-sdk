@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiBellSchedule Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,12 +59,12 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'bell_schedule_name' => 'string',
-        'class_periods' => '\OpenAPI\Client\Model\EdFiBellScheduleClassPeriod[]',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
+        'class_periods' => '\Resources\Model\EdFiBellScheduleClassPeriod[]',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
         'alternate_day_name' => 'string',
-        'dates' => '\OpenAPI\Client\Model\EdFiBellScheduleDate[]',
+        'dates' => '\Resources\Model\EdFiBellScheduleDate[]',
         'end_time' => 'string',
-        'grade_levels' => '\OpenAPI\Client\Model\EdFiBellScheduleGradeLevel[]',
+        'grade_levels' => '\Resources\Model\EdFiBellScheduleGradeLevel[]',
         'start_time' => 'string',
         'total_instructional_time' => 'int',
         '_etag' => 'string',
@@ -455,7 +455,7 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets class_periods
      *
-     * @return \OpenAPI\Client\Model\EdFiBellScheduleClassPeriod[]
+     * @return \Resources\Model\EdFiBellScheduleClassPeriod[]
      */
     public function getClassPeriods()
     {
@@ -465,7 +465,7 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets class_periods
      *
-     * @param \OpenAPI\Client\Model\EdFiBellScheduleClassPeriod[] $class_periods An unordered collection of bellScheduleClassPeriods. The class periods that compose this bell schedule.
+     * @param \Resources\Model\EdFiBellScheduleClassPeriod[] $class_periods An unordered collection of bellScheduleClassPeriods. The class periods that compose this bell schedule.
      *
      * @return self
      */
@@ -482,7 +482,7 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -492,7 +492,7 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */
@@ -550,7 +550,7 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dates
      *
-     * @return \OpenAPI\Client\Model\EdFiBellScheduleDate[]|null
+     * @return \Resources\Model\EdFiBellScheduleDate[]|null
      */
     public function getDates()
     {
@@ -560,7 +560,7 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dates
      *
-     * @param \OpenAPI\Client\Model\EdFiBellScheduleDate[]|null $dates An unordered collection of bellScheduleDates. The dates for which the bell schedule applies.
+     * @param \Resources\Model\EdFiBellScheduleDate[]|null $dates An unordered collection of bellScheduleDates. The dates for which the bell schedule applies.
      *
      * @return self
      */
@@ -611,7 +611,7 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiBellScheduleGradeLevel[]|null
+     * @return \Resources\Model\EdFiBellScheduleGradeLevel[]|null
      */
     public function getGradeLevels()
     {
@@ -621,7 +621,7 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiBellScheduleGradeLevel[]|null $grade_levels An unordered collection of bellScheduleGradeLevels. The grade levels the particular bell schedule applies to.
+     * @param \Resources\Model\EdFiBellScheduleGradeLevel[]|null $grade_levels An unordered collection of bellScheduleGradeLevels. The grade levels the particular bell schedule applies to.
      *
      * @return self
      */

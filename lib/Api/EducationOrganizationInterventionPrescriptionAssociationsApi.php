@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * EducationOrganizationInterventionPrescriptionAssociationsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEducationOrganizationInterventionPrescriptionAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEducationOrganizationInterventionPrescriptionAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducationOrganizationInterventionPrescriptionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]
      */
     public function deletesEducationOrganizationInterventionPrescriptionAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationOrganizationInterventionPrescriptionAssociations'][0])
     {
@@ -407,9 +407,9 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducationOrganizationInterventionPrescriptionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesEducationOrganizationInterventionPrescriptionAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationOrganizationInterventionPrescriptionAssociations'][0])
     {
@@ -440,11 +440,11 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      */
     public function deletesEducationOrganizationInterventionPrescriptionAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationOrganizationInterventionPrescriptionAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationDelete[]';
         $request = $this->deletesEducationOrganizationInterventionPrescriptionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -773,9 +773,9 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationInterventionPrescriptionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]
+     * @return \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]
      */
     public function getEducationOrganizationInterventionPrescriptionAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $intervention_prescription_education_organization_id = null, $intervention_prescription_identification_code = null, $begin_date = null, $end_date = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationInterventionPrescriptionAssociations'][0])
     {
@@ -802,9 +802,9 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationInterventionPrescriptionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEducationOrganizationInterventionPrescriptionAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $intervention_prescription_education_organization_id = null, $intervention_prescription_identification_code = null, $begin_date = null, $end_date = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationInterventionPrescriptionAssociations'][0])
     {
@@ -835,11 +835,11 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]' !== 'string') {
+                        if ('\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -857,7 +857,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -876,7 +876,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]';
+            $returnType = '\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -909,7 +909,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]',
+                        '\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -975,7 +975,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      */
     public function getEducationOrganizationInterventionPrescriptionAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $intervention_prescription_education_organization_id = null, $intervention_prescription_identification_code = null, $begin_date = null, $end_date = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationInterventionPrescriptionAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]';
+        $returnType = '\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation[]';
         $request = $this->getEducationOrganizationInterventionPrescriptionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_id, $intervention_prescription_education_organization_id, $intervention_prescription_identification_code, $begin_date, $end_date, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1240,9 +1240,9 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationInterventionPrescriptionAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation
+     * @return \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation
      */
     public function getEducationOrganizationInterventionPrescriptionAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationInterventionPrescriptionAssociationsById'][0])
     {
@@ -1260,9 +1260,9 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationInterventionPrescriptionAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEducationOrganizationInterventionPrescriptionAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationInterventionPrescriptionAssociationsById'][0])
     {
@@ -1293,11 +1293,11 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation' !== 'string') {
+                        if ('\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1315,7 +1315,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1334,7 +1334,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation';
+            $returnType = '\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1367,7 +1367,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation',
+                        '\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1415,7 +1415,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      */
     public function getEducationOrganizationInterventionPrescriptionAssociationsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationInterventionPrescriptionAssociationsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation';
+        $returnType = '\Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation';
         $request = $this->getEducationOrganizationInterventionPrescriptionAssociationsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1575,9 +1575,9 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducationOrganizationInterventionPrescriptionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]
      */
     public function keyChangesEducationOrganizationInterventionPrescriptionAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationOrganizationInterventionPrescriptionAssociations'][0])
     {
@@ -1598,9 +1598,9 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducationOrganizationInterventionPrescriptionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesEducationOrganizationInterventionPrescriptionAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationOrganizationInterventionPrescriptionAssociations'][0])
     {
@@ -1631,11 +1631,11 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1653,7 +1653,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1672,7 +1672,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1705,7 +1705,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1759,7 +1759,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      */
     public function keyChangesEducationOrganizationInterventionPrescriptionAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationOrganizationInterventionPrescriptionAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiEducationOrganizationInterventionPrescriptionAssociationKeyChange[]';
         $request = $this->keyChangesEducationOrganizationInterventionPrescriptionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1950,10 +1950,10 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducationOrganizationInterventionPrescriptionAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1967,10 +1967,10 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducationOrganizationInterventionPrescriptionAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2015,7 +2015,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducationOrganizationInterventionPrescriptionAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2036,7 +2036,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducationOrganizationInterventionPrescriptionAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2073,7 +2073,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
     /**
      * Create request for operation 'postEducationOrganizationInterventionPrescriptionAssociation'
      *
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducationOrganizationInterventionPrescriptionAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2171,11 +2171,11 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducationOrganizationInterventionPrescriptionAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2190,11 +2190,11 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducationOrganizationInterventionPrescriptionAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2240,7 +2240,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducationOrganizationInterventionPrescriptionAssociation'] to see the possible values for this operation
      *
@@ -2263,7 +2263,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducationOrganizationInterventionPrescriptionAssociation'] to see the possible values for this operation
      *
@@ -2302,7 +2302,7 @@ class EducationOrganizationInterventionPrescriptionAssociationsApi
      * Create request for operation 'putEducationOrganizationInterventionPrescriptionAssociation'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationInterventionPrescriptionAssociation $ed_fi_education_organization_intervention_prescription_association The JSON representation of the \&quot;educationOrganizationInterventionPrescriptionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducationOrganizationInterventionPrescriptionAssociation'] to see the possible values for this operation
      *

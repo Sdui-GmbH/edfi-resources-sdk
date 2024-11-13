@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffProgramAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class EdFiStaffProgramAssociation implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
-        'program_reference' => '\OpenAPI\Client\Model\EdFiProgramReference',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
+        'program_reference' => '\Resources\Model\EdFiProgramReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
         'end_date' => '\DateTime',
         'student_record_access' => 'bool',
         '_etag' => 'string',
@@ -404,7 +404,7 @@ class EdFiStaffProgramAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets program_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramReference
+     * @return \Resources\Model\EdFiProgramReference
      */
     public function getProgramReference()
     {
@@ -414,7 +414,7 @@ class EdFiStaffProgramAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets program_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramReference $program_reference program_reference
+     * @param \Resources\Model\EdFiProgramReference $program_reference program_reference
      *
      * @return self
      */
@@ -431,7 +431,7 @@ class EdFiStaffProgramAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference
+     * @return \Resources\Model\EdFiStaffReference
      */
     public function getStaffReference()
     {
@@ -441,7 +441,7 @@ class EdFiStaffProgramAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference $staff_reference staff_reference
      *
      * @return self
      */

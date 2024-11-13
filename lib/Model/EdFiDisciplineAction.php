@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiDisciplineAction Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,17 +60,17 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
         'id' => 'string',
         'discipline_action_identifier' => 'string',
         'discipline_date' => '\DateTime',
-        'disciplines' => '\OpenAPI\Client\Model\EdFiDisciplineActionDiscipline[]',
-        'assignment_school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'responsibility_school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'disciplines' => '\Resources\Model\EdFiDisciplineActionDiscipline[]',
+        'assignment_school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'responsibility_school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'actual_discipline_action_length' => 'float',
         'discipline_action_length' => 'float',
         'discipline_action_length_difference_reason_descriptor' => 'string',
         'iep_placement_meeting_indicator' => 'bool',
         'related_to_zero_tolerance_policy' => 'bool',
-        'staffs' => '\OpenAPI\Client\Model\EdFiDisciplineActionStaff[]',
-        'student_discipline_incident_behavior_associations' => '\OpenAPI\Client\Model\EdFiDisciplineActionStudentDisciplineIncidentBehaviorAssociation[]',
+        'staffs' => '\Resources\Model\EdFiDisciplineActionStaff[]',
+        'student_discipline_incident_behavior_associations' => '\Resources\Model\EdFiDisciplineActionStudentDisciplineIncidentBehaviorAssociation[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -520,7 +520,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets disciplines
      *
-     * @return \OpenAPI\Client\Model\EdFiDisciplineActionDiscipline[]
+     * @return \Resources\Model\EdFiDisciplineActionDiscipline[]
      */
     public function getDisciplines()
     {
@@ -530,7 +530,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets disciplines
      *
-     * @param \OpenAPI\Client\Model\EdFiDisciplineActionDiscipline[] $disciplines An unordered collection of disciplineActionDisciplines. Type of action, such as removal from the classroom, used to discipline the student involved as a perpetrator in a discipline incident.
+     * @param \Resources\Model\EdFiDisciplineActionDiscipline[] $disciplines An unordered collection of disciplineActionDisciplines. Type of action, such as removal from the classroom, used to discipline the student involved as a perpetrator in a discipline incident.
      *
      * @return self
      */
@@ -547,7 +547,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets assignment_school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference|null
+     * @return \Resources\Model\EdFiSchoolReference|null
      */
     public function getAssignmentSchoolReference()
     {
@@ -557,7 +557,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets assignment_school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference|null $assignment_school_reference assignment_school_reference
+     * @param \Resources\Model\EdFiSchoolReference|null $assignment_school_reference assignment_school_reference
      *
      * @return self
      */
@@ -574,7 +574,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets responsibility_school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getResponsibilitySchoolReference()
     {
@@ -584,7 +584,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets responsibility_school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $responsibility_school_reference responsibility_school_reference
+     * @param \Resources\Model\EdFiSchoolReference $responsibility_school_reference responsibility_school_reference
      *
      * @return self
      */
@@ -601,7 +601,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -611,7 +611,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -812,7 +812,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets staffs
      *
-     * @return \OpenAPI\Client\Model\EdFiDisciplineActionStaff[]|null
+     * @return \Resources\Model\EdFiDisciplineActionStaff[]|null
      */
     public function getStaffs()
     {
@@ -822,7 +822,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets staffs
      *
-     * @param \OpenAPI\Client\Model\EdFiDisciplineActionStaff[]|null $staffs An unordered collection of disciplineActionStaffs. The staff responsible for enforcing the discipline action.
+     * @param \Resources\Model\EdFiDisciplineActionStaff[]|null $staffs An unordered collection of disciplineActionStaffs. The staff responsible for enforcing the discipline action.
      *
      * @return self
      */
@@ -839,7 +839,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets student_discipline_incident_behavior_associations
      *
-     * @return \OpenAPI\Client\Model\EdFiDisciplineActionStudentDisciplineIncidentBehaviorAssociation[]|null
+     * @return \Resources\Model\EdFiDisciplineActionStudentDisciplineIncidentBehaviorAssociation[]|null
      */
     public function getStudentDisciplineIncidentBehaviorAssociations()
     {
@@ -849,7 +849,7 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets student_discipline_incident_behavior_associations
      *
-     * @param \OpenAPI\Client\Model\EdFiDisciplineActionStudentDisciplineIncidentBehaviorAssociation[]|null $student_discipline_incident_behavior_associations An unordered collection of disciplineActionStudentDisciplineIncidentBehaviorAssociations. A reference to the behavior(s) by the student that led or contributed to this specific action.
+     * @param \Resources\Model\EdFiDisciplineActionStudentDisciplineIncidentBehaviorAssociation[]|null $student_discipline_incident_behavior_associations An unordered collection of disciplineActionStudentDisciplineIncidentBehaviorAssociations. A reference to the behavior(s) by the student that led or contributed to this specific action.
      *
      * @return self
      */

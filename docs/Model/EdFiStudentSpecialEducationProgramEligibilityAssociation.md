@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **consent_to_evaluation_received_date** | **\DateTime** | Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. |
-**education_organization_reference** | [**\OpenAPI\Client\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  |
-**program_reference** | [**\OpenAPI\Client\Model\EdFiProgramReference**](EdFiProgramReference.md) |  |
-**student_reference** | [**\OpenAPI\Client\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
+**education_organization_reference** | [**\Resources\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  |
+**program_reference** | [**\Resources\Model\EdFiProgramReference**](EdFiProgramReference.md) |  |
+**student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
 **consent_to_evaluation_date** | **\DateTime** | The date on which the student&#39;s parent gave a consent (Parent Consent Date). | [optional]
 **eligibility_conference_date** | **\DateTime** | The month, day, and year when the eligibility conference is held between the parent(s)/guardian(s) and the educational organization responsible staff member(s) to review and make decision on special education related services eligibility. | [optional]
 **eligibility_delay_reason_descriptor** | **string** | The reason why the eligibility determination was completed beyond the required timeframe. | [optional]

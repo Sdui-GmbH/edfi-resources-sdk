@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiDisciplineActionStudentDisciplineIncidentBehaviorAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiDisciplineActionStudentDisciplineIncidentBehaviorAssociation implement
       * @var string[]
       */
     protected static $openAPITypes = [
-        'student_discipline_incident_behavior_association_reference' => '\OpenAPI\Client\Model\EdFiStudentDisciplineIncidentBehaviorAssociationReference'
+        'student_discipline_incident_behavior_association_reference' => '\Resources\Model\EdFiStudentDisciplineIncidentBehaviorAssociationReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiDisciplineActionStudentDisciplineIncidentBehaviorAssociation implement
     /**
      * Gets student_discipline_incident_behavior_association_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentDisciplineIncidentBehaviorAssociationReference
+     * @return \Resources\Model\EdFiStudentDisciplineIncidentBehaviorAssociationReference
      */
     public function getStudentDisciplineIncidentBehaviorAssociationReference()
     {
@@ -305,7 +305,7 @@ class EdFiDisciplineActionStudentDisciplineIncidentBehaviorAssociation implement
     /**
      * Sets student_discipline_incident_behavior_association_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentDisciplineIncidentBehaviorAssociationReference $student_discipline_incident_behavior_association_reference student_discipline_incident_behavior_association_reference
+     * @param \Resources\Model\EdFiStudentDisciplineIncidentBehaviorAssociationReference $student_discipline_incident_behavior_association_reference student_discipline_incident_behavior_association_reference
      *
      * @return self
      */

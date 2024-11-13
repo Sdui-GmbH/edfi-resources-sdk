@@ -1,4 +1,4 @@
-# OpenAPI\Client\FinancialAidsApi
+# Resources\FinancialAidsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FinancialAidsApi(
+$apiInstance = new Resources\Api\FinancialAidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesFinancialAids()`
 
 ```php
-deletesFinancialAids($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidDelete[]
+deletesFinancialAids($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesTpdmFinancialAidDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FinancialAidsApi(
+$apiInstance = new Resources\Api\FinancialAidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidDelete[]**](../Model/TrackedChangesTpdmFinancialAidDelete.md)
+[**\Resources\Model\TrackedChangesTpdmFinancialAidDelete[]**](../Model/TrackedChangesTpdmFinancialAidDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getFinancialAids()`
 
 ```php
-getFinancialAids($offset, $limit, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot): \OpenAPI\Client\Model\TpdmFinancialAid[]
+getFinancialAids($offset, $limit, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot): \Resources\Model\TpdmFinancialAid[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FinancialAidsApi(
+$apiInstance = new Resources\Api\FinancialAidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -215,7 +215,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TpdmFinancialAid[]**](../Model/TpdmFinancialAid.md)
+[**\Resources\Model\TpdmFinancialAid[]**](../Model/TpdmFinancialAid.md)
 
 ### Authorization
 
@@ -233,7 +233,7 @@ try {
 ## `getFinancialAidsById()`
 
 ```php
-getFinancialAidsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\TpdmFinancialAid
+getFinancialAidsById($id, $if_none_match, $use_snapshot): \Resources\Model\TpdmFinancialAid
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -248,10 +248,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FinancialAidsApi(
+$apiInstance = new Resources\Api\FinancialAidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -279,7 +279,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TpdmFinancialAid**](../Model/TpdmFinancialAid.md)
+[**\Resources\Model\TpdmFinancialAid**](../Model/TpdmFinancialAid.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ try {
 ## `keyChangesFinancialAids()`
 
 ```php
-keyChangesFinancialAids($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidKeyChange[]
+keyChangesFinancialAids($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -312,10 +312,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FinancialAidsApi(
+$apiInstance = new Resources\Api\FinancialAidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -349,7 +349,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidKeyChange[]**](../Model/TrackedChangesTpdmFinancialAidKeyChange.md)
+[**\Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]**](../Model/TrackedChangesTpdmFinancialAidKeyChange.md)
 
 ### Authorization
 
@@ -382,16 +382,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FinancialAidsApi(
+$apiInstance = new Resources\Api\FinancialAidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tpdm_financial_aid = new \OpenAPI\Client\Model\TpdmFinancialAid(); // \OpenAPI\Client\Model\TpdmFinancialAid | The JSON representation of the \"financialAid\" resource to be created or updated.
+$tpdm_financial_aid = new \Resources\Model\TpdmFinancialAid(); // \Resources\Model\TpdmFinancialAid | The JSON representation of the \"financialAid\" resource to be created or updated.
 
 try {
     $apiInstance->postFinancialAid($tpdm_financial_aid);
@@ -404,7 +404,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **tpdm_financial_aid** | [**\OpenAPI\Client\Model\TpdmFinancialAid**](../Model/TpdmFinancialAid.md)| The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. | |
+| **tpdm_financial_aid** | [**\Resources\Model\TpdmFinancialAid**](../Model/TpdmFinancialAid.md)| The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -441,17 +441,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FinancialAidsApi(
+$apiInstance = new Resources\Api\FinancialAidsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$tpdm_financial_aid = new \OpenAPI\Client\Model\TpdmFinancialAid(); // \OpenAPI\Client\Model\TpdmFinancialAid | The JSON representation of the \"financialAid\" resource to be created or updated.
+$tpdm_financial_aid = new \Resources\Model\TpdmFinancialAid(); // \Resources\Model\TpdmFinancialAid | The JSON representation of the \"financialAid\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -466,7 +466,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **tpdm_financial_aid** | [**\OpenAPI\Client\Model\TpdmFinancialAid**](../Model/TpdmFinancialAid.md)| The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. | |
+| **tpdm_financial_aid** | [**\Resources\Model\TpdmFinancialAid**](../Model/TpdmFinancialAid.md)| The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

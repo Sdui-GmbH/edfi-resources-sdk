@@ -1,4 +1,4 @@
-# OpenAPI\Client\CohortsApi
+# Resources\CohortsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CohortsApi(
+$apiInstance = new Resources\Api\CohortsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesCohorts()`
 
 ```php
-deletesCohorts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCohortDelete[]
+deletesCohorts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCohortDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CohortsApi(
+$apiInstance = new Resources\Api\CohortsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCohortDelete[]**](../Model/TrackedChangesEdFiCohortDelete.md)
+[**\Resources\Model\TrackedChangesEdFiCohortDelete[]**](../Model/TrackedChangesEdFiCohortDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getCohorts()`
 
 ```php
-getCohorts($offset, $limit, $min_change_version, $max_change_version, $total_count, $cohort_identifier, $education_organization_id, $academic_subject_descriptor, $cohort_scope_descriptor, $cohort_type_descriptor, $cohort_description, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiCohort[]
+getCohorts($offset, $limit, $min_change_version, $max_change_version, $total_count, $cohort_identifier, $education_organization_id, $academic_subject_descriptor, $cohort_scope_descriptor, $cohort_type_descriptor, $cohort_description, $id, $use_snapshot): \Resources\Model\EdFiCohort[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CohortsApi(
+$apiInstance = new Resources\Api\CohortsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -213,7 +213,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCohort[]**](../Model/EdFiCohort.md)
+[**\Resources\Model\EdFiCohort[]**](../Model/EdFiCohort.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ try {
 ## `getCohortsById()`
 
 ```php
-getCohortsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiCohort
+getCohortsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiCohort
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -246,10 +246,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CohortsApi(
+$apiInstance = new Resources\Api\CohortsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -277,7 +277,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCohort**](../Model/EdFiCohort.md)
+[**\Resources\Model\EdFiCohort**](../Model/EdFiCohort.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ try {
 ## `keyChangesCohorts()`
 
 ```php
-keyChangesCohorts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCohortKeyChange[]
+keyChangesCohorts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCohortKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -310,10 +310,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CohortsApi(
+$apiInstance = new Resources\Api\CohortsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -347,7 +347,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCohortKeyChange[]**](../Model/TrackedChangesEdFiCohortKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiCohortKeyChange[]**](../Model/TrackedChangesEdFiCohortKeyChange.md)
 
 ### Authorization
 
@@ -380,16 +380,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CohortsApi(
+$apiInstance = new Resources\Api\CohortsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_cohort = new \OpenAPI\Client\Model\EdFiCohort(); // \OpenAPI\Client\Model\EdFiCohort | The JSON representation of the \"cohort\" resource to be created or updated.
+$ed_fi_cohort = new \Resources\Model\EdFiCohort(); // \Resources\Model\EdFiCohort | The JSON representation of the \"cohort\" resource to be created or updated.
 
 try {
     $apiInstance->postCohort($ed_fi_cohort);
@@ -402,7 +402,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_cohort** | [**\OpenAPI\Client\Model\EdFiCohort**](../Model/EdFiCohort.md)| The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. | |
+| **ed_fi_cohort** | [**\Resources\Model\EdFiCohort**](../Model/EdFiCohort.md)| The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -439,17 +439,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CohortsApi(
+$apiInstance = new Resources\Api\CohortsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_cohort = new \OpenAPI\Client\Model\EdFiCohort(); // \OpenAPI\Client\Model\EdFiCohort | The JSON representation of the \"cohort\" resource to be created or updated.
+$ed_fi_cohort = new \Resources\Model\EdFiCohort(); // \Resources\Model\EdFiCohort | The JSON representation of the \"cohort\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -464,7 +464,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_cohort** | [**\OpenAPI\Client\Model\EdFiCohort**](../Model/EdFiCohort.md)| The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. | |
+| **ed_fi_cohort** | [**\Resources\Model\EdFiCohort**](../Model/EdFiCohort.md)| The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

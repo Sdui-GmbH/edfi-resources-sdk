@@ -1,4 +1,4 @@
-# OpenAPI\Client\StudentSpecialEducationProgramEligibilityAssociationsApi
+# Resources\StudentSpecialEducationProgramEligibilityAssociationsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
+$apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesStudentSpecialEducationProgramEligibilityAssociations()`
 
 ```php
-deletesStudentSpecialEducationProgramEligibilityAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete[]
+deletesStudentSpecialEducationProgramEligibilityAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
+$apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete[]**](../Model/TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete.md)
+[**\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete[]**](../Model/TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getStudentSpecialEducationProgramEligibilityAssociations()`
 
 ```php
-getStudentSpecialEducationProgramEligibilityAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[]
+getStudentSpecialEducationProgramEligibilityAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot): \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
+$apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -241,7 +241,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[]**](../Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.md)
+[**\Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[]**](../Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ try {
 ## `getStudentSpecialEducationProgramEligibilityAssociationsById()`
 
 ```php
-getStudentSpecialEducationProgramEligibilityAssociationsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation
+getStudentSpecialEducationProgramEligibilityAssociationsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -274,10 +274,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
+$apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -305,7 +305,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation**](../Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.md)
+[**\Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation**](../Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.md)
 
 ### Authorization
 
@@ -323,7 +323,7 @@ try {
 ## `keyChangesStudentSpecialEducationProgramEligibilityAssociations()`
 
 ```php
-keyChangesStudentSpecialEducationProgramEligibilityAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange[]
+keyChangesStudentSpecialEducationProgramEligibilityAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -338,10 +338,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
+$apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -375,7 +375,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange[]**](../Model/TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange[]**](../Model/TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange.md)
 
 ### Authorization
 
@@ -408,16 +408,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
+$apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_student_special_education_program_eligibility_association = new \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation(); // \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation | The JSON representation of the \"studentSpecialEducationProgramEligibilityAssociation\" resource to be created or updated.
+$ed_fi_student_special_education_program_eligibility_association = new \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation(); // \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation | The JSON representation of the \"studentSpecialEducationProgramEligibilityAssociation\" resource to be created or updated.
 
 try {
     $apiInstance->postStudentSpecialEducationProgramEligibilityAssociation($ed_fi_student_special_education_program_eligibility_association);
@@ -430,7 +430,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_student_special_education_program_eligibility_association** | [**\OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation**](../Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.md)| The JSON representation of the \&quot;studentSpecialEducationProgramEligibilityAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_student_special_education_program_eligibility_association** | [**\Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation**](../Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.md)| The JSON representation of the \&quot;studentSpecialEducationProgramEligibilityAssociation\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -467,17 +467,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
+$apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_student_special_education_program_eligibility_association = new \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation(); // \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation | The JSON representation of the \"studentSpecialEducationProgramEligibilityAssociation\" resource to be created or updated.
+$ed_fi_student_special_education_program_eligibility_association = new \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation(); // \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation | The JSON representation of the \"studentSpecialEducationProgramEligibilityAssociation\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -492,7 +492,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_student_special_education_program_eligibility_association** | [**\OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation**](../Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.md)| The JSON representation of the \&quot;studentSpecialEducationProgramEligibilityAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_student_special_education_program_eligibility_association** | [**\Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation**](../Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.md)| The JSON representation of the \&quot;studentSpecialEducationProgramEligibilityAssociation\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

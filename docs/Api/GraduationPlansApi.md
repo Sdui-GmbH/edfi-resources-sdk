@@ -1,4 +1,4 @@
-# OpenAPI\Client\GraduationPlansApi
+# Resources\GraduationPlansApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GraduationPlansApi(
+$apiInstance = new Resources\Api\GraduationPlansApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesGraduationPlans()`
 
 ```php
-deletesGraduationPlans($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanDelete[]
+deletesGraduationPlans($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiGraduationPlanDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GraduationPlansApi(
+$apiInstance = new Resources\Api\GraduationPlansApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanDelete[]**](../Model/TrackedChangesEdFiGraduationPlanDelete.md)
+[**\Resources\Model\TrackedChangesEdFiGraduationPlanDelete[]**](../Model/TrackedChangesEdFiGraduationPlanDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getGraduationPlans()`
 
 ```php
-getGraduationPlans($offset, $limit, $min_change_version, $max_change_version, $total_count, $graduation_plan_type_descriptor, $education_organization_id, $graduation_school_year, $total_required_credit_type_descriptor, $id, $individual_plan, $total_required_credit_conversion, $total_required_credits, $use_snapshot): \OpenAPI\Client\Model\EdFiGraduationPlan[]
+getGraduationPlans($offset, $limit, $min_change_version, $max_change_version, $total_count, $graduation_plan_type_descriptor, $education_organization_id, $graduation_school_year, $total_required_credit_type_descriptor, $id, $individual_plan, $total_required_credit_conversion, $total_required_credits, $use_snapshot): \Resources\Model\EdFiGraduationPlan[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GraduationPlansApi(
+$apiInstance = new Resources\Api\GraduationPlansApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -215,7 +215,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiGraduationPlan[]**](../Model/EdFiGraduationPlan.md)
+[**\Resources\Model\EdFiGraduationPlan[]**](../Model/EdFiGraduationPlan.md)
 
 ### Authorization
 
@@ -233,7 +233,7 @@ try {
 ## `getGraduationPlansById()`
 
 ```php
-getGraduationPlansById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiGraduationPlan
+getGraduationPlansById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiGraduationPlan
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -248,10 +248,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GraduationPlansApi(
+$apiInstance = new Resources\Api\GraduationPlansApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -279,7 +279,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiGraduationPlan**](../Model/EdFiGraduationPlan.md)
+[**\Resources\Model\EdFiGraduationPlan**](../Model/EdFiGraduationPlan.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ try {
 ## `keyChangesGraduationPlans()`
 
 ```php
-keyChangesGraduationPlans($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanKeyChange[]
+keyChangesGraduationPlans($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiGraduationPlanKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -312,10 +312,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GraduationPlansApi(
+$apiInstance = new Resources\Api\GraduationPlansApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -349,7 +349,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiGraduationPlanKeyChange[]**](../Model/TrackedChangesEdFiGraduationPlanKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiGraduationPlanKeyChange[]**](../Model/TrackedChangesEdFiGraduationPlanKeyChange.md)
 
 ### Authorization
 
@@ -382,16 +382,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GraduationPlansApi(
+$apiInstance = new Resources\Api\GraduationPlansApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_graduation_plan = new \OpenAPI\Client\Model\EdFiGraduationPlan(); // \OpenAPI\Client\Model\EdFiGraduationPlan | The JSON representation of the \"graduationPlan\" resource to be created or updated.
+$ed_fi_graduation_plan = new \Resources\Model\EdFiGraduationPlan(); // \Resources\Model\EdFiGraduationPlan | The JSON representation of the \"graduationPlan\" resource to be created or updated.
 
 try {
     $apiInstance->postGraduationPlan($ed_fi_graduation_plan);
@@ -404,7 +404,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_graduation_plan** | [**\OpenAPI\Client\Model\EdFiGraduationPlan**](../Model/EdFiGraduationPlan.md)| The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. | |
+| **ed_fi_graduation_plan** | [**\Resources\Model\EdFiGraduationPlan**](../Model/EdFiGraduationPlan.md)| The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -441,17 +441,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GraduationPlansApi(
+$apiInstance = new Resources\Api\GraduationPlansApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_graduation_plan = new \OpenAPI\Client\Model\EdFiGraduationPlan(); // \OpenAPI\Client\Model\EdFiGraduationPlan | The JSON representation of the \"graduationPlan\" resource to be created or updated.
+$ed_fi_graduation_plan = new \Resources\Model\EdFiGraduationPlan(); // \Resources\Model\EdFiGraduationPlan | The JSON representation of the \"graduationPlan\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -466,7 +466,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_graduation_plan** | [**\OpenAPI\Client\Model\EdFiGraduationPlan**](../Model/EdFiGraduationPlan.md)| The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. | |
+| **ed_fi_graduation_plan** | [**\Resources\Model\EdFiGraduationPlan**](../Model/EdFiGraduationPlan.md)| The JSON representation of the \&quot;graduationPlan\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

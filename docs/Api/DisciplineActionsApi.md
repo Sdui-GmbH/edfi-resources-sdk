@@ -1,4 +1,4 @@
-# OpenAPI\Client\DisciplineActionsApi
+# Resources\DisciplineActionsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\DisciplineActionsApi(
+$apiInstance = new Resources\Api\DisciplineActionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesDisciplineActions()`
 
 ```php
-deletesDisciplineActions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionDelete[]
+deletesDisciplineActions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\DisciplineActionsApi(
+$apiInstance = new Resources\Api\DisciplineActionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionDelete[]**](../Model/TrackedChangesEdFiDisciplineActionDelete.md)
+[**\Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]**](../Model/TrackedChangesEdFiDisciplineActionDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getDisciplineActions()`
 
 ```php
-getDisciplineActions($offset, $limit, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot): \OpenAPI\Client\Model\EdFiDisciplineAction[]
+getDisciplineActions($offset, $limit, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot): \Resources\Model\EdFiDisciplineAction[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\DisciplineActionsApi(
+$apiInstance = new Resources\Api\DisciplineActionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -221,7 +221,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiDisciplineAction[]**](../Model/EdFiDisciplineAction.md)
+[**\Resources\Model\EdFiDisciplineAction[]**](../Model/EdFiDisciplineAction.md)
 
 ### Authorization
 
@@ -239,7 +239,7 @@ try {
 ## `getDisciplineActionsById()`
 
 ```php
-getDisciplineActionsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiDisciplineAction
+getDisciplineActionsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiDisciplineAction
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -254,10 +254,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\DisciplineActionsApi(
+$apiInstance = new Resources\Api\DisciplineActionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -285,7 +285,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiDisciplineAction**](../Model/EdFiDisciplineAction.md)
+[**\Resources\Model\EdFiDisciplineAction**](../Model/EdFiDisciplineAction.md)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ try {
 ## `keyChangesDisciplineActions()`
 
 ```php
-keyChangesDisciplineActions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionKeyChange[]
+keyChangesDisciplineActions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -318,10 +318,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\DisciplineActionsApi(
+$apiInstance = new Resources\Api\DisciplineActionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -355,7 +355,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineActionKeyChange[]**](../Model/TrackedChangesEdFiDisciplineActionKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]**](../Model/TrackedChangesEdFiDisciplineActionKeyChange.md)
 
 ### Authorization
 
@@ -388,16 +388,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\DisciplineActionsApi(
+$apiInstance = new Resources\Api\DisciplineActionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_discipline_action = new \OpenAPI\Client\Model\EdFiDisciplineAction(); // \OpenAPI\Client\Model\EdFiDisciplineAction | The JSON representation of the \"disciplineAction\" resource to be created or updated.
+$ed_fi_discipline_action = new \Resources\Model\EdFiDisciplineAction(); // \Resources\Model\EdFiDisciplineAction | The JSON representation of the \"disciplineAction\" resource to be created or updated.
 
 try {
     $apiInstance->postDisciplineAction($ed_fi_discipline_action);
@@ -410,7 +410,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_discipline_action** | [**\OpenAPI\Client\Model\EdFiDisciplineAction**](../Model/EdFiDisciplineAction.md)| The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. | |
+| **ed_fi_discipline_action** | [**\Resources\Model\EdFiDisciplineAction**](../Model/EdFiDisciplineAction.md)| The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -447,17 +447,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\DisciplineActionsApi(
+$apiInstance = new Resources\Api\DisciplineActionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_discipline_action = new \OpenAPI\Client\Model\EdFiDisciplineAction(); // \OpenAPI\Client\Model\EdFiDisciplineAction | The JSON representation of the \"disciplineAction\" resource to be created or updated.
+$ed_fi_discipline_action = new \Resources\Model\EdFiDisciplineAction(); // \Resources\Model\EdFiDisciplineAction | The JSON representation of the \"disciplineAction\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -472,7 +472,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_discipline_action** | [**\OpenAPI\Client\Model\EdFiDisciplineAction**](../Model/EdFiDisciplineAction.md)| The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. | |
+| **ed_fi_discipline_action** | [**\Resources\Model\EdFiDisciplineAction**](../Model/EdFiDisciplineAction.md)| The JSON representation of the \&quot;disciplineAction\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

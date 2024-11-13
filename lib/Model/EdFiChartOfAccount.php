@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiChartOfAccount Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,18 +60,18 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
         'id' => 'string',
         'account_identifier' => 'string',
         'fiscal_year' => 'int',
-        'balance_sheet_dimension_reference' => '\OpenAPI\Client\Model\EdFiBalanceSheetDimensionReference',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'function_dimension_reference' => '\OpenAPI\Client\Model\EdFiFunctionDimensionReference',
-        'fund_dimension_reference' => '\OpenAPI\Client\Model\EdFiFundDimensionReference',
-        'object_dimension_reference' => '\OpenAPI\Client\Model\EdFiObjectDimensionReference',
-        'operational_unit_dimension_reference' => '\OpenAPI\Client\Model\EdFiOperationalUnitDimensionReference',
-        'program_dimension_reference' => '\OpenAPI\Client\Model\EdFiProgramDimensionReference',
-        'project_dimension_reference' => '\OpenAPI\Client\Model\EdFiProjectDimensionReference',
-        'source_dimension_reference' => '\OpenAPI\Client\Model\EdFiSourceDimensionReference',
+        'balance_sheet_dimension_reference' => '\Resources\Model\EdFiBalanceSheetDimensionReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'function_dimension_reference' => '\Resources\Model\EdFiFunctionDimensionReference',
+        'fund_dimension_reference' => '\Resources\Model\EdFiFundDimensionReference',
+        'object_dimension_reference' => '\Resources\Model\EdFiObjectDimensionReference',
+        'operational_unit_dimension_reference' => '\Resources\Model\EdFiOperationalUnitDimensionReference',
+        'program_dimension_reference' => '\Resources\Model\EdFiProgramDimensionReference',
+        'project_dimension_reference' => '\Resources\Model\EdFiProjectDimensionReference',
+        'source_dimension_reference' => '\Resources\Model\EdFiSourceDimensionReference',
         'account_name' => 'string',
         'account_type_descriptor' => 'string',
-        'reporting_tags' => '\OpenAPI\Client\Model\EdFiChartOfAccountReportingTag[]',
+        'reporting_tags' => '\Resources\Model\EdFiChartOfAccountReportingTag[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -536,7 +536,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets balance_sheet_dimension_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiBalanceSheetDimensionReference|null
+     * @return \Resources\Model\EdFiBalanceSheetDimensionReference|null
      */
     public function getBalanceSheetDimensionReference()
     {
@@ -546,7 +546,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets balance_sheet_dimension_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiBalanceSheetDimensionReference|null $balance_sheet_dimension_reference balance_sheet_dimension_reference
+     * @param \Resources\Model\EdFiBalanceSheetDimensionReference|null $balance_sheet_dimension_reference balance_sheet_dimension_reference
      *
      * @return self
      */
@@ -563,7 +563,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -573,7 +573,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -590,7 +590,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets function_dimension_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiFunctionDimensionReference|null
+     * @return \Resources\Model\EdFiFunctionDimensionReference|null
      */
     public function getFunctionDimensionReference()
     {
@@ -600,7 +600,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets function_dimension_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiFunctionDimensionReference|null $function_dimension_reference function_dimension_reference
+     * @param \Resources\Model\EdFiFunctionDimensionReference|null $function_dimension_reference function_dimension_reference
      *
      * @return self
      */
@@ -617,7 +617,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets fund_dimension_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiFundDimensionReference|null
+     * @return \Resources\Model\EdFiFundDimensionReference|null
      */
     public function getFundDimensionReference()
     {
@@ -627,7 +627,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets fund_dimension_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiFundDimensionReference|null $fund_dimension_reference fund_dimension_reference
+     * @param \Resources\Model\EdFiFundDimensionReference|null $fund_dimension_reference fund_dimension_reference
      *
      * @return self
      */
@@ -644,7 +644,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets object_dimension_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiObjectDimensionReference|null
+     * @return \Resources\Model\EdFiObjectDimensionReference|null
      */
     public function getObjectDimensionReference()
     {
@@ -654,7 +654,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets object_dimension_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiObjectDimensionReference|null $object_dimension_reference object_dimension_reference
+     * @param \Resources\Model\EdFiObjectDimensionReference|null $object_dimension_reference object_dimension_reference
      *
      * @return self
      */
@@ -671,7 +671,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets operational_unit_dimension_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiOperationalUnitDimensionReference|null
+     * @return \Resources\Model\EdFiOperationalUnitDimensionReference|null
      */
     public function getOperationalUnitDimensionReference()
     {
@@ -681,7 +681,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets operational_unit_dimension_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiOperationalUnitDimensionReference|null $operational_unit_dimension_reference operational_unit_dimension_reference
+     * @param \Resources\Model\EdFiOperationalUnitDimensionReference|null $operational_unit_dimension_reference operational_unit_dimension_reference
      *
      * @return self
      */
@@ -698,7 +698,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets program_dimension_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramDimensionReference|null
+     * @return \Resources\Model\EdFiProgramDimensionReference|null
      */
     public function getProgramDimensionReference()
     {
@@ -708,7 +708,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets program_dimension_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramDimensionReference|null $program_dimension_reference program_dimension_reference
+     * @param \Resources\Model\EdFiProgramDimensionReference|null $program_dimension_reference program_dimension_reference
      *
      * @return self
      */
@@ -725,7 +725,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets project_dimension_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProjectDimensionReference|null
+     * @return \Resources\Model\EdFiProjectDimensionReference|null
      */
     public function getProjectDimensionReference()
     {
@@ -735,7 +735,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets project_dimension_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProjectDimensionReference|null $project_dimension_reference project_dimension_reference
+     * @param \Resources\Model\EdFiProjectDimensionReference|null $project_dimension_reference project_dimension_reference
      *
      * @return self
      */
@@ -752,7 +752,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets source_dimension_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSourceDimensionReference|null
+     * @return \Resources\Model\EdFiSourceDimensionReference|null
      */
     public function getSourceDimensionReference()
     {
@@ -762,7 +762,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets source_dimension_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSourceDimensionReference|null $source_dimension_reference source_dimension_reference
+     * @param \Resources\Model\EdFiSourceDimensionReference|null $source_dimension_reference source_dimension_reference
      *
      * @return self
      */
@@ -848,7 +848,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets reporting_tags
      *
-     * @return \OpenAPI\Client\Model\EdFiChartOfAccountReportingTag[]|null
+     * @return \Resources\Model\EdFiChartOfAccountReportingTag[]|null
      */
     public function getReportingTags()
     {
@@ -858,7 +858,7 @@ class EdFiChartOfAccount implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets reporting_tags
      *
-     * @param \OpenAPI\Client\Model\EdFiChartOfAccountReportingTag[]|null $reporting_tags An unordered collection of chartOfAccountReportingTags. Optional tag for accountability reporting.
+     * @param \Resources\Model\EdFiChartOfAccountReportingTag[]|null $reporting_tags An unordered collection of chartOfAccountReportingTags. Optional tag for accountability reporting.
      *
      * @return self
      */

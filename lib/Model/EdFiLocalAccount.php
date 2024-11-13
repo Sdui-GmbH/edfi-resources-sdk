@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiLocalAccount Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,10 +60,10 @@ class EdFiLocalAccount implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'account_identifier' => 'string',
         'fiscal_year' => 'int',
-        'chart_of_account_reference' => '\OpenAPI\Client\Model\EdFiChartOfAccountReference',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
+        'chart_of_account_reference' => '\Resources\Model\EdFiChartOfAccountReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
         'account_name' => 'string',
-        'reporting_tags' => '\OpenAPI\Client\Model\EdFiLocalAccountReportingTag[]',
+        'reporting_tags' => '\Resources\Model\EdFiLocalAccountReportingTag[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -476,7 +476,7 @@ class EdFiLocalAccount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets chart_of_account_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiChartOfAccountReference
+     * @return \Resources\Model\EdFiChartOfAccountReference
      */
     public function getChartOfAccountReference()
     {
@@ -486,7 +486,7 @@ class EdFiLocalAccount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets chart_of_account_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiChartOfAccountReference $chart_of_account_reference chart_of_account_reference
+     * @param \Resources\Model\EdFiChartOfAccountReference $chart_of_account_reference chart_of_account_reference
      *
      * @return self
      */
@@ -503,7 +503,7 @@ class EdFiLocalAccount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -513,7 +513,7 @@ class EdFiLocalAccount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -568,7 +568,7 @@ class EdFiLocalAccount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets reporting_tags
      *
-     * @return \OpenAPI\Client\Model\EdFiLocalAccountReportingTag[]|null
+     * @return \Resources\Model\EdFiLocalAccountReportingTag[]|null
      */
     public function getReportingTags()
     {
@@ -578,7 +578,7 @@ class EdFiLocalAccount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reporting_tags
      *
-     * @param \OpenAPI\Client\Model\EdFiLocalAccountReportingTag[]|null $reporting_tags An unordered collection of localAccountReportingTags. Optional tag for accountability reporting.
+     * @param \Resources\Model\EdFiLocalAccountReportingTag[]|null $reporting_tags An unordered collection of localAccountReportingTags. Optional tag for accountability reporting.
      *
      * @return self
      */

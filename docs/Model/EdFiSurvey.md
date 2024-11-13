@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 **namespace** | **string** | Namespace for the survey. |
 **survey_identifier** | **string** | The unique survey identifier from the survey tool. |
-**education_organization_reference** | [**\OpenAPI\Client\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  | [optional]
-**school_year_type_reference** | [**\OpenAPI\Client\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  |
-**session_reference** | [**\OpenAPI\Client\Model\EdFiSessionReference**](EdFiSessionReference.md) |  | [optional]
+**education_organization_reference** | [**\Resources\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  | [optional]
+**school_year_type_reference** | [**\Resources\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  |
+**session_reference** | [**\Resources\Model\EdFiSessionReference**](EdFiSessionReference.md) |  | [optional]
 **number_administered** | **int** | Number of persons to whom this survey was administered. | [optional]
 **survey_category_descriptor** | **string** | The category or type of survey. | [optional]
 **survey_title** | **string** | The title of the survey. |

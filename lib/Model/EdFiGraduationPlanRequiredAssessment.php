@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiGraduationPlanRequiredAssessment Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,9 +57,9 @@ class EdFiGraduationPlanRequiredAssessment implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'assessment_reference' => '\OpenAPI\Client\Model\EdFiAssessmentReference',
-        'scores' => '\OpenAPI\Client\Model\EdFiGraduationPlanRequiredAssessmentScore[]',
-        'performance_level' => '\OpenAPI\Client\Model\EdFiGraduationPlanRequiredAssessmentPerformanceLevel'
+        'assessment_reference' => '\Resources\Model\EdFiAssessmentReference',
+        'scores' => '\Resources\Model\EdFiGraduationPlanRequiredAssessmentScore[]',
+        'performance_level' => '\Resources\Model\EdFiGraduationPlanRequiredAssessmentPerformanceLevel'
     ];
 
     /**
@@ -309,7 +309,7 @@ class EdFiGraduationPlanRequiredAssessment implements ModelInterface, ArrayAcces
     /**
      * Gets assessment_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentReference
+     * @return \Resources\Model\EdFiAssessmentReference
      */
     public function getAssessmentReference()
     {
@@ -319,7 +319,7 @@ class EdFiGraduationPlanRequiredAssessment implements ModelInterface, ArrayAcces
     /**
      * Sets assessment_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentReference $assessment_reference assessment_reference
+     * @param \Resources\Model\EdFiAssessmentReference $assessment_reference assessment_reference
      *
      * @return self
      */
@@ -336,7 +336,7 @@ class EdFiGraduationPlanRequiredAssessment implements ModelInterface, ArrayAcces
     /**
      * Gets scores
      *
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlanRequiredAssessmentScore[]|null
+     * @return \Resources\Model\EdFiGraduationPlanRequiredAssessmentScore[]|null
      */
     public function getScores()
     {
@@ -346,7 +346,7 @@ class EdFiGraduationPlanRequiredAssessment implements ModelInterface, ArrayAcces
     /**
      * Sets scores
      *
-     * @param \OpenAPI\Client\Model\EdFiGraduationPlanRequiredAssessmentScore[]|null $scores An unordered collection of graduationPlanRequiredAssessmentScores. Score required to be met or exceeded.
+     * @param \Resources\Model\EdFiGraduationPlanRequiredAssessmentScore[]|null $scores An unordered collection of graduationPlanRequiredAssessmentScores. Score required to be met or exceeded.
      *
      * @return self
      */
@@ -363,7 +363,7 @@ class EdFiGraduationPlanRequiredAssessment implements ModelInterface, ArrayAcces
     /**
      * Gets performance_level
      *
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlanRequiredAssessmentPerformanceLevel|null
+     * @return \Resources\Model\EdFiGraduationPlanRequiredAssessmentPerformanceLevel|null
      */
     public function getPerformanceLevel()
     {
@@ -373,7 +373,7 @@ class EdFiGraduationPlanRequiredAssessment implements ModelInterface, ArrayAcces
     /**
      * Sets performance_level
      *
-     * @param \OpenAPI\Client\Model\EdFiGraduationPlanRequiredAssessmentPerformanceLevel|null $performance_level performance_level
+     * @param \Resources\Model\EdFiGraduationPlanRequiredAssessmentPerformanceLevel|null $performance_level performance_level
      *
      * @return self
      */

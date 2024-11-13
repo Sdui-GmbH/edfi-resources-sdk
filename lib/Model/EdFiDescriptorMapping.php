@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiDescriptorMapping Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class EdFiDescriptorMapping implements ModelInterface, ArrayAccess, \JsonSeriali
         'mapped_value' => 'string',
         'namespace' => 'string',
         'value' => 'string',
-        'model_entities' => '\OpenAPI\Client\Model\EdFiDescriptorMappingModelEntity[]',
+        'model_entities' => '\Resources\Model\EdFiDescriptorMappingModelEntity[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -548,7 +548,7 @@ class EdFiDescriptorMapping implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets model_entities
      *
-     * @return \OpenAPI\Client\Model\EdFiDescriptorMappingModelEntity[]|null
+     * @return \Resources\Model\EdFiDescriptorMappingModelEntity[]|null
      */
     public function getModelEntities()
     {
@@ -558,7 +558,7 @@ class EdFiDescriptorMapping implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets model_entities
      *
-     * @param \OpenAPI\Client\Model\EdFiDescriptorMappingModelEntity[]|null $model_entities An unordered collection of descriptorMappingModelEntities. The resources for which the descriptor mapping applies. If empty, the mapping is assumed to be applicable to all resources in which the descriptor appears.
+     * @param \Resources\Model\EdFiDescriptorMappingModelEntity[]|null $model_entities An unordered collection of descriptorMappingModelEntities. The resources for which the descriptor mapping applies. If empty, the mapping is assumed to be applicable to all resources in which the descriptor appears.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiStudentDisciplineIncidentNonOffenderAssociationDelete Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class TrackedChangesEdFiStudentDisciplineIncidentNonOffenderAssociationDelete im
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStudentDisciplineIncidentNonOffenderAssociationKey'
+        'key_values' => '\Resources\Model\TrackedChangesEdFiStudentDisciplineIncidentNonOffenderAssociationKey'
     ];
 
     /**
@@ -360,7 +360,7 @@ class TrackedChangesEdFiStudentDisciplineIncidentNonOffenderAssociationDelete im
     /**
      * Gets key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentDisciplineIncidentNonOffenderAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStudentDisciplineIncidentNonOffenderAssociationKey|null
      */
     public function getKeyValues()
     {
@@ -370,7 +370,7 @@ class TrackedChangesEdFiStudentDisciplineIncidentNonOffenderAssociationDelete im
     /**
      * Sets key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStudentDisciplineIncidentNonOffenderAssociationKey|null $key_values key_values
+     * @param \Resources\Model\TrackedChangesEdFiStudentDisciplineIncidentNonOffenderAssociationKey|null $key_values key_values
      *
      * @return self
      */

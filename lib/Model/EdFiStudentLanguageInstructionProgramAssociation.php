@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentLanguageInstructionProgramAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,15 +59,15 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'program_reference' => '\OpenAPI\Client\Model\EdFiProgramReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'program_reference' => '\Resources\Model\EdFiProgramReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'dosage' => 'int',
         'end_date' => '\DateTime',
-        'english_language_proficiency_assessments' => '\OpenAPI\Client\Model\EdFiStudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment[]',
+        'english_language_proficiency_assessments' => '\Resources\Model\EdFiStudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment[]',
         'english_learner_participation' => 'bool',
-        'language_instruction_program_services' => '\OpenAPI\Client\Model\EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramService[]',
-        'program_participation_statuses' => '\OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]',
+        'language_instruction_program_services' => '\Resources\Model\EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramService[]',
+        'program_participation_statuses' => '\Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]',
         'reason_exited_descriptor' => 'string',
         'served_outside_of_regular_session' => 'bool',
         '_etag' => 'string',
@@ -460,7 +460,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -470,7 +470,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -487,7 +487,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Gets program_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramReference
+     * @return \Resources\Model\EdFiProgramReference
      */
     public function getProgramReference()
     {
@@ -497,7 +497,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Sets program_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramReference $program_reference program_reference
+     * @param \Resources\Model\EdFiProgramReference $program_reference program_reference
      *
      * @return self
      */
@@ -514,7 +514,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -524,7 +524,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -609,7 +609,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Gets english_language_proficiency_assessments
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment[]|null
+     * @return \Resources\Model\EdFiStudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment[]|null
      */
     public function getEnglishLanguageProficiencyAssessments()
     {
@@ -619,7 +619,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Sets english_language_proficiency_assessments
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment[]|null $english_language_proficiency_assessments An unordered collection of studentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessments. Results of yearly English language assessment.
+     * @param \Resources\Model\EdFiStudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment[]|null $english_language_proficiency_assessments An unordered collection of studentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessments. Results of yearly English language assessment.
      *
      * @return self
      */
@@ -670,7 +670,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Gets language_instruction_program_services
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramService[]|null
+     * @return \Resources\Model\EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramService[]|null
      */
     public function getLanguageInstructionProgramServices()
     {
@@ -680,7 +680,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Sets language_instruction_program_services
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramService[]|null $language_instruction_program_services An unordered collection of studentLanguageInstructionProgramAssociationLanguageInstructionProgramServices. Indicates the service(s) being provided to the student by the language instruction program.
+     * @param \Resources\Model\EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramService[]|null $language_instruction_program_services An unordered collection of studentLanguageInstructionProgramAssociationLanguageInstructionProgramServices. Indicates the service(s) being provided to the student by the language instruction program.
      *
      * @return self
      */
@@ -697,7 +697,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Gets program_participation_statuses
      *
-     * @return \OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null
+     * @return \Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null
      */
     public function getProgramParticipationStatuses()
     {
@@ -707,7 +707,7 @@ class EdFiStudentLanguageInstructionProgramAssociation implements ModelInterface
     /**
      * Sets program_participation_statuses
      *
-     * @param \OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null $program_participation_statuses An unordered collection of generalStudentProgramAssociationProgramParticipationStatuses. The status of the student's program participation.
+     * @param \Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null $program_participation_statuses An unordered collection of generalStudentProgramAssociationProgramParticipationStatuses. The status of the student's program participation.
      *
      * @return self
      */

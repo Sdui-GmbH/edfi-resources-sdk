@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * LocalPayrollsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class LocalPayrollsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalPayrollById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class LocalPayrollsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalPayrollById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class LocalPayrollsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalPayrolls'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalPayrollDelete[]
      */
     public function deletesLocalPayrolls($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalPayrolls'][0])
     {
@@ -407,9 +407,9 @@ class LocalPayrollsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalPayrolls'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalPayrollDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesLocalPayrollsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalPayrolls'][0])
     {
@@ -440,11 +440,11 @@ class LocalPayrollsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalPayrollDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalPayrollDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class LocalPayrollsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalPayrollDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class LocalPayrollsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalPayrollDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class LocalPayrollsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalPayrollDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class LocalPayrollsApi
      */
     public function deletesLocalPayrollsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalPayrolls'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalPayrollDelete[]';
         $request = $this->deletesLocalPayrollsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -775,9 +775,9 @@ class LocalPayrollsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalPayrolls'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalPayroll[]
+     * @return \Resources\Model\EdFiLocalPayroll[]
      */
     public function getLocalPayrolls($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $staff_unique_id = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalPayrolls'][0])
     {
@@ -806,9 +806,9 @@ class LocalPayrollsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalPayrolls'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalPayroll[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalPayroll[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalPayrollsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $staff_unique_id = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalPayrolls'][0])
     {
@@ -839,11 +839,11 @@ class LocalPayrollsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalPayroll[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalPayroll[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalPayroll[]' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalPayroll[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -861,7 +861,7 @@ class LocalPayrollsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalPayroll[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalPayroll[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -880,7 +880,7 @@ class LocalPayrollsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalPayroll[]';
+            $returnType = '\Resources\Model\EdFiLocalPayroll[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -913,7 +913,7 @@ class LocalPayrollsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalPayroll[]',
+                        '\Resources\Model\EdFiLocalPayroll[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -983,7 +983,7 @@ class LocalPayrollsApi
      */
     public function getLocalPayrollsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $staff_unique_id = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalPayrolls'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalPayroll[]';
+        $returnType = '\Resources\Model\EdFiLocalPayroll[]';
         $request = $this->getLocalPayrollsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $staff_unique_id, $financial_collection_descriptor, $amount, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1276,9 +1276,9 @@ class LocalPayrollsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalPayrollsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalPayroll
+     * @return \Resources\Model\EdFiLocalPayroll
      */
     public function getLocalPayrollsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalPayrollsById'][0])
     {
@@ -1296,9 +1296,9 @@ class LocalPayrollsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalPayrollsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalPayroll, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalPayroll, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalPayrollsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalPayrollsById'][0])
     {
@@ -1329,11 +1329,11 @@ class LocalPayrollsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalPayroll' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalPayroll' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalPayroll' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalPayroll' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1351,7 +1351,7 @@ class LocalPayrollsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalPayroll', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalPayroll', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1370,7 +1370,7 @@ class LocalPayrollsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalPayroll';
+            $returnType = '\Resources\Model\EdFiLocalPayroll';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1403,7 +1403,7 @@ class LocalPayrollsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalPayroll',
+                        '\Resources\Model\EdFiLocalPayroll',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1451,7 +1451,7 @@ class LocalPayrollsApi
      */
     public function getLocalPayrollsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalPayrollsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalPayroll';
+        $returnType = '\Resources\Model\EdFiLocalPayroll';
         $request = $this->getLocalPayrollsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1611,9 +1611,9 @@ class LocalPayrollsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalPayrolls'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalPayrollKeyChange[]
      */
     public function keyChangesLocalPayrolls($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalPayrolls'][0])
     {
@@ -1634,9 +1634,9 @@ class LocalPayrollsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalPayrolls'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalPayrollKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesLocalPayrollsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalPayrolls'][0])
     {
@@ -1667,11 +1667,11 @@ class LocalPayrollsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalPayrollKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalPayrollKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1689,7 +1689,7 @@ class LocalPayrollsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalPayrollKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1708,7 +1708,7 @@ class LocalPayrollsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalPayrollKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1741,7 +1741,7 @@ class LocalPayrollsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalPayrollKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1795,7 +1795,7 @@ class LocalPayrollsApi
      */
     public function keyChangesLocalPayrollsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalPayrolls'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalPayrollKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalPayrollKeyChange[]';
         $request = $this->keyChangesLocalPayrollsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1986,10 +1986,10 @@ class LocalPayrollsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalPayroll'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2003,10 +2003,10 @@ class LocalPayrollsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalPayroll'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2051,7 +2051,7 @@ class LocalPayrollsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalPayroll'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2072,7 +2072,7 @@ class LocalPayrollsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalPayroll'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2109,7 +2109,7 @@ class LocalPayrollsApi
     /**
      * Create request for operation 'postLocalPayroll'
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalPayroll'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2207,11 +2207,11 @@ class LocalPayrollsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalPayroll'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2226,11 +2226,11 @@ class LocalPayrollsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalPayroll'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2276,7 +2276,7 @@ class LocalPayrollsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalPayroll'] to see the possible values for this operation
      *
@@ -2299,7 +2299,7 @@ class LocalPayrollsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalPayroll'] to see the possible values for this operation
      *
@@ -2338,7 +2338,7 @@ class LocalPayrollsApi
      * Create request for operation 'putLocalPayroll'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalPayroll $ed_fi_local_payroll The JSON representation of the \&quot;localPayroll\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalPayroll'] to see the possible values for this operation
      *

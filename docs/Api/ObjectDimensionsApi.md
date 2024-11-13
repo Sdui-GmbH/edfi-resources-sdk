@@ -1,4 +1,4 @@
-# OpenAPI\Client\ObjectDimensionsApi
+# Resources\ObjectDimensionsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ObjectDimensionsApi(
+$apiInstance = new Resources\Api\ObjectDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesObjectDimensions()`
 
 ```php
-deletesObjectDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiObjectDimensionDelete[]
+deletesObjectDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiObjectDimensionDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ObjectDimensionsApi(
+$apiInstance = new Resources\Api\ObjectDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiObjectDimensionDelete[]**](../Model/TrackedChangesEdFiObjectDimensionDelete.md)
+[**\Resources\Model\TrackedChangesEdFiObjectDimensionDelete[]**](../Model/TrackedChangesEdFiObjectDimensionDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getObjectDimensions()`
 
 ```php
-getObjectDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $code, $fiscal_year, $code_name, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiObjectDimension[]
+getObjectDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $code, $fiscal_year, $code_name, $id, $use_snapshot): \Resources\Model\EdFiObjectDimension[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ObjectDimensionsApi(
+$apiInstance = new Resources\Api\ObjectDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -207,7 +207,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiObjectDimension[]**](../Model/EdFiObjectDimension.md)
+[**\Resources\Model\EdFiObjectDimension[]**](../Model/EdFiObjectDimension.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ try {
 ## `getObjectDimensionsById()`
 
 ```php
-getObjectDimensionsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiObjectDimension
+getObjectDimensionsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiObjectDimension
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -240,10 +240,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ObjectDimensionsApi(
+$apiInstance = new Resources\Api\ObjectDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -271,7 +271,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiObjectDimension**](../Model/EdFiObjectDimension.md)
+[**\Resources\Model\EdFiObjectDimension**](../Model/EdFiObjectDimension.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ try {
 ## `keyChangesObjectDimensions()`
 
 ```php
-keyChangesObjectDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiObjectDimensionKeyChange[]
+keyChangesObjectDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiObjectDimensionKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -304,10 +304,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ObjectDimensionsApi(
+$apiInstance = new Resources\Api\ObjectDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -341,7 +341,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiObjectDimensionKeyChange[]**](../Model/TrackedChangesEdFiObjectDimensionKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiObjectDimensionKeyChange[]**](../Model/TrackedChangesEdFiObjectDimensionKeyChange.md)
 
 ### Authorization
 
@@ -374,16 +374,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ObjectDimensionsApi(
+$apiInstance = new Resources\Api\ObjectDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_object_dimension = new \OpenAPI\Client\Model\EdFiObjectDimension(); // \OpenAPI\Client\Model\EdFiObjectDimension | The JSON representation of the \"objectDimension\" resource to be created or updated.
+$ed_fi_object_dimension = new \Resources\Model\EdFiObjectDimension(); // \Resources\Model\EdFiObjectDimension | The JSON representation of the \"objectDimension\" resource to be created or updated.
 
 try {
     $apiInstance->postObjectDimension($ed_fi_object_dimension);
@@ -396,7 +396,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_object_dimension** | [**\OpenAPI\Client\Model\EdFiObjectDimension**](../Model/EdFiObjectDimension.md)| The JSON representation of the \&quot;objectDimension\&quot; resource to be created or updated. | |
+| **ed_fi_object_dimension** | [**\Resources\Model\EdFiObjectDimension**](../Model/EdFiObjectDimension.md)| The JSON representation of the \&quot;objectDimension\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -433,17 +433,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ObjectDimensionsApi(
+$apiInstance = new Resources\Api\ObjectDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_object_dimension = new \OpenAPI\Client\Model\EdFiObjectDimension(); // \OpenAPI\Client\Model\EdFiObjectDimension | The JSON representation of the \"objectDimension\" resource to be created or updated.
+$ed_fi_object_dimension = new \Resources\Model\EdFiObjectDimension(); // \Resources\Model\EdFiObjectDimension | The JSON representation of the \"objectDimension\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -458,7 +458,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_object_dimension** | [**\OpenAPI\Client\Model\EdFiObjectDimension**](../Model/EdFiObjectDimension.md)| The JSON representation of the \&quot;objectDimension\&quot; resource to be created or updated. | |
+| **ed_fi_object_dimension** | [**\Resources\Model\EdFiObjectDimension**](../Model/EdFiObjectDimension.md)| The JSON representation of the \&quot;objectDimension\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

@@ -1,4 +1,4 @@
-# OpenAPI\Client\SectionsApi
+# Resources\SectionsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SectionsApi(
+$apiInstance = new Resources\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesSections()`
 
 ```php
-deletesSections($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiSectionDelete[]
+deletesSections($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiSectionDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SectionsApi(
+$apiInstance = new Resources\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiSectionDelete[]**](../Model/TrackedChangesEdFiSectionDelete.md)
+[**\Resources\Model\TrackedChangesEdFiSectionDelete[]**](../Model/TrackedChangesEdFiSectionDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getSections()`
 
 ```php
-getSections($offset, $limit, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot): \OpenAPI\Client\Model\EdFiSection[]
+getSections($offset, $limit, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot): \Resources\Model\EdFiSection[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SectionsApi(
+$apiInstance = new Resources\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -237,7 +237,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiSection[]**](../Model/EdFiSection.md)
+[**\Resources\Model\EdFiSection[]**](../Model/EdFiSection.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ try {
 ## `getSectionsById()`
 
 ```php
-getSectionsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiSection
+getSectionsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiSection
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -270,10 +270,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SectionsApi(
+$apiInstance = new Resources\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -301,7 +301,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiSection**](../Model/EdFiSection.md)
+[**\Resources\Model\EdFiSection**](../Model/EdFiSection.md)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ try {
 ## `keyChangesSections()`
 
 ```php
-keyChangesSections($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiSectionKeyChange[]
+keyChangesSections($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiSectionKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -334,10 +334,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SectionsApi(
+$apiInstance = new Resources\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -371,7 +371,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiSectionKeyChange[]**](../Model/TrackedChangesEdFiSectionKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiSectionKeyChange[]**](../Model/TrackedChangesEdFiSectionKeyChange.md)
 
 ### Authorization
 
@@ -404,16 +404,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SectionsApi(
+$apiInstance = new Resources\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_section = new \OpenAPI\Client\Model\EdFiSection(); // \OpenAPI\Client\Model\EdFiSection | The JSON representation of the \"section\" resource to be created or updated.
+$ed_fi_section = new \Resources\Model\EdFiSection(); // \Resources\Model\EdFiSection | The JSON representation of the \"section\" resource to be created or updated.
 
 try {
     $apiInstance->postSection($ed_fi_section);
@@ -426,7 +426,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_section** | [**\OpenAPI\Client\Model\EdFiSection**](../Model/EdFiSection.md)| The JSON representation of the \&quot;section\&quot; resource to be created or updated. | |
+| **ed_fi_section** | [**\Resources\Model\EdFiSection**](../Model/EdFiSection.md)| The JSON representation of the \&quot;section\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -463,17 +463,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SectionsApi(
+$apiInstance = new Resources\Api\SectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_section = new \OpenAPI\Client\Model\EdFiSection(); // \OpenAPI\Client\Model\EdFiSection | The JSON representation of the \"section\" resource to be created or updated.
+$ed_fi_section = new \Resources\Model\EdFiSection(); // \Resources\Model\EdFiSection | The JSON representation of the \"section\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -488,7 +488,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_section** | [**\OpenAPI\Client\Model\EdFiSection**](../Model/EdFiSection.md)| The JSON representation of the \&quot;section\&quot; resource to be created or updated. | |
+| **ed_fi_section** | [**\Resources\Model\EdFiSection**](../Model/EdFiSection.md)| The JSON representation of the \&quot;section\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

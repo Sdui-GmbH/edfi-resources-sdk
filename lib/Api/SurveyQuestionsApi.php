@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * SurveyQuestionsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class SurveyQuestionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSurveyQuestionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class SurveyQuestionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSurveyQuestionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class SurveyQuestionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSurveyQuestions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiSurveyQuestionDelete[]
      */
     public function deletesSurveyQuestions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyQuestions'][0])
     {
@@ -407,9 +407,9 @@ class SurveyQuestionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSurveyQuestions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiSurveyQuestionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesSurveyQuestionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyQuestions'][0])
     {
@@ -440,11 +440,11 @@ class SurveyQuestionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiSurveyQuestionDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiSurveyQuestionDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class SurveyQuestionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiSurveyQuestionDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class SurveyQuestionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiSurveyQuestionDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class SurveyQuestionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiSurveyQuestionDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class SurveyQuestionsApi
      */
     public function deletesSurveyQuestionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyQuestions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiSurveyQuestionDelete[]';
         $request = $this->deletesSurveyQuestionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class SurveyQuestionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveyQuestions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiSurveyQuestion[]
+     * @return \Resources\Model\EdFiSurveyQuestion[]
      */
     public function getSurveyQuestions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $question_code = null, $namespace = null, $survey_identifier = null, $survey_section_title = null, $question_form_descriptor = null, $id = null, $question_text = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyQuestions'][0])
     {
@@ -804,9 +804,9 @@ class SurveyQuestionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveyQuestions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiSurveyQuestion[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiSurveyQuestion[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSurveyQuestionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $question_code = null, $namespace = null, $survey_identifier = null, $survey_section_title = null, $question_form_descriptor = null, $id = null, $question_text = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyQuestions'][0])
     {
@@ -837,11 +837,11 @@ class SurveyQuestionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiSurveyQuestion[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiSurveyQuestion[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiSurveyQuestion[]' !== 'string') {
+                        if ('\Resources\Model\EdFiSurveyQuestion[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class SurveyQuestionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiSurveyQuestion[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiSurveyQuestion[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class SurveyQuestionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiSurveyQuestion[]';
+            $returnType = '\Resources\Model\EdFiSurveyQuestion[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class SurveyQuestionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiSurveyQuestion[]',
+                        '\Resources\Model\EdFiSurveyQuestion[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class SurveyQuestionsApi
      */
     public function getSurveyQuestionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $question_code = null, $namespace = null, $survey_identifier = null, $survey_section_title = null, $question_form_descriptor = null, $id = null, $question_text = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyQuestions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiSurveyQuestion[]';
+        $returnType = '\Resources\Model\EdFiSurveyQuestion[]';
         $request = $this->getSurveyQuestionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $question_code, $namespace, $survey_identifier, $survey_section_title, $question_form_descriptor, $id, $question_text, $use_snapshot, $contentType);
 
         return $this->client
@@ -1270,9 +1270,9 @@ class SurveyQuestionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveyQuestionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiSurveyQuestion
+     * @return \Resources\Model\EdFiSurveyQuestion
      */
     public function getSurveyQuestionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyQuestionsById'][0])
     {
@@ -1290,9 +1290,9 @@ class SurveyQuestionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveyQuestionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiSurveyQuestion, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiSurveyQuestion, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSurveyQuestionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyQuestionsById'][0])
     {
@@ -1323,11 +1323,11 @@ class SurveyQuestionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiSurveyQuestion' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiSurveyQuestion' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiSurveyQuestion' !== 'string') {
+                        if ('\Resources\Model\EdFiSurveyQuestion' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1345,7 +1345,7 @@ class SurveyQuestionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiSurveyQuestion', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiSurveyQuestion', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1364,7 +1364,7 @@ class SurveyQuestionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiSurveyQuestion';
+            $returnType = '\Resources\Model\EdFiSurveyQuestion';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1397,7 +1397,7 @@ class SurveyQuestionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiSurveyQuestion',
+                        '\Resources\Model\EdFiSurveyQuestion',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1445,7 +1445,7 @@ class SurveyQuestionsApi
      */
     public function getSurveyQuestionsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyQuestionsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiSurveyQuestion';
+        $returnType = '\Resources\Model\EdFiSurveyQuestion';
         $request = $this->getSurveyQuestionsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1605,9 +1605,9 @@ class SurveyQuestionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSurveyQuestions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]
      */
     public function keyChangesSurveyQuestions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyQuestions'][0])
     {
@@ -1628,9 +1628,9 @@ class SurveyQuestionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSurveyQuestions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiSurveyQuestionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesSurveyQuestionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyQuestions'][0])
     {
@@ -1661,11 +1661,11 @@ class SurveyQuestionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1683,7 +1683,7 @@ class SurveyQuestionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1702,7 +1702,7 @@ class SurveyQuestionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1735,7 +1735,7 @@ class SurveyQuestionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1789,7 +1789,7 @@ class SurveyQuestionsApi
      */
     public function keyChangesSurveyQuestionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyQuestions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiSurveyQuestionKeyChange[]';
         $request = $this->keyChangesSurveyQuestionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1980,10 +1980,10 @@ class SurveyQuestionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSurveyQuestion'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1997,10 +1997,10 @@ class SurveyQuestionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSurveyQuestion'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2045,7 +2045,7 @@ class SurveyQuestionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSurveyQuestion'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2066,7 +2066,7 @@ class SurveyQuestionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSurveyQuestion'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2103,7 +2103,7 @@ class SurveyQuestionsApi
     /**
      * Create request for operation 'postSurveyQuestion'
      *
-     * @param  \OpenAPI\Client\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSurveyQuestion'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2201,11 +2201,11 @@ class SurveyQuestionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSurveyQuestion'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2220,11 +2220,11 @@ class SurveyQuestionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSurveyQuestion'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2270,7 +2270,7 @@ class SurveyQuestionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSurveyQuestion'] to see the possible values for this operation
      *
@@ -2293,7 +2293,7 @@ class SurveyQuestionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSurveyQuestion'] to see the possible values for this operation
      *
@@ -2332,7 +2332,7 @@ class SurveyQuestionsApi
      * Create request for operation 'putSurveyQuestion'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSurveyQuestion $ed_fi_survey_question The JSON representation of the \&quot;surveyQuestion\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSurveyQuestion'] to see the possible values for this operation
      *

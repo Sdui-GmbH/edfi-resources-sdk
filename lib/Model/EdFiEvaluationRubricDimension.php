@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiEvaluationRubricDimension Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class EdFiEvaluationRubricDimension implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPITypes = [
         'id' => 'string',
         'evaluation_rubric_rating' => 'int',
-        'program_evaluation_element_reference' => '\OpenAPI\Client\Model\EdFiProgramEvaluationElementReference',
+        'program_evaluation_element_reference' => '\Resources\Model\EdFiProgramEvaluationElementReference',
         'evaluation_criterion_description' => 'string',
         'evaluation_rubric_rating_level_descriptor' => 'string',
         'rubric_dimension_sort_order' => 'int',
@@ -416,7 +416,7 @@ class EdFiEvaluationRubricDimension implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets program_evaluation_element_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramEvaluationElementReference
+     * @return \Resources\Model\EdFiProgramEvaluationElementReference
      */
     public function getProgramEvaluationElementReference()
     {
@@ -426,7 +426,7 @@ class EdFiEvaluationRubricDimension implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets program_evaluation_element_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramEvaluationElementReference $program_evaluation_element_reference program_evaluation_element_reference
+     * @param \Resources\Model\EdFiProgramEvaluationElementReference $program_evaluation_element_reference program_evaluation_element_reference
      *
      * @return self
      */

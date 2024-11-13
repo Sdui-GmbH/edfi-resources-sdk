@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * CredentialExtensions Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class CredentialExtensions implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tpdm' => '\OpenAPI\Client\Model\TpdmCredentialExtension'
+        'tpdm' => '\Resources\Model\TpdmCredentialExtension'
     ];
 
     /**
@@ -292,7 +292,7 @@ class CredentialExtensions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets tpdm
      *
-     * @return \OpenAPI\Client\Model\TpdmCredentialExtension|null
+     * @return \Resources\Model\TpdmCredentialExtension|null
      */
     public function getTpdm()
     {
@@ -302,7 +302,7 @@ class CredentialExtensions implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets tpdm
      *
-     * @param \OpenAPI\Client\Model\TpdmCredentialExtension|null $tpdm tpdm
+     * @param \Resources\Model\TpdmCredentialExtension|null $tpdm tpdm
      *
      * @return self
      */

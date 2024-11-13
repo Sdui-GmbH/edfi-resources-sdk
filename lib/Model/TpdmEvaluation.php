@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmEvaluation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,13 +59,13 @@ class TpdmEvaluation implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'evaluation_title' => 'string',
-        'performance_evaluation_reference' => '\OpenAPI\Client\Model\TpdmPerformanceEvaluationReference',
+        'performance_evaluation_reference' => '\Resources\Model\TpdmPerformanceEvaluationReference',
         'evaluation_description' => 'string',
         'evaluation_type_descriptor' => 'string',
         'inter_rater_reliability_score' => 'int',
         'max_rating' => 'float',
         'min_rating' => 'float',
-        'rating_levels' => '\OpenAPI\Client\Model\TpdmEvaluationRatingLevel[]',
+        'rating_levels' => '\Resources\Model\TpdmEvaluationRatingLevel[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -445,7 +445,7 @@ class TpdmEvaluation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets performance_evaluation_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmPerformanceEvaluationReference
+     * @return \Resources\Model\TpdmPerformanceEvaluationReference
      */
     public function getPerformanceEvaluationReference()
     {
@@ -455,7 +455,7 @@ class TpdmEvaluation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets performance_evaluation_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmPerformanceEvaluationReference $performance_evaluation_reference performance_evaluation_reference
+     * @param \Resources\Model\TpdmPerformanceEvaluationReference $performance_evaluation_reference performance_evaluation_reference
      *
      * @return self
      */
@@ -650,7 +650,7 @@ class TpdmEvaluation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets rating_levels
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationRatingLevel[]|null
+     * @return \Resources\Model\TpdmEvaluationRatingLevel[]|null
      */
     public function getRatingLevels()
     {
@@ -660,7 +660,7 @@ class TpdmEvaluation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets rating_levels
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationRatingLevel[]|null $rating_levels An unordered collection of evaluationRatingLevels. The descriptive level(s) of ratings (cut scores) for the evaluation.
+     * @param \Resources\Model\TpdmEvaluationRatingLevel[]|null $rating_levels An unordered collection of evaluationRatingLevels. The descriptive level(s) of ratings (cut scores) for the evaluation.
      *
      * @return self
      */

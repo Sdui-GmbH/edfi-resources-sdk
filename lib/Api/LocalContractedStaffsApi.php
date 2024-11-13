@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * LocalContractedStaffsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class LocalContractedStaffsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalContractedStaffById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class LocalContractedStaffsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalContractedStaffById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class LocalContractedStaffsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalContractedStaffs'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalContractedStaffDelete[]
      */
     public function deletesLocalContractedStaffs($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalContractedStaffs'][0])
     {
@@ -407,9 +407,9 @@ class LocalContractedStaffsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalContractedStaffs'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalContractedStaffDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesLocalContractedStaffsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalContractedStaffs'][0])
     {
@@ -440,11 +440,11 @@ class LocalContractedStaffsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalContractedStaffDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalContractedStaffDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class LocalContractedStaffsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalContractedStaffDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class LocalContractedStaffsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalContractedStaffDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class LocalContractedStaffsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalContractedStaffDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class LocalContractedStaffsApi
      */
     public function deletesLocalContractedStaffsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalContractedStaffs'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalContractedStaffDelete[]';
         $request = $this->deletesLocalContractedStaffsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -775,9 +775,9 @@ class LocalContractedStaffsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalContractedStaffs'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalContractedStaff[]
+     * @return \Resources\Model\EdFiLocalContractedStaff[]
      */
     public function getLocalContractedStaffs($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $staff_unique_id = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalContractedStaffs'][0])
     {
@@ -806,9 +806,9 @@ class LocalContractedStaffsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalContractedStaffs'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalContractedStaff[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalContractedStaff[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalContractedStaffsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $staff_unique_id = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalContractedStaffs'][0])
     {
@@ -839,11 +839,11 @@ class LocalContractedStaffsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalContractedStaff[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalContractedStaff[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalContractedStaff[]' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalContractedStaff[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -861,7 +861,7 @@ class LocalContractedStaffsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalContractedStaff[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalContractedStaff[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -880,7 +880,7 @@ class LocalContractedStaffsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalContractedStaff[]';
+            $returnType = '\Resources\Model\EdFiLocalContractedStaff[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -913,7 +913,7 @@ class LocalContractedStaffsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalContractedStaff[]',
+                        '\Resources\Model\EdFiLocalContractedStaff[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -983,7 +983,7 @@ class LocalContractedStaffsApi
      */
     public function getLocalContractedStaffsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $staff_unique_id = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalContractedStaffs'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalContractedStaff[]';
+        $returnType = '\Resources\Model\EdFiLocalContractedStaff[]';
         $request = $this->getLocalContractedStaffsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $staff_unique_id, $financial_collection_descriptor, $amount, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1276,9 +1276,9 @@ class LocalContractedStaffsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalContractedStaffsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalContractedStaff
+     * @return \Resources\Model\EdFiLocalContractedStaff
      */
     public function getLocalContractedStaffsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalContractedStaffsById'][0])
     {
@@ -1296,9 +1296,9 @@ class LocalContractedStaffsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalContractedStaffsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalContractedStaff, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalContractedStaff, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalContractedStaffsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalContractedStaffsById'][0])
     {
@@ -1329,11 +1329,11 @@ class LocalContractedStaffsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalContractedStaff' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalContractedStaff' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalContractedStaff' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalContractedStaff' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1351,7 +1351,7 @@ class LocalContractedStaffsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalContractedStaff', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalContractedStaff', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1370,7 +1370,7 @@ class LocalContractedStaffsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalContractedStaff';
+            $returnType = '\Resources\Model\EdFiLocalContractedStaff';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1403,7 +1403,7 @@ class LocalContractedStaffsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalContractedStaff',
+                        '\Resources\Model\EdFiLocalContractedStaff',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1451,7 +1451,7 @@ class LocalContractedStaffsApi
      */
     public function getLocalContractedStaffsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalContractedStaffsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalContractedStaff';
+        $returnType = '\Resources\Model\EdFiLocalContractedStaff';
         $request = $this->getLocalContractedStaffsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1611,9 +1611,9 @@ class LocalContractedStaffsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalContractedStaffs'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]
      */
     public function keyChangesLocalContractedStaffs($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalContractedStaffs'][0])
     {
@@ -1634,9 +1634,9 @@ class LocalContractedStaffsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalContractedStaffs'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesLocalContractedStaffsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalContractedStaffs'][0])
     {
@@ -1667,11 +1667,11 @@ class LocalContractedStaffsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1689,7 +1689,7 @@ class LocalContractedStaffsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1708,7 +1708,7 @@ class LocalContractedStaffsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1741,7 +1741,7 @@ class LocalContractedStaffsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1795,7 +1795,7 @@ class LocalContractedStaffsApi
      */
     public function keyChangesLocalContractedStaffsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalContractedStaffs'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalContractedStaffKeyChange[]';
         $request = $this->keyChangesLocalContractedStaffsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1986,10 +1986,10 @@ class LocalContractedStaffsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalContractedStaff'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2003,10 +2003,10 @@ class LocalContractedStaffsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalContractedStaff'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2051,7 +2051,7 @@ class LocalContractedStaffsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalContractedStaff'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2072,7 +2072,7 @@ class LocalContractedStaffsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalContractedStaff'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2109,7 +2109,7 @@ class LocalContractedStaffsApi
     /**
      * Create request for operation 'postLocalContractedStaff'
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalContractedStaff'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2207,11 +2207,11 @@ class LocalContractedStaffsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalContractedStaff'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2226,11 +2226,11 @@ class LocalContractedStaffsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalContractedStaff'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2276,7 +2276,7 @@ class LocalContractedStaffsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalContractedStaff'] to see the possible values for this operation
      *
@@ -2299,7 +2299,7 @@ class LocalContractedStaffsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalContractedStaff'] to see the possible values for this operation
      *
@@ -2338,7 +2338,7 @@ class LocalContractedStaffsApi
      * Create request for operation 'putLocalContractedStaff'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalContractedStaff $ed_fi_local_contracted_staff The JSON representation of the \&quot;localContractedStaff\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalContractedStaff'] to see the possible values for this operation
      *

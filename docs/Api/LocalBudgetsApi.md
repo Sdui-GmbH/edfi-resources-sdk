@@ -1,4 +1,4 @@
-# OpenAPI\Client\LocalBudgetsApi
+# Resources\LocalBudgetsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalBudgetsApi(
+$apiInstance = new Resources\Api\LocalBudgetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesLocalBudgets()`
 
 ```php
-deletesLocalBudgets($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetDelete[]
+deletesLocalBudgets($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLocalBudgetDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalBudgetsApi(
+$apiInstance = new Resources\Api\LocalBudgetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetDelete[]**](../Model/TrackedChangesEdFiLocalBudgetDelete.md)
+[**\Resources\Model\TrackedChangesEdFiLocalBudgetDelete[]**](../Model/TrackedChangesEdFiLocalBudgetDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getLocalBudgets()`
 
 ```php
-getLocalBudgets($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $financial_collection_descriptor, $amount, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiLocalBudget[]
+getLocalBudgets($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $financial_collection_descriptor, $amount, $id, $use_snapshot): \Resources\Model\EdFiLocalBudget[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalBudgetsApi(
+$apiInstance = new Resources\Api\LocalBudgetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -213,7 +213,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLocalBudget[]**](../Model/EdFiLocalBudget.md)
+[**\Resources\Model\EdFiLocalBudget[]**](../Model/EdFiLocalBudget.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ try {
 ## `getLocalBudgetsById()`
 
 ```php
-getLocalBudgetsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiLocalBudget
+getLocalBudgetsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiLocalBudget
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -246,10 +246,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalBudgetsApi(
+$apiInstance = new Resources\Api\LocalBudgetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -277,7 +277,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLocalBudget**](../Model/EdFiLocalBudget.md)
+[**\Resources\Model\EdFiLocalBudget**](../Model/EdFiLocalBudget.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ try {
 ## `keyChangesLocalBudgets()`
 
 ```php
-keyChangesLocalBudgets($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetKeyChange[]
+keyChangesLocalBudgets($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLocalBudgetKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -310,10 +310,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalBudgetsApi(
+$apiInstance = new Resources\Api\LocalBudgetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -347,7 +347,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetKeyChange[]**](../Model/TrackedChangesEdFiLocalBudgetKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiLocalBudgetKeyChange[]**](../Model/TrackedChangesEdFiLocalBudgetKeyChange.md)
 
 ### Authorization
 
@@ -380,16 +380,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalBudgetsApi(
+$apiInstance = new Resources\Api\LocalBudgetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_local_budget = new \OpenAPI\Client\Model\EdFiLocalBudget(); // \OpenAPI\Client\Model\EdFiLocalBudget | The JSON representation of the \"localBudget\" resource to be created or updated.
+$ed_fi_local_budget = new \Resources\Model\EdFiLocalBudget(); // \Resources\Model\EdFiLocalBudget | The JSON representation of the \"localBudget\" resource to be created or updated.
 
 try {
     $apiInstance->postLocalBudget($ed_fi_local_budget);
@@ -402,7 +402,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_local_budget** | [**\OpenAPI\Client\Model\EdFiLocalBudget**](../Model/EdFiLocalBudget.md)| The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. | |
+| **ed_fi_local_budget** | [**\Resources\Model\EdFiLocalBudget**](../Model/EdFiLocalBudget.md)| The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -439,17 +439,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalBudgetsApi(
+$apiInstance = new Resources\Api\LocalBudgetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_local_budget = new \OpenAPI\Client\Model\EdFiLocalBudget(); // \OpenAPI\Client\Model\EdFiLocalBudget | The JSON representation of the \"localBudget\" resource to be created or updated.
+$ed_fi_local_budget = new \Resources\Model\EdFiLocalBudget(); // \Resources\Model\EdFiLocalBudget | The JSON representation of the \"localBudget\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -464,7 +464,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_local_budget** | [**\OpenAPI\Client\Model\EdFiLocalBudget**](../Model/EdFiLocalBudget.md)| The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. | |
+| **ed_fi_local_budget** | [**\Resources\Model\EdFiLocalBudget**](../Model/EdFiLocalBudget.md)| The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **account_identifier** | **string** | Code value for the valid combination of account dimensions by LEA under which financials are reported. |
 **education_organization_id** | **int** | The identifier assigned to an education organization. |
 **fiscal_year** | **int** | The fiscal year for the account. |
-**link** | [**\OpenAPI\Client\Model\Link**](Link.md) |  | [optional]
+**link** | [**\Resources\Model\Link**](Link.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

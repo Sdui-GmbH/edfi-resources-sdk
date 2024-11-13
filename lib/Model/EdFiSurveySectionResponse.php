@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSurveySectionResponse Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class EdFiSurveySectionResponse implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'survey_response_reference' => '\OpenAPI\Client\Model\EdFiSurveyResponseReference',
-        'survey_section_reference' => '\OpenAPI\Client\Model\EdFiSurveySectionReference',
+        'survey_response_reference' => '\Resources\Model\EdFiSurveyResponseReference',
+        'survey_section_reference' => '\Resources\Model\EdFiSurveySectionReference',
         'section_rating' => 'float',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -364,7 +364,7 @@ class EdFiSurveySectionResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets survey_response_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveyResponseReference
+     * @return \Resources\Model\EdFiSurveyResponseReference
      */
     public function getSurveyResponseReference()
     {
@@ -374,7 +374,7 @@ class EdFiSurveySectionResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets survey_response_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveyResponseReference $survey_response_reference survey_response_reference
+     * @param \Resources\Model\EdFiSurveyResponseReference $survey_response_reference survey_response_reference
      *
      * @return self
      */
@@ -391,7 +391,7 @@ class EdFiSurveySectionResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets survey_section_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveySectionReference
+     * @return \Resources\Model\EdFiSurveySectionReference
      */
     public function getSurveySectionReference()
     {
@@ -401,7 +401,7 @@ class EdFiSurveySectionResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets survey_section_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveySectionReference $survey_section_reference survey_section_reference
+     * @param \Resources\Model\EdFiSurveySectionReference $survey_section_reference survey_section_reference
      *
      * @return self
      */

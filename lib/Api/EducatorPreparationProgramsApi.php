@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * EducatorPreparationProgramsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class EducatorPreparationProgramsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEducatorPreparationProgramById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class EducatorPreparationProgramsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEducatorPreparationProgramById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class EducatorPreparationProgramsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducatorPreparationPrograms'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]
+     * @return \Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]
      */
     public function deletesEducatorPreparationPrograms($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
     {
@@ -407,9 +407,9 @@ class EducatorPreparationProgramsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducatorPreparationPrograms'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesEducatorPreparationProgramsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
     {
@@ -440,11 +440,11 @@ class EducatorPreparationProgramsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class EducatorPreparationProgramsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class EducatorPreparationProgramsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class EducatorPreparationProgramsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]',
+                        '\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class EducatorPreparationProgramsApi
      */
     public function deletesEducatorPreparationProgramsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]';
         $request = $this->deletesEducatorPreparationProgramsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -773,9 +773,9 @@ class EducatorPreparationProgramsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducatorPreparationPrograms'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmEducatorPreparationProgram[]
+     * @return \Resources\Model\TpdmEducatorPreparationProgram[]
      */
     public function getEducatorPreparationPrograms($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
     {
@@ -802,9 +802,9 @@ class EducatorPreparationProgramsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducatorPreparationPrograms'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmEducatorPreparationProgram[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmEducatorPreparationProgram[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEducatorPreparationProgramsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
     {
@@ -835,11 +835,11 @@ class EducatorPreparationProgramsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmEducatorPreparationProgram[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmEducatorPreparationProgram[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmEducatorPreparationProgram[]' !== 'string') {
+                        if ('\Resources\Model\TpdmEducatorPreparationProgram[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -857,7 +857,7 @@ class EducatorPreparationProgramsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmEducatorPreparationProgram[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmEducatorPreparationProgram[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -876,7 +876,7 @@ class EducatorPreparationProgramsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmEducatorPreparationProgram[]';
+            $returnType = '\Resources\Model\TpdmEducatorPreparationProgram[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -909,7 +909,7 @@ class EducatorPreparationProgramsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmEducatorPreparationProgram[]',
+                        '\Resources\Model\TpdmEducatorPreparationProgram[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -975,7 +975,7 @@ class EducatorPreparationProgramsApi
      */
     public function getEducatorPreparationProgramsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmEducatorPreparationProgram[]';
+        $returnType = '\Resources\Model\TpdmEducatorPreparationProgram[]';
         $request = $this->getEducatorPreparationProgramsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1249,9 +1249,9 @@ class EducatorPreparationProgramsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducatorPreparationProgramsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmEducatorPreparationProgram
+     * @return \Resources\Model\TpdmEducatorPreparationProgram
      */
     public function getEducatorPreparationProgramsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationProgramsById'][0])
     {
@@ -1269,9 +1269,9 @@ class EducatorPreparationProgramsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducatorPreparationProgramsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmEducatorPreparationProgram, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmEducatorPreparationProgram, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEducatorPreparationProgramsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationProgramsById'][0])
     {
@@ -1302,11 +1302,11 @@ class EducatorPreparationProgramsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmEducatorPreparationProgram' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmEducatorPreparationProgram' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmEducatorPreparationProgram' !== 'string') {
+                        if ('\Resources\Model\TpdmEducatorPreparationProgram' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1324,7 +1324,7 @@ class EducatorPreparationProgramsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmEducatorPreparationProgram', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmEducatorPreparationProgram', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1343,7 +1343,7 @@ class EducatorPreparationProgramsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmEducatorPreparationProgram';
+            $returnType = '\Resources\Model\TpdmEducatorPreparationProgram';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1376,7 +1376,7 @@ class EducatorPreparationProgramsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmEducatorPreparationProgram',
+                        '\Resources\Model\TpdmEducatorPreparationProgram',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1424,7 +1424,7 @@ class EducatorPreparationProgramsApi
      */
     public function getEducatorPreparationProgramsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationProgramsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmEducatorPreparationProgram';
+        $returnType = '\Resources\Model\TpdmEducatorPreparationProgram';
         $request = $this->getEducatorPreparationProgramsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1584,9 +1584,9 @@ class EducatorPreparationProgramsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducatorPreparationPrograms'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]
+     * @return \Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]
      */
     public function keyChangesEducatorPreparationPrograms($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
     {
@@ -1607,9 +1607,9 @@ class EducatorPreparationProgramsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducatorPreparationPrograms'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesEducatorPreparationProgramsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
     {
@@ -1640,11 +1640,11 @@ class EducatorPreparationProgramsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1662,7 +1662,7 @@ class EducatorPreparationProgramsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1681,7 +1681,7 @@ class EducatorPreparationProgramsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1714,7 +1714,7 @@ class EducatorPreparationProgramsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]',
+                        '\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1768,7 +1768,7 @@ class EducatorPreparationProgramsApi
      */
     public function keyChangesEducatorPreparationProgramsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]';
         $request = $this->keyChangesEducatorPreparationProgramsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1959,10 +1959,10 @@ class EducatorPreparationProgramsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducatorPreparationProgram'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1976,10 +1976,10 @@ class EducatorPreparationProgramsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducatorPreparationProgram'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2024,7 +2024,7 @@ class EducatorPreparationProgramsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducatorPreparationProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2045,7 +2045,7 @@ class EducatorPreparationProgramsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducatorPreparationProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2082,7 +2082,7 @@ class EducatorPreparationProgramsApi
     /**
      * Create request for operation 'postEducatorPreparationProgram'
      *
-     * @param  \OpenAPI\Client\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducatorPreparationProgram'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2180,11 +2180,11 @@ class EducatorPreparationProgramsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducatorPreparationProgram'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2199,11 +2199,11 @@ class EducatorPreparationProgramsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducatorPreparationProgram'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2249,7 +2249,7 @@ class EducatorPreparationProgramsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducatorPreparationProgram'] to see the possible values for this operation
      *
@@ -2272,7 +2272,7 @@ class EducatorPreparationProgramsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducatorPreparationProgram'] to see the possible values for this operation
      *
@@ -2311,7 +2311,7 @@ class EducatorPreparationProgramsApi
      * Create request for operation 'putEducatorPreparationProgram'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEducatorPreparationProgram $tpdm_educator_preparation_program The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducatorPreparationProgram'] to see the possible values for this operation
      *

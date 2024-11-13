@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **as_of_date** | **\DateTime** | The date of the reported amount for the account. |
-**local_account_reference** | [**\OpenAPI\Client\Model\EdFiLocalAccountReference**](EdFiLocalAccountReference.md) |  |
+**local_account_reference** | [**\Resources\Model\EdFiLocalAccountReference**](EdFiLocalAccountReference.md) |  |
 **amount** | **float** | Current balance for the account. |
 **financial_collection_descriptor** | **string** | The accounting period or grouping for which the amount is collected. | [optional]
 **_etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional]

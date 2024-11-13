@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **title** | **string** | The name of the content standard, for example Common Core. |
 **uri** | **string** | An unambiguous reference to the standards using a network-resolvable URI. | [optional]
 **version** | **string** | The version identifier for the content. | [optional]
-**mandating_education_organization_reference** | [**\OpenAPI\Client\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  | [optional]
-**authors** | [**\OpenAPI\Client\Model\EdFiLearningStandardContentStandardAuthor[]**](EdFiLearningStandardContentStandardAuthor.md) | An unordered collection of learningStandardContentStandardAuthors. The person or organization chiefly responsible for the intellectual content of the standard. | [optional]
+**mandating_education_organization_reference** | [**\Resources\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  | [optional]
+**authors** | [**\Resources\Model\EdFiLearningStandardContentStandardAuthor[]**](EdFiLearningStandardContentStandardAuthor.md) | An unordered collection of learningStandardContentStandardAuthors. The person or organization chiefly responsible for the intellectual content of the standard. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1,4 +1,4 @@
-# OpenAPI\Client\StudentProgramAttendanceEventsApi
+# Resources\StudentProgramAttendanceEventsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentProgramAttendanceEventsApi(
+$apiInstance = new Resources\Api\StudentProgramAttendanceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesStudentProgramAttendanceEvents()`
 
 ```php
-deletesStudentProgramAttendanceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentProgramAttendanceEventDelete[]
+deletesStudentProgramAttendanceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentProgramAttendanceEventDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentProgramAttendanceEventsApi(
+$apiInstance = new Resources\Api\StudentProgramAttendanceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentProgramAttendanceEventDelete[]**](../Model/TrackedChangesEdFiStudentProgramAttendanceEventDelete.md)
+[**\Resources\Model\TrackedChangesEdFiStudentProgramAttendanceEventDelete[]**](../Model/TrackedChangesEdFiStudentProgramAttendanceEventDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getStudentProgramAttendanceEvents()`
 
 ```php
-getStudentProgramAttendanceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $attendance_event_category_descriptor, $event_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $educational_environment_descriptor, $attendance_event_reason, $event_duration, $id, $program_attendance_duration, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentProgramAttendanceEvent[]
+getStudentProgramAttendanceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $attendance_event_category_descriptor, $event_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $educational_environment_descriptor, $attendance_event_reason, $event_duration, $id, $program_attendance_duration, $use_snapshot): \Resources\Model\EdFiStudentProgramAttendanceEvent[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentProgramAttendanceEventsApi(
+$apiInstance = new Resources\Api\StudentProgramAttendanceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -223,7 +223,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentProgramAttendanceEvent[]**](../Model/EdFiStudentProgramAttendanceEvent.md)
+[**\Resources\Model\EdFiStudentProgramAttendanceEvent[]**](../Model/EdFiStudentProgramAttendanceEvent.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ try {
 ## `getStudentProgramAttendanceEventsById()`
 
 ```php
-getStudentProgramAttendanceEventsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentProgramAttendanceEvent
+getStudentProgramAttendanceEventsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiStudentProgramAttendanceEvent
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -256,10 +256,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentProgramAttendanceEventsApi(
+$apiInstance = new Resources\Api\StudentProgramAttendanceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -287,7 +287,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentProgramAttendanceEvent**](../Model/EdFiStudentProgramAttendanceEvent.md)
+[**\Resources\Model\EdFiStudentProgramAttendanceEvent**](../Model/EdFiStudentProgramAttendanceEvent.md)
 
 ### Authorization
 
@@ -305,7 +305,7 @@ try {
 ## `keyChangesStudentProgramAttendanceEvents()`
 
 ```php
-keyChangesStudentProgramAttendanceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentProgramAttendanceEventKeyChange[]
+keyChangesStudentProgramAttendanceEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentProgramAttendanceEventKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -320,10 +320,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentProgramAttendanceEventsApi(
+$apiInstance = new Resources\Api\StudentProgramAttendanceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -357,7 +357,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentProgramAttendanceEventKeyChange[]**](../Model/TrackedChangesEdFiStudentProgramAttendanceEventKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiStudentProgramAttendanceEventKeyChange[]**](../Model/TrackedChangesEdFiStudentProgramAttendanceEventKeyChange.md)
 
 ### Authorization
 
@@ -390,16 +390,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentProgramAttendanceEventsApi(
+$apiInstance = new Resources\Api\StudentProgramAttendanceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_student_program_attendance_event = new \OpenAPI\Client\Model\EdFiStudentProgramAttendanceEvent(); // \OpenAPI\Client\Model\EdFiStudentProgramAttendanceEvent | The JSON representation of the \"studentProgramAttendanceEvent\" resource to be created or updated.
+$ed_fi_student_program_attendance_event = new \Resources\Model\EdFiStudentProgramAttendanceEvent(); // \Resources\Model\EdFiStudentProgramAttendanceEvent | The JSON representation of the \"studentProgramAttendanceEvent\" resource to be created or updated.
 
 try {
     $apiInstance->postStudentProgramAttendanceEvent($ed_fi_student_program_attendance_event);
@@ -412,7 +412,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_student_program_attendance_event** | [**\OpenAPI\Client\Model\EdFiStudentProgramAttendanceEvent**](../Model/EdFiStudentProgramAttendanceEvent.md)| The JSON representation of the \&quot;studentProgramAttendanceEvent\&quot; resource to be created or updated. | |
+| **ed_fi_student_program_attendance_event** | [**\Resources\Model\EdFiStudentProgramAttendanceEvent**](../Model/EdFiStudentProgramAttendanceEvent.md)| The JSON representation of the \&quot;studentProgramAttendanceEvent\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -449,17 +449,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentProgramAttendanceEventsApi(
+$apiInstance = new Resources\Api\StudentProgramAttendanceEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_student_program_attendance_event = new \OpenAPI\Client\Model\EdFiStudentProgramAttendanceEvent(); // \OpenAPI\Client\Model\EdFiStudentProgramAttendanceEvent | The JSON representation of the \"studentProgramAttendanceEvent\" resource to be created or updated.
+$ed_fi_student_program_attendance_event = new \Resources\Model\EdFiStudentProgramAttendanceEvent(); // \Resources\Model\EdFiStudentProgramAttendanceEvent | The JSON representation of the \"studentProgramAttendanceEvent\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -474,7 +474,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_student_program_attendance_event** | [**\OpenAPI\Client\Model\EdFiStudentProgramAttendanceEvent**](../Model/EdFiStudentProgramAttendanceEvent.md)| The JSON representation of the \&quot;studentProgramAttendanceEvent\&quot; resource to be created or updated. | |
+| **ed_fi_student_program_attendance_event** | [**\Resources\Model\EdFiStudentProgramAttendanceEvent**](../Model/EdFiStudentProgramAttendanceEvent.md)| The JSON representation of the \&quot;studentProgramAttendanceEvent\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

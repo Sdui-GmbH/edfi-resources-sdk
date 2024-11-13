@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
-**gradebook_entry_reference** | [**\OpenAPI\Client\Model\EdFiGradebookEntryReference**](EdFiGradebookEntryReference.md) |  |
-**student_reference** | [**\OpenAPI\Client\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
+**gradebook_entry_reference** | [**\Resources\Model\EdFiGradebookEntryReference**](EdFiGradebookEntryReference.md) |  |
+**student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
 **assignment_late_status_descriptor** | **string** | Status of whether the assignment was submitted after the due date and/or marked as. | [optional]
 **competency_level_descriptor** | **string** | The competency level assessed for the student for the referenced learning objective. | [optional]
 **date_fulfilled** | **\DateTime** | The date an assignment was turned in or the date of an assessment. | [optional]

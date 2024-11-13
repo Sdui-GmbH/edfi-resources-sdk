@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffSectionAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class EdFiStaffSectionAssociation implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
-        'section_reference' => '\OpenAPI\Client\Model\EdFiSectionReference',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
+        'section_reference' => '\Resources\Model\EdFiSectionReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
         'classroom_position_descriptor' => 'string',
         'end_date' => '\DateTime',
         'highly_qualified_teacher' => 'bool',
@@ -432,7 +432,7 @@ class EdFiStaffSectionAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets section_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionReference
+     * @return \Resources\Model\EdFiSectionReference
      */
     public function getSectionReference()
     {
@@ -442,7 +442,7 @@ class EdFiStaffSectionAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets section_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionReference $section_reference section_reference
+     * @param \Resources\Model\EdFiSectionReference $section_reference section_reference
      *
      * @return self
      */
@@ -459,7 +459,7 @@ class EdFiStaffSectionAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference
+     * @return \Resources\Model\EdFiStaffReference
      */
     public function getStaffReference()
     {
@@ -469,7 +469,7 @@ class EdFiStaffSectionAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference $staff_reference staff_reference
      *
      * @return self
      */

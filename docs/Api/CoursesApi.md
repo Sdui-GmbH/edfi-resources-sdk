@@ -1,4 +1,4 @@
-# OpenAPI\Client\CoursesApi
+# Resources\CoursesApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CoursesApi(
+$apiInstance = new Resources\Api\CoursesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesCourses()`
 
 ```php
-deletesCourses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCourseDelete[]
+deletesCourses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCourseDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CoursesApi(
+$apiInstance = new Resources\Api\CoursesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCourseDelete[]**](../Model/TrackedChangesEdFiCourseDelete.md)
+[**\Resources\Model\TrackedChangesEdFiCourseDelete[]**](../Model/TrackedChangesEdFiCourseDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getCourses()`
 
 ```php
-getCourses($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot): \OpenAPI\Client\Model\EdFiCourse[]
+getCourses($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot): \Resources\Model\EdFiCourse[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CoursesApi(
+$apiInstance = new Resources\Api\CoursesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -237,7 +237,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCourse[]**](../Model/EdFiCourse.md)
+[**\Resources\Model\EdFiCourse[]**](../Model/EdFiCourse.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ try {
 ## `getCoursesById()`
 
 ```php
-getCoursesById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiCourse
+getCoursesById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiCourse
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -270,10 +270,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CoursesApi(
+$apiInstance = new Resources\Api\CoursesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -301,7 +301,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCourse**](../Model/EdFiCourse.md)
+[**\Resources\Model\EdFiCourse**](../Model/EdFiCourse.md)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ try {
 ## `keyChangesCourses()`
 
 ```php
-keyChangesCourses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCourseKeyChange[]
+keyChangesCourses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCourseKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -334,10 +334,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CoursesApi(
+$apiInstance = new Resources\Api\CoursesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -371,7 +371,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCourseKeyChange[]**](../Model/TrackedChangesEdFiCourseKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiCourseKeyChange[]**](../Model/TrackedChangesEdFiCourseKeyChange.md)
 
 ### Authorization
 
@@ -404,16 +404,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CoursesApi(
+$apiInstance = new Resources\Api\CoursesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_course = new \OpenAPI\Client\Model\EdFiCourse(); // \OpenAPI\Client\Model\EdFiCourse | The JSON representation of the \"course\" resource to be created or updated.
+$ed_fi_course = new \Resources\Model\EdFiCourse(); // \Resources\Model\EdFiCourse | The JSON representation of the \"course\" resource to be created or updated.
 
 try {
     $apiInstance->postCourse($ed_fi_course);
@@ -426,7 +426,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_course** | [**\OpenAPI\Client\Model\EdFiCourse**](../Model/EdFiCourse.md)| The JSON representation of the \&quot;course\&quot; resource to be created or updated. | |
+| **ed_fi_course** | [**\Resources\Model\EdFiCourse**](../Model/EdFiCourse.md)| The JSON representation of the \&quot;course\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -463,17 +463,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CoursesApi(
+$apiInstance = new Resources\Api\CoursesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_course = new \OpenAPI\Client\Model\EdFiCourse(); // \OpenAPI\Client\Model\EdFiCourse | The JSON representation of the \"course\" resource to be created or updated.
+$ed_fi_course = new \Resources\Model\EdFiCourse(); // \Resources\Model\EdFiCourse | The JSON representation of the \"course\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -488,7 +488,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_course** | [**\OpenAPI\Client\Model\EdFiCourse**](../Model/EdFiCourse.md)| The JSON representation of the \&quot;course\&quot; resource to be created or updated. | |
+| **ed_fi_course** | [**\Resources\Model\EdFiCourse**](../Model/EdFiCourse.md)| The JSON representation of the \&quot;course\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

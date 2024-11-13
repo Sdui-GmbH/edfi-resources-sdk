@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiOpenStaffPositionDelete Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class TrackedChangesEdFiOpenStaffPositionDelete implements ModelInterface, Array
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiOpenStaffPositionKey'
+        'key_values' => '\Resources\Model\TrackedChangesEdFiOpenStaffPositionKey'
     ];
 
     /**
@@ -360,7 +360,7 @@ class TrackedChangesEdFiOpenStaffPositionDelete implements ModelInterface, Array
     /**
      * Gets key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiOpenStaffPositionKey|null
+     * @return \Resources\Model\TrackedChangesEdFiOpenStaffPositionKey|null
      */
     public function getKeyValues()
     {
@@ -370,7 +370,7 @@ class TrackedChangesEdFiOpenStaffPositionDelete implements ModelInterface, Array
     /**
      * Sets key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiOpenStaffPositionKey|null $key_values key_values
+     * @param \Resources\Model\TrackedChangesEdFiOpenStaffPositionKey|null $key_values key_values
      *
      * @return self
      */

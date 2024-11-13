@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiCommunityProviderLicense Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
         'id' => 'string',
         'license_identifier' => 'string',
         'licensing_organization' => 'string',
-        'community_provider_reference' => '\OpenAPI\Client\Model\EdFiCommunityProviderReference',
+        'community_provider_reference' => '\Resources\Model\EdFiCommunityProviderReference',
         'authorized_facility_capacity' => 'int',
         'license_effective_date' => '\DateTime',
         'license_expiration_date' => '\DateTime',
@@ -510,7 +510,7 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets community_provider_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCommunityProviderReference
+     * @return \Resources\Model\EdFiCommunityProviderReference
      */
     public function getCommunityProviderReference()
     {
@@ -520,7 +520,7 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets community_provider_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCommunityProviderReference $community_provider_reference community_provider_reference
+     * @param \Resources\Model\EdFiCommunityProviderReference $community_provider_reference community_provider_reference
      *
      * @return self
      */

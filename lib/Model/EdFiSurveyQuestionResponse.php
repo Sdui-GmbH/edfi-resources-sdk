@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSurveyQuestionResponse Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,12 +58,12 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'survey_question_reference' => '\OpenAPI\Client\Model\EdFiSurveyQuestionReference',
-        'survey_response_reference' => '\OpenAPI\Client\Model\EdFiSurveyResponseReference',
+        'survey_question_reference' => '\Resources\Model\EdFiSurveyQuestionReference',
+        'survey_response_reference' => '\Resources\Model\EdFiSurveyResponseReference',
         'comment' => 'string',
         'no_response' => 'bool',
-        'survey_question_matrix_element_responses' => '\OpenAPI\Client\Model\EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse[]',
-        'values' => '\OpenAPI\Client\Model\EdFiSurveyQuestionResponseValue[]',
+        'survey_question_matrix_element_responses' => '\Resources\Model\EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse[]',
+        'values' => '\Resources\Model\EdFiSurveyQuestionResponseValue[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -389,7 +389,7 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets survey_question_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveyQuestionReference
+     * @return \Resources\Model\EdFiSurveyQuestionReference
      */
     public function getSurveyQuestionReference()
     {
@@ -399,7 +399,7 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets survey_question_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveyQuestionReference $survey_question_reference survey_question_reference
+     * @param \Resources\Model\EdFiSurveyQuestionReference $survey_question_reference survey_question_reference
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets survey_response_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveyResponseReference
+     * @return \Resources\Model\EdFiSurveyResponseReference
      */
     public function getSurveyResponseReference()
     {
@@ -426,7 +426,7 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets survey_response_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveyResponseReference $survey_response_reference survey_response_reference
+     * @param \Resources\Model\EdFiSurveyResponseReference $survey_response_reference survey_response_reference
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets survey_question_matrix_element_responses
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse[]|null
+     * @return \Resources\Model\EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse[]|null
      */
     public function getSurveyQuestionMatrixElementResponses()
     {
@@ -528,7 +528,7 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets survey_question_matrix_element_responses
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse[]|null $survey_question_matrix_element_responses An unordered collection of surveyQuestionResponseSurveyQuestionMatrixElementResponses. For matrix questions, the response for each row of the matrix.
+     * @param \Resources\Model\EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse[]|null $survey_question_matrix_element_responses An unordered collection of surveyQuestionResponseSurveyQuestionMatrixElementResponses. For matrix questions, the response for each row of the matrix.
      *
      * @return self
      */
@@ -545,7 +545,7 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets values
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveyQuestionResponseValue[]|null
+     * @return \Resources\Model\EdFiSurveyQuestionResponseValue[]|null
      */
     public function getValues()
     {
@@ -555,7 +555,7 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets values
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveyQuestionResponseValue[]|null $values An unordered collection of surveyQuestionResponseValues. For free-form, single- or multiple-selection questions, one or more responses.
+     * @param \Resources\Model\EdFiSurveyQuestionResponseValue[]|null $values An unordered collection of surveyQuestionResponseValues. For free-form, single- or multiple-selection questions, one or more responses.
      *
      * @return self
      */

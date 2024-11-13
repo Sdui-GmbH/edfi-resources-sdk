@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiLearningStandardEquivalenceAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class EdFiLearningStandardEquivalenceAssociation implements ModelInterface, Arra
     protected static $openAPITypes = [
         'id' => 'string',
         'namespace' => 'string',
-        'source_learning_standard_reference' => '\OpenAPI\Client\Model\EdFiLearningStandardReference',
-        'target_learning_standard_reference' => '\OpenAPI\Client\Model\EdFiLearningStandardReference',
+        'source_learning_standard_reference' => '\Resources\Model\EdFiLearningStandardReference',
+        'target_learning_standard_reference' => '\Resources\Model\EdFiLearningStandardReference',
         'effective_date' => '\DateTime',
         'learning_standard_equivalence_strength_description' => 'string',
         'learning_standard_equivalence_strength_descriptor' => 'string',
@@ -438,7 +438,7 @@ class EdFiLearningStandardEquivalenceAssociation implements ModelInterface, Arra
     /**
      * Gets source_learning_standard_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardReference
+     * @return \Resources\Model\EdFiLearningStandardReference
      */
     public function getSourceLearningStandardReference()
     {
@@ -448,7 +448,7 @@ class EdFiLearningStandardEquivalenceAssociation implements ModelInterface, Arra
     /**
      * Sets source_learning_standard_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiLearningStandardReference $source_learning_standard_reference source_learning_standard_reference
+     * @param \Resources\Model\EdFiLearningStandardReference $source_learning_standard_reference source_learning_standard_reference
      *
      * @return self
      */
@@ -465,7 +465,7 @@ class EdFiLearningStandardEquivalenceAssociation implements ModelInterface, Arra
     /**
      * Gets target_learning_standard_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardReference
+     * @return \Resources\Model\EdFiLearningStandardReference
      */
     public function getTargetLearningStandardReference()
     {
@@ -475,7 +475,7 @@ class EdFiLearningStandardEquivalenceAssociation implements ModelInterface, Arra
     /**
      * Sets target_learning_standard_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiLearningStandardReference $target_learning_standard_reference target_learning_standard_reference
+     * @param \Resources\Model\EdFiLearningStandardReference $target_learning_standard_reference target_learning_standard_reference
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# OpenAPI\Client\CompetencyObjectivesApi
+# Resources\CompetencyObjectivesApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CompetencyObjectivesApi(
+$apiInstance = new Resources\Api\CompetencyObjectivesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesCompetencyObjectives()`
 
 ```php
-deletesCompetencyObjectives($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]
+deletesCompetencyObjectives($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CompetencyObjectivesApi(
+$apiInstance = new Resources\Api\CompetencyObjectivesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]**](../Model/TrackedChangesEdFiCompetencyObjectiveDelete.md)
+[**\Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]**](../Model/TrackedChangesEdFiCompetencyObjectiveDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getCompetencyObjectives()`
 
 ```php
-getCompetencyObjectives($offset, $limit, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot): \OpenAPI\Client\Model\EdFiCompetencyObjective[]
+getCompetencyObjectives($offset, $limit, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot): \Resources\Model\EdFiCompetencyObjective[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CompetencyObjectivesApi(
+$apiInstance = new Resources\Api\CompetencyObjectivesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -213,7 +213,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCompetencyObjective[]**](../Model/EdFiCompetencyObjective.md)
+[**\Resources\Model\EdFiCompetencyObjective[]**](../Model/EdFiCompetencyObjective.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ try {
 ## `getCompetencyObjectivesById()`
 
 ```php
-getCompetencyObjectivesById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiCompetencyObjective
+getCompetencyObjectivesById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiCompetencyObjective
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -246,10 +246,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CompetencyObjectivesApi(
+$apiInstance = new Resources\Api\CompetencyObjectivesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -277,7 +277,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCompetencyObjective**](../Model/EdFiCompetencyObjective.md)
+[**\Resources\Model\EdFiCompetencyObjective**](../Model/EdFiCompetencyObjective.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ try {
 ## `keyChangesCompetencyObjectives()`
 
 ```php
-keyChangesCompetencyObjectives($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]
+keyChangesCompetencyObjectives($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -310,10 +310,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CompetencyObjectivesApi(
+$apiInstance = new Resources\Api\CompetencyObjectivesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -347,7 +347,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]**](../Model/TrackedChangesEdFiCompetencyObjectiveKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]**](../Model/TrackedChangesEdFiCompetencyObjectiveKeyChange.md)
 
 ### Authorization
 
@@ -380,16 +380,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CompetencyObjectivesApi(
+$apiInstance = new Resources\Api\CompetencyObjectivesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_competency_objective = new \OpenAPI\Client\Model\EdFiCompetencyObjective(); // \OpenAPI\Client\Model\EdFiCompetencyObjective | The JSON representation of the \"competencyObjective\" resource to be created or updated.
+$ed_fi_competency_objective = new \Resources\Model\EdFiCompetencyObjective(); // \Resources\Model\EdFiCompetencyObjective | The JSON representation of the \"competencyObjective\" resource to be created or updated.
 
 try {
     $apiInstance->postCompetencyObjective($ed_fi_competency_objective);
@@ -402,7 +402,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_competency_objective** | [**\OpenAPI\Client\Model\EdFiCompetencyObjective**](../Model/EdFiCompetencyObjective.md)| The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. | |
+| **ed_fi_competency_objective** | [**\Resources\Model\EdFiCompetencyObjective**](../Model/EdFiCompetencyObjective.md)| The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -439,17 +439,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CompetencyObjectivesApi(
+$apiInstance = new Resources\Api\CompetencyObjectivesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_competency_objective = new \OpenAPI\Client\Model\EdFiCompetencyObjective(); // \OpenAPI\Client\Model\EdFiCompetencyObjective | The JSON representation of the \"competencyObjective\" resource to be created or updated.
+$ed_fi_competency_objective = new \Resources\Model\EdFiCompetencyObjective(); // \Resources\Model\EdFiCompetencyObjective | The JSON representation of the \"competencyObjective\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -464,7 +464,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_competency_objective** | [**\OpenAPI\Client\Model\EdFiCompetencyObjective**](../Model/EdFiCompetencyObjective.md)| The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. | |
+| **ed_fi_competency_objective** | [**\Resources\Model\EdFiCompetencyObjective**](../Model/EdFiCompetencyObjective.md)| The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

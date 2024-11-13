@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiCourseTranscript Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,23 +59,23 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPITypes = [
         'id' => 'string',
         'course_attempt_result_descriptor' => 'string',
-        'course_reference' => '\OpenAPI\Client\Model\EdFiCourseReference',
-        'external_education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'responsible_teacher_staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
-        'student_academic_record_reference' => '\OpenAPI\Client\Model\EdFiStudentAcademicRecordReference',
-        'academic_subjects' => '\OpenAPI\Client\Model\EdFiCourseTranscriptAcademicSubject[]',
-        'alternative_course_identification_codes' => '\OpenAPI\Client\Model\EdFiCourseTranscriptAlternativeCourseIdentificationCode[]',
+        'course_reference' => '\Resources\Model\EdFiCourseReference',
+        'external_education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'responsible_teacher_staff_reference' => '\Resources\Model\EdFiStaffReference',
+        'student_academic_record_reference' => '\Resources\Model\EdFiStudentAcademicRecordReference',
+        'academic_subjects' => '\Resources\Model\EdFiCourseTranscriptAcademicSubject[]',
+        'alternative_course_identification_codes' => '\Resources\Model\EdFiCourseTranscriptAlternativeCourseIdentificationCode[]',
         'alternative_course_title' => 'string',
         'assigning_organization_identification_code' => 'string',
         'attempted_credit_conversion' => 'float',
         'attempted_credits' => 'float',
         'attempted_credit_type_descriptor' => 'string',
         'course_catalog_url' => 'string',
-        'course_programs' => '\OpenAPI\Client\Model\EdFiCourseTranscriptCourseProgram[]',
+        'course_programs' => '\Resources\Model\EdFiCourseTranscriptCourseProgram[]',
         'course_repeat_code_descriptor' => 'string',
         'course_title' => 'string',
-        'credit_categories' => '\OpenAPI\Client\Model\EdFiCourseTranscriptCreditCategory[]',
-        'earned_additional_credits' => '\OpenAPI\Client\Model\EdFiCourseTranscriptEarnedAdditionalCredits[]',
+        'credit_categories' => '\Resources\Model\EdFiCourseTranscriptCreditCategory[]',
+        'earned_additional_credits' => '\Resources\Model\EdFiCourseTranscriptEarnedAdditionalCredits[]',
         'earned_credit_conversion' => 'float',
         'earned_credits' => 'float',
         'earned_credit_type_descriptor' => 'string',
@@ -83,8 +83,8 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
         'final_letter_grade_earned' => 'string',
         'final_numeric_grade_earned' => 'float',
         'method_credit_earned_descriptor' => 'string',
-        'partial_course_transcript_awards' => '\OpenAPI\Client\Model\EdFiCourseTranscriptPartialCourseTranscriptAwards[]',
-        'sections' => '\OpenAPI\Client\Model\EdFiCourseTranscriptSection[]',
+        'partial_course_transcript_awards' => '\Resources\Model\EdFiCourseTranscriptPartialCourseTranscriptAwards[]',
+        'sections' => '\Resources\Model\EdFiCourseTranscriptSection[]',
         'when_taken_grade_level_descriptor' => 'string',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -649,7 +649,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets course_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseReference
+     * @return \Resources\Model\EdFiCourseReference
      */
     public function getCourseReference()
     {
@@ -659,7 +659,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets course_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseReference $course_reference course_reference
+     * @param \Resources\Model\EdFiCourseReference $course_reference course_reference
      *
      * @return self
      */
@@ -676,7 +676,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets external_education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference|null
+     * @return \Resources\Model\EdFiEducationOrganizationReference|null
      */
     public function getExternalEducationOrganizationReference()
     {
@@ -686,7 +686,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets external_education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference|null $external_education_organization_reference external_education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference|null $external_education_organization_reference external_education_organization_reference
      *
      * @return self
      */
@@ -703,7 +703,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets responsible_teacher_staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference|null
+     * @return \Resources\Model\EdFiStaffReference|null
      */
     public function getResponsibleTeacherStaffReference()
     {
@@ -713,7 +713,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets responsible_teacher_staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference|null $responsible_teacher_staff_reference responsible_teacher_staff_reference
+     * @param \Resources\Model\EdFiStaffReference|null $responsible_teacher_staff_reference responsible_teacher_staff_reference
      *
      * @return self
      */
@@ -730,7 +730,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets student_academic_record_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAcademicRecordReference
+     * @return \Resources\Model\EdFiStudentAcademicRecordReference
      */
     public function getStudentAcademicRecordReference()
     {
@@ -740,7 +740,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets student_academic_record_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAcademicRecordReference $student_academic_record_reference student_academic_record_reference
+     * @param \Resources\Model\EdFiStudentAcademicRecordReference $student_academic_record_reference student_academic_record_reference
      *
      * @return self
      */
@@ -757,7 +757,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets academic_subjects
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseTranscriptAcademicSubject[]|null
+     * @return \Resources\Model\EdFiCourseTranscriptAcademicSubject[]|null
      */
     public function getAcademicSubjects()
     {
@@ -767,7 +767,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets academic_subjects
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseTranscriptAcademicSubject[]|null $academic_subjects An unordered collection of courseTranscriptAcademicSubjects. The subject area for the course transcript credits awarded in the course transcript.
+     * @param \Resources\Model\EdFiCourseTranscriptAcademicSubject[]|null $academic_subjects An unordered collection of courseTranscriptAcademicSubjects. The subject area for the course transcript credits awarded in the course transcript.
      *
      * @return self
      */
@@ -784,7 +784,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets alternative_course_identification_codes
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseTranscriptAlternativeCourseIdentificationCode[]|null
+     * @return \Resources\Model\EdFiCourseTranscriptAlternativeCourseIdentificationCode[]|null
      */
     public function getAlternativeCourseIdentificationCodes()
     {
@@ -794,7 +794,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets alternative_course_identification_codes
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseTranscriptAlternativeCourseIdentificationCode[]|null $alternative_course_identification_codes An unordered collection of courseTranscriptAlternativeCourseIdentificationCodes. The code that identifies the course, course offering, the code from an external educational organization, or other alternate course code.
+     * @param \Resources\Model\EdFiCourseTranscriptAlternativeCourseIdentificationCode[]|null $alternative_course_identification_codes An unordered collection of courseTranscriptAlternativeCourseIdentificationCodes. The code that identifies the course, course offering, the code from an external educational organization, or other alternate course code.
      *
      * @return self
      */
@@ -1045,7 +1045,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets course_programs
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseTranscriptCourseProgram[]|null
+     * @return \Resources\Model\EdFiCourseTranscriptCourseProgram[]|null
      */
     public function getCoursePrograms()
     {
@@ -1055,7 +1055,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets course_programs
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseTranscriptCourseProgram[]|null $course_programs An unordered collection of courseTranscriptCoursePrograms. The program(s) that the student participated in the context of the course.
+     * @param \Resources\Model\EdFiCourseTranscriptCourseProgram[]|null $course_programs An unordered collection of courseTranscriptCoursePrograms. The program(s) that the student participated in the context of the course.
      *
      * @return self
      */
@@ -1151,7 +1151,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets credit_categories
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseTranscriptCreditCategory[]|null
+     * @return \Resources\Model\EdFiCourseTranscriptCreditCategory[]|null
      */
     public function getCreditCategories()
     {
@@ -1161,7 +1161,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets credit_categories
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseTranscriptCreditCategory[]|null $credit_categories An unordered collection of courseTranscriptCreditCategories. A categorization for the course transcript credits awarded in the course transcript.
+     * @param \Resources\Model\EdFiCourseTranscriptCreditCategory[]|null $credit_categories An unordered collection of courseTranscriptCreditCategories. A categorization for the course transcript credits awarded in the course transcript.
      *
      * @return self
      */
@@ -1178,7 +1178,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets earned_additional_credits
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseTranscriptEarnedAdditionalCredits[]|null
+     * @return \Resources\Model\EdFiCourseTranscriptEarnedAdditionalCredits[]|null
      */
     public function getEarnedAdditionalCredits()
     {
@@ -1188,7 +1188,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets earned_additional_credits
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseTranscriptEarnedAdditionalCredits[]|null $earned_additional_credits An unordered collection of courseTranscriptEarnedAdditionalCredits. The number of additional credits a student attempted and could earn for successfully completing a given course.
+     * @param \Resources\Model\EdFiCourseTranscriptEarnedAdditionalCredits[]|null $earned_additional_credits An unordered collection of courseTranscriptEarnedAdditionalCredits. The number of additional credits a student attempted and could earn for successfully completing a given course.
      *
      * @return self
      */
@@ -1470,7 +1470,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets partial_course_transcript_awards
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseTranscriptPartialCourseTranscriptAwards[]|null
+     * @return \Resources\Model\EdFiCourseTranscriptPartialCourseTranscriptAwards[]|null
      */
     public function getPartialCourseTranscriptAwards()
     {
@@ -1480,7 +1480,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets partial_course_transcript_awards
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseTranscriptPartialCourseTranscriptAwards[]|null $partial_course_transcript_awards An unordered collection of courseTranscriptPartialCourseTranscriptAwards. A collection of partial credits and/or grades a student earned against the course over the session, used when awards of credit are incremental.
+     * @param \Resources\Model\EdFiCourseTranscriptPartialCourseTranscriptAwards[]|null $partial_course_transcript_awards An unordered collection of courseTranscriptPartialCourseTranscriptAwards. A collection of partial credits and/or grades a student earned against the course over the session, used when awards of credit are incremental.
      *
      * @return self
      */
@@ -1497,7 +1497,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets sections
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseTranscriptSection[]|null
+     * @return \Resources\Model\EdFiCourseTranscriptSection[]|null
      */
     public function getSections()
     {
@@ -1507,7 +1507,7 @@ class EdFiCourseTranscript implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets sections
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseTranscriptSection[]|null $sections An unordered collection of courseTranscriptSections. The section(s) associated with the course transcript.
+     * @param \Resources\Model\EdFiCourseTranscriptSection[]|null $sections An unordered collection of courseTranscriptSections. The section(s) associated with the course transcript.
      *
      * @return self
      */

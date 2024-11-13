@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * CommunityProvidersApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class CommunityProvidersApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCommunityProviderById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class CommunityProvidersApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCommunityProviderById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class CommunityProvidersApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityProviders'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiCommunityProviderDelete[]
      */
     public function deletesCommunityProviders($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviders'][0])
     {
@@ -407,9 +407,9 @@ class CommunityProvidersApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityProviders'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCommunityProviderDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesCommunityProvidersWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviders'][0])
     {
@@ -440,11 +440,11 @@ class CommunityProvidersApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCommunityProviderDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCommunityProviderDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class CommunityProvidersApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCommunityProviderDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class CommunityProvidersApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCommunityProviderDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class CommunityProvidersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiCommunityProviderDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class CommunityProvidersApi
      */
     public function deletesCommunityProvidersAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviders'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCommunityProviderDelete[]';
         $request = $this->deletesCommunityProvidersRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class CommunityProvidersApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviders'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCommunityProvider[]
+     * @return \Resources\Model\EdFiCommunityProvider[]
      */
     public function getCommunityProviders($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
     {
@@ -804,9 +804,9 @@ class CommunityProvidersApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviders'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCommunityProvider[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCommunityProvider[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCommunityProvidersWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
     {
@@ -837,11 +837,11 @@ class CommunityProvidersApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCommunityProvider[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCommunityProvider[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCommunityProvider[]' !== 'string') {
+                        if ('\Resources\Model\EdFiCommunityProvider[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class CommunityProvidersApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCommunityProvider[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCommunityProvider[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class CommunityProvidersApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCommunityProvider[]';
+            $returnType = '\Resources\Model\EdFiCommunityProvider[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class CommunityProvidersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCommunityProvider[]',
+                        '\Resources\Model\EdFiCommunityProvider[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class CommunityProvidersApi
      */
     public function getCommunityProvidersAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCommunityProvider[]';
+        $returnType = '\Resources\Model\EdFiCommunityProvider[]';
         $request = $this->getCommunityProvidersRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $use_snapshot, $contentType);
 
         return $this->client
@@ -1261,9 +1261,9 @@ class CommunityProvidersApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProvidersById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCommunityProvider
+     * @return \Resources\Model\EdFiCommunityProvider
      */
     public function getCommunityProvidersById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProvidersById'][0])
     {
@@ -1281,9 +1281,9 @@ class CommunityProvidersApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProvidersById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCommunityProvider, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCommunityProvider, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCommunityProvidersByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProvidersById'][0])
     {
@@ -1314,11 +1314,11 @@ class CommunityProvidersApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCommunityProvider' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCommunityProvider' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCommunityProvider' !== 'string') {
+                        if ('\Resources\Model\EdFiCommunityProvider' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1336,7 +1336,7 @@ class CommunityProvidersApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCommunityProvider', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCommunityProvider', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1355,7 +1355,7 @@ class CommunityProvidersApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCommunityProvider';
+            $returnType = '\Resources\Model\EdFiCommunityProvider';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1388,7 +1388,7 @@ class CommunityProvidersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCommunityProvider',
+                        '\Resources\Model\EdFiCommunityProvider',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1436,7 +1436,7 @@ class CommunityProvidersApi
      */
     public function getCommunityProvidersByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProvidersById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCommunityProvider';
+        $returnType = '\Resources\Model\EdFiCommunityProvider';
         $request = $this->getCommunityProvidersByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1596,9 +1596,9 @@ class CommunityProvidersApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityProviders'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiCommunityProviderKeyChange[]
      */
     public function keyChangesCommunityProviders($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviders'][0])
     {
@@ -1619,9 +1619,9 @@ class CommunityProvidersApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityProviders'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCommunityProviderKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesCommunityProvidersWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviders'][0])
     {
@@ -1652,11 +1652,11 @@ class CommunityProvidersApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCommunityProviderKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCommunityProviderKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1674,7 +1674,7 @@ class CommunityProvidersApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCommunityProviderKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1693,7 +1693,7 @@ class CommunityProvidersApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCommunityProviderKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1726,7 +1726,7 @@ class CommunityProvidersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiCommunityProviderKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1780,7 +1780,7 @@ class CommunityProvidersApi
      */
     public function keyChangesCommunityProvidersAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviders'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCommunityProviderKeyChange[]';
         $request = $this->keyChangesCommunityProvidersRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1971,10 +1971,10 @@ class CommunityProvidersApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCommunityProvider'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1988,10 +1988,10 @@ class CommunityProvidersApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCommunityProvider'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2036,7 +2036,7 @@ class CommunityProvidersApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCommunityProvider'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2057,7 +2057,7 @@ class CommunityProvidersApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCommunityProvider'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2094,7 +2094,7 @@ class CommunityProvidersApi
     /**
      * Create request for operation 'postCommunityProvider'
      *
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCommunityProvider'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2192,11 +2192,11 @@ class CommunityProvidersApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCommunityProvider'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2211,11 +2211,11 @@ class CommunityProvidersApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCommunityProvider'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2261,7 +2261,7 @@ class CommunityProvidersApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCommunityProvider'] to see the possible values for this operation
      *
@@ -2284,7 +2284,7 @@ class CommunityProvidersApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCommunityProvider'] to see the possible values for this operation
      *
@@ -2323,7 +2323,7 @@ class CommunityProvidersApi
      * Create request for operation 'putCommunityProvider'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProvider $ed_fi_community_provider The JSON representation of the \&quot;communityProvider\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCommunityProvider'] to see the possible values for this operation
      *

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiGraduationPlanReference Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class EdFiGraduationPlanReference implements ModelInterface, ArrayAccess, \JsonS
         'education_organization_id' => 'int',
         'graduation_plan_type_descriptor' => 'string',
         'graduation_school_year' => 'int',
-        'link' => '\OpenAPI\Client\Model\Link'
+        'link' => '\Resources\Model\Link'
     ];
 
     /**
@@ -411,7 +411,7 @@ class EdFiGraduationPlanReference implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets link
      *
-     * @return \OpenAPI\Client\Model\Link|null
+     * @return \Resources\Model\Link|null
      */
     public function getLink()
     {
@@ -421,7 +421,7 @@ class EdFiGraduationPlanReference implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets link
      *
-     * @param \OpenAPI\Client\Model\Link|null $link link
+     * @param \Resources\Model\Link|null $link link
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentSectionAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,12 +59,12 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
-        'section_reference' => '\OpenAPI\Client\Model\EdFiSectionReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'section_reference' => '\Resources\Model\EdFiSectionReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'attempt_status_descriptor' => 'string',
         'end_date' => '\DateTime',
         'homeroom_indicator' => 'bool',
-        'programs' => '\OpenAPI\Client\Model\EdFiStudentSectionAssociationProgram[]',
+        'programs' => '\Resources\Model\EdFiStudentSectionAssociationProgram[]',
         'repeat_identifier_descriptor' => 'string',
         'teacher_student_data_link_exclusion' => 'bool',
         '_etag' => 'string',
@@ -440,7 +440,7 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets section_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionReference
+     * @return \Resources\Model\EdFiSectionReference
      */
     public function getSectionReference()
     {
@@ -450,7 +450,7 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets section_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionReference $section_reference section_reference
+     * @param \Resources\Model\EdFiSectionReference $section_reference section_reference
      *
      * @return self
      */
@@ -467,7 +467,7 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -477,7 +477,7 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -600,7 +600,7 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets programs
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSectionAssociationProgram[]|null
+     * @return \Resources\Model\EdFiStudentSectionAssociationProgram[]|null
      */
     public function getPrograms()
     {
@@ -610,7 +610,7 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets programs
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSectionAssociationProgram[]|null $programs An unordered collection of studentSectionAssociationPrograms. The program(s) that the student is participating in the context of the course.
+     * @param \Resources\Model\EdFiStudentSectionAssociationProgram[]|null $programs An unordered collection of studentSectionAssociationPrograms. The program(s) that the student is participating in the context of the course.
      *
      * @return self
      */

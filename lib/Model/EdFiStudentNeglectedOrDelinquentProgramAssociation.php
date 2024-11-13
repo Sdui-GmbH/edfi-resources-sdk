@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentNeglectedOrDelinquentProgramAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,15 +59,15 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'program_reference' => '\OpenAPI\Client\Model\EdFiProgramReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'program_reference' => '\Resources\Model\EdFiProgramReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'ela_progress_level_descriptor' => 'string',
         'end_date' => '\DateTime',
         'mathematics_progress_level_descriptor' => 'string',
         'neglected_or_delinquent_program_descriptor' => 'string',
-        'neglected_or_delinquent_program_services' => '\OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramService[]',
-        'program_participation_statuses' => '\OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]',
+        'neglected_or_delinquent_program_services' => '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramService[]',
+        'program_participation_statuses' => '\Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]',
         'reason_exited_descriptor' => 'string',
         'served_outside_of_regular_session' => 'bool',
         '_etag' => 'string',
@@ -472,7 +472,7 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -482,7 +482,7 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -499,7 +499,7 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     /**
      * Gets program_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramReference
+     * @return \Resources\Model\EdFiProgramReference
      */
     public function getProgramReference()
     {
@@ -509,7 +509,7 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     /**
      * Sets program_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramReference $program_reference program_reference
+     * @param \Resources\Model\EdFiProgramReference $program_reference program_reference
      *
      * @return self
      */
@@ -526,7 +526,7 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -536,7 +536,7 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -701,7 +701,7 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     /**
      * Gets neglected_or_delinquent_program_services
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramService[]|null
+     * @return \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramService[]|null
      */
     public function getNeglectedOrDelinquentProgramServices()
     {
@@ -711,7 +711,7 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     /**
      * Sets neglected_or_delinquent_program_services
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramService[]|null $neglected_or_delinquent_program_services An unordered collection of studentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramServices. Indicates the service(s) being provided to the student by the neglected or delinquent program.
+     * @param \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramService[]|null $neglected_or_delinquent_program_services An unordered collection of studentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramServices. Indicates the service(s) being provided to the student by the neglected or delinquent program.
      *
      * @return self
      */
@@ -728,7 +728,7 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     /**
      * Gets program_participation_statuses
      *
-     * @return \OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null
+     * @return \Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null
      */
     public function getProgramParticipationStatuses()
     {
@@ -738,7 +738,7 @@ class EdFiStudentNeglectedOrDelinquentProgramAssociation implements ModelInterfa
     /**
      * Sets program_participation_statuses
      *
-     * @param \OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null $program_participation_statuses An unordered collection of generalStudentProgramAssociationProgramParticipationStatuses. The status of the student's program participation.
+     * @param \Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null $program_participation_statuses An unordered collection of generalStudentProgramAssociationProgramParticipationStatuses. The status of the student's program participation.
      *
      * @return self
      */

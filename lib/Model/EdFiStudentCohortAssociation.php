@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentCohortAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,10 +59,10 @@ class EdFiStudentCohortAssociation implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
-        'cohort_reference' => '\OpenAPI\Client\Model\EdFiCohortReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'cohort_reference' => '\Resources\Model\EdFiCohortReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'end_date' => '\DateTime',
-        'sections' => '\OpenAPI\Client\Model\EdFiStudentCohortAssociationSection[]',
+        'sections' => '\Resources\Model\EdFiStudentCohortAssociationSection[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -404,7 +404,7 @@ class EdFiStudentCohortAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets cohort_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCohortReference
+     * @return \Resources\Model\EdFiCohortReference
      */
     public function getCohortReference()
     {
@@ -414,7 +414,7 @@ class EdFiStudentCohortAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets cohort_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCohortReference $cohort_reference cohort_reference
+     * @param \Resources\Model\EdFiCohortReference $cohort_reference cohort_reference
      *
      * @return self
      */
@@ -431,7 +431,7 @@ class EdFiStudentCohortAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -441,7 +441,7 @@ class EdFiStudentCohortAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -492,7 +492,7 @@ class EdFiStudentCohortAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets sections
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentCohortAssociationSection[]|null
+     * @return \Resources\Model\EdFiStudentCohortAssociationSection[]|null
      */
     public function getSections()
     {
@@ -502,7 +502,7 @@ class EdFiStudentCohortAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets sections
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentCohortAssociationSection[]|null $sections An unordered collection of studentCohortAssociationSections. The cohort representing the subdivision of students within one or more sections. For example, a group of students may be given additional instruction and tracked as a cohort.
+     * @param \Resources\Model\EdFiStudentCohortAssociationSection[]|null $sections An unordered collection of studentCohortAssociationSections. The cohort representing the subdivision of students within one or more sections. For example, a group of students may be given additional instruction and tracked as a cohort.
      *
      * @return self
      */

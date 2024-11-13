@@ -1,4 +1,4 @@
-# OpenAPI\Client\LearningStandardEquivalenceAssociationsApi
+# Resources\LearningStandardEquivalenceAssociationsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardEquivalenceAssociationsApi(
+$apiInstance = new Resources\Api\LearningStandardEquivalenceAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesLearningStandardEquivalenceAssociations()`
 
 ```php
-deletesLearningStandardEquivalenceAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]
+deletesLearningStandardEquivalenceAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardEquivalenceAssociationsApi(
+$apiInstance = new Resources\Api\LearningStandardEquivalenceAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]**](../Model/TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete.md)
+[**\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete[]**](../Model/TrackedChangesEdFiLearningStandardEquivalenceAssociationDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getLearningStandardEquivalenceAssociations()`
 
 ```php
-getLearningStandardEquivalenceAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $namespace, $source_learning_standard_id, $target_learning_standard_id, $learning_standard_equivalence_strength_descriptor, $effective_date, $id, $learning_standard_equivalence_strength_description, $use_snapshot): \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation[]
+getLearningStandardEquivalenceAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $namespace, $source_learning_standard_id, $target_learning_standard_id, $learning_standard_equivalence_strength_descriptor, $effective_date, $id, $learning_standard_equivalence_strength_description, $use_snapshot): \Resources\Model\EdFiLearningStandardEquivalenceAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardEquivalenceAssociationsApi(
+$apiInstance = new Resources\Api\LearningStandardEquivalenceAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -213,7 +213,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation[]**](../Model/EdFiLearningStandardEquivalenceAssociation.md)
+[**\Resources\Model\EdFiLearningStandardEquivalenceAssociation[]**](../Model/EdFiLearningStandardEquivalenceAssociation.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ try {
 ## `getLearningStandardEquivalenceAssociationsById()`
 
 ```php
-getLearningStandardEquivalenceAssociationsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation
+getLearningStandardEquivalenceAssociationsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiLearningStandardEquivalenceAssociation
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -246,10 +246,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardEquivalenceAssociationsApi(
+$apiInstance = new Resources\Api\LearningStandardEquivalenceAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -277,7 +277,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation**](../Model/EdFiLearningStandardEquivalenceAssociation.md)
+[**\Resources\Model\EdFiLearningStandardEquivalenceAssociation**](../Model/EdFiLearningStandardEquivalenceAssociation.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ try {
 ## `keyChangesLearningStandardEquivalenceAssociations()`
 
 ```php
-keyChangesLearningStandardEquivalenceAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]
+keyChangesLearningStandardEquivalenceAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -310,10 +310,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardEquivalenceAssociationsApi(
+$apiInstance = new Resources\Api\LearningStandardEquivalenceAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -347,7 +347,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]**](../Model/TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange[]**](../Model/TrackedChangesEdFiLearningStandardEquivalenceAssociationKeyChange.md)
 
 ### Authorization
 
@@ -380,16 +380,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardEquivalenceAssociationsApi(
+$apiInstance = new Resources\Api\LearningStandardEquivalenceAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_learning_standard_equivalence_association = new \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation(); // \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation | The JSON representation of the \"learningStandardEquivalenceAssociation\" resource to be created or updated.
+$ed_fi_learning_standard_equivalence_association = new \Resources\Model\EdFiLearningStandardEquivalenceAssociation(); // \Resources\Model\EdFiLearningStandardEquivalenceAssociation | The JSON representation of the \"learningStandardEquivalenceAssociation\" resource to be created or updated.
 
 try {
     $apiInstance->postLearningStandardEquivalenceAssociation($ed_fi_learning_standard_equivalence_association);
@@ -402,7 +402,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_learning_standard_equivalence_association** | [**\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation**](../Model/EdFiLearningStandardEquivalenceAssociation.md)| The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_learning_standard_equivalence_association** | [**\Resources\Model\EdFiLearningStandardEquivalenceAssociation**](../Model/EdFiLearningStandardEquivalenceAssociation.md)| The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -439,17 +439,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LearningStandardEquivalenceAssociationsApi(
+$apiInstance = new Resources\Api\LearningStandardEquivalenceAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_learning_standard_equivalence_association = new \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation(); // \OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation | The JSON representation of the \"learningStandardEquivalenceAssociation\" resource to be created or updated.
+$ed_fi_learning_standard_equivalence_association = new \Resources\Model\EdFiLearningStandardEquivalenceAssociation(); // \Resources\Model\EdFiLearningStandardEquivalenceAssociation | The JSON representation of the \"learningStandardEquivalenceAssociation\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -464,7 +464,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_learning_standard_equivalence_association** | [**\OpenAPI\Client\Model\EdFiLearningStandardEquivalenceAssociation**](../Model/EdFiLearningStandardEquivalenceAssociation.md)| The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_learning_standard_equivalence_association** | [**\Resources\Model\EdFiLearningStandardEquivalenceAssociation**](../Model/EdFiLearningStandardEquivalenceAssociation.md)| The JSON representation of the \&quot;learningStandardEquivalenceAssociation\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

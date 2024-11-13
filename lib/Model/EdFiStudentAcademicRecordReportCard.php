@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentAcademicRecordReportCard Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiStudentAcademicRecordReportCard implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'report_card_reference' => '\OpenAPI\Client\Model\EdFiReportCardReference'
+        'report_card_reference' => '\Resources\Model\EdFiReportCardReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiStudentAcademicRecordReportCard implements ModelInterface, ArrayAccess
     /**
      * Gets report_card_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiReportCardReference
+     * @return \Resources\Model\EdFiReportCardReference
      */
     public function getReportCardReference()
     {
@@ -305,7 +305,7 @@ class EdFiStudentAcademicRecordReportCard implements ModelInterface, ArrayAccess
     /**
      * Sets report_card_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiReportCardReference $report_card_reference report_card_reference
+     * @param \Resources\Model\EdFiReportCardReference $report_card_reference report_card_reference
      *
      * @return self
      */

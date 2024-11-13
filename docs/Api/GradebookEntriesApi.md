@@ -1,4 +1,4 @@
-# OpenAPI\Client\GradebookEntriesApi
+# Resources\GradebookEntriesApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GradebookEntriesApi(
+$apiInstance = new Resources\Api\GradebookEntriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesGradebookEntries()`
 
 ```php
-deletesGradebookEntries($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiGradebookEntryDelete[]
+deletesGradebookEntries($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiGradebookEntryDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GradebookEntriesApi(
+$apiInstance = new Resources\Api\GradebookEntriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiGradebookEntryDelete[]**](../Model/TrackedChangesEdFiGradebookEntryDelete.md)
+[**\Resources\Model\TrackedChangesEdFiGradebookEntryDelete[]**](../Model/TrackedChangesEdFiGradebookEntryDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getGradebookEntries()`
 
 ```php
-getGradebookEntries($offset, $limit, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $grading_period_descriptor, $grading_period_name, $school_id, $school_year, $local_course_code, $section_identifier, $session_name, $gradebook_entry_type_descriptor, $date_assigned, $description, $due_date, $due_time, $id, $max_points, $source_section_identifier, $title, $use_snapshot): \OpenAPI\Client\Model\EdFiGradebookEntry[]
+getGradebookEntries($offset, $limit, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $grading_period_descriptor, $grading_period_name, $school_id, $school_year, $local_course_code, $section_identifier, $session_name, $gradebook_entry_type_descriptor, $date_assigned, $description, $due_date, $due_time, $id, $max_points, $source_section_identifier, $title, $use_snapshot): \Resources\Model\EdFiGradebookEntry[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GradebookEntriesApi(
+$apiInstance = new Resources\Api\GradebookEntriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -235,7 +235,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiGradebookEntry[]**](../Model/EdFiGradebookEntry.md)
+[**\Resources\Model\EdFiGradebookEntry[]**](../Model/EdFiGradebookEntry.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ try {
 ## `getGradebookEntriesById()`
 
 ```php
-getGradebookEntriesById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiGradebookEntry
+getGradebookEntriesById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiGradebookEntry
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -268,10 +268,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GradebookEntriesApi(
+$apiInstance = new Resources\Api\GradebookEntriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -299,7 +299,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiGradebookEntry**](../Model/EdFiGradebookEntry.md)
+[**\Resources\Model\EdFiGradebookEntry**](../Model/EdFiGradebookEntry.md)
 
 ### Authorization
 
@@ -317,7 +317,7 @@ try {
 ## `keyChangesGradebookEntries()`
 
 ```php
-keyChangesGradebookEntries($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiGradebookEntryKeyChange[]
+keyChangesGradebookEntries($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiGradebookEntryKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -332,10 +332,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GradebookEntriesApi(
+$apiInstance = new Resources\Api\GradebookEntriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -369,7 +369,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiGradebookEntryKeyChange[]**](../Model/TrackedChangesEdFiGradebookEntryKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiGradebookEntryKeyChange[]**](../Model/TrackedChangesEdFiGradebookEntryKeyChange.md)
 
 ### Authorization
 
@@ -402,16 +402,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GradebookEntriesApi(
+$apiInstance = new Resources\Api\GradebookEntriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_gradebook_entry = new \OpenAPI\Client\Model\EdFiGradebookEntry(); // \OpenAPI\Client\Model\EdFiGradebookEntry | The JSON representation of the \"gradebookEntry\" resource to be created or updated.
+$ed_fi_gradebook_entry = new \Resources\Model\EdFiGradebookEntry(); // \Resources\Model\EdFiGradebookEntry | The JSON representation of the \"gradebookEntry\" resource to be created or updated.
 
 try {
     $apiInstance->postGradebookEntry($ed_fi_gradebook_entry);
@@ -424,7 +424,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_gradebook_entry** | [**\OpenAPI\Client\Model\EdFiGradebookEntry**](../Model/EdFiGradebookEntry.md)| The JSON representation of the \&quot;gradebookEntry\&quot; resource to be created or updated. | |
+| **ed_fi_gradebook_entry** | [**\Resources\Model\EdFiGradebookEntry**](../Model/EdFiGradebookEntry.md)| The JSON representation of the \&quot;gradebookEntry\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -461,17 +461,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\GradebookEntriesApi(
+$apiInstance = new Resources\Api\GradebookEntriesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_gradebook_entry = new \OpenAPI\Client\Model\EdFiGradebookEntry(); // \OpenAPI\Client\Model\EdFiGradebookEntry | The JSON representation of the \"gradebookEntry\" resource to be created or updated.
+$ed_fi_gradebook_entry = new \Resources\Model\EdFiGradebookEntry(); // \Resources\Model\EdFiGradebookEntry | The JSON representation of the \"gradebookEntry\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -486,7 +486,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_gradebook_entry** | [**\OpenAPI\Client\Model\EdFiGradebookEntry**](../Model/EdFiGradebookEntry.md)| The JSON representation of the \&quot;gradebookEntry\&quot; resource to be created or updated. | |
+| **ed_fi_gradebook_entry** | [**\Resources\Model\EdFiGradebookEntry**](../Model/EdFiGradebookEntry.md)| The JSON representation of the \&quot;gradebookEntry\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

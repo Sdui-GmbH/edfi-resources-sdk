@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiAssessmentContentStandard Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,8 +65,8 @@ class EdFiAssessmentContentStandard implements ModelInterface, ArrayAccess, \Jso
         'title' => 'string',
         'uri' => 'string',
         'version' => 'string',
-        'mandating_education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'authors' => '\OpenAPI\Client\Model\EdFiAssessmentContentStandardAuthor[]'
+        'mandating_education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'authors' => '\Resources\Model\EdFiAssessmentContentStandardAuthor[]'
     ];
 
     /**
@@ -676,7 +676,7 @@ class EdFiAssessmentContentStandard implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets mandating_education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference|null
+     * @return \Resources\Model\EdFiEducationOrganizationReference|null
      */
     public function getMandatingEducationOrganizationReference()
     {
@@ -686,7 +686,7 @@ class EdFiAssessmentContentStandard implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets mandating_education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference|null $mandating_education_organization_reference mandating_education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference|null $mandating_education_organization_reference mandating_education_organization_reference
      *
      * @return self
      */
@@ -703,7 +703,7 @@ class EdFiAssessmentContentStandard implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets authors
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentContentStandardAuthor[]|null
+     * @return \Resources\Model\EdFiAssessmentContentStandardAuthor[]|null
      */
     public function getAuthors()
     {
@@ -713,7 +713,7 @@ class EdFiAssessmentContentStandard implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets authors
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentContentStandardAuthor[]|null $authors An unordered collection of assessmentContentStandardAuthors. The person or organization chiefly responsible for the intellectual content of the standard.
+     * @param \Resources\Model\EdFiAssessmentContentStandardAuthor[]|null $authors An unordered collection of assessmentContentStandardAuthors. The person or organization chiefly responsible for the intellectual content of the standard.
      *
      * @return self
      */

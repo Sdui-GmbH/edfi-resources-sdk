@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiSurveyProgramAssociationKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiSurveyProgramAssociationKeyChange implements ModelInterf
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiSurveyProgramAssociationKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiSurveyProgramAssociationKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiSurveyProgramAssociationKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiSurveyProgramAssociationKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiSurveyProgramAssociationKeyChange implements ModelInterf
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSurveyProgramAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiSurveyProgramAssociationKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiSurveyProgramAssociationKeyChange implements ModelInterf
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiSurveyProgramAssociationKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiSurveyProgramAssociationKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiSurveyProgramAssociationKeyChange implements ModelInterf
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSurveyProgramAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiSurveyProgramAssociationKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiSurveyProgramAssociationKeyChange implements ModelInterf
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiSurveyProgramAssociationKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiSurveyProgramAssociationKey|null $new_key_values new_key_values
      *
      * @return self
      */

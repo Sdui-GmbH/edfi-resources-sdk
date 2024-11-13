@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * CredentialsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class CredentialsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCredentialById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class CredentialsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCredentialById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class CredentialsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCredentials'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCredentialDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiCredentialDelete[]
      */
     public function deletesCredentials($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCredentials'][0])
     {
@@ -407,9 +407,9 @@ class CredentialsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCredentials'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCredentialDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCredentialDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesCredentialsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCredentials'][0])
     {
@@ -440,11 +440,11 @@ class CredentialsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCredentialDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCredentialDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCredentialDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCredentialDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class CredentialsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCredentialDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCredentialDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class CredentialsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCredentialDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCredentialDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class CredentialsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCredentialDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiCredentialDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class CredentialsApi
      */
     public function deletesCredentialsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCredentials'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCredentialDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCredentialDelete[]';
         $request = $this->deletesCredentialsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -778,9 +778,9 @@ class CredentialsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCredentials'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCredential[]
+     * @return \Resources\Model\EdFiCredential[]
      */
     public function getCredentials($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_of_issue_state_abbreviation_descriptor = null, $credential_identifier = null, $credential_field_descriptor = null, $credential_type_descriptor = null, $teaching_credential_basis_descriptor = null, $teaching_credential_descriptor = null, $effective_date = null, $expiration_date = null, $id = null, $issuance_date = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getCredentials'][0])
     {
@@ -812,9 +812,9 @@ class CredentialsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCredentials'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCredential[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCredential[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCredentialsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_of_issue_state_abbreviation_descriptor = null, $credential_identifier = null, $credential_field_descriptor = null, $credential_type_descriptor = null, $teaching_credential_basis_descriptor = null, $teaching_credential_descriptor = null, $effective_date = null, $expiration_date = null, $id = null, $issuance_date = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getCredentials'][0])
     {
@@ -845,11 +845,11 @@ class CredentialsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCredential[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCredential[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCredential[]' !== 'string') {
+                        if ('\Resources\Model\EdFiCredential[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -867,7 +867,7 @@ class CredentialsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCredential[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCredential[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -886,7 +886,7 @@ class CredentialsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCredential[]';
+            $returnType = '\Resources\Model\EdFiCredential[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -919,7 +919,7 @@ class CredentialsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCredential[]',
+                        '\Resources\Model\EdFiCredential[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -995,7 +995,7 @@ class CredentialsApi
      */
     public function getCredentialsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_of_issue_state_abbreviation_descriptor = null, $credential_identifier = null, $credential_field_descriptor = null, $credential_type_descriptor = null, $teaching_credential_basis_descriptor = null, $teaching_credential_descriptor = null, $effective_date = null, $expiration_date = null, $id = null, $issuance_date = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getCredentials'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCredential[]';
+        $returnType = '\Resources\Model\EdFiCredential[]';
         $request = $this->getCredentialsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_of_issue_state_abbreviation_descriptor, $credential_identifier, $credential_field_descriptor, $credential_type_descriptor, $teaching_credential_basis_descriptor, $teaching_credential_descriptor, $effective_date, $expiration_date, $id, $issuance_date, $namespace, $use_snapshot, $contentType);
 
         return $this->client
@@ -1333,9 +1333,9 @@ class CredentialsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCredentialsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCredential
+     * @return \Resources\Model\EdFiCredential
      */
     public function getCredentialsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCredentialsById'][0])
     {
@@ -1353,9 +1353,9 @@ class CredentialsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCredentialsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCredential, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCredential, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCredentialsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCredentialsById'][0])
     {
@@ -1386,11 +1386,11 @@ class CredentialsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCredential' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCredential' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCredential' !== 'string') {
+                        if ('\Resources\Model\EdFiCredential' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1408,7 +1408,7 @@ class CredentialsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCredential', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCredential', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1427,7 +1427,7 @@ class CredentialsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCredential';
+            $returnType = '\Resources\Model\EdFiCredential';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1460,7 +1460,7 @@ class CredentialsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCredential',
+                        '\Resources\Model\EdFiCredential',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1508,7 +1508,7 @@ class CredentialsApi
      */
     public function getCredentialsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCredentialsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCredential';
+        $returnType = '\Resources\Model\EdFiCredential';
         $request = $this->getCredentialsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1668,9 +1668,9 @@ class CredentialsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCredentials'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCredentialKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiCredentialKeyChange[]
      */
     public function keyChangesCredentials($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCredentials'][0])
     {
@@ -1691,9 +1691,9 @@ class CredentialsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCredentials'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCredentialKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCredentialKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesCredentialsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCredentials'][0])
     {
@@ -1724,11 +1724,11 @@ class CredentialsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCredentialKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCredentialKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCredentialKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCredentialKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1746,7 +1746,7 @@ class CredentialsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCredentialKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCredentialKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1765,7 +1765,7 @@ class CredentialsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCredentialKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCredentialKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1798,7 +1798,7 @@ class CredentialsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCredentialKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiCredentialKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1852,7 +1852,7 @@ class CredentialsApi
      */
     public function keyChangesCredentialsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCredentials'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCredentialKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCredentialKeyChange[]';
         $request = $this->keyChangesCredentialsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2043,10 +2043,10 @@ class CredentialsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCredential'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2060,10 +2060,10 @@ class CredentialsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCredential'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2108,7 +2108,7 @@ class CredentialsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCredential'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2129,7 +2129,7 @@ class CredentialsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCredential'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2166,7 +2166,7 @@ class CredentialsApi
     /**
      * Create request for operation 'postCredential'
      *
-     * @param  \OpenAPI\Client\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCredential'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2264,11 +2264,11 @@ class CredentialsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCredential'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2283,11 +2283,11 @@ class CredentialsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCredential'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2333,7 +2333,7 @@ class CredentialsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCredential'] to see the possible values for this operation
      *
@@ -2356,7 +2356,7 @@ class CredentialsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCredential'] to see the possible values for this operation
      *
@@ -2395,7 +2395,7 @@ class CredentialsApi
      * Create request for operation 'putCredential'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCredential $ed_fi_credential The JSON representation of the \&quot;credential\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCredential'] to see the possible values for this operation
      *

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * CohortsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class CohortsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCohortById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class CohortsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCohortById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class CohortsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCohorts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCohortDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiCohortDelete[]
      */
     public function deletesCohorts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCohorts'][0])
     {
@@ -407,9 +407,9 @@ class CohortsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCohorts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCohortDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCohortDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesCohortsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCohorts'][0])
     {
@@ -440,11 +440,11 @@ class CohortsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCohortDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCohortDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCohortDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCohortDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class CohortsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCohortDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCohortDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class CohortsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCohortDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCohortDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class CohortsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCohortDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiCohortDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class CohortsApi
      */
     public function deletesCohortsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCohorts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCohortDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCohortDelete[]';
         $request = $this->deletesCohortsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class CohortsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCohorts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCohort[]
+     * @return \Resources\Model\EdFiCohort[]
      */
     public function getCohorts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $cohort_identifier = null, $education_organization_id = null, $academic_subject_descriptor = null, $cohort_scope_descriptor = null, $cohort_type_descriptor = null, $cohort_description = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCohorts'][0])
     {
@@ -804,9 +804,9 @@ class CohortsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCohorts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCohort[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCohort[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCohortsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $cohort_identifier = null, $education_organization_id = null, $academic_subject_descriptor = null, $cohort_scope_descriptor = null, $cohort_type_descriptor = null, $cohort_description = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCohorts'][0])
     {
@@ -837,11 +837,11 @@ class CohortsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCohort[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCohort[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCohort[]' !== 'string') {
+                        if ('\Resources\Model\EdFiCohort[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class CohortsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCohort[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCohort[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class CohortsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCohort[]';
+            $returnType = '\Resources\Model\EdFiCohort[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class CohortsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCohort[]',
+                        '\Resources\Model\EdFiCohort[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class CohortsApi
      */
     public function getCohortsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $cohort_identifier = null, $education_organization_id = null, $academic_subject_descriptor = null, $cohort_scope_descriptor = null, $cohort_type_descriptor = null, $cohort_description = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCohorts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCohort[]';
+        $returnType = '\Resources\Model\EdFiCohort[]';
         $request = $this->getCohortsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $cohort_identifier, $education_organization_id, $academic_subject_descriptor, $cohort_scope_descriptor, $cohort_type_descriptor, $cohort_description, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1267,9 +1267,9 @@ class CohortsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCohortsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCohort
+     * @return \Resources\Model\EdFiCohort
      */
     public function getCohortsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCohortsById'][0])
     {
@@ -1287,9 +1287,9 @@ class CohortsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCohortsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCohort, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCohort, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCohortsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCohortsById'][0])
     {
@@ -1320,11 +1320,11 @@ class CohortsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCohort' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCohort' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCohort' !== 'string') {
+                        if ('\Resources\Model\EdFiCohort' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1342,7 +1342,7 @@ class CohortsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCohort', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCohort', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1361,7 +1361,7 @@ class CohortsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCohort';
+            $returnType = '\Resources\Model\EdFiCohort';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1394,7 +1394,7 @@ class CohortsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCohort',
+                        '\Resources\Model\EdFiCohort',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1442,7 +1442,7 @@ class CohortsApi
      */
     public function getCohortsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCohortsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCohort';
+        $returnType = '\Resources\Model\EdFiCohort';
         $request = $this->getCohortsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1602,9 +1602,9 @@ class CohortsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCohorts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCohortKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiCohortKeyChange[]
      */
     public function keyChangesCohorts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCohorts'][0])
     {
@@ -1625,9 +1625,9 @@ class CohortsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCohorts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCohortKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCohortKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesCohortsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCohorts'][0])
     {
@@ -1658,11 +1658,11 @@ class CohortsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCohortKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCohortKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCohortKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCohortKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1680,7 +1680,7 @@ class CohortsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCohortKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCohortKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1699,7 +1699,7 @@ class CohortsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCohortKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCohortKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1732,7 +1732,7 @@ class CohortsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCohortKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiCohortKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1786,7 +1786,7 @@ class CohortsApi
      */
     public function keyChangesCohortsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCohorts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCohortKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCohortKeyChange[]';
         $request = $this->keyChangesCohortsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1977,10 +1977,10 @@ class CohortsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCohort'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1994,10 +1994,10 @@ class CohortsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCohort'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2042,7 +2042,7 @@ class CohortsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCohort'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2063,7 +2063,7 @@ class CohortsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCohort'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2100,7 +2100,7 @@ class CohortsApi
     /**
      * Create request for operation 'postCohort'
      *
-     * @param  \OpenAPI\Client\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCohort'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2198,11 +2198,11 @@ class CohortsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCohort'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2217,11 +2217,11 @@ class CohortsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCohort'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2267,7 +2267,7 @@ class CohortsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCohort'] to see the possible values for this operation
      *
@@ -2290,7 +2290,7 @@ class CohortsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCohort'] to see the possible values for this operation
      *
@@ -2329,7 +2329,7 @@ class CohortsApi
      * Create request for operation 'putCohort'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCohort $ed_fi_cohort The JSON representation of the \&quot;cohort\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCohort'] to see the possible values for this operation
      *

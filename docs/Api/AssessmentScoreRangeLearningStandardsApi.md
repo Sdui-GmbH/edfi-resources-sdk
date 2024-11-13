@@ -1,4 +1,4 @@
-# OpenAPI\Client\AssessmentScoreRangeLearningStandardsApi
+# Resources\AssessmentScoreRangeLearningStandardsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\AssessmentScoreRangeLearningStandardsApi(
+$apiInstance = new Resources\Api\AssessmentScoreRangeLearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesAssessmentScoreRangeLearningStandards()`
 
 ```php
-deletesAssessmentScoreRangeLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete[]
+deletesAssessmentScoreRangeLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\AssessmentScoreRangeLearningStandardsApi(
+$apiInstance = new Resources\Api\AssessmentScoreRangeLearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete[]**](../Model/TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete.md)
+[**\Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete[]**](../Model/TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getAssessmentScoreRangeLearningStandards()`
 
 ```php
-getAssessmentScoreRangeLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot): \OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandard[]
+getAssessmentScoreRangeLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot): \Resources\Model\EdFiAssessmentScoreRangeLearningStandard[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\AssessmentScoreRangeLearningStandardsApi(
+$apiInstance = new Resources\Api\AssessmentScoreRangeLearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -215,7 +215,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandard[]**](../Model/EdFiAssessmentScoreRangeLearningStandard.md)
+[**\Resources\Model\EdFiAssessmentScoreRangeLearningStandard[]**](../Model/EdFiAssessmentScoreRangeLearningStandard.md)
 
 ### Authorization
 
@@ -233,7 +233,7 @@ try {
 ## `getAssessmentScoreRangeLearningStandardsById()`
 
 ```php
-getAssessmentScoreRangeLearningStandardsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandard
+getAssessmentScoreRangeLearningStandardsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiAssessmentScoreRangeLearningStandard
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -248,10 +248,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\AssessmentScoreRangeLearningStandardsApi(
+$apiInstance = new Resources\Api\AssessmentScoreRangeLearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -279,7 +279,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandard**](../Model/EdFiAssessmentScoreRangeLearningStandard.md)
+[**\Resources\Model\EdFiAssessmentScoreRangeLearningStandard**](../Model/EdFiAssessmentScoreRangeLearningStandard.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ try {
 ## `keyChangesAssessmentScoreRangeLearningStandards()`
 
 ```php
-keyChangesAssessmentScoreRangeLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange[]
+keyChangesAssessmentScoreRangeLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -312,10 +312,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\AssessmentScoreRangeLearningStandardsApi(
+$apiInstance = new Resources\Api\AssessmentScoreRangeLearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -349,7 +349,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange[]**](../Model/TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange[]**](../Model/TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange.md)
 
 ### Authorization
 
@@ -382,16 +382,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\AssessmentScoreRangeLearningStandardsApi(
+$apiInstance = new Resources\Api\AssessmentScoreRangeLearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_assessment_score_range_learning_standard = new \OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandard(); // \OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandard | The JSON representation of the \"assessmentScoreRangeLearningStandard\" resource to be created or updated.
+$ed_fi_assessment_score_range_learning_standard = new \Resources\Model\EdFiAssessmentScoreRangeLearningStandard(); // \Resources\Model\EdFiAssessmentScoreRangeLearningStandard | The JSON representation of the \"assessmentScoreRangeLearningStandard\" resource to be created or updated.
 
 try {
     $apiInstance->postAssessmentScoreRangeLearningStandard($ed_fi_assessment_score_range_learning_standard);
@@ -404,7 +404,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_assessment_score_range_learning_standard** | [**\OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandard**](../Model/EdFiAssessmentScoreRangeLearningStandard.md)| The JSON representation of the \&quot;assessmentScoreRangeLearningStandard\&quot; resource to be created or updated. | |
+| **ed_fi_assessment_score_range_learning_standard** | [**\Resources\Model\EdFiAssessmentScoreRangeLearningStandard**](../Model/EdFiAssessmentScoreRangeLearningStandard.md)| The JSON representation of the \&quot;assessmentScoreRangeLearningStandard\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -441,17 +441,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\AssessmentScoreRangeLearningStandardsApi(
+$apiInstance = new Resources\Api\AssessmentScoreRangeLearningStandardsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_assessment_score_range_learning_standard = new \OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandard(); // \OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandard | The JSON representation of the \"assessmentScoreRangeLearningStandard\" resource to be created or updated.
+$ed_fi_assessment_score_range_learning_standard = new \Resources\Model\EdFiAssessmentScoreRangeLearningStandard(); // \Resources\Model\EdFiAssessmentScoreRangeLearningStandard | The JSON representation of the \"assessmentScoreRangeLearningStandard\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -466,7 +466,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_assessment_score_range_learning_standard** | [**\OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandard**](../Model/EdFiAssessmentScoreRangeLearningStandard.md)| The JSON representation of the \&quot;assessmentScoreRangeLearningStandard\&quot; resource to be created or updated. | |
+| **ed_fi_assessment_score_range_learning_standard** | [**\Resources\Model\EdFiAssessmentScoreRangeLearningStandard**](../Model/EdFiAssessmentScoreRangeLearningStandard.md)| The JSON representation of the \&quot;assessmentScoreRangeLearningStandard\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

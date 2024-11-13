@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiStaffCohortAssociationKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiStaffCohortAssociationKeyChange implements ModelInterfac
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStaffCohortAssociationKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiStaffCohortAssociationKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiStaffCohortAssociationKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiStaffCohortAssociationKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiStaffCohortAssociationKeyChange implements ModelInterfac
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffCohortAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStaffCohortAssociationKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiStaffCohortAssociationKeyChange implements ModelInterfac
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStaffCohortAssociationKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiStaffCohortAssociationKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiStaffCohortAssociationKeyChange implements ModelInterfac
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffCohortAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiStaffCohortAssociationKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiStaffCohortAssociationKeyChange implements ModelInterfac
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiStaffCohortAssociationKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiStaffCohortAssociationKey|null $new_key_values new_key_values
      *
      * @return self
      */

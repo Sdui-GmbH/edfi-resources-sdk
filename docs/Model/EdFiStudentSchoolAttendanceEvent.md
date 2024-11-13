@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 **attendance_event_category_descriptor** | **string** | A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. |
 **event_date** | **\DateTime** | Date for this attendance event. |
-**school_reference** | [**\OpenAPI\Client\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
-**session_reference** | [**\OpenAPI\Client\Model\EdFiSessionReference**](EdFiSessionReference.md) |  |
-**student_reference** | [**\OpenAPI\Client\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
+**school_reference** | [**\Resources\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
+**session_reference** | [**\Resources\Model\EdFiSessionReference**](EdFiSessionReference.md) |  |
+**student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
 **arrival_time** | **string** | The time of day the student arrived for the attendance event in ISO 8601 format. | [optional]
 **attendance_event_reason** | **string** | The reported reason for a student&#39;s absence. | [optional]
 **departure_time** | **string** | The time of day the student departed for the attendance event in ISO 8601 format. | [optional]

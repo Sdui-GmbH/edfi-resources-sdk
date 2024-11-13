@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSectionAttendanceTakenEvent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,9 +58,9 @@ class EdFiSectionAttendanceTakenEvent implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'calendar_date_reference' => '\OpenAPI\Client\Model\EdFiCalendarDateReference',
-        'section_reference' => '\OpenAPI\Client\Model\EdFiSectionReference',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
+        'calendar_date_reference' => '\Resources\Model\EdFiCalendarDateReference',
+        'section_reference' => '\Resources\Model\EdFiSectionReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
         'event_date' => '\DateTime',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -370,7 +370,7 @@ class EdFiSectionAttendanceTakenEvent implements ModelInterface, ArrayAccess, \J
     /**
      * Gets calendar_date_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCalendarDateReference
+     * @return \Resources\Model\EdFiCalendarDateReference
      */
     public function getCalendarDateReference()
     {
@@ -380,7 +380,7 @@ class EdFiSectionAttendanceTakenEvent implements ModelInterface, ArrayAccess, \J
     /**
      * Sets calendar_date_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCalendarDateReference $calendar_date_reference calendar_date_reference
+     * @param \Resources\Model\EdFiCalendarDateReference $calendar_date_reference calendar_date_reference
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class EdFiSectionAttendanceTakenEvent implements ModelInterface, ArrayAccess, \J
     /**
      * Gets section_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionReference
+     * @return \Resources\Model\EdFiSectionReference
      */
     public function getSectionReference()
     {
@@ -407,7 +407,7 @@ class EdFiSectionAttendanceTakenEvent implements ModelInterface, ArrayAccess, \J
     /**
      * Sets section_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionReference $section_reference section_reference
+     * @param \Resources\Model\EdFiSectionReference $section_reference section_reference
      *
      * @return self
      */
@@ -424,7 +424,7 @@ class EdFiSectionAttendanceTakenEvent implements ModelInterface, ArrayAccess, \J
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference|null
+     * @return \Resources\Model\EdFiStaffReference|null
      */
     public function getStaffReference()
     {
@@ -434,7 +434,7 @@ class EdFiSectionAttendanceTakenEvent implements ModelInterface, ArrayAccess, \J
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference|null $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference|null $staff_reference staff_reference
      *
      * @return self
      */

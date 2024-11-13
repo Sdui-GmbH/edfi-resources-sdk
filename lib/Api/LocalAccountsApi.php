@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * LocalAccountsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class LocalAccountsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalAccountById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class LocalAccountsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalAccountById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class LocalAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalAccountDelete[]
      */
     public function deletesLocalAccounts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalAccounts'][0])
     {
@@ -407,9 +407,9 @@ class LocalAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalAccountDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesLocalAccountsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalAccounts'][0])
     {
@@ -440,11 +440,11 @@ class LocalAccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalAccountDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalAccountDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class LocalAccountsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalAccountDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class LocalAccountsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalAccountDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class LocalAccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalAccountDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class LocalAccountsApi
      */
     public function deletesLocalAccountsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalAccounts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalAccountDelete[]';
         $request = $this->deletesLocalAccountsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class LocalAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalAccount[]
+     * @return \Resources\Model\EdFiLocalAccount[]
      */
     public function getLocalAccounts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $account_identifier = null, $fiscal_year = null, $education_organization_id = null, $chart_of_account_identifier = null, $chart_of_account_education_organization_id = null, $account_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalAccounts'][0])
     {
@@ -804,9 +804,9 @@ class LocalAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalAccount[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalAccount[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalAccountsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $account_identifier = null, $fiscal_year = null, $education_organization_id = null, $chart_of_account_identifier = null, $chart_of_account_education_organization_id = null, $account_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalAccounts'][0])
     {
@@ -837,11 +837,11 @@ class LocalAccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalAccount[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalAccount[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalAccount[]' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalAccount[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class LocalAccountsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalAccount[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalAccount[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class LocalAccountsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalAccount[]';
+            $returnType = '\Resources\Model\EdFiLocalAccount[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class LocalAccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalAccount[]',
+                        '\Resources\Model\EdFiLocalAccount[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class LocalAccountsApi
      */
     public function getLocalAccountsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $account_identifier = null, $fiscal_year = null, $education_organization_id = null, $chart_of_account_identifier = null, $chart_of_account_education_organization_id = null, $account_name = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalAccounts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalAccount[]';
+        $returnType = '\Resources\Model\EdFiLocalAccount[]';
         $request = $this->getLocalAccountsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $account_identifier, $fiscal_year, $education_organization_id, $chart_of_account_identifier, $chart_of_account_education_organization_id, $account_name, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1261,9 +1261,9 @@ class LocalAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalAccountsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalAccount
+     * @return \Resources\Model\EdFiLocalAccount
      */
     public function getLocalAccountsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalAccountsById'][0])
     {
@@ -1281,9 +1281,9 @@ class LocalAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalAccountsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalAccount, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalAccount, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalAccountsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalAccountsById'][0])
     {
@@ -1314,11 +1314,11 @@ class LocalAccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalAccount' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalAccount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalAccount' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalAccount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1336,7 +1336,7 @@ class LocalAccountsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalAccount', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalAccount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1355,7 +1355,7 @@ class LocalAccountsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalAccount';
+            $returnType = '\Resources\Model\EdFiLocalAccount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1388,7 +1388,7 @@ class LocalAccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalAccount',
+                        '\Resources\Model\EdFiLocalAccount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1436,7 +1436,7 @@ class LocalAccountsApi
      */
     public function getLocalAccountsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalAccountsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalAccount';
+        $returnType = '\Resources\Model\EdFiLocalAccount';
         $request = $this->getLocalAccountsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1596,9 +1596,9 @@ class LocalAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalAccountKeyChange[]
      */
     public function keyChangesLocalAccounts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalAccounts'][0])
     {
@@ -1619,9 +1619,9 @@ class LocalAccountsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalAccountKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesLocalAccountsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalAccounts'][0])
     {
@@ -1652,11 +1652,11 @@ class LocalAccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalAccountKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalAccountKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1674,7 +1674,7 @@ class LocalAccountsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalAccountKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1693,7 +1693,7 @@ class LocalAccountsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalAccountKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1726,7 +1726,7 @@ class LocalAccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalAccountKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1780,7 +1780,7 @@ class LocalAccountsApi
      */
     public function keyChangesLocalAccountsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalAccounts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalAccountKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalAccountKeyChange[]';
         $request = $this->keyChangesLocalAccountsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1971,10 +1971,10 @@ class LocalAccountsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalAccount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1988,10 +1988,10 @@ class LocalAccountsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalAccount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2036,7 +2036,7 @@ class LocalAccountsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2057,7 +2057,7 @@ class LocalAccountsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2094,7 +2094,7 @@ class LocalAccountsApi
     /**
      * Create request for operation 'postLocalAccount'
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2192,11 +2192,11 @@ class LocalAccountsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalAccount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2211,11 +2211,11 @@ class LocalAccountsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalAccount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2261,7 +2261,7 @@ class LocalAccountsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalAccount'] to see the possible values for this operation
      *
@@ -2284,7 +2284,7 @@ class LocalAccountsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalAccount'] to see the possible values for this operation
      *
@@ -2323,7 +2323,7 @@ class LocalAccountsApi
      * Create request for operation 'putLocalAccount'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalAccount $ed_fi_local_account The JSON representation of the \&quot;localAccount\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalAccount'] to see the possible values for this operation
      *

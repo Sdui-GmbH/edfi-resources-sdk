@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentCompetencyObjectiveGeneralStudentProgramAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiStudentCompetencyObjectiveGeneralStudentProgramAssociation implements 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'general_student_program_association_reference' => '\OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationReference'
+        'general_student_program_association_reference' => '\Resources\Model\EdFiGeneralStudentProgramAssociationReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiStudentCompetencyObjectiveGeneralStudentProgramAssociation implements 
     /**
      * Gets general_student_program_association_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationReference
+     * @return \Resources\Model\EdFiGeneralStudentProgramAssociationReference
      */
     public function getGeneralStudentProgramAssociationReference()
     {
@@ -305,7 +305,7 @@ class EdFiStudentCompetencyObjectiveGeneralStudentProgramAssociation implements 
     /**
      * Sets general_student_program_association_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationReference $general_student_program_association_reference general_student_program_association_reference
+     * @param \Resources\Model\EdFiGeneralStudentProgramAssociationReference $general_student_program_association_reference general_student_program_association_reference
      *
      * @return self
      */

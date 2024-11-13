@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiClassPeriod Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class EdFiClassPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'class_period_name' => 'string',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'meeting_times' => '\OpenAPI\Client\Model\EdFiClassPeriodMeetingTime[]',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'meeting_times' => '\Resources\Model\EdFiClassPeriodMeetingTime[]',
         'official_attendance_period' => 'bool',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -409,7 +409,7 @@ class EdFiClassPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -419,7 +419,7 @@ class EdFiClassPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class EdFiClassPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets meeting_times
      *
-     * @return \OpenAPI\Client\Model\EdFiClassPeriodMeetingTime[]|null
+     * @return \Resources\Model\EdFiClassPeriodMeetingTime[]|null
      */
     public function getMeetingTimes()
     {
@@ -446,7 +446,7 @@ class EdFiClassPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meeting_times
      *
-     * @param \OpenAPI\Client\Model\EdFiClassPeriodMeetingTime[]|null $meeting_times An unordered collection of classPeriodMeetingTimes. The meeting time(s) for a class period.
+     * @param \Resources\Model\EdFiClassPeriodMeetingTime[]|null $meeting_times An unordered collection of classPeriodMeetingTimes. The meeting time(s) for a class period.
      *
      * @return self
      */

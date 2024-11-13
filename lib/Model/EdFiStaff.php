@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaff Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,38 +59,38 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'staff_unique_id' => 'string',
-        'person_reference' => '\OpenAPI\Client\Model\EdFiPersonReference',
-        'addresses' => '\OpenAPI\Client\Model\EdFiStaffAddress[]',
-        'ancestry_ethnic_origins' => '\OpenAPI\Client\Model\EdFiStaffAncestryEthnicOrigin[]',
+        'person_reference' => '\Resources\Model\EdFiPersonReference',
+        'addresses' => '\Resources\Model\EdFiStaffAddress[]',
+        'ancestry_ethnic_origins' => '\Resources\Model\EdFiStaffAncestryEthnicOrigin[]',
         'birth_date' => '\DateTime',
         'citizenship_status_descriptor' => 'string',
-        'credentials' => '\OpenAPI\Client\Model\EdFiStaffCredential[]',
-        'electronic_mails' => '\OpenAPI\Client\Model\EdFiStaffElectronicMail[]',
+        'credentials' => '\Resources\Model\EdFiStaffCredential[]',
+        'electronic_mails' => '\Resources\Model\EdFiStaffElectronicMail[]',
         'first_name' => 'string',
         'gender_identity' => 'string',
         'generation_code_suffix' => 'string',
         'highest_completed_level_of_education_descriptor' => 'string',
         'highly_qualified_teacher' => 'bool',
         'hispanic_latino_ethnicity' => 'bool',
-        'identification_codes' => '\OpenAPI\Client\Model\EdFiStaffIdentificationCode[]',
-        'identification_documents' => '\OpenAPI\Client\Model\EdFiStaffIdentificationDocument[]',
-        'international_addresses' => '\OpenAPI\Client\Model\EdFiStaffInternationalAddress[]',
-        'languages' => '\OpenAPI\Client\Model\EdFiStaffLanguage[]',
+        'identification_codes' => '\Resources\Model\EdFiStaffIdentificationCode[]',
+        'identification_documents' => '\Resources\Model\EdFiStaffIdentificationDocument[]',
+        'international_addresses' => '\Resources\Model\EdFiStaffInternationalAddress[]',
+        'languages' => '\Resources\Model\EdFiStaffLanguage[]',
         'last_surname' => 'string',
         'login_id' => 'string',
         'maiden_name' => 'string',
         'middle_name' => 'string',
-        'other_names' => '\OpenAPI\Client\Model\EdFiStaffOtherName[]',
-        'personal_identification_documents' => '\OpenAPI\Client\Model\EdFiStaffPersonalIdentificationDocument[]',
+        'other_names' => '\Resources\Model\EdFiStaffOtherName[]',
+        'personal_identification_documents' => '\Resources\Model\EdFiStaffPersonalIdentificationDocument[]',
         'personal_title_prefix' => 'string',
         'preferred_first_name' => 'string',
         'preferred_last_surname' => 'string',
-        'races' => '\OpenAPI\Client\Model\EdFiStaffRace[]',
-        'recognitions' => '\OpenAPI\Client\Model\EdFiStaffRecognition[]',
+        'races' => '\Resources\Model\EdFiStaffRace[]',
+        'recognitions' => '\Resources\Model\EdFiStaffRecognition[]',
         'sex_descriptor' => 'string',
-        'telephones' => '\OpenAPI\Client\Model\EdFiStaffTelephone[]',
-        'tribal_affiliations' => '\OpenAPI\Client\Model\EdFiStaffTribalAffiliation[]',
-        'visas' => '\OpenAPI\Client\Model\EdFiStaffVisa[]',
+        'telephones' => '\Resources\Model\EdFiStaffTelephone[]',
+        'tribal_affiliations' => '\Resources\Model\EdFiStaffTribalAffiliation[]',
+        'visas' => '\Resources\Model\EdFiStaffVisa[]',
         'years_of_prior_professional_experience' => 'float',
         'years_of_prior_teaching_experience' => 'float',
         '_etag' => 'string',
@@ -717,7 +717,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets person_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiPersonReference|null
+     * @return \Resources\Model\EdFiPersonReference|null
      */
     public function getPersonReference()
     {
@@ -727,7 +727,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets person_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiPersonReference|null $person_reference person_reference
+     * @param \Resources\Model\EdFiPersonReference|null $person_reference person_reference
      *
      * @return self
      */
@@ -744,7 +744,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets addresses
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffAddress[]|null
+     * @return \Resources\Model\EdFiStaffAddress[]|null
      */
     public function getAddresses()
     {
@@ -754,7 +754,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets addresses
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffAddress[]|null $addresses An unordered collection of staffAddresses. The set of elements that describes an address, including the street address, city, state, and ZIP code.
+     * @param \Resources\Model\EdFiStaffAddress[]|null $addresses An unordered collection of staffAddresses. The set of elements that describes an address, including the street address, city, state, and ZIP code.
      *
      * @return self
      */
@@ -771,7 +771,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ancestry_ethnic_origins
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffAncestryEthnicOrigin[]|null
+     * @return \Resources\Model\EdFiStaffAncestryEthnicOrigin[]|null
      */
     public function getAncestryEthnicOrigins()
     {
@@ -781,7 +781,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ancestry_ethnic_origins
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffAncestryEthnicOrigin[]|null $ancestry_ethnic_origins An unordered collection of staffAncestryEthnicOrigins. The original peoples or cultures with which the individual identifies.
+     * @param \Resources\Model\EdFiStaffAncestryEthnicOrigin[]|null $ancestry_ethnic_origins An unordered collection of staffAncestryEthnicOrigins. The original peoples or cultures with which the individual identifies.
      *
      * @return self
      */
@@ -870,7 +870,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets credentials
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffCredential[]|null
+     * @return \Resources\Model\EdFiStaffCredential[]|null
      */
     public function getCredentials()
     {
@@ -880,7 +880,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets credentials
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffCredential[]|null $credentials An unordered collection of staffCredentials. The legal document giving authorization to perform teaching assignment services.
+     * @param \Resources\Model\EdFiStaffCredential[]|null $credentials An unordered collection of staffCredentials. The legal document giving authorization to perform teaching assignment services.
      *
      * @return self
      */
@@ -897,7 +897,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets electronic_mails
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffElectronicMail[]|null
+     * @return \Resources\Model\EdFiStaffElectronicMail[]|null
      */
     public function getElectronicMails()
     {
@@ -907,7 +907,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets electronic_mails
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffElectronicMail[]|null $electronic_mails An unordered collection of staffElectronicMails. The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.
+     * @param \Resources\Model\EdFiStaffElectronicMail[]|null $electronic_mails An unordered collection of staffElectronicMails. The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.
      *
      * @return self
      */
@@ -1143,7 +1143,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets identification_codes
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffIdentificationCode[]|null
+     * @return \Resources\Model\EdFiStaffIdentificationCode[]|null
      */
     public function getIdentificationCodes()
     {
@@ -1153,7 +1153,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identification_codes
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffIdentificationCode[]|null $identification_codes An unordered collection of staffIdentificationCodes. A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity.
+     * @param \Resources\Model\EdFiStaffIdentificationCode[]|null $identification_codes An unordered collection of staffIdentificationCodes. A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity.
      *
      * @return self
      */
@@ -1170,7 +1170,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets identification_documents
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffIdentificationDocument[]|null
+     * @return \Resources\Model\EdFiStaffIdentificationDocument[]|null
      */
     public function getIdentificationDocuments()
     {
@@ -1180,7 +1180,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identification_documents
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffIdentificationDocument[]|null $identification_documents An unordered collection of staffIdentificationDocuments. Describe the documentation of citizenship.
+     * @param \Resources\Model\EdFiStaffIdentificationDocument[]|null $identification_documents An unordered collection of staffIdentificationDocuments. Describe the documentation of citizenship.
      *
      * @return self
      */
@@ -1197,7 +1197,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets international_addresses
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffInternationalAddress[]|null
+     * @return \Resources\Model\EdFiStaffInternationalAddress[]|null
      */
     public function getInternationalAddresses()
     {
@@ -1207,7 +1207,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets international_addresses
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffInternationalAddress[]|null $international_addresses An unordered collection of staffInternationalAddresses. The set of elements that describes an international address.
+     * @param \Resources\Model\EdFiStaffInternationalAddress[]|null $international_addresses An unordered collection of staffInternationalAddresses. The set of elements that describes an international address.
      *
      * @return self
      */
@@ -1224,7 +1224,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets languages
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffLanguage[]|null
+     * @return \Resources\Model\EdFiStaffLanguage[]|null
      */
     public function getLanguages()
     {
@@ -1234,7 +1234,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets languages
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffLanguage[]|null $languages An unordered collection of staffLanguages. The language(s) the individual uses to communicate. It is strongly recommended that entries use only ISO 639-2 language codes.
+     * @param \Resources\Model\EdFiStaffLanguage[]|null $languages An unordered collection of staffLanguages. The language(s) the individual uses to communicate. It is strongly recommended that entries use only ISO 639-2 language codes.
      *
      * @return self
      */
@@ -1408,7 +1408,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets other_names
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffOtherName[]|null
+     * @return \Resources\Model\EdFiStaffOtherName[]|null
      */
     public function getOtherNames()
     {
@@ -1418,7 +1418,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets other_names
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffOtherName[]|null $other_names An unordered collection of staffOtherNames. Other names (e.g., alias, nickname, previous legal name) associated with a person.
+     * @param \Resources\Model\EdFiStaffOtherName[]|null $other_names An unordered collection of staffOtherNames. Other names (e.g., alias, nickname, previous legal name) associated with a person.
      *
      * @return self
      */
@@ -1435,7 +1435,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets personal_identification_documents
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffPersonalIdentificationDocument[]|null
+     * @return \Resources\Model\EdFiStaffPersonalIdentificationDocument[]|null
      */
     public function getPersonalIdentificationDocuments()
     {
@@ -1445,7 +1445,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets personal_identification_documents
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffPersonalIdentificationDocument[]|null $personal_identification_documents An unordered collection of staffPersonalIdentificationDocuments. The documents presented as evident to verify one's personal identity; for example: drivers license, passport, birth certificate, etc.
+     * @param \Resources\Model\EdFiStaffPersonalIdentificationDocument[]|null $personal_identification_documents An unordered collection of staffPersonalIdentificationDocuments. The documents presented as evident to verify one's personal identity; for example: drivers license, passport, birth certificate, etc.
      *
      * @return self
      */
@@ -1585,7 +1585,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets races
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffRace[]|null
+     * @return \Resources\Model\EdFiStaffRace[]|null
      */
     public function getRaces()
     {
@@ -1595,7 +1595,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets races
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffRace[]|null $races An unordered collection of staffRaces. The general racial category which most clearly reflects the individual's recognition of his or her community or with which the individual most identifies. The way this data element is listed, it must allow for multiple entries so that each individual can specify all appropriate races.
+     * @param \Resources\Model\EdFiStaffRace[]|null $races An unordered collection of staffRaces. The general racial category which most clearly reflects the individual's recognition of his or her community or with which the individual most identifies. The way this data element is listed, it must allow for multiple entries so that each individual can specify all appropriate races.
      *
      * @return self
      */
@@ -1612,7 +1612,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets recognitions
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffRecognition[]|null
+     * @return \Resources\Model\EdFiStaffRecognition[]|null
      */
     public function getRecognitions()
     {
@@ -1622,7 +1622,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets recognitions
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffRecognition[]|null $recognitions An unordered collection of staffRecognitions. Recognitions given to the staff for accomplishments in a co-curricular or extracurricular activity.
+     * @param \Resources\Model\EdFiStaffRecognition[]|null $recognitions An unordered collection of staffRecognitions. Recognitions given to the staff for accomplishments in a co-curricular or extracurricular activity.
      *
      * @return self
      */
@@ -1677,7 +1677,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets telephones
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffTelephone[]|null
+     * @return \Resources\Model\EdFiStaffTelephone[]|null
      */
     public function getTelephones()
     {
@@ -1687,7 +1687,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets telephones
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffTelephone[]|null $telephones An unordered collection of staffTelephones. The 10-digit telephone number, including the area code, for the person.
+     * @param \Resources\Model\EdFiStaffTelephone[]|null $telephones An unordered collection of staffTelephones. The 10-digit telephone number, including the area code, for the person.
      *
      * @return self
      */
@@ -1704,7 +1704,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tribal_affiliations
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffTribalAffiliation[]|null
+     * @return \Resources\Model\EdFiStaffTribalAffiliation[]|null
      */
     public function getTribalAffiliations()
     {
@@ -1714,7 +1714,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tribal_affiliations
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffTribalAffiliation[]|null $tribal_affiliations An unordered collection of staffTribalAffiliations. An American Indian tribe with which the staff member is affiliated.
+     * @param \Resources\Model\EdFiStaffTribalAffiliation[]|null $tribal_affiliations An unordered collection of staffTribalAffiliations. An American Indian tribe with which the staff member is affiliated.
      *
      * @return self
      */
@@ -1731,7 +1731,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets visas
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffVisa[]|null
+     * @return \Resources\Model\EdFiStaffVisa[]|null
      */
     public function getVisas()
     {
@@ -1741,7 +1741,7 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets visas
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffVisa[]|null $visas An unordered collection of staffVisas. An indicator of a non-US citizen's Visa type.
+     * @param \Resources\Model\EdFiStaffVisa[]|null $visas An unordered collection of staffVisas. An indicator of a non-US citizen's Visa type.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiContact Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,26 +59,26 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'contact_unique_id' => 'string',
-        'person_reference' => '\OpenAPI\Client\Model\EdFiPersonReference',
-        'addresses' => '\OpenAPI\Client\Model\EdFiContactAddress[]',
-        'electronic_mails' => '\OpenAPI\Client\Model\EdFiContactElectronicMail[]',
+        'person_reference' => '\Resources\Model\EdFiPersonReference',
+        'addresses' => '\Resources\Model\EdFiContactAddress[]',
+        'electronic_mails' => '\Resources\Model\EdFiContactElectronicMail[]',
         'first_name' => 'string',
         'gender_identity' => 'string',
         'generation_code_suffix' => 'string',
         'highest_completed_level_of_education_descriptor' => 'string',
-        'international_addresses' => '\OpenAPI\Client\Model\EdFiContactInternationalAddress[]',
-        'languages' => '\OpenAPI\Client\Model\EdFiContactLanguage[]',
+        'international_addresses' => '\Resources\Model\EdFiContactInternationalAddress[]',
+        'languages' => '\Resources\Model\EdFiContactLanguage[]',
         'last_surname' => 'string',
         'login_id' => 'string',
         'maiden_name' => 'string',
         'middle_name' => 'string',
-        'other_names' => '\OpenAPI\Client\Model\EdFiContactOtherName[]',
-        'personal_identification_documents' => '\OpenAPI\Client\Model\EdFiContactPersonalIdentificationDocument[]',
+        'other_names' => '\Resources\Model\EdFiContactOtherName[]',
+        'personal_identification_documents' => '\Resources\Model\EdFiContactPersonalIdentificationDocument[]',
         'personal_title_prefix' => 'string',
         'preferred_first_name' => 'string',
         'preferred_last_surname' => 'string',
         'sex_descriptor' => 'string',
-        'telephones' => '\OpenAPI\Client\Model\EdFiContactTelephone[]',
+        'telephones' => '\Resources\Model\EdFiContactTelephone[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -615,7 +615,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets person_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiPersonReference|null
+     * @return \Resources\Model\EdFiPersonReference|null
      */
     public function getPersonReference()
     {
@@ -625,7 +625,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets person_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiPersonReference|null $person_reference person_reference
+     * @param \Resources\Model\EdFiPersonReference|null $person_reference person_reference
      *
      * @return self
      */
@@ -642,7 +642,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets addresses
      *
-     * @return \OpenAPI\Client\Model\EdFiContactAddress[]|null
+     * @return \Resources\Model\EdFiContactAddress[]|null
      */
     public function getAddresses()
     {
@@ -652,7 +652,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets addresses
      *
-     * @param \OpenAPI\Client\Model\EdFiContactAddress[]|null $addresses An unordered collection of contactAddresses. Contact's address, if different from the student address.
+     * @param \Resources\Model\EdFiContactAddress[]|null $addresses An unordered collection of contactAddresses. Contact's address, if different from the student address.
      *
      * @return self
      */
@@ -669,7 +669,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets electronic_mails
      *
-     * @return \OpenAPI\Client\Model\EdFiContactElectronicMail[]|null
+     * @return \Resources\Model\EdFiContactElectronicMail[]|null
      */
     public function getElectronicMails()
     {
@@ -679,7 +679,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets electronic_mails
      *
-     * @param \OpenAPI\Client\Model\EdFiContactElectronicMail[]|null $electronic_mails An unordered collection of contactElectronicMails. The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.
+     * @param \Resources\Model\EdFiContactElectronicMail[]|null $electronic_mails An unordered collection of contactElectronicMails. The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.
      *
      * @return self
      */
@@ -847,7 +847,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets international_addresses
      *
-     * @return \OpenAPI\Client\Model\EdFiContactInternationalAddress[]|null
+     * @return \Resources\Model\EdFiContactInternationalAddress[]|null
      */
     public function getInternationalAddresses()
     {
@@ -857,7 +857,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets international_addresses
      *
-     * @param \OpenAPI\Client\Model\EdFiContactInternationalAddress[]|null $international_addresses An unordered collection of contactInternationalAddresses. The set of elements that describes an international address.
+     * @param \Resources\Model\EdFiContactInternationalAddress[]|null $international_addresses An unordered collection of contactInternationalAddresses. The set of elements that describes an international address.
      *
      * @return self
      */
@@ -874,7 +874,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets languages
      *
-     * @return \OpenAPI\Client\Model\EdFiContactLanguage[]|null
+     * @return \Resources\Model\EdFiContactLanguage[]|null
      */
     public function getLanguages()
     {
@@ -884,7 +884,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets languages
      *
-     * @param \OpenAPI\Client\Model\EdFiContactLanguage[]|null $languages An unordered collection of contactLanguages. The language(s) the individual uses to communicate. It is strongly recommended that entries use only ISO 639-2 language codes.
+     * @param \Resources\Model\EdFiContactLanguage[]|null $languages An unordered collection of contactLanguages. The language(s) the individual uses to communicate. It is strongly recommended that entries use only ISO 639-2 language codes.
      *
      * @return self
      */
@@ -1058,7 +1058,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets other_names
      *
-     * @return \OpenAPI\Client\Model\EdFiContactOtherName[]|null
+     * @return \Resources\Model\EdFiContactOtherName[]|null
      */
     public function getOtherNames()
     {
@@ -1068,7 +1068,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets other_names
      *
-     * @param \OpenAPI\Client\Model\EdFiContactOtherName[]|null $other_names An unordered collection of contactOtherNames. Other names (e.g., alias, nickname, previous legal name) associated with a person.
+     * @param \Resources\Model\EdFiContactOtherName[]|null $other_names An unordered collection of contactOtherNames. Other names (e.g., alias, nickname, previous legal name) associated with a person.
      *
      * @return self
      */
@@ -1085,7 +1085,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets personal_identification_documents
      *
-     * @return \OpenAPI\Client\Model\EdFiContactPersonalIdentificationDocument[]|null
+     * @return \Resources\Model\EdFiContactPersonalIdentificationDocument[]|null
      */
     public function getPersonalIdentificationDocuments()
     {
@@ -1095,7 +1095,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets personal_identification_documents
      *
-     * @param \OpenAPI\Client\Model\EdFiContactPersonalIdentificationDocument[]|null $personal_identification_documents An unordered collection of contactPersonalIdentificationDocuments. The documents presented as evident to verify one's personal identity; for example: drivers license, passport, birth certificate, etc.
+     * @param \Resources\Model\EdFiContactPersonalIdentificationDocument[]|null $personal_identification_documents An unordered collection of contactPersonalIdentificationDocuments. The documents presented as evident to verify one's personal identity; for example: drivers license, passport, birth certificate, etc.
      *
      * @return self
      */
@@ -1273,7 +1273,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets telephones
      *
-     * @return \OpenAPI\Client\Model\EdFiContactTelephone[]|null
+     * @return \Resources\Model\EdFiContactTelephone[]|null
      */
     public function getTelephones()
     {
@@ -1283,7 +1283,7 @@ class EdFiContact implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets telephones
      *
-     * @param \OpenAPI\Client\Model\EdFiContactTelephone[]|null $telephones An unordered collection of contactTelephones. The 10-digit telephone number, including the area code, for the person.
+     * @param \Resources\Model\EdFiContactTelephone[]|null $telephones An unordered collection of contactTelephones. The 10-digit telephone number, including the area code, for the person.
      *
      * @return self
      */

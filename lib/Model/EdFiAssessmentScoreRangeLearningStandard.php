@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiAssessmentScoreRangeLearningStandard Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,10 +58,10 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'learning_standards' => '\OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandardLearningStandard[]',
+        'learning_standards' => '\Resources\Model\EdFiAssessmentScoreRangeLearningStandardLearningStandard[]',
         'score_range_id' => 'string',
-        'assessment_reference' => '\OpenAPI\Client\Model\EdFiAssessmentReference',
-        'objective_assessment_reference' => '\OpenAPI\Client\Model\EdFiObjectiveAssessmentReference',
+        'assessment_reference' => '\Resources\Model\EdFiAssessmentReference',
+        'objective_assessment_reference' => '\Resources\Model\EdFiObjectiveAssessmentReference',
         'assessment_reporting_method_descriptor' => 'string',
         'maximum_score' => 'string',
         'minimum_score' => 'string',
@@ -425,7 +425,7 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
     /**
      * Gets learning_standards
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandardLearningStandard[]
+     * @return \Resources\Model\EdFiAssessmentScoreRangeLearningStandardLearningStandard[]
      */
     public function getLearningStandards()
     {
@@ -435,7 +435,7 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
     /**
      * Sets learning_standards
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentScoreRangeLearningStandardLearningStandard[] $learning_standards An unordered collection of assessmentScoreRangeLearningStandardLearningStandards. Learning standard associated with the score range.
+     * @param \Resources\Model\EdFiAssessmentScoreRangeLearningStandardLearningStandard[] $learning_standards An unordered collection of assessmentScoreRangeLearningStandardLearningStandards. Learning standard associated with the score range.
      *
      * @return self
      */
@@ -486,7 +486,7 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
     /**
      * Gets assessment_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentReference
+     * @return \Resources\Model\EdFiAssessmentReference
      */
     public function getAssessmentReference()
     {
@@ -496,7 +496,7 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
     /**
      * Sets assessment_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentReference $assessment_reference assessment_reference
+     * @param \Resources\Model\EdFiAssessmentReference $assessment_reference assessment_reference
      *
      * @return self
      */
@@ -513,7 +513,7 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
     /**
      * Gets objective_assessment_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiObjectiveAssessmentReference|null
+     * @return \Resources\Model\EdFiObjectiveAssessmentReference|null
      */
     public function getObjectiveAssessmentReference()
     {
@@ -523,7 +523,7 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
     /**
      * Sets objective_assessment_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiObjectiveAssessmentReference|null $objective_assessment_reference objective_assessment_reference
+     * @param \Resources\Model\EdFiObjectiveAssessmentReference|null $objective_assessment_reference objective_assessment_reference
      *
      * @return self
      */

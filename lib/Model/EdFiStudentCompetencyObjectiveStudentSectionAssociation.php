@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentCompetencyObjectiveStudentSectionAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiStudentCompetencyObjectiveStudentSectionAssociation implements ModelIn
       * @var string[]
       */
     protected static $openAPITypes = [
-        'student_section_association_reference' => '\OpenAPI\Client\Model\EdFiStudentSectionAssociationReference'
+        'student_section_association_reference' => '\Resources\Model\EdFiStudentSectionAssociationReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiStudentCompetencyObjectiveStudentSectionAssociation implements ModelIn
     /**
      * Gets student_section_association_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSectionAssociationReference
+     * @return \Resources\Model\EdFiStudentSectionAssociationReference
      */
     public function getStudentSectionAssociationReference()
     {
@@ -305,7 +305,7 @@ class EdFiStudentCompetencyObjectiveStudentSectionAssociation implements ModelIn
     /**
      * Sets student_section_association_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSectionAssociationReference $student_section_association_reference student_section_association_reference
+     * @param \Resources\Model\EdFiStudentSectionAssociationReference $student_section_association_reference student_section_association_reference
      *
      * @return self
      */

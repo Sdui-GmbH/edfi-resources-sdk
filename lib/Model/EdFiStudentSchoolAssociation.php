@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentSchoolAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,15 +59,15 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'id' => 'string',
         'entry_date' => '\DateTime',
-        'calendar_reference' => '\OpenAPI\Client\Model\EdFiCalendarReference',
-        'class_of_school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
-        'graduation_plan_reference' => '\OpenAPI\Client\Model\EdFiGraduationPlanReference',
-        'next_year_school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
-        'alternative_graduation_plans' => '\OpenAPI\Client\Model\EdFiStudentSchoolAssociationAlternativeGraduationPlan[]',
-        'education_plans' => '\OpenAPI\Client\Model\EdFiStudentSchoolAssociationEducationPlan[]',
+        'calendar_reference' => '\Resources\Model\EdFiCalendarReference',
+        'class_of_school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
+        'graduation_plan_reference' => '\Resources\Model\EdFiGraduationPlanReference',
+        'next_year_school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
+        'alternative_graduation_plans' => '\Resources\Model\EdFiStudentSchoolAssociationAlternativeGraduationPlan[]',
+        'education_plans' => '\Resources\Model\EdFiStudentSchoolAssociationEducationPlan[]',
         'employed_while_enrolled' => 'bool',
         'enrollment_type_descriptor' => 'string',
         'entry_grade_level_descriptor' => 'string',
@@ -590,7 +590,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets calendar_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCalendarReference|null
+     * @return \Resources\Model\EdFiCalendarReference|null
      */
     public function getCalendarReference()
     {
@@ -600,7 +600,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets calendar_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCalendarReference|null $calendar_reference calendar_reference
+     * @param \Resources\Model\EdFiCalendarReference|null $calendar_reference calendar_reference
      *
      * @return self
      */
@@ -617,7 +617,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets class_of_school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null
+     * @return \Resources\Model\EdFiSchoolYearTypeReference|null
      */
     public function getClassOfSchoolYearTypeReference()
     {
@@ -627,7 +627,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets class_of_school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null $class_of_school_year_type_reference class_of_school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference|null $class_of_school_year_type_reference class_of_school_year_type_reference
      *
      * @return self
      */
@@ -644,7 +644,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets graduation_plan_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlanReference|null
+     * @return \Resources\Model\EdFiGraduationPlanReference|null
      */
     public function getGraduationPlanReference()
     {
@@ -654,7 +654,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets graduation_plan_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiGraduationPlanReference|null $graduation_plan_reference graduation_plan_reference
+     * @param \Resources\Model\EdFiGraduationPlanReference|null $graduation_plan_reference graduation_plan_reference
      *
      * @return self
      */
@@ -671,7 +671,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets next_year_school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference|null
+     * @return \Resources\Model\EdFiSchoolReference|null
      */
     public function getNextYearSchoolReference()
     {
@@ -681,7 +681,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets next_year_school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference|null $next_year_school_reference next_year_school_reference
+     * @param \Resources\Model\EdFiSchoolReference|null $next_year_school_reference next_year_school_reference
      *
      * @return self
      */
@@ -698,7 +698,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -708,7 +708,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */
@@ -725,7 +725,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null
+     * @return \Resources\Model\EdFiSchoolYearTypeReference|null
      */
     public function getSchoolYearTypeReference()
     {
@@ -735,7 +735,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference|null $school_year_type_reference school_year_type_reference
      *
      * @return self
      */
@@ -752,7 +752,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -762,7 +762,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -779,7 +779,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets alternative_graduation_plans
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSchoolAssociationAlternativeGraduationPlan[]|null
+     * @return \Resources\Model\EdFiStudentSchoolAssociationAlternativeGraduationPlan[]|null
      */
     public function getAlternativeGraduationPlans()
     {
@@ -789,7 +789,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets alternative_graduation_plans
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSchoolAssociationAlternativeGraduationPlan[]|null $alternative_graduation_plans An unordered collection of studentSchoolAssociationAlternativeGraduationPlans. The secondary graduation plan or plans associated with the student enrolled in the school.
+     * @param \Resources\Model\EdFiStudentSchoolAssociationAlternativeGraduationPlan[]|null $alternative_graduation_plans An unordered collection of studentSchoolAssociationAlternativeGraduationPlans. The secondary graduation plan or plans associated with the student enrolled in the school.
      *
      * @return self
      */
@@ -806,7 +806,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets education_plans
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSchoolAssociationEducationPlan[]|null
+     * @return \Resources\Model\EdFiStudentSchoolAssociationEducationPlan[]|null
      */
     public function getEducationPlans()
     {
@@ -816,7 +816,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets education_plans
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSchoolAssociationEducationPlan[]|null $education_plans An unordered collection of studentSchoolAssociationEducationPlans. The type of education plan(s) the student is following, if appropriate.
+     * @param \Resources\Model\EdFiStudentSchoolAssociationEducationPlan[]|null $education_plans An unordered collection of studentSchoolAssociationEducationPlans. The type of education plan(s) the student is following, if appropriate.
      *
      * @return self
      */

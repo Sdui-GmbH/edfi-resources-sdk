@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * CalendarsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class CalendarsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCalendarById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class CalendarsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCalendarById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class CalendarsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCalendars'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCalendarDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiCalendarDelete[]
      */
     public function deletesCalendars($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCalendars'][0])
     {
@@ -407,9 +407,9 @@ class CalendarsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCalendars'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCalendarDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCalendarDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesCalendarsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCalendars'][0])
     {
@@ -440,11 +440,11 @@ class CalendarsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCalendarDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCalendarDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCalendarDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCalendarDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class CalendarsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCalendarDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCalendarDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class CalendarsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCalendarDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCalendarDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class CalendarsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCalendarDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiCalendarDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class CalendarsApi
      */
     public function deletesCalendarsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCalendars'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCalendarDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCalendarDelete[]';
         $request = $this->deletesCalendarsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -772,9 +772,9 @@ class CalendarsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCalendars'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCalendar[]
+     * @return \Resources\Model\EdFiCalendar[]
      */
     public function getCalendars($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $calendar_code = null, $school_id = null, $school_year = null, $calendar_type_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCalendars'][0])
     {
@@ -800,9 +800,9 @@ class CalendarsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCalendars'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCalendar[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCalendar[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCalendarsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $calendar_code = null, $school_id = null, $school_year = null, $calendar_type_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCalendars'][0])
     {
@@ -833,11 +833,11 @@ class CalendarsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCalendar[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCalendar[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCalendar[]' !== 'string') {
+                        if ('\Resources\Model\EdFiCalendar[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -855,7 +855,7 @@ class CalendarsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCalendar[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCalendar[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -874,7 +874,7 @@ class CalendarsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCalendar[]';
+            $returnType = '\Resources\Model\EdFiCalendar[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -907,7 +907,7 @@ class CalendarsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCalendar[]',
+                        '\Resources\Model\EdFiCalendar[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -971,7 +971,7 @@ class CalendarsApi
      */
     public function getCalendarsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $calendar_code = null, $school_id = null, $school_year = null, $calendar_type_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCalendars'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCalendar[]';
+        $returnType = '\Resources\Model\EdFiCalendar[]';
         $request = $this->getCalendarsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $calendar_code, $school_id, $school_year, $calendar_type_descriptor, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1228,9 +1228,9 @@ class CalendarsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCalendarsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCalendar
+     * @return \Resources\Model\EdFiCalendar
      */
     public function getCalendarsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCalendarsById'][0])
     {
@@ -1248,9 +1248,9 @@ class CalendarsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCalendarsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCalendar, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCalendar, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCalendarsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCalendarsById'][0])
     {
@@ -1281,11 +1281,11 @@ class CalendarsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCalendar' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCalendar' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCalendar' !== 'string') {
+                        if ('\Resources\Model\EdFiCalendar' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1303,7 +1303,7 @@ class CalendarsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCalendar', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCalendar', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1322,7 +1322,7 @@ class CalendarsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCalendar';
+            $returnType = '\Resources\Model\EdFiCalendar';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1355,7 +1355,7 @@ class CalendarsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCalendar',
+                        '\Resources\Model\EdFiCalendar',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1403,7 +1403,7 @@ class CalendarsApi
      */
     public function getCalendarsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCalendarsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCalendar';
+        $returnType = '\Resources\Model\EdFiCalendar';
         $request = $this->getCalendarsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1563,9 +1563,9 @@ class CalendarsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCalendars'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCalendarKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiCalendarKeyChange[]
      */
     public function keyChangesCalendars($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCalendars'][0])
     {
@@ -1586,9 +1586,9 @@ class CalendarsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCalendars'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCalendarKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCalendarKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesCalendarsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCalendars'][0])
     {
@@ -1619,11 +1619,11 @@ class CalendarsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCalendarKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCalendarKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCalendarKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCalendarKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1641,7 +1641,7 @@ class CalendarsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCalendarKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCalendarKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1660,7 +1660,7 @@ class CalendarsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCalendarKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCalendarKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1693,7 +1693,7 @@ class CalendarsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCalendarKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiCalendarKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1747,7 +1747,7 @@ class CalendarsApi
      */
     public function keyChangesCalendarsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCalendars'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCalendarKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCalendarKeyChange[]';
         $request = $this->keyChangesCalendarsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1938,10 +1938,10 @@ class CalendarsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCalendar'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1955,10 +1955,10 @@ class CalendarsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCalendar'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2003,7 +2003,7 @@ class CalendarsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCalendar'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2024,7 +2024,7 @@ class CalendarsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCalendar'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2061,7 +2061,7 @@ class CalendarsApi
     /**
      * Create request for operation 'postCalendar'
      *
-     * @param  \OpenAPI\Client\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCalendar'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2159,11 +2159,11 @@ class CalendarsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCalendar'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2178,11 +2178,11 @@ class CalendarsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCalendar'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2228,7 +2228,7 @@ class CalendarsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCalendar'] to see the possible values for this operation
      *
@@ -2251,7 +2251,7 @@ class CalendarsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCalendar'] to see the possible values for this operation
      *
@@ -2290,7 +2290,7 @@ class CalendarsApi
      * Create request for operation 'putCalendar'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCalendar $ed_fi_calendar The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCalendar'] to see the possible values for this operation
      *

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentSpecialEducationProgramAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,10 +59,10 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'program_reference' => '\OpenAPI\Client\Model\EdFiProgramReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
-        'disabilities' => '\OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationDisability[]',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'program_reference' => '\Resources\Model\EdFiProgramReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
+        'disabilities' => '\Resources\Model\EdFiStudentSpecialEducationProgramAssociationDisability[]',
         'end_date' => '\DateTime',
         'idea_eligibility' => 'bool',
         'iep_begin_date' => '\DateTime',
@@ -71,16 +71,16 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
         'last_evaluation_date' => '\DateTime',
         'medically_fragile' => 'bool',
         'multiply_disabled' => 'bool',
-        'program_participation_statuses' => '\OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]',
+        'program_participation_statuses' => '\Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]',
         'reason_exited_descriptor' => 'string',
         'school_hours_per_week' => 'float',
         'served_outside_of_regular_session' => 'bool',
-        'service_providers' => '\OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationServiceProvider[]',
+        'service_providers' => '\Resources\Model\EdFiStudentSpecialEducationProgramAssociationServiceProvider[]',
         'special_education_exit_date' => '\DateTime',
         'special_education_exit_explained' => 'string',
         'special_education_exit_reason_descriptor' => 'string',
         'special_education_hours_per_week' => 'float',
-        'special_education_program_services' => '\OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramService[]',
+        'special_education_program_services' => '\Resources\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramService[]',
         'special_education_setting_descriptor' => 'string',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -556,7 +556,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -566,7 +566,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -583,7 +583,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Gets program_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramReference
+     * @return \Resources\Model\EdFiProgramReference
      */
     public function getProgramReference()
     {
@@ -593,7 +593,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets program_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramReference $program_reference program_reference
+     * @param \Resources\Model\EdFiProgramReference $program_reference program_reference
      *
      * @return self
      */
@@ -610,7 +610,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -620,7 +620,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -637,7 +637,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Gets disabilities
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationDisability[]|null
+     * @return \Resources\Model\EdFiStudentSpecialEducationProgramAssociationDisability[]|null
      */
     public function getDisabilities()
     {
@@ -647,7 +647,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets disabilities
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationDisability[]|null $disabilities An unordered collection of studentSpecialEducationProgramAssociationDisabilities. The disability condition(s) that best describes an individual's impairment, as related to special education services received.
+     * @param \Resources\Model\EdFiStudentSpecialEducationProgramAssociationDisability[]|null $disabilities An unordered collection of studentSpecialEducationProgramAssociationDisabilities. The disability condition(s) that best describes an individual's impairment, as related to special education services received.
      *
      * @return self
      */
@@ -936,7 +936,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Gets program_participation_statuses
      *
-     * @return \OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null
+     * @return \Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null
      */
     public function getProgramParticipationStatuses()
     {
@@ -946,7 +946,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets program_participation_statuses
      *
-     * @param \OpenAPI\Client\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null $program_participation_statuses An unordered collection of generalStudentProgramAssociationProgramParticipationStatuses. The status of the student's program participation.
+     * @param \Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]|null $program_participation_statuses An unordered collection of generalStudentProgramAssociationProgramParticipationStatuses. The status of the student's program participation.
      *
      * @return self
      */
@@ -1069,7 +1069,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Gets service_providers
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationServiceProvider[]|null
+     * @return \Resources\Model\EdFiStudentSpecialEducationProgramAssociationServiceProvider[]|null
      */
     public function getServiceProviders()
     {
@@ -1079,7 +1079,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets service_providers
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationServiceProvider[]|null $service_providers An unordered collection of studentSpecialEducationProgramAssociationServiceProviders. The staff providing special education services to the student.
+     * @param \Resources\Model\EdFiStudentSpecialEducationProgramAssociationServiceProvider[]|null $service_providers An unordered collection of studentSpecialEducationProgramAssociationServiceProviders. The staff providing special education services to the student.
      *
      * @return self
      */
@@ -1240,7 +1240,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Gets special_education_program_services
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramService[]|null
+     * @return \Resources\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramService[]|null
      */
     public function getSpecialEducationProgramServices()
     {
@@ -1250,7 +1250,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets special_education_program_services
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramService[]|null $special_education_program_services An unordered collection of studentSpecialEducationProgramAssociationSpecialEducationProgramServices. Indicates the service(s) being provided to the student by the special education program.
+     * @param \Resources\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramService[]|null $special_education_program_services An unordered collection of studentSpecialEducationProgramAssociationSpecialEducationProgramServices. Indicates the service(s) being provided to the student by the special education program.
      *
      * @return self
      */

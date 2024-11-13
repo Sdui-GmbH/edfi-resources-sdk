@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmRubricDimension Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class TpdmRubricDimension implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'id' => 'string',
         'rubric_rating' => 'int',
-        'evaluation_element_reference' => '\OpenAPI\Client\Model\TpdmEvaluationElementReference',
+        'evaluation_element_reference' => '\Resources\Model\TpdmEvaluationElementReference',
         'criterion_description' => 'string',
         'dimension_order' => 'int',
         'rubric_rating_level_descriptor' => 'string',
@@ -416,7 +416,7 @@ class TpdmRubricDimension implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets evaluation_element_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationElementReference
+     * @return \Resources\Model\TpdmEvaluationElementReference
      */
     public function getEvaluationElementReference()
     {
@@ -426,7 +426,7 @@ class TpdmRubricDimension implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets evaluation_element_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationElementReference $evaluation_element_reference evaluation_element_reference
+     * @param \Resources\Model\TpdmEvaluationElementReference $evaluation_element_reference evaluation_element_reference
      *
      * @return self
      */

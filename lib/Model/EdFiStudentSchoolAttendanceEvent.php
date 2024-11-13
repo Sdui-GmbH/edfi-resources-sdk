@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentSchoolAttendanceEvent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,9 +60,9 @@ class EdFiStudentSchoolAttendanceEvent implements ModelInterface, ArrayAccess, \
         'id' => 'string',
         'attendance_event_category_descriptor' => 'string',
         'event_date' => '\DateTime',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'session_reference' => '\OpenAPI\Client\Model\EdFiSessionReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'session_reference' => '\Resources\Model\EdFiSessionReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'arrival_time' => 'string',
         'attendance_event_reason' => 'string',
         'departure_time' => 'string',
@@ -515,7 +515,7 @@ class EdFiStudentSchoolAttendanceEvent implements ModelInterface, ArrayAccess, \
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -525,7 +525,7 @@ class EdFiStudentSchoolAttendanceEvent implements ModelInterface, ArrayAccess, \
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */
@@ -542,7 +542,7 @@ class EdFiStudentSchoolAttendanceEvent implements ModelInterface, ArrayAccess, \
     /**
      * Gets session_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSessionReference
+     * @return \Resources\Model\EdFiSessionReference
      */
     public function getSessionReference()
     {
@@ -552,7 +552,7 @@ class EdFiStudentSchoolAttendanceEvent implements ModelInterface, ArrayAccess, \
     /**
      * Sets session_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSessionReference $session_reference session_reference
+     * @param \Resources\Model\EdFiSessionReference $session_reference session_reference
      *
      * @return self
      */
@@ -569,7 +569,7 @@ class EdFiStudentSchoolAttendanceEvent implements ModelInterface, ArrayAccess, \
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -579,7 +579,7 @@ class EdFiStudentSchoolAttendanceEvent implements ModelInterface, ArrayAccess, \
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */

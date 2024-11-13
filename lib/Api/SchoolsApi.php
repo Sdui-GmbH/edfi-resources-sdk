@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * SchoolsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class SchoolsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSchoolById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class SchoolsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSchoolById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class SchoolsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSchools'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSchoolDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiSchoolDelete[]
      */
     public function deletesSchools($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
     {
@@ -407,9 +407,9 @@ class SchoolsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSchools'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiSchoolDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiSchoolDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesSchoolsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
     {
@@ -440,11 +440,11 @@ class SchoolsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiSchoolDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiSchoolDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiSchoolDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiSchoolDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class SchoolsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiSchoolDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiSchoolDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class SchoolsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSchoolDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiSchoolDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class SchoolsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiSchoolDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiSchoolDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class SchoolsApi
      */
     public function deletesSchoolsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSchoolDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiSchoolDelete[]';
         $request = $this->deletesSchoolsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -777,9 +777,9 @@ class SchoolsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchools'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiSchool[]
+     * @return \Resources\Model\EdFiSchool[]
      */
     public function getSchools($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchools'][0])
     {
@@ -810,9 +810,9 @@ class SchoolsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchools'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiSchool[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiSchool[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSchoolsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchools'][0])
     {
@@ -843,11 +843,11 @@ class SchoolsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiSchool[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiSchool[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiSchool[]' !== 'string') {
+                        if ('\Resources\Model\EdFiSchool[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -865,7 +865,7 @@ class SchoolsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiSchool[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiSchool[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -884,7 +884,7 @@ class SchoolsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiSchool[]';
+            $returnType = '\Resources\Model\EdFiSchool[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -917,7 +917,7 @@ class SchoolsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiSchool[]',
+                        '\Resources\Model\EdFiSchool[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -991,7 +991,7 @@ class SchoolsApi
      */
     public function getSchoolsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchools'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiSchool[]';
+        $returnType = '\Resources\Model\EdFiSchool[]';
         $request = $this->getSchoolsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $use_snapshot, $contentType);
 
         return $this->client
@@ -1318,9 +1318,9 @@ class SchoolsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiSchool
+     * @return \Resources\Model\EdFiSchool
      */
     public function getSchoolsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolsById'][0])
     {
@@ -1338,9 +1338,9 @@ class SchoolsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiSchool, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiSchool, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSchoolsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolsById'][0])
     {
@@ -1371,11 +1371,11 @@ class SchoolsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiSchool' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiSchool' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiSchool' !== 'string') {
+                        if ('\Resources\Model\EdFiSchool' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1393,7 +1393,7 @@ class SchoolsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiSchool', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiSchool', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1412,7 +1412,7 @@ class SchoolsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiSchool';
+            $returnType = '\Resources\Model\EdFiSchool';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1445,7 +1445,7 @@ class SchoolsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiSchool',
+                        '\Resources\Model\EdFiSchool',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1493,7 +1493,7 @@ class SchoolsApi
      */
     public function getSchoolsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiSchool';
+        $returnType = '\Resources\Model\EdFiSchool';
         $request = $this->getSchoolsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1653,9 +1653,9 @@ class SchoolsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSchools'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSchoolKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiSchoolKeyChange[]
      */
     public function keyChangesSchools($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
     {
@@ -1676,9 +1676,9 @@ class SchoolsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSchools'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiSchoolKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiSchoolKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesSchoolsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
     {
@@ -1709,11 +1709,11 @@ class SchoolsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiSchoolKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiSchoolKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiSchoolKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiSchoolKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1731,7 +1731,7 @@ class SchoolsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiSchoolKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiSchoolKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1750,7 +1750,7 @@ class SchoolsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSchoolKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiSchoolKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1783,7 +1783,7 @@ class SchoolsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiSchoolKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiSchoolKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1837,7 +1837,7 @@ class SchoolsApi
      */
     public function keyChangesSchoolsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSchoolKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiSchoolKeyChange[]';
         $request = $this->keyChangesSchoolsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2028,10 +2028,10 @@ class SchoolsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSchool'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2045,10 +2045,10 @@ class SchoolsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSchool'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2093,7 +2093,7 @@ class SchoolsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSchool'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2114,7 +2114,7 @@ class SchoolsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSchool'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2151,7 +2151,7 @@ class SchoolsApi
     /**
      * Create request for operation 'postSchool'
      *
-     * @param  \OpenAPI\Client\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSchool'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2249,11 +2249,11 @@ class SchoolsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSchool'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2268,11 +2268,11 @@ class SchoolsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSchool'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2318,7 +2318,7 @@ class SchoolsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSchool'] to see the possible values for this operation
      *
@@ -2341,7 +2341,7 @@ class SchoolsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSchool'] to see the possible values for this operation
      *
@@ -2380,7 +2380,7 @@ class SchoolsApi
      * Create request for operation 'putSchool'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchool $ed_fi_school The JSON representation of the \&quot;school\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSchool'] to see the possible values for this operation
      *

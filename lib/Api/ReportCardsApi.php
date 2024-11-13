@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * ReportCardsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class ReportCardsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteReportCardById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class ReportCardsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteReportCardById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class ReportCardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesReportCards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiReportCardDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiReportCardDelete[]
      */
     public function deletesReportCards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesReportCards'][0])
     {
@@ -407,9 +407,9 @@ class ReportCardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesReportCards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiReportCardDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiReportCardDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesReportCardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesReportCards'][0])
     {
@@ -440,11 +440,11 @@ class ReportCardsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiReportCardDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiReportCardDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiReportCardDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiReportCardDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class ReportCardsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiReportCardDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiReportCardDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class ReportCardsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiReportCardDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiReportCardDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class ReportCardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiReportCardDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiReportCardDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class ReportCardsApi
      */
     public function deletesReportCardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesReportCards'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiReportCardDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiReportCardDelete[]';
         $request = $this->deletesReportCardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -777,9 +777,9 @@ class ReportCardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReportCards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiReportCard[]
+     * @return \Resources\Model\EdFiReportCard[]
      */
     public function getReportCards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $grading_period_descriptor = null, $grading_period_name = null, $grading_period_school_id = null, $grading_period_school_year = null, $student_unique_id = null, $id = null, $number_of_days_absent = null, $number_of_days_in_attendance = null, $number_of_days_tardy = null, $use_snapshot = false, string $contentType = self::contentTypes['getReportCards'][0])
     {
@@ -810,9 +810,9 @@ class ReportCardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReportCards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiReportCard[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiReportCard[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getReportCardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $grading_period_descriptor = null, $grading_period_name = null, $grading_period_school_id = null, $grading_period_school_year = null, $student_unique_id = null, $id = null, $number_of_days_absent = null, $number_of_days_in_attendance = null, $number_of_days_tardy = null, $use_snapshot = false, string $contentType = self::contentTypes['getReportCards'][0])
     {
@@ -843,11 +843,11 @@ class ReportCardsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiReportCard[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiReportCard[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiReportCard[]' !== 'string') {
+                        if ('\Resources\Model\EdFiReportCard[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -865,7 +865,7 @@ class ReportCardsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiReportCard[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiReportCard[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -884,7 +884,7 @@ class ReportCardsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiReportCard[]';
+            $returnType = '\Resources\Model\EdFiReportCard[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -917,7 +917,7 @@ class ReportCardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiReportCard[]',
+                        '\Resources\Model\EdFiReportCard[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -991,7 +991,7 @@ class ReportCardsApi
      */
     public function getReportCardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $grading_period_descriptor = null, $grading_period_name = null, $grading_period_school_id = null, $grading_period_school_year = null, $student_unique_id = null, $id = null, $number_of_days_absent = null, $number_of_days_in_attendance = null, $number_of_days_tardy = null, $use_snapshot = false, string $contentType = self::contentTypes['getReportCards'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiReportCard[]';
+        $returnType = '\Resources\Model\EdFiReportCard[]';
         $request = $this->getReportCardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_id, $grading_period_descriptor, $grading_period_name, $grading_period_school_id, $grading_period_school_year, $student_unique_id, $id, $number_of_days_absent, $number_of_days_in_attendance, $number_of_days_tardy, $use_snapshot, $contentType);
 
         return $this->client
@@ -1306,9 +1306,9 @@ class ReportCardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReportCardsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiReportCard
+     * @return \Resources\Model\EdFiReportCard
      */
     public function getReportCardsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getReportCardsById'][0])
     {
@@ -1326,9 +1326,9 @@ class ReportCardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReportCardsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiReportCard, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiReportCard, HTTP status code, HTTP response headers (array of strings)
      */
     public function getReportCardsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getReportCardsById'][0])
     {
@@ -1359,11 +1359,11 @@ class ReportCardsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiReportCard' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiReportCard' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiReportCard' !== 'string') {
+                        if ('\Resources\Model\EdFiReportCard' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1381,7 +1381,7 @@ class ReportCardsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiReportCard', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiReportCard', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1400,7 +1400,7 @@ class ReportCardsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiReportCard';
+            $returnType = '\Resources\Model\EdFiReportCard';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1433,7 +1433,7 @@ class ReportCardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiReportCard',
+                        '\Resources\Model\EdFiReportCard',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1481,7 +1481,7 @@ class ReportCardsApi
      */
     public function getReportCardsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getReportCardsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiReportCard';
+        $returnType = '\Resources\Model\EdFiReportCard';
         $request = $this->getReportCardsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1641,9 +1641,9 @@ class ReportCardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesReportCards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiReportCardKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiReportCardKeyChange[]
      */
     public function keyChangesReportCards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesReportCards'][0])
     {
@@ -1664,9 +1664,9 @@ class ReportCardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesReportCards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiReportCardKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiReportCardKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesReportCardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesReportCards'][0])
     {
@@ -1697,11 +1697,11 @@ class ReportCardsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiReportCardKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiReportCardKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiReportCardKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiReportCardKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1719,7 +1719,7 @@ class ReportCardsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiReportCardKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiReportCardKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1738,7 +1738,7 @@ class ReportCardsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiReportCardKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiReportCardKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1771,7 +1771,7 @@ class ReportCardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiReportCardKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiReportCardKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1825,7 +1825,7 @@ class ReportCardsApi
      */
     public function keyChangesReportCardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesReportCards'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiReportCardKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiReportCardKeyChange[]';
         $request = $this->keyChangesReportCardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2016,10 +2016,10 @@ class ReportCardsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postReportCard'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2033,10 +2033,10 @@ class ReportCardsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postReportCard'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2081,7 +2081,7 @@ class ReportCardsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postReportCard'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2102,7 +2102,7 @@ class ReportCardsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postReportCard'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2139,7 +2139,7 @@ class ReportCardsApi
     /**
      * Create request for operation 'postReportCard'
      *
-     * @param  \OpenAPI\Client\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postReportCard'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2237,11 +2237,11 @@ class ReportCardsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putReportCard'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2256,11 +2256,11 @@ class ReportCardsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putReportCard'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2306,7 +2306,7 @@ class ReportCardsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putReportCard'] to see the possible values for this operation
      *
@@ -2329,7 +2329,7 @@ class ReportCardsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putReportCard'] to see the possible values for this operation
      *
@@ -2368,7 +2368,7 @@ class ReportCardsApi
      * Create request for operation 'putReportCard'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiReportCard $ed_fi_report_card The JSON representation of the \&quot;reportCard\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putReportCard'] to see the possible values for this operation
      *

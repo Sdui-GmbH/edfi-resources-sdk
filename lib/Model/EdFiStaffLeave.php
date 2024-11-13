@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffLeave Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class EdFiStaffLeave implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'begin_date' => '\DateTime',
         'staff_leave_event_category_descriptor' => 'string',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
         'end_date' => '\DateTime',
         'reason' => 'string',
         'substitute_assigned' => 'bool',
@@ -454,7 +454,7 @@ class EdFiStaffLeave implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference
+     * @return \Resources\Model\EdFiStaffReference
      */
     public function getStaffReference()
     {
@@ -464,7 +464,7 @@ class EdFiStaffLeave implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference $staff_reference staff_reference
      *
      * @return self
      */

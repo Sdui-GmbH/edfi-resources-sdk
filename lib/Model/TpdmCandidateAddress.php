@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmCandidateAddress Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -71,7 +71,7 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
         'latitude' => 'string',
         'longitude' => 'string',
         'name_of_county' => 'string',
-        'periods' => '\OpenAPI\Client\Model\TpdmCandidateAddressPeriod[]'
+        'periods' => '\Resources\Model\TpdmCandidateAddressPeriod[]'
     ];
 
     /**
@@ -1020,7 +1020,7 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets periods
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateAddressPeriod[]|null
+     * @return \Resources\Model\TpdmCandidateAddressPeriod[]|null
      */
     public function getPeriods()
     {
@@ -1030,7 +1030,7 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets periods
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateAddressPeriod[]|null $periods An unordered collection of candidateAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address.
+     * @param \Resources\Model\TpdmCandidateAddressPeriod[]|null $periods An unordered collection of candidateAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address.
      *
      * @return self
      */

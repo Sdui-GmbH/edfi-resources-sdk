@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * StaffSectionAssociationsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class StaffSectionAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStaffSectionAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class StaffSectionAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStaffSectionAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class StaffSectionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffSectionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]
      */
     public function deletesStaffSectionAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffSectionAssociations'][0])
     {
@@ -407,9 +407,9 @@ class StaffSectionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffSectionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStaffSectionAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesStaffSectionAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffSectionAssociations'][0])
     {
@@ -440,11 +440,11 @@ class StaffSectionAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class StaffSectionAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class StaffSectionAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class StaffSectionAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class StaffSectionAssociationsApi
      */
     public function deletesStaffSectionAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffSectionAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStaffSectionAssociationDelete[]';
         $request = $this->deletesStaffSectionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -780,9 +780,9 @@ class StaffSectionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffSectionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStaffSectionAssociation[]
+     * @return \Resources\Model\EdFiStaffSectionAssociation[]
      */
     public function getStaffSectionAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $staff_unique_id = null, $classroom_position_descriptor = null, $end_date = null, $highly_qualified_teacher = null, $id = null, $percentage_contribution = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffSectionAssociations'][0])
     {
@@ -816,9 +816,9 @@ class StaffSectionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffSectionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStaffSectionAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStaffSectionAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStaffSectionAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $staff_unique_id = null, $classroom_position_descriptor = null, $end_date = null, $highly_qualified_teacher = null, $id = null, $percentage_contribution = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffSectionAssociations'][0])
     {
@@ -849,11 +849,11 @@ class StaffSectionAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStaffSectionAssociation[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStaffSectionAssociation[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStaffSectionAssociation[]' !== 'string') {
+                        if ('\Resources\Model\EdFiStaffSectionAssociation[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -871,7 +871,7 @@ class StaffSectionAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStaffSectionAssociation[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStaffSectionAssociation[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -890,7 +890,7 @@ class StaffSectionAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStaffSectionAssociation[]';
+            $returnType = '\Resources\Model\EdFiStaffSectionAssociation[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -923,7 +923,7 @@ class StaffSectionAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStaffSectionAssociation[]',
+                        '\Resources\Model\EdFiStaffSectionAssociation[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1003,7 +1003,7 @@ class StaffSectionAssociationsApi
      */
     public function getStaffSectionAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $staff_unique_id = null, $classroom_position_descriptor = null, $end_date = null, $highly_qualified_teacher = null, $id = null, $percentage_contribution = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffSectionAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStaffSectionAssociation[]';
+        $returnType = '\Resources\Model\EdFiStaffSectionAssociation[]';
         $request = $this->getStaffSectionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $staff_unique_id, $classroom_position_descriptor, $end_date, $highly_qualified_teacher, $id, $percentage_contribution, $teacher_student_data_link_exclusion, $use_snapshot, $contentType);
 
         return $this->client
@@ -1357,9 +1357,9 @@ class StaffSectionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffSectionAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStaffSectionAssociation
+     * @return \Resources\Model\EdFiStaffSectionAssociation
      */
     public function getStaffSectionAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffSectionAssociationsById'][0])
     {
@@ -1377,9 +1377,9 @@ class StaffSectionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffSectionAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStaffSectionAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStaffSectionAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStaffSectionAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffSectionAssociationsById'][0])
     {
@@ -1410,11 +1410,11 @@ class StaffSectionAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStaffSectionAssociation' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStaffSectionAssociation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStaffSectionAssociation' !== 'string') {
+                        if ('\Resources\Model\EdFiStaffSectionAssociation' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1432,7 +1432,7 @@ class StaffSectionAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStaffSectionAssociation', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStaffSectionAssociation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1451,7 +1451,7 @@ class StaffSectionAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStaffSectionAssociation';
+            $returnType = '\Resources\Model\EdFiStaffSectionAssociation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1484,7 +1484,7 @@ class StaffSectionAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStaffSectionAssociation',
+                        '\Resources\Model\EdFiStaffSectionAssociation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1532,7 +1532,7 @@ class StaffSectionAssociationsApi
      */
     public function getStaffSectionAssociationsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffSectionAssociationsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStaffSectionAssociation';
+        $returnType = '\Resources\Model\EdFiStaffSectionAssociation';
         $request = $this->getStaffSectionAssociationsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1692,9 +1692,9 @@ class StaffSectionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffSectionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]
      */
     public function keyChangesStaffSectionAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffSectionAssociations'][0])
     {
@@ -1715,9 +1715,9 @@ class StaffSectionAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffSectionAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesStaffSectionAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffSectionAssociations'][0])
     {
@@ -1748,11 +1748,11 @@ class StaffSectionAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1770,7 +1770,7 @@ class StaffSectionAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1789,7 +1789,7 @@ class StaffSectionAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1822,7 +1822,7 @@ class StaffSectionAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1876,7 +1876,7 @@ class StaffSectionAssociationsApi
      */
     public function keyChangesStaffSectionAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffSectionAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStaffSectionAssociationKeyChange[]';
         $request = $this->keyChangesStaffSectionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2067,10 +2067,10 @@ class StaffSectionAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffSectionAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2084,10 +2084,10 @@ class StaffSectionAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffSectionAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2132,7 +2132,7 @@ class StaffSectionAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffSectionAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2153,7 +2153,7 @@ class StaffSectionAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffSectionAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2190,7 +2190,7 @@ class StaffSectionAssociationsApi
     /**
      * Create request for operation 'postStaffSectionAssociation'
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffSectionAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2288,11 +2288,11 @@ class StaffSectionAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffSectionAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2307,11 +2307,11 @@ class StaffSectionAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffSectionAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2357,7 +2357,7 @@ class StaffSectionAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffSectionAssociation'] to see the possible values for this operation
      *
@@ -2380,7 +2380,7 @@ class StaffSectionAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffSectionAssociation'] to see the possible values for this operation
      *
@@ -2419,7 +2419,7 @@ class StaffSectionAssociationsApi
      * Create request for operation 'putStaffSectionAssociation'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffSectionAssociation $ed_fi_staff_section_association The JSON representation of the \&quot;staffSectionAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffSectionAssociation'] to see the possible values for this operation
      *

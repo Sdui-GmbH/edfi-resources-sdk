@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiEducationContent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,20 +59,20 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPITypes = [
         'id' => 'string',
         'content_identifier' => 'string',
-        'learning_standard_reference' => '\OpenAPI\Client\Model\EdFiLearningStandardReference',
+        'learning_standard_reference' => '\Resources\Model\EdFiLearningStandardReference',
         'additional_authors_indicator' => 'bool',
-        'appropriate_grade_levels' => '\OpenAPI\Client\Model\EdFiEducationContentAppropriateGradeLevel[]',
-        'appropriate_sexes' => '\OpenAPI\Client\Model\EdFiEducationContentAppropriateSex[]',
-        'authors' => '\OpenAPI\Client\Model\EdFiEducationContentAuthor[]',
+        'appropriate_grade_levels' => '\Resources\Model\EdFiEducationContentAppropriateGradeLevel[]',
+        'appropriate_sexes' => '\Resources\Model\EdFiEducationContentAppropriateSex[]',
+        'authors' => '\Resources\Model\EdFiEducationContentAuthor[]',
         'content_class_descriptor' => 'string',
         'cost' => 'float',
         'cost_rate_descriptor' => 'string',
-        'derivative_source_education_contents' => '\OpenAPI\Client\Model\EdFiEducationContentDerivativeSourceEducationContent[]',
-        'derivative_source_learning_resource_metadata_uris' => '\OpenAPI\Client\Model\EdFiEducationContentDerivativeSourceLearningResourceMetadataURI[]',
-        'derivative_source_uris' => '\OpenAPI\Client\Model\EdFiEducationContentDerivativeSourceURI[]',
+        'derivative_source_education_contents' => '\Resources\Model\EdFiEducationContentDerivativeSourceEducationContent[]',
+        'derivative_source_learning_resource_metadata_uris' => '\Resources\Model\EdFiEducationContentDerivativeSourceLearningResourceMetadataURI[]',
+        'derivative_source_uris' => '\Resources\Model\EdFiEducationContentDerivativeSourceURI[]',
         'description' => 'string',
         'interactivity_style_descriptor' => 'string',
-        'languages' => '\OpenAPI\Client\Model\EdFiEducationContentLanguage[]',
+        'languages' => '\Resources\Model\EdFiEducationContentLanguage[]',
         'learning_resource_metadata_uri' => 'string',
         'namespace' => 'string',
         'publication_date' => '\DateTime',
@@ -621,7 +621,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets learning_standard_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardReference|null
+     * @return \Resources\Model\EdFiLearningStandardReference|null
      */
     public function getLearningStandardReference()
     {
@@ -631,7 +631,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets learning_standard_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiLearningStandardReference|null $learning_standard_reference learning_standard_reference
+     * @param \Resources\Model\EdFiLearningStandardReference|null $learning_standard_reference learning_standard_reference
      *
      * @return self
      */
@@ -682,7 +682,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets appropriate_grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationContentAppropriateGradeLevel[]|null
+     * @return \Resources\Model\EdFiEducationContentAppropriateGradeLevel[]|null
      */
     public function getAppropriateGradeLevels()
     {
@@ -692,7 +692,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets appropriate_grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationContentAppropriateGradeLevel[]|null $appropriate_grade_levels An unordered collection of educationContentAppropriateGradeLevels. Grade levels for which this education content is applicable. If omitted, considered generally applicable.
+     * @param \Resources\Model\EdFiEducationContentAppropriateGradeLevel[]|null $appropriate_grade_levels An unordered collection of educationContentAppropriateGradeLevels. Grade levels for which this education content is applicable. If omitted, considered generally applicable.
      *
      * @return self
      */
@@ -709,7 +709,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets appropriate_sexes
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationContentAppropriateSex[]|null
+     * @return \Resources\Model\EdFiEducationContentAppropriateSex[]|null
      */
     public function getAppropriateSexes()
     {
@@ -719,7 +719,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets appropriate_sexes
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationContentAppropriateSex[]|null $appropriate_sexes An unordered collection of educationContentAppropriateSexes. Sexes for which this education content is applicable. If omitted, considered generally applicable.
+     * @param \Resources\Model\EdFiEducationContentAppropriateSex[]|null $appropriate_sexes An unordered collection of educationContentAppropriateSexes. Sexes for which this education content is applicable. If omitted, considered generally applicable.
      *
      * @return self
      */
@@ -736,7 +736,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets authors
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationContentAuthor[]|null
+     * @return \Resources\Model\EdFiEducationContentAuthor[]|null
      */
     public function getAuthors()
     {
@@ -746,7 +746,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets authors
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationContentAuthor[]|null $authors An unordered collection of educationContentAuthors. The individual credited with the creation of the resource.
+     * @param \Resources\Model\EdFiEducationContentAuthor[]|null $authors An unordered collection of educationContentAuthors. The individual credited with the creation of the resource.
      *
      * @return self
      */
@@ -873,7 +873,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets derivative_source_education_contents
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationContentDerivativeSourceEducationContent[]|null
+     * @return \Resources\Model\EdFiEducationContentDerivativeSourceEducationContent[]|null
      */
     public function getDerivativeSourceEducationContents()
     {
@@ -883,7 +883,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets derivative_source_education_contents
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationContentDerivativeSourceEducationContent[]|null $derivative_source_education_contents An unordered collection of educationContentDerivativeSourceEducationContents. Relates the education content source to the education content.
+     * @param \Resources\Model\EdFiEducationContentDerivativeSourceEducationContent[]|null $derivative_source_education_contents An unordered collection of educationContentDerivativeSourceEducationContents. Relates the education content source to the education content.
      *
      * @return self
      */
@@ -900,7 +900,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets derivative_source_learning_resource_metadata_uris
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationContentDerivativeSourceLearningResourceMetadataURI[]|null
+     * @return \Resources\Model\EdFiEducationContentDerivativeSourceLearningResourceMetadataURI[]|null
      */
     public function getDerivativeSourceLearningResourceMetadataUris()
     {
@@ -910,7 +910,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets derivative_source_learning_resource_metadata_uris
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationContentDerivativeSourceLearningResourceMetadataURI[]|null $derivative_source_learning_resource_metadata_uris An unordered collection of educationContentDerivativeSourceLearningResourceMetadataURIs. The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item.
+     * @param \Resources\Model\EdFiEducationContentDerivativeSourceLearningResourceMetadataURI[]|null $derivative_source_learning_resource_metadata_uris An unordered collection of educationContentDerivativeSourceLearningResourceMetadataURIs. The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item.
      *
      * @return self
      */
@@ -927,7 +927,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets derivative_source_uris
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationContentDerivativeSourceURI[]|null
+     * @return \Resources\Model\EdFiEducationContentDerivativeSourceURI[]|null
      */
     public function getDerivativeSourceUris()
     {
@@ -937,7 +937,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets derivative_source_uris
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationContentDerivativeSourceURI[]|null $derivative_source_uris An unordered collection of educationContentDerivativeSourceURIs. The URI (typical a URL) pointing to an education content item.
+     * @param \Resources\Model\EdFiEducationContentDerivativeSourceURI[]|null $derivative_source_uris An unordered collection of educationContentDerivativeSourceURIs. The URI (typical a URL) pointing to an education content item.
      *
      * @return self
      */
@@ -1033,7 +1033,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets languages
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationContentLanguage[]|null
+     * @return \Resources\Model\EdFiEducationContentLanguage[]|null
      */
     public function getLanguages()
     {
@@ -1043,7 +1043,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets languages
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationContentLanguage[]|null $languages An unordered collection of educationContentLanguages. An indication of the languages in which the Education Content is designed.
+     * @param \Resources\Model\EdFiEducationContentLanguage[]|null $languages An unordered collection of educationContentLanguages. An indication of the languages in which the Education Content is designed.
      *
      * @return self
      */

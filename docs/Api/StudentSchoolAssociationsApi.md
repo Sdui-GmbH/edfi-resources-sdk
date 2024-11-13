@@ -1,4 +1,4 @@
-# OpenAPI\Client\StudentSchoolAssociationsApi
+# Resources\StudentSchoolAssociationsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSchoolAssociationsApi(
+$apiInstance = new Resources\Api\StudentSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesStudentSchoolAssociations()`
 
 ```php
-deletesStudentSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentSchoolAssociationDelete[]
+deletesStudentSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentSchoolAssociationDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSchoolAssociationsApi(
+$apiInstance = new Resources\Api\StudentSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentSchoolAssociationDelete[]**](../Model/TrackedChangesEdFiStudentSchoolAssociationDelete.md)
+[**\Resources\Model\TrackedChangesEdFiStudentSchoolAssociationDelete[]**](../Model/TrackedChangesEdFiStudentSchoolAssociationDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getStudentSchoolAssociations()`
 
 ```php
-getStudentSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentSchoolAssociation[]
+getStudentSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot): \Resources\Model\EdFiStudentSchoolAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSchoolAssociationsApi(
+$apiInstance = new Resources\Api\StudentSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -253,7 +253,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentSchoolAssociation[]**](../Model/EdFiStudentSchoolAssociation.md)
+[**\Resources\Model\EdFiStudentSchoolAssociation[]**](../Model/EdFiStudentSchoolAssociation.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ try {
 ## `getStudentSchoolAssociationsById()`
 
 ```php
-getStudentSchoolAssociationsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentSchoolAssociation
+getStudentSchoolAssociationsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiStudentSchoolAssociation
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -286,10 +286,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSchoolAssociationsApi(
+$apiInstance = new Resources\Api\StudentSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -317,7 +317,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentSchoolAssociation**](../Model/EdFiStudentSchoolAssociation.md)
+[**\Resources\Model\EdFiStudentSchoolAssociation**](../Model/EdFiStudentSchoolAssociation.md)
 
 ### Authorization
 
@@ -335,7 +335,7 @@ try {
 ## `keyChangesStudentSchoolAssociations()`
 
 ```php
-keyChangesStudentSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentSchoolAssociationKeyChange[]
+keyChangesStudentSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentSchoolAssociationKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -350,10 +350,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSchoolAssociationsApi(
+$apiInstance = new Resources\Api\StudentSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -387,7 +387,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentSchoolAssociationKeyChange[]**](../Model/TrackedChangesEdFiStudentSchoolAssociationKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiStudentSchoolAssociationKeyChange[]**](../Model/TrackedChangesEdFiStudentSchoolAssociationKeyChange.md)
 
 ### Authorization
 
@@ -420,16 +420,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSchoolAssociationsApi(
+$apiInstance = new Resources\Api\StudentSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_student_school_association = new \OpenAPI\Client\Model\EdFiStudentSchoolAssociation(); // \OpenAPI\Client\Model\EdFiStudentSchoolAssociation | The JSON representation of the \"studentSchoolAssociation\" resource to be created or updated.
+$ed_fi_student_school_association = new \Resources\Model\EdFiStudentSchoolAssociation(); // \Resources\Model\EdFiStudentSchoolAssociation | The JSON representation of the \"studentSchoolAssociation\" resource to be created or updated.
 
 try {
     $apiInstance->postStudentSchoolAssociation($ed_fi_student_school_association);
@@ -442,7 +442,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_student_school_association** | [**\OpenAPI\Client\Model\EdFiStudentSchoolAssociation**](../Model/EdFiStudentSchoolAssociation.md)| The JSON representation of the \&quot;studentSchoolAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_student_school_association** | [**\Resources\Model\EdFiStudentSchoolAssociation**](../Model/EdFiStudentSchoolAssociation.md)| The JSON representation of the \&quot;studentSchoolAssociation\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -479,17 +479,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentSchoolAssociationsApi(
+$apiInstance = new Resources\Api\StudentSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_student_school_association = new \OpenAPI\Client\Model\EdFiStudentSchoolAssociation(); // \OpenAPI\Client\Model\EdFiStudentSchoolAssociation | The JSON representation of the \"studentSchoolAssociation\" resource to be created or updated.
+$ed_fi_student_school_association = new \Resources\Model\EdFiStudentSchoolAssociation(); // \Resources\Model\EdFiStudentSchoolAssociation | The JSON representation of the \"studentSchoolAssociation\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -504,7 +504,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_student_school_association** | [**\OpenAPI\Client\Model\EdFiStudentSchoolAssociation**](../Model/EdFiStudentSchoolAssociation.md)| The JSON representation of the \&quot;studentSchoolAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_student_school_association** | [**\Resources\Model\EdFiStudentSchoolAssociation**](../Model/EdFiStudentSchoolAssociation.md)| The JSON representation of the \&quot;studentSchoolAssociation\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

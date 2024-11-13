@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentAssessmentStudentObjectiveAssessment Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,9 +60,9 @@ class EdFiStudentAssessmentStudentObjectiveAssessment implements ModelInterface,
         'administration_date' => '\DateTime',
         'administration_end_date' => '\DateTime',
         'assessed_minutes' => 'int',
-        'objective_assessment_reference' => '\OpenAPI\Client\Model\EdFiObjectiveAssessmentReference',
-        'performance_levels' => '\OpenAPI\Client\Model\EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevel[]',
-        'score_results' => '\OpenAPI\Client\Model\EdFiStudentAssessmentStudentObjectiveAssessmentScoreResult[]'
+        'objective_assessment_reference' => '\Resources\Model\EdFiObjectiveAssessmentReference',
+        'performance_levels' => '\Resources\Model\EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevel[]',
+        'score_results' => '\Resources\Model\EdFiStudentAssessmentStudentObjectiveAssessmentScoreResult[]'
     ];
 
     /**
@@ -432,7 +432,7 @@ class EdFiStudentAssessmentStudentObjectiveAssessment implements ModelInterface,
     /**
      * Gets objective_assessment_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiObjectiveAssessmentReference
+     * @return \Resources\Model\EdFiObjectiveAssessmentReference
      */
     public function getObjectiveAssessmentReference()
     {
@@ -442,7 +442,7 @@ class EdFiStudentAssessmentStudentObjectiveAssessment implements ModelInterface,
     /**
      * Sets objective_assessment_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiObjectiveAssessmentReference $objective_assessment_reference objective_assessment_reference
+     * @param \Resources\Model\EdFiObjectiveAssessmentReference $objective_assessment_reference objective_assessment_reference
      *
      * @return self
      */
@@ -459,7 +459,7 @@ class EdFiStudentAssessmentStudentObjectiveAssessment implements ModelInterface,
     /**
      * Gets performance_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevel[]|null
+     * @return \Resources\Model\EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevel[]|null
      */
     public function getPerformanceLevels()
     {
@@ -469,7 +469,7 @@ class EdFiStudentAssessmentStudentObjectiveAssessment implements ModelInterface,
     /**
      * Sets performance_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevel[]|null $performance_levels An unordered collection of studentAssessmentStudentObjectiveAssessmentPerformanceLevels. The performance level(s) achieved for the objective assessment.
+     * @param \Resources\Model\EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevel[]|null $performance_levels An unordered collection of studentAssessmentStudentObjectiveAssessmentPerformanceLevels. The performance level(s) achieved for the objective assessment.
      *
      * @return self
      */
@@ -486,7 +486,7 @@ class EdFiStudentAssessmentStudentObjectiveAssessment implements ModelInterface,
     /**
      * Gets score_results
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAssessmentStudentObjectiveAssessmentScoreResult[]|null
+     * @return \Resources\Model\EdFiStudentAssessmentStudentObjectiveAssessmentScoreResult[]|null
      */
     public function getScoreResults()
     {
@@ -496,7 +496,7 @@ class EdFiStudentAssessmentStudentObjectiveAssessment implements ModelInterface,
     /**
      * Sets score_results
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAssessmentStudentObjectiveAssessmentScoreResult[]|null $score_results An unordered collection of studentAssessmentStudentObjectiveAssessmentScoreResults. A meaningful score or statistical expression of the performance of an individual. The results can be expressed as a number, percentile, range, level, etc.
+     * @param \Resources\Model\EdFiStudentAssessmentStudentObjectiveAssessmentScoreResult[]|null $score_results An unordered collection of studentAssessmentStudentObjectiveAssessmentScoreResults. A meaningful score or statistical expression of the performance of an individual. The results can be expressed as a number, percentile, range, level, etc.
      *
      * @return self
      */

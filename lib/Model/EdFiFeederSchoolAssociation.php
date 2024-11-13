@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiFeederSchoolAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
-        'feeder_school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
+        'feeder_school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
         'end_date' => '\DateTime',
         'feeder_relationship_description' => 'string',
         '_etag' => 'string',
@@ -412,7 +412,7 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets feeder_school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getFeederSchoolReference()
     {
@@ -422,7 +422,7 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets feeder_school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $feeder_school_reference feeder_school_reference
+     * @param \Resources\Model\EdFiSchoolReference $feeder_school_reference feeder_school_reference
      *
      * @return self
      */
@@ -439,7 +439,7 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -449,7 +449,7 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */

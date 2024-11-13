@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **begin_date** | **\DateTime** | Start date for the association of staff to this program. |
-**program_reference** | [**\OpenAPI\Client\Model\EdFiProgramReference**](EdFiProgramReference.md) |  |
-**staff_reference** | [**\OpenAPI\Client\Model\EdFiStaffReference**](EdFiStaffReference.md) |  |
+**program_reference** | [**\Resources\Model\EdFiProgramReference**](EdFiProgramReference.md) |  |
+**staff_reference** | [**\Resources\Model\EdFiStaffReference**](EdFiStaffReference.md) |  |
 **end_date** | **\DateTime** | End date for the association of staff to this program. | [optional]
 **student_record_access** | **bool** | Indicator of whether the staff has access to the student records of the program per district interpretation of FERPA and other privacy laws, regulations, and policies. | [optional]
 **_etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional]

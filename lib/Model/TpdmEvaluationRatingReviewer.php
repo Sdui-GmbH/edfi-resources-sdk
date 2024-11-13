@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmEvaluationRatingReviewer Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TpdmEvaluationRatingReviewer implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_surname' => 'string',
-        'reviewer_person_reference' => '\OpenAPI\Client\Model\EdFiPersonReference',
-        'received_training' => '\OpenAPI\Client\Model\TpdmEvaluationRatingReviewerReceivedTraining'
+        'reviewer_person_reference' => '\Resources\Model\EdFiPersonReference',
+        'received_training' => '\Resources\Model\TpdmEvaluationRatingReviewerReceivedTraining'
     ];
 
     /**
@@ -403,7 +403,7 @@ class TpdmEvaluationRatingReviewer implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets reviewer_person_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiPersonReference|null
+     * @return \Resources\Model\EdFiPersonReference|null
      */
     public function getReviewerPersonReference()
     {
@@ -413,7 +413,7 @@ class TpdmEvaluationRatingReviewer implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets reviewer_person_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiPersonReference|null $reviewer_person_reference reviewer_person_reference
+     * @param \Resources\Model\EdFiPersonReference|null $reviewer_person_reference reviewer_person_reference
      *
      * @return self
      */
@@ -430,7 +430,7 @@ class TpdmEvaluationRatingReviewer implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets received_training
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationRatingReviewerReceivedTraining|null
+     * @return \Resources\Model\TpdmEvaluationRatingReviewerReceivedTraining|null
      */
     public function getReceivedTraining()
     {
@@ -440,7 +440,7 @@ class TpdmEvaluationRatingReviewer implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets received_training
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationRatingReviewerReceivedTraining|null $received_training received_training
+     * @param \Resources\Model\TpdmEvaluationRatingReviewerReceivedTraining|null $received_training received_training
      *
      * @return self
      */

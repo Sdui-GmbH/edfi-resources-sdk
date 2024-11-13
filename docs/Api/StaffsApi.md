@@ -1,4 +1,4 @@
-# OpenAPI\Client\StaffsApi
+# Resources\StaffsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffsApi(
+$apiInstance = new Resources\Api\StaffsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesStaffs()`
 
 ```php
-deletesStaffs($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStaffDelete[]
+deletesStaffs($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStaffDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffsApi(
+$apiInstance = new Resources\Api\StaffsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStaffDelete[]**](../Model/TrackedChangesEdFiStaffDelete.md)
+[**\Resources\Model\TrackedChangesEdFiStaffDelete[]**](../Model/TrackedChangesEdFiStaffDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getStaffs()`
 
 ```php
-getStaffs($offset, $limit, $min_change_version, $max_change_version, $total_count, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot): \OpenAPI\Client\Model\EdFiStaff[]
+getStaffs($offset, $limit, $min_change_version, $max_change_version, $total_count, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot): \Resources\Model\EdFiStaff[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffsApi(
+$apiInstance = new Resources\Api\StaffsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -243,7 +243,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStaff[]**](../Model/EdFiStaff.md)
+[**\Resources\Model\EdFiStaff[]**](../Model/EdFiStaff.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ try {
 ## `getStaffsById()`
 
 ```php
-getStaffsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiStaff
+getStaffsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiStaff
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -276,10 +276,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffsApi(
+$apiInstance = new Resources\Api\StaffsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -307,7 +307,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStaff**](../Model/EdFiStaff.md)
+[**\Resources\Model\EdFiStaff**](../Model/EdFiStaff.md)
 
 ### Authorization
 
@@ -325,7 +325,7 @@ try {
 ## `keyChangesStaffs()`
 
 ```php
-keyChangesStaffs($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStaffKeyChange[]
+keyChangesStaffs($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStaffKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -340,10 +340,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffsApi(
+$apiInstance = new Resources\Api\StaffsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -377,7 +377,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStaffKeyChange[]**](../Model/TrackedChangesEdFiStaffKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiStaffKeyChange[]**](../Model/TrackedChangesEdFiStaffKeyChange.md)
 
 ### Authorization
 
@@ -410,16 +410,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffsApi(
+$apiInstance = new Resources\Api\StaffsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_staff = new \OpenAPI\Client\Model\EdFiStaff(); // \OpenAPI\Client\Model\EdFiStaff | The JSON representation of the \"staff\" resource to be created or updated.
+$ed_fi_staff = new \Resources\Model\EdFiStaff(); // \Resources\Model\EdFiStaff | The JSON representation of the \"staff\" resource to be created or updated.
 
 try {
     $apiInstance->postStaff($ed_fi_staff);
@@ -432,7 +432,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_staff** | [**\OpenAPI\Client\Model\EdFiStaff**](../Model/EdFiStaff.md)| The JSON representation of the \&quot;staff\&quot; resource to be created or updated. | |
+| **ed_fi_staff** | [**\Resources\Model\EdFiStaff**](../Model/EdFiStaff.md)| The JSON representation of the \&quot;staff\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -469,17 +469,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StaffsApi(
+$apiInstance = new Resources\Api\StaffsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_staff = new \OpenAPI\Client\Model\EdFiStaff(); // \OpenAPI\Client\Model\EdFiStaff | The JSON representation of the \"staff\" resource to be created or updated.
+$ed_fi_staff = new \Resources\Model\EdFiStaff(); // \Resources\Model\EdFiStaff | The JSON representation of the \"staff\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -494,7 +494,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_staff** | [**\OpenAPI\Client\Model\EdFiStaff**](../Model/EdFiStaff.md)| The JSON representation of the \&quot;staff\&quot; resource to be created or updated. | |
+| **ed_fi_staff** | [**\Resources\Model\EdFiStaff**](../Model/EdFiStaff.md)| The JSON representation of the \&quot;staff\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

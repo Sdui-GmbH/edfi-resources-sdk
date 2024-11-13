@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **rubric_rating** | **int** | The rating achieved for the rubric dimension. |
-**evaluation_element_reference** | [**\OpenAPI\Client\Model\TpdmEvaluationElementReference**](TpdmEvaluationElementReference.md) |  |
+**evaluation_element_reference** | [**\Resources\Model\TpdmEvaluationElementReference**](TpdmEvaluationElementReference.md) |  |
 **criterion_description** | **string** | The criterion description for the rubric dimension. |
 **dimension_order** | **int** | The order for the rubric dimension. | [optional]
 **rubric_rating_level_descriptor** | **string** | The rating level achieved for the rubric dimension. | [optional]

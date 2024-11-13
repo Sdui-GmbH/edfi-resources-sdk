@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **evaluation_rubric_rating** | **int** | The numeric rating associated with the evaluation rubric dimension. |
-**program_evaluation_element_reference** | [**\OpenAPI\Client\Model\EdFiProgramEvaluationElementReference**](EdFiProgramEvaluationElementReference.md) |  |
+**program_evaluation_element_reference** | [**\Resources\Model\EdFiProgramEvaluationElementReference**](EdFiProgramEvaluationElementReference.md) |  |
 **evaluation_criterion_description** | **string** | The evaluation criterion description for the evaluation rubric dimension. |
 **evaluation_rubric_rating_level_descriptor** | **string** | The rating level achieved for the evaluation rubric dimension. | [optional]
 **rubric_dimension_sort_order** | **int** | The sort order of the rubric dimension. | [optional]

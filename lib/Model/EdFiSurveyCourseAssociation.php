@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSurveyCourseAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class EdFiSurveyCourseAssociation implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'course_reference' => '\OpenAPI\Client\Model\EdFiCourseReference',
-        'survey_reference' => '\OpenAPI\Client\Model\EdFiSurveyReference',
+        'course_reference' => '\Resources\Model\EdFiCourseReference',
+        'survey_reference' => '\Resources\Model\EdFiSurveyReference',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -353,7 +353,7 @@ class EdFiSurveyCourseAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets course_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCourseReference
+     * @return \Resources\Model\EdFiCourseReference
      */
     public function getCourseReference()
     {
@@ -363,7 +363,7 @@ class EdFiSurveyCourseAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets course_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCourseReference $course_reference course_reference
+     * @param \Resources\Model\EdFiCourseReference $course_reference course_reference
      *
      * @return self
      */
@@ -380,7 +380,7 @@ class EdFiSurveyCourseAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets survey_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveyReference
+     * @return \Resources\Model\EdFiSurveyReference
      */
     public function getSurveyReference()
     {
@@ -390,7 +390,7 @@ class EdFiSurveyCourseAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets survey_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveyReference $survey_reference survey_reference
+     * @param \Resources\Model\EdFiSurveyReference $survey_reference survey_reference
      *
      * @return self
      */

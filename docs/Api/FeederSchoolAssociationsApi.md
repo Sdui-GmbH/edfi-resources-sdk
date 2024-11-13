@@ -1,4 +1,4 @@
-# OpenAPI\Client\FeederSchoolAssociationsApi
+# Resources\FeederSchoolAssociationsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FeederSchoolAssociationsApi(
+$apiInstance = new Resources\Api\FeederSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesFeederSchoolAssociations()`
 
 ```php
-deletesFeederSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiFeederSchoolAssociationDelete[]
+deletesFeederSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiFeederSchoolAssociationDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FeederSchoolAssociationsApi(
+$apiInstance = new Resources\Api\FeederSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiFeederSchoolAssociationDelete[]**](../Model/TrackedChangesEdFiFeederSchoolAssociationDelete.md)
+[**\Resources\Model\TrackedChangesEdFiFeederSchoolAssociationDelete[]**](../Model/TrackedChangesEdFiFeederSchoolAssociationDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getFeederSchoolAssociations()`
 
 ```php
-getFeederSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $feeder_school_id, $school_id, $end_date, $feeder_relationship_description, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiFeederSchoolAssociation[]
+getFeederSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $feeder_school_id, $school_id, $end_date, $feeder_relationship_description, $id, $use_snapshot): \Resources\Model\EdFiFeederSchoolAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FeederSchoolAssociationsApi(
+$apiInstance = new Resources\Api\FeederSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -211,7 +211,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiFeederSchoolAssociation[]**](../Model/EdFiFeederSchoolAssociation.md)
+[**\Resources\Model\EdFiFeederSchoolAssociation[]**](../Model/EdFiFeederSchoolAssociation.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ try {
 ## `getFeederSchoolAssociationsById()`
 
 ```php
-getFeederSchoolAssociationsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiFeederSchoolAssociation
+getFeederSchoolAssociationsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiFeederSchoolAssociation
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -244,10 +244,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FeederSchoolAssociationsApi(
+$apiInstance = new Resources\Api\FeederSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -275,7 +275,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiFeederSchoolAssociation**](../Model/EdFiFeederSchoolAssociation.md)
+[**\Resources\Model\EdFiFeederSchoolAssociation**](../Model/EdFiFeederSchoolAssociation.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ try {
 ## `keyChangesFeederSchoolAssociations()`
 
 ```php
-keyChangesFeederSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiFeederSchoolAssociationKeyChange[]
+keyChangesFeederSchoolAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiFeederSchoolAssociationKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -308,10 +308,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FeederSchoolAssociationsApi(
+$apiInstance = new Resources\Api\FeederSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -345,7 +345,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiFeederSchoolAssociationKeyChange[]**](../Model/TrackedChangesEdFiFeederSchoolAssociationKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiFeederSchoolAssociationKeyChange[]**](../Model/TrackedChangesEdFiFeederSchoolAssociationKeyChange.md)
 
 ### Authorization
 
@@ -378,16 +378,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FeederSchoolAssociationsApi(
+$apiInstance = new Resources\Api\FeederSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_feeder_school_association = new \OpenAPI\Client\Model\EdFiFeederSchoolAssociation(); // \OpenAPI\Client\Model\EdFiFeederSchoolAssociation | The JSON representation of the \"feederSchoolAssociation\" resource to be created or updated.
+$ed_fi_feeder_school_association = new \Resources\Model\EdFiFeederSchoolAssociation(); // \Resources\Model\EdFiFeederSchoolAssociation | The JSON representation of the \"feederSchoolAssociation\" resource to be created or updated.
 
 try {
     $apiInstance->postFeederSchoolAssociation($ed_fi_feeder_school_association);
@@ -400,7 +400,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_feeder_school_association** | [**\OpenAPI\Client\Model\EdFiFeederSchoolAssociation**](../Model/EdFiFeederSchoolAssociation.md)| The JSON representation of the \&quot;feederSchoolAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_feeder_school_association** | [**\Resources\Model\EdFiFeederSchoolAssociation**](../Model/EdFiFeederSchoolAssociation.md)| The JSON representation of the \&quot;feederSchoolAssociation\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -437,17 +437,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\FeederSchoolAssociationsApi(
+$apiInstance = new Resources\Api\FeederSchoolAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_feeder_school_association = new \OpenAPI\Client\Model\EdFiFeederSchoolAssociation(); // \OpenAPI\Client\Model\EdFiFeederSchoolAssociation | The JSON representation of the \"feederSchoolAssociation\" resource to be created or updated.
+$ed_fi_feeder_school_association = new \Resources\Model\EdFiFeederSchoolAssociation(); // \Resources\Model\EdFiFeederSchoolAssociation | The JSON representation of the \"feederSchoolAssociation\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -462,7 +462,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_feeder_school_association** | [**\OpenAPI\Client\Model\EdFiFeederSchoolAssociation**](../Model/EdFiFeederSchoolAssociation.md)| The JSON representation of the \&quot;feederSchoolAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_feeder_school_association** | [**\Resources\Model\EdFiFeederSchoolAssociation**](../Model/EdFiFeederSchoolAssociation.md)| The JSON representation of the \&quot;feederSchoolAssociation\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

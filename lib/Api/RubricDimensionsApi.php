@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * RubricDimensionsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class RubricDimensionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRubricDimensionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class RubricDimensionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRubricDimensionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class RubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionDelete[]
+     * @return \Resources\Model\TrackedChangesTpdmRubricDimensionDelete[]
      */
     public function deletesRubricDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesRubricDimensions'][0])
     {
@@ -407,9 +407,9 @@ class RubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmRubricDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesRubricDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesRubricDimensions'][0])
     {
@@ -440,11 +440,11 @@ class RubricDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmRubricDimensionDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmRubricDimensionDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class RubricDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmRubricDimensionDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class RubricDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmRubricDimensionDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class RubricDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionDelete[]',
+                        '\Resources\Model\TrackedChangesTpdmRubricDimensionDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class RubricDimensionsApi
      */
     public function deletesRubricDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesRubricDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmRubricDimensionDelete[]';
         $request = $this->deletesRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -781,9 +781,9 @@ class RubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmRubricDimension[]
+     * @return \Resources\Model\TpdmRubricDimension[]
      */
     public function getRubricDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rubric_rating = null, $education_organization_id = null, $evaluation_element_title = null, $evaluation_objective_title = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $rubric_rating_level_descriptor = null, $criterion_description = null, $dimension_order = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getRubricDimensions'][0])
     {
@@ -818,9 +818,9 @@ class RubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmRubricDimension[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmRubricDimension[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getRubricDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rubric_rating = null, $education_organization_id = null, $evaluation_element_title = null, $evaluation_objective_title = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $rubric_rating_level_descriptor = null, $criterion_description = null, $dimension_order = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getRubricDimensions'][0])
     {
@@ -851,11 +851,11 @@ class RubricDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmRubricDimension[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmRubricDimension[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmRubricDimension[]' !== 'string') {
+                        if ('\Resources\Model\TpdmRubricDimension[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -873,7 +873,7 @@ class RubricDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmRubricDimension[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmRubricDimension[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -892,7 +892,7 @@ class RubricDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmRubricDimension[]';
+            $returnType = '\Resources\Model\TpdmRubricDimension[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -925,7 +925,7 @@ class RubricDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmRubricDimension[]',
+                        '\Resources\Model\TpdmRubricDimension[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1007,7 +1007,7 @@ class RubricDimensionsApi
      */
     public function getRubricDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rubric_rating = null, $education_organization_id = null, $evaluation_element_title = null, $evaluation_objective_title = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $rubric_rating_level_descriptor = null, $criterion_description = null, $dimension_order = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getRubricDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmRubricDimension[]';
+        $returnType = '\Resources\Model\TpdmRubricDimension[]';
         $request = $this->getRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $rubric_rating, $education_organization_id, $evaluation_element_title, $evaluation_objective_title, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $rubric_rating_level_descriptor, $criterion_description, $dimension_order, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1384,9 +1384,9 @@ class RubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRubricDimensionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmRubricDimension
+     * @return \Resources\Model\TpdmRubricDimension
      */
     public function getRubricDimensionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getRubricDimensionsById'][0])
     {
@@ -1404,9 +1404,9 @@ class RubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRubricDimensionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmRubricDimension, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmRubricDimension, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRubricDimensionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getRubricDimensionsById'][0])
     {
@@ -1437,11 +1437,11 @@ class RubricDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmRubricDimension' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmRubricDimension' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmRubricDimension' !== 'string') {
+                        if ('\Resources\Model\TpdmRubricDimension' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1459,7 +1459,7 @@ class RubricDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmRubricDimension', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmRubricDimension', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1478,7 +1478,7 @@ class RubricDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmRubricDimension';
+            $returnType = '\Resources\Model\TpdmRubricDimension';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1511,7 +1511,7 @@ class RubricDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmRubricDimension',
+                        '\Resources\Model\TpdmRubricDimension',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1559,7 +1559,7 @@ class RubricDimensionsApi
      */
     public function getRubricDimensionsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getRubricDimensionsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmRubricDimension';
+        $returnType = '\Resources\Model\TpdmRubricDimension';
         $request = $this->getRubricDimensionsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1719,9 +1719,9 @@ class RubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionKeyChange[]
+     * @return \Resources\Model\TrackedChangesTpdmRubricDimensionKeyChange[]
      */
     public function keyChangesRubricDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesRubricDimensions'][0])
     {
@@ -1742,9 +1742,9 @@ class RubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmRubricDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesRubricDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesRubricDimensions'][0])
     {
@@ -1775,11 +1775,11 @@ class RubricDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmRubricDimensionKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmRubricDimensionKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1797,7 +1797,7 @@ class RubricDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmRubricDimensionKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1816,7 +1816,7 @@ class RubricDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmRubricDimensionKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1849,7 +1849,7 @@ class RubricDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionKeyChange[]',
+                        '\Resources\Model\TrackedChangesTpdmRubricDimensionKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1903,7 +1903,7 @@ class RubricDimensionsApi
      */
     public function keyChangesRubricDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesRubricDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmRubricDimensionKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmRubricDimensionKeyChange[]';
         $request = $this->keyChangesRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2094,10 +2094,10 @@ class RubricDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postRubricDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2111,10 +2111,10 @@ class RubricDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postRubricDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2159,7 +2159,7 @@ class RubricDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postRubricDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2180,7 +2180,7 @@ class RubricDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postRubricDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2217,7 +2217,7 @@ class RubricDimensionsApi
     /**
      * Create request for operation 'postRubricDimension'
      *
-     * @param  \OpenAPI\Client\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postRubricDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2315,11 +2315,11 @@ class RubricDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putRubricDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2334,11 +2334,11 @@ class RubricDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putRubricDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2384,7 +2384,7 @@ class RubricDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putRubricDimension'] to see the possible values for this operation
      *
@@ -2407,7 +2407,7 @@ class RubricDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putRubricDimension'] to see the possible values for this operation
      *
@@ -2446,7 +2446,7 @@ class RubricDimensionsApi
      * Create request for operation 'putRubricDimension'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmRubricDimension $tpdm_rubric_dimension The JSON representation of the \&quot;rubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putRubricDimension'] to see the possible values for this operation
      *

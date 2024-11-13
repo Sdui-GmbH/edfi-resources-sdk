@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentGradebookEntry Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class EdFiStudentGradebookEntry implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'gradebook_entry_reference' => '\OpenAPI\Client\Model\EdFiGradebookEntryReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'gradebook_entry_reference' => '\Resources\Model\EdFiGradebookEntryReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'assignment_late_status_descriptor' => 'string',
         'competency_level_descriptor' => 'string',
         'date_fulfilled' => '\DateTime',
@@ -444,7 +444,7 @@ class EdFiStudentGradebookEntry implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets gradebook_entry_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiGradebookEntryReference
+     * @return \Resources\Model\EdFiGradebookEntryReference
      */
     public function getGradebookEntryReference()
     {
@@ -454,7 +454,7 @@ class EdFiStudentGradebookEntry implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets gradebook_entry_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiGradebookEntryReference $gradebook_entry_reference gradebook_entry_reference
+     * @param \Resources\Model\EdFiGradebookEntryReference $gradebook_entry_reference gradebook_entry_reference
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class EdFiStudentGradebookEntry implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -481,7 +481,7 @@ class EdFiStudentGradebookEntry implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmCandidateLanguage Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class TpdmCandidateLanguage implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'language_descriptor' => 'string',
-        'uses' => '\OpenAPI\Client\Model\TpdmCandidateLanguageUse[]'
+        'uses' => '\Resources\Model\TpdmCandidateLanguageUse[]'
     ];
 
     /**
@@ -337,7 +337,7 @@ class TpdmCandidateLanguage implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets uses
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateLanguageUse[]|null
+     * @return \Resources\Model\TpdmCandidateLanguageUse[]|null
      */
     public function getUses()
     {
@@ -347,7 +347,7 @@ class TpdmCandidateLanguage implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets uses
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateLanguageUse[]|null $uses An unordered collection of candidateLanguageUses. A description of how the language is used (e.g. Home Language, Native Language, Spoken Language).
+     * @param \Resources\Model\TpdmCandidateLanguageUse[]|null $uses An unordered collection of candidateLanguageUses. A description of how the language is used (e.g. Home Language, Native Language, Spoken Language).
      *
      * @return self
      */

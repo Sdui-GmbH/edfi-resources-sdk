@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramService Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramServic
         'primary_indicator' => 'bool',
         'service_begin_date' => '\DateTime',
         'service_end_date' => '\DateTime',
-        'providers' => '\OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramServiceProvider[]'
+        'providers' => '\Resources\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramServiceProvider[]'
     ];
 
     /**
@@ -460,7 +460,7 @@ class EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramServic
     /**
      * Gets providers
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramServiceProvider[]|null
+     * @return \Resources\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramServiceProvider[]|null
      */
     public function getProviders()
     {
@@ -470,7 +470,7 @@ class EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramServic
     /**
      * Sets providers
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramServiceProvider[]|null $providers An unordered collection of studentSpecialEducationProgramAssociationSpecialEducationProgramServiceProviders. The staff providing the service to the student.
+     * @param \Resources\Model\EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramServiceProvider[]|null $providers An unordered collection of studentSpecialEducationProgramAssociationSpecialEducationProgramServiceProviders. The staff providing the service to the student.
      *
      * @return self
      */

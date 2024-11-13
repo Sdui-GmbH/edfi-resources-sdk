@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * EducationOrganizationPeerAssociationsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class EducationOrganizationPeerAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEducationOrganizationPeerAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class EducationOrganizationPeerAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEducationOrganizationPeerAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class EducationOrganizationPeerAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducationOrganizationPeerAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]
      */
     public function deletesEducationOrganizationPeerAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationOrganizationPeerAssociations'][0])
     {
@@ -407,9 +407,9 @@ class EducationOrganizationPeerAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducationOrganizationPeerAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesEducationOrganizationPeerAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationOrganizationPeerAssociations'][0])
     {
@@ -440,11 +440,11 @@ class EducationOrganizationPeerAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class EducationOrganizationPeerAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class EducationOrganizationPeerAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class EducationOrganizationPeerAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class EducationOrganizationPeerAssociationsApi
      */
     public function deletesEducationOrganizationPeerAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationOrganizationPeerAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationDelete[]';
         $request = $this->deletesEducationOrganizationPeerAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -770,9 +770,9 @@ class EducationOrganizationPeerAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationPeerAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation[]
+     * @return \Resources\Model\EdFiEducationOrganizationPeerAssociation[]
      */
     public function getEducationOrganizationPeerAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $peer_education_organization_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationPeerAssociations'][0])
     {
@@ -796,9 +796,9 @@ class EducationOrganizationPeerAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationPeerAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiEducationOrganizationPeerAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEducationOrganizationPeerAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $peer_education_organization_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationPeerAssociations'][0])
     {
@@ -829,11 +829,11 @@ class EducationOrganizationPeerAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiEducationOrganizationPeerAssociation[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation[]' !== 'string') {
+                        if ('\Resources\Model\EdFiEducationOrganizationPeerAssociation[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -851,7 +851,7 @@ class EducationOrganizationPeerAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiEducationOrganizationPeerAssociation[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -870,7 +870,7 @@ class EducationOrganizationPeerAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation[]';
+            $returnType = '\Resources\Model\EdFiEducationOrganizationPeerAssociation[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -903,7 +903,7 @@ class EducationOrganizationPeerAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation[]',
+                        '\Resources\Model\EdFiEducationOrganizationPeerAssociation[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -963,7 +963,7 @@ class EducationOrganizationPeerAssociationsApi
      */
     public function getEducationOrganizationPeerAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $peer_education_organization_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationPeerAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation[]';
+        $returnType = '\Resources\Model\EdFiEducationOrganizationPeerAssociation[]';
         $request = $this->getEducationOrganizationPeerAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_id, $peer_education_organization_id, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1192,9 +1192,9 @@ class EducationOrganizationPeerAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationPeerAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation
+     * @return \Resources\Model\EdFiEducationOrganizationPeerAssociation
      */
     public function getEducationOrganizationPeerAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationPeerAssociationsById'][0])
     {
@@ -1212,9 +1212,9 @@ class EducationOrganizationPeerAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationPeerAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiEducationOrganizationPeerAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEducationOrganizationPeerAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationPeerAssociationsById'][0])
     {
@@ -1245,11 +1245,11 @@ class EducationOrganizationPeerAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiEducationOrganizationPeerAssociation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation' !== 'string') {
+                        if ('\Resources\Model\EdFiEducationOrganizationPeerAssociation' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1267,7 +1267,7 @@ class EducationOrganizationPeerAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiEducationOrganizationPeerAssociation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1286,7 +1286,7 @@ class EducationOrganizationPeerAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation';
+            $returnType = '\Resources\Model\EdFiEducationOrganizationPeerAssociation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1319,7 +1319,7 @@ class EducationOrganizationPeerAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation',
+                        '\Resources\Model\EdFiEducationOrganizationPeerAssociation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1367,7 +1367,7 @@ class EducationOrganizationPeerAssociationsApi
      */
     public function getEducationOrganizationPeerAssociationsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationPeerAssociationsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation';
+        $returnType = '\Resources\Model\EdFiEducationOrganizationPeerAssociation';
         $request = $this->getEducationOrganizationPeerAssociationsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1527,9 +1527,9 @@ class EducationOrganizationPeerAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducationOrganizationPeerAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]
      */
     public function keyChangesEducationOrganizationPeerAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationOrganizationPeerAssociations'][0])
     {
@@ -1550,9 +1550,9 @@ class EducationOrganizationPeerAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducationOrganizationPeerAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesEducationOrganizationPeerAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationOrganizationPeerAssociations'][0])
     {
@@ -1583,11 +1583,11 @@ class EducationOrganizationPeerAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1605,7 +1605,7 @@ class EducationOrganizationPeerAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1624,7 +1624,7 @@ class EducationOrganizationPeerAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1657,7 +1657,7 @@ class EducationOrganizationPeerAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1711,7 +1711,7 @@ class EducationOrganizationPeerAssociationsApi
      */
     public function keyChangesEducationOrganizationPeerAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationOrganizationPeerAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiEducationOrganizationPeerAssociationKeyChange[]';
         $request = $this->keyChangesEducationOrganizationPeerAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1902,10 +1902,10 @@ class EducationOrganizationPeerAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducationOrganizationPeerAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1919,10 +1919,10 @@ class EducationOrganizationPeerAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducationOrganizationPeerAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1967,7 +1967,7 @@ class EducationOrganizationPeerAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducationOrganizationPeerAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1988,7 +1988,7 @@ class EducationOrganizationPeerAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducationOrganizationPeerAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2025,7 +2025,7 @@ class EducationOrganizationPeerAssociationsApi
     /**
      * Create request for operation 'postEducationOrganizationPeerAssociation'
      *
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEducationOrganizationPeerAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2123,11 +2123,11 @@ class EducationOrganizationPeerAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducationOrganizationPeerAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2142,11 +2142,11 @@ class EducationOrganizationPeerAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducationOrganizationPeerAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2192,7 +2192,7 @@ class EducationOrganizationPeerAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducationOrganizationPeerAssociation'] to see the possible values for this operation
      *
@@ -2215,7 +2215,7 @@ class EducationOrganizationPeerAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducationOrganizationPeerAssociation'] to see the possible values for this operation
      *
@@ -2254,7 +2254,7 @@ class EducationOrganizationPeerAssociationsApi
      * Create request for operation 'putEducationOrganizationPeerAssociation'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEducationOrganizationPeerAssociation $ed_fi_education_organization_peer_association The JSON representation of the \&quot;educationOrganizationPeerAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEducationOrganizationPeerAssociation'] to see the possible values for this operation
      *

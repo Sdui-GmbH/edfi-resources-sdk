@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * SectionsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class SectionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSectionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class SectionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSectionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class SectionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSections'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSectionDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiSectionDelete[]
      */
     public function deletesSections($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
     {
@@ -407,9 +407,9 @@ class SectionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSections'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiSectionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiSectionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesSectionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
     {
@@ -440,11 +440,11 @@ class SectionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiSectionDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiSectionDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiSectionDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiSectionDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class SectionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiSectionDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiSectionDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class SectionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSectionDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiSectionDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class SectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiSectionDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiSectionDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class SectionsApi
      */
     public function deletesSectionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSectionDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiSectionDelete[]';
         $request = $this->deletesSectionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -786,9 +786,9 @@ class SectionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSections'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiSection[]
+     * @return \Resources\Model\EdFiSection[]
      */
     public function getSections($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
     {
@@ -828,9 +828,9 @@ class SectionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSections'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiSection[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiSection[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSectionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
     {
@@ -861,11 +861,11 @@ class SectionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiSection[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiSection[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiSection[]' !== 'string') {
+                        if ('\Resources\Model\EdFiSection[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -883,7 +883,7 @@ class SectionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiSection[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiSection[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -902,7 +902,7 @@ class SectionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiSection[]';
+            $returnType = '\Resources\Model\EdFiSection[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -935,7 +935,7 @@ class SectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiSection[]',
+                        '\Resources\Model\EdFiSection[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1027,7 +1027,7 @@ class SectionsApi
      */
     public function getSectionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiSection[]';
+        $returnType = '\Resources\Model\EdFiSection[]';
         $request = $this->getSectionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType);
 
         return $this->client
@@ -1465,9 +1465,9 @@ class SectionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSectionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiSection
+     * @return \Resources\Model\EdFiSection
      */
     public function getSectionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSectionsById'][0])
     {
@@ -1485,9 +1485,9 @@ class SectionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSectionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiSection, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiSection, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSectionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSectionsById'][0])
     {
@@ -1518,11 +1518,11 @@ class SectionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiSection' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiSection' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiSection' !== 'string') {
+                        if ('\Resources\Model\EdFiSection' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1540,7 +1540,7 @@ class SectionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiSection', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiSection', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1559,7 +1559,7 @@ class SectionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiSection';
+            $returnType = '\Resources\Model\EdFiSection';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1592,7 +1592,7 @@ class SectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiSection',
+                        '\Resources\Model\EdFiSection',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1640,7 +1640,7 @@ class SectionsApi
      */
     public function getSectionsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSectionsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiSection';
+        $returnType = '\Resources\Model\EdFiSection';
         $request = $this->getSectionsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1800,9 +1800,9 @@ class SectionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSections'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSectionKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiSectionKeyChange[]
      */
     public function keyChangesSections($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
     {
@@ -1823,9 +1823,9 @@ class SectionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSections'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiSectionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiSectionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesSectionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
     {
@@ -1856,11 +1856,11 @@ class SectionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiSectionKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiSectionKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiSectionKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiSectionKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1878,7 +1878,7 @@ class SectionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiSectionKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiSectionKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1897,7 +1897,7 @@ class SectionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSectionKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiSectionKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1930,7 +1930,7 @@ class SectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiSectionKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiSectionKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1984,7 +1984,7 @@ class SectionsApi
      */
     public function keyChangesSectionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiSectionKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiSectionKeyChange[]';
         $request = $this->keyChangesSectionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2175,10 +2175,10 @@ class SectionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSection'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2192,10 +2192,10 @@ class SectionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSection'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2240,7 +2240,7 @@ class SectionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2261,7 +2261,7 @@ class SectionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2298,7 +2298,7 @@ class SectionsApi
     /**
      * Create request for operation 'postSection'
      *
-     * @param  \OpenAPI\Client\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2396,11 +2396,11 @@ class SectionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSection'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2415,11 +2415,11 @@ class SectionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSection'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2465,7 +2465,7 @@ class SectionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSection'] to see the possible values for this operation
      *
@@ -2488,7 +2488,7 @@ class SectionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSection'] to see the possible values for this operation
      *
@@ -2527,7 +2527,7 @@ class SectionsApi
      * Create request for operation 'putSection'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSection $ed_fi_section The JSON representation of the \&quot;section\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSection'] to see the possible values for this operation
      *

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * FinancialAidsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class FinancialAidsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFinancialAidById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class FinancialAidsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFinancialAidById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class FinancialAidsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesFinancialAids'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidDelete[]
+     * @return \Resources\Model\TrackedChangesTpdmFinancialAidDelete[]
      */
     public function deletesFinancialAids($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
     {
@@ -407,9 +407,9 @@ class FinancialAidsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesFinancialAids'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmFinancialAidDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesFinancialAidsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
     {
@@ -440,11 +440,11 @@ class FinancialAidsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmFinancialAidDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmFinancialAidDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class FinancialAidsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmFinancialAidDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class FinancialAidsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmFinancialAidDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class FinancialAidsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidDelete[]',
+                        '\Resources\Model\TrackedChangesTpdmFinancialAidDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class FinancialAidsApi
      */
     public function deletesFinancialAidsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmFinancialAidDelete[]';
         $request = $this->deletesFinancialAidsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -775,9 +775,9 @@ class FinancialAidsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFinancialAids'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmFinancialAid[]
+     * @return \Resources\Model\TpdmFinancialAid[]
      */
     public function getFinancialAids($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
     {
@@ -806,9 +806,9 @@ class FinancialAidsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFinancialAids'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmFinancialAid[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmFinancialAid[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getFinancialAidsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
     {
@@ -839,11 +839,11 @@ class FinancialAidsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmFinancialAid[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmFinancialAid[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmFinancialAid[]' !== 'string') {
+                        if ('\Resources\Model\TpdmFinancialAid[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -861,7 +861,7 @@ class FinancialAidsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmFinancialAid[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmFinancialAid[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -880,7 +880,7 @@ class FinancialAidsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmFinancialAid[]';
+            $returnType = '\Resources\Model\TpdmFinancialAid[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -913,7 +913,7 @@ class FinancialAidsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmFinancialAid[]',
+                        '\Resources\Model\TpdmFinancialAid[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -983,7 +983,7 @@ class FinancialAidsApi
      */
     public function getFinancialAidsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmFinancialAid[]';
+        $returnType = '\Resources\Model\TpdmFinancialAid[]';
         $request = $this->getFinancialAidsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType);
 
         return $this->client
@@ -1276,9 +1276,9 @@ class FinancialAidsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFinancialAidsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmFinancialAid
+     * @return \Resources\Model\TpdmFinancialAid
      */
     public function getFinancialAidsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAidsById'][0])
     {
@@ -1296,9 +1296,9 @@ class FinancialAidsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFinancialAidsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmFinancialAid, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmFinancialAid, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFinancialAidsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAidsById'][0])
     {
@@ -1329,11 +1329,11 @@ class FinancialAidsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmFinancialAid' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmFinancialAid' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmFinancialAid' !== 'string') {
+                        if ('\Resources\Model\TpdmFinancialAid' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1351,7 +1351,7 @@ class FinancialAidsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmFinancialAid', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmFinancialAid', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1370,7 +1370,7 @@ class FinancialAidsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmFinancialAid';
+            $returnType = '\Resources\Model\TpdmFinancialAid';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1403,7 +1403,7 @@ class FinancialAidsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmFinancialAid',
+                        '\Resources\Model\TpdmFinancialAid',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1451,7 +1451,7 @@ class FinancialAidsApi
      */
     public function getFinancialAidsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAidsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmFinancialAid';
+        $returnType = '\Resources\Model\TpdmFinancialAid';
         $request = $this->getFinancialAidsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1611,9 +1611,9 @@ class FinancialAidsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesFinancialAids'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidKeyChange[]
+     * @return \Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]
      */
     public function keyChangesFinancialAids($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
     {
@@ -1634,9 +1634,9 @@ class FinancialAidsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesFinancialAids'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesFinancialAidsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
     {
@@ -1667,11 +1667,11 @@ class FinancialAidsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1689,7 +1689,7 @@ class FinancialAidsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1708,7 +1708,7 @@ class FinancialAidsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1741,7 +1741,7 @@ class FinancialAidsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidKeyChange[]',
+                        '\Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1795,7 +1795,7 @@ class FinancialAidsApi
      */
     public function keyChangesFinancialAidsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmFinancialAidKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]';
         $request = $this->keyChangesFinancialAidsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1986,10 +1986,10 @@ class FinancialAidsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFinancialAid'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2003,10 +2003,10 @@ class FinancialAidsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFinancialAid'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2051,7 +2051,7 @@ class FinancialAidsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFinancialAid'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2072,7 +2072,7 @@ class FinancialAidsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFinancialAid'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2109,7 +2109,7 @@ class FinancialAidsApi
     /**
      * Create request for operation 'postFinancialAid'
      *
-     * @param  \OpenAPI\Client\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postFinancialAid'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2207,11 +2207,11 @@ class FinancialAidsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putFinancialAid'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2226,11 +2226,11 @@ class FinancialAidsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putFinancialAid'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2276,7 +2276,7 @@ class FinancialAidsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putFinancialAid'] to see the possible values for this operation
      *
@@ -2299,7 +2299,7 @@ class FinancialAidsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putFinancialAid'] to see the possible values for this operation
      *
@@ -2338,7 +2338,7 @@ class FinancialAidsApi
      * Create request for operation 'putFinancialAid'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmFinancialAid $tpdm_financial_aid The JSON representation of the \&quot;financialAid\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putFinancialAid'] to see the possible values for this operation
      *

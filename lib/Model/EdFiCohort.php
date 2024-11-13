@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiCohort Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,12 +59,12 @@ class EdFiCohort implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'cohort_identifier' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
         'academic_subject_descriptor' => 'string',
         'cohort_description' => 'string',
         'cohort_scope_descriptor' => 'string',
         'cohort_type_descriptor' => 'string',
-        'programs' => '\OpenAPI\Client\Model\EdFiCohortProgram[]',
+        'programs' => '\Resources\Model\EdFiCohortProgram[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -453,7 +453,7 @@ class EdFiCohort implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -463,7 +463,7 @@ class EdFiCohort implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -628,7 +628,7 @@ class EdFiCohort implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets programs
      *
-     * @return \OpenAPI\Client\Model\EdFiCohortProgram[]|null
+     * @return \Resources\Model\EdFiCohortProgram[]|null
      */
     public function getPrograms()
     {
@@ -638,7 +638,7 @@ class EdFiCohort implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets programs
      *
-     * @param \OpenAPI\Client\Model\EdFiCohortProgram[]|null $programs An unordered collection of cohortPrograms. The (optional) program associated with this cohort (e.g., special education).
+     * @param \Resources\Model\EdFiCohortProgram[]|null $programs An unordered collection of cohortPrograms. The (optional) program associated with this cohort (e.g., special education).
      *
      * @return self
      */

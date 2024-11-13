@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * ProgramEvaluationsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class ProgramEvaluationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProgramEvaluationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class ProgramEvaluationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteProgramEvaluationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class ProgramEvaluationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesProgramEvaluations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiProgramEvaluationDelete[]
      */
     public function deletesProgramEvaluations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluations'][0])
     {
@@ -407,9 +407,9 @@ class ProgramEvaluationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesProgramEvaluations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiProgramEvaluationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesProgramEvaluationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluations'][0])
     {
@@ -440,11 +440,11 @@ class ProgramEvaluationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiProgramEvaluationDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiProgramEvaluationDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class ProgramEvaluationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiProgramEvaluationDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class ProgramEvaluationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiProgramEvaluationDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class ProgramEvaluationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiProgramEvaluationDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class ProgramEvaluationsApi
      */
     public function deletesProgramEvaluationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiProgramEvaluationDelete[]';
         $request = $this->deletesProgramEvaluationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -777,9 +777,9 @@ class ProgramEvaluationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramEvaluations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiProgramEvaluation[]
+     * @return \Resources\Model\EdFiProgramEvaluation[]
      */
     public function getProgramEvaluations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_period_descriptor = null, $program_evaluation_type_descriptor = null, $program_evaluation_title = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $evaluation_max_numeric_rating = null, $evaluation_min_numeric_rating = null, $id = null, $program_evaluation_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluations'][0])
     {
@@ -810,9 +810,9 @@ class ProgramEvaluationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramEvaluations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiProgramEvaluation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiProgramEvaluation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getProgramEvaluationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_period_descriptor = null, $program_evaluation_type_descriptor = null, $program_evaluation_title = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $evaluation_max_numeric_rating = null, $evaluation_min_numeric_rating = null, $id = null, $program_evaluation_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluations'][0])
     {
@@ -843,11 +843,11 @@ class ProgramEvaluationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiProgramEvaluation[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiProgramEvaluation[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiProgramEvaluation[]' !== 'string') {
+                        if ('\Resources\Model\EdFiProgramEvaluation[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -865,7 +865,7 @@ class ProgramEvaluationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiProgramEvaluation[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiProgramEvaluation[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -884,7 +884,7 @@ class ProgramEvaluationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiProgramEvaluation[]';
+            $returnType = '\Resources\Model\EdFiProgramEvaluation[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -917,7 +917,7 @@ class ProgramEvaluationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiProgramEvaluation[]',
+                        '\Resources\Model\EdFiProgramEvaluation[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -991,7 +991,7 @@ class ProgramEvaluationsApi
      */
     public function getProgramEvaluationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_period_descriptor = null, $program_evaluation_type_descriptor = null, $program_evaluation_title = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $evaluation_max_numeric_rating = null, $evaluation_min_numeric_rating = null, $id = null, $program_evaluation_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiProgramEvaluation[]';
+        $returnType = '\Resources\Model\EdFiProgramEvaluation[]';
         $request = $this->getProgramEvaluationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_evaluation_period_descriptor, $program_evaluation_type_descriptor, $program_evaluation_title, $program_education_organization_id, $program_name, $program_type_descriptor, $evaluation_max_numeric_rating, $evaluation_min_numeric_rating, $id, $program_evaluation_description, $use_snapshot, $contentType);
 
         return $this->client
@@ -1315,9 +1315,9 @@ class ProgramEvaluationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramEvaluationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiProgramEvaluation
+     * @return \Resources\Model\EdFiProgramEvaluation
      */
     public function getProgramEvaluationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationsById'][0])
     {
@@ -1335,9 +1335,9 @@ class ProgramEvaluationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramEvaluationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiProgramEvaluation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiProgramEvaluation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProgramEvaluationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationsById'][0])
     {
@@ -1368,11 +1368,11 @@ class ProgramEvaluationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiProgramEvaluation' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiProgramEvaluation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiProgramEvaluation' !== 'string') {
+                        if ('\Resources\Model\EdFiProgramEvaluation' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1390,7 +1390,7 @@ class ProgramEvaluationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiProgramEvaluation', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiProgramEvaluation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1409,7 +1409,7 @@ class ProgramEvaluationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiProgramEvaluation';
+            $returnType = '\Resources\Model\EdFiProgramEvaluation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1442,7 +1442,7 @@ class ProgramEvaluationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiProgramEvaluation',
+                        '\Resources\Model\EdFiProgramEvaluation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1490,7 +1490,7 @@ class ProgramEvaluationsApi
      */
     public function getProgramEvaluationsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiProgramEvaluation';
+        $returnType = '\Resources\Model\EdFiProgramEvaluation';
         $request = $this->getProgramEvaluationsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1650,9 +1650,9 @@ class ProgramEvaluationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesProgramEvaluations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]
      */
     public function keyChangesProgramEvaluations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluations'][0])
     {
@@ -1673,9 +1673,9 @@ class ProgramEvaluationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesProgramEvaluations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiProgramEvaluationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesProgramEvaluationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluations'][0])
     {
@@ -1706,11 +1706,11 @@ class ProgramEvaluationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1728,7 +1728,7 @@ class ProgramEvaluationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1747,7 +1747,7 @@ class ProgramEvaluationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1780,7 +1780,7 @@ class ProgramEvaluationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1834,7 +1834,7 @@ class ProgramEvaluationsApi
      */
     public function keyChangesProgramEvaluationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiProgramEvaluationKeyChange[]';
         $request = $this->keyChangesProgramEvaluationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2025,10 +2025,10 @@ class ProgramEvaluationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postProgramEvaluation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2042,10 +2042,10 @@ class ProgramEvaluationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postProgramEvaluation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2090,7 +2090,7 @@ class ProgramEvaluationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postProgramEvaluation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2111,7 +2111,7 @@ class ProgramEvaluationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postProgramEvaluation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2148,7 +2148,7 @@ class ProgramEvaluationsApi
     /**
      * Create request for operation 'postProgramEvaluation'
      *
-     * @param  \OpenAPI\Client\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postProgramEvaluation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2246,11 +2246,11 @@ class ProgramEvaluationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putProgramEvaluation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2265,11 +2265,11 @@ class ProgramEvaluationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putProgramEvaluation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2315,7 +2315,7 @@ class ProgramEvaluationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putProgramEvaluation'] to see the possible values for this operation
      *
@@ -2338,7 +2338,7 @@ class ProgramEvaluationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putProgramEvaluation'] to see the possible values for this operation
      *
@@ -2377,7 +2377,7 @@ class ProgramEvaluationsApi
      * Create request for operation 'putProgramEvaluation'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiProgramEvaluation $ed_fi_program_evaluation The JSON representation of the \&quot;programEvaluation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putProgramEvaluation'] to see the possible values for this operation
      *

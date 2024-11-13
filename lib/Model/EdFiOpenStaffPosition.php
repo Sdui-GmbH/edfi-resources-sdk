@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiOpenStaffPosition Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,12 +59,12 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'id' => 'string',
         'requisition_number' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'academic_subjects' => '\OpenAPI\Client\Model\EdFiOpenStaffPositionAcademicSubject[]',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'academic_subjects' => '\Resources\Model\EdFiOpenStaffPositionAcademicSubject[]',
         'date_posted' => '\DateTime',
         'date_posting_removed' => '\DateTime',
         'employment_status_descriptor' => 'string',
-        'instructional_grade_levels' => '\OpenAPI\Client\Model\EdFiOpenStaffPositionInstructionalGradeLevel[]',
+        'instructional_grade_levels' => '\Resources\Model\EdFiOpenStaffPositionInstructionalGradeLevel[]',
         'position_title' => 'string',
         'posting_result_descriptor' => 'string',
         'program_assignment_descriptor' => 'string',
@@ -491,7 +491,7 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -501,7 +501,7 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets academic_subjects
      *
-     * @return \OpenAPI\Client\Model\EdFiOpenStaffPositionAcademicSubject[]|null
+     * @return \Resources\Model\EdFiOpenStaffPositionAcademicSubject[]|null
      */
     public function getAcademicSubjects()
     {
@@ -528,7 +528,7 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets academic_subjects
      *
-     * @param \OpenAPI\Client\Model\EdFiOpenStaffPositionAcademicSubject[]|null $academic_subjects An unordered collection of openStaffPositionAcademicSubjects. The teaching field required for the open staff position.
+     * @param \Resources\Model\EdFiOpenStaffPositionAcademicSubject[]|null $academic_subjects An unordered collection of openStaffPositionAcademicSubjects. The teaching field required for the open staff position.
      *
      * @return self
      */
@@ -637,7 +637,7 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets instructional_grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiOpenStaffPositionInstructionalGradeLevel[]|null
+     * @return \Resources\Model\EdFiOpenStaffPositionInstructionalGradeLevel[]|null
      */
     public function getInstructionalGradeLevels()
     {
@@ -647,7 +647,7 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets instructional_grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiOpenStaffPositionInstructionalGradeLevel[]|null $instructional_grade_levels An unordered collection of openStaffPositionInstructionalGradeLevels. The set of grade levels for which the position's assignment is responsible.
+     * @param \Resources\Model\EdFiOpenStaffPositionInstructionalGradeLevel[]|null $instructional_grade_levels An unordered collection of openStaffPositionInstructionalGradeLevels. The set of grade levels for which the position's assignment is responsible.
      *
      * @return self
      */

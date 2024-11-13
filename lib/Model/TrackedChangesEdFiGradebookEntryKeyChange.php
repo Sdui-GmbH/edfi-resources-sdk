@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiGradebookEntryKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiGradebookEntryKeyChange implements ModelInterface, Array
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiGradebookEntryKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiGradebookEntryKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiGradebookEntryKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiGradebookEntryKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiGradebookEntryKeyChange implements ModelInterface, Array
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiGradebookEntryKey|null
+     * @return \Resources\Model\TrackedChangesEdFiGradebookEntryKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiGradebookEntryKeyChange implements ModelInterface, Array
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiGradebookEntryKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiGradebookEntryKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiGradebookEntryKeyChange implements ModelInterface, Array
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiGradebookEntryKey|null
+     * @return \Resources\Model\TrackedChangesEdFiGradebookEntryKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiGradebookEntryKeyChange implements ModelInterface, Array
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiGradebookEntryKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiGradebookEntryKey|null $new_key_values new_key_values
      *
      * @return self
      */

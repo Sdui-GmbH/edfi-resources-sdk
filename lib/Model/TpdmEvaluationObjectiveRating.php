@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmEvaluationObjectiveRating Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,11 +58,11 @@ class TpdmEvaluationObjectiveRating implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'evaluation_objective_reference' => '\OpenAPI\Client\Model\TpdmEvaluationObjectiveReference',
-        'evaluation_rating_reference' => '\OpenAPI\Client\Model\TpdmEvaluationRatingReference',
+        'evaluation_objective_reference' => '\Resources\Model\TpdmEvaluationObjectiveReference',
+        'evaluation_rating_reference' => '\Resources\Model\TpdmEvaluationRatingReference',
         'comments' => 'string',
         'objective_rating_level_descriptor' => 'string',
-        'results' => '\OpenAPI\Client\Model\TpdmEvaluationObjectiveRatingResult[]',
+        'results' => '\Resources\Model\TpdmEvaluationObjectiveRatingResult[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -386,7 +386,7 @@ class TpdmEvaluationObjectiveRating implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets evaluation_objective_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationObjectiveReference
+     * @return \Resources\Model\TpdmEvaluationObjectiveReference
      */
     public function getEvaluationObjectiveReference()
     {
@@ -396,7 +396,7 @@ class TpdmEvaluationObjectiveRating implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets evaluation_objective_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationObjectiveReference $evaluation_objective_reference evaluation_objective_reference
+     * @param \Resources\Model\TpdmEvaluationObjectiveReference $evaluation_objective_reference evaluation_objective_reference
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class TpdmEvaluationObjectiveRating implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets evaluation_rating_reference
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationRatingReference
+     * @return \Resources\Model\TpdmEvaluationRatingReference
      */
     public function getEvaluationRatingReference()
     {
@@ -423,7 +423,7 @@ class TpdmEvaluationObjectiveRating implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets evaluation_rating_reference
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationRatingReference $evaluation_rating_reference evaluation_rating_reference
+     * @param \Resources\Model\TpdmEvaluationRatingReference $evaluation_rating_reference evaluation_rating_reference
      *
      * @return self
      */
@@ -519,7 +519,7 @@ class TpdmEvaluationObjectiveRating implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets results
      *
-     * @return \OpenAPI\Client\Model\TpdmEvaluationObjectiveRatingResult[]|null
+     * @return \Resources\Model\TpdmEvaluationObjectiveRatingResult[]|null
      */
     public function getResults()
     {
@@ -529,7 +529,7 @@ class TpdmEvaluationObjectiveRating implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets results
      *
-     * @param \OpenAPI\Client\Model\TpdmEvaluationObjectiveRatingResult[]|null $results An unordered collection of evaluationObjectiveRatingResults. The numerical summary rating or score for the evaluation Objective.
+     * @param \Resources\Model\TpdmEvaluationObjectiveRatingResult[]|null $results An unordered collection of evaluationObjectiveRatingResults. The numerical summary rating or score for the evaluation Objective.
      *
      * @return self
      */

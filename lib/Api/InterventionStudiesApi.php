@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * InterventionStudiesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class InterventionStudiesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteInterventionStudyById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class InterventionStudiesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteInterventionStudyById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class InterventionStudiesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesInterventionStudies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiInterventionStudyDelete[]
      */
     public function deletesInterventionStudies($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionStudies'][0])
     {
@@ -407,9 +407,9 @@ class InterventionStudiesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesInterventionStudies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiInterventionStudyDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesInterventionStudiesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionStudies'][0])
     {
@@ -440,11 +440,11 @@ class InterventionStudiesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiInterventionStudyDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiInterventionStudyDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class InterventionStudiesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiInterventionStudyDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class InterventionStudiesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiInterventionStudyDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class InterventionStudiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiInterventionStudyDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class InterventionStudiesApi
      */
     public function deletesInterventionStudiesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionStudies'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiInterventionStudyDelete[]';
         $request = $this->deletesInterventionStudiesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -775,9 +775,9 @@ class InterventionStudiesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInterventionStudies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiInterventionStudy[]
+     * @return \Resources\Model\EdFiInterventionStudy[]
      */
     public function getInterventionStudies($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_study_identification_code = null, $education_organization_id = null, $intervention_prescription_education_organization_id = null, $intervention_prescription_identification_code = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $participants = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionStudies'][0])
     {
@@ -806,9 +806,9 @@ class InterventionStudiesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInterventionStudies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiInterventionStudy[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiInterventionStudy[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getInterventionStudiesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_study_identification_code = null, $education_organization_id = null, $intervention_prescription_education_organization_id = null, $intervention_prescription_identification_code = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $participants = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionStudies'][0])
     {
@@ -839,11 +839,11 @@ class InterventionStudiesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiInterventionStudy[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiInterventionStudy[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiInterventionStudy[]' !== 'string') {
+                        if ('\Resources\Model\EdFiInterventionStudy[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -861,7 +861,7 @@ class InterventionStudiesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiInterventionStudy[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiInterventionStudy[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -880,7 +880,7 @@ class InterventionStudiesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiInterventionStudy[]';
+            $returnType = '\Resources\Model\EdFiInterventionStudy[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -913,7 +913,7 @@ class InterventionStudiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiInterventionStudy[]',
+                        '\Resources\Model\EdFiInterventionStudy[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -983,7 +983,7 @@ class InterventionStudiesApi
      */
     public function getInterventionStudiesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_study_identification_code = null, $education_organization_id = null, $intervention_prescription_education_organization_id = null, $intervention_prescription_identification_code = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $participants = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionStudies'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiInterventionStudy[]';
+        $returnType = '\Resources\Model\EdFiInterventionStudy[]';
         $request = $this->getInterventionStudiesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $intervention_study_identification_code, $education_organization_id, $intervention_prescription_education_organization_id, $intervention_prescription_identification_code, $delivery_method_descriptor, $intervention_class_descriptor, $id, $participants, $use_snapshot, $contentType);
 
         return $this->client
@@ -1279,9 +1279,9 @@ class InterventionStudiesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInterventionStudiesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiInterventionStudy
+     * @return \Resources\Model\EdFiInterventionStudy
      */
     public function getInterventionStudiesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionStudiesById'][0])
     {
@@ -1299,9 +1299,9 @@ class InterventionStudiesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInterventionStudiesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiInterventionStudy, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiInterventionStudy, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInterventionStudiesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionStudiesById'][0])
     {
@@ -1332,11 +1332,11 @@ class InterventionStudiesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiInterventionStudy' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiInterventionStudy' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiInterventionStudy' !== 'string') {
+                        if ('\Resources\Model\EdFiInterventionStudy' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1354,7 +1354,7 @@ class InterventionStudiesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiInterventionStudy', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiInterventionStudy', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1373,7 +1373,7 @@ class InterventionStudiesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiInterventionStudy';
+            $returnType = '\Resources\Model\EdFiInterventionStudy';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1406,7 +1406,7 @@ class InterventionStudiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiInterventionStudy',
+                        '\Resources\Model\EdFiInterventionStudy',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1454,7 +1454,7 @@ class InterventionStudiesApi
      */
     public function getInterventionStudiesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionStudiesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiInterventionStudy';
+        $returnType = '\Resources\Model\EdFiInterventionStudy';
         $request = $this->getInterventionStudiesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1614,9 +1614,9 @@ class InterventionStudiesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesInterventionStudies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiInterventionStudyKeyChange[]
      */
     public function keyChangesInterventionStudies($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionStudies'][0])
     {
@@ -1637,9 +1637,9 @@ class InterventionStudiesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesInterventionStudies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiInterventionStudyKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesInterventionStudiesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionStudies'][0])
     {
@@ -1670,11 +1670,11 @@ class InterventionStudiesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiInterventionStudyKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiInterventionStudyKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1692,7 +1692,7 @@ class InterventionStudiesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiInterventionStudyKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1711,7 +1711,7 @@ class InterventionStudiesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiInterventionStudyKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1744,7 +1744,7 @@ class InterventionStudiesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiInterventionStudyKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1798,7 +1798,7 @@ class InterventionStudiesApi
      */
     public function keyChangesInterventionStudiesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionStudies'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiInterventionStudyKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiInterventionStudyKeyChange[]';
         $request = $this->keyChangesInterventionStudiesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1989,10 +1989,10 @@ class InterventionStudiesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postInterventionStudy'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2006,10 +2006,10 @@ class InterventionStudiesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postInterventionStudy'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2054,7 +2054,7 @@ class InterventionStudiesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postInterventionStudy'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2075,7 +2075,7 @@ class InterventionStudiesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postInterventionStudy'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2112,7 +2112,7 @@ class InterventionStudiesApi
     /**
      * Create request for operation 'postInterventionStudy'
      *
-     * @param  \OpenAPI\Client\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postInterventionStudy'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2210,11 +2210,11 @@ class InterventionStudiesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putInterventionStudy'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2229,11 +2229,11 @@ class InterventionStudiesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putInterventionStudy'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2279,7 +2279,7 @@ class InterventionStudiesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putInterventionStudy'] to see the possible values for this operation
      *
@@ -2302,7 +2302,7 @@ class InterventionStudiesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putInterventionStudy'] to see the possible values for this operation
      *
@@ -2341,7 +2341,7 @@ class InterventionStudiesApi
      * Create request for operation 'putInterventionStudy'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiInterventionStudy $ed_fi_intervention_study The JSON representation of the \&quot;interventionStudy\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putInterventionStudy'] to see the possible values for this operation
      *

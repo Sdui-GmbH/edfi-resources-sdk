@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * LocalEncumbrancesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class LocalEncumbrancesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalEncumbranceById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class LocalEncumbrancesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalEncumbranceById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class LocalEncumbrancesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalEncumbrances'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalEncumbranceDelete[]
      */
     public function deletesLocalEncumbrances($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalEncumbrances'][0])
     {
@@ -407,9 +407,9 @@ class LocalEncumbrancesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalEncumbrances'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalEncumbranceDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesLocalEncumbrancesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalEncumbrances'][0])
     {
@@ -440,11 +440,11 @@ class LocalEncumbrancesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalEncumbranceDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalEncumbranceDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class LocalEncumbrancesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalEncumbranceDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class LocalEncumbrancesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalEncumbranceDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class LocalEncumbrancesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalEncumbranceDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class LocalEncumbrancesApi
      */
     public function deletesLocalEncumbrancesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalEncumbrances'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalEncumbranceDelete[]';
         $request = $this->deletesLocalEncumbrancesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class LocalEncumbrancesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEncumbrances'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalEncumbrance[]
+     * @return \Resources\Model\EdFiLocalEncumbrance[]
      */
     public function getLocalEncumbrances($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEncumbrances'][0])
     {
@@ -804,9 +804,9 @@ class LocalEncumbrancesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEncumbrances'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalEncumbrance[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalEncumbrance[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalEncumbrancesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEncumbrances'][0])
     {
@@ -837,11 +837,11 @@ class LocalEncumbrancesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalEncumbrance[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalEncumbrance[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalEncumbrance[]' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalEncumbrance[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class LocalEncumbrancesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalEncumbrance[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalEncumbrance[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class LocalEncumbrancesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalEncumbrance[]';
+            $returnType = '\Resources\Model\EdFiLocalEncumbrance[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class LocalEncumbrancesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalEncumbrance[]',
+                        '\Resources\Model\EdFiLocalEncumbrance[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class LocalEncumbrancesApi
      */
     public function getLocalEncumbrancesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEncumbrances'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalEncumbrance[]';
+        $returnType = '\Resources\Model\EdFiLocalEncumbrance[]';
         $request = $this->getLocalEncumbrancesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $financial_collection_descriptor, $amount, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1258,9 +1258,9 @@ class LocalEncumbrancesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEncumbrancesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalEncumbrance
+     * @return \Resources\Model\EdFiLocalEncumbrance
      */
     public function getLocalEncumbrancesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEncumbrancesById'][0])
     {
@@ -1278,9 +1278,9 @@ class LocalEncumbrancesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEncumbrancesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalEncumbrance, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalEncumbrance, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalEncumbrancesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEncumbrancesById'][0])
     {
@@ -1311,11 +1311,11 @@ class LocalEncumbrancesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalEncumbrance' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalEncumbrance' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalEncumbrance' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalEncumbrance' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1333,7 +1333,7 @@ class LocalEncumbrancesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalEncumbrance', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalEncumbrance', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1352,7 +1352,7 @@ class LocalEncumbrancesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalEncumbrance';
+            $returnType = '\Resources\Model\EdFiLocalEncumbrance';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1385,7 +1385,7 @@ class LocalEncumbrancesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalEncumbrance',
+                        '\Resources\Model\EdFiLocalEncumbrance',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1433,7 +1433,7 @@ class LocalEncumbrancesApi
      */
     public function getLocalEncumbrancesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEncumbrancesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalEncumbrance';
+        $returnType = '\Resources\Model\EdFiLocalEncumbrance';
         $request = $this->getLocalEncumbrancesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1593,9 +1593,9 @@ class LocalEncumbrancesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalEncumbrances'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]
      */
     public function keyChangesLocalEncumbrances($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalEncumbrances'][0])
     {
@@ -1616,9 +1616,9 @@ class LocalEncumbrancesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalEncumbrances'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesLocalEncumbrancesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalEncumbrances'][0])
     {
@@ -1649,11 +1649,11 @@ class LocalEncumbrancesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1671,7 +1671,7 @@ class LocalEncumbrancesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1690,7 +1690,7 @@ class LocalEncumbrancesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1723,7 +1723,7 @@ class LocalEncumbrancesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1777,7 +1777,7 @@ class LocalEncumbrancesApi
      */
     public function keyChangesLocalEncumbrancesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalEncumbrances'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalEncumbranceKeyChange[]';
         $request = $this->keyChangesLocalEncumbrancesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1968,10 +1968,10 @@ class LocalEncumbrancesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalEncumbrance'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1985,10 +1985,10 @@ class LocalEncumbrancesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalEncumbrance'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2033,7 +2033,7 @@ class LocalEncumbrancesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalEncumbrance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2054,7 +2054,7 @@ class LocalEncumbrancesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalEncumbrance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2091,7 +2091,7 @@ class LocalEncumbrancesApi
     /**
      * Create request for operation 'postLocalEncumbrance'
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalEncumbrance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2189,11 +2189,11 @@ class LocalEncumbrancesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalEncumbrance'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2208,11 +2208,11 @@ class LocalEncumbrancesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalEncumbrance'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2258,7 +2258,7 @@ class LocalEncumbrancesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalEncumbrance'] to see the possible values for this operation
      *
@@ -2281,7 +2281,7 @@ class LocalEncumbrancesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalEncumbrance'] to see the possible values for this operation
      *
@@ -2320,7 +2320,7 @@ class LocalEncumbrancesApi
      * Create request for operation 'putLocalEncumbrance'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEncumbrance $ed_fi_local_encumbrance The JSON representation of the \&quot;localEncumbrance\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalEncumbrance'] to see the possible values for this operation
      *

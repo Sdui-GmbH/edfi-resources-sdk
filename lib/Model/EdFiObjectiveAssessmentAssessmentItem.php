@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiObjectiveAssessmentAssessmentItem Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiObjectiveAssessmentAssessmentItem implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'assessment_item_reference' => '\OpenAPI\Client\Model\EdFiAssessmentItemReference'
+        'assessment_item_reference' => '\Resources\Model\EdFiAssessmentItemReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiObjectiveAssessmentAssessmentItem implements ModelInterface, ArrayAcce
     /**
      * Gets assessment_item_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentItemReference
+     * @return \Resources\Model\EdFiAssessmentItemReference
      */
     public function getAssessmentItemReference()
     {
@@ -305,7 +305,7 @@ class EdFiObjectiveAssessmentAssessmentItem implements ModelInterface, ArrayAcce
     /**
      * Sets assessment_item_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentItemReference $assessment_item_reference assessment_item_reference
+     * @param \Resources\Model\EdFiAssessmentItemReference $assessment_item_reference assessment_item_reference
      *
      * @return self
      */

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * LocalActualsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class LocalActualsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalActualById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class LocalActualsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalActualById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class LocalActualsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalActuals'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalActualDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalActualDelete[]
      */
     public function deletesLocalActuals($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalActuals'][0])
     {
@@ -407,9 +407,9 @@ class LocalActualsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalActuals'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalActualDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalActualDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesLocalActualsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalActuals'][0])
     {
@@ -440,11 +440,11 @@ class LocalActualsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalActualDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalActualDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class LocalActualsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalActualDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class LocalActualsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalActualDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class LocalActualsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalActualDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class LocalActualsApi
      */
     public function deletesLocalActualsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalActuals'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalActualDelete[]';
         $request = $this->deletesLocalActualsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class LocalActualsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalActuals'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalActual[]
+     * @return \Resources\Model\EdFiLocalActual[]
      */
     public function getLocalActuals($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalActuals'][0])
     {
@@ -804,9 +804,9 @@ class LocalActualsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalActuals'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalActual[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalActual[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalActualsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalActuals'][0])
     {
@@ -837,11 +837,11 @@ class LocalActualsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalActual[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalActual[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalActual[]' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalActual[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class LocalActualsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalActual[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalActual[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class LocalActualsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalActual[]';
+            $returnType = '\Resources\Model\EdFiLocalActual[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class LocalActualsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalActual[]',
+                        '\Resources\Model\EdFiLocalActual[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class LocalActualsApi
      */
     public function getLocalActualsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalActuals'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalActual[]';
+        $returnType = '\Resources\Model\EdFiLocalActual[]';
         $request = $this->getLocalActualsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $financial_collection_descriptor, $amount, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1258,9 +1258,9 @@ class LocalActualsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalActualsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalActual
+     * @return \Resources\Model\EdFiLocalActual
      */
     public function getLocalActualsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalActualsById'][0])
     {
@@ -1278,9 +1278,9 @@ class LocalActualsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalActualsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalActual, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalActual, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalActualsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalActualsById'][0])
     {
@@ -1311,11 +1311,11 @@ class LocalActualsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalActual' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalActual' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalActual' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalActual' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1333,7 +1333,7 @@ class LocalActualsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalActual', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalActual', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1352,7 +1352,7 @@ class LocalActualsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalActual';
+            $returnType = '\Resources\Model\EdFiLocalActual';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1385,7 +1385,7 @@ class LocalActualsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalActual',
+                        '\Resources\Model\EdFiLocalActual',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1433,7 +1433,7 @@ class LocalActualsApi
      */
     public function getLocalActualsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalActualsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalActual';
+        $returnType = '\Resources\Model\EdFiLocalActual';
         $request = $this->getLocalActualsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1593,9 +1593,9 @@ class LocalActualsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalActuals'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalActualKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalActualKeyChange[]
      */
     public function keyChangesLocalActuals($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalActuals'][0])
     {
@@ -1616,9 +1616,9 @@ class LocalActualsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalActuals'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalActualKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalActualKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesLocalActualsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalActuals'][0])
     {
@@ -1649,11 +1649,11 @@ class LocalActualsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalActualKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalActualKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1671,7 +1671,7 @@ class LocalActualsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalActualKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1690,7 +1690,7 @@ class LocalActualsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalActualKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1723,7 +1723,7 @@ class LocalActualsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalActualKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1777,7 +1777,7 @@ class LocalActualsApi
      */
     public function keyChangesLocalActualsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalActuals'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalActualKeyChange[]';
         $request = $this->keyChangesLocalActualsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1968,10 +1968,10 @@ class LocalActualsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalActual'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1985,10 +1985,10 @@ class LocalActualsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalActual'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2033,7 +2033,7 @@ class LocalActualsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalActual'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2054,7 +2054,7 @@ class LocalActualsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalActual'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2091,7 +2091,7 @@ class LocalActualsApi
     /**
      * Create request for operation 'postLocalActual'
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalActual'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2189,11 +2189,11 @@ class LocalActualsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalActual'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2208,11 +2208,11 @@ class LocalActualsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalActual'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2258,7 +2258,7 @@ class LocalActualsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalActual'] to see the possible values for this operation
      *
@@ -2281,7 +2281,7 @@ class LocalActualsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalActual'] to see the possible values for this operation
      *
@@ -2320,7 +2320,7 @@ class LocalActualsApi
      * Create request for operation 'putLocalActual'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalActual $ed_fi_local_actual The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalActual'] to see the possible values for this operation
      *

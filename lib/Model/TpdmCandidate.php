@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmCandidate Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'candidate_identifier' => 'string',
-        'person_reference' => '\OpenAPI\Client\Model\EdFiPersonReference',
-        'addresses' => '\OpenAPI\Client\Model\TpdmCandidateAddress[]',
+        'person_reference' => '\Resources\Model\EdFiPersonReference',
+        'addresses' => '\Resources\Model\TpdmCandidateAddress[]',
         'birth_city' => 'string',
         'birth_country_descriptor' => 'string',
         'birth_date' => '\DateTime',
@@ -68,30 +68,30 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         'birth_sex_descriptor' => 'string',
         'birth_state_abbreviation_descriptor' => 'string',
         'date_entered_us' => '\DateTime',
-        'disabilities' => '\OpenAPI\Client\Model\TpdmCandidateDisability[]',
+        'disabilities' => '\Resources\Model\TpdmCandidateDisability[]',
         'displacement_status' => 'string',
         'economic_disadvantaged' => 'bool',
-        'electronic_mails' => '\OpenAPI\Client\Model\TpdmCandidateElectronicMail[]',
+        'electronic_mails' => '\Resources\Model\TpdmCandidateElectronicMail[]',
         'english_language_exam_descriptor' => 'string',
         'first_generation_student' => 'bool',
         'first_name' => 'string',
         'gender_descriptor' => 'string',
         'generation_code_suffix' => 'string',
         'hispanic_latino_ethnicity' => 'bool',
-        'languages' => '\OpenAPI\Client\Model\TpdmCandidateLanguage[]',
+        'languages' => '\Resources\Model\TpdmCandidateLanguage[]',
         'last_surname' => 'string',
         'limited_english_proficiency_descriptor' => 'string',
         'maiden_name' => 'string',
         'middle_name' => 'string',
         'multiple_birth_status' => 'bool',
-        'other_names' => '\OpenAPI\Client\Model\TpdmCandidateOtherName[]',
-        'personal_identification_documents' => '\OpenAPI\Client\Model\TpdmCandidatePersonalIdentificationDocument[]',
+        'other_names' => '\Resources\Model\TpdmCandidateOtherName[]',
+        'personal_identification_documents' => '\Resources\Model\TpdmCandidatePersonalIdentificationDocument[]',
         'personal_title_prefix' => 'string',
         'preferred_first_name' => 'string',
         'preferred_last_surname' => 'string',
-        'races' => '\OpenAPI\Client\Model\TpdmCandidateRace[]',
+        'races' => '\Resources\Model\TpdmCandidateRace[]',
         'sex_descriptor' => 'string',
-        'telephones' => '\OpenAPI\Client\Model\TpdmCandidateTelephone[]',
+        'telephones' => '\Resources\Model\TpdmCandidateTelephone[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -744,7 +744,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets person_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiPersonReference|null
+     * @return \Resources\Model\EdFiPersonReference|null
      */
     public function getPersonReference()
     {
@@ -754,7 +754,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets person_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiPersonReference|null $person_reference person_reference
+     * @param \Resources\Model\EdFiPersonReference|null $person_reference person_reference
      *
      * @return self
      */
@@ -771,7 +771,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets addresses
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateAddress[]|null
+     * @return \Resources\Model\TpdmCandidateAddress[]|null
      */
     public function getAddresses()
     {
@@ -781,7 +781,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets addresses
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateAddress[]|null $addresses An unordered collection of candidateAddresses. The set of elements that describes an address, including the street address, city, state, and ZIP code.
+     * @param \Resources\Model\TpdmCandidateAddress[]|null $addresses An unordered collection of candidateAddresses. The set of elements that describes an address, including the street address, city, state, and ZIP code.
      *
      * @return self
      */
@@ -1055,7 +1055,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets disabilities
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateDisability[]|null
+     * @return \Resources\Model\TpdmCandidateDisability[]|null
      */
     public function getDisabilities()
     {
@@ -1065,7 +1065,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets disabilities
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateDisability[]|null $disabilities An unordered collection of candidateDisabilities. The disability condition(s) that best describes an individual's impairment.
+     * @param \Resources\Model\TpdmCandidateDisability[]|null $disabilities An unordered collection of candidateDisabilities. The disability condition(s) that best describes an individual's impairment.
      *
      * @return self
      */
@@ -1157,7 +1157,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets electronic_mails
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateElectronicMail[]|null
+     * @return \Resources\Model\TpdmCandidateElectronicMail[]|null
      */
     public function getElectronicMails()
     {
@@ -1167,7 +1167,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets electronic_mails
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateElectronicMail[]|null $electronic_mails An unordered collection of candidateElectronicMails. The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.
+     * @param \Resources\Model\TpdmCandidateElectronicMail[]|null $electronic_mails An unordered collection of candidateElectronicMails. The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.
      *
      * @return self
      */
@@ -1403,7 +1403,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets languages
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateLanguage[]|null
+     * @return \Resources\Model\TpdmCandidateLanguage[]|null
      */
     public function getLanguages()
     {
@@ -1413,7 +1413,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets languages
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateLanguage[]|null $languages An unordered collection of candidateLanguages. The language(s) the individual uses to communicate.
+     * @param \Resources\Model\TpdmCandidateLanguage[]|null $languages An unordered collection of candidateLanguages. The language(s) the individual uses to communicate.
      *
      * @return self
      */
@@ -1618,7 +1618,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets other_names
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateOtherName[]|null
+     * @return \Resources\Model\TpdmCandidateOtherName[]|null
      */
     public function getOtherNames()
     {
@@ -1628,7 +1628,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets other_names
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateOtherName[]|null $other_names An unordered collection of candidateOtherNames. Other names (e.g., alias, nickname, previous legal name) associated with a person.
+     * @param \Resources\Model\TpdmCandidateOtherName[]|null $other_names An unordered collection of candidateOtherNames. Other names (e.g., alias, nickname, previous legal name) associated with a person.
      *
      * @return self
      */
@@ -1645,7 +1645,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets personal_identification_documents
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidatePersonalIdentificationDocument[]|null
+     * @return \Resources\Model\TpdmCandidatePersonalIdentificationDocument[]|null
      */
     public function getPersonalIdentificationDocuments()
     {
@@ -1655,7 +1655,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets personal_identification_documents
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidatePersonalIdentificationDocument[]|null $personal_identification_documents An unordered collection of candidatePersonalIdentificationDocuments. The documents presented as evident to verify one's personal identity; for example: drivers license, passport, birth certificate, etc.
+     * @param \Resources\Model\TpdmCandidatePersonalIdentificationDocument[]|null $personal_identification_documents An unordered collection of candidatePersonalIdentificationDocuments. The documents presented as evident to verify one's personal identity; for example: drivers license, passport, birth certificate, etc.
      *
      * @return self
      */
@@ -1795,7 +1795,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets races
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateRace[]|null
+     * @return \Resources\Model\TpdmCandidateRace[]|null
      */
     public function getRaces()
     {
@@ -1805,7 +1805,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets races
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateRace[]|null $races An unordered collection of candidateRaces. The general racial category which most clearly reflects the individual's recognition of his or her community or with which the individual most identifies. The data model allows for multiple entries so that each individual can specify all appropriate races.
+     * @param \Resources\Model\TpdmCandidateRace[]|null $races An unordered collection of candidateRaces. The general racial category which most clearly reflects the individual's recognition of his or her community or with which the individual most identifies. The data model allows for multiple entries so that each individual can specify all appropriate races.
      *
      * @return self
      */
@@ -1853,7 +1853,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets telephones
      *
-     * @return \OpenAPI\Client\Model\TpdmCandidateTelephone[]|null
+     * @return \Resources\Model\TpdmCandidateTelephone[]|null
      */
     public function getTelephones()
     {
@@ -1863,7 +1863,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets telephones
      *
-     * @param \OpenAPI\Client\Model\TpdmCandidateTelephone[]|null $telephones An unordered collection of candidateTelephones. The 10-digit telephone number, including the area code, for the person.
+     * @param \Resources\Model\TpdmCandidateTelephone[]|null $telephones An unordered collection of candidateTelephones. The 10-digit telephone number, including the area code, for the person.
      *
      * @return self
      */

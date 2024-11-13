@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociat
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociat
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociat
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociat
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey|null
+     * @return \Resources\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociat
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiSurveySectionResponseEducationOrganizationTargetAssociationKey|null $new_key_values new_key_values
      *
      * @return self
      */

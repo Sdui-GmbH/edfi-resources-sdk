@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * EvaluationObjectivesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class EvaluationObjectivesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEvaluationObjectiveById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class EvaluationObjectivesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEvaluationObjectiveById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class EvaluationObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]
+     * @return \Resources\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]
      */
     public function deletesEvaluationObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationObjectives'][0])
     {
@@ -407,9 +407,9 @@ class EvaluationObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmEvaluationObjectiveDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesEvaluationObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationObjectives'][0])
     {
@@ -440,11 +440,11 @@ class EvaluationObjectivesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class EvaluationObjectivesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class EvaluationObjectivesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class EvaluationObjectivesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]',
+                        '\Resources\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class EvaluationObjectivesApi
      */
     public function deletesEvaluationObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationObjectives'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmEvaluationObjectiveDelete[]';
         $request = $this->deletesEvaluationObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -781,9 +781,9 @@ class EvaluationObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmEvaluationObjective[]
+     * @return \Resources\Model\TpdmEvaluationObjective[]
      */
     public function getEvaluationObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_objective_title = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $evaluation_type_descriptor = null, $evaluation_objective_description = null, $id = null, $max_rating = null, $min_rating = null, $sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationObjectives'][0])
     {
@@ -818,9 +818,9 @@ class EvaluationObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmEvaluationObjective[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmEvaluationObjective[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEvaluationObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_objective_title = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $evaluation_type_descriptor = null, $evaluation_objective_description = null, $id = null, $max_rating = null, $min_rating = null, $sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationObjectives'][0])
     {
@@ -851,11 +851,11 @@ class EvaluationObjectivesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmEvaluationObjective[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmEvaluationObjective[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmEvaluationObjective[]' !== 'string') {
+                        if ('\Resources\Model\TpdmEvaluationObjective[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -873,7 +873,7 @@ class EvaluationObjectivesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmEvaluationObjective[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmEvaluationObjective[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -892,7 +892,7 @@ class EvaluationObjectivesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmEvaluationObjective[]';
+            $returnType = '\Resources\Model\TpdmEvaluationObjective[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -925,7 +925,7 @@ class EvaluationObjectivesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmEvaluationObjective[]',
+                        '\Resources\Model\TpdmEvaluationObjective[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1007,7 +1007,7 @@ class EvaluationObjectivesApi
      */
     public function getEvaluationObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_objective_title = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $evaluation_type_descriptor = null, $evaluation_objective_description = null, $id = null, $max_rating = null, $min_rating = null, $sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationObjectives'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmEvaluationObjective[]';
+        $returnType = '\Resources\Model\TpdmEvaluationObjective[]';
         $request = $this->getEvaluationObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_objective_title, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $evaluation_type_descriptor, $evaluation_objective_description, $id, $max_rating, $min_rating, $sort_order, $use_snapshot, $contentType);
 
         return $this->client
@@ -1381,9 +1381,9 @@ class EvaluationObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationObjectivesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TpdmEvaluationObjective
+     * @return \Resources\Model\TpdmEvaluationObjective
      */
     public function getEvaluationObjectivesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationObjectivesById'][0])
     {
@@ -1401,9 +1401,9 @@ class EvaluationObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationObjectivesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TpdmEvaluationObjective, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TpdmEvaluationObjective, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEvaluationObjectivesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationObjectivesById'][0])
     {
@@ -1434,11 +1434,11 @@ class EvaluationObjectivesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TpdmEvaluationObjective' === '\SplFileObject') {
+                    if ('\Resources\Model\TpdmEvaluationObjective' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TpdmEvaluationObjective' !== 'string') {
+                        if ('\Resources\Model\TpdmEvaluationObjective' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1456,7 +1456,7 @@ class EvaluationObjectivesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TpdmEvaluationObjective', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TpdmEvaluationObjective', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1475,7 +1475,7 @@ class EvaluationObjectivesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TpdmEvaluationObjective';
+            $returnType = '\Resources\Model\TpdmEvaluationObjective';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1508,7 +1508,7 @@ class EvaluationObjectivesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TpdmEvaluationObjective',
+                        '\Resources\Model\TpdmEvaluationObjective',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1556,7 +1556,7 @@ class EvaluationObjectivesApi
      */
     public function getEvaluationObjectivesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationObjectivesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TpdmEvaluationObjective';
+        $returnType = '\Resources\Model\TpdmEvaluationObjective';
         $request = $this->getEvaluationObjectivesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1716,9 +1716,9 @@ class EvaluationObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]
+     * @return \Resources\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]
      */
     public function keyChangesEvaluationObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationObjectives'][0])
     {
@@ -1739,9 +1739,9 @@ class EvaluationObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesEvaluationObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationObjectives'][0])
     {
@@ -1772,11 +1772,11 @@ class EvaluationObjectivesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1794,7 +1794,7 @@ class EvaluationObjectivesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1813,7 +1813,7 @@ class EvaluationObjectivesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1846,7 +1846,7 @@ class EvaluationObjectivesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]',
+                        '\Resources\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1900,7 +1900,7 @@ class EvaluationObjectivesApi
      */
     public function keyChangesEvaluationObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationObjectives'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesTpdmEvaluationObjectiveKeyChange[]';
         $request = $this->keyChangesEvaluationObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2091,10 +2091,10 @@ class EvaluationObjectivesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEvaluationObjective'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2108,10 +2108,10 @@ class EvaluationObjectivesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEvaluationObjective'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2156,7 +2156,7 @@ class EvaluationObjectivesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEvaluationObjective'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2177,7 +2177,7 @@ class EvaluationObjectivesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEvaluationObjective'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2214,7 +2214,7 @@ class EvaluationObjectivesApi
     /**
      * Create request for operation 'postEvaluationObjective'
      *
-     * @param  \OpenAPI\Client\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEvaluationObjective'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2312,11 +2312,11 @@ class EvaluationObjectivesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEvaluationObjective'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2331,11 +2331,11 @@ class EvaluationObjectivesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEvaluationObjective'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2381,7 +2381,7 @@ class EvaluationObjectivesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEvaluationObjective'] to see the possible values for this operation
      *
@@ -2404,7 +2404,7 @@ class EvaluationObjectivesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEvaluationObjective'] to see the possible values for this operation
      *
@@ -2443,7 +2443,7 @@ class EvaluationObjectivesApi
      * Create request for operation 'putEvaluationObjective'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\TpdmEvaluationObjective $tpdm_evaluation_objective The JSON representation of the \&quot;evaluationObjective\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEvaluationObjective'] to see the possible values for this operation
      *

@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 **employment_status_descriptor** | **string** | Reflects the type of employment or contract. |
 **hire_date** | **\DateTime** | The month, day, and year on which an individual was hired for a position. |
-**credential_reference** | [**\OpenAPI\Client\Model\EdFiCredentialReference**](EdFiCredentialReference.md) |  | [optional]
-**education_organization_reference** | [**\OpenAPI\Client\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  |
-**staff_reference** | [**\OpenAPI\Client\Model\EdFiStaffReference**](EdFiStaffReference.md) |  |
+**credential_reference** | [**\Resources\Model\EdFiCredentialReference**](EdFiCredentialReference.md) |  | [optional]
+**education_organization_reference** | [**\Resources\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  |
+**staff_reference** | [**\Resources\Model\EdFiStaffReference**](EdFiStaffReference.md) |  |
 **annual_wage** | **float** | Annual wage associated with the employment position being reported. | [optional]
 **department** | **string** | The department or suborganization the employee/contractor is associated with in the education organization. | [optional]
 **end_date** | **\DateTime** | The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid). | [optional]

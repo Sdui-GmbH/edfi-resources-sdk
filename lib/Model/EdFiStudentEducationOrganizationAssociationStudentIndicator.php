@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentEducationOrganizationAssociationStudentIndicator Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class EdFiStudentEducationOrganizationAssociationStudentIndicator implements Mod
         'designated_by' => 'string',
         'indicator' => 'string',
         'indicator_group' => 'string',
-        'periods' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentIndicatorPeriod[]'
+        'periods' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationStudentIndicatorPeriod[]'
     ];
 
     /**
@@ -508,7 +508,7 @@ class EdFiStudentEducationOrganizationAssociationStudentIndicator implements Mod
     /**
      * Gets periods
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentIndicatorPeriod[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationStudentIndicatorPeriod[]|null
      */
     public function getPeriods()
     {
@@ -518,7 +518,7 @@ class EdFiStudentEducationOrganizationAssociationStudentIndicator implements Mod
     /**
      * Sets periods
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentIndicatorPeriod[]|null $periods An unordered collection of studentEducationOrganizationAssociationStudentIndicatorPeriods. The time periods for which the indicator was effective.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationStudentIndicatorPeriod[]|null $periods An unordered collection of studentEducationOrganizationAssociationStudentIndicatorPeriods. The time periods for which the indicator was effective.
      *
      * @return self
      */

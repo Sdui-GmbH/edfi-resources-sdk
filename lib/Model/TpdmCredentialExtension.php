@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmCredentialExtension Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,8 +63,8 @@ class TpdmCredentialExtension implements ModelInterface, ArrayAccess, \JsonSeria
         'board_certification_indicator' => 'bool',
         'certification_title' => 'string',
         'credential_status_date' => '\DateTime',
-        'person_reference' => '\OpenAPI\Client\Model\EdFiPersonReference',
-        'student_academic_records' => '\OpenAPI\Client\Model\TpdmCredentialStudentAcademicRecord[]'
+        'person_reference' => '\Resources\Model\EdFiPersonReference',
+        'student_academic_records' => '\Resources\Model\TpdmCredentialStudentAcademicRecord[]'
     ];
 
     /**
@@ -584,7 +584,7 @@ class TpdmCredentialExtension implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets person_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiPersonReference|null
+     * @return \Resources\Model\EdFiPersonReference|null
      */
     public function getPersonReference()
     {
@@ -594,7 +594,7 @@ class TpdmCredentialExtension implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets person_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiPersonReference|null $person_reference person_reference
+     * @param \Resources\Model\EdFiPersonReference|null $person_reference person_reference
      *
      * @return self
      */
@@ -611,7 +611,7 @@ class TpdmCredentialExtension implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets student_academic_records
      *
-     * @return \OpenAPI\Client\Model\TpdmCredentialStudentAcademicRecord[]|null
+     * @return \Resources\Model\TpdmCredentialStudentAcademicRecord[]|null
      */
     public function getStudentAcademicRecords()
     {
@@ -621,7 +621,7 @@ class TpdmCredentialExtension implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets student_academic_records
      *
-     * @param \OpenAPI\Client\Model\TpdmCredentialStudentAcademicRecord[]|null $student_academic_records An unordered collection of credentialStudentAcademicRecords. Reference to the person's Student Academic Records for the school(s) with which the Credential is associated.
+     * @param \Resources\Model\TpdmCredentialStudentAcademicRecord[]|null $student_academic_records An unordered collection of credentialStudentAcademicRecords. Reference to the person's Student Academic Records for the school(s) with which the Credential is associated.
      *
      * @return self
      */

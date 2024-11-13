@@ -1,4 +1,4 @@
-# OpenAPI\Client\ChartOfAccountsApi
+# Resources\ChartOfAccountsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ChartOfAccountsApi(
+$apiInstance = new Resources\Api\ChartOfAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesChartOfAccounts()`
 
 ```php
-deletesChartOfAccounts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountDelete[]
+deletesChartOfAccounts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiChartOfAccountDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ChartOfAccountsApi(
+$apiInstance = new Resources\Api\ChartOfAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountDelete[]**](../Model/TrackedChangesEdFiChartOfAccountDelete.md)
+[**\Resources\Model\TrackedChangesEdFiChartOfAccountDelete[]**](../Model/TrackedChangesEdFiChartOfAccountDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getChartOfAccounts()`
 
 ```php
-getChartOfAccounts($offset, $limit, $min_change_version, $max_change_version, $total_count, $account_identifier, $fiscal_year, $education_organization_id, $balance_sheet_code, $function_code, $fund_code, $object_code, $operational_unit_code, $program_code, $project_code, $source_code, $account_type_descriptor, $account_name, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiChartOfAccount[]
+getChartOfAccounts($offset, $limit, $min_change_version, $max_change_version, $total_count, $account_identifier, $fiscal_year, $education_organization_id, $balance_sheet_code, $function_code, $fund_code, $object_code, $operational_unit_code, $program_code, $project_code, $source_code, $account_type_descriptor, $account_name, $id, $use_snapshot): \Resources\Model\EdFiChartOfAccount[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ChartOfAccountsApi(
+$apiInstance = new Resources\Api\ChartOfAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -227,7 +227,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiChartOfAccount[]**](../Model/EdFiChartOfAccount.md)
+[**\Resources\Model\EdFiChartOfAccount[]**](../Model/EdFiChartOfAccount.md)
 
 ### Authorization
 
@@ -245,7 +245,7 @@ try {
 ## `getChartOfAccountsById()`
 
 ```php
-getChartOfAccountsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiChartOfAccount
+getChartOfAccountsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiChartOfAccount
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -260,10 +260,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ChartOfAccountsApi(
+$apiInstance = new Resources\Api\ChartOfAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -291,7 +291,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiChartOfAccount**](../Model/EdFiChartOfAccount.md)
+[**\Resources\Model\EdFiChartOfAccount**](../Model/EdFiChartOfAccount.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ try {
 ## `keyChangesChartOfAccounts()`
 
 ```php
-keyChangesChartOfAccounts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountKeyChange[]
+keyChangesChartOfAccounts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiChartOfAccountKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -324,10 +324,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ChartOfAccountsApi(
+$apiInstance = new Resources\Api\ChartOfAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -361,7 +361,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiChartOfAccountKeyChange[]**](../Model/TrackedChangesEdFiChartOfAccountKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiChartOfAccountKeyChange[]**](../Model/TrackedChangesEdFiChartOfAccountKeyChange.md)
 
 ### Authorization
 
@@ -394,16 +394,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ChartOfAccountsApi(
+$apiInstance = new Resources\Api\ChartOfAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_chart_of_account = new \OpenAPI\Client\Model\EdFiChartOfAccount(); // \OpenAPI\Client\Model\EdFiChartOfAccount | The JSON representation of the \"chartOfAccount\" resource to be created or updated.
+$ed_fi_chart_of_account = new \Resources\Model\EdFiChartOfAccount(); // \Resources\Model\EdFiChartOfAccount | The JSON representation of the \"chartOfAccount\" resource to be created or updated.
 
 try {
     $apiInstance->postChartOfAccount($ed_fi_chart_of_account);
@@ -416,7 +416,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_chart_of_account** | [**\OpenAPI\Client\Model\EdFiChartOfAccount**](../Model/EdFiChartOfAccount.md)| The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. | |
+| **ed_fi_chart_of_account** | [**\Resources\Model\EdFiChartOfAccount**](../Model/EdFiChartOfAccount.md)| The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -453,17 +453,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ChartOfAccountsApi(
+$apiInstance = new Resources\Api\ChartOfAccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_chart_of_account = new \OpenAPI\Client\Model\EdFiChartOfAccount(); // \OpenAPI\Client\Model\EdFiChartOfAccount | The JSON representation of the \"chartOfAccount\" resource to be created or updated.
+$ed_fi_chart_of_account = new \Resources\Model\EdFiChartOfAccount(); // \Resources\Model\EdFiChartOfAccount | The JSON representation of the \"chartOfAccount\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -478,7 +478,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_chart_of_account** | [**\OpenAPI\Client\Model\EdFiChartOfAccount**](../Model/EdFiChartOfAccount.md)| The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. | |
+| **ed_fi_chart_of_account** | [**\Resources\Model\EdFiChartOfAccount**](../Model/EdFiChartOfAccount.md)| The JSON representation of the \&quot;chartOfAccount\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

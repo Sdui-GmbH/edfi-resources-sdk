@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * LocalEducationAgenciesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class LocalEducationAgenciesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalEducationAgencyById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class LocalEducationAgenciesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalEducationAgencyById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class LocalEducationAgenciesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalEducationAgencies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]
      */
     public function deletesLocalEducationAgencies($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalEducationAgencies'][0])
     {
@@ -407,9 +407,9 @@ class LocalEducationAgenciesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalEducationAgencies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalEducationAgencyDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesLocalEducationAgenciesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalEducationAgencies'][0])
     {
@@ -440,11 +440,11 @@ class LocalEducationAgenciesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class LocalEducationAgenciesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class LocalEducationAgenciesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class LocalEducationAgenciesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class LocalEducationAgenciesApi
      */
     public function deletesLocalEducationAgenciesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalEducationAgencies'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalEducationAgencyDelete[]';
         $request = $this->deletesLocalEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -773,9 +773,9 @@ class LocalEducationAgenciesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEducationAgencies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalEducationAgency[]
+     * @return \Resources\Model\EdFiLocalEducationAgency[]
      */
     public function getLocalEducationAgencies($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
     {
@@ -802,9 +802,9 @@ class LocalEducationAgenciesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEducationAgencies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalEducationAgency[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalEducationAgency[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalEducationAgenciesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
     {
@@ -835,11 +835,11 @@ class LocalEducationAgenciesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalEducationAgency[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalEducationAgency[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalEducationAgency[]' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalEducationAgency[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -857,7 +857,7 @@ class LocalEducationAgenciesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalEducationAgency[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalEducationAgency[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -876,7 +876,7 @@ class LocalEducationAgenciesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalEducationAgency[]';
+            $returnType = '\Resources\Model\EdFiLocalEducationAgency[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -909,7 +909,7 @@ class LocalEducationAgenciesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalEducationAgency[]',
+                        '\Resources\Model\EdFiLocalEducationAgency[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -975,7 +975,7 @@ class LocalEducationAgenciesApi
      */
     public function getLocalEducationAgenciesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalEducationAgency[]';
+        $returnType = '\Resources\Model\EdFiLocalEducationAgency[]';
         $request = $this->getLocalEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $use_snapshot, $contentType);
 
         return $this->client
@@ -1243,9 +1243,9 @@ class LocalEducationAgenciesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEducationAgenciesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalEducationAgency
+     * @return \Resources\Model\EdFiLocalEducationAgency
      */
     public function getLocalEducationAgenciesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgenciesById'][0])
     {
@@ -1263,9 +1263,9 @@ class LocalEducationAgenciesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEducationAgenciesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalEducationAgency, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalEducationAgency, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalEducationAgenciesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgenciesById'][0])
     {
@@ -1296,11 +1296,11 @@ class LocalEducationAgenciesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalEducationAgency' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalEducationAgency' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalEducationAgency' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalEducationAgency' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1318,7 +1318,7 @@ class LocalEducationAgenciesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalEducationAgency', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalEducationAgency', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1337,7 +1337,7 @@ class LocalEducationAgenciesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalEducationAgency';
+            $returnType = '\Resources\Model\EdFiLocalEducationAgency';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1370,7 +1370,7 @@ class LocalEducationAgenciesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalEducationAgency',
+                        '\Resources\Model\EdFiLocalEducationAgency',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1418,7 +1418,7 @@ class LocalEducationAgenciesApi
      */
     public function getLocalEducationAgenciesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgenciesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalEducationAgency';
+        $returnType = '\Resources\Model\EdFiLocalEducationAgency';
         $request = $this->getLocalEducationAgenciesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1578,9 +1578,9 @@ class LocalEducationAgenciesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalEducationAgencies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]
      */
     public function keyChangesLocalEducationAgencies($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalEducationAgencies'][0])
     {
@@ -1601,9 +1601,9 @@ class LocalEducationAgenciesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalEducationAgencies'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesLocalEducationAgenciesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalEducationAgencies'][0])
     {
@@ -1634,11 +1634,11 @@ class LocalEducationAgenciesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1656,7 +1656,7 @@ class LocalEducationAgenciesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1675,7 +1675,7 @@ class LocalEducationAgenciesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1708,7 +1708,7 @@ class LocalEducationAgenciesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1762,7 +1762,7 @@ class LocalEducationAgenciesApi
      */
     public function keyChangesLocalEducationAgenciesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalEducationAgencies'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalEducationAgencyKeyChange[]';
         $request = $this->keyChangesLocalEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1953,10 +1953,10 @@ class LocalEducationAgenciesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalEducationAgency'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1970,10 +1970,10 @@ class LocalEducationAgenciesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalEducationAgency'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2018,7 +2018,7 @@ class LocalEducationAgenciesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalEducationAgency'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2039,7 +2039,7 @@ class LocalEducationAgenciesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalEducationAgency'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2076,7 +2076,7 @@ class LocalEducationAgenciesApi
     /**
      * Create request for operation 'postLocalEducationAgency'
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalEducationAgency'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2174,11 +2174,11 @@ class LocalEducationAgenciesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalEducationAgency'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2193,11 +2193,11 @@ class LocalEducationAgenciesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalEducationAgency'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2243,7 +2243,7 @@ class LocalEducationAgenciesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalEducationAgency'] to see the possible values for this operation
      *
@@ -2266,7 +2266,7 @@ class LocalEducationAgenciesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalEducationAgency'] to see the possible values for this operation
      *
@@ -2305,7 +2305,7 @@ class LocalEducationAgenciesApi
      * Create request for operation 'putLocalEducationAgency'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalEducationAgency $ed_fi_local_education_agency The JSON representation of the \&quot;localEducationAgency\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalEducationAgency'] to see the possible values for this operation
      *

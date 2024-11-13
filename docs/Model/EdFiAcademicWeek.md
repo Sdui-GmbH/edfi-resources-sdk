@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **week_identifier** | **string** | The school label for the week. |
-**school_reference** | [**\OpenAPI\Client\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
+**school_reference** | [**\Resources\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
 **begin_date** | **\DateTime** | The start date for the academic week. |
 **end_date** | **\DateTime** | The end date for the academic week. |
 **total_instructional_days** | **int** | The total instructional days during the academic week. |

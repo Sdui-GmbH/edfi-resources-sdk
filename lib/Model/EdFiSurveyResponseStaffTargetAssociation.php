@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSurveyResponseStaffTargetAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class EdFiSurveyResponseStaffTargetAssociation implements ModelInterface, ArrayA
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
-        'survey_response_reference' => '\OpenAPI\Client\Model\EdFiSurveyResponseReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
+        'survey_response_reference' => '\Resources\Model\EdFiSurveyResponseReference',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -353,7 +353,7 @@ class EdFiSurveyResponseStaffTargetAssociation implements ModelInterface, ArrayA
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference
+     * @return \Resources\Model\EdFiStaffReference
      */
     public function getStaffReference()
     {
@@ -363,7 +363,7 @@ class EdFiSurveyResponseStaffTargetAssociation implements ModelInterface, ArrayA
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference $staff_reference staff_reference
      *
      * @return self
      */
@@ -380,7 +380,7 @@ class EdFiSurveyResponseStaffTargetAssociation implements ModelInterface, ArrayA
     /**
      * Gets survey_response_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSurveyResponseReference
+     * @return \Resources\Model\EdFiSurveyResponseReference
      */
     public function getSurveyResponseReference()
     {
@@ -390,7 +390,7 @@ class EdFiSurveyResponseStaffTargetAssociation implements ModelInterface, ArrayA
     /**
      * Sets survey_response_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSurveyResponseReference $survey_response_reference survey_response_reference
+     * @param \Resources\Model\EdFiSurveyResponseReference $survey_response_reference survey_response_reference
      *
      * @return self
      */

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * StudentHomelessProgramAssociationsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class StudentHomelessProgramAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStudentHomelessProgramAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class StudentHomelessProgramAssociationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStudentHomelessProgramAssociationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class StudentHomelessProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]
      */
     public function deletesStudentHomelessProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentHomelessProgramAssociations'][0])
     {
@@ -407,9 +407,9 @@ class StudentHomelessProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesStudentHomelessProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentHomelessProgramAssociations'][0])
     {
@@ -440,11 +440,11 @@ class StudentHomelessProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class StudentHomelessProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class StudentHomelessProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class StudentHomelessProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class StudentHomelessProgramAssociationsApi
      */
     public function deletesStudentHomelessProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentHomelessProgramAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]';
         $request = $this->deletesStudentHomelessProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -776,9 +776,9 @@ class StudentHomelessProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation[]
+     * @return \Resources\Model\EdFiStudentHomelessProgramAssociation[]
      */
     public function getStudentHomelessProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
     {
@@ -808,9 +808,9 @@ class StudentHomelessProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStudentHomelessProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentHomelessProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
     {
@@ -841,11 +841,11 @@ class StudentHomelessProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStudentHomelessProgramAssociation[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation[]' !== 'string') {
+                        if ('\Resources\Model\EdFiStudentHomelessProgramAssociation[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -863,7 +863,7 @@ class StudentHomelessProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStudentHomelessProgramAssociation[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -882,7 +882,7 @@ class StudentHomelessProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation[]';
+            $returnType = '\Resources\Model\EdFiStudentHomelessProgramAssociation[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -915,7 +915,7 @@ class StudentHomelessProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation[]',
+                        '\Resources\Model\EdFiStudentHomelessProgramAssociation[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -987,7 +987,7 @@ class StudentHomelessProgramAssociationsApi
      */
     public function getStudentHomelessProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation[]';
+        $returnType = '\Resources\Model\EdFiStudentHomelessProgramAssociation[]';
         $request = $this->getStudentHomelessProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $use_snapshot, $contentType);
 
         return $this->client
@@ -1294,9 +1294,9 @@ class StudentHomelessProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentHomelessProgramAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation
+     * @return \Resources\Model\EdFiStudentHomelessProgramAssociation
      */
     public function getStudentHomelessProgramAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociationsById'][0])
     {
@@ -1314,9 +1314,9 @@ class StudentHomelessProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentHomelessProgramAssociationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStudentHomelessProgramAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentHomelessProgramAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociationsById'][0])
     {
@@ -1347,11 +1347,11 @@ class StudentHomelessProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStudentHomelessProgramAssociation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation' !== 'string') {
+                        if ('\Resources\Model\EdFiStudentHomelessProgramAssociation' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1369,7 +1369,7 @@ class StudentHomelessProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStudentHomelessProgramAssociation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1388,7 +1388,7 @@ class StudentHomelessProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation';
+            $returnType = '\Resources\Model\EdFiStudentHomelessProgramAssociation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1421,7 +1421,7 @@ class StudentHomelessProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation',
+                        '\Resources\Model\EdFiStudentHomelessProgramAssociation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1469,7 +1469,7 @@ class StudentHomelessProgramAssociationsApi
      */
     public function getStudentHomelessProgramAssociationsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociationsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation';
+        $returnType = '\Resources\Model\EdFiStudentHomelessProgramAssociation';
         $request = $this->getStudentHomelessProgramAssociationsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1629,9 +1629,9 @@ class StudentHomelessProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]
      */
     public function keyChangesStudentHomelessProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentHomelessProgramAssociations'][0])
     {
@@ -1652,9 +1652,9 @@ class StudentHomelessProgramAssociationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesStudentHomelessProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentHomelessProgramAssociations'][0])
     {
@@ -1685,11 +1685,11 @@ class StudentHomelessProgramAssociationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1707,7 +1707,7 @@ class StudentHomelessProgramAssociationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1726,7 +1726,7 @@ class StudentHomelessProgramAssociationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1759,7 +1759,7 @@ class StudentHomelessProgramAssociationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1813,7 +1813,7 @@ class StudentHomelessProgramAssociationsApi
      */
     public function keyChangesStudentHomelessProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentHomelessProgramAssociations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]';
         $request = $this->keyChangesStudentHomelessProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2004,10 +2004,10 @@ class StudentHomelessProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentHomelessProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2021,10 +2021,10 @@ class StudentHomelessProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentHomelessProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2069,7 +2069,7 @@ class StudentHomelessProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentHomelessProgramAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2090,7 +2090,7 @@ class StudentHomelessProgramAssociationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentHomelessProgramAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2127,7 +2127,7 @@ class StudentHomelessProgramAssociationsApi
     /**
      * Create request for operation 'postStudentHomelessProgramAssociation'
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentHomelessProgramAssociation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2225,11 +2225,11 @@ class StudentHomelessProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentHomelessProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2244,11 +2244,11 @@ class StudentHomelessProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentHomelessProgramAssociation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2294,7 +2294,7 @@ class StudentHomelessProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentHomelessProgramAssociation'] to see the possible values for this operation
      *
@@ -2317,7 +2317,7 @@ class StudentHomelessProgramAssociationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentHomelessProgramAssociation'] to see the possible values for this operation
      *
@@ -2356,7 +2356,7 @@ class StudentHomelessProgramAssociationsApi
      * Create request for operation 'putStudentHomelessProgramAssociation'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentHomelessProgramAssociation $ed_fi_student_homeless_program_association The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentHomelessProgramAssociation'] to see the possible values for this operation
      *

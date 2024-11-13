@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiRestraintEvent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,12 +59,12 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'id' => 'string',
         'restraint_event_identifier' => 'string',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'educational_environment_descriptor' => 'string',
         'event_date' => '\DateTime',
-        'programs' => '\OpenAPI\Client\Model\EdFiRestraintEventProgram[]',
-        'reasons' => '\OpenAPI\Client\Model\EdFiRestraintEventReason[]',
+        'programs' => '\Resources\Model\EdFiRestraintEventProgram[]',
+        'reasons' => '\Resources\Model\EdFiRestraintEventReason[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -440,7 +440,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -450,7 +450,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */
@@ -467,7 +467,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -477,7 +477,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -559,7 +559,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets programs
      *
-     * @return \OpenAPI\Client\Model\EdFiRestraintEventProgram[]|null
+     * @return \Resources\Model\EdFiRestraintEventProgram[]|null
      */
     public function getPrograms()
     {
@@ -569,7 +569,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets programs
      *
-     * @param \OpenAPI\Client\Model\EdFiRestraintEventProgram[]|null $programs An unordered collection of restraintEventPrograms. The special education program associated with the restraint event.
+     * @param \Resources\Model\EdFiRestraintEventProgram[]|null $programs An unordered collection of restraintEventPrograms. The special education program associated with the restraint event.
      *
      * @return self
      */
@@ -586,7 +586,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets reasons
      *
-     * @return \OpenAPI\Client\Model\EdFiRestraintEventReason[]|null
+     * @return \Resources\Model\EdFiRestraintEventReason[]|null
      */
     public function getReasons()
     {
@@ -596,7 +596,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets reasons
      *
-     * @param \OpenAPI\Client\Model\EdFiRestraintEventReason[]|null $reasons An unordered collection of restraintEventReasons. A categorization of the circumstances or reason for the RestraintEvent.
+     * @param \Resources\Model\EdFiRestraintEventReason[]|null $reasons An unordered collection of restraintEventReasons. A categorization of the circumstances or reason for the RestraintEvent.
      *
      * @return self
      */

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 **aid_type_descriptor** | **string** | The classification of financial aid awarded to a person for the academic term/year. |
 **begin_date** | **\DateTime** | The date the award was designated. |
-**student_reference** | [**\OpenAPI\Client\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
+**student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
 **aid_amount** | **float** | The amount of financial aid awarded to a person for the term/year. | [optional]
 **aid_condition_description** | **string** | The description of the condition (e.g., placement in a high need school) under which the aid was given. | [optional]
 **end_date** | **\DateTime** | The date the award was removed. | [optional]

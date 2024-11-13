@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiDisciplineIncident Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,10 +59,10 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'id' => 'string',
         'incident_identifier' => 'string',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'behaviors' => '\OpenAPI\Client\Model\EdFiDisciplineIncidentBehavior[]',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'behaviors' => '\Resources\Model\EdFiDisciplineIncidentBehavior[]',
         'case_number' => 'string',
-        'external_participants' => '\OpenAPI\Client\Model\EdFiDisciplineIncidentExternalParticipant[]',
+        'external_participants' => '\Resources\Model\EdFiDisciplineIncidentExternalParticipant[]',
         'incident_cost' => 'float',
         'incident_date' => '\DateTime',
         'incident_description' => 'string',
@@ -71,7 +71,7 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
         'reported_to_law_enforcement' => 'bool',
         'reporter_description_descriptor' => 'string',
         'reporter_name' => 'string',
-        'weapons' => '\OpenAPI\Client\Model\EdFiDisciplineIncidentWeapon[]',
+        'weapons' => '\Resources\Model\EdFiDisciplineIncidentWeapon[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -514,7 +514,7 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -524,7 +524,7 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */
@@ -541,7 +541,7 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets behaviors
      *
-     * @return \OpenAPI\Client\Model\EdFiDisciplineIncidentBehavior[]|null
+     * @return \Resources\Model\EdFiDisciplineIncidentBehavior[]|null
      */
     public function getBehaviors()
     {
@@ -551,7 +551,7 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets behaviors
      *
-     * @param \OpenAPI\Client\Model\EdFiDisciplineIncidentBehavior[]|null $behaviors An unordered collection of disciplineIncidentBehaviors. Describes behavior by category and provides a detailed description.
+     * @param \Resources\Model\EdFiDisciplineIncidentBehavior[]|null $behaviors An unordered collection of disciplineIncidentBehaviors. Describes behavior by category and provides a detailed description.
      *
      * @return self
      */
@@ -609,7 +609,7 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets external_participants
      *
-     * @return \OpenAPI\Client\Model\EdFiDisciplineIncidentExternalParticipant[]|null
+     * @return \Resources\Model\EdFiDisciplineIncidentExternalParticipant[]|null
      */
     public function getExternalParticipants()
     {
@@ -619,7 +619,7 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets external_participants
      *
-     * @param \OpenAPI\Client\Model\EdFiDisciplineIncidentExternalParticipant[]|null $external_participants An unordered collection of disciplineIncidentExternalParticipants. Information on an individual involved in the discipline incident.
+     * @param \Resources\Model\EdFiDisciplineIncidentExternalParticipant[]|null $external_participants An unordered collection of disciplineIncidentExternalParticipants. Information on an individual involved in the discipline incident.
      *
      * @return self
      */
@@ -923,7 +923,7 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets weapons
      *
-     * @return \OpenAPI\Client\Model\EdFiDisciplineIncidentWeapon[]|null
+     * @return \Resources\Model\EdFiDisciplineIncidentWeapon[]|null
      */
     public function getWeapons()
     {
@@ -933,7 +933,7 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets weapons
      *
-     * @param \OpenAPI\Client\Model\EdFiDisciplineIncidentWeapon[]|null $weapons An unordered collection of disciplineIncidentWeapons. Identifies the type of weapon used during an incident. The Federal Gun-Free Schools Act requires states to report the number of students expelled for bringing firearms to school by type of firearm.
+     * @param \Resources\Model\EdFiDisciplineIncidentWeapon[]|null $weapons An unordered collection of disciplineIncidentWeapons. Identifies the type of weapon used during an incident. The Federal Gun-Free Schools Act requires states to report the number of students expelled for bringing firearms to school by type of firearm.
      *
      * @return self
      */

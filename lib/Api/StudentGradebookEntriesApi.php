@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * StudentGradebookEntriesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class StudentGradebookEntriesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStudentGradebookEntryById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class StudentGradebookEntriesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStudentGradebookEntryById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class StudentGradebookEntriesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentGradebookEntries'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]
      */
     public function deletesStudentGradebookEntries($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
     {
@@ -407,9 +407,9 @@ class StudentGradebookEntriesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentGradebookEntries'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesStudentGradebookEntriesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
     {
@@ -440,11 +440,11 @@ class StudentGradebookEntriesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class StudentGradebookEntriesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class StudentGradebookEntriesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class StudentGradebookEntriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class StudentGradebookEntriesApi
      */
     public function deletesStudentGradebookEntriesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]';
         $request = $this->deletesStudentGradebookEntriesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -780,9 +780,9 @@ class StudentGradebookEntriesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentGradebookEntries'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStudentGradebookEntry[]
+     * @return \Resources\Model\EdFiStudentGradebookEntry[]
      */
     public function getStudentGradebookEntries($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
     {
@@ -816,9 +816,9 @@ class StudentGradebookEntriesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentGradebookEntries'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStudentGradebookEntry[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStudentGradebookEntry[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentGradebookEntriesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
     {
@@ -849,11 +849,11 @@ class StudentGradebookEntriesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStudentGradebookEntry[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStudentGradebookEntry[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStudentGradebookEntry[]' !== 'string') {
+                        if ('\Resources\Model\EdFiStudentGradebookEntry[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -871,7 +871,7 @@ class StudentGradebookEntriesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStudentGradebookEntry[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStudentGradebookEntry[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -890,7 +890,7 @@ class StudentGradebookEntriesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStudentGradebookEntry[]';
+            $returnType = '\Resources\Model\EdFiStudentGradebookEntry[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -923,7 +923,7 @@ class StudentGradebookEntriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStudentGradebookEntry[]',
+                        '\Resources\Model\EdFiStudentGradebookEntry[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1003,7 +1003,7 @@ class StudentGradebookEntriesApi
      */
     public function getStudentGradebookEntriesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStudentGradebookEntry[]';
+        $returnType = '\Resources\Model\EdFiStudentGradebookEntry[]';
         $request = $this->getStudentGradebookEntriesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType);
 
         return $this->client
@@ -1366,9 +1366,9 @@ class StudentGradebookEntriesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentGradebookEntriesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStudentGradebookEntry
+     * @return \Resources\Model\EdFiStudentGradebookEntry
      */
     public function getStudentGradebookEntriesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntriesById'][0])
     {
@@ -1386,9 +1386,9 @@ class StudentGradebookEntriesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentGradebookEntriesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStudentGradebookEntry, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStudentGradebookEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentGradebookEntriesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntriesById'][0])
     {
@@ -1419,11 +1419,11 @@ class StudentGradebookEntriesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStudentGradebookEntry' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStudentGradebookEntry' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStudentGradebookEntry' !== 'string') {
+                        if ('\Resources\Model\EdFiStudentGradebookEntry' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1441,7 +1441,7 @@ class StudentGradebookEntriesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStudentGradebookEntry', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStudentGradebookEntry', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1460,7 +1460,7 @@ class StudentGradebookEntriesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStudentGradebookEntry';
+            $returnType = '\Resources\Model\EdFiStudentGradebookEntry';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1493,7 +1493,7 @@ class StudentGradebookEntriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStudentGradebookEntry',
+                        '\Resources\Model\EdFiStudentGradebookEntry',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1541,7 +1541,7 @@ class StudentGradebookEntriesApi
      */
     public function getStudentGradebookEntriesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntriesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStudentGradebookEntry';
+        $returnType = '\Resources\Model\EdFiStudentGradebookEntry';
         $request = $this->getStudentGradebookEntriesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1701,9 +1701,9 @@ class StudentGradebookEntriesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentGradebookEntries'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]
      */
     public function keyChangesStudentGradebookEntries($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
     {
@@ -1724,9 +1724,9 @@ class StudentGradebookEntriesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentGradebookEntries'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesStudentGradebookEntriesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
     {
@@ -1757,11 +1757,11 @@ class StudentGradebookEntriesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1779,7 +1779,7 @@ class StudentGradebookEntriesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1798,7 +1798,7 @@ class StudentGradebookEntriesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1831,7 +1831,7 @@ class StudentGradebookEntriesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1885,7 +1885,7 @@ class StudentGradebookEntriesApi
      */
     public function keyChangesStudentGradebookEntriesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]';
         $request = $this->keyChangesStudentGradebookEntriesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2076,10 +2076,10 @@ class StudentGradebookEntriesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentGradebookEntry'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2093,10 +2093,10 @@ class StudentGradebookEntriesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentGradebookEntry'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2141,7 +2141,7 @@ class StudentGradebookEntriesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentGradebookEntry'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2162,7 +2162,7 @@ class StudentGradebookEntriesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentGradebookEntry'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2199,7 +2199,7 @@ class StudentGradebookEntriesApi
     /**
      * Create request for operation 'postStudentGradebookEntry'
      *
-     * @param  \OpenAPI\Client\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStudentGradebookEntry'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2297,11 +2297,11 @@ class StudentGradebookEntriesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentGradebookEntry'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2316,11 +2316,11 @@ class StudentGradebookEntriesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentGradebookEntry'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2366,7 +2366,7 @@ class StudentGradebookEntriesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentGradebookEntry'] to see the possible values for this operation
      *
@@ -2389,7 +2389,7 @@ class StudentGradebookEntriesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentGradebookEntry'] to see the possible values for this operation
      *
@@ -2428,7 +2428,7 @@ class StudentGradebookEntriesApi
      * Create request for operation 'putStudentGradebookEntry'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStudentGradebookEntry $ed_fi_student_gradebook_entry The JSON representation of the \&quot;studentGradebookEntry\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStudentGradebookEntry'] to see the possible values for this operation
      *

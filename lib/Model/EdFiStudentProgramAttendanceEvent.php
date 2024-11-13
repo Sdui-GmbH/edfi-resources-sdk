@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentProgramAttendanceEvent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,9 +60,9 @@ class EdFiStudentProgramAttendanceEvent implements ModelInterface, ArrayAccess, 
         'id' => 'string',
         'attendance_event_category_descriptor' => 'string',
         'event_date' => '\DateTime',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'program_reference' => '\OpenAPI\Client\Model\EdFiProgramReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'program_reference' => '\Resources\Model\EdFiProgramReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'attendance_event_reason' => 'string',
         'educational_environment_descriptor' => 'string',
         'event_duration' => 'float',
@@ -501,7 +501,7 @@ class EdFiStudentProgramAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -511,7 +511,7 @@ class EdFiStudentProgramAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -528,7 +528,7 @@ class EdFiStudentProgramAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Gets program_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramReference
+     * @return \Resources\Model\EdFiProgramReference
      */
     public function getProgramReference()
     {
@@ -538,7 +538,7 @@ class EdFiStudentProgramAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Sets program_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramReference $program_reference program_reference
+     * @param \Resources\Model\EdFiProgramReference $program_reference program_reference
      *
      * @return self
      */
@@ -555,7 +555,7 @@ class EdFiStudentProgramAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -565,7 +565,7 @@ class EdFiStudentProgramAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */

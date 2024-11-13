@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiGradingPeriodKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiGradingPeriodKeyChange implements ModelInterface, ArrayA
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiGradingPeriodKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiGradingPeriodKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiGradingPeriodKeyChange implements ModelInterface, ArrayA
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKey|null
+     * @return \Resources\Model\TrackedChangesEdFiGradingPeriodKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiGradingPeriodKeyChange implements ModelInterface, ArrayA
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiGradingPeriodKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiGradingPeriodKeyChange implements ModelInterface, ArrayA
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKey|null
+     * @return \Resources\Model\TrackedChangesEdFiGradingPeriodKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiGradingPeriodKeyChange implements ModelInterface, ArrayA
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiGradingPeriodKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiGradingPeriodKey|null $new_key_values new_key_values
      *
      * @return self
      */

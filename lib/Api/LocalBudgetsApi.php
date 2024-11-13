@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * LocalBudgetsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class LocalBudgetsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalBudgetById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class LocalBudgetsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocalBudgetById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class LocalBudgetsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalBudgets'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalBudgetDelete[]
      */
     public function deletesLocalBudgets($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalBudgets'][0])
     {
@@ -407,9 +407,9 @@ class LocalBudgetsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocalBudgets'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalBudgetDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesLocalBudgetsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalBudgets'][0])
     {
@@ -440,11 +440,11 @@ class LocalBudgetsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalBudgetDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalBudgetDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class LocalBudgetsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalBudgetDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class LocalBudgetsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalBudgetDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class LocalBudgetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalBudgetDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class LocalBudgetsApi
      */
     public function deletesLocalBudgetsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocalBudgets'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalBudgetDelete[]';
         $request = $this->deletesLocalBudgetsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class LocalBudgetsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalBudgets'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalBudget[]
+     * @return \Resources\Model\EdFiLocalBudget[]
      */
     public function getLocalBudgets($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalBudgets'][0])
     {
@@ -804,9 +804,9 @@ class LocalBudgetsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalBudgets'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalBudget[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalBudget[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalBudgetsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalBudgets'][0])
     {
@@ -837,11 +837,11 @@ class LocalBudgetsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalBudget[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalBudget[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalBudget[]' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalBudget[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class LocalBudgetsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalBudget[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalBudget[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class LocalBudgetsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalBudget[]';
+            $returnType = '\Resources\Model\EdFiLocalBudget[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class LocalBudgetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalBudget[]',
+                        '\Resources\Model\EdFiLocalBudget[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class LocalBudgetsApi
      */
     public function getLocalBudgetsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $as_of_date = null, $account_identifier = null, $education_organization_id = null, $fiscal_year = null, $financial_collection_descriptor = null, $amount = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalBudgets'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalBudget[]';
+        $returnType = '\Resources\Model\EdFiLocalBudget[]';
         $request = $this->getLocalBudgetsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $financial_collection_descriptor, $amount, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1258,9 +1258,9 @@ class LocalBudgetsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalBudgetsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocalBudget
+     * @return \Resources\Model\EdFiLocalBudget
      */
     public function getLocalBudgetsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalBudgetsById'][0])
     {
@@ -1278,9 +1278,9 @@ class LocalBudgetsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalBudgetsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocalBudget, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocalBudget, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocalBudgetsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalBudgetsById'][0])
     {
@@ -1311,11 +1311,11 @@ class LocalBudgetsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocalBudget' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocalBudget' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocalBudget' !== 'string') {
+                        if ('\Resources\Model\EdFiLocalBudget' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1333,7 +1333,7 @@ class LocalBudgetsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocalBudget', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocalBudget', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1352,7 +1352,7 @@ class LocalBudgetsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocalBudget';
+            $returnType = '\Resources\Model\EdFiLocalBudget';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1385,7 +1385,7 @@ class LocalBudgetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocalBudget',
+                        '\Resources\Model\EdFiLocalBudget',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1433,7 +1433,7 @@ class LocalBudgetsApi
      */
     public function getLocalBudgetsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalBudgetsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocalBudget';
+        $returnType = '\Resources\Model\EdFiLocalBudget';
         $request = $this->getLocalBudgetsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1593,9 +1593,9 @@ class LocalBudgetsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalBudgets'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiLocalBudgetKeyChange[]
      */
     public function keyChangesLocalBudgets($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalBudgets'][0])
     {
@@ -1616,9 +1616,9 @@ class LocalBudgetsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocalBudgets'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocalBudgetKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesLocalBudgetsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalBudgets'][0])
     {
@@ -1649,11 +1649,11 @@ class LocalBudgetsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocalBudgetKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocalBudgetKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1671,7 +1671,7 @@ class LocalBudgetsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocalBudgetKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1690,7 +1690,7 @@ class LocalBudgetsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocalBudgetKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1723,7 +1723,7 @@ class LocalBudgetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiLocalBudgetKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1777,7 +1777,7 @@ class LocalBudgetsApi
      */
     public function keyChangesLocalBudgetsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocalBudgets'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocalBudgetKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocalBudgetKeyChange[]';
         $request = $this->keyChangesLocalBudgetsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1968,10 +1968,10 @@ class LocalBudgetsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalBudget'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1985,10 +1985,10 @@ class LocalBudgetsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalBudget'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2033,7 +2033,7 @@ class LocalBudgetsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalBudget'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2054,7 +2054,7 @@ class LocalBudgetsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalBudget'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2091,7 +2091,7 @@ class LocalBudgetsApi
     /**
      * Create request for operation 'postLocalBudget'
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocalBudget'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2189,11 +2189,11 @@ class LocalBudgetsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalBudget'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2208,11 +2208,11 @@ class LocalBudgetsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalBudget'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2258,7 +2258,7 @@ class LocalBudgetsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalBudget'] to see the possible values for this operation
      *
@@ -2281,7 +2281,7 @@ class LocalBudgetsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalBudget'] to see the possible values for this operation
      *
@@ -2320,7 +2320,7 @@ class LocalBudgetsApi
      * Create request for operation 'putLocalBudget'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocalBudget $ed_fi_local_budget The JSON representation of the \&quot;localBudget\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocalBudget'] to see the possible values for this operation
      *

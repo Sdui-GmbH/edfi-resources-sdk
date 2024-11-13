@@ -1,4 +1,4 @@
-# OpenAPI\Client\BellSchedulesApi
+# Resources\BellSchedulesApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\BellSchedulesApi(
+$apiInstance = new Resources\Api\BellSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesBellSchedules()`
 
 ```php
-deletesBellSchedules($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleDelete[]
+deletesBellSchedules($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiBellScheduleDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\BellSchedulesApi(
+$apiInstance = new Resources\Api\BellSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleDelete[]**](../Model/TrackedChangesEdFiBellScheduleDelete.md)
+[**\Resources\Model\TrackedChangesEdFiBellScheduleDelete[]**](../Model/TrackedChangesEdFiBellScheduleDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getBellSchedules()`
 
 ```php
-getBellSchedules($offset, $limit, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot): \OpenAPI\Client\Model\EdFiBellSchedule[]
+getBellSchedules($offset, $limit, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot): \Resources\Model\EdFiBellSchedule[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\BellSchedulesApi(
+$apiInstance = new Resources\Api\BellSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -213,7 +213,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiBellSchedule[]**](../Model/EdFiBellSchedule.md)
+[**\Resources\Model\EdFiBellSchedule[]**](../Model/EdFiBellSchedule.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ try {
 ## `getBellSchedulesById()`
 
 ```php
-getBellSchedulesById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiBellSchedule
+getBellSchedulesById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiBellSchedule
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -246,10 +246,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\BellSchedulesApi(
+$apiInstance = new Resources\Api\BellSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -277,7 +277,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiBellSchedule**](../Model/EdFiBellSchedule.md)
+[**\Resources\Model\EdFiBellSchedule**](../Model/EdFiBellSchedule.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ try {
 ## `keyChangesBellSchedules()`
 
 ```php
-keyChangesBellSchedules($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleKeyChange[]
+keyChangesBellSchedules($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -310,10 +310,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\BellSchedulesApi(
+$apiInstance = new Resources\Api\BellSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -347,7 +347,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleKeyChange[]**](../Model/TrackedChangesEdFiBellScheduleKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]**](../Model/TrackedChangesEdFiBellScheduleKeyChange.md)
 
 ### Authorization
 
@@ -380,16 +380,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\BellSchedulesApi(
+$apiInstance = new Resources\Api\BellSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_bell_schedule = new \OpenAPI\Client\Model\EdFiBellSchedule(); // \OpenAPI\Client\Model\EdFiBellSchedule | The JSON representation of the \"bellSchedule\" resource to be created or updated.
+$ed_fi_bell_schedule = new \Resources\Model\EdFiBellSchedule(); // \Resources\Model\EdFiBellSchedule | The JSON representation of the \"bellSchedule\" resource to be created or updated.
 
 try {
     $apiInstance->postBellSchedule($ed_fi_bell_schedule);
@@ -402,7 +402,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_bell_schedule** | [**\OpenAPI\Client\Model\EdFiBellSchedule**](../Model/EdFiBellSchedule.md)| The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. | |
+| **ed_fi_bell_schedule** | [**\Resources\Model\EdFiBellSchedule**](../Model/EdFiBellSchedule.md)| The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -439,17 +439,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\BellSchedulesApi(
+$apiInstance = new Resources\Api\BellSchedulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_bell_schedule = new \OpenAPI\Client\Model\EdFiBellSchedule(); // \OpenAPI\Client\Model\EdFiBellSchedule | The JSON representation of the \"bellSchedule\" resource to be created or updated.
+$ed_fi_bell_schedule = new \Resources\Model\EdFiBellSchedule(); // \Resources\Model\EdFiBellSchedule | The JSON representation of the \"bellSchedule\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -464,7 +464,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_bell_schedule** | [**\OpenAPI\Client\Model\EdFiBellSchedule**](../Model/EdFiBellSchedule.md)| The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. | |
+| **ed_fi_bell_schedule** | [**\Resources\Model\EdFiBellSchedule**](../Model/EdFiBellSchedule.md)| The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

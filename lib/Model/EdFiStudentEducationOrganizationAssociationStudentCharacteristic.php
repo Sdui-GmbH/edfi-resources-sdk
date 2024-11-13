@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentEducationOrganizationAssociationStudentCharacteristic Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class EdFiStudentEducationOrganizationAssociationStudentCharacteristic implement
     protected static $openAPITypes = [
         'student_characteristic_descriptor' => 'string',
         'designated_by' => 'string',
-        'periods' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristicPeriod[]'
+        'periods' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristicPeriod[]'
     ];
 
     /**
@@ -393,7 +393,7 @@ class EdFiStudentEducationOrganizationAssociationStudentCharacteristic implement
     /**
      * Gets periods
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristicPeriod[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristicPeriod[]|null
      */
     public function getPeriods()
     {
@@ -403,7 +403,7 @@ class EdFiStudentEducationOrganizationAssociationStudentCharacteristic implement
     /**
      * Sets periods
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristicPeriod[]|null $periods An unordered collection of studentEducationOrganizationAssociationStudentCharacteristicPeriods. The time periods for which characteristic was effective.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristicPeriod[]|null $periods An unordered collection of studentEducationOrganizationAssociationStudentCharacteristicPeriods. The time periods for which characteristic was effective.
      *
      * @return self
      */

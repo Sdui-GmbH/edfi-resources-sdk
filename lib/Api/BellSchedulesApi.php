@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * BellSchedulesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class BellSchedulesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBellScheduleById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class BellSchedulesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBellScheduleById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class BellSchedulesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesBellSchedules'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiBellScheduleDelete[]
      */
     public function deletesBellSchedules($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
     {
@@ -407,9 +407,9 @@ class BellSchedulesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesBellSchedules'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiBellScheduleDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesBellSchedulesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
     {
@@ -440,11 +440,11 @@ class BellSchedulesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiBellScheduleDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiBellScheduleDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class BellSchedulesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiBellScheduleDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class BellSchedulesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiBellScheduleDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class BellSchedulesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiBellScheduleDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class BellSchedulesApi
      */
     public function deletesBellSchedulesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiBellScheduleDelete[]';
         $request = $this->deletesBellSchedulesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class BellSchedulesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBellSchedules'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiBellSchedule[]
+     * @return \Resources\Model\EdFiBellSchedule[]
      */
     public function getBellSchedules($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
     {
@@ -804,9 +804,9 @@ class BellSchedulesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBellSchedules'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiBellSchedule[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiBellSchedule[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBellSchedulesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
     {
@@ -837,11 +837,11 @@ class BellSchedulesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiBellSchedule[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiBellSchedule[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiBellSchedule[]' !== 'string') {
+                        if ('\Resources\Model\EdFiBellSchedule[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class BellSchedulesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiBellSchedule[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiBellSchedule[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class BellSchedulesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiBellSchedule[]';
+            $returnType = '\Resources\Model\EdFiBellSchedule[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class BellSchedulesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiBellSchedule[]',
+                        '\Resources\Model\EdFiBellSchedule[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class BellSchedulesApi
      */
     public function getBellSchedulesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiBellSchedule[]';
+        $returnType = '\Resources\Model\EdFiBellSchedule[]';
         $request = $this->getBellSchedulesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType);
 
         return $this->client
@@ -1258,9 +1258,9 @@ class BellSchedulesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBellSchedulesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiBellSchedule
+     * @return \Resources\Model\EdFiBellSchedule
      */
     public function getBellSchedulesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedulesById'][0])
     {
@@ -1278,9 +1278,9 @@ class BellSchedulesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBellSchedulesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiBellSchedule, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiBellSchedule, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBellSchedulesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedulesById'][0])
     {
@@ -1311,11 +1311,11 @@ class BellSchedulesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiBellSchedule' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiBellSchedule' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiBellSchedule' !== 'string') {
+                        if ('\Resources\Model\EdFiBellSchedule' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1333,7 +1333,7 @@ class BellSchedulesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiBellSchedule', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiBellSchedule', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1352,7 +1352,7 @@ class BellSchedulesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiBellSchedule';
+            $returnType = '\Resources\Model\EdFiBellSchedule';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1385,7 +1385,7 @@ class BellSchedulesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiBellSchedule',
+                        '\Resources\Model\EdFiBellSchedule',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1433,7 +1433,7 @@ class BellSchedulesApi
      */
     public function getBellSchedulesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedulesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiBellSchedule';
+        $returnType = '\Resources\Model\EdFiBellSchedule';
         $request = $this->getBellSchedulesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1593,9 +1593,9 @@ class BellSchedulesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesBellSchedules'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]
      */
     public function keyChangesBellSchedules($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
     {
@@ -1616,9 +1616,9 @@ class BellSchedulesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesBellSchedules'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesBellSchedulesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
     {
@@ -1649,11 +1649,11 @@ class BellSchedulesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1671,7 +1671,7 @@ class BellSchedulesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1690,7 +1690,7 @@ class BellSchedulesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1723,7 +1723,7 @@ class BellSchedulesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1777,7 +1777,7 @@ class BellSchedulesApi
      */
     public function keyChangesBellSchedulesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiBellScheduleKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]';
         $request = $this->keyChangesBellSchedulesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1968,10 +1968,10 @@ class BellSchedulesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postBellSchedule'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1985,10 +1985,10 @@ class BellSchedulesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postBellSchedule'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2033,7 +2033,7 @@ class BellSchedulesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postBellSchedule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2054,7 +2054,7 @@ class BellSchedulesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postBellSchedule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2091,7 +2091,7 @@ class BellSchedulesApi
     /**
      * Create request for operation 'postBellSchedule'
      *
-     * @param  \OpenAPI\Client\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postBellSchedule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2189,11 +2189,11 @@ class BellSchedulesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putBellSchedule'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2208,11 +2208,11 @@ class BellSchedulesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putBellSchedule'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2258,7 +2258,7 @@ class BellSchedulesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putBellSchedule'] to see the possible values for this operation
      *
@@ -2281,7 +2281,7 @@ class BellSchedulesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putBellSchedule'] to see the possible values for this operation
      *
@@ -2320,7 +2320,7 @@ class BellSchedulesApi
      * Create request for operation 'putBellSchedule'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiBellSchedule $ed_fi_bell_schedule The JSON representation of the \&quot;bellSchedule\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putBellSchedule'] to see the possible values for this operation
      *

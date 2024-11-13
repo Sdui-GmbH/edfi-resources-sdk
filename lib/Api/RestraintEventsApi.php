@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * RestraintEventsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class RestraintEventsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRestraintEventById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class RestraintEventsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRestraintEventById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class RestraintEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesRestraintEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiRestraintEventDelete[]
      */
     public function deletesRestraintEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesRestraintEvents'][0])
     {
@@ -407,9 +407,9 @@ class RestraintEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesRestraintEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiRestraintEventDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesRestraintEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesRestraintEvents'][0])
     {
@@ -440,11 +440,11 @@ class RestraintEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiRestraintEventDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiRestraintEventDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class RestraintEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiRestraintEventDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class RestraintEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiRestraintEventDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class RestraintEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiRestraintEventDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class RestraintEventsApi
      */
     public function deletesRestraintEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesRestraintEvents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiRestraintEventDelete[]';
         $request = $this->deletesRestraintEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -773,9 +773,9 @@ class RestraintEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRestraintEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiRestraintEvent[]
+     * @return \Resources\Model\EdFiRestraintEvent[]
      */
     public function getRestraintEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $restraint_event_identifier = null, $school_id = null, $student_unique_id = null, $educational_environment_descriptor = null, $event_date = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getRestraintEvents'][0])
     {
@@ -802,9 +802,9 @@ class RestraintEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRestraintEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiRestraintEvent[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiRestraintEvent[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getRestraintEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $restraint_event_identifier = null, $school_id = null, $student_unique_id = null, $educational_environment_descriptor = null, $event_date = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getRestraintEvents'][0])
     {
@@ -835,11 +835,11 @@ class RestraintEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiRestraintEvent[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiRestraintEvent[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiRestraintEvent[]' !== 'string') {
+                        if ('\Resources\Model\EdFiRestraintEvent[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -857,7 +857,7 @@ class RestraintEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiRestraintEvent[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiRestraintEvent[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -876,7 +876,7 @@ class RestraintEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiRestraintEvent[]';
+            $returnType = '\Resources\Model\EdFiRestraintEvent[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -909,7 +909,7 @@ class RestraintEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiRestraintEvent[]',
+                        '\Resources\Model\EdFiRestraintEvent[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -975,7 +975,7 @@ class RestraintEventsApi
      */
     public function getRestraintEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $restraint_event_identifier = null, $school_id = null, $student_unique_id = null, $educational_environment_descriptor = null, $event_date = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getRestraintEvents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiRestraintEvent[]';
+        $returnType = '\Resources\Model\EdFiRestraintEvent[]';
         $request = $this->getRestraintEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $restraint_event_identifier, $school_id, $student_unique_id, $educational_environment_descriptor, $event_date, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1246,9 +1246,9 @@ class RestraintEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRestraintEventsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiRestraintEvent
+     * @return \Resources\Model\EdFiRestraintEvent
      */
     public function getRestraintEventsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getRestraintEventsById'][0])
     {
@@ -1266,9 +1266,9 @@ class RestraintEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRestraintEventsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiRestraintEvent, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiRestraintEvent, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRestraintEventsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getRestraintEventsById'][0])
     {
@@ -1299,11 +1299,11 @@ class RestraintEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiRestraintEvent' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiRestraintEvent' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiRestraintEvent' !== 'string') {
+                        if ('\Resources\Model\EdFiRestraintEvent' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1321,7 +1321,7 @@ class RestraintEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiRestraintEvent', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiRestraintEvent', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1340,7 +1340,7 @@ class RestraintEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiRestraintEvent';
+            $returnType = '\Resources\Model\EdFiRestraintEvent';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1373,7 +1373,7 @@ class RestraintEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiRestraintEvent',
+                        '\Resources\Model\EdFiRestraintEvent',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1421,7 +1421,7 @@ class RestraintEventsApi
      */
     public function getRestraintEventsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getRestraintEventsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiRestraintEvent';
+        $returnType = '\Resources\Model\EdFiRestraintEvent';
         $request = $this->getRestraintEventsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1581,9 +1581,9 @@ class RestraintEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesRestraintEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiRestraintEventKeyChange[]
      */
     public function keyChangesRestraintEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesRestraintEvents'][0])
     {
@@ -1604,9 +1604,9 @@ class RestraintEventsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesRestraintEvents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiRestraintEventKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesRestraintEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesRestraintEvents'][0])
     {
@@ -1637,11 +1637,11 @@ class RestraintEventsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiRestraintEventKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiRestraintEventKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1659,7 +1659,7 @@ class RestraintEventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiRestraintEventKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1678,7 +1678,7 @@ class RestraintEventsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiRestraintEventKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1711,7 +1711,7 @@ class RestraintEventsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiRestraintEventKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1765,7 +1765,7 @@ class RestraintEventsApi
      */
     public function keyChangesRestraintEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesRestraintEvents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiRestraintEventKeyChange[]';
         $request = $this->keyChangesRestraintEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1956,10 +1956,10 @@ class RestraintEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postRestraintEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1973,10 +1973,10 @@ class RestraintEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postRestraintEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2021,7 +2021,7 @@ class RestraintEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postRestraintEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2042,7 +2042,7 @@ class RestraintEventsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postRestraintEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2079,7 +2079,7 @@ class RestraintEventsApi
     /**
      * Create request for operation 'postRestraintEvent'
      *
-     * @param  \OpenAPI\Client\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postRestraintEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2177,11 +2177,11 @@ class RestraintEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putRestraintEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2196,11 +2196,11 @@ class RestraintEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putRestraintEvent'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2246,7 +2246,7 @@ class RestraintEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putRestraintEvent'] to see the possible values for this operation
      *
@@ -2269,7 +2269,7 @@ class RestraintEventsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putRestraintEvent'] to see the possible values for this operation
      *
@@ -2308,7 +2308,7 @@ class RestraintEventsApi
      * Create request for operation 'putRestraintEvent'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiRestraintEvent $ed_fi_restraint_event The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putRestraintEvent'] to see the possible values for this operation
      *

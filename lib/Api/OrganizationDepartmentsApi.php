@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * OrganizationDepartmentsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class OrganizationDepartmentsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrganizationDepartmentById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class OrganizationDepartmentsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOrganizationDepartmentById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class OrganizationDepartmentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesOrganizationDepartments'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]
      */
     public function deletesOrganizationDepartments($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOrganizationDepartments'][0])
     {
@@ -407,9 +407,9 @@ class OrganizationDepartmentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesOrganizationDepartments'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiOrganizationDepartmentDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesOrganizationDepartmentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOrganizationDepartments'][0])
     {
@@ -440,11 +440,11 @@ class OrganizationDepartmentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class OrganizationDepartmentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class OrganizationDepartmentsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class OrganizationDepartmentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class OrganizationDepartmentsApi
      */
     public function deletesOrganizationDepartmentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOrganizationDepartments'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]';
         $request = $this->deletesOrganizationDepartmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -770,9 +770,9 @@ class OrganizationDepartmentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganizationDepartments'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiOrganizationDepartment[]
+     * @return \Resources\Model\EdFiOrganizationDepartment[]
      */
     public function getOrganizationDepartments($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
     {
@@ -796,9 +796,9 @@ class OrganizationDepartmentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganizationDepartments'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiOrganizationDepartment[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiOrganizationDepartment[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrganizationDepartmentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
     {
@@ -829,11 +829,11 @@ class OrganizationDepartmentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiOrganizationDepartment[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiOrganizationDepartment[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiOrganizationDepartment[]' !== 'string') {
+                        if ('\Resources\Model\EdFiOrganizationDepartment[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -851,7 +851,7 @@ class OrganizationDepartmentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiOrganizationDepartment[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiOrganizationDepartment[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -870,7 +870,7 @@ class OrganizationDepartmentsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiOrganizationDepartment[]';
+            $returnType = '\Resources\Model\EdFiOrganizationDepartment[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -903,7 +903,7 @@ class OrganizationDepartmentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiOrganizationDepartment[]',
+                        '\Resources\Model\EdFiOrganizationDepartment[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -963,7 +963,7 @@ class OrganizationDepartmentsApi
      */
     public function getOrganizationDepartmentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiOrganizationDepartment[]';
+        $returnType = '\Resources\Model\EdFiOrganizationDepartment[]';
         $request = $this->getOrganizationDepartmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $use_snapshot, $contentType);
 
         return $this->client
@@ -1195,9 +1195,9 @@ class OrganizationDepartmentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganizationDepartmentsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiOrganizationDepartment
+     * @return \Resources\Model\EdFiOrganizationDepartment
      */
     public function getOrganizationDepartmentsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartmentsById'][0])
     {
@@ -1215,9 +1215,9 @@ class OrganizationDepartmentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganizationDepartmentsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiOrganizationDepartment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiOrganizationDepartment, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrganizationDepartmentsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartmentsById'][0])
     {
@@ -1248,11 +1248,11 @@ class OrganizationDepartmentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiOrganizationDepartment' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiOrganizationDepartment' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiOrganizationDepartment' !== 'string') {
+                        if ('\Resources\Model\EdFiOrganizationDepartment' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1270,7 +1270,7 @@ class OrganizationDepartmentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiOrganizationDepartment', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiOrganizationDepartment', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1289,7 +1289,7 @@ class OrganizationDepartmentsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiOrganizationDepartment';
+            $returnType = '\Resources\Model\EdFiOrganizationDepartment';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1322,7 +1322,7 @@ class OrganizationDepartmentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiOrganizationDepartment',
+                        '\Resources\Model\EdFiOrganizationDepartment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1370,7 +1370,7 @@ class OrganizationDepartmentsApi
      */
     public function getOrganizationDepartmentsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartmentsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiOrganizationDepartment';
+        $returnType = '\Resources\Model\EdFiOrganizationDepartment';
         $request = $this->getOrganizationDepartmentsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1530,9 +1530,9 @@ class OrganizationDepartmentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesOrganizationDepartments'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]
      */
     public function keyChangesOrganizationDepartments($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOrganizationDepartments'][0])
     {
@@ -1553,9 +1553,9 @@ class OrganizationDepartmentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesOrganizationDepartments'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesOrganizationDepartmentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOrganizationDepartments'][0])
     {
@@ -1586,11 +1586,11 @@ class OrganizationDepartmentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1608,7 +1608,7 @@ class OrganizationDepartmentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1627,7 +1627,7 @@ class OrganizationDepartmentsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1660,7 +1660,7 @@ class OrganizationDepartmentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1714,7 +1714,7 @@ class OrganizationDepartmentsApi
      */
     public function keyChangesOrganizationDepartmentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOrganizationDepartments'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]';
         $request = $this->keyChangesOrganizationDepartmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1905,10 +1905,10 @@ class OrganizationDepartmentsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postOrganizationDepartment'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1922,10 +1922,10 @@ class OrganizationDepartmentsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postOrganizationDepartment'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1970,7 +1970,7 @@ class OrganizationDepartmentsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postOrganizationDepartment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1991,7 +1991,7 @@ class OrganizationDepartmentsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postOrganizationDepartment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2028,7 +2028,7 @@ class OrganizationDepartmentsApi
     /**
      * Create request for operation 'postOrganizationDepartment'
      *
-     * @param  \OpenAPI\Client\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postOrganizationDepartment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2126,11 +2126,11 @@ class OrganizationDepartmentsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putOrganizationDepartment'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2145,11 +2145,11 @@ class OrganizationDepartmentsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putOrganizationDepartment'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2195,7 +2195,7 @@ class OrganizationDepartmentsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putOrganizationDepartment'] to see the possible values for this operation
      *
@@ -2218,7 +2218,7 @@ class OrganizationDepartmentsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putOrganizationDepartment'] to see the possible values for this operation
      *
@@ -2257,7 +2257,7 @@ class OrganizationDepartmentsApi
      * Create request for operation 'putOrganizationDepartment'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiOrganizationDepartment $ed_fi_organization_department The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putOrganizationDepartment'] to see the possible values for this operation
      *

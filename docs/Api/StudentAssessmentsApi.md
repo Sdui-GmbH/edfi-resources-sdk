@@ -1,4 +1,4 @@
-# OpenAPI\Client\StudentAssessmentsApi
+# Resources\StudentAssessmentsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentAssessmentsApi(
+$apiInstance = new Resources\Api\StudentAssessmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesStudentAssessments()`
 
 ```php
-deletesStudentAssessments($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentAssessmentDelete[]
+deletesStudentAssessments($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentAssessmentDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentAssessmentsApi(
+$apiInstance = new Resources\Api\StudentAssessmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentAssessmentDelete[]**](../Model/TrackedChangesEdFiStudentAssessmentDelete.md)
+[**\Resources\Model\TrackedChangesEdFiStudentAssessmentDelete[]**](../Model/TrackedChangesEdFiStudentAssessmentDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getStudentAssessments()`
 
 ```php
-getStudentAssessments($offset, $limit, $min_change_version, $max_change_version, $total_count, $student_assessment_identifier, $assessment_identifier, $namespace, $student_unique_id, $reported_school_id, $school_year, $administration_environment_descriptor, $event_circumstance_descriptor, $when_assessed_grade_level_descriptor, $administration_language_descriptor, $platform_type_descriptor, $reason_not_tested_descriptor, $retest_indicator_descriptor, $administration_date, $administration_end_date, $assessed_minutes, $event_description, $id, $reported_school_identifier, $serial_number, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentAssessment[]
+getStudentAssessments($offset, $limit, $min_change_version, $max_change_version, $total_count, $student_assessment_identifier, $assessment_identifier, $namespace, $student_unique_id, $reported_school_id, $school_year, $administration_environment_descriptor, $event_circumstance_descriptor, $when_assessed_grade_level_descriptor, $administration_language_descriptor, $platform_type_descriptor, $reason_not_tested_descriptor, $retest_indicator_descriptor, $administration_date, $administration_end_date, $assessed_minutes, $event_description, $id, $reported_school_identifier, $serial_number, $use_snapshot): \Resources\Model\EdFiStudentAssessment[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentAssessmentsApi(
+$apiInstance = new Resources\Api\StudentAssessmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -239,7 +239,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentAssessment[]**](../Model/EdFiStudentAssessment.md)
+[**\Resources\Model\EdFiStudentAssessment[]**](../Model/EdFiStudentAssessment.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ try {
 ## `getStudentAssessmentsById()`
 
 ```php
-getStudentAssessmentsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentAssessment
+getStudentAssessmentsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiStudentAssessment
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -272,10 +272,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentAssessmentsApi(
+$apiInstance = new Resources\Api\StudentAssessmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -303,7 +303,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentAssessment**](../Model/EdFiStudentAssessment.md)
+[**\Resources\Model\EdFiStudentAssessment**](../Model/EdFiStudentAssessment.md)
 
 ### Authorization
 
@@ -321,7 +321,7 @@ try {
 ## `keyChangesStudentAssessments()`
 
 ```php
-keyChangesStudentAssessments($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentAssessmentKeyChange[]
+keyChangesStudentAssessments($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentAssessmentKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -336,10 +336,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentAssessmentsApi(
+$apiInstance = new Resources\Api\StudentAssessmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -373,7 +373,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentAssessmentKeyChange[]**](../Model/TrackedChangesEdFiStudentAssessmentKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiStudentAssessmentKeyChange[]**](../Model/TrackedChangesEdFiStudentAssessmentKeyChange.md)
 
 ### Authorization
 
@@ -406,16 +406,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentAssessmentsApi(
+$apiInstance = new Resources\Api\StudentAssessmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_student_assessment = new \OpenAPI\Client\Model\EdFiStudentAssessment(); // \OpenAPI\Client\Model\EdFiStudentAssessment | The JSON representation of the \"studentAssessment\" resource to be created or updated.
+$ed_fi_student_assessment = new \Resources\Model\EdFiStudentAssessment(); // \Resources\Model\EdFiStudentAssessment | The JSON representation of the \"studentAssessment\" resource to be created or updated.
 
 try {
     $apiInstance->postStudentAssessment($ed_fi_student_assessment);
@@ -428,7 +428,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_student_assessment** | [**\OpenAPI\Client\Model\EdFiStudentAssessment**](../Model/EdFiStudentAssessment.md)| The JSON representation of the \&quot;studentAssessment\&quot; resource to be created or updated. | |
+| **ed_fi_student_assessment** | [**\Resources\Model\EdFiStudentAssessment**](../Model/EdFiStudentAssessment.md)| The JSON representation of the \&quot;studentAssessment\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -465,17 +465,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentAssessmentsApi(
+$apiInstance = new Resources\Api\StudentAssessmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_student_assessment = new \OpenAPI\Client\Model\EdFiStudentAssessment(); // \OpenAPI\Client\Model\EdFiStudentAssessment | The JSON representation of the \"studentAssessment\" resource to be created or updated.
+$ed_fi_student_assessment = new \Resources\Model\EdFiStudentAssessment(); // \Resources\Model\EdFiStudentAssessment | The JSON representation of the \"studentAssessment\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -490,7 +490,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_student_assessment** | [**\OpenAPI\Client\Model\EdFiStudentAssessment**](../Model/EdFiStudentAssessment.md)| The JSON representation of the \&quot;studentAssessment\&quot; resource to be created or updated. | |
+| **ed_fi_student_assessment** | [**\Resources\Model\EdFiStudentAssessment**](../Model/EdFiStudentAssessment.md)| The JSON representation of the \&quot;studentAssessment\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

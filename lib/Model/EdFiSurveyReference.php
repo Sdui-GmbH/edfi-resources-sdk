@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSurveyReference Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class EdFiSurveyReference implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'namespace' => 'string',
         'survey_identifier' => 'string',
-        'link' => '\OpenAPI\Client\Model\Link'
+        'link' => '\Resources\Model\Link'
     ];
 
     /**
@@ -396,7 +396,7 @@ class EdFiSurveyReference implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets link
      *
-     * @return \OpenAPI\Client\Model\Link|null
+     * @return \Resources\Model\Link|null
      */
     public function getLink()
     {
@@ -406,7 +406,7 @@ class EdFiSurveyReference implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets link
      *
-     * @param \OpenAPI\Client\Model\Link|null $link link
+     * @param \Resources\Model\Link|null $link link
      *
      * @return self
      */

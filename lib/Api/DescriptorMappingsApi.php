@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * DescriptorMappingsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class DescriptorMappingsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDescriptorMappingById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class DescriptorMappingsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDescriptorMappingById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class DescriptorMappingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDescriptorMappings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiDescriptorMappingDelete[]
      */
     public function deletesDescriptorMappings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDescriptorMappings'][0])
     {
@@ -407,9 +407,9 @@ class DescriptorMappingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDescriptorMappings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiDescriptorMappingDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesDescriptorMappingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDescriptorMappings'][0])
     {
@@ -440,11 +440,11 @@ class DescriptorMappingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiDescriptorMappingDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiDescriptorMappingDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class DescriptorMappingsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiDescriptorMappingDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class DescriptorMappingsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiDescriptorMappingDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class DescriptorMappingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiDescriptorMappingDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class DescriptorMappingsApi
      */
     public function deletesDescriptorMappingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDescriptorMappings'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiDescriptorMappingDelete[]';
         $request = $this->deletesDescriptorMappingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -772,9 +772,9 @@ class DescriptorMappingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDescriptorMappings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiDescriptorMapping[]
+     * @return \Resources\Model\EdFiDescriptorMapping[]
      */
     public function getDescriptorMappings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $mapped_namespace = null, $mapped_value = null, $namespace = null, $value = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getDescriptorMappings'][0])
     {
@@ -800,9 +800,9 @@ class DescriptorMappingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDescriptorMappings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiDescriptorMapping[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiDescriptorMapping[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getDescriptorMappingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $mapped_namespace = null, $mapped_value = null, $namespace = null, $value = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getDescriptorMappings'][0])
     {
@@ -833,11 +833,11 @@ class DescriptorMappingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiDescriptorMapping[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiDescriptorMapping[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiDescriptorMapping[]' !== 'string') {
+                        if ('\Resources\Model\EdFiDescriptorMapping[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -855,7 +855,7 @@ class DescriptorMappingsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiDescriptorMapping[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiDescriptorMapping[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -874,7 +874,7 @@ class DescriptorMappingsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiDescriptorMapping[]';
+            $returnType = '\Resources\Model\EdFiDescriptorMapping[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -907,7 +907,7 @@ class DescriptorMappingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiDescriptorMapping[]',
+                        '\Resources\Model\EdFiDescriptorMapping[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -971,7 +971,7 @@ class DescriptorMappingsApi
      */
     public function getDescriptorMappingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $mapped_namespace = null, $mapped_value = null, $namespace = null, $value = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getDescriptorMappings'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiDescriptorMapping[]';
+        $returnType = '\Resources\Model\EdFiDescriptorMapping[]';
         $request = $this->getDescriptorMappingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $mapped_namespace, $mapped_value, $namespace, $value, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1234,9 +1234,9 @@ class DescriptorMappingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDescriptorMappingsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiDescriptorMapping
+     * @return \Resources\Model\EdFiDescriptorMapping
      */
     public function getDescriptorMappingsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDescriptorMappingsById'][0])
     {
@@ -1254,9 +1254,9 @@ class DescriptorMappingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDescriptorMappingsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiDescriptorMapping, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiDescriptorMapping, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDescriptorMappingsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDescriptorMappingsById'][0])
     {
@@ -1287,11 +1287,11 @@ class DescriptorMappingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiDescriptorMapping' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiDescriptorMapping' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiDescriptorMapping' !== 'string') {
+                        if ('\Resources\Model\EdFiDescriptorMapping' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1309,7 +1309,7 @@ class DescriptorMappingsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiDescriptorMapping', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiDescriptorMapping', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1328,7 +1328,7 @@ class DescriptorMappingsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiDescriptorMapping';
+            $returnType = '\Resources\Model\EdFiDescriptorMapping';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1361,7 +1361,7 @@ class DescriptorMappingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiDescriptorMapping',
+                        '\Resources\Model\EdFiDescriptorMapping',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1409,7 +1409,7 @@ class DescriptorMappingsApi
      */
     public function getDescriptorMappingsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDescriptorMappingsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiDescriptorMapping';
+        $returnType = '\Resources\Model\EdFiDescriptorMapping';
         $request = $this->getDescriptorMappingsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1569,9 +1569,9 @@ class DescriptorMappingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDescriptorMappings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]
      */
     public function keyChangesDescriptorMappings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDescriptorMappings'][0])
     {
@@ -1592,9 +1592,9 @@ class DescriptorMappingsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDescriptorMappings'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiDescriptorMappingKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesDescriptorMappingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDescriptorMappings'][0])
     {
@@ -1625,11 +1625,11 @@ class DescriptorMappingsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1647,7 +1647,7 @@ class DescriptorMappingsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1666,7 +1666,7 @@ class DescriptorMappingsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1699,7 +1699,7 @@ class DescriptorMappingsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1753,7 +1753,7 @@ class DescriptorMappingsApi
      */
     public function keyChangesDescriptorMappingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDescriptorMappings'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiDescriptorMappingKeyChange[]';
         $request = $this->keyChangesDescriptorMappingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1944,10 +1944,10 @@ class DescriptorMappingsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDescriptorMapping'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1961,10 +1961,10 @@ class DescriptorMappingsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDescriptorMapping'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2009,7 +2009,7 @@ class DescriptorMappingsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDescriptorMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2030,7 +2030,7 @@ class DescriptorMappingsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDescriptorMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2067,7 +2067,7 @@ class DescriptorMappingsApi
     /**
      * Create request for operation 'postDescriptorMapping'
      *
-     * @param  \OpenAPI\Client\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDescriptorMapping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2165,11 +2165,11 @@ class DescriptorMappingsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDescriptorMapping'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2184,11 +2184,11 @@ class DescriptorMappingsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDescriptorMapping'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2234,7 +2234,7 @@ class DescriptorMappingsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDescriptorMapping'] to see the possible values for this operation
      *
@@ -2257,7 +2257,7 @@ class DescriptorMappingsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDescriptorMapping'] to see the possible values for this operation
      *
@@ -2296,7 +2296,7 @@ class DescriptorMappingsApi
      * Create request for operation 'putDescriptorMapping'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDescriptorMapping $ed_fi_descriptor_mapping The JSON representation of the \&quot;descriptorMapping\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDescriptorMapping'] to see the possible values for this operation
      *

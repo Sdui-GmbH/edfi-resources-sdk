@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentInterventionAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,12 +58,12 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'cohort_reference' => '\OpenAPI\Client\Model\EdFiCohortReference',
-        'intervention_reference' => '\OpenAPI\Client\Model\EdFiInterventionReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'cohort_reference' => '\Resources\Model\EdFiCohortReference',
+        'intervention_reference' => '\Resources\Model\EdFiInterventionReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'diagnostic_statement' => 'string',
         'dosage' => 'int',
-        'intervention_effectivenesses' => '\OpenAPI\Client\Model\EdFiStudentInterventionAssociationInterventionEffectiveness[]',
+        'intervention_effectivenesses' => '\Resources\Model\EdFiStudentInterventionAssociationInterventionEffectiveness[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -389,7 +389,7 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
     /**
      * Gets cohort_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCohortReference|null
+     * @return \Resources\Model\EdFiCohortReference|null
      */
     public function getCohortReference()
     {
@@ -399,7 +399,7 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
     /**
      * Sets cohort_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCohortReference|null $cohort_reference cohort_reference
+     * @param \Resources\Model\EdFiCohortReference|null $cohort_reference cohort_reference
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
     /**
      * Gets intervention_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionReference
+     * @return \Resources\Model\EdFiInterventionReference
      */
     public function getInterventionReference()
     {
@@ -426,7 +426,7 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
     /**
      * Sets intervention_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionReference $intervention_reference intervention_reference
+     * @param \Resources\Model\EdFiInterventionReference $intervention_reference intervention_reference
      *
      * @return self
      */
@@ -443,7 +443,7 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -453,7 +453,7 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -545,7 +545,7 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
     /**
      * Gets intervention_effectivenesses
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentInterventionAssociationInterventionEffectiveness[]|null
+     * @return \Resources\Model\EdFiStudentInterventionAssociationInterventionEffectiveness[]|null
      */
     public function getInterventionEffectivenesses()
     {
@@ -555,7 +555,7 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
     /**
      * Sets intervention_effectivenesses
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentInterventionAssociationInterventionEffectiveness[]|null $intervention_effectivenesses An unordered collection of studentInterventionAssociationInterventionEffectivenesses. A measure of the effects of an intervention in each outcome domain. The rating of effectiveness takes into account four factors: the quality of the research on the intervention, the statistical significance of the research findings, the size of the differences between participants in the intervention and comparison groups and the consistency in results.
+     * @param \Resources\Model\EdFiStudentInterventionAssociationInterventionEffectiveness[]|null $intervention_effectivenesses An unordered collection of studentInterventionAssociationInterventionEffectivenesses. A measure of the effects of an intervention in each outcome domain. The rating of effectiveness takes into account four factors: the quality of the research on the intervention, the statistical significance of the research findings, the size of the differences between participants in the intervention and comparison groups and the consistency in results.
      *
      * @return self
      */

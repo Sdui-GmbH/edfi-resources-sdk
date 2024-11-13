@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **performance_evaluation_type_descriptor** | **string** | The type of performance evaluation conducted. |
 **school_year** | **int** | The identifier for the school year. |
 **term_descriptor** | **string** | The term for the session during the school year. |
-**link** | [**\OpenAPI\Client\Model\Link**](Link.md) |  | [optional]
+**link** | [**\Resources\Model\Link**](Link.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentSectionAttendanceEvent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,11 +60,11 @@ class EdFiStudentSectionAttendanceEvent implements ModelInterface, ArrayAccess, 
         'id' => 'string',
         'attendance_event_category_descriptor' => 'string',
         'event_date' => '\DateTime',
-        'section_reference' => '\OpenAPI\Client\Model\EdFiSectionReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'section_reference' => '\Resources\Model\EdFiSectionReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'arrival_time' => 'string',
         'attendance_event_reason' => 'string',
-        'class_periods' => '\OpenAPI\Client\Model\EdFiStudentSectionAttendanceEventClassPeriod[]',
+        'class_periods' => '\Resources\Model\EdFiStudentSectionAttendanceEventClassPeriod[]',
         'departure_time' => 'string',
         'educational_environment_descriptor' => 'string',
         'event_duration' => 'float',
@@ -512,7 +512,7 @@ class EdFiStudentSectionAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Gets section_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionReference
+     * @return \Resources\Model\EdFiSectionReference
      */
     public function getSectionReference()
     {
@@ -522,7 +522,7 @@ class EdFiStudentSectionAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Sets section_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionReference $section_reference section_reference
+     * @param \Resources\Model\EdFiSectionReference $section_reference section_reference
      *
      * @return self
      */
@@ -539,7 +539,7 @@ class EdFiStudentSectionAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -549,7 +549,7 @@ class EdFiStudentSectionAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -641,7 +641,7 @@ class EdFiStudentSectionAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Gets class_periods
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSectionAttendanceEventClassPeriod[]|null
+     * @return \Resources\Model\EdFiStudentSectionAttendanceEventClassPeriod[]|null
      */
     public function getClassPeriods()
     {
@@ -651,7 +651,7 @@ class EdFiStudentSectionAttendanceEvent implements ModelInterface, ArrayAccess, 
     /**
      * Sets class_periods
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSectionAttendanceEventClassPeriod[]|null $class_periods An unordered collection of studentSectionAttendanceEventClassPeriods. The class period(s) to which the section attendance event applies.
+     * @param \Resources\Model\EdFiStudentSectionAttendanceEventClassPeriod[]|null $class_periods An unordered collection of studentSectionAttendanceEventClassPeriods. The class period(s) to which the section attendance event applies.
      *
      * @return self
      */

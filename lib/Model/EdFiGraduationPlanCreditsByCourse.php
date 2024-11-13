@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiGraduationPlanCreditsByCourse Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class EdFiGraduationPlanCreditsByCourse implements ModelInterface, ArrayAccess, 
         'when_taken_grade_level_descriptor' => 'string',
         'credit_conversion' => 'float',
         'credits' => 'float',
-        'courses' => '\OpenAPI\Client\Model\EdFiGraduationPlanCreditsByCourseCourse[]'
+        'courses' => '\Resources\Model\EdFiGraduationPlanCreditsByCourseCourse[]'
     ];
 
     /**
@@ -532,7 +532,7 @@ class EdFiGraduationPlanCreditsByCourse implements ModelInterface, ArrayAccess, 
     /**
      * Gets courses
      *
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlanCreditsByCourseCourse[]
+     * @return \Resources\Model\EdFiGraduationPlanCreditsByCourseCourse[]
      */
     public function getCourses()
     {
@@ -542,7 +542,7 @@ class EdFiGraduationPlanCreditsByCourse implements ModelInterface, ArrayAccess, 
     /**
      * Sets courses
      *
-     * @param \OpenAPI\Client\Model\EdFiGraduationPlanCreditsByCourseCourse[] $courses An unordered collection of graduationPlanCreditsByCourseCourses. The course reference that identifies the organization of subject matter and related learning experiences provided for the instruction of students.
+     * @param \Resources\Model\EdFiGraduationPlanCreditsByCourseCourse[] $courses An unordered collection of graduationPlanCreditsByCourseCourses. The course reference that identifies the organization of subject matter and related learning experiences provided for the instruction of students.
      *
      * @return self
      */

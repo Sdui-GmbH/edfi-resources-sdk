@@ -1,4 +1,4 @@
-# OpenAPI\Client\ProgramDimensionsApi
+# Resources\ProgramDimensionsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramDimensionsApi(
+$apiInstance = new Resources\Api\ProgramDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesProgramDimensions()`
 
 ```php
-deletesProgramDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiProgramDimensionDelete[]
+deletesProgramDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiProgramDimensionDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramDimensionsApi(
+$apiInstance = new Resources\Api\ProgramDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiProgramDimensionDelete[]**](../Model/TrackedChangesEdFiProgramDimensionDelete.md)
+[**\Resources\Model\TrackedChangesEdFiProgramDimensionDelete[]**](../Model/TrackedChangesEdFiProgramDimensionDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getProgramDimensions()`
 
 ```php
-getProgramDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $code, $fiscal_year, $code_name, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiProgramDimension[]
+getProgramDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $code, $fiscal_year, $code_name, $id, $use_snapshot): \Resources\Model\EdFiProgramDimension[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramDimensionsApi(
+$apiInstance = new Resources\Api\ProgramDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -207,7 +207,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiProgramDimension[]**](../Model/EdFiProgramDimension.md)
+[**\Resources\Model\EdFiProgramDimension[]**](../Model/EdFiProgramDimension.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ try {
 ## `getProgramDimensionsById()`
 
 ```php
-getProgramDimensionsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiProgramDimension
+getProgramDimensionsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiProgramDimension
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -240,10 +240,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramDimensionsApi(
+$apiInstance = new Resources\Api\ProgramDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -271,7 +271,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiProgramDimension**](../Model/EdFiProgramDimension.md)
+[**\Resources\Model\EdFiProgramDimension**](../Model/EdFiProgramDimension.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ try {
 ## `keyChangesProgramDimensions()`
 
 ```php
-keyChangesProgramDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiProgramDimensionKeyChange[]
+keyChangesProgramDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiProgramDimensionKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -304,10 +304,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramDimensionsApi(
+$apiInstance = new Resources\Api\ProgramDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -341,7 +341,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiProgramDimensionKeyChange[]**](../Model/TrackedChangesEdFiProgramDimensionKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiProgramDimensionKeyChange[]**](../Model/TrackedChangesEdFiProgramDimensionKeyChange.md)
 
 ### Authorization
 
@@ -374,16 +374,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramDimensionsApi(
+$apiInstance = new Resources\Api\ProgramDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_program_dimension = new \OpenAPI\Client\Model\EdFiProgramDimension(); // \OpenAPI\Client\Model\EdFiProgramDimension | The JSON representation of the \"programDimension\" resource to be created or updated.
+$ed_fi_program_dimension = new \Resources\Model\EdFiProgramDimension(); // \Resources\Model\EdFiProgramDimension | The JSON representation of the \"programDimension\" resource to be created or updated.
 
 try {
     $apiInstance->postProgramDimension($ed_fi_program_dimension);
@@ -396,7 +396,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_program_dimension** | [**\OpenAPI\Client\Model\EdFiProgramDimension**](../Model/EdFiProgramDimension.md)| The JSON representation of the \&quot;programDimension\&quot; resource to be created or updated. | |
+| **ed_fi_program_dimension** | [**\Resources\Model\EdFiProgramDimension**](../Model/EdFiProgramDimension.md)| The JSON representation of the \&quot;programDimension\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -433,17 +433,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ProgramDimensionsApi(
+$apiInstance = new Resources\Api\ProgramDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_program_dimension = new \OpenAPI\Client\Model\EdFiProgramDimension(); // \OpenAPI\Client\Model\EdFiProgramDimension | The JSON representation of the \"programDimension\" resource to be created or updated.
+$ed_fi_program_dimension = new \Resources\Model\EdFiProgramDimension(); // \Resources\Model\EdFiProgramDimension | The JSON representation of the \"programDimension\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -458,7 +458,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_program_dimension** | [**\OpenAPI\Client\Model\EdFiProgramDimension**](../Model/EdFiProgramDimension.md)| The JSON representation of the \&quot;programDimension\&quot; resource to be created or updated. | |
+| **ed_fi_program_dimension** | [**\Resources\Model\EdFiProgramDimension**](../Model/EdFiProgramDimension.md)| The JSON representation of the \&quot;programDimension\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

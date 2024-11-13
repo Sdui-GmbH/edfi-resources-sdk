@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiGrade Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,13 +59,13 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'grade_type_descriptor' => 'string',
-        'grading_period_reference' => '\OpenAPI\Client\Model\EdFiGradingPeriodReference',
-        'student_section_association_reference' => '\OpenAPI\Client\Model\EdFiStudentSectionAssociationReference',
+        'grading_period_reference' => '\Resources\Model\EdFiGradingPeriodReference',
+        'student_section_association_reference' => '\Resources\Model\EdFiStudentSectionAssociationReference',
         'current_grade_as_of_date' => '\DateTime',
         'current_grade_indicator' => 'bool',
         'diagnostic_statement' => 'string',
         'grade_earned_description' => 'string',
-        'learning_standard_grades' => '\OpenAPI\Client\Model\EdFiGradeLearningStandardGrade[]',
+        'learning_standard_grades' => '\Resources\Model\EdFiGradeLearningStandardGrade[]',
         'letter_grade_earned' => 'string',
         'numeric_grade_earned' => 'float',
         'performance_base_conversion_descriptor' => 'string',
@@ -478,7 +478,7 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grading_period_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiGradingPeriodReference
+     * @return \Resources\Model\EdFiGradingPeriodReference
      */
     public function getGradingPeriodReference()
     {
@@ -488,7 +488,7 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grading_period_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiGradingPeriodReference $grading_period_reference grading_period_reference
+     * @param \Resources\Model\EdFiGradingPeriodReference $grading_period_reference grading_period_reference
      *
      * @return self
      */
@@ -505,7 +505,7 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets student_section_association_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSectionAssociationReference
+     * @return \Resources\Model\EdFiStudentSectionAssociationReference
      */
     public function getStudentSectionAssociationReference()
     {
@@ -515,7 +515,7 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets student_section_association_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSectionAssociationReference $student_section_association_reference student_section_association_reference
+     * @param \Resources\Model\EdFiStudentSectionAssociationReference $student_section_association_reference student_section_association_reference
      *
      * @return self
      */
@@ -679,7 +679,7 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets learning_standard_grades
      *
-     * @return \OpenAPI\Client\Model\EdFiGradeLearningStandardGrade[]|null
+     * @return \Resources\Model\EdFiGradeLearningStandardGrade[]|null
      */
     public function getLearningStandardGrades()
     {
@@ -689,7 +689,7 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets learning_standard_grades
      *
-     * @param \OpenAPI\Client\Model\EdFiGradeLearningStandardGrade[]|null $learning_standard_grades An unordered collection of gradeLearningStandardGrades. A collection of learning standards associated with the grade.
+     * @param \Resources\Model\EdFiGradeLearningStandardGrade[]|null $learning_standard_grades An unordered collection of gradeLearningStandardGrades. A collection of learning standards associated with the grade.
      *
      * @return self
      */

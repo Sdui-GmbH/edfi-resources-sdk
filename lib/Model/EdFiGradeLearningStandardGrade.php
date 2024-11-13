@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiGradeLearningStandardGrade Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class EdFiGradeLearningStandardGrade implements ModelInterface, ArrayAccess, \Js
         'diagnostic_statement' => 'string',
         'letter_grade_earned' => 'string',
         'numeric_grade_earned' => 'float',
-        'learning_standard_reference' => '\OpenAPI\Client\Model\EdFiLearningStandardReference'
+        'learning_standard_reference' => '\Resources\Model\EdFiLearningStandardReference'
     ];
 
     /**
@@ -497,7 +497,7 @@ class EdFiGradeLearningStandardGrade implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets learning_standard_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiLearningStandardReference
+     * @return \Resources\Model\EdFiLearningStandardReference
      */
     public function getLearningStandardReference()
     {
@@ -507,7 +507,7 @@ class EdFiGradeLearningStandardGrade implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets learning_standard_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiLearningStandardReference $learning_standard_reference learning_standard_reference
+     * @param \Resources\Model\EdFiLearningStandardReference $learning_standard_reference learning_standard_reference
      *
      * @return self
      */

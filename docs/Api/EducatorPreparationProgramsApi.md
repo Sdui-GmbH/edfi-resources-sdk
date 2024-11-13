@@ -1,4 +1,4 @@
-# OpenAPI\Client\EducatorPreparationProgramsApi
+# Resources\EducatorPreparationProgramsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducatorPreparationProgramsApi(
+$apiInstance = new Resources\Api\EducatorPreparationProgramsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesEducatorPreparationPrograms()`
 
 ```php
-deletesEducatorPreparationPrograms($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]
+deletesEducatorPreparationPrograms($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducatorPreparationProgramsApi(
+$apiInstance = new Resources\Api\EducatorPreparationProgramsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]**](../Model/TrackedChangesTpdmEducatorPreparationProgramDelete.md)
+[**\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]**](../Model/TrackedChangesTpdmEducatorPreparationProgramDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getEducatorPreparationPrograms()`
 
 ```php
-getEducatorPreparationPrograms($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot): \OpenAPI\Client\Model\TpdmEducatorPreparationProgram[]
+getEducatorPreparationPrograms($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot): \Resources\Model\TpdmEducatorPreparationProgram[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducatorPreparationProgramsApi(
+$apiInstance = new Resources\Api\EducatorPreparationProgramsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -211,7 +211,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TpdmEducatorPreparationProgram[]**](../Model/TpdmEducatorPreparationProgram.md)
+[**\Resources\Model\TpdmEducatorPreparationProgram[]**](../Model/TpdmEducatorPreparationProgram.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ try {
 ## `getEducatorPreparationProgramsById()`
 
 ```php
-getEducatorPreparationProgramsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\TpdmEducatorPreparationProgram
+getEducatorPreparationProgramsById($id, $if_none_match, $use_snapshot): \Resources\Model\TpdmEducatorPreparationProgram
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -244,10 +244,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducatorPreparationProgramsApi(
+$apiInstance = new Resources\Api\EducatorPreparationProgramsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -275,7 +275,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TpdmEducatorPreparationProgram**](../Model/TpdmEducatorPreparationProgram.md)
+[**\Resources\Model\TpdmEducatorPreparationProgram**](../Model/TpdmEducatorPreparationProgram.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ try {
 ## `keyChangesEducatorPreparationPrograms()`
 
 ```php
-keyChangesEducatorPreparationPrograms($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]
+keyChangesEducatorPreparationPrograms($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -308,10 +308,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducatorPreparationProgramsApi(
+$apiInstance = new Resources\Api\EducatorPreparationProgramsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -345,7 +345,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]**](../Model/TrackedChangesTpdmEducatorPreparationProgramKeyChange.md)
+[**\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]**](../Model/TrackedChangesTpdmEducatorPreparationProgramKeyChange.md)
 
 ### Authorization
 
@@ -378,16 +378,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducatorPreparationProgramsApi(
+$apiInstance = new Resources\Api\EducatorPreparationProgramsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$tpdm_educator_preparation_program = new \OpenAPI\Client\Model\TpdmEducatorPreparationProgram(); // \OpenAPI\Client\Model\TpdmEducatorPreparationProgram | The JSON representation of the \"educatorPreparationProgram\" resource to be created or updated.
+$tpdm_educator_preparation_program = new \Resources\Model\TpdmEducatorPreparationProgram(); // \Resources\Model\TpdmEducatorPreparationProgram | The JSON representation of the \"educatorPreparationProgram\" resource to be created or updated.
 
 try {
     $apiInstance->postEducatorPreparationProgram($tpdm_educator_preparation_program);
@@ -400,7 +400,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **tpdm_educator_preparation_program** | [**\OpenAPI\Client\Model\TpdmEducatorPreparationProgram**](../Model/TpdmEducatorPreparationProgram.md)| The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. | |
+| **tpdm_educator_preparation_program** | [**\Resources\Model\TpdmEducatorPreparationProgram**](../Model/TpdmEducatorPreparationProgram.md)| The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -437,17 +437,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducatorPreparationProgramsApi(
+$apiInstance = new Resources\Api\EducatorPreparationProgramsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$tpdm_educator_preparation_program = new \OpenAPI\Client\Model\TpdmEducatorPreparationProgram(); // \OpenAPI\Client\Model\TpdmEducatorPreparationProgram | The JSON representation of the \"educatorPreparationProgram\" resource to be created or updated.
+$tpdm_educator_preparation_program = new \Resources\Model\TpdmEducatorPreparationProgram(); // \Resources\Model\TpdmEducatorPreparationProgram | The JSON representation of the \"educatorPreparationProgram\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -462,7 +462,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **tpdm_educator_preparation_program** | [**\OpenAPI\Client\Model\TpdmEducatorPreparationProgram**](../Model/TpdmEducatorPreparationProgram.md)| The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. | |
+| **tpdm_educator_preparation_program** | [**\Resources\Model\TpdmEducatorPreparationProgram**](../Model/TpdmEducatorPreparationProgram.md)| The JSON representation of the \&quot;educatorPreparationProgram\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

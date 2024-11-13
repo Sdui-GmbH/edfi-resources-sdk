@@ -1,4 +1,4 @@
-# OpenAPI\Client\OrganizationDepartmentsApi
+# Resources\OrganizationDepartmentsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\OrganizationDepartmentsApi(
+$apiInstance = new Resources\Api\OrganizationDepartmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesOrganizationDepartments()`
 
 ```php
-deletesOrganizationDepartments($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]
+deletesOrganizationDepartments($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\OrganizationDepartmentsApi(
+$apiInstance = new Resources\Api\OrganizationDepartmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]**](../Model/TrackedChangesEdFiOrganizationDepartmentDelete.md)
+[**\Resources\Model\TrackedChangesEdFiOrganizationDepartmentDelete[]**](../Model/TrackedChangesEdFiOrganizationDepartmentDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getOrganizationDepartments()`
 
 ```php
-getOrganizationDepartments($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $use_snapshot): \OpenAPI\Client\Model\EdFiOrganizationDepartment[]
+getOrganizationDepartments($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $use_snapshot): \Resources\Model\EdFiOrganizationDepartment[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\OrganizationDepartmentsApi(
+$apiInstance = new Resources\Api\OrganizationDepartmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -205,7 +205,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiOrganizationDepartment[]**](../Model/EdFiOrganizationDepartment.md)
+[**\Resources\Model\EdFiOrganizationDepartment[]**](../Model/EdFiOrganizationDepartment.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ try {
 ## `getOrganizationDepartmentsById()`
 
 ```php
-getOrganizationDepartmentsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiOrganizationDepartment
+getOrganizationDepartmentsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiOrganizationDepartment
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -238,10 +238,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\OrganizationDepartmentsApi(
+$apiInstance = new Resources\Api\OrganizationDepartmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -269,7 +269,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiOrganizationDepartment**](../Model/EdFiOrganizationDepartment.md)
+[**\Resources\Model\EdFiOrganizationDepartment**](../Model/EdFiOrganizationDepartment.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ try {
 ## `keyChangesOrganizationDepartments()`
 
 ```php
-keyChangesOrganizationDepartments($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]
+keyChangesOrganizationDepartments($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -302,10 +302,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\OrganizationDepartmentsApi(
+$apiInstance = new Resources\Api\OrganizationDepartmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -339,7 +339,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]**](../Model/TrackedChangesEdFiOrganizationDepartmentKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiOrganizationDepartmentKeyChange[]**](../Model/TrackedChangesEdFiOrganizationDepartmentKeyChange.md)
 
 ### Authorization
 
@@ -372,16 +372,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\OrganizationDepartmentsApi(
+$apiInstance = new Resources\Api\OrganizationDepartmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_organization_department = new \OpenAPI\Client\Model\EdFiOrganizationDepartment(); // \OpenAPI\Client\Model\EdFiOrganizationDepartment | The JSON representation of the \"organizationDepartment\" resource to be created or updated.
+$ed_fi_organization_department = new \Resources\Model\EdFiOrganizationDepartment(); // \Resources\Model\EdFiOrganizationDepartment | The JSON representation of the \"organizationDepartment\" resource to be created or updated.
 
 try {
     $apiInstance->postOrganizationDepartment($ed_fi_organization_department);
@@ -394,7 +394,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_organization_department** | [**\OpenAPI\Client\Model\EdFiOrganizationDepartment**](../Model/EdFiOrganizationDepartment.md)| The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. | |
+| **ed_fi_organization_department** | [**\Resources\Model\EdFiOrganizationDepartment**](../Model/EdFiOrganizationDepartment.md)| The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -431,17 +431,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\OrganizationDepartmentsApi(
+$apiInstance = new Resources\Api\OrganizationDepartmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_organization_department = new \OpenAPI\Client\Model\EdFiOrganizationDepartment(); // \OpenAPI\Client\Model\EdFiOrganizationDepartment | The JSON representation of the \"organizationDepartment\" resource to be created or updated.
+$ed_fi_organization_department = new \Resources\Model\EdFiOrganizationDepartment(); // \Resources\Model\EdFiOrganizationDepartment | The JSON representation of the \"organizationDepartment\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -456,7 +456,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_organization_department** | [**\OpenAPI\Client\Model\EdFiOrganizationDepartment**](../Model/EdFiOrganizationDepartment.md)| The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. | |
+| **ed_fi_organization_department** | [**\Resources\Model\EdFiOrganizationDepartment**](../Model/EdFiOrganizationDepartment.md)| The JSON representation of the \&quot;organizationDepartment\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

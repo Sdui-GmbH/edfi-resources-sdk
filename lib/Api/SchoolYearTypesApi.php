@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * SchoolYearTypesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -143,7 +143,7 @@ class SchoolYearTypesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSchoolYearTypeById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -161,7 +161,7 @@ class SchoolYearTypesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSchoolYearTypeById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -382,9 +382,9 @@ class SchoolYearTypesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolYearTypes'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearType[]
+     * @return \Resources\Model\EdFiSchoolYearType[]
      */
     public function getSchoolYearTypes($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_year = null, $current_school_year = null, $id = null, $school_year_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolYearTypes'][0])
     {
@@ -409,9 +409,9 @@ class SchoolYearTypesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolYearTypes'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiSchoolYearType[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiSchoolYearType[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSchoolYearTypesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_year = null, $current_school_year = null, $id = null, $school_year_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolYearTypes'][0])
     {
@@ -442,11 +442,11 @@ class SchoolYearTypesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiSchoolYearType[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiSchoolYearType[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiSchoolYearType[]' !== 'string') {
+                        if ('\Resources\Model\EdFiSchoolYearType[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -464,7 +464,7 @@ class SchoolYearTypesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiSchoolYearType[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiSchoolYearType[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -483,7 +483,7 @@ class SchoolYearTypesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiSchoolYearType[]';
+            $returnType = '\Resources\Model\EdFiSchoolYearType[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -516,7 +516,7 @@ class SchoolYearTypesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiSchoolYearType[]',
+                        '\Resources\Model\EdFiSchoolYearType[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -578,7 +578,7 @@ class SchoolYearTypesApi
      */
     public function getSchoolYearTypesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_year = null, $current_school_year = null, $id = null, $school_year_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolYearTypes'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiSchoolYearType[]';
+        $returnType = '\Resources\Model\EdFiSchoolYearType[]';
         $request = $this->getSchoolYearTypesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_year, $current_school_year, $id, $school_year_description, $use_snapshot, $contentType);
 
         return $this->client
@@ -821,9 +821,9 @@ class SchoolYearTypesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolYearTypesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearType
+     * @return \Resources\Model\EdFiSchoolYearType
      */
     public function getSchoolYearTypesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolYearTypesById'][0])
     {
@@ -841,9 +841,9 @@ class SchoolYearTypesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolYearTypesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiSchoolYearType, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiSchoolYearType, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSchoolYearTypesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolYearTypesById'][0])
     {
@@ -874,11 +874,11 @@ class SchoolYearTypesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiSchoolYearType' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiSchoolYearType' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiSchoolYearType' !== 'string') {
+                        if ('\Resources\Model\EdFiSchoolYearType' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -896,7 +896,7 @@ class SchoolYearTypesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiSchoolYearType', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiSchoolYearType', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -915,7 +915,7 @@ class SchoolYearTypesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiSchoolYearType';
+            $returnType = '\Resources\Model\EdFiSchoolYearType';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -948,7 +948,7 @@ class SchoolYearTypesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiSchoolYearType',
+                        '\Resources\Model\EdFiSchoolYearType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -996,7 +996,7 @@ class SchoolYearTypesApi
      */
     public function getSchoolYearTypesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolYearTypesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiSchoolYearType';
+        $returnType = '\Resources\Model\EdFiSchoolYearType';
         $request = $this->getSchoolYearTypesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1148,10 +1148,10 @@ class SchoolYearTypesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSchoolYearType'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1165,10 +1165,10 @@ class SchoolYearTypesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSchoolYearType'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1213,7 +1213,7 @@ class SchoolYearTypesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSchoolYearType'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1234,7 +1234,7 @@ class SchoolYearTypesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSchoolYearType'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1271,7 +1271,7 @@ class SchoolYearTypesApi
     /**
      * Create request for operation 'postSchoolYearType'
      *
-     * @param  \OpenAPI\Client\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postSchoolYearType'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1369,11 +1369,11 @@ class SchoolYearTypesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSchoolYearType'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1388,11 +1388,11 @@ class SchoolYearTypesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSchoolYearType'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1438,7 +1438,7 @@ class SchoolYearTypesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSchoolYearType'] to see the possible values for this operation
      *
@@ -1461,7 +1461,7 @@ class SchoolYearTypesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSchoolYearType'] to see the possible values for this operation
      *
@@ -1500,7 +1500,7 @@ class SchoolYearTypesApi
      * Create request for operation 'putSchoolYearType'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiSchoolYearType $ed_fi_school_year_type The JSON representation of the \&quot;schoolYearType\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putSchoolYearType'] to see the possible values for this operation
      *

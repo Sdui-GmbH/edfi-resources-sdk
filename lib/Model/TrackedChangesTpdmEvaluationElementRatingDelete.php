@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesTpdmEvaluationElementRatingDelete Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class TrackedChangesTpdmEvaluationElementRatingDelete implements ModelInterface,
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'key_values' => '\OpenAPI\Client\Model\TrackedChangesTpdmEvaluationElementRatingKey'
+        'key_values' => '\Resources\Model\TrackedChangesTpdmEvaluationElementRatingKey'
     ];
 
     /**
@@ -360,7 +360,7 @@ class TrackedChangesTpdmEvaluationElementRatingDelete implements ModelInterface,
     /**
      * Gets key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesTpdmEvaluationElementRatingKey|null
+     * @return \Resources\Model\TrackedChangesTpdmEvaluationElementRatingKey|null
      */
     public function getKeyValues()
     {
@@ -370,7 +370,7 @@ class TrackedChangesTpdmEvaluationElementRatingDelete implements ModelInterface,
     /**
      * Sets key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesTpdmEvaluationElementRatingKey|null $key_values key_values
+     * @param \Resources\Model\TrackedChangesTpdmEvaluationElementRatingKey|null $key_values key_values
      *
      * @return self
      */

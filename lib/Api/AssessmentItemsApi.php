@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * AssessmentItemsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class AssessmentItemsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAssessmentItemById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class AssessmentItemsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAssessmentItemById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class AssessmentItemsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessmentItems'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiAssessmentItemDelete[]
      */
     public function deletesAssessmentItems($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentItems'][0])
     {
@@ -407,9 +407,9 @@ class AssessmentItemsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessmentItems'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiAssessmentItemDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesAssessmentItemsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentItems'][0])
     {
@@ -440,11 +440,11 @@ class AssessmentItemsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiAssessmentItemDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiAssessmentItemDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class AssessmentItemsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiAssessmentItemDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class AssessmentItemsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiAssessmentItemDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class AssessmentItemsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiAssessmentItemDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class AssessmentItemsApi
      */
     public function deletesAssessmentItemsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentItems'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiAssessmentItemDelete[]';
         $request = $this->deletesAssessmentItemsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -777,9 +777,9 @@ class AssessmentItemsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentItems'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiAssessmentItem[]
+     * @return \Resources\Model\EdFiAssessmentItem[]
      */
     public function getAssessmentItems($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $identification_code = null, $assessment_identifier = null, $namespace = null, $assessment_item_category_descriptor = null, $assessment_item_uri = null, $expected_time_assessed = null, $id = null, $item_text = null, $max_raw_score = null, $nomenclature = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentItems'][0])
     {
@@ -810,9 +810,9 @@ class AssessmentItemsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentItems'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiAssessmentItem[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiAssessmentItem[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getAssessmentItemsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $identification_code = null, $assessment_identifier = null, $namespace = null, $assessment_item_category_descriptor = null, $assessment_item_uri = null, $expected_time_assessed = null, $id = null, $item_text = null, $max_raw_score = null, $nomenclature = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentItems'][0])
     {
@@ -843,11 +843,11 @@ class AssessmentItemsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiAssessmentItem[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiAssessmentItem[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiAssessmentItem[]' !== 'string') {
+                        if ('\Resources\Model\EdFiAssessmentItem[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -865,7 +865,7 @@ class AssessmentItemsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiAssessmentItem[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiAssessmentItem[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -884,7 +884,7 @@ class AssessmentItemsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiAssessmentItem[]';
+            $returnType = '\Resources\Model\EdFiAssessmentItem[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -917,7 +917,7 @@ class AssessmentItemsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiAssessmentItem[]',
+                        '\Resources\Model\EdFiAssessmentItem[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -991,7 +991,7 @@ class AssessmentItemsApi
      */
     public function getAssessmentItemsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $identification_code = null, $assessment_identifier = null, $namespace = null, $assessment_item_category_descriptor = null, $assessment_item_uri = null, $expected_time_assessed = null, $id = null, $item_text = null, $max_raw_score = null, $nomenclature = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentItems'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiAssessmentItem[]';
+        $returnType = '\Resources\Model\EdFiAssessmentItem[]';
         $request = $this->getAssessmentItemsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $identification_code, $assessment_identifier, $namespace, $assessment_item_category_descriptor, $assessment_item_uri, $expected_time_assessed, $id, $item_text, $max_raw_score, $nomenclature, $use_snapshot, $contentType);
 
         return $this->client
@@ -1321,9 +1321,9 @@ class AssessmentItemsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentItemsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiAssessmentItem
+     * @return \Resources\Model\EdFiAssessmentItem
      */
     public function getAssessmentItemsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentItemsById'][0])
     {
@@ -1341,9 +1341,9 @@ class AssessmentItemsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentItemsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiAssessmentItem, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiAssessmentItem, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAssessmentItemsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentItemsById'][0])
     {
@@ -1374,11 +1374,11 @@ class AssessmentItemsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiAssessmentItem' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiAssessmentItem' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiAssessmentItem' !== 'string') {
+                        if ('\Resources\Model\EdFiAssessmentItem' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1396,7 +1396,7 @@ class AssessmentItemsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiAssessmentItem', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiAssessmentItem', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1415,7 +1415,7 @@ class AssessmentItemsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiAssessmentItem';
+            $returnType = '\Resources\Model\EdFiAssessmentItem';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1448,7 +1448,7 @@ class AssessmentItemsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiAssessmentItem',
+                        '\Resources\Model\EdFiAssessmentItem',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1496,7 +1496,7 @@ class AssessmentItemsApi
      */
     public function getAssessmentItemsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentItemsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiAssessmentItem';
+        $returnType = '\Resources\Model\EdFiAssessmentItem';
         $request = $this->getAssessmentItemsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1656,9 +1656,9 @@ class AssessmentItemsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessmentItems'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiAssessmentItemKeyChange[]
      */
     public function keyChangesAssessmentItems($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentItems'][0])
     {
@@ -1679,9 +1679,9 @@ class AssessmentItemsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessmentItems'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiAssessmentItemKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesAssessmentItemsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentItems'][0])
     {
@@ -1712,11 +1712,11 @@ class AssessmentItemsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiAssessmentItemKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiAssessmentItemKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1734,7 +1734,7 @@ class AssessmentItemsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiAssessmentItemKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1753,7 +1753,7 @@ class AssessmentItemsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiAssessmentItemKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1786,7 +1786,7 @@ class AssessmentItemsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiAssessmentItemKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1840,7 +1840,7 @@ class AssessmentItemsApi
      */
     public function keyChangesAssessmentItemsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentItems'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiAssessmentItemKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiAssessmentItemKeyChange[]';
         $request = $this->keyChangesAssessmentItemsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2031,10 +2031,10 @@ class AssessmentItemsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAssessmentItem'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2048,10 +2048,10 @@ class AssessmentItemsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAssessmentItem'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2096,7 +2096,7 @@ class AssessmentItemsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAssessmentItem'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2117,7 +2117,7 @@ class AssessmentItemsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAssessmentItem'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2154,7 +2154,7 @@ class AssessmentItemsApi
     /**
      * Create request for operation 'postAssessmentItem'
      *
-     * @param  \OpenAPI\Client\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postAssessmentItem'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2252,11 +2252,11 @@ class AssessmentItemsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAssessmentItem'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2271,11 +2271,11 @@ class AssessmentItemsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAssessmentItem'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2321,7 +2321,7 @@ class AssessmentItemsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAssessmentItem'] to see the possible values for this operation
      *
@@ -2344,7 +2344,7 @@ class AssessmentItemsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAssessmentItem'] to see the possible values for this operation
      *
@@ -2383,7 +2383,7 @@ class AssessmentItemsApi
      * Create request for operation 'putAssessmentItem'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiAssessmentItem $ed_fi_assessment_item The JSON representation of the \&quot;assessmentItem\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putAssessmentItem'] to see the possible values for this operation
      *

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiEducationOrganizationIndicator Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class EdFiEducationOrganizationIndicator implements ModelInterface, ArrayAccess,
         'indicator_level_descriptor' => 'string',
         'designated_by' => 'string',
         'indicator_value' => 'string',
-        'periods' => '\OpenAPI\Client\Model\EdFiEducationOrganizationIndicatorPeriod[]'
+        'periods' => '\Resources\Model\EdFiEducationOrganizationIndicatorPeriod[]'
     ];
 
     /**
@@ -547,7 +547,7 @@ class EdFiEducationOrganizationIndicator implements ModelInterface, ArrayAccess,
     /**
      * Gets periods
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationIndicatorPeriod[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationIndicatorPeriod[]|null
      */
     public function getPeriods()
     {
@@ -557,7 +557,7 @@ class EdFiEducationOrganizationIndicator implements ModelInterface, ArrayAccess,
     /**
      * Sets periods
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationIndicatorPeriod[]|null $periods An unordered collection of educationOrganizationIndicatorPeriods. The time period or as-of date for the indicator.
+     * @param \Resources\Model\EdFiEducationOrganizationIndicatorPeriod[]|null $periods An unordered collection of educationOrganizationIndicatorPeriods. The time period or as-of date for the indicator.
      *
      * @return self
      */

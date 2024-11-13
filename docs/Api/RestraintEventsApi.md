@@ -1,4 +1,4 @@
-# OpenAPI\Client\RestraintEventsApi
+# Resources\RestraintEventsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RestraintEventsApi(
+$apiInstance = new Resources\Api\RestraintEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesRestraintEvents()`
 
 ```php
-deletesRestraintEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventDelete[]
+deletesRestraintEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiRestraintEventDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RestraintEventsApi(
+$apiInstance = new Resources\Api\RestraintEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventDelete[]**](../Model/TrackedChangesEdFiRestraintEventDelete.md)
+[**\Resources\Model\TrackedChangesEdFiRestraintEventDelete[]**](../Model/TrackedChangesEdFiRestraintEventDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getRestraintEvents()`
 
 ```php
-getRestraintEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $restraint_event_identifier, $school_id, $student_unique_id, $educational_environment_descriptor, $event_date, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiRestraintEvent[]
+getRestraintEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $restraint_event_identifier, $school_id, $student_unique_id, $educational_environment_descriptor, $event_date, $id, $use_snapshot): \Resources\Model\EdFiRestraintEvent[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RestraintEventsApi(
+$apiInstance = new Resources\Api\RestraintEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -211,7 +211,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiRestraintEvent[]**](../Model/EdFiRestraintEvent.md)
+[**\Resources\Model\EdFiRestraintEvent[]**](../Model/EdFiRestraintEvent.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ try {
 ## `getRestraintEventsById()`
 
 ```php
-getRestraintEventsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiRestraintEvent
+getRestraintEventsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiRestraintEvent
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -244,10 +244,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RestraintEventsApi(
+$apiInstance = new Resources\Api\RestraintEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -275,7 +275,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiRestraintEvent**](../Model/EdFiRestraintEvent.md)
+[**\Resources\Model\EdFiRestraintEvent**](../Model/EdFiRestraintEvent.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ try {
 ## `keyChangesRestraintEvents()`
 
 ```php
-keyChangesRestraintEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventKeyChange[]
+keyChangesRestraintEvents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiRestraintEventKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -308,10 +308,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RestraintEventsApi(
+$apiInstance = new Resources\Api\RestraintEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -345,7 +345,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiRestraintEventKeyChange[]**](../Model/TrackedChangesEdFiRestraintEventKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiRestraintEventKeyChange[]**](../Model/TrackedChangesEdFiRestraintEventKeyChange.md)
 
 ### Authorization
 
@@ -378,16 +378,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RestraintEventsApi(
+$apiInstance = new Resources\Api\RestraintEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_restraint_event = new \OpenAPI\Client\Model\EdFiRestraintEvent(); // \OpenAPI\Client\Model\EdFiRestraintEvent | The JSON representation of the \"restraintEvent\" resource to be created or updated.
+$ed_fi_restraint_event = new \Resources\Model\EdFiRestraintEvent(); // \Resources\Model\EdFiRestraintEvent | The JSON representation of the \"restraintEvent\" resource to be created or updated.
 
 try {
     $apiInstance->postRestraintEvent($ed_fi_restraint_event);
@@ -400,7 +400,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_restraint_event** | [**\OpenAPI\Client\Model\EdFiRestraintEvent**](../Model/EdFiRestraintEvent.md)| The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. | |
+| **ed_fi_restraint_event** | [**\Resources\Model\EdFiRestraintEvent**](../Model/EdFiRestraintEvent.md)| The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -437,17 +437,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\RestraintEventsApi(
+$apiInstance = new Resources\Api\RestraintEventsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_restraint_event = new \OpenAPI\Client\Model\EdFiRestraintEvent(); // \OpenAPI\Client\Model\EdFiRestraintEvent | The JSON representation of the \"restraintEvent\" resource to be created or updated.
+$ed_fi_restraint_event = new \Resources\Model\EdFiRestraintEvent(); // \Resources\Model\EdFiRestraintEvent | The JSON representation of the \"restraintEvent\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -462,7 +462,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_restraint_event** | [**\OpenAPI\Client\Model\EdFiRestraintEvent**](../Model/EdFiRestraintEvent.md)| The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. | |
+| **ed_fi_restraint_event** | [**\Resources\Model\EdFiRestraintEvent**](../Model/EdFiRestraintEvent.md)| The JSON representation of the \&quot;restraintEvent\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

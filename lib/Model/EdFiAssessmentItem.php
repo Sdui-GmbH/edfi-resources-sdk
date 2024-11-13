@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiAssessmentItem Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,15 +59,15 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'id' => 'string',
         'identification_code' => 'string',
-        'assessment_reference' => '\OpenAPI\Client\Model\EdFiAssessmentReference',
+        'assessment_reference' => '\Resources\Model\EdFiAssessmentReference',
         'assessment_item_category_descriptor' => 'string',
         'assessment_item_uri' => 'string',
         'expected_time_assessed' => 'string',
         'item_text' => 'string',
-        'learning_standards' => '\OpenAPI\Client\Model\EdFiAssessmentItemLearningStandard[]',
+        'learning_standards' => '\Resources\Model\EdFiAssessmentItemLearningStandard[]',
         'max_raw_score' => 'float',
         'nomenclature' => 'string',
-        'possible_responses' => '\OpenAPI\Client\Model\EdFiAssessmentItemPossibleResponse[]',
+        'possible_responses' => '\Resources\Model\EdFiAssessmentItemPossibleResponse[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -483,7 +483,7 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets assessment_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentReference
+     * @return \Resources\Model\EdFiAssessmentReference
      */
     public function getAssessmentReference()
     {
@@ -493,7 +493,7 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets assessment_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentReference $assessment_reference assessment_reference
+     * @param \Resources\Model\EdFiAssessmentReference $assessment_reference assessment_reference
      *
      * @return self
      */
@@ -668,7 +668,7 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets learning_standards
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentItemLearningStandard[]|null
+     * @return \Resources\Model\EdFiAssessmentItemLearningStandard[]|null
      */
     public function getLearningStandards()
     {
@@ -678,7 +678,7 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets learning_standards
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentItemLearningStandard[]|null $learning_standards An unordered collection of assessmentItemLearningStandards. Learning standard tested by this item.
+     * @param \Resources\Model\EdFiAssessmentItemLearningStandard[]|null $learning_standards An unordered collection of assessmentItemLearningStandards. Learning standard tested by this item.
      *
      * @return self
      */
@@ -770,7 +770,7 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets possible_responses
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentItemPossibleResponse[]|null
+     * @return \Resources\Model\EdFiAssessmentItemPossibleResponse[]|null
      */
     public function getPossibleResponses()
     {
@@ -780,7 +780,7 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets possible_responses
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentItemPossibleResponse[]|null $possible_responses An unordered collection of assessmentItemPossibleResponses. A possible response to an assessment item.
+     * @param \Resources\Model\EdFiAssessmentItemPossibleResponse[]|null $possible_responses An unordered collection of assessmentItemPossibleResponses. A possible response to an assessment item.
      *
      * @return self
      */

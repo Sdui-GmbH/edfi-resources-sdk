@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiSurvey Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,9 +60,9 @@ class EdFiSurvey implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'namespace' => 'string',
         'survey_identifier' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
-        'session_reference' => '\OpenAPI\Client\Model\EdFiSessionReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
+        'session_reference' => '\Resources\Model\EdFiSessionReference',
         'number_administered' => 'int',
         'survey_category_descriptor' => 'string',
         'survey_title' => 'string',
@@ -497,7 +497,7 @@ class EdFiSurvey implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference|null
+     * @return \Resources\Model\EdFiEducationOrganizationReference|null
      */
     public function getEducationOrganizationReference()
     {
@@ -507,7 +507,7 @@ class EdFiSurvey implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference|null $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference|null $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -524,7 +524,7 @@ class EdFiSurvey implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference
+     * @return \Resources\Model\EdFiSchoolYearTypeReference
      */
     public function getSchoolYearTypeReference()
     {
@@ -534,7 +534,7 @@ class EdFiSurvey implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
      *
      * @return self
      */
@@ -551,7 +551,7 @@ class EdFiSurvey implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets session_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSessionReference|null
+     * @return \Resources\Model\EdFiSessionReference|null
      */
     public function getSessionReference()
     {
@@ -561,7 +561,7 @@ class EdFiSurvey implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets session_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSessionReference|null $session_reference session_reference
+     * @param \Resources\Model\EdFiSessionReference|null $session_reference session_reference
      *
      * @return self
      */

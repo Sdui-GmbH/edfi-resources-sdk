@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiBellScheduleClassPeriod Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiBellScheduleClassPeriod implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'class_period_reference' => '\OpenAPI\Client\Model\EdFiClassPeriodReference'
+        'class_period_reference' => '\Resources\Model\EdFiClassPeriodReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiBellScheduleClassPeriod implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets class_period_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiClassPeriodReference
+     * @return \Resources\Model\EdFiClassPeriodReference
      */
     public function getClassPeriodReference()
     {
@@ -305,7 +305,7 @@ class EdFiBellScheduleClassPeriod implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets class_period_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiClassPeriodReference $class_period_reference class_period_reference
+     * @param \Resources\Model\EdFiClassPeriodReference $class_period_reference class_period_reference
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffCredential Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiStaffCredential implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'credential_reference' => '\OpenAPI\Client\Model\EdFiCredentialReference'
+        'credential_reference' => '\Resources\Model\EdFiCredentialReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiStaffCredential implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets credential_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCredentialReference
+     * @return \Resources\Model\EdFiCredentialReference
      */
     public function getCredentialReference()
     {
@@ -305,7 +305,7 @@ class EdFiStaffCredential implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets credential_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCredentialReference $credential_reference credential_reference
+     * @param \Resources\Model\EdFiCredentialReference $credential_reference credential_reference
      *
      * @return self
      */

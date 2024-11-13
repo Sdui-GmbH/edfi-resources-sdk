@@ -1,4 +1,4 @@
-# OpenAPI\Client\EducationContentsApi
+# Resources\EducationContentsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducationContentsApi(
+$apiInstance = new Resources\Api\EducationContentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesEducationContents()`
 
 ```php
-deletesEducationContents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiEducationContentDelete[]
+deletesEducationContents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiEducationContentDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducationContentsApi(
+$apiInstance = new Resources\Api\EducationContentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiEducationContentDelete[]**](../Model/TrackedChangesEdFiEducationContentDelete.md)
+[**\Resources\Model\TrackedChangesEdFiEducationContentDelete[]**](../Model/TrackedChangesEdFiEducationContentDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getEducationContents()`
 
 ```php
-getEducationContents($offset, $limit, $min_change_version, $max_change_version, $total_count, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot): \OpenAPI\Client\Model\EdFiEducationContent[]
+getEducationContents($offset, $limit, $min_change_version, $max_change_version, $total_count, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot): \Resources\Model\EdFiEducationContent[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducationContentsApi(
+$apiInstance = new Resources\Api\EducationContentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -235,7 +235,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiEducationContent[]**](../Model/EdFiEducationContent.md)
+[**\Resources\Model\EdFiEducationContent[]**](../Model/EdFiEducationContent.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ try {
 ## `getEducationContentsById()`
 
 ```php
-getEducationContentsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiEducationContent
+getEducationContentsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiEducationContent
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -268,10 +268,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducationContentsApi(
+$apiInstance = new Resources\Api\EducationContentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -299,7 +299,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiEducationContent**](../Model/EdFiEducationContent.md)
+[**\Resources\Model\EdFiEducationContent**](../Model/EdFiEducationContent.md)
 
 ### Authorization
 
@@ -317,7 +317,7 @@ try {
 ## `keyChangesEducationContents()`
 
 ```php
-keyChangesEducationContents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiEducationContentKeyChange[]
+keyChangesEducationContents($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiEducationContentKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -332,10 +332,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducationContentsApi(
+$apiInstance = new Resources\Api\EducationContentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -369,7 +369,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiEducationContentKeyChange[]**](../Model/TrackedChangesEdFiEducationContentKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiEducationContentKeyChange[]**](../Model/TrackedChangesEdFiEducationContentKeyChange.md)
 
 ### Authorization
 
@@ -402,16 +402,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducationContentsApi(
+$apiInstance = new Resources\Api\EducationContentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_education_content = new \OpenAPI\Client\Model\EdFiEducationContent(); // \OpenAPI\Client\Model\EdFiEducationContent | The JSON representation of the \"educationContent\" resource to be created or updated.
+$ed_fi_education_content = new \Resources\Model\EdFiEducationContent(); // \Resources\Model\EdFiEducationContent | The JSON representation of the \"educationContent\" resource to be created or updated.
 
 try {
     $apiInstance->postEducationContent($ed_fi_education_content);
@@ -424,7 +424,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_education_content** | [**\OpenAPI\Client\Model\EdFiEducationContent**](../Model/EdFiEducationContent.md)| The JSON representation of the \&quot;educationContent\&quot; resource to be created or updated. | |
+| **ed_fi_education_content** | [**\Resources\Model\EdFiEducationContent**](../Model/EdFiEducationContent.md)| The JSON representation of the \&quot;educationContent\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -461,17 +461,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EducationContentsApi(
+$apiInstance = new Resources\Api\EducationContentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_education_content = new \OpenAPI\Client\Model\EdFiEducationContent(); // \OpenAPI\Client\Model\EdFiEducationContent | The JSON representation of the \"educationContent\" resource to be created or updated.
+$ed_fi_education_content = new \Resources\Model\EdFiEducationContent(); // \Resources\Model\EdFiEducationContent | The JSON representation of the \"educationContent\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -486,7 +486,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_education_content** | [**\OpenAPI\Client\Model\EdFiEducationContent**](../Model/EdFiEducationContent.md)| The JSON representation of the \&quot;educationContent\&quot; resource to be created or updated. | |
+| **ed_fi_education_content** | [**\Resources\Model\EdFiEducationContent**](../Model/EdFiEducationContent.md)| The JSON representation of the \&quot;educationContent\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiReportCard Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,15 +58,15 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'grading_period_reference' => '\OpenAPI\Client\Model\EdFiGradingPeriodReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
-        'grade_point_averages' => '\OpenAPI\Client\Model\EdFiReportCardGradePointAverage[]',
-        'grades' => '\OpenAPI\Client\Model\EdFiReportCardGrade[]',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'grading_period_reference' => '\Resources\Model\EdFiGradingPeriodReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
+        'grade_point_averages' => '\Resources\Model\EdFiReportCardGradePointAverage[]',
+        'grades' => '\Resources\Model\EdFiReportCardGrade[]',
         'number_of_days_absent' => 'float',
         'number_of_days_in_attendance' => 'float',
         'number_of_days_tardy' => 'int',
-        'student_competency_objectives' => '\OpenAPI\Client\Model\EdFiReportCardStudentCompetencyObjective[]',
+        'student_competency_objectives' => '\Resources\Model\EdFiReportCardStudentCompetencyObjective[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -417,7 +417,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -427,7 +427,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -444,7 +444,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grading_period_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiGradingPeriodReference
+     * @return \Resources\Model\EdFiGradingPeriodReference
      */
     public function getGradingPeriodReference()
     {
@@ -454,7 +454,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grading_period_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiGradingPeriodReference $grading_period_reference grading_period_reference
+     * @param \Resources\Model\EdFiGradingPeriodReference $grading_period_reference grading_period_reference
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -481,7 +481,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -498,7 +498,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grade_point_averages
      *
-     * @return \OpenAPI\Client\Model\EdFiReportCardGradePointAverage[]|null
+     * @return \Resources\Model\EdFiReportCardGradePointAverage[]|null
      */
     public function getGradePointAverages()
     {
@@ -508,7 +508,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grade_point_averages
      *
-     * @param \OpenAPI\Client\Model\EdFiReportCardGradePointAverage[]|null $grade_point_averages An unordered collection of reportCardGradePointAverages. A measure of average performance for courses taken by an individual.
+     * @param \Resources\Model\EdFiReportCardGradePointAverage[]|null $grade_point_averages An unordered collection of reportCardGradePointAverages. A measure of average performance for courses taken by an individual.
      *
      * @return self
      */
@@ -525,7 +525,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets grades
      *
-     * @return \OpenAPI\Client\Model\EdFiReportCardGrade[]|null
+     * @return \Resources\Model\EdFiReportCardGrade[]|null
      */
     public function getGrades()
     {
@@ -535,7 +535,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets grades
      *
-     * @param \OpenAPI\Client\Model\EdFiReportCardGrade[]|null $grades An unordered collection of reportCardGrades. Grades for the classes attended by the student for this grading period.
+     * @param \Resources\Model\EdFiReportCardGrade[]|null $grades An unordered collection of reportCardGrades. Grades for the classes attended by the student for this grading period.
      *
      * @return self
      */
@@ -669,7 +669,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets student_competency_objectives
      *
-     * @return \OpenAPI\Client\Model\EdFiReportCardStudentCompetencyObjective[]|null
+     * @return \Resources\Model\EdFiReportCardStudentCompetencyObjective[]|null
      */
     public function getStudentCompetencyObjectives()
     {
@@ -679,7 +679,7 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets student_competency_objectives
      *
-     * @param \OpenAPI\Client\Model\EdFiReportCardStudentCompetencyObjective[]|null $student_competency_objectives An unordered collection of reportCardStudentCompetencyObjectives. The student competency evaluations associated for this grading period.
+     * @param \Resources\Model\EdFiReportCardStudentCompetencyObjective[]|null $student_competency_objectives An unordered collection of reportCardStudentCompetencyObjectives. The student competency evaluations associated for this grading period.
      *
      * @return self
      */

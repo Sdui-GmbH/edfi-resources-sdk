@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * StaffLeavesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class StaffLeavesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStaffLeaveById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class StaffLeavesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteStaffLeaveById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class StaffLeavesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffLeaves'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiStaffLeaveDelete[]
      */
     public function deletesStaffLeaves($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffLeaves'][0])
     {
@@ -407,9 +407,9 @@ class StaffLeavesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffLeaves'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStaffLeaveDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesStaffLeavesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffLeaves'][0])
     {
@@ -440,11 +440,11 @@ class StaffLeavesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStaffLeaveDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStaffLeaveDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class StaffLeavesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStaffLeaveDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class StaffLeavesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStaffLeaveDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class StaffLeavesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiStaffLeaveDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class StaffLeavesApi
      */
     public function deletesStaffLeavesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffLeaves'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStaffLeaveDelete[]';
         $request = $this->deletesStaffLeavesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class StaffLeavesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffLeaves'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStaffLeave[]
+     * @return \Resources\Model\EdFiStaffLeave[]
      */
     public function getStaffLeaves($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_leave_event_category_descriptor = null, $begin_date = null, $staff_unique_id = null, $end_date = null, $id = null, $reason = null, $substitute_assigned = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffLeaves'][0])
     {
@@ -804,9 +804,9 @@ class StaffLeavesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffLeaves'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStaffLeave[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStaffLeave[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getStaffLeavesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_leave_event_category_descriptor = null, $begin_date = null, $staff_unique_id = null, $end_date = null, $id = null, $reason = null, $substitute_assigned = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffLeaves'][0])
     {
@@ -837,11 +837,11 @@ class StaffLeavesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStaffLeave[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStaffLeave[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStaffLeave[]' !== 'string') {
+                        if ('\Resources\Model\EdFiStaffLeave[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class StaffLeavesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStaffLeave[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStaffLeave[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class StaffLeavesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStaffLeave[]';
+            $returnType = '\Resources\Model\EdFiStaffLeave[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class StaffLeavesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStaffLeave[]',
+                        '\Resources\Model\EdFiStaffLeave[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class StaffLeavesApi
      */
     public function getStaffLeavesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_leave_event_category_descriptor = null, $begin_date = null, $staff_unique_id = null, $end_date = null, $id = null, $reason = null, $substitute_assigned = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffLeaves'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStaffLeave[]';
+        $returnType = '\Resources\Model\EdFiStaffLeave[]';
         $request = $this->getStaffLeavesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $staff_leave_event_category_descriptor, $begin_date, $staff_unique_id, $end_date, $id, $reason, $substitute_assigned, $use_snapshot, $contentType);
 
         return $this->client
@@ -1261,9 +1261,9 @@ class StaffLeavesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffLeavesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiStaffLeave
+     * @return \Resources\Model\EdFiStaffLeave
      */
     public function getStaffLeavesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffLeavesById'][0])
     {
@@ -1281,9 +1281,9 @@ class StaffLeavesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffLeavesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiStaffLeave, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiStaffLeave, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStaffLeavesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffLeavesById'][0])
     {
@@ -1314,11 +1314,11 @@ class StaffLeavesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiStaffLeave' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiStaffLeave' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiStaffLeave' !== 'string') {
+                        if ('\Resources\Model\EdFiStaffLeave' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1336,7 +1336,7 @@ class StaffLeavesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiStaffLeave', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiStaffLeave', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1355,7 +1355,7 @@ class StaffLeavesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiStaffLeave';
+            $returnType = '\Resources\Model\EdFiStaffLeave';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1388,7 +1388,7 @@ class StaffLeavesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiStaffLeave',
+                        '\Resources\Model\EdFiStaffLeave',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1436,7 +1436,7 @@ class StaffLeavesApi
      */
     public function getStaffLeavesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffLeavesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiStaffLeave';
+        $returnType = '\Resources\Model\EdFiStaffLeave';
         $request = $this->getStaffLeavesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1596,9 +1596,9 @@ class StaffLeavesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffLeaves'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiStaffLeaveKeyChange[]
      */
     public function keyChangesStaffLeaves($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffLeaves'][0])
     {
@@ -1619,9 +1619,9 @@ class StaffLeavesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffLeaves'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiStaffLeaveKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesStaffLeavesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffLeaves'][0])
     {
@@ -1652,11 +1652,11 @@ class StaffLeavesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiStaffLeaveKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiStaffLeaveKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1674,7 +1674,7 @@ class StaffLeavesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiStaffLeaveKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1693,7 +1693,7 @@ class StaffLeavesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiStaffLeaveKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1726,7 +1726,7 @@ class StaffLeavesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiStaffLeaveKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1780,7 +1780,7 @@ class StaffLeavesApi
      */
     public function keyChangesStaffLeavesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffLeaves'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiStaffLeaveKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiStaffLeaveKeyChange[]';
         $request = $this->keyChangesStaffLeavesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1971,10 +1971,10 @@ class StaffLeavesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffLeave'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1988,10 +1988,10 @@ class StaffLeavesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffLeave'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2036,7 +2036,7 @@ class StaffLeavesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffLeave'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2057,7 +2057,7 @@ class StaffLeavesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffLeave'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2094,7 +2094,7 @@ class StaffLeavesApi
     /**
      * Create request for operation 'postStaffLeave'
      *
-     * @param  \OpenAPI\Client\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postStaffLeave'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2192,11 +2192,11 @@ class StaffLeavesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffLeave'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2211,11 +2211,11 @@ class StaffLeavesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffLeave'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2261,7 +2261,7 @@ class StaffLeavesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffLeave'] to see the possible values for this operation
      *
@@ -2284,7 +2284,7 @@ class StaffLeavesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffLeave'] to see the possible values for this operation
      *
@@ -2323,7 +2323,7 @@ class StaffLeavesApi
      * Create request for operation 'putStaffLeave'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiStaffLeave $ed_fi_staff_leave The JSON representation of the \&quot;staffLeave\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putStaffLeave'] to see the possible values for this operation
      *

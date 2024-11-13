@@ -1,4 +1,4 @@
-# OpenAPI\Client\CalendarDatesApi
+# Resources\CalendarDatesApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CalendarDatesApi(
+$apiInstance = new Resources\Api\CalendarDatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesCalendarDates()`
 
 ```php
-deletesCalendarDates($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCalendarDateDelete[]
+deletesCalendarDates($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCalendarDateDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CalendarDatesApi(
+$apiInstance = new Resources\Api\CalendarDatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCalendarDateDelete[]**](../Model/TrackedChangesEdFiCalendarDateDelete.md)
+[**\Resources\Model\TrackedChangesEdFiCalendarDateDelete[]**](../Model/TrackedChangesEdFiCalendarDateDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getCalendarDates()`
 
 ```php
-getCalendarDates($offset, $limit, $min_change_version, $max_change_version, $total_count, $date, $calendar_code, $school_id, $school_year, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiCalendarDate[]
+getCalendarDates($offset, $limit, $min_change_version, $max_change_version, $total_count, $date, $calendar_code, $school_id, $school_year, $id, $use_snapshot): \Resources\Model\EdFiCalendarDate[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CalendarDatesApi(
+$apiInstance = new Resources\Api\CalendarDatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -209,7 +209,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCalendarDate[]**](../Model/EdFiCalendarDate.md)
+[**\Resources\Model\EdFiCalendarDate[]**](../Model/EdFiCalendarDate.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ try {
 ## `getCalendarDatesById()`
 
 ```php
-getCalendarDatesById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiCalendarDate
+getCalendarDatesById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiCalendarDate
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -242,10 +242,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CalendarDatesApi(
+$apiInstance = new Resources\Api\CalendarDatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -273,7 +273,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCalendarDate**](../Model/EdFiCalendarDate.md)
+[**\Resources\Model\EdFiCalendarDate**](../Model/EdFiCalendarDate.md)
 
 ### Authorization
 
@@ -291,7 +291,7 @@ try {
 ## `keyChangesCalendarDates()`
 
 ```php
-keyChangesCalendarDates($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCalendarDateKeyChange[]
+keyChangesCalendarDates($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCalendarDateKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -306,10 +306,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CalendarDatesApi(
+$apiInstance = new Resources\Api\CalendarDatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -343,7 +343,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCalendarDateKeyChange[]**](../Model/TrackedChangesEdFiCalendarDateKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiCalendarDateKeyChange[]**](../Model/TrackedChangesEdFiCalendarDateKeyChange.md)
 
 ### Authorization
 
@@ -376,16 +376,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CalendarDatesApi(
+$apiInstance = new Resources\Api\CalendarDatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_calendar_date = new \OpenAPI\Client\Model\EdFiCalendarDate(); // \OpenAPI\Client\Model\EdFiCalendarDate | The JSON representation of the \"calendarDate\" resource to be created or updated.
+$ed_fi_calendar_date = new \Resources\Model\EdFiCalendarDate(); // \Resources\Model\EdFiCalendarDate | The JSON representation of the \"calendarDate\" resource to be created or updated.
 
 try {
     $apiInstance->postCalendarDate($ed_fi_calendar_date);
@@ -398,7 +398,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_calendar_date** | [**\OpenAPI\Client\Model\EdFiCalendarDate**](../Model/EdFiCalendarDate.md)| The JSON representation of the \&quot;calendarDate\&quot; resource to be created or updated. | |
+| **ed_fi_calendar_date** | [**\Resources\Model\EdFiCalendarDate**](../Model/EdFiCalendarDate.md)| The JSON representation of the \&quot;calendarDate\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -435,17 +435,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CalendarDatesApi(
+$apiInstance = new Resources\Api\CalendarDatesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_calendar_date = new \OpenAPI\Client\Model\EdFiCalendarDate(); // \OpenAPI\Client\Model\EdFiCalendarDate | The JSON representation of the \"calendarDate\" resource to be created or updated.
+$ed_fi_calendar_date = new \Resources\Model\EdFiCalendarDate(); // \Resources\Model\EdFiCalendarDate | The JSON representation of the \"calendarDate\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -460,7 +460,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_calendar_date** | [**\OpenAPI\Client\Model\EdFiCalendarDate**](../Model/EdFiCalendarDate.md)| The JSON representation of the \&quot;calendarDate\&quot; resource to be created or updated. | |
+| **ed_fi_calendar_date** | [**\Resources\Model\EdFiCalendarDate**](../Model/EdFiCalendarDate.md)| The JSON representation of the \&quot;calendarDate\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

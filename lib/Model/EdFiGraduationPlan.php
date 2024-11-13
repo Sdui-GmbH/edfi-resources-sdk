@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiGraduationPlan Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,13 +59,13 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'id' => 'string',
         'graduation_plan_type_descriptor' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'graduation_school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
-        'credits_by_courses' => '\OpenAPI\Client\Model\EdFiGraduationPlanCreditsByCourse[]',
-        'credits_by_credit_categories' => '\OpenAPI\Client\Model\EdFiGraduationPlanCreditsByCreditCategory[]',
-        'credits_by_subjects' => '\OpenAPI\Client\Model\EdFiGraduationPlanCreditsBySubject[]',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'graduation_school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
+        'credits_by_courses' => '\Resources\Model\EdFiGraduationPlanCreditsByCourse[]',
+        'credits_by_credit_categories' => '\Resources\Model\EdFiGraduationPlanCreditsByCreditCategory[]',
+        'credits_by_subjects' => '\Resources\Model\EdFiGraduationPlanCreditsBySubject[]',
         'individual_plan' => 'bool',
-        'required_assessments' => '\OpenAPI\Client\Model\EdFiGraduationPlanRequiredAssessment[]',
+        'required_assessments' => '\Resources\Model\EdFiGraduationPlanRequiredAssessment[]',
         'total_required_credit_conversion' => 'float',
         'total_required_credits' => 'float',
         'total_required_credit_type_descriptor' => 'string',
@@ -465,7 +465,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -475,7 +475,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -492,7 +492,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets graduation_school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference
+     * @return \Resources\Model\EdFiSchoolYearTypeReference
      */
     public function getGraduationSchoolYearTypeReference()
     {
@@ -502,7 +502,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets graduation_school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference $graduation_school_year_type_reference graduation_school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference $graduation_school_year_type_reference graduation_school_year_type_reference
      *
      * @return self
      */
@@ -519,7 +519,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets credits_by_courses
      *
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlanCreditsByCourse[]|null
+     * @return \Resources\Model\EdFiGraduationPlanCreditsByCourse[]|null
      */
     public function getCreditsByCourses()
     {
@@ -529,7 +529,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets credits_by_courses
      *
-     * @param \OpenAPI\Client\Model\EdFiGraduationPlanCreditsByCourse[]|null $credits_by_courses An unordered collection of graduationPlanCreditsByCourses. The total credits required for graduation by taking a specific course, or by taking one or more from a set of courses.
+     * @param \Resources\Model\EdFiGraduationPlanCreditsByCourse[]|null $credits_by_courses An unordered collection of graduationPlanCreditsByCourses. The total credits required for graduation by taking a specific course, or by taking one or more from a set of courses.
      *
      * @return self
      */
@@ -546,7 +546,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets credits_by_credit_categories
      *
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlanCreditsByCreditCategory[]|null
+     * @return \Resources\Model\EdFiGraduationPlanCreditsByCreditCategory[]|null
      */
     public function getCreditsByCreditCategories()
     {
@@ -556,7 +556,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets credits_by_credit_categories
      *
-     * @param \OpenAPI\Client\Model\EdFiGraduationPlanCreditsByCreditCategory[]|null $credits_by_credit_categories An unordered collection of graduationPlanCreditsByCreditCategories. The total credits required for graduation based on the credit category.
+     * @param \Resources\Model\EdFiGraduationPlanCreditsByCreditCategory[]|null $credits_by_credit_categories An unordered collection of graduationPlanCreditsByCreditCategories. The total credits required for graduation based on the credit category.
      *
      * @return self
      */
@@ -573,7 +573,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets credits_by_subjects
      *
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlanCreditsBySubject[]|null
+     * @return \Resources\Model\EdFiGraduationPlanCreditsBySubject[]|null
      */
     public function getCreditsBySubjects()
     {
@@ -583,7 +583,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets credits_by_subjects
      *
-     * @param \OpenAPI\Client\Model\EdFiGraduationPlanCreditsBySubject[]|null $credits_by_subjects An unordered collection of graduationPlanCreditsBySubjects. The total credits required in subject to graduate. Only those courses identified as a high school course requirement are eligible to meet subject credit requirements.
+     * @param \Resources\Model\EdFiGraduationPlanCreditsBySubject[]|null $credits_by_subjects An unordered collection of graduationPlanCreditsBySubjects. The total credits required in subject to graduate. Only those courses identified as a high school course requirement are eligible to meet subject credit requirements.
      *
      * @return self
      */
@@ -634,7 +634,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets required_assessments
      *
-     * @return \OpenAPI\Client\Model\EdFiGraduationPlanRequiredAssessment[]|null
+     * @return \Resources\Model\EdFiGraduationPlanRequiredAssessment[]|null
      */
     public function getRequiredAssessments()
     {
@@ -644,7 +644,7 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets required_assessments
      *
-     * @param \OpenAPI\Client\Model\EdFiGraduationPlanRequiredAssessment[]|null $required_assessments An unordered collection of graduationPlanRequiredAssessments. The assessments and associated required score and performance level needed to satisfy graduation requirements.
+     * @param \Resources\Model\EdFiGraduationPlanRequiredAssessment[]|null $required_assessments An unordered collection of graduationPlanRequiredAssessments. The assessments and associated required score and performance level needed to satisfy graduation requirements.
      *
      * @return self
      */

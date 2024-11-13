@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TrackedChangesEdFiSectionAttendanceTakenEventKeyChange Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class TrackedChangesEdFiSectionAttendanceTakenEventKeyChange implements ModelInt
     protected static $openAPITypes = [
         'id' => 'string',
         'change_version' => 'float',
-        'old_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey',
-        'new_key_values' => '\OpenAPI\Client\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey'
+        'old_key_values' => '\Resources\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey',
+        'new_key_values' => '\Resources\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey'
     ];
 
     /**
@@ -367,7 +367,7 @@ class TrackedChangesEdFiSectionAttendanceTakenEventKeyChange implements ModelInt
     /**
      * Gets old_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey|null
+     * @return \Resources\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey|null
      */
     public function getOldKeyValues()
     {
@@ -377,7 +377,7 @@ class TrackedChangesEdFiSectionAttendanceTakenEventKeyChange implements ModelInt
     /**
      * Sets old_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey|null $old_key_values old_key_values
+     * @param \Resources\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey|null $old_key_values old_key_values
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class TrackedChangesEdFiSectionAttendanceTakenEventKeyChange implements ModelInt
     /**
      * Gets new_key_values
      *
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey|null
+     * @return \Resources\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey|null
      */
     public function getNewKeyValues()
     {
@@ -404,7 +404,7 @@ class TrackedChangesEdFiSectionAttendanceTakenEventKeyChange implements ModelInt
     /**
      * Sets new_key_values
      *
-     * @param \OpenAPI\Client\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey|null $new_key_values new_key_values
+     * @param \Resources\Model\TrackedChangesEdFiSectionAttendanceTakenEventKey|null $new_key_values new_key_values
      *
      * @return self
      */

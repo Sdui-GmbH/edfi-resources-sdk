@@ -1,4 +1,4 @@
-# OpenAPI\Client\SurveySectionResponsesApi
+# Resources\SurveySectionResponsesApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveySectionResponsesApi(
+$apiInstance = new Resources\Api\SurveySectionResponsesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesSurveySectionResponses()`
 
 ```php
-deletesSurveySectionResponses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiSurveySectionResponseDelete[]
+deletesSurveySectionResponses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiSurveySectionResponseDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveySectionResponsesApi(
+$apiInstance = new Resources\Api\SurveySectionResponsesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiSurveySectionResponseDelete[]**](../Model/TrackedChangesEdFiSurveySectionResponseDelete.md)
+[**\Resources\Model\TrackedChangesEdFiSurveySectionResponseDelete[]**](../Model/TrackedChangesEdFiSurveySectionResponseDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getSurveySectionResponses()`
 
 ```php
-getSurveySectionResponses($offset, $limit, $min_change_version, $max_change_version, $total_count, $namespace, $survey_identifier, $survey_response_identifier, $survey_section_title, $id, $section_rating, $use_snapshot): \OpenAPI\Client\Model\EdFiSurveySectionResponse[]
+getSurveySectionResponses($offset, $limit, $min_change_version, $max_change_version, $total_count, $namespace, $survey_identifier, $survey_response_identifier, $survey_section_title, $id, $section_rating, $use_snapshot): \Resources\Model\EdFiSurveySectionResponse[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveySectionResponsesApi(
+$apiInstance = new Resources\Api\SurveySectionResponsesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -211,7 +211,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiSurveySectionResponse[]**](../Model/EdFiSurveySectionResponse.md)
+[**\Resources\Model\EdFiSurveySectionResponse[]**](../Model/EdFiSurveySectionResponse.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ try {
 ## `getSurveySectionResponsesById()`
 
 ```php
-getSurveySectionResponsesById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiSurveySectionResponse
+getSurveySectionResponsesById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiSurveySectionResponse
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -244,10 +244,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveySectionResponsesApi(
+$apiInstance = new Resources\Api\SurveySectionResponsesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -275,7 +275,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiSurveySectionResponse**](../Model/EdFiSurveySectionResponse.md)
+[**\Resources\Model\EdFiSurveySectionResponse**](../Model/EdFiSurveySectionResponse.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ try {
 ## `keyChangesSurveySectionResponses()`
 
 ```php
-keyChangesSurveySectionResponses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiSurveySectionResponseKeyChange[]
+keyChangesSurveySectionResponses($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiSurveySectionResponseKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -308,10 +308,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveySectionResponsesApi(
+$apiInstance = new Resources\Api\SurveySectionResponsesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -345,7 +345,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiSurveySectionResponseKeyChange[]**](../Model/TrackedChangesEdFiSurveySectionResponseKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiSurveySectionResponseKeyChange[]**](../Model/TrackedChangesEdFiSurveySectionResponseKeyChange.md)
 
 ### Authorization
 
@@ -378,16 +378,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveySectionResponsesApi(
+$apiInstance = new Resources\Api\SurveySectionResponsesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_survey_section_response = new \OpenAPI\Client\Model\EdFiSurveySectionResponse(); // \OpenAPI\Client\Model\EdFiSurveySectionResponse | The JSON representation of the \"surveySectionResponse\" resource to be created or updated.
+$ed_fi_survey_section_response = new \Resources\Model\EdFiSurveySectionResponse(); // \Resources\Model\EdFiSurveySectionResponse | The JSON representation of the \"surveySectionResponse\" resource to be created or updated.
 
 try {
     $apiInstance->postSurveySectionResponse($ed_fi_survey_section_response);
@@ -400,7 +400,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_survey_section_response** | [**\OpenAPI\Client\Model\EdFiSurveySectionResponse**](../Model/EdFiSurveySectionResponse.md)| The JSON representation of the \&quot;surveySectionResponse\&quot; resource to be created or updated. | |
+| **ed_fi_survey_section_response** | [**\Resources\Model\EdFiSurveySectionResponse**](../Model/EdFiSurveySectionResponse.md)| The JSON representation of the \&quot;surveySectionResponse\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -437,17 +437,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SurveySectionResponsesApi(
+$apiInstance = new Resources\Api\SurveySectionResponsesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_survey_section_response = new \OpenAPI\Client\Model\EdFiSurveySectionResponse(); // \OpenAPI\Client\Model\EdFiSurveySectionResponse | The JSON representation of the \"surveySectionResponse\" resource to be created or updated.
+$ed_fi_survey_section_response = new \Resources\Model\EdFiSurveySectionResponse(); // \Resources\Model\EdFiSurveySectionResponse | The JSON representation of the \"surveySectionResponse\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -462,7 +462,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_survey_section_response** | [**\OpenAPI\Client\Model\EdFiSurveySectionResponse**](../Model/EdFiSurveySectionResponse.md)| The JSON representation of the \&quot;surveySectionResponse\&quot; resource to be created or updated. | |
+| **ed_fi_survey_section_response** | [**\Resources\Model\EdFiSurveySectionResponse**](../Model/EdFiSurveySectionResponse.md)| The JSON representation of the \&quot;surveySectionResponse\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

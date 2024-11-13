@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * PeopleApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class PeopleApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePersonById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class PeopleApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePersonById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class PeopleApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesPeople'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiPersonDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiPersonDelete[]
      */
     public function deletesPeople($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesPeople'][0])
     {
@@ -407,9 +407,9 @@ class PeopleApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesPeople'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiPersonDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiPersonDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesPeopleWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesPeople'][0])
     {
@@ -440,11 +440,11 @@ class PeopleApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiPersonDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiPersonDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiPersonDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiPersonDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class PeopleApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiPersonDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiPersonDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class PeopleApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPersonDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiPersonDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class PeopleApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiPersonDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiPersonDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class PeopleApi
      */
     public function deletesPeopleAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesPeople'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPersonDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiPersonDelete[]';
         $request = $this->deletesPeopleRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -770,9 +770,9 @@ class PeopleApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPeople'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiPerson[]
+     * @return \Resources\Model\EdFiPerson[]
      */
     public function getPeople($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $source_system_descriptor = null, $person_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPeople'][0])
     {
@@ -796,9 +796,9 @@ class PeopleApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPeople'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiPerson[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiPerson[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPeopleWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $source_system_descriptor = null, $person_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPeople'][0])
     {
@@ -829,11 +829,11 @@ class PeopleApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiPerson[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiPerson[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiPerson[]' !== 'string') {
+                        if ('\Resources\Model\EdFiPerson[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -851,7 +851,7 @@ class PeopleApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiPerson[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiPerson[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -870,7 +870,7 @@ class PeopleApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiPerson[]';
+            $returnType = '\Resources\Model\EdFiPerson[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -903,7 +903,7 @@ class PeopleApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiPerson[]',
+                        '\Resources\Model\EdFiPerson[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -963,7 +963,7 @@ class PeopleApi
      */
     public function getPeopleAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $source_system_descriptor = null, $person_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPeople'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiPerson[]';
+        $returnType = '\Resources\Model\EdFiPerson[]';
         $request = $this->getPeopleRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $source_system_descriptor, $person_id, $id, $use_snapshot, $contentType);
 
         return $this->client
@@ -1198,9 +1198,9 @@ class PeopleApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPeopleById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiPerson
+     * @return \Resources\Model\EdFiPerson
      */
     public function getPeopleById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getPeopleById'][0])
     {
@@ -1218,9 +1218,9 @@ class PeopleApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPeopleById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiPerson, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiPerson, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPeopleByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getPeopleById'][0])
     {
@@ -1251,11 +1251,11 @@ class PeopleApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiPerson' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiPerson' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiPerson' !== 'string') {
+                        if ('\Resources\Model\EdFiPerson' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1273,7 +1273,7 @@ class PeopleApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiPerson', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiPerson', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1292,7 +1292,7 @@ class PeopleApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiPerson';
+            $returnType = '\Resources\Model\EdFiPerson';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1325,7 +1325,7 @@ class PeopleApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiPerson',
+                        '\Resources\Model\EdFiPerson',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1373,7 +1373,7 @@ class PeopleApi
      */
     public function getPeopleByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getPeopleById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiPerson';
+        $returnType = '\Resources\Model\EdFiPerson';
         $request = $this->getPeopleByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1533,9 +1533,9 @@ class PeopleApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesPeople'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiPersonKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiPersonKeyChange[]
      */
     public function keyChangesPeople($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesPeople'][0])
     {
@@ -1556,9 +1556,9 @@ class PeopleApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesPeople'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiPersonKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiPersonKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesPeopleWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesPeople'][0])
     {
@@ -1589,11 +1589,11 @@ class PeopleApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiPersonKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiPersonKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiPersonKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiPersonKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1611,7 +1611,7 @@ class PeopleApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiPersonKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiPersonKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1630,7 +1630,7 @@ class PeopleApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPersonKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiPersonKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1663,7 +1663,7 @@ class PeopleApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiPersonKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiPersonKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1717,7 +1717,7 @@ class PeopleApi
      */
     public function keyChangesPeopleAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesPeople'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiPersonKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiPersonKeyChange[]';
         $request = $this->keyChangesPeopleRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1908,10 +1908,10 @@ class PeopleApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPerson'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1925,10 +1925,10 @@ class PeopleApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPerson'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1973,7 +1973,7 @@ class PeopleApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPerson'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1994,7 +1994,7 @@ class PeopleApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPerson'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2031,7 +2031,7 @@ class PeopleApi
     /**
      * Create request for operation 'postPerson'
      *
-     * @param  \OpenAPI\Client\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postPerson'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2129,11 +2129,11 @@ class PeopleApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPerson'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2148,11 +2148,11 @@ class PeopleApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPerson'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2198,7 +2198,7 @@ class PeopleApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPerson'] to see the possible values for this operation
      *
@@ -2221,7 +2221,7 @@ class PeopleApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPerson'] to see the possible values for this operation
      *
@@ -2260,7 +2260,7 @@ class PeopleApi
      * Create request for operation 'putPerson'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiPerson $ed_fi_person The JSON representation of the \&quot;person\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putPerson'] to see the possible values for this operation
      *

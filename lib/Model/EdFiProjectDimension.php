@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiProjectDimension Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class EdFiProjectDimension implements ModelInterface, ArrayAccess, \JsonSerializ
         'code' => 'string',
         'fiscal_year' => 'int',
         'code_name' => 'string',
-        'reporting_tags' => '\OpenAPI\Client\Model\EdFiProjectDimensionReportingTag[]',
+        'reporting_tags' => '\Resources\Model\EdFiProjectDimensionReportingTag[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -501,7 +501,7 @@ class EdFiProjectDimension implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets reporting_tags
      *
-     * @return \OpenAPI\Client\Model\EdFiProjectDimensionReportingTag[]|null
+     * @return \Resources\Model\EdFiProjectDimensionReportingTag[]|null
      */
     public function getReportingTags()
     {
@@ -511,7 +511,7 @@ class EdFiProjectDimension implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets reporting_tags
      *
-     * @param \OpenAPI\Client\Model\EdFiProjectDimensionReportingTag[]|null $reporting_tags An unordered collection of projectDimensionReportingTags. Optional tag for accountability reporting.
+     * @param \Resources\Model\EdFiProjectDimensionReportingTag[]|null $reporting_tags An unordered collection of projectDimensionReportingTags. Optional tag for accountability reporting.
      *
      * @return self
      */

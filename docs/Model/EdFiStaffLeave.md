@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 **begin_date** | **\DateTime** | The begin date of the staff leave. |
 **staff_leave_event_category_descriptor** | **string** | The code describing the type of leave taken. |
-**staff_reference** | [**\OpenAPI\Client\Model\EdFiStaffReference**](EdFiStaffReference.md) |  |
+**staff_reference** | [**\Resources\Model\EdFiStaffReference**](EdFiStaffReference.md) |  |
 **end_date** | **\DateTime** | The end date of the staff leave. | [optional]
 **reason** | **string** | Expanded reason for the staff leave. | [optional]
 **substitute_assigned** | **bool** | Indicator of whether a substitute was assigned during the period of staff leave. | [optional]

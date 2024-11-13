@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentSpecialEducationProgramAssociationDisability Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class EdFiStudentSpecialEducationProgramAssociationDisability implements ModelIn
         'disability_determination_source_type_descriptor' => 'string',
         'disability_diagnosis' => 'string',
         'order_of_disability' => 'int',
-        'designations' => '\OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationDisabilityDesignation[]'
+        'designations' => '\Resources\Model\EdFiStudentSpecialEducationProgramAssociationDisabilityDesignation[]'
     ];
 
     /**
@@ -483,7 +483,7 @@ class EdFiStudentSpecialEducationProgramAssociationDisability implements ModelIn
     /**
      * Gets designations
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationDisabilityDesignation[]|null
+     * @return \Resources\Model\EdFiStudentSpecialEducationProgramAssociationDisabilityDesignation[]|null
      */
     public function getDesignations()
     {
@@ -493,7 +493,7 @@ class EdFiStudentSpecialEducationProgramAssociationDisability implements ModelIn
     /**
      * Sets designations
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentSpecialEducationProgramAssociationDisabilityDesignation[]|null $designations An unordered collection of studentSpecialEducationProgramAssociationDisabilityDesignations. Whether the disability is IDEA, Section 504, or other disability designation.
+     * @param \Resources\Model\EdFiStudentSpecialEducationProgramAssociationDisabilityDesignation[]|null $designations An unordered collection of studentSpecialEducationProgramAssociationDisabilityDesignations. Whether the disability is IDEA, Section 504, or other disability designation.
      *
      * @return self
      */

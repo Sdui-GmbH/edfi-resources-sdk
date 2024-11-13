@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmPerformanceEvaluation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,12 +62,12 @@ class TpdmPerformanceEvaluation implements ModelInterface, ArrayAccess, \JsonSer
         'performance_evaluation_title' => 'string',
         'performance_evaluation_type_descriptor' => 'string',
         'term_descriptor' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
         'academic_subject_descriptor' => 'string',
-        'grade_levels' => '\OpenAPI\Client\Model\TpdmPerformanceEvaluationGradeLevel[]',
+        'grade_levels' => '\Resources\Model\TpdmPerformanceEvaluationGradeLevel[]',
         'performance_evaluation_description' => 'string',
-        'rating_levels' => '\OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingLevel[]',
+        'rating_levels' => '\Resources\Model\TpdmPerformanceEvaluationRatingLevel[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -576,7 +576,7 @@ class TpdmPerformanceEvaluation implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -586,7 +586,7 @@ class TpdmPerformanceEvaluation implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -603,7 +603,7 @@ class TpdmPerformanceEvaluation implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference
+     * @return \Resources\Model\EdFiSchoolYearTypeReference
      */
     public function getSchoolYearTypeReference()
     {
@@ -613,7 +613,7 @@ class TpdmPerformanceEvaluation implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference $school_year_type_reference school_year_type_reference
      *
      * @return self
      */
@@ -668,7 +668,7 @@ class TpdmPerformanceEvaluation implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets grade_levels
      *
-     * @return \OpenAPI\Client\Model\TpdmPerformanceEvaluationGradeLevel[]|null
+     * @return \Resources\Model\TpdmPerformanceEvaluationGradeLevel[]|null
      */
     public function getGradeLevels()
     {
@@ -678,7 +678,7 @@ class TpdmPerformanceEvaluation implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets grade_levels
      *
-     * @param \OpenAPI\Client\Model\TpdmPerformanceEvaluationGradeLevel[]|null $grade_levels An unordered collection of performanceEvaluationGradeLevels. The grade levels involved with the performance evaluation.
+     * @param \Resources\Model\TpdmPerformanceEvaluationGradeLevel[]|null $grade_levels An unordered collection of performanceEvaluationGradeLevels. The grade levels involved with the performance evaluation.
      *
      * @return self
      */
@@ -733,7 +733,7 @@ class TpdmPerformanceEvaluation implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets rating_levels
      *
-     * @return \OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingLevel[]|null
+     * @return \Resources\Model\TpdmPerformanceEvaluationRatingLevel[]|null
      */
     public function getRatingLevels()
     {
@@ -743,7 +743,7 @@ class TpdmPerformanceEvaluation implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets rating_levels
      *
-     * @param \OpenAPI\Client\Model\TpdmPerformanceEvaluationRatingLevel[]|null $rating_levels An unordered collection of performanceEvaluationRatingLevels. The descriptive level(s) of ratings (cut scores) for the evaluation.
+     * @param \Resources\Model\TpdmPerformanceEvaluationRatingLevel[]|null $rating_levels An unordered collection of performanceEvaluationRatingLevels. The descriptive level(s) of ratings (cut scores) for the evaluation.
      *
      * @return self
      */

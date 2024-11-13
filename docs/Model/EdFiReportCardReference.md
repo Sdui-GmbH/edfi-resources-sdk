@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **grading_period_school_id** | **int** | The identifier assigned to a school. |
 **grading_period_school_year** | **int** | The identifier for the grading period school year. |
 **student_unique_id** | **string** | A unique alphanumeric code assigned to a student. |
-**link** | [**\OpenAPI\Client\Model\Link**](Link.md) |  | [optional]
+**link** | [**\Resources\Model\Link**](Link.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

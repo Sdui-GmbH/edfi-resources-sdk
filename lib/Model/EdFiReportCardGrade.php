@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiReportCardGrade Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiReportCardGrade implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'grade_reference' => '\OpenAPI\Client\Model\EdFiGradeReference'
+        'grade_reference' => '\Resources\Model\EdFiGradeReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiReportCardGrade implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets grade_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiGradeReference
+     * @return \Resources\Model\EdFiGradeReference
      */
     public function getGradeReference()
     {
@@ -305,7 +305,7 @@ class EdFiReportCardGrade implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets grade_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiGradeReference $grade_reference grade_reference
+     * @param \Resources\Model\EdFiGradeReference $grade_reference grade_reference
      *
      * @return self
      */

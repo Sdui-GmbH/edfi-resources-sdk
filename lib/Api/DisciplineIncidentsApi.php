@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * DisciplineIncidentsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class DisciplineIncidentsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDisciplineIncidentById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class DisciplineIncidentsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDisciplineIncidentById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class DisciplineIncidentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineIncidents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[]
      */
     public function deletesDisciplineIncidents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
     {
@@ -407,9 +407,9 @@ class DisciplineIncidentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineIncidents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesDisciplineIncidentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
     {
@@ -440,11 +440,11 @@ class DisciplineIncidentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class DisciplineIncidentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class DisciplineIncidentsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class DisciplineIncidentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class DisciplineIncidentsApi
      */
     public function deletesDisciplineIncidentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[]';
         $request = $this->deletesDisciplineIncidentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -779,9 +779,9 @@ class DisciplineIncidentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineIncidents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiDisciplineIncident[]
+     * @return \Resources\Model\EdFiDisciplineIncident[]
      */
     public function getDisciplineIncidents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
     {
@@ -814,9 +814,9 @@ class DisciplineIncidentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineIncidents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiDisciplineIncident[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiDisciplineIncident[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getDisciplineIncidentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
     {
@@ -847,11 +847,11 @@ class DisciplineIncidentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiDisciplineIncident[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiDisciplineIncident[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiDisciplineIncident[]' !== 'string') {
+                        if ('\Resources\Model\EdFiDisciplineIncident[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -869,7 +869,7 @@ class DisciplineIncidentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiDisciplineIncident[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiDisciplineIncident[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -888,7 +888,7 @@ class DisciplineIncidentsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiDisciplineIncident[]';
+            $returnType = '\Resources\Model\EdFiDisciplineIncident[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -921,7 +921,7 @@ class DisciplineIncidentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiDisciplineIncident[]',
+                        '\Resources\Model\EdFiDisciplineIncident[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -999,7 +999,7 @@ class DisciplineIncidentsApi
      */
     public function getDisciplineIncidentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiDisciplineIncident[]';
+        $returnType = '\Resources\Model\EdFiDisciplineIncident[]';
         $request = $this->getDisciplineIncidentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType);
 
         return $this->client
@@ -1345,9 +1345,9 @@ class DisciplineIncidentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineIncidentsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiDisciplineIncident
+     * @return \Resources\Model\EdFiDisciplineIncident
      */
     public function getDisciplineIncidentsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidentsById'][0])
     {
@@ -1365,9 +1365,9 @@ class DisciplineIncidentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineIncidentsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiDisciplineIncident, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiDisciplineIncident, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDisciplineIncidentsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidentsById'][0])
     {
@@ -1398,11 +1398,11 @@ class DisciplineIncidentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiDisciplineIncident' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiDisciplineIncident' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiDisciplineIncident' !== 'string') {
+                        if ('\Resources\Model\EdFiDisciplineIncident' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1420,7 +1420,7 @@ class DisciplineIncidentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiDisciplineIncident', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiDisciplineIncident', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1439,7 +1439,7 @@ class DisciplineIncidentsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiDisciplineIncident';
+            $returnType = '\Resources\Model\EdFiDisciplineIncident';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1472,7 +1472,7 @@ class DisciplineIncidentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiDisciplineIncident',
+                        '\Resources\Model\EdFiDisciplineIncident',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1520,7 +1520,7 @@ class DisciplineIncidentsApi
      */
     public function getDisciplineIncidentsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidentsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiDisciplineIncident';
+        $returnType = '\Resources\Model\EdFiDisciplineIncident';
         $request = $this->getDisciplineIncidentsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1680,9 +1680,9 @@ class DisciplineIncidentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineIncidents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]
      */
     public function keyChangesDisciplineIncidents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
     {
@@ -1703,9 +1703,9 @@ class DisciplineIncidentsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineIncidents'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesDisciplineIncidentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
     {
@@ -1736,11 +1736,11 @@ class DisciplineIncidentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1758,7 +1758,7 @@ class DisciplineIncidentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1777,7 +1777,7 @@ class DisciplineIncidentsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1810,7 +1810,7 @@ class DisciplineIncidentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1864,7 +1864,7 @@ class DisciplineIncidentsApi
      */
     public function keyChangesDisciplineIncidentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]';
         $request = $this->keyChangesDisciplineIncidentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2055,10 +2055,10 @@ class DisciplineIncidentsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDisciplineIncident'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2072,10 +2072,10 @@ class DisciplineIncidentsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDisciplineIncident'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2120,7 +2120,7 @@ class DisciplineIncidentsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDisciplineIncident'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2141,7 +2141,7 @@ class DisciplineIncidentsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDisciplineIncident'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2178,7 +2178,7 @@ class DisciplineIncidentsApi
     /**
      * Create request for operation 'postDisciplineIncident'
      *
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postDisciplineIncident'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2276,11 +2276,11 @@ class DisciplineIncidentsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDisciplineIncident'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2295,11 +2295,11 @@ class DisciplineIncidentsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDisciplineIncident'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2345,7 +2345,7 @@ class DisciplineIncidentsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDisciplineIncident'] to see the possible values for this operation
      *
@@ -2368,7 +2368,7 @@ class DisciplineIncidentsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDisciplineIncident'] to see the possible values for this operation
      *
@@ -2407,7 +2407,7 @@ class DisciplineIncidentsApi
      * Create request for operation 'putDisciplineIncident'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiDisciplineIncident $ed_fi_discipline_incident The JSON representation of the \&quot;disciplineIncident\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putDisciplineIncident'] to see the possible values for this operation
      *

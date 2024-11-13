@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiCommunityProvider Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,14 +58,14 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'categories' => '\OpenAPI\Client\Model\EdFiEducationOrganizationCategory[]',
+        'categories' => '\Resources\Model\EdFiEducationOrganizationCategory[]',
         'community_provider_id' => 'int',
-        'community_organization_reference' => '\OpenAPI\Client\Model\EdFiCommunityOrganizationReference',
-        'addresses' => '\OpenAPI\Client\Model\EdFiEducationOrganizationAddress[]',
-        'identification_codes' => '\OpenAPI\Client\Model\EdFiEducationOrganizationIdentificationCode[]',
-        'indicators' => '\OpenAPI\Client\Model\EdFiEducationOrganizationIndicator[]',
-        'institution_telephones' => '\OpenAPI\Client\Model\EdFiEducationOrganizationInstitutionTelephone[]',
-        'international_addresses' => '\OpenAPI\Client\Model\EdFiEducationOrganizationInternationalAddress[]',
+        'community_organization_reference' => '\Resources\Model\EdFiCommunityOrganizationReference',
+        'addresses' => '\Resources\Model\EdFiEducationOrganizationAddress[]',
+        'identification_codes' => '\Resources\Model\EdFiEducationOrganizationIdentificationCode[]',
+        'indicators' => '\Resources\Model\EdFiEducationOrganizationIndicator[]',
+        'institution_telephones' => '\Resources\Model\EdFiEducationOrganizationInstitutionTelephone[]',
+        'international_addresses' => '\Resources\Model\EdFiEducationOrganizationInternationalAddress[]',
         'license_exempt_indicator' => 'bool',
         'name_of_institution' => 'string',
         'operational_status_descriptor' => 'string',
@@ -507,7 +507,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets categories
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationCategory[]
+     * @return \Resources\Model\EdFiEducationOrganizationCategory[]
      */
     public function getCategories()
     {
@@ -517,7 +517,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets categories
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationCategory[] $categories An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state.
+     * @param \Resources\Model\EdFiEducationOrganizationCategory[] $categories An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state.
      *
      * @return self
      */
@@ -561,7 +561,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets community_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCommunityOrganizationReference|null
+     * @return \Resources\Model\EdFiCommunityOrganizationReference|null
      */
     public function getCommunityOrganizationReference()
     {
@@ -571,7 +571,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets community_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCommunityOrganizationReference|null $community_organization_reference community_organization_reference
+     * @param \Resources\Model\EdFiCommunityOrganizationReference|null $community_organization_reference community_organization_reference
      *
      * @return self
      */
@@ -588,7 +588,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets addresses
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationAddress[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationAddress[]|null
      */
     public function getAddresses()
     {
@@ -598,7 +598,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets addresses
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationAddress[]|null $addresses An unordered collection of educationOrganizationAddresses. The set of elements that describes an address for the education entity, including the street address, city, state, ZIP code, and ZIP code + 4.
+     * @param \Resources\Model\EdFiEducationOrganizationAddress[]|null $addresses An unordered collection of educationOrganizationAddresses. The set of elements that describes an address for the education entity, including the street address, city, state, ZIP code, and ZIP code + 4.
      *
      * @return self
      */
@@ -615,7 +615,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets identification_codes
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationIdentificationCode[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationIdentificationCode[]|null
      */
     public function getIdentificationCodes()
     {
@@ -625,7 +625,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets identification_codes
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationIdentificationCode[]|null $identification_codes An unordered collection of educationOrganizationIdentificationCodes. A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.
+     * @param \Resources\Model\EdFiEducationOrganizationIdentificationCode[]|null $identification_codes An unordered collection of educationOrganizationIdentificationCodes. A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.
      *
      * @return self
      */
@@ -642,7 +642,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets indicators
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationIndicator[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationIndicator[]|null
      */
     public function getIndicators()
     {
@@ -652,7 +652,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets indicators
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationIndicator[]|null $indicators An unordered collection of educationOrganizationIndicators. An indicator or metric of an education organization.
+     * @param \Resources\Model\EdFiEducationOrganizationIndicator[]|null $indicators An unordered collection of educationOrganizationIndicators. An indicator or metric of an education organization.
      *
      * @return self
      */
@@ -669,7 +669,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets institution_telephones
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationInstitutionTelephone[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationInstitutionTelephone[]|null
      */
     public function getInstitutionTelephones()
     {
@@ -679,7 +679,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets institution_telephones
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationInstitutionTelephone[]|null $institution_telephones An unordered collection of educationOrganizationInstitutionTelephones. The 10-digit telephone number, including the area code, for the education entity.
+     * @param \Resources\Model\EdFiEducationOrganizationInstitutionTelephone[]|null $institution_telephones An unordered collection of educationOrganizationInstitutionTelephones. The 10-digit telephone number, including the area code, for the education entity.
      *
      * @return self
      */
@@ -696,7 +696,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets international_addresses
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationInternationalAddress[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationInternationalAddress[]|null
      */
     public function getInternationalAddresses()
     {
@@ -706,7 +706,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets international_addresses
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationInternationalAddress[]|null $international_addresses An unordered collection of educationOrganizationInternationalAddresses. The set of elements that describes the international physical location of the education entity.
+     * @param \Resources\Model\EdFiEducationOrganizationInternationalAddress[]|null $international_addresses An unordered collection of educationOrganizationInternationalAddresses. The set of elements that describes the international physical location of the education entity.
      *
      * @return self
      */

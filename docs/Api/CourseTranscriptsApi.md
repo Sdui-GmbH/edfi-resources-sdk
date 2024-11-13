@@ -1,4 +1,4 @@
-# OpenAPI\Client\CourseTranscriptsApi
+# Resources\CourseTranscriptsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CourseTranscriptsApi(
+$apiInstance = new Resources\Api\CourseTranscriptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesCourseTranscripts()`
 
 ```php
-deletesCourseTranscripts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCourseTranscriptDelete[]
+deletesCourseTranscripts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCourseTranscriptDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CourseTranscriptsApi(
+$apiInstance = new Resources\Api\CourseTranscriptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCourseTranscriptDelete[]**](../Model/TrackedChangesEdFiCourseTranscriptDelete.md)
+[**\Resources\Model\TrackedChangesEdFiCourseTranscriptDelete[]**](../Model/TrackedChangesEdFiCourseTranscriptDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getCourseTranscripts()`
 
 ```php
-getCourseTranscripts($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_attempt_result_descriptor, $course_code, $course_education_organization_id, $education_organization_id, $school_year, $student_unique_id, $term_descriptor, $external_education_organization_id, $responsible_teacher_staff_unique_id, $course_repeat_code_descriptor, $attempted_credit_type_descriptor, $earned_credit_type_descriptor, $when_taken_grade_level_descriptor, $method_credit_earned_descriptor, $alternative_course_title, $assigning_organization_identification_code, $attempted_credit_conversion, $attempted_credits, $course_catalog_url, $course_title, $earned_credit_conversion, $earned_credits, $external_education_organization_name_of_institution, $final_letter_grade_earned, $final_numeric_grade_earned, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiCourseTranscript[]
+getCourseTranscripts($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_attempt_result_descriptor, $course_code, $course_education_organization_id, $education_organization_id, $school_year, $student_unique_id, $term_descriptor, $external_education_organization_id, $responsible_teacher_staff_unique_id, $course_repeat_code_descriptor, $attempted_credit_type_descriptor, $earned_credit_type_descriptor, $when_taken_grade_level_descriptor, $method_credit_earned_descriptor, $alternative_course_title, $assigning_organization_identification_code, $attempted_credit_conversion, $attempted_credits, $course_catalog_url, $course_title, $earned_credit_conversion, $earned_credits, $external_education_organization_name_of_institution, $final_letter_grade_earned, $final_numeric_grade_earned, $id, $use_snapshot): \Resources\Model\EdFiCourseTranscript[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CourseTranscriptsApi(
+$apiInstance = new Resources\Api\CourseTranscriptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -251,7 +251,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCourseTranscript[]**](../Model/EdFiCourseTranscript.md)
+[**\Resources\Model\EdFiCourseTranscript[]**](../Model/EdFiCourseTranscript.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ try {
 ## `getCourseTranscriptsById()`
 
 ```php
-getCourseTranscriptsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiCourseTranscript
+getCourseTranscriptsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiCourseTranscript
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -284,10 +284,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CourseTranscriptsApi(
+$apiInstance = new Resources\Api\CourseTranscriptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -315,7 +315,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiCourseTranscript**](../Model/EdFiCourseTranscript.md)
+[**\Resources\Model\EdFiCourseTranscript**](../Model/EdFiCourseTranscript.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ try {
 ## `keyChangesCourseTranscripts()`
 
 ```php
-keyChangesCourseTranscripts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiCourseTranscriptKeyChange[]
+keyChangesCourseTranscripts($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiCourseTranscriptKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -348,10 +348,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CourseTranscriptsApi(
+$apiInstance = new Resources\Api\CourseTranscriptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -385,7 +385,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiCourseTranscriptKeyChange[]**](../Model/TrackedChangesEdFiCourseTranscriptKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiCourseTranscriptKeyChange[]**](../Model/TrackedChangesEdFiCourseTranscriptKeyChange.md)
 
 ### Authorization
 
@@ -418,16 +418,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CourseTranscriptsApi(
+$apiInstance = new Resources\Api\CourseTranscriptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_course_transcript = new \OpenAPI\Client\Model\EdFiCourseTranscript(); // \OpenAPI\Client\Model\EdFiCourseTranscript | The JSON representation of the \"courseTranscript\" resource to be created or updated.
+$ed_fi_course_transcript = new \Resources\Model\EdFiCourseTranscript(); // \Resources\Model\EdFiCourseTranscript | The JSON representation of the \"courseTranscript\" resource to be created or updated.
 
 try {
     $apiInstance->postCourseTranscript($ed_fi_course_transcript);
@@ -440,7 +440,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_course_transcript** | [**\OpenAPI\Client\Model\EdFiCourseTranscript**](../Model/EdFiCourseTranscript.md)| The JSON representation of the \&quot;courseTranscript\&quot; resource to be created or updated. | |
+| **ed_fi_course_transcript** | [**\Resources\Model\EdFiCourseTranscript**](../Model/EdFiCourseTranscript.md)| The JSON representation of the \&quot;courseTranscript\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -477,17 +477,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\CourseTranscriptsApi(
+$apiInstance = new Resources\Api\CourseTranscriptsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_course_transcript = new \OpenAPI\Client\Model\EdFiCourseTranscript(); // \OpenAPI\Client\Model\EdFiCourseTranscript | The JSON representation of the \"courseTranscript\" resource to be created or updated.
+$ed_fi_course_transcript = new \Resources\Model\EdFiCourseTranscript(); // \Resources\Model\EdFiCourseTranscript | The JSON representation of the \"courseTranscript\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -502,7 +502,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_course_transcript** | [**\OpenAPI\Client\Model\EdFiCourseTranscript**](../Model/EdFiCourseTranscript.md)| The JSON representation of the \&quot;courseTranscript\&quot; resource to be created or updated. | |
+| **ed_fi_course_transcript** | [**\Resources\Model\EdFiCourseTranscript**](../Model/EdFiCourseTranscript.md)| The JSON representation of the \&quot;courseTranscript\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

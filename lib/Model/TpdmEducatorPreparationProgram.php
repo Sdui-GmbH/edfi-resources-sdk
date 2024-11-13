@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmEducatorPreparationProgram Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,9 +60,9 @@ class TpdmEducatorPreparationProgram implements ModelInterface, ArrayAccess, \Js
         'id' => 'string',
         'program_name' => 'string',
         'program_type_descriptor' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
         'accreditation_status_descriptor' => 'string',
-        'grade_levels' => '\OpenAPI\Client\Model\TpdmEducatorPreparationProgramGradeLevel[]',
+        'grade_levels' => '\Resources\Model\TpdmEducatorPreparationProgramGradeLevel[]',
         'program_id' => 'string',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -473,7 +473,7 @@ class TpdmEducatorPreparationProgram implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -483,7 +483,7 @@ class TpdmEducatorPreparationProgram implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -538,7 +538,7 @@ class TpdmEducatorPreparationProgram implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets grade_levels
      *
-     * @return \OpenAPI\Client\Model\TpdmEducatorPreparationProgramGradeLevel[]|null
+     * @return \Resources\Model\TpdmEducatorPreparationProgramGradeLevel[]|null
      */
     public function getGradeLevels()
     {
@@ -548,7 +548,7 @@ class TpdmEducatorPreparationProgram implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets grade_levels
      *
-     * @param \OpenAPI\Client\Model\TpdmEducatorPreparationProgramGradeLevel[]|null $grade_levels An unordered collection of educatorPreparationProgramGradeLevels. The grade levels served at the EPP Program.
+     * @param \Resources\Model\TpdmEducatorPreparationProgramGradeLevel[]|null $grade_levels An unordered collection of educatorPreparationProgramGradeLevels. The grade levels served at the EPP Program.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentAssessmentEducationOrganizationAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,9 +59,9 @@ class EdFiStudentAssessmentEducationOrganizationAssociation implements ModelInte
     protected static $openAPITypes = [
         'id' => 'string',
         'education_organization_association_type_descriptor' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
-        'student_assessment_reference' => '\OpenAPI\Client\Model\EdFiStudentAssessmentReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
+        'student_assessment_reference' => '\Resources\Model\EdFiStudentAssessmentReference',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -405,7 +405,7 @@ class EdFiStudentAssessmentEducationOrganizationAssociation implements ModelInte
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -415,7 +415,7 @@ class EdFiStudentAssessmentEducationOrganizationAssociation implements ModelInte
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -432,7 +432,7 @@ class EdFiStudentAssessmentEducationOrganizationAssociation implements ModelInte
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null
+     * @return \Resources\Model\EdFiSchoolYearTypeReference|null
      */
     public function getSchoolYearTypeReference()
     {
@@ -442,7 +442,7 @@ class EdFiStudentAssessmentEducationOrganizationAssociation implements ModelInte
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference|null $school_year_type_reference school_year_type_reference
      *
      * @return self
      */
@@ -459,7 +459,7 @@ class EdFiStudentAssessmentEducationOrganizationAssociation implements ModelInte
     /**
      * Gets student_assessment_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAssessmentReference
+     * @return \Resources\Model\EdFiStudentAssessmentReference
      */
     public function getStudentAssessmentReference()
     {
@@ -469,7 +469,7 @@ class EdFiStudentAssessmentEducationOrganizationAssociation implements ModelInte
     /**
      * Sets student_assessment_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAssessmentReference $student_assessment_reference student_assessment_reference
+     * @param \Resources\Model\EdFiStudentAssessmentReference $student_assessment_reference student_assessment_reference
      *
      * @return self
      */

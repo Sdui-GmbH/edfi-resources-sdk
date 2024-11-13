@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * TpdmSchoolExtension Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class TpdmSchoolExtension implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'post_secondary_institution_reference' => '\OpenAPI\Client\Model\EdFiPostSecondaryInstitutionReference'
+        'post_secondary_institution_reference' => '\Resources\Model\EdFiPostSecondaryInstitutionReference'
     ];
 
     /**
@@ -292,7 +292,7 @@ class TpdmSchoolExtension implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets post_secondary_institution_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiPostSecondaryInstitutionReference|null
+     * @return \Resources\Model\EdFiPostSecondaryInstitutionReference|null
      */
     public function getPostSecondaryInstitutionReference()
     {
@@ -302,7 +302,7 @@ class TpdmSchoolExtension implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets post_secondary_institution_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiPostSecondaryInstitutionReference|null $post_secondary_institution_reference post_secondary_institution_reference
+     * @param \Resources\Model\EdFiPostSecondaryInstitutionReference|null $post_secondary_institution_reference post_secondary_institution_reference
      *
      * @return self
      */

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * ClassPeriodsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class ClassPeriodsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteClassPeriodById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class ClassPeriodsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteClassPeriodById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class ClassPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesClassPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiClassPeriodDelete[]
      */
     public function deletesClassPeriods($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesClassPeriods'][0])
     {
@@ -407,9 +407,9 @@ class ClassPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesClassPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiClassPeriodDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesClassPeriodsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesClassPeriods'][0])
     {
@@ -440,11 +440,11 @@ class ClassPeriodsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiClassPeriodDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiClassPeriodDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class ClassPeriodsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiClassPeriodDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class ClassPeriodsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiClassPeriodDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class ClassPeriodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiClassPeriodDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class ClassPeriodsApi
      */
     public function deletesClassPeriodsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesClassPeriods'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiClassPeriodDelete[]';
         $request = $this->deletesClassPeriodsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -771,9 +771,9 @@ class ClassPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClassPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiClassPeriod[]
+     * @return \Resources\Model\EdFiClassPeriod[]
      */
     public function getClassPeriods($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $class_period_name = null, $school_id = null, $id = null, $official_attendance_period = null, $use_snapshot = false, string $contentType = self::contentTypes['getClassPeriods'][0])
     {
@@ -798,9 +798,9 @@ class ClassPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClassPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiClassPeriod[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiClassPeriod[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getClassPeriodsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $class_period_name = null, $school_id = null, $id = null, $official_attendance_period = null, $use_snapshot = false, string $contentType = self::contentTypes['getClassPeriods'][0])
     {
@@ -831,11 +831,11 @@ class ClassPeriodsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiClassPeriod[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiClassPeriod[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiClassPeriod[]' !== 'string') {
+                        if ('\Resources\Model\EdFiClassPeriod[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -853,7 +853,7 @@ class ClassPeriodsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiClassPeriod[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiClassPeriod[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -872,7 +872,7 @@ class ClassPeriodsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiClassPeriod[]';
+            $returnType = '\Resources\Model\EdFiClassPeriod[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -905,7 +905,7 @@ class ClassPeriodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiClassPeriod[]',
+                        '\Resources\Model\EdFiClassPeriod[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -967,7 +967,7 @@ class ClassPeriodsApi
      */
     public function getClassPeriodsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $class_period_name = null, $school_id = null, $id = null, $official_attendance_period = null, $use_snapshot = false, string $contentType = self::contentTypes['getClassPeriods'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiClassPeriod[]';
+        $returnType = '\Resources\Model\EdFiClassPeriod[]';
         $request = $this->getClassPeriodsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $class_period_name, $school_id, $id, $official_attendance_period, $use_snapshot, $contentType);
 
         return $this->client
@@ -1210,9 +1210,9 @@ class ClassPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClassPeriodsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiClassPeriod
+     * @return \Resources\Model\EdFiClassPeriod
      */
     public function getClassPeriodsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getClassPeriodsById'][0])
     {
@@ -1230,9 +1230,9 @@ class ClassPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getClassPeriodsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiClassPeriod, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiClassPeriod, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClassPeriodsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getClassPeriodsById'][0])
     {
@@ -1263,11 +1263,11 @@ class ClassPeriodsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiClassPeriod' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiClassPeriod' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiClassPeriod' !== 'string') {
+                        if ('\Resources\Model\EdFiClassPeriod' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1285,7 +1285,7 @@ class ClassPeriodsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiClassPeriod', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiClassPeriod', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1304,7 +1304,7 @@ class ClassPeriodsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiClassPeriod';
+            $returnType = '\Resources\Model\EdFiClassPeriod';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1337,7 +1337,7 @@ class ClassPeriodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiClassPeriod',
+                        '\Resources\Model\EdFiClassPeriod',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1385,7 +1385,7 @@ class ClassPeriodsApi
      */
     public function getClassPeriodsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getClassPeriodsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiClassPeriod';
+        $returnType = '\Resources\Model\EdFiClassPeriod';
         $request = $this->getClassPeriodsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1545,9 +1545,9 @@ class ClassPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesClassPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiClassPeriodKeyChange[]
      */
     public function keyChangesClassPeriods($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesClassPeriods'][0])
     {
@@ -1568,9 +1568,9 @@ class ClassPeriodsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesClassPeriods'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiClassPeriodKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesClassPeriodsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesClassPeriods'][0])
     {
@@ -1601,11 +1601,11 @@ class ClassPeriodsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiClassPeriodKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiClassPeriodKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1623,7 +1623,7 @@ class ClassPeriodsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiClassPeriodKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1642,7 +1642,7 @@ class ClassPeriodsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiClassPeriodKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1675,7 +1675,7 @@ class ClassPeriodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiClassPeriodKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1729,7 +1729,7 @@ class ClassPeriodsApi
      */
     public function keyChangesClassPeriodsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesClassPeriods'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiClassPeriodKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiClassPeriodKeyChange[]';
         $request = $this->keyChangesClassPeriodsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1920,10 +1920,10 @@ class ClassPeriodsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postClassPeriod'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1937,10 +1937,10 @@ class ClassPeriodsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postClassPeriod'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1985,7 +1985,7 @@ class ClassPeriodsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postClassPeriod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2006,7 +2006,7 @@ class ClassPeriodsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postClassPeriod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2043,7 +2043,7 @@ class ClassPeriodsApi
     /**
      * Create request for operation 'postClassPeriod'
      *
-     * @param  \OpenAPI\Client\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postClassPeriod'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2141,11 +2141,11 @@ class ClassPeriodsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putClassPeriod'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2160,11 +2160,11 @@ class ClassPeriodsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putClassPeriod'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2210,7 +2210,7 @@ class ClassPeriodsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putClassPeriod'] to see the possible values for this operation
      *
@@ -2233,7 +2233,7 @@ class ClassPeriodsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putClassPeriod'] to see the possible values for this operation
      *
@@ -2272,7 +2272,7 @@ class ClassPeriodsApi
      * Create request for operation 'putClassPeriod'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiClassPeriod $ed_fi_class_period The JSON representation of the \&quot;classPeriod\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putClassPeriod'] to see the possible values for this operation
      *

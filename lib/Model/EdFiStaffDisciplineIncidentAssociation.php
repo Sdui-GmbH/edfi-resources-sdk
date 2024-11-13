@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffDisciplineIncidentAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,9 +58,9 @@ class EdFiStaffDisciplineIncidentAssociation implements ModelInterface, ArrayAcc
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'discipline_incident_participation_codes' => '\OpenAPI\Client\Model\EdFiStaffDisciplineIncidentAssociationDisciplineIncidentParticipationCode[]',
-        'discipline_incident_reference' => '\OpenAPI\Client\Model\EdFiDisciplineIncidentReference',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
+        'discipline_incident_participation_codes' => '\Resources\Model\EdFiStaffDisciplineIncidentAssociationDisciplineIncidentParticipationCode[]',
+        'discipline_incident_reference' => '\Resources\Model\EdFiDisciplineIncidentReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -363,7 +363,7 @@ class EdFiStaffDisciplineIncidentAssociation implements ModelInterface, ArrayAcc
     /**
      * Gets discipline_incident_participation_codes
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffDisciplineIncidentAssociationDisciplineIncidentParticipationCode[]
+     * @return \Resources\Model\EdFiStaffDisciplineIncidentAssociationDisciplineIncidentParticipationCode[]
      */
     public function getDisciplineIncidentParticipationCodes()
     {
@@ -373,7 +373,7 @@ class EdFiStaffDisciplineIncidentAssociation implements ModelInterface, ArrayAcc
     /**
      * Sets discipline_incident_participation_codes
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffDisciplineIncidentAssociationDisciplineIncidentParticipationCode[] $discipline_incident_participation_codes An unordered collection of staffDisciplineIncidentAssociationDisciplineIncidentParticipationCodes. The role or type of participation of a student in a discipline incident.
+     * @param \Resources\Model\EdFiStaffDisciplineIncidentAssociationDisciplineIncidentParticipationCode[] $discipline_incident_participation_codes An unordered collection of staffDisciplineIncidentAssociationDisciplineIncidentParticipationCodes. The role or type of participation of a student in a discipline incident.
      *
      * @return self
      */
@@ -390,7 +390,7 @@ class EdFiStaffDisciplineIncidentAssociation implements ModelInterface, ArrayAcc
     /**
      * Gets discipline_incident_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiDisciplineIncidentReference
+     * @return \Resources\Model\EdFiDisciplineIncidentReference
      */
     public function getDisciplineIncidentReference()
     {
@@ -400,7 +400,7 @@ class EdFiStaffDisciplineIncidentAssociation implements ModelInterface, ArrayAcc
     /**
      * Sets discipline_incident_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiDisciplineIncidentReference $discipline_incident_reference discipline_incident_reference
+     * @param \Resources\Model\EdFiDisciplineIncidentReference $discipline_incident_reference discipline_incident_reference
      *
      * @return self
      */
@@ -417,7 +417,7 @@ class EdFiStaffDisciplineIncidentAssociation implements ModelInterface, ArrayAcc
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference
+     * @return \Resources\Model\EdFiStaffReference
      */
     public function getStaffReference()
     {
@@ -427,7 +427,7 @@ class EdFiStaffDisciplineIncidentAssociation implements ModelInterface, ArrayAcc
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference $staff_reference staff_reference
      *
      * @return self
      */

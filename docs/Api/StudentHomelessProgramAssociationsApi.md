@@ -1,4 +1,4 @@
-# OpenAPI\Client\StudentHomelessProgramAssociationsApi
+# Resources\StudentHomelessProgramAssociationsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentHomelessProgramAssociationsApi(
+$apiInstance = new Resources\Api\StudentHomelessProgramAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesStudentHomelessProgramAssociations()`
 
 ```php
-deletesStudentHomelessProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]
+deletesStudentHomelessProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentHomelessProgramAssociationsApi(
+$apiInstance = new Resources\Api\StudentHomelessProgramAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]**](../Model/TrackedChangesEdFiStudentHomelessProgramAssociationDelete.md)
+[**\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationDelete[]**](../Model/TrackedChangesEdFiStudentHomelessProgramAssociationDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getStudentHomelessProgramAssociations()`
 
 ```php
-getStudentHomelessProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation[]
+getStudentHomelessProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $use_snapshot): \Resources\Model\EdFiStudentHomelessProgramAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentHomelessProgramAssociationsApi(
+$apiInstance = new Resources\Api\StudentHomelessProgramAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -217,7 +217,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation[]**](../Model/EdFiStudentHomelessProgramAssociation.md)
+[**\Resources\Model\EdFiStudentHomelessProgramAssociation[]**](../Model/EdFiStudentHomelessProgramAssociation.md)
 
 ### Authorization
 
@@ -235,7 +235,7 @@ try {
 ## `getStudentHomelessProgramAssociationsById()`
 
 ```php
-getStudentHomelessProgramAssociationsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation
+getStudentHomelessProgramAssociationsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiStudentHomelessProgramAssociation
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -250,10 +250,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentHomelessProgramAssociationsApi(
+$apiInstance = new Resources\Api\StudentHomelessProgramAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -281,7 +281,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation**](../Model/EdFiStudentHomelessProgramAssociation.md)
+[**\Resources\Model\EdFiStudentHomelessProgramAssociation**](../Model/EdFiStudentHomelessProgramAssociation.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ try {
 ## `keyChangesStudentHomelessProgramAssociations()`
 
 ```php
-keyChangesStudentHomelessProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]
+keyChangesStudentHomelessProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -314,10 +314,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentHomelessProgramAssociationsApi(
+$apiInstance = new Resources\Api\StudentHomelessProgramAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -351,7 +351,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]**](../Model/TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange[]**](../Model/TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange.md)
 
 ### Authorization
 
@@ -384,16 +384,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentHomelessProgramAssociationsApi(
+$apiInstance = new Resources\Api\StudentHomelessProgramAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_student_homeless_program_association = new \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation(); // \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation | The JSON representation of the \"studentHomelessProgramAssociation\" resource to be created or updated.
+$ed_fi_student_homeless_program_association = new \Resources\Model\EdFiStudentHomelessProgramAssociation(); // \Resources\Model\EdFiStudentHomelessProgramAssociation | The JSON representation of the \"studentHomelessProgramAssociation\" resource to be created or updated.
 
 try {
     $apiInstance->postStudentHomelessProgramAssociation($ed_fi_student_homeless_program_association);
@@ -406,7 +406,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_student_homeless_program_association** | [**\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation**](../Model/EdFiStudentHomelessProgramAssociation.md)| The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_student_homeless_program_association** | [**\Resources\Model\EdFiStudentHomelessProgramAssociation**](../Model/EdFiStudentHomelessProgramAssociation.md)| The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -443,17 +443,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\StudentHomelessProgramAssociationsApi(
+$apiInstance = new Resources\Api\StudentHomelessProgramAssociationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_student_homeless_program_association = new \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation(); // \OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation | The JSON representation of the \"studentHomelessProgramAssociation\" resource to be created or updated.
+$ed_fi_student_homeless_program_association = new \Resources\Model\EdFiStudentHomelessProgramAssociation(); // \Resources\Model\EdFiStudentHomelessProgramAssociation | The JSON representation of the \"studentHomelessProgramAssociation\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -468,7 +468,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_student_homeless_program_association** | [**\OpenAPI\Client\Model\EdFiStudentHomelessProgramAssociation**](../Model/EdFiStudentHomelessProgramAssociation.md)| The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. | |
+| **ed_fi_student_homeless_program_association** | [**\Resources\Model\EdFiStudentHomelessProgramAssociation**](../Model/EdFiStudentHomelessProgramAssociation.md)| The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

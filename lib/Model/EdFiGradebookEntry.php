@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiGradebookEntry Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,14 +60,14 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
         'id' => 'string',
         'gradebook_entry_identifier' => 'string',
         'namespace' => 'string',
-        'grading_period_reference' => '\OpenAPI\Client\Model\EdFiGradingPeriodReference',
-        'section_reference' => '\OpenAPI\Client\Model\EdFiSectionReference',
+        'grading_period_reference' => '\Resources\Model\EdFiGradingPeriodReference',
+        'section_reference' => '\Resources\Model\EdFiSectionReference',
         'date_assigned' => '\DateTime',
         'description' => 'string',
         'due_date' => '\DateTime',
         'due_time' => 'string',
         'gradebook_entry_type_descriptor' => 'string',
-        'learning_standards' => '\OpenAPI\Client\Model\EdFiGradebookEntryLearningStandard[]',
+        'learning_standards' => '\Resources\Model\EdFiGradebookEntryLearningStandard[]',
         'max_points' => 'float',
         'source_section_identifier' => 'string',
         'title' => 'string',
@@ -547,7 +547,7 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets grading_period_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiGradingPeriodReference|null
+     * @return \Resources\Model\EdFiGradingPeriodReference|null
      */
     public function getGradingPeriodReference()
     {
@@ -557,7 +557,7 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets grading_period_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiGradingPeriodReference|null $grading_period_reference grading_period_reference
+     * @param \Resources\Model\EdFiGradingPeriodReference|null $grading_period_reference grading_period_reference
      *
      * @return self
      */
@@ -574,7 +574,7 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets section_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSectionReference|null
+     * @return \Resources\Model\EdFiSectionReference|null
      */
     public function getSectionReference()
     {
@@ -584,7 +584,7 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets section_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSectionReference|null $section_reference section_reference
+     * @param \Resources\Model\EdFiSectionReference|null $section_reference section_reference
      *
      * @return self
      */
@@ -775,7 +775,7 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets learning_standards
      *
-     * @return \OpenAPI\Client\Model\EdFiGradebookEntryLearningStandard[]|null
+     * @return \Resources\Model\EdFiGradebookEntryLearningStandard[]|null
      */
     public function getLearningStandards()
     {
@@ -785,7 +785,7 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets learning_standards
      *
-     * @param \OpenAPI\Client\Model\EdFiGradebookEntryLearningStandard[]|null $learning_standards An unordered collection of gradebookEntryLearningStandards. LearningStandard(s) associated with the gradebook entry.
+     * @param \Resources\Model\EdFiGradebookEntryLearningStandard[]|null $learning_standards An unordered collection of gradebookEntryLearningStandards. LearningStandard(s) associated with the gradebook entry.
      *
      * @return self
      */

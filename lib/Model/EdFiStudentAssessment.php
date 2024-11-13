@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentAssessment Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,11 +59,11 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'id' => 'string',
         'student_assessment_identifier' => 'string',
-        'assessment_reference' => '\OpenAPI\Client\Model\EdFiAssessmentReference',
-        'reported_school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
-        'accommodations' => '\OpenAPI\Client\Model\EdFiStudentAssessmentAccommodation[]',
+        'assessment_reference' => '\Resources\Model\EdFiAssessmentReference',
+        'reported_school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
+        'accommodations' => '\Resources\Model\EdFiStudentAssessmentAccommodation[]',
         'administration_date' => '\DateTime',
         'administration_end_date' => '\DateTime',
         'administration_environment_descriptor' => 'string',
@@ -71,16 +71,16 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
         'assessed_minutes' => 'int',
         'event_circumstance_descriptor' => 'string',
         'event_description' => 'string',
-        'items' => '\OpenAPI\Client\Model\EdFiStudentAssessmentItem[]',
-        'performance_levels' => '\OpenAPI\Client\Model\EdFiStudentAssessmentPerformanceLevel[]',
-        'period' => '\OpenAPI\Client\Model\EdFiStudentAssessmentPeriod',
+        'items' => '\Resources\Model\EdFiStudentAssessmentItem[]',
+        'performance_levels' => '\Resources\Model\EdFiStudentAssessmentPerformanceLevel[]',
+        'period' => '\Resources\Model\EdFiStudentAssessmentPeriod',
         'platform_type_descriptor' => 'string',
         'reason_not_tested_descriptor' => 'string',
         'reported_school_identifier' => 'string',
         'retest_indicator_descriptor' => 'string',
-        'score_results' => '\OpenAPI\Client\Model\EdFiStudentAssessmentScoreResult[]',
+        'score_results' => '\Resources\Model\EdFiStudentAssessmentScoreResult[]',
         'serial_number' => 'string',
-        'student_objective_assessments' => '\OpenAPI\Client\Model\EdFiStudentAssessmentStudentObjectiveAssessment[]',
+        'student_objective_assessments' => '\Resources\Model\EdFiStudentAssessmentStudentObjectiveAssessment[]',
         'when_assessed_grade_level_descriptor' => 'string',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
@@ -604,7 +604,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets assessment_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiAssessmentReference
+     * @return \Resources\Model\EdFiAssessmentReference
      */
     public function getAssessmentReference()
     {
@@ -614,7 +614,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets assessment_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiAssessmentReference $assessment_reference assessment_reference
+     * @param \Resources\Model\EdFiAssessmentReference $assessment_reference assessment_reference
      *
      * @return self
      */
@@ -631,7 +631,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets reported_school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference|null
+     * @return \Resources\Model\EdFiSchoolReference|null
      */
     public function getReportedSchoolReference()
     {
@@ -641,7 +641,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets reported_school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference|null $reported_school_reference reported_school_reference
+     * @param \Resources\Model\EdFiSchoolReference|null $reported_school_reference reported_school_reference
      *
      * @return self
      */
@@ -658,7 +658,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null
+     * @return \Resources\Model\EdFiSchoolYearTypeReference|null
      */
     public function getSchoolYearTypeReference()
     {
@@ -668,7 +668,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference|null $school_year_type_reference school_year_type_reference
      *
      * @return self
      */
@@ -685,7 +685,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -695,7 +695,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -712,7 +712,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets accommodations
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAssessmentAccommodation[]|null
+     * @return \Resources\Model\EdFiStudentAssessmentAccommodation[]|null
      */
     public function getAccommodations()
     {
@@ -722,7 +722,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets accommodations
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAssessmentAccommodation[]|null $accommodations An unordered collection of studentAssessmentAccommodations. The specific type of special variation used in how an examination is presented, how it is administered, or how the test taker is allowed to respond. This generally refers to changes that do not substantially alter what the examination measures. The proper use of accommodations does not substantially change academic level or performance criteria.
+     * @param \Resources\Model\EdFiStudentAssessmentAccommodation[]|null $accommodations An unordered collection of studentAssessmentAccommodations. The specific type of special variation used in how an examination is presented, how it is administered, or how the test taker is allowed to respond. This generally refers to changes that do not substantially alter what the examination measures. The proper use of accommodations does not substantially change academic level or performance criteria.
      *
      * @return self
      */
@@ -996,7 +996,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets items
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAssessmentItem[]|null
+     * @return \Resources\Model\EdFiStudentAssessmentItem[]|null
      */
     public function getItems()
     {
@@ -1006,7 +1006,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets items
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAssessmentItem[]|null $items An unordered collection of studentAssessmentItems. The student's response to an assessment item and the item-level scores such as correct, incorrect, or met standard.
+     * @param \Resources\Model\EdFiStudentAssessmentItem[]|null $items An unordered collection of studentAssessmentItems. The student's response to an assessment item and the item-level scores such as correct, incorrect, or met standard.
      *
      * @return self
      */
@@ -1023,7 +1023,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets performance_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAssessmentPerformanceLevel[]|null
+     * @return \Resources\Model\EdFiStudentAssessmentPerformanceLevel[]|null
      */
     public function getPerformanceLevels()
     {
@@ -1033,7 +1033,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets performance_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAssessmentPerformanceLevel[]|null $performance_levels An unordered collection of studentAssessmentPerformanceLevels. The performance level(s) achieved for the student assessment.
+     * @param \Resources\Model\EdFiStudentAssessmentPerformanceLevel[]|null $performance_levels An unordered collection of studentAssessmentPerformanceLevels. The performance level(s) achieved for the student assessment.
      *
      * @return self
      */
@@ -1050,7 +1050,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets period
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAssessmentPeriod|null
+     * @return \Resources\Model\EdFiStudentAssessmentPeriod|null
      */
     public function getPeriod()
     {
@@ -1060,7 +1060,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets period
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAssessmentPeriod|null $period period
+     * @param \Resources\Model\EdFiStudentAssessmentPeriod|null $period period
      *
      * @return self
      */
@@ -1232,7 +1232,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets score_results
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAssessmentScoreResult[]|null
+     * @return \Resources\Model\EdFiStudentAssessmentScoreResult[]|null
      */
     public function getScoreResults()
     {
@@ -1242,7 +1242,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets score_results
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAssessmentScoreResult[]|null $score_results An unordered collection of studentAssessmentScoreResults. A meaningful score or statistical expression of the performance of an individual. The results can be expressed as a number, percentile, range, level, etc.
+     * @param \Resources\Model\EdFiStudentAssessmentScoreResult[]|null $score_results An unordered collection of studentAssessmentScoreResults. A meaningful score or statistical expression of the performance of an individual. The results can be expressed as a number, percentile, range, level, etc.
      *
      * @return self
      */
@@ -1300,7 +1300,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets student_objective_assessments
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentAssessmentStudentObjectiveAssessment[]|null
+     * @return \Resources\Model\EdFiStudentAssessmentStudentObjectiveAssessment[]|null
      */
     public function getStudentObjectiveAssessments()
     {
@@ -1310,7 +1310,7 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets student_objective_assessments
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentAssessmentStudentObjectiveAssessment[]|null $student_objective_assessments An unordered collection of studentAssessmentStudentObjectiveAssessments. The student's score and/or performance levels earned for an objective assessment.
+     * @param \Resources\Model\EdFiStudentAssessmentStudentObjectiveAssessment[]|null $student_objective_assessments An unordered collection of studentAssessmentStudentObjectiveAssessments. The student's score and/or performance levels earned for an objective assessment.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiProgram Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,11 +60,11 @@ class EdFiProgram implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'program_name' => 'string',
         'program_type_descriptor' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'characteristics' => '\OpenAPI\Client\Model\EdFiProgramCharacteristic[]',
-        'learning_standards' => '\OpenAPI\Client\Model\EdFiProgramLearningStandard[]',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'characteristics' => '\Resources\Model\EdFiProgramCharacteristic[]',
+        'learning_standards' => '\Resources\Model\EdFiProgramLearningStandard[]',
         'program_id' => 'string',
-        'sponsors' => '\OpenAPI\Client\Model\EdFiProgramSponsor[]',
+        'sponsors' => '\Resources\Model\EdFiProgramSponsor[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -476,7 +476,7 @@ class EdFiProgram implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -486,7 +486,7 @@ class EdFiProgram implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -503,7 +503,7 @@ class EdFiProgram implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets characteristics
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramCharacteristic[]|null
+     * @return \Resources\Model\EdFiProgramCharacteristic[]|null
      */
     public function getCharacteristics()
     {
@@ -513,7 +513,7 @@ class EdFiProgram implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets characteristics
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramCharacteristic[]|null $characteristics An unordered collection of programCharacteristics. Reflects important characteristics of the program, such as categories or particular indications.
+     * @param \Resources\Model\EdFiProgramCharacteristic[]|null $characteristics An unordered collection of programCharacteristics. Reflects important characteristics of the program, such as categories or particular indications.
      *
      * @return self
      */
@@ -530,7 +530,7 @@ class EdFiProgram implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets learning_standards
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramLearningStandard[]|null
+     * @return \Resources\Model\EdFiProgramLearningStandard[]|null
      */
     public function getLearningStandards()
     {
@@ -540,7 +540,7 @@ class EdFiProgram implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets learning_standards
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramLearningStandard[]|null $learning_standards An unordered collection of programLearningStandards. Learning standard followed by this program.
+     * @param \Resources\Model\EdFiProgramLearningStandard[]|null $learning_standards An unordered collection of programLearningStandards. Learning standard followed by this program.
      *
      * @return self
      */
@@ -598,7 +598,7 @@ class EdFiProgram implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sponsors
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramSponsor[]|null
+     * @return \Resources\Model\EdFiProgramSponsor[]|null
      */
     public function getSponsors()
     {
@@ -608,7 +608,7 @@ class EdFiProgram implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sponsors
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramSponsor[]|null $sponsors An unordered collection of programSponsors. Ultimate and intermediate providers of funds for a particular educational or service program or activity, or for an individual's participation in the program or activity (e.g., Federal, State, ESC, District, School, Private Organization).
+     * @param \Resources\Model\EdFiProgramSponsor[]|null $sponsors An unordered collection of programSponsors. Ultimate and intermediate providers of funds for a particular educational or service program or activity, or for an individual's participation in the program or activity (e.g., Federal, State, ESC, District, School, Private Organization).
      *
      * @return self
      */

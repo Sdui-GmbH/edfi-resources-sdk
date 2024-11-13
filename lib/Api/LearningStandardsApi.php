@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * LearningStandardsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class LearningStandardsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLearningStandardById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class LearningStandardsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLearningStandardById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class LearningStandardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLearningStandards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiLearningStandardDelete[]
      */
     public function deletesLearningStandards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
     {
@@ -407,9 +407,9 @@ class LearningStandardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLearningStandards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLearningStandardDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesLearningStandardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
     {
@@ -440,11 +440,11 @@ class LearningStandardsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLearningStandardDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLearningStandardDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class LearningStandardsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLearningStandardDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class LearningStandardsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLearningStandardDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class LearningStandardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiLearningStandardDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class LearningStandardsApi
      */
     public function deletesLearningStandardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLearningStandardDelete[]';
         $request = $this->deletesLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -778,9 +778,9 @@ class LearningStandardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLearningStandard[]
+     * @return \Resources\Model\EdFiLearningStandard[]
      */
     public function getLearningStandards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandards'][0])
     {
@@ -812,9 +812,9 @@ class LearningStandardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLearningStandard[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLearningStandard[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLearningStandardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandards'][0])
     {
@@ -845,11 +845,11 @@ class LearningStandardsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLearningStandard[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLearningStandard[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLearningStandard[]' !== 'string') {
+                        if ('\Resources\Model\EdFiLearningStandard[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -867,7 +867,7 @@ class LearningStandardsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLearningStandard[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLearningStandard[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -886,7 +886,7 @@ class LearningStandardsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLearningStandard[]';
+            $returnType = '\Resources\Model\EdFiLearningStandard[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -919,7 +919,7 @@ class LearningStandardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLearningStandard[]',
+                        '\Resources\Model\EdFiLearningStandard[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -995,7 +995,7 @@ class LearningStandardsApi
      */
     public function getLearningStandardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandards'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLearningStandard[]';
+        $returnType = '\Resources\Model\EdFiLearningStandard[]';
         $request = $this->getLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $contentType);
 
         return $this->client
@@ -1342,9 +1342,9 @@ class LearningStandardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLearningStandard
+     * @return \Resources\Model\EdFiLearningStandard
      */
     public function getLearningStandardsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardsById'][0])
     {
@@ -1362,9 +1362,9 @@ class LearningStandardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLearningStandard, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLearningStandard, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLearningStandardsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardsById'][0])
     {
@@ -1395,11 +1395,11 @@ class LearningStandardsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLearningStandard' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLearningStandard' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLearningStandard' !== 'string') {
+                        if ('\Resources\Model\EdFiLearningStandard' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1417,7 +1417,7 @@ class LearningStandardsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLearningStandard', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLearningStandard', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1436,7 +1436,7 @@ class LearningStandardsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLearningStandard';
+            $returnType = '\Resources\Model\EdFiLearningStandard';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1469,7 +1469,7 @@ class LearningStandardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLearningStandard',
+                        '\Resources\Model\EdFiLearningStandard',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1517,7 +1517,7 @@ class LearningStandardsApi
      */
     public function getLearningStandardsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLearningStandard';
+        $returnType = '\Resources\Model\EdFiLearningStandard';
         $request = $this->getLearningStandardsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1677,9 +1677,9 @@ class LearningStandardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLearningStandards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]
      */
     public function keyChangesLearningStandards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
     {
@@ -1700,9 +1700,9 @@ class LearningStandardsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLearningStandards'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesLearningStandardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
     {
@@ -1733,11 +1733,11 @@ class LearningStandardsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1755,7 +1755,7 @@ class LearningStandardsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1774,7 +1774,7 @@ class LearningStandardsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1807,7 +1807,7 @@ class LearningStandardsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1861,7 +1861,7 @@ class LearningStandardsApi
      */
     public function keyChangesLearningStandardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLearningStandardKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]';
         $request = $this->keyChangesLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2052,10 +2052,10 @@ class LearningStandardsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLearningStandard'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2069,10 +2069,10 @@ class LearningStandardsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLearningStandard'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2117,7 +2117,7 @@ class LearningStandardsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLearningStandard'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2138,7 +2138,7 @@ class LearningStandardsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLearningStandard'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2175,7 +2175,7 @@ class LearningStandardsApi
     /**
      * Create request for operation 'postLearningStandard'
      *
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLearningStandard'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2273,11 +2273,11 @@ class LearningStandardsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLearningStandard'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2292,11 +2292,11 @@ class LearningStandardsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLearningStandard'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2342,7 +2342,7 @@ class LearningStandardsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLearningStandard'] to see the possible values for this operation
      *
@@ -2365,7 +2365,7 @@ class LearningStandardsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLearningStandard'] to see the possible values for this operation
      *
@@ -2404,7 +2404,7 @@ class LearningStandardsApi
      * Create request for operation 'putLearningStandard'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLearningStandard $ed_fi_learning_standard The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLearningStandard'] to see the possible values for this operation
      *

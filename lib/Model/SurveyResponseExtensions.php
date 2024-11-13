@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * SurveyResponseExtensions Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class SurveyResponseExtensions implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tpdm' => '\OpenAPI\Client\Model\TpdmSurveyResponseExtension'
+        'tpdm' => '\Resources\Model\TpdmSurveyResponseExtension'
     ];
 
     /**
@@ -292,7 +292,7 @@ class SurveyResponseExtensions implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets tpdm
      *
-     * @return \OpenAPI\Client\Model\TpdmSurveyResponseExtension|null
+     * @return \Resources\Model\TpdmSurveyResponseExtension|null
      */
     public function getTpdm()
     {
@@ -302,7 +302,7 @@ class SurveyResponseExtensions implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets tpdm
      *
-     * @param \OpenAPI\Client\Model\TpdmSurveyResponseExtension|null $tpdm tpdm
+     * @param \Resources\Model\TpdmSurveyResponseExtension|null $tpdm tpdm
      *
      * @return self
      */

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
-**contact_reference** | [**\OpenAPI\Client\Model\EdFiContactReference**](EdFiContactReference.md) |  |
-**student_reference** | [**\OpenAPI\Client\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
+**contact_reference** | [**\Resources\Model\EdFiContactReference**](EdFiContactReference.md) |  |
+**student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
 **contact_priority** | **int** | The numeric order of the preferred sequence or priority of contact. | [optional]
 **contact_restrictions** | **string** | Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). | [optional]
 **emergency_contact_status** | **bool** | Indicator of whether the person is a designated emergency contact for the student. | [optional]

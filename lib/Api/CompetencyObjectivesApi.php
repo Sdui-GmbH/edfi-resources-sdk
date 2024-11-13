@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * CompetencyObjectivesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class CompetencyObjectivesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCompetencyObjectiveById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class CompetencyObjectivesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCompetencyObjectiveById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class CompetencyObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCompetencyObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]
      */
     public function deletesCompetencyObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
     {
@@ -407,9 +407,9 @@ class CompetencyObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCompetencyObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesCompetencyObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
     {
@@ -440,11 +440,11 @@ class CompetencyObjectivesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class CompetencyObjectivesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class CompetencyObjectivesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class CompetencyObjectivesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class CompetencyObjectivesApi
      */
     public function deletesCompetencyObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]';
         $request = $this->deletesCompetencyObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -774,9 +774,9 @@ class CompetencyObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompetencyObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCompetencyObjective[]
+     * @return \Resources\Model\EdFiCompetencyObjective[]
      */
     public function getCompetencyObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
     {
@@ -804,9 +804,9 @@ class CompetencyObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompetencyObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCompetencyObjective[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCompetencyObjective[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCompetencyObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
     {
@@ -837,11 +837,11 @@ class CompetencyObjectivesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCompetencyObjective[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCompetencyObjective[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCompetencyObjective[]' !== 'string') {
+                        if ('\Resources\Model\EdFiCompetencyObjective[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -859,7 +859,7 @@ class CompetencyObjectivesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCompetencyObjective[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCompetencyObjective[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class CompetencyObjectivesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCompetencyObjective[]';
+            $returnType = '\Resources\Model\EdFiCompetencyObjective[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -911,7 +911,7 @@ class CompetencyObjectivesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCompetencyObjective[]',
+                        '\Resources\Model\EdFiCompetencyObjective[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class CompetencyObjectivesApi
      */
     public function getCompetencyObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCompetencyObjective[]';
+        $returnType = '\Resources\Model\EdFiCompetencyObjective[]';
         $request = $this->getCompetencyObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType);
 
         return $this->client
@@ -1267,9 +1267,9 @@ class CompetencyObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompetencyObjectivesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCompetencyObjective
+     * @return \Resources\Model\EdFiCompetencyObjective
      */
     public function getCompetencyObjectivesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectivesById'][0])
     {
@@ -1287,9 +1287,9 @@ class CompetencyObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompetencyObjectivesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCompetencyObjective, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCompetencyObjective, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCompetencyObjectivesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectivesById'][0])
     {
@@ -1320,11 +1320,11 @@ class CompetencyObjectivesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCompetencyObjective' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCompetencyObjective' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCompetencyObjective' !== 'string') {
+                        if ('\Resources\Model\EdFiCompetencyObjective' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1342,7 +1342,7 @@ class CompetencyObjectivesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCompetencyObjective', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCompetencyObjective', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1361,7 +1361,7 @@ class CompetencyObjectivesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCompetencyObjective';
+            $returnType = '\Resources\Model\EdFiCompetencyObjective';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1394,7 +1394,7 @@ class CompetencyObjectivesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCompetencyObjective',
+                        '\Resources\Model\EdFiCompetencyObjective',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1442,7 +1442,7 @@ class CompetencyObjectivesApi
      */
     public function getCompetencyObjectivesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectivesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCompetencyObjective';
+        $returnType = '\Resources\Model\EdFiCompetencyObjective';
         $request = $this->getCompetencyObjectivesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1602,9 +1602,9 @@ class CompetencyObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCompetencyObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]
      */
     public function keyChangesCompetencyObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
     {
@@ -1625,9 +1625,9 @@ class CompetencyObjectivesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCompetencyObjectives'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesCompetencyObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
     {
@@ -1658,11 +1658,11 @@ class CompetencyObjectivesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1680,7 +1680,7 @@ class CompetencyObjectivesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1699,7 +1699,7 @@ class CompetencyObjectivesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1732,7 +1732,7 @@ class CompetencyObjectivesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1786,7 +1786,7 @@ class CompetencyObjectivesApi
      */
     public function keyChangesCompetencyObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]';
         $request = $this->keyChangesCompetencyObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1977,10 +1977,10 @@ class CompetencyObjectivesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCompetencyObjective'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1994,10 +1994,10 @@ class CompetencyObjectivesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCompetencyObjective'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2042,7 +2042,7 @@ class CompetencyObjectivesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCompetencyObjective'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2063,7 +2063,7 @@ class CompetencyObjectivesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCompetencyObjective'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2100,7 +2100,7 @@ class CompetencyObjectivesApi
     /**
      * Create request for operation 'postCompetencyObjective'
      *
-     * @param  \OpenAPI\Client\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCompetencyObjective'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2198,11 +2198,11 @@ class CompetencyObjectivesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCompetencyObjective'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2217,11 +2217,11 @@ class CompetencyObjectivesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCompetencyObjective'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2267,7 +2267,7 @@ class CompetencyObjectivesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCompetencyObjective'] to see the possible values for this operation
      *
@@ -2290,7 +2290,7 @@ class CompetencyObjectivesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCompetencyObjective'] to see the possible values for this operation
      *
@@ -2329,7 +2329,7 @@ class CompetencyObjectivesApi
      * Create request for operation 'putCompetencyObjective'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCompetencyObjective $ed_fi_competency_objective The JSON representation of the \&quot;competencyObjective\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCompetencyObjective'] to see the possible values for this operation
      *

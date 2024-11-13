@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentEducationOrganizationAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,35 +58,35 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
-        'addresses' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationAddress[]',
-        'ancestry_ethnic_origins' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationAncestryEthnicOrigin[]',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
+        'addresses' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationAddress[]',
+        'ancestry_ethnic_origins' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationAncestryEthnicOrigin[]',
         'barrier_to_internet_access_in_residence_descriptor' => 'string',
-        'cohort_years' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationCohortYear[]',
-        'disabilities' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationDisability[]',
-        'electronic_mails' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationElectronicMail[]',
+        'cohort_years' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationCohortYear[]',
+        'disabilities' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationDisability[]',
+        'electronic_mails' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationElectronicMail[]',
         'gender_identity' => 'string',
         'hispanic_latino_ethnicity' => 'bool',
-        'international_addresses' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationInternationalAddress[]',
+        'international_addresses' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationInternationalAddress[]',
         'internet_access_in_residence' => 'bool',
         'internet_access_type_in_residence_descriptor' => 'string',
         'internet_performance_in_residence_descriptor' => 'string',
-        'languages' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationLanguage[]',
+        'languages' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationLanguage[]',
         'limited_english_proficiency_descriptor' => 'string',
         'login_id' => 'string',
         'primary_learning_device_access_descriptor' => 'string',
         'primary_learning_device_away_from_school_descriptor' => 'string',
         'primary_learning_device_provider_descriptor' => 'string',
         'profile_thumbnail' => 'string',
-        'races' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationRace[]',
+        'races' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationRace[]',
         'sex_descriptor' => 'string',
-        'student_characteristics' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristic[]',
-        'student_identification_codes' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentIdentificationCode[]',
-        'student_indicators' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentIndicator[]',
+        'student_characteristics' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristic[]',
+        'student_identification_codes' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationStudentIdentificationCode[]',
+        'student_indicators' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationStudentIndicator[]',
         'supporter_military_connection_descriptor' => 'string',
-        'telephones' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationTelephone[]',
-        'tribal_affiliations' => '\OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationTribalAffiliation[]',
+        'telephones' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationTelephone[]',
+        'tribal_affiliations' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationTribalAffiliation[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -598,7 +598,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getEducationOrganizationReference()
     {
@@ -608,7 +608,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -625,7 +625,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -635,7 +635,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -652,7 +652,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets addresses
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationAddress[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationAddress[]|null
      */
     public function getAddresses()
     {
@@ -662,7 +662,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets addresses
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationAddress[]|null $addresses An unordered collection of studentEducationOrganizationAssociationAddresses. The set of elements that describes an address, including the street address, city, state, and ZIP code.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationAddress[]|null $addresses An unordered collection of studentEducationOrganizationAssociationAddresses. The set of elements that describes an address, including the street address, city, state, and ZIP code.
      *
      * @return self
      */
@@ -679,7 +679,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets ancestry_ethnic_origins
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationAncestryEthnicOrigin[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationAncestryEthnicOrigin[]|null
      */
     public function getAncestryEthnicOrigins()
     {
@@ -689,7 +689,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets ancestry_ethnic_origins
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationAncestryEthnicOrigin[]|null $ancestry_ethnic_origins An unordered collection of studentEducationOrganizationAssociationAncestryEthnicOrigins. The original peoples or cultures with which the individual identifies.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationAncestryEthnicOrigin[]|null $ancestry_ethnic_origins An unordered collection of studentEducationOrganizationAssociationAncestryEthnicOrigins. The original peoples or cultures with which the individual identifies.
      *
      * @return self
      */
@@ -744,7 +744,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets cohort_years
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationCohortYear[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationCohortYear[]|null
      */
     public function getCohortYears()
     {
@@ -754,7 +754,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets cohort_years
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationCohortYear[]|null $cohort_years An unordered collection of studentEducationOrganizationAssociationCohortYears. The type and year of a cohort (e.g., 9th grade) the student belongs to as determined by the year that student entered a specific grade.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationCohortYear[]|null $cohort_years An unordered collection of studentEducationOrganizationAssociationCohortYears. The type and year of a cohort (e.g., 9th grade) the student belongs to as determined by the year that student entered a specific grade.
      *
      * @return self
      */
@@ -771,7 +771,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets disabilities
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationDisability[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationDisability[]|null
      */
     public function getDisabilities()
     {
@@ -781,7 +781,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets disabilities
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationDisability[]|null $disabilities An unordered collection of studentEducationOrganizationAssociationDisabilities. The disability condition(s) that best describes an individual's impairment, as determined by evaluation(s) conducted by the education organization.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationDisability[]|null $disabilities An unordered collection of studentEducationOrganizationAssociationDisabilities. The disability condition(s) that best describes an individual's impairment, as determined by evaluation(s) conducted by the education organization.
      *
      * @return self
      */
@@ -798,7 +798,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets electronic_mails
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationElectronicMail[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationElectronicMail[]|null
      */
     public function getElectronicMails()
     {
@@ -808,7 +808,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets electronic_mails
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationElectronicMail[]|null $electronic_mails An unordered collection of studentEducationOrganizationAssociationElectronicMails. The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationElectronicMail[]|null $electronic_mails An unordered collection of studentEducationOrganizationAssociationElectronicMails. The numbers, letters, and symbols used to identify an electronic mail (e-mail) user within the network to which the individual or organization belongs.
      *
      * @return self
      */
@@ -897,7 +897,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets international_addresses
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationInternationalAddress[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationInternationalAddress[]|null
      */
     public function getInternationalAddresses()
     {
@@ -907,7 +907,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets international_addresses
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationInternationalAddress[]|null $international_addresses An unordered collection of studentEducationOrganizationAssociationInternationalAddresses. The set of elements that describes an international address.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationInternationalAddress[]|null $international_addresses An unordered collection of studentEducationOrganizationAssociationInternationalAddresses. The set of elements that describes an international address.
      *
      * @return self
      */
@@ -1034,7 +1034,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets languages
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationLanguage[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationLanguage[]|null
      */
     public function getLanguages()
     {
@@ -1044,7 +1044,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets languages
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationLanguage[]|null $languages An unordered collection of studentEducationOrganizationAssociationLanguages. The language(s) the individual uses to communicate. It is strongly recommended that entries use only ISO 639-3 language codes.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationLanguage[]|null $languages An unordered collection of studentEducationOrganizationAssociationLanguages. The language(s) the individual uses to communicate. It is strongly recommended that entries use only ISO 639-3 language codes.
      *
      * @return self
      */
@@ -1295,7 +1295,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets races
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationRace[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationRace[]|null
      */
     public function getRaces()
     {
@@ -1305,7 +1305,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets races
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationRace[]|null $races An unordered collection of studentEducationOrganizationAssociationRaces. The general racial category which most clearly reflects the individual's recognition of his or her community or with which the individual most identifies as last reported to the education organization. The data model allows for multiple entries so that each individual can specify all appropriate races.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationRace[]|null $races An unordered collection of studentEducationOrganizationAssociationRaces. The general racial category which most clearly reflects the individual's recognition of his or her community or with which the individual most identifies as last reported to the education organization. The data model allows for multiple entries so that each individual can specify all appropriate races.
      *
      * @return self
      */
@@ -1360,7 +1360,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets student_characteristics
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristic[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristic[]|null
      */
     public function getStudentCharacteristics()
     {
@@ -1370,7 +1370,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets student_characteristics
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristic[]|null $student_characteristics An unordered collection of studentEducationOrganizationAssociationStudentCharacteristics. Reflects important characteristics of a student. If a student has a characteristic present, that characteristic is considered true or active for that student. If a characteristic is not present, no assumption is made as to the applicability of the characteristic, but local policy may dictate otherwise.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationStudentCharacteristic[]|null $student_characteristics An unordered collection of studentEducationOrganizationAssociationStudentCharacteristics. Reflects important characteristics of a student. If a student has a characteristic present, that characteristic is considered true or active for that student. If a characteristic is not present, no assumption is made as to the applicability of the characteristic, but local policy may dictate otherwise.
      *
      * @return self
      */
@@ -1387,7 +1387,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets student_identification_codes
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentIdentificationCode[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationStudentIdentificationCode[]|null
      */
     public function getStudentIdentificationCodes()
     {
@@ -1397,7 +1397,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets student_identification_codes
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentIdentificationCode[]|null $student_identification_codes An unordered collection of studentEducationOrganizationAssociationStudentIdentificationCodes. A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationStudentIdentificationCode[]|null $student_identification_codes An unordered collection of studentEducationOrganizationAssociationStudentIdentificationCodes. A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student.
      *
      * @return self
      */
@@ -1414,7 +1414,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets student_indicators
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentIndicator[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationStudentIndicator[]|null
      */
     public function getStudentIndicators()
     {
@@ -1424,7 +1424,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets student_indicators
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationStudentIndicator[]|null $student_indicators An unordered collection of studentEducationOrganizationAssociationStudentIndicators. An indicator or metric computed for the student (e.g., at risk).
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationStudentIndicator[]|null $student_indicators An unordered collection of studentEducationOrganizationAssociationStudentIndicators. An indicator or metric computed for the student (e.g., at risk).
      *
      * @return self
      */
@@ -1479,7 +1479,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets telephones
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationTelephone[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationTelephone[]|null
      */
     public function getTelephones()
     {
@@ -1489,7 +1489,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets telephones
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationTelephone[]|null $telephones An unordered collection of studentEducationOrganizationAssociationTelephones. The 10-digit telephone number, including the area code, for the person.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationTelephone[]|null $telephones An unordered collection of studentEducationOrganizationAssociationTelephones. The 10-digit telephone number, including the area code, for the person.
      *
      * @return self
      */
@@ -1506,7 +1506,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Gets tribal_affiliations
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationTribalAffiliation[]|null
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationTribalAffiliation[]|null
      */
     public function getTribalAffiliations()
     {
@@ -1516,7 +1516,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
     /**
      * Sets tribal_affiliations
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentEducationOrganizationAssociationTribalAffiliation[]|null $tribal_affiliations An unordered collection of studentEducationOrganizationAssociationTribalAffiliations. An American Indian tribe with which the student is affiliated as last reported to the education organization.
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationTribalAffiliation[]|null $tribal_affiliations An unordered collection of studentEducationOrganizationAssociationTribalAffiliations. An American Indian tribe with which the student is affiliated as last reported to the education organization.
      *
      * @return self
      */

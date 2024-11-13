@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentInterventionAttendanceEvent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,8 +60,8 @@ class EdFiStudentInterventionAttendanceEvent implements ModelInterface, ArrayAcc
         'id' => 'string',
         'attendance_event_category_descriptor' => 'string',
         'event_date' => '\DateTime',
-        'intervention_reference' => '\OpenAPI\Client\Model\EdFiInterventionReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'intervention_reference' => '\Resources\Model\EdFiInterventionReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'attendance_event_reason' => 'string',
         'educational_environment_descriptor' => 'string',
         'event_duration' => 'float',
@@ -491,7 +491,7 @@ class EdFiStudentInterventionAttendanceEvent implements ModelInterface, ArrayAcc
     /**
      * Gets intervention_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiInterventionReference
+     * @return \Resources\Model\EdFiInterventionReference
      */
     public function getInterventionReference()
     {
@@ -501,7 +501,7 @@ class EdFiStudentInterventionAttendanceEvent implements ModelInterface, ArrayAcc
     /**
      * Sets intervention_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiInterventionReference $intervention_reference intervention_reference
+     * @param \Resources\Model\EdFiInterventionReference $intervention_reference intervention_reference
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class EdFiStudentInterventionAttendanceEvent implements ModelInterface, ArrayAcc
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -528,7 +528,7 @@ class EdFiStudentInterventionAttendanceEvent implements ModelInterface, ArrayAcc
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */

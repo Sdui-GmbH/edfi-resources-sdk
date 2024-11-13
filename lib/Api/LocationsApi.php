@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * LocationsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class LocationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class LocationsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteLocationById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class LocationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocationDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiLocationDelete[]
      */
     public function deletesLocations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
     {
@@ -407,9 +407,9 @@ class LocationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesLocationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
     {
@@ -440,11 +440,11 @@ class LocationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocationDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocationDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocationDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocationDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class LocationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocationDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocationDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class LocationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocationDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocationDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class LocationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocationDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiLocationDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class LocationsApi
      */
     public function deletesLocationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocationDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocationDelete[]';
         $request = $this->deletesLocationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -772,9 +772,9 @@ class LocationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocation[]
+     * @return \Resources\Model\EdFiLocation[]
      */
     public function getLocations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
     {
@@ -800,9 +800,9 @@ class LocationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
     {
@@ -833,11 +833,11 @@ class LocationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocation[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocation[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocation[]' !== 'string') {
+                        if ('\Resources\Model\EdFiLocation[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -855,7 +855,7 @@ class LocationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocation[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocation[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -874,7 +874,7 @@ class LocationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocation[]';
+            $returnType = '\Resources\Model\EdFiLocation[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -907,7 +907,7 @@ class LocationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocation[]',
+                        '\Resources\Model\EdFiLocation[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -971,7 +971,7 @@ class LocationsApi
      */
     public function getLocationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocation[]';
+        $returnType = '\Resources\Model\EdFiLocation[]';
         $request = $this->getLocationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType);
 
         return $this->client
@@ -1225,9 +1225,9 @@ class LocationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiLocation
+     * @return \Resources\Model\EdFiLocation
      */
     public function getLocationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocationsById'][0])
     {
@@ -1245,9 +1245,9 @@ class LocationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocationsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiLocation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiLocation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocationsById'][0])
     {
@@ -1278,11 +1278,11 @@ class LocationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiLocation' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiLocation' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiLocation' !== 'string') {
+                        if ('\Resources\Model\EdFiLocation' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1300,7 +1300,7 @@ class LocationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiLocation', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiLocation', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1319,7 +1319,7 @@ class LocationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiLocation';
+            $returnType = '\Resources\Model\EdFiLocation';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1352,7 +1352,7 @@ class LocationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiLocation',
+                        '\Resources\Model\EdFiLocation',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1400,7 +1400,7 @@ class LocationsApi
      */
     public function getLocationsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocationsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiLocation';
+        $returnType = '\Resources\Model\EdFiLocation';
         $request = $this->getLocationsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1560,9 +1560,9 @@ class LocationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiLocationKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiLocationKeyChange[]
      */
     public function keyChangesLocations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
     {
@@ -1583,9 +1583,9 @@ class LocationsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocations'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiLocationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiLocationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesLocationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
     {
@@ -1616,11 +1616,11 @@ class LocationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocationKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiLocationKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiLocationKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiLocationKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1638,7 +1638,7 @@ class LocationsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiLocationKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiLocationKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1657,7 +1657,7 @@ class LocationsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocationKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiLocationKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1690,7 +1690,7 @@ class LocationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiLocationKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiLocationKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1744,7 +1744,7 @@ class LocationsApi
      */
     public function keyChangesLocationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiLocationKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiLocationKeyChange[]';
         $request = $this->keyChangesLocationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -1935,10 +1935,10 @@ class LocationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1952,10 +1952,10 @@ class LocationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2000,7 +2000,7 @@ class LocationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2021,7 +2021,7 @@ class LocationsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2058,7 +2058,7 @@ class LocationsApi
     /**
      * Create request for operation 'postLocation'
      *
-     * @param  \OpenAPI\Client\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2156,11 +2156,11 @@ class LocationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2175,11 +2175,11 @@ class LocationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocation'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2225,7 +2225,7 @@ class LocationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocation'] to see the possible values for this operation
      *
@@ -2248,7 +2248,7 @@ class LocationsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocation'] to see the possible values for this operation
      *
@@ -2287,7 +2287,7 @@ class LocationsApi
      * Create request for operation 'putLocation'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiLocation $ed_fi_location The JSON representation of the \&quot;location\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putLocation'] to see the possible values for this operation
      *

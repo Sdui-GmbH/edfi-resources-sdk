@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentContactAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class EdFiStudentContactAssociation implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'contact_reference' => '\OpenAPI\Client\Model\EdFiContactReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'contact_reference' => '\Resources\Model\EdFiContactReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'contact_priority' => 'int',
         'contact_restrictions' => 'string',
         'emergency_contact_status' => 'bool',
@@ -414,7 +414,7 @@ class EdFiStudentContactAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets contact_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiContactReference
+     * @return \Resources\Model\EdFiContactReference
      */
     public function getContactReference()
     {
@@ -424,7 +424,7 @@ class EdFiStudentContactAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets contact_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiContactReference $contact_reference contact_reference
+     * @param \Resources\Model\EdFiContactReference $contact_reference contact_reference
      *
      * @return self
      */
@@ -441,7 +441,7 @@ class EdFiStudentContactAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -451,7 +451,7 @@ class EdFiStudentContactAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */

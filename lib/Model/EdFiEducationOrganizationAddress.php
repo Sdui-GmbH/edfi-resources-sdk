@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiEducationOrganizationAddress Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -71,7 +71,7 @@ class EdFiEducationOrganizationAddress implements ModelInterface, ArrayAccess, \
         'latitude' => 'string',
         'longitude' => 'string',
         'name_of_county' => 'string',
-        'periods' => '\OpenAPI\Client\Model\EdFiEducationOrganizationAddressPeriod[]'
+        'periods' => '\Resources\Model\EdFiEducationOrganizationAddressPeriod[]'
     ];
 
     /**
@@ -1020,7 +1020,7 @@ class EdFiEducationOrganizationAddress implements ModelInterface, ArrayAccess, \
     /**
      * Gets periods
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationAddressPeriod[]|null
+     * @return \Resources\Model\EdFiEducationOrganizationAddressPeriod[]|null
      */
     public function getPeriods()
     {
@@ -1030,7 +1030,7 @@ class EdFiEducationOrganizationAddress implements ModelInterface, ArrayAccess, \
     /**
      * Sets periods
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationAddressPeriod[]|null $periods An unordered collection of educationOrganizationAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address.
+     * @param \Resources\Model\EdFiEducationOrganizationAddressPeriod[]|null $periods An unordered collection of educationOrganizationAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address.
      *
      * @return self
      */

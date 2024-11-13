@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * EvaluationRubricDimensionsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class EvaluationRubricDimensionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEvaluationRubricDimensionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class EvaluationRubricDimensionsApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteEvaluationRubricDimensionById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class EvaluationRubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]
      */
     public function deletesEvaluationRubricDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
     {
@@ -407,9 +407,9 @@ class EvaluationRubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesEvaluationRubricDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
     {
@@ -440,11 +440,11 @@ class EvaluationRubricDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class EvaluationRubricDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class EvaluationRubricDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class EvaluationRubricDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class EvaluationRubricDimensionsApi
      */
     public function deletesEvaluationRubricDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]';
         $request = $this->deletesEvaluationRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -779,9 +779,9 @@ class EvaluationRubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiEvaluationRubricDimension[]
+     * @return \Resources\Model\EdFiEvaluationRubricDimension[]
      */
     public function getEvaluationRubricDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
     {
@@ -814,9 +814,9 @@ class EvaluationRubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiEvaluationRubricDimension[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiEvaluationRubricDimension[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEvaluationRubricDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
     {
@@ -847,11 +847,11 @@ class EvaluationRubricDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiEvaluationRubricDimension[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiEvaluationRubricDimension[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiEvaluationRubricDimension[]' !== 'string') {
+                        if ('\Resources\Model\EdFiEvaluationRubricDimension[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -869,7 +869,7 @@ class EvaluationRubricDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiEvaluationRubricDimension[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiEvaluationRubricDimension[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -888,7 +888,7 @@ class EvaluationRubricDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiEvaluationRubricDimension[]';
+            $returnType = '\Resources\Model\EdFiEvaluationRubricDimension[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -921,7 +921,7 @@ class EvaluationRubricDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiEvaluationRubricDimension[]',
+                        '\Resources\Model\EdFiEvaluationRubricDimension[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -999,7 +999,7 @@ class EvaluationRubricDimensionsApi
      */
     public function getEvaluationRubricDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiEvaluationRubricDimension[]';
+        $returnType = '\Resources\Model\EdFiEvaluationRubricDimension[]';
         $request = $this->getEvaluationRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType);
 
         return $this->client
@@ -1351,9 +1351,9 @@ class EvaluationRubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRubricDimensionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiEvaluationRubricDimension
+     * @return \Resources\Model\EdFiEvaluationRubricDimension
      */
     public function getEvaluationRubricDimensionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensionsById'][0])
     {
@@ -1371,9 +1371,9 @@ class EvaluationRubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRubricDimensionsById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiEvaluationRubricDimension, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiEvaluationRubricDimension, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEvaluationRubricDimensionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensionsById'][0])
     {
@@ -1404,11 +1404,11 @@ class EvaluationRubricDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiEvaluationRubricDimension' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiEvaluationRubricDimension' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiEvaluationRubricDimension' !== 'string') {
+                        if ('\Resources\Model\EdFiEvaluationRubricDimension' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1426,7 +1426,7 @@ class EvaluationRubricDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiEvaluationRubricDimension', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiEvaluationRubricDimension', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1445,7 +1445,7 @@ class EvaluationRubricDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiEvaluationRubricDimension';
+            $returnType = '\Resources\Model\EdFiEvaluationRubricDimension';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1478,7 +1478,7 @@ class EvaluationRubricDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiEvaluationRubricDimension',
+                        '\Resources\Model\EdFiEvaluationRubricDimension',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1526,7 +1526,7 @@ class EvaluationRubricDimensionsApi
      */
     public function getEvaluationRubricDimensionsByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensionsById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiEvaluationRubricDimension';
+        $returnType = '\Resources\Model\EdFiEvaluationRubricDimension';
         $request = $this->getEvaluationRubricDimensionsByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1686,9 +1686,9 @@ class EvaluationRubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]
      */
     public function keyChangesEvaluationRubricDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
     {
@@ -1709,9 +1709,9 @@ class EvaluationRubricDimensionsApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRubricDimensions'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesEvaluationRubricDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
     {
@@ -1742,11 +1742,11 @@ class EvaluationRubricDimensionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1764,7 +1764,7 @@ class EvaluationRubricDimensionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1783,7 +1783,7 @@ class EvaluationRubricDimensionsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1816,7 +1816,7 @@ class EvaluationRubricDimensionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1870,7 +1870,7 @@ class EvaluationRubricDimensionsApi
      */
     public function keyChangesEvaluationRubricDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]';
         $request = $this->keyChangesEvaluationRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2061,10 +2061,10 @@ class EvaluationRubricDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEvaluationRubricDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2078,10 +2078,10 @@ class EvaluationRubricDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEvaluationRubricDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2126,7 +2126,7 @@ class EvaluationRubricDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEvaluationRubricDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2147,7 +2147,7 @@ class EvaluationRubricDimensionsApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEvaluationRubricDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2184,7 +2184,7 @@ class EvaluationRubricDimensionsApi
     /**
      * Create request for operation 'postEvaluationRubricDimension'
      *
-     * @param  \OpenAPI\Client\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postEvaluationRubricDimension'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2282,11 +2282,11 @@ class EvaluationRubricDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEvaluationRubricDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2301,11 +2301,11 @@ class EvaluationRubricDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEvaluationRubricDimension'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2351,7 +2351,7 @@ class EvaluationRubricDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEvaluationRubricDimension'] to see the possible values for this operation
      *
@@ -2374,7 +2374,7 @@ class EvaluationRubricDimensionsApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEvaluationRubricDimension'] to see the possible values for this operation
      *
@@ -2413,7 +2413,7 @@ class EvaluationRubricDimensionsApi
      * Create request for operation 'putEvaluationRubricDimension'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiEvaluationRubricDimension $ed_fi_evaluation_rubric_dimension The JSON representation of the \&quot;evaluationRubricDimension\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putEvaluationRubricDimension'] to see the possible values for this operation
      *

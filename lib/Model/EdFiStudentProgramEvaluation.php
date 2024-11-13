@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentProgramEvaluation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,14 +59,14 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     protected static $openAPITypes = [
         'id' => 'string',
         'evaluation_date' => '\DateTime',
-        'education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
-        'program_evaluation_reference' => '\OpenAPI\Client\Model\EdFiProgramEvaluationReference',
-        'staff_evaluator_staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
-        'student_reference' => '\OpenAPI\Client\Model\EdFiStudentReference',
+        'education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
+        'program_evaluation_reference' => '\Resources\Model\EdFiProgramEvaluationReference',
+        'staff_evaluator_staff_reference' => '\Resources\Model\EdFiStaffReference',
+        'student_reference' => '\Resources\Model\EdFiStudentReference',
         'evaluation_duration' => 'int',
-        'external_evaluators' => '\OpenAPI\Client\Model\EdFiStudentProgramEvaluationExternalEvaluator[]',
-        'student_evaluation_elements' => '\OpenAPI\Client\Model\EdFiStudentProgramEvaluationStudentEvaluationElement[]',
-        'student_evaluation_objectives' => '\OpenAPI\Client\Model\EdFiStudentProgramEvaluationStudentEvaluationObjective[]',
+        'external_evaluators' => '\Resources\Model\EdFiStudentProgramEvaluationExternalEvaluator[]',
+        'student_evaluation_elements' => '\Resources\Model\EdFiStudentProgramEvaluationStudentEvaluationElement[]',
+        'student_evaluation_objectives' => '\Resources\Model\EdFiStudentProgramEvaluationStudentEvaluationObjective[]',
         'summary_evaluation_comment' => 'string',
         'summary_evaluation_numeric_rating' => 'float',
         'summary_evaluation_rating_level_descriptor' => 'string',
@@ -469,7 +469,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference|null
+     * @return \Resources\Model\EdFiEducationOrganizationReference|null
      */
     public function getEducationOrganizationReference()
     {
@@ -479,7 +479,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference|null $education_organization_reference education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference|null $education_organization_reference education_organization_reference
      *
      * @return self
      */
@@ -496,7 +496,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets program_evaluation_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramEvaluationReference
+     * @return \Resources\Model\EdFiProgramEvaluationReference
      */
     public function getProgramEvaluationReference()
     {
@@ -506,7 +506,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets program_evaluation_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramEvaluationReference $program_evaluation_reference program_evaluation_reference
+     * @param \Resources\Model\EdFiProgramEvaluationReference $program_evaluation_reference program_evaluation_reference
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets staff_evaluator_staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference|null
+     * @return \Resources\Model\EdFiStaffReference|null
      */
     public function getStaffEvaluatorStaffReference()
     {
@@ -533,7 +533,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets staff_evaluator_staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference|null $staff_evaluator_staff_reference staff_evaluator_staff_reference
+     * @param \Resources\Model\EdFiStaffReference|null $staff_evaluator_staff_reference staff_evaluator_staff_reference
      *
      * @return self
      */
@@ -550,7 +550,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets student_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentReference
+     * @return \Resources\Model\EdFiStudentReference
      */
     public function getStudentReference()
     {
@@ -560,7 +560,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets student_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentReference $student_reference student_reference
+     * @param \Resources\Model\EdFiStudentReference $student_reference student_reference
      *
      * @return self
      */
@@ -616,7 +616,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets external_evaluators
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentProgramEvaluationExternalEvaluator[]|null
+     * @return \Resources\Model\EdFiStudentProgramEvaluationExternalEvaluator[]|null
      */
     public function getExternalEvaluators()
     {
@@ -626,7 +626,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets external_evaluators
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentProgramEvaluationExternalEvaluator[]|null $external_evaluators An unordered collection of studentProgramEvaluationExternalEvaluators. The external person(s) - not staff - that conducted the evaluation.
+     * @param \Resources\Model\EdFiStudentProgramEvaluationExternalEvaluator[]|null $external_evaluators An unordered collection of studentProgramEvaluationExternalEvaluators. The external person(s) - not staff - that conducted the evaluation.
      *
      * @return self
      */
@@ -643,7 +643,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets student_evaluation_elements
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentProgramEvaluationStudentEvaluationElement[]|null
+     * @return \Resources\Model\EdFiStudentProgramEvaluationStudentEvaluationElement[]|null
      */
     public function getStudentEvaluationElements()
     {
@@ -653,7 +653,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets student_evaluation_elements
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentProgramEvaluationStudentEvaluationElement[]|null $student_evaluation_elements An unordered collection of studentProgramEvaluationStudentEvaluationElements. The student's rating and/or rating levels earned for a program evaluation element.
+     * @param \Resources\Model\EdFiStudentProgramEvaluationStudentEvaluationElement[]|null $student_evaluation_elements An unordered collection of studentProgramEvaluationStudentEvaluationElements. The student's rating and/or rating levels earned for a program evaluation element.
      *
      * @return self
      */
@@ -670,7 +670,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets student_evaluation_objectives
      *
-     * @return \OpenAPI\Client\Model\EdFiStudentProgramEvaluationStudentEvaluationObjective[]|null
+     * @return \Resources\Model\EdFiStudentProgramEvaluationStudentEvaluationObjective[]|null
      */
     public function getStudentEvaluationObjectives()
     {
@@ -680,7 +680,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets student_evaluation_objectives
      *
-     * @param \OpenAPI\Client\Model\EdFiStudentProgramEvaluationStudentEvaluationObjective[]|null $student_evaluation_objectives An unordered collection of studentProgramEvaluationStudentEvaluationObjectives. The student's rating and/or rating levels earned for a program evaluation objective.
+     * @param \Resources\Model\EdFiStudentProgramEvaluationStudentEvaluationObjective[]|null $student_evaluation_objectives An unordered collection of studentProgramEvaluationStudentEvaluationObjectives. The student's rating and/or rating levels earned for a program evaluation objective.
      *
      * @return self
      */

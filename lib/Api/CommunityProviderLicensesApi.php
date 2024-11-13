@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Resources\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Resources\ApiException;
+use Resources\Configuration;
+use Resources\HeaderSelector;
+use Resources\ObjectSerializer;
 
 /**
  * CommunityProviderLicensesApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,7 +149,7 @@ class CommunityProviderLicensesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCommunityProviderLicenseById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -167,7 +167,7 @@ class CommunityProviderLicensesApi
      * @param  string $if_match The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteCommunityProviderLicenseById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -384,9 +384,9 @@ class CommunityProviderLicensesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityProviderLicenses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]
+     * @return \Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]
      */
     public function deletesCommunityProviderLicenses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
     {
@@ -407,9 +407,9 @@ class CommunityProviderLicensesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityProviderLicenses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deletesCommunityProviderLicensesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
     {
@@ -440,11 +440,11 @@ class CommunityProviderLicensesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -462,7 +462,7 @@ class CommunityProviderLicensesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -481,7 +481,7 @@ class CommunityProviderLicensesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -514,7 +514,7 @@ class CommunityProviderLicensesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]',
+                        '\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class CommunityProviderLicensesApi
      */
     public function deletesCommunityProviderLicensesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]';
         $request = $this->deletesCommunityProviderLicensesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -779,9 +779,9 @@ class CommunityProviderLicensesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviderLicenses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCommunityProviderLicense[]
+     * @return \Resources\Model\EdFiCommunityProviderLicense[]
      */
     public function getCommunityProviderLicenses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
     {
@@ -814,9 +814,9 @@ class CommunityProviderLicensesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviderLicenses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCommunityProviderLicense[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCommunityProviderLicense[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCommunityProviderLicensesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
     {
@@ -847,11 +847,11 @@ class CommunityProviderLicensesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCommunityProviderLicense[]' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCommunityProviderLicense[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCommunityProviderLicense[]' !== 'string') {
+                        if ('\Resources\Model\EdFiCommunityProviderLicense[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -869,7 +869,7 @@ class CommunityProviderLicensesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCommunityProviderLicense[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCommunityProviderLicense[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -888,7 +888,7 @@ class CommunityProviderLicensesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCommunityProviderLicense[]';
+            $returnType = '\Resources\Model\EdFiCommunityProviderLicense[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -921,7 +921,7 @@ class CommunityProviderLicensesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCommunityProviderLicense[]',
+                        '\Resources\Model\EdFiCommunityProviderLicense[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -999,7 +999,7 @@ class CommunityProviderLicensesApi
      */
     public function getCommunityProviderLicensesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCommunityProviderLicense[]';
+        $returnType = '\Resources\Model\EdFiCommunityProviderLicense[]';
         $request = $this->getCommunityProviderLicensesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType);
 
         return $this->client
@@ -1339,9 +1339,9 @@ class CommunityProviderLicensesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviderLicensesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\EdFiCommunityProviderLicense
+     * @return \Resources\Model\EdFiCommunityProviderLicense
      */
     public function getCommunityProviderLicensesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicensesById'][0])
     {
@@ -1359,9 +1359,9 @@ class CommunityProviderLicensesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviderLicensesById'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\EdFiCommunityProviderLicense, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\EdFiCommunityProviderLicense, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCommunityProviderLicensesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicensesById'][0])
     {
@@ -1392,11 +1392,11 @@ class CommunityProviderLicensesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\EdFiCommunityProviderLicense' === '\SplFileObject') {
+                    if ('\Resources\Model\EdFiCommunityProviderLicense' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\EdFiCommunityProviderLicense' !== 'string') {
+                        if ('\Resources\Model\EdFiCommunityProviderLicense' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1414,7 +1414,7 @@ class CommunityProviderLicensesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\EdFiCommunityProviderLicense', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\EdFiCommunityProviderLicense', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1433,7 +1433,7 @@ class CommunityProviderLicensesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\EdFiCommunityProviderLicense';
+            $returnType = '\Resources\Model\EdFiCommunityProviderLicense';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1466,7 +1466,7 @@ class CommunityProviderLicensesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\EdFiCommunityProviderLicense',
+                        '\Resources\Model\EdFiCommunityProviderLicense',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1514,7 +1514,7 @@ class CommunityProviderLicensesApi
      */
     public function getCommunityProviderLicensesByIdAsyncWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicensesById'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\EdFiCommunityProviderLicense';
+        $returnType = '\Resources\Model\EdFiCommunityProviderLicense';
         $request = $this->getCommunityProviderLicensesByIdRequest($id, $if_none_match, $use_snapshot, $contentType);
 
         return $this->client
@@ -1674,9 +1674,9 @@ class CommunityProviderLicensesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityProviderLicenses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]
+     * @return \Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]
      */
     public function keyChangesCommunityProviderLicenses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
     {
@@ -1697,9 +1697,9 @@ class CommunityProviderLicensesApi
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityProviderLicenses'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
     public function keyChangesCommunityProviderLicensesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
     {
@@ -1730,11 +1730,11 @@ class CommunityProviderLicensesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]' === '\SplFileObject') {
+                    if ('\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]' !== 'string') {
+                        if ('\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1752,7 +1752,7 @@ class CommunityProviderLicensesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]', []),
+                        ObjectSerializer::deserialize($content, '\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1771,7 +1771,7 @@ class CommunityProviderLicensesApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]';
+            $returnType = '\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1804,7 +1804,7 @@ class CommunityProviderLicensesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]',
+                        '\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1858,7 +1858,7 @@ class CommunityProviderLicensesApi
      */
     public function keyChangesCommunityProviderLicensesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]';
+        $returnType = '\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]';
         $request = $this->keyChangesCommunityProviderLicensesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
         return $this->client
@@ -2049,10 +2049,10 @@ class CommunityProviderLicensesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCommunityProviderLicense'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2066,10 +2066,10 @@ class CommunityProviderLicensesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCommunityProviderLicense'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2114,7 +2114,7 @@ class CommunityProviderLicensesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCommunityProviderLicense'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2135,7 +2135,7 @@ class CommunityProviderLicensesApi
      *
      * Creates or updates resources based on the natural key values of the supplied resource.
      *
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCommunityProviderLicense'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2172,7 +2172,7 @@ class CommunityProviderLicensesApi
     /**
      * Create request for operation 'postCommunityProviderLicense'
      *
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postCommunityProviderLicense'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2270,11 +2270,11 @@ class CommunityProviderLicensesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCommunityProviderLicense'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2289,11 +2289,11 @@ class CommunityProviderLicensesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCommunityProviderLicense'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2339,7 +2339,7 @@ class CommunityProviderLicensesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCommunityProviderLicense'] to see the possible values for this operation
      *
@@ -2362,7 +2362,7 @@ class CommunityProviderLicensesApi
      * Updates a resource based on the resource identifier.
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCommunityProviderLicense'] to see the possible values for this operation
      *
@@ -2401,7 +2401,7 @@ class CommunityProviderLicensesApi
      * Create request for operation 'putCommunityProviderLicense'
      *
      * @param  string $id A resource identifier that uniquely identifies the resource. (required)
-     * @param  \OpenAPI\Client\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
+     * @param  \Resources\Model\EdFiCommunityProviderLicense $ed_fi_community_provider_license The JSON representation of the \&quot;communityProviderLicense\&quot; resource to be created or updated. (required)
      * @param  string $if_match The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putCommunityProviderLicense'] to see the possible values for this operation
      *

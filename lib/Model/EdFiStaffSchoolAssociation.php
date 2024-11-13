@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStaffSchoolAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,12 +59,12 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     protected static $openAPITypes = [
         'id' => 'string',
         'program_assignment_descriptor' => 'string',
-        'calendar_reference' => '\OpenAPI\Client\Model\EdFiCalendarReference',
-        'school_reference' => '\OpenAPI\Client\Model\EdFiSchoolReference',
-        'school_year_type_reference' => '\OpenAPI\Client\Model\EdFiSchoolYearTypeReference',
-        'staff_reference' => '\OpenAPI\Client\Model\EdFiStaffReference',
-        'academic_subjects' => '\OpenAPI\Client\Model\EdFiStaffSchoolAssociationAcademicSubject[]',
-        'grade_levels' => '\OpenAPI\Client\Model\EdFiStaffSchoolAssociationGradeLevel[]',
+        'calendar_reference' => '\Resources\Model\EdFiCalendarReference',
+        'school_reference' => '\Resources\Model\EdFiSchoolReference',
+        'school_year_type_reference' => '\Resources\Model\EdFiSchoolYearTypeReference',
+        'staff_reference' => '\Resources\Model\EdFiStaffReference',
+        'academic_subjects' => '\Resources\Model\EdFiStaffSchoolAssociationAcademicSubject[]',
+        'grade_levels' => '\Resources\Model\EdFiStaffSchoolAssociationGradeLevel[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -426,7 +426,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets calendar_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiCalendarReference|null
+     * @return \Resources\Model\EdFiCalendarReference|null
      */
     public function getCalendarReference()
     {
@@ -436,7 +436,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets calendar_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiCalendarReference|null $calendar_reference calendar_reference
+     * @param \Resources\Model\EdFiCalendarReference|null $calendar_reference calendar_reference
      *
      * @return self
      */
@@ -453,7 +453,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets school_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolReference
+     * @return \Resources\Model\EdFiSchoolReference
      */
     public function getSchoolReference()
     {
@@ -463,7 +463,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets school_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolReference $school_reference school_reference
+     * @param \Resources\Model\EdFiSchoolReference $school_reference school_reference
      *
      * @return self
      */
@@ -480,7 +480,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets school_year_type_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null
+     * @return \Resources\Model\EdFiSchoolYearTypeReference|null
      */
     public function getSchoolYearTypeReference()
     {
@@ -490,7 +490,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets school_year_type_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiSchoolYearTypeReference|null $school_year_type_reference school_year_type_reference
+     * @param \Resources\Model\EdFiSchoolYearTypeReference|null $school_year_type_reference school_year_type_reference
      *
      * @return self
      */
@@ -507,7 +507,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets staff_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffReference
+     * @return \Resources\Model\EdFiStaffReference
      */
     public function getStaffReference()
     {
@@ -517,7 +517,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets staff_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffReference $staff_reference staff_reference
+     * @param \Resources\Model\EdFiStaffReference $staff_reference staff_reference
      *
      * @return self
      */
@@ -534,7 +534,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets academic_subjects
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffSchoolAssociationAcademicSubject[]|null
+     * @return \Resources\Model\EdFiStaffSchoolAssociationAcademicSubject[]|null
      */
     public function getAcademicSubjects()
     {
@@ -544,7 +544,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets academic_subjects
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffSchoolAssociationAcademicSubject[]|null $academic_subjects An unordered collection of staffSchoolAssociationAcademicSubjects. The academic subjects the individual is eligible to teach.
+     * @param \Resources\Model\EdFiStaffSchoolAssociationAcademicSubject[]|null $academic_subjects An unordered collection of staffSchoolAssociationAcademicSubjects. The academic subjects the individual is eligible to teach.
      *
      * @return self
      */
@@ -561,7 +561,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets grade_levels
      *
-     * @return \OpenAPI\Client\Model\EdFiStaffSchoolAssociationGradeLevel[]|null
+     * @return \Resources\Model\EdFiStaffSchoolAssociationGradeLevel[]|null
      */
     public function getGradeLevels()
     {
@@ -571,7 +571,7 @@ class EdFiStaffSchoolAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets grade_levels
      *
-     * @param \OpenAPI\Client\Model\EdFiStaffSchoolAssociationGradeLevel[]|null $grade_levels An unordered collection of staffSchoolAssociationGradeLevels. The grade levels the individual is eligible to teach.
+     * @param \Resources\Model\EdFiStaffSchoolAssociationGradeLevel[]|null $grade_levels An unordered collection of staffSchoolAssociationGradeLevels. The grade levels the individual is eligible to teach.
      *
      * @return self
      */

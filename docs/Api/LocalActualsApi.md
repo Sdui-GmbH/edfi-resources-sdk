@@ -1,4 +1,4 @@
-# OpenAPI\Client\LocalActualsApi
+# Resources\LocalActualsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalActualsApi(
+$apiInstance = new Resources\Api\LocalActualsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesLocalActuals()`
 
 ```php
-deletesLocalActuals($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLocalActualDelete[]
+deletesLocalActuals($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLocalActualDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalActualsApi(
+$apiInstance = new Resources\Api\LocalActualsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualDelete[]**](../Model/TrackedChangesEdFiLocalActualDelete.md)
+[**\Resources\Model\TrackedChangesEdFiLocalActualDelete[]**](../Model/TrackedChangesEdFiLocalActualDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getLocalActuals()`
 
 ```php
-getLocalActuals($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $financial_collection_descriptor, $amount, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiLocalActual[]
+getLocalActuals($offset, $limit, $min_change_version, $max_change_version, $total_count, $as_of_date, $account_identifier, $education_organization_id, $fiscal_year, $financial_collection_descriptor, $amount, $id, $use_snapshot): \Resources\Model\EdFiLocalActual[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalActualsApi(
+$apiInstance = new Resources\Api\LocalActualsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -213,7 +213,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLocalActual[]**](../Model/EdFiLocalActual.md)
+[**\Resources\Model\EdFiLocalActual[]**](../Model/EdFiLocalActual.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ try {
 ## `getLocalActualsById()`
 
 ```php
-getLocalActualsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiLocalActual
+getLocalActualsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiLocalActual
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -246,10 +246,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalActualsApi(
+$apiInstance = new Resources\Api\LocalActualsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -277,7 +277,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiLocalActual**](../Model/EdFiLocalActual.md)
+[**\Resources\Model\EdFiLocalActual**](../Model/EdFiLocalActual.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ try {
 ## `keyChangesLocalActuals()`
 
 ```php
-keyChangesLocalActuals($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiLocalActualKeyChange[]
+keyChangesLocalActuals($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiLocalActualKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -310,10 +310,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalActualsApi(
+$apiInstance = new Resources\Api\LocalActualsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -347,7 +347,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiLocalActualKeyChange[]**](../Model/TrackedChangesEdFiLocalActualKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiLocalActualKeyChange[]**](../Model/TrackedChangesEdFiLocalActualKeyChange.md)
 
 ### Authorization
 
@@ -380,16 +380,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalActualsApi(
+$apiInstance = new Resources\Api\LocalActualsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_local_actual = new \OpenAPI\Client\Model\EdFiLocalActual(); // \OpenAPI\Client\Model\EdFiLocalActual | The JSON representation of the \"localActual\" resource to be created or updated.
+$ed_fi_local_actual = new \Resources\Model\EdFiLocalActual(); // \Resources\Model\EdFiLocalActual | The JSON representation of the \"localActual\" resource to be created or updated.
 
 try {
     $apiInstance->postLocalActual($ed_fi_local_actual);
@@ -402,7 +402,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_local_actual** | [**\OpenAPI\Client\Model\EdFiLocalActual**](../Model/EdFiLocalActual.md)| The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. | |
+| **ed_fi_local_actual** | [**\Resources\Model\EdFiLocalActual**](../Model/EdFiLocalActual.md)| The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -439,17 +439,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\LocalActualsApi(
+$apiInstance = new Resources\Api\LocalActualsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_local_actual = new \OpenAPI\Client\Model\EdFiLocalActual(); // \OpenAPI\Client\Model\EdFiLocalActual | The JSON representation of the \"localActual\" resource to be created or updated.
+$ed_fi_local_actual = new \Resources\Model\EdFiLocalActual(); // \Resources\Model\EdFiLocalActual | The JSON representation of the \"localActual\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -464,7 +464,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_local_actual** | [**\OpenAPI\Client\Model\EdFiLocalActual**](../Model/EdFiLocalActual.md)| The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. | |
+| **ed_fi_local_actual** | [**\Resources\Model\EdFiLocalActual**](../Model/EdFiLocalActual.md)| The JSON representation of the \&quot;localActual\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiInterventionEducationContent Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class EdFiInterventionEducationContent implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'education_content_reference' => '\OpenAPI\Client\Model\EdFiEducationContentReference'
+        'education_content_reference' => '\Resources\Model\EdFiEducationContentReference'
     ];
 
     /**
@@ -295,7 +295,7 @@ class EdFiInterventionEducationContent implements ModelInterface, ArrayAccess, \
     /**
      * Gets education_content_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationContentReference
+     * @return \Resources\Model\EdFiEducationContentReference
      */
     public function getEducationContentReference()
     {
@@ -305,7 +305,7 @@ class EdFiInterventionEducationContent implements ModelInterface, ArrayAccess, \
     /**
      * Sets education_content_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationContentReference $education_content_reference education_content_reference
+     * @param \Resources\Model\EdFiEducationContentReference $education_content_reference education_content_reference
      *
      * @return self
      */

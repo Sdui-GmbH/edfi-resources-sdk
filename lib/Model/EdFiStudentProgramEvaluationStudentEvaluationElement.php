@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiStudentProgramEvaluationStudentEvaluationElement Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class EdFiStudentProgramEvaluationStudentEvaluationElement implements ModelInter
     protected static $openAPITypes = [
         'evaluation_element_rating_level_descriptor' => 'string',
         'evaluation_element_numeric_rating' => 'float',
-        'program_evaluation_element_reference' => '\OpenAPI\Client\Model\EdFiProgramEvaluationElementReference'
+        'program_evaluation_element_reference' => '\Resources\Model\EdFiProgramEvaluationElementReference'
     ];
 
     /**
@@ -385,7 +385,7 @@ class EdFiStudentProgramEvaluationStudentEvaluationElement implements ModelInter
     /**
      * Gets program_evaluation_element_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiProgramEvaluationElementReference
+     * @return \Resources\Model\EdFiProgramEvaluationElementReference
      */
     public function getProgramEvaluationElementReference()
     {
@@ -395,7 +395,7 @@ class EdFiStudentProgramEvaluationStudentEvaluationElement implements ModelInter
     /**
      * Sets program_evaluation_element_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiProgramEvaluationElementReference $program_evaluation_element_reference program_evaluation_element_reference
+     * @param \Resources\Model\EdFiProgramEvaluationElementReference $program_evaluation_element_reference program_evaluation_element_reference
      *
      * @return self
      */

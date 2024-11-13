@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Resources\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Resources\ObjectSerializer;
 
 /**
  * EdFiEducationOrganizationNetworkAssociation Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Resources
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class EdFiEducationOrganizationNetworkAssociation implements ModelInterface, Arr
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'education_organization_network_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationNetworkReference',
-        'member_education_organization_reference' => '\OpenAPI\Client\Model\EdFiEducationOrganizationReference',
+        'education_organization_network_reference' => '\Resources\Model\EdFiEducationOrganizationNetworkReference',
+        'member_education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
         'begin_date' => '\DateTime',
         'end_date' => '\DateTime',
         '_etag' => 'string',
@@ -367,7 +367,7 @@ class EdFiEducationOrganizationNetworkAssociation implements ModelInterface, Arr
     /**
      * Gets education_organization_network_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationNetworkReference
+     * @return \Resources\Model\EdFiEducationOrganizationNetworkReference
      */
     public function getEducationOrganizationNetworkReference()
     {
@@ -377,7 +377,7 @@ class EdFiEducationOrganizationNetworkAssociation implements ModelInterface, Arr
     /**
      * Sets education_organization_network_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationNetworkReference $education_organization_network_reference education_organization_network_reference
+     * @param \Resources\Model\EdFiEducationOrganizationNetworkReference $education_organization_network_reference education_organization_network_reference
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class EdFiEducationOrganizationNetworkAssociation implements ModelInterface, Arr
     /**
      * Gets member_education_organization_reference
      *
-     * @return \OpenAPI\Client\Model\EdFiEducationOrganizationReference
+     * @return \Resources\Model\EdFiEducationOrganizationReference
      */
     public function getMemberEducationOrganizationReference()
     {
@@ -404,7 +404,7 @@ class EdFiEducationOrganizationNetworkAssociation implements ModelInterface, Arr
     /**
      * Sets member_education_organization_reference
      *
-     * @param \OpenAPI\Client\Model\EdFiEducationOrganizationReference $member_education_organization_reference member_education_organization_reference
+     * @param \Resources\Model\EdFiEducationOrganizationReference $member_education_organization_reference member_education_organization_reference
      *
      * @return self
      */

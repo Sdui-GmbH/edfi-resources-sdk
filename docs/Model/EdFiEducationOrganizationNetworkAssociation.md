@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
-**education_organization_network_reference** | [**\OpenAPI\Client\Model\EdFiEducationOrganizationNetworkReference**](EdFiEducationOrganizationNetworkReference.md) |  |
-**member_education_organization_reference** | [**\OpenAPI\Client\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  |
+**education_organization_network_reference** | [**\Resources\Model\EdFiEducationOrganizationNetworkReference**](EdFiEducationOrganizationNetworkReference.md) |  |
+**member_education_organization_reference** | [**\Resources\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  |
 **begin_date** | **\DateTime** | The date on which the education organization joined this network. | [optional]
 **end_date** | **\DateTime** | The date on which the education organization left this network. | [optional]
 **_etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional]

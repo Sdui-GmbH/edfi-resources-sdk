@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **program_name** | **string** | The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. |
 **program_type_descriptor** | **string** | The type of program. |
 **student_unique_id** | **string** | A unique alphanumeric code assigned to a student. |
-**link** | [**\OpenAPI\Client\Model\Link**](Link.md) |  | [optional]
+**link** | [**\Resources\Model\Link**](Link.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

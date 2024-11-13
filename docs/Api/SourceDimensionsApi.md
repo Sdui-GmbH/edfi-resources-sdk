@@ -1,4 +1,4 @@
-# OpenAPI\Client\SourceDimensionsApi
+# Resources\SourceDimensionsApi
 
 All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
 
@@ -31,10 +31,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SourceDimensionsApi(
+$apiInstance = new Resources\Api\SourceDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -77,7 +77,7 @@ void (empty response body)
 ## `deletesSourceDimensions()`
 
 ```php
-deletesSourceDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiSourceDimensionDelete[]
+deletesSourceDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiSourceDimensionDelete[]
 ```
 
 Retrieves deleted resources based on change version.
@@ -92,10 +92,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SourceDimensionsApi(
+$apiInstance = new Resources\Api\SourceDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiSourceDimensionDelete[]**](../Model/TrackedChangesEdFiSourceDimensionDelete.md)
+[**\Resources\Model\TrackedChangesEdFiSourceDimensionDelete[]**](../Model/TrackedChangesEdFiSourceDimensionDelete.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `getSourceDimensions()`
 
 ```php
-getSourceDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $code, $fiscal_year, $code_name, $id, $use_snapshot): \OpenAPI\Client\Model\EdFiSourceDimension[]
+getSourceDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $code, $fiscal_year, $code_name, $id, $use_snapshot): \Resources\Model\EdFiSourceDimension[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -162,10 +162,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SourceDimensionsApi(
+$apiInstance = new Resources\Api\SourceDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -207,7 +207,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiSourceDimension[]**](../Model/EdFiSourceDimension.md)
+[**\Resources\Model\EdFiSourceDimension[]**](../Model/EdFiSourceDimension.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ try {
 ## `getSourceDimensionsById()`
 
 ```php
-getSourceDimensionsById($id, $if_none_match, $use_snapshot): \OpenAPI\Client\Model\EdFiSourceDimension
+getSourceDimensionsById($id, $if_none_match, $use_snapshot): \Resources\Model\EdFiSourceDimension
 ```
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -240,10 +240,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SourceDimensionsApi(
+$apiInstance = new Resources\Api\SourceDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -271,7 +271,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\EdFiSourceDimension**](../Model/EdFiSourceDimension.md)
+[**\Resources\Model\EdFiSourceDimension**](../Model/EdFiSourceDimension.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ try {
 ## `keyChangesSourceDimensions()`
 
 ```php
-keyChangesSourceDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \OpenAPI\Client\Model\TrackedChangesEdFiSourceDimensionKeyChange[]
+keyChangesSourceDimensions($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot): \Resources\Model\TrackedChangesEdFiSourceDimensionKeyChange[]
 ```
 
 Retrieves resources key changes based on change version.
@@ -304,10 +304,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SourceDimensionsApi(
+$apiInstance = new Resources\Api\SourceDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -341,7 +341,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TrackedChangesEdFiSourceDimensionKeyChange[]**](../Model/TrackedChangesEdFiSourceDimensionKeyChange.md)
+[**\Resources\Model\TrackedChangesEdFiSourceDimensionKeyChange[]**](../Model/TrackedChangesEdFiSourceDimensionKeyChange.md)
 
 ### Authorization
 
@@ -374,16 +374,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SourceDimensionsApi(
+$apiInstance = new Resources\Api\SourceDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ed_fi_source_dimension = new \OpenAPI\Client\Model\EdFiSourceDimension(); // \OpenAPI\Client\Model\EdFiSourceDimension | The JSON representation of the \"sourceDimension\" resource to be created or updated.
+$ed_fi_source_dimension = new \Resources\Model\EdFiSourceDimension(); // \Resources\Model\EdFiSourceDimension | The JSON representation of the \"sourceDimension\" resource to be created or updated.
 
 try {
     $apiInstance->postSourceDimension($ed_fi_source_dimension);
@@ -396,7 +396,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ed_fi_source_dimension** | [**\OpenAPI\Client\Model\EdFiSourceDimension**](../Model/EdFiSourceDimension.md)| The JSON representation of the \&quot;sourceDimension\&quot; resource to be created or updated. | |
+| **ed_fi_source_dimension** | [**\Resources\Model\EdFiSourceDimension**](../Model/EdFiSourceDimension.md)| The JSON representation of the \&quot;sourceDimension\&quot; resource to be created or updated. | |
 
 ### Return type
 
@@ -433,17 +433,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: oauth2_client_credentials
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\SourceDimensionsApi(
+$apiInstance = new Resources\Api\SourceDimensionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 'id_example'; // string | A resource identifier that uniquely identifies the resource.
-$ed_fi_source_dimension = new \OpenAPI\Client\Model\EdFiSourceDimension(); // \OpenAPI\Client\Model\EdFiSourceDimension | The JSON representation of the \"sourceDimension\" resource to be created or updated.
+$ed_fi_source_dimension = new \Resources\Model\EdFiSourceDimension(); // \Resources\Model\EdFiSourceDimension | The JSON representation of the \"sourceDimension\" resource to be created or updated.
 $if_match = 'if_match_example'; // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
 
 try {
@@ -458,7 +458,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| A resource identifier that uniquely identifies the resource. | |
-| **ed_fi_source_dimension** | [**\OpenAPI\Client\Model\EdFiSourceDimension**](../Model/EdFiSourceDimension.md)| The JSON representation of the \&quot;sourceDimension\&quot; resource to be created or updated. | |
+| **ed_fi_source_dimension** | [**\Resources\Model\EdFiSourceDimension**](../Model/EdFiSourceDimension.md)| The JSON representation of the \&quot;sourceDimension\&quot; resource to be created or updated. | |
 | **if_match** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] |
 
 ### Return type
