@@ -288,10 +288,6 @@ class EdFiStudentReference implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
         }
 
-        if ((mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -331,9 +327,6 @@ class EdFiStudentReference implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling EdFiStudentReference., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling EdFiStudentReference., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

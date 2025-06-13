@@ -1,6 +1,6 @@
 # Resources\FeederSchoolAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -177,8 +177,8 @@ $min_change_version = 56; // int | Used in synchronization to set sequence minim
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
 $begin_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year of the first day of the feeder school association.
-$feeder_school_id = 56; // int | The identifier assigned to a school.
-$school_id = 56; // int | The identifier assigned to a school.
+$feeder_school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year of the last day of the feeder school association.
 $feeder_relationship_description = 'feeder_relationship_description_example'; // string | Describes the relationship from the feeder school to the receiving school, for example by program emphasis, such as special education, language immersion, science, or performing art.
 $id = 'id_example'; // string | 
@@ -202,8 +202,8 @@ try {
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
 | **begin_date** | **\DateTime**| The month, day, and year of the first day of the feeder school association. | [optional] |
-| **feeder_school_id** | **int**| The identifier assigned to a school. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **feeder_school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **end_date** | **\DateTime**| The month, day, and year of the last day of the feeder school association. | [optional] |
 | **feeder_relationship_description** | **string**| Describes the relationship from the feeder school to the receiving school, for example by program emphasis, such as special education, language immersion, science, or performing art. | [optional] |
 | **id** | **string**|  | [optional] |

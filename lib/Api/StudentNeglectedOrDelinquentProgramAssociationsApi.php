@@ -773,6 +773,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
      * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
      * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
@@ -780,9 +781,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]
      */
-    public function getStudentNeglectedOrDelinquentProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function getStudentNeglectedOrDelinquentProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
-        list($response) = $this->getStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot, $contentType);
+        list($response) = $this->getStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -805,6 +806,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
      * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
      * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
@@ -812,9 +814,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function getStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
-        $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot, $contentType);
+        $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -944,15 +946,16 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
      * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
      * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentNeglectedOrDelinquentProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function getStudentNeglectedOrDelinquentProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
-        return $this->getStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot, $contentType)
+        return $this->getStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -979,16 +982,17 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
      * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
      * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function getStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]';
-        $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot, $contentType);
+        $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1043,13 +1047,14 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
      * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
      * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
 
 
@@ -1090,6 +1095,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
             throw new \InvalidArgumentException('invalid length for "$mathematics_progress_level_descriptor" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociations, must be smaller than or equal to 306.');
         }
         
+
 
 
         $resourcePath = '/ed-fi/studentNeglectedOrDelinquentProgramAssociations';
@@ -1220,6 +1226,15 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $mathematics_progress_level_descriptor,
             'mathematicsProgressLevelDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

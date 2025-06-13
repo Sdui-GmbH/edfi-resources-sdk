@@ -459,10 +459,6 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['assessment_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['namespace'] === null) {
             $invalidProperties[] = "'namespace' can't be null";
         }
@@ -482,16 +478,8 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'assessment_family', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['assessment_family']) && (mb_strlen($this->container['assessment_family']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assessment_family', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['assessment_form']) && (mb_strlen($this->container['assessment_form']) > 60)) {
             $invalidProperties[] = "invalid value for 'assessment_form', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['assessment_form']) && (mb_strlen($this->container['assessment_form']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assessment_form', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['assessment_title'] === null) {
@@ -501,16 +489,16 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'assessment_title', the character length must be smaller than or equal to 255.";
         }
 
-        if ((mb_strlen($this->container['assessment_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assessment_title', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['max_raw_score']) && ($this->container['max_raw_score'] > 9999999999.99999)) {
+            $invalidProperties[] = "invalid value for 'max_raw_score', must be smaller than or equal to 9999999999.99999.";
+        }
+
+        if (!is_null($this->container['max_raw_score']) && ($this->container['max_raw_score'] < -9999999999.99999)) {
+            $invalidProperties[] = "invalid value for 'max_raw_score', must be bigger than or equal to -9999999999.99999.";
         }
 
         if (!is_null($this->container['nomenclature']) && (mb_strlen($this->container['nomenclature']) > 100)) {
             $invalidProperties[] = "invalid value for 'nomenclature', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['nomenclature']) && (mb_strlen($this->container['nomenclature']) < 1)) {
-            $invalidProperties[] = "invalid value for 'nomenclature', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -606,9 +594,6 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($assessment_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling EdFiAssessment., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($assessment_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling EdFiAssessment., must be bigger than or equal to 1.');
         }
 
         $this->container['assessment_identifier'] = $assessment_identifier;
@@ -808,9 +793,6 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($assessment_family) && (mb_strlen($assessment_family) > 60)) {
             throw new \InvalidArgumentException('invalid length for $assessment_family when calling EdFiAssessment., must be smaller than or equal to 60.');
         }
-        if (!is_null($assessment_family) && (mb_strlen($assessment_family) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assessment_family when calling EdFiAssessment., must be bigger than or equal to 1.');
-        }
 
         $this->container['assessment_family'] = $assessment_family;
 
@@ -849,9 +831,6 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($assessment_form) && (mb_strlen($assessment_form) > 60)) {
             throw new \InvalidArgumentException('invalid length for $assessment_form when calling EdFiAssessment., must be smaller than or equal to 60.');
         }
-        if (!is_null($assessment_form) && (mb_strlen($assessment_form) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assessment_form when calling EdFiAssessment., must be bigger than or equal to 1.');
-        }
 
         $this->container['assessment_form'] = $assessment_form;
 
@@ -882,9 +861,6 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($assessment_title) > 255)) {
             throw new \InvalidArgumentException('invalid length for $assessment_title when calling EdFiAssessment., must be smaller than or equal to 255.');
-        }
-        if ((mb_strlen($assessment_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assessment_title when calling EdFiAssessment., must be bigger than or equal to 1.');
         }
 
         $this->container['assessment_title'] = $assessment_title;
@@ -1036,6 +1012,14 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($max_raw_score) && ($max_raw_score > 9999999999.99999)) {
+            throw new \InvalidArgumentException('invalid value for $max_raw_score when calling EdFiAssessment., must be smaller than or equal to 9999999999.99999.');
+        }
+        if (!is_null($max_raw_score) && ($max_raw_score < -9999999999.99999)) {
+            throw new \InvalidArgumentException('invalid value for $max_raw_score when calling EdFiAssessment., must be bigger than or equal to -9999999999.99999.');
+        }
+
         $this->container['max_raw_score'] = $max_raw_score;
 
         return $this;
@@ -1072,9 +1056,6 @@ class EdFiAssessment implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($nomenclature) && (mb_strlen($nomenclature) > 100)) {
             throw new \InvalidArgumentException('invalid length for $nomenclature when calling EdFiAssessment., must be smaller than or equal to 100.');
-        }
-        if (!is_null($nomenclature) && (mb_strlen($nomenclature) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $nomenclature when calling EdFiAssessment., must be bigger than or equal to 1.');
         }
 
         $this->container['nomenclature'] = $nomenclature;

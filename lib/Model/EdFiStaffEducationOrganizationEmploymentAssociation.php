@@ -395,16 +395,32 @@ class EdFiStaffEducationOrganizationEmploymentAssociation implements ModelInterf
         if ($this->container['staff_reference'] === null) {
             $invalidProperties[] = "'staff_reference' can't be null";
         }
+        if (!is_null($this->container['annual_wage']) && ($this->container['annual_wage'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'annual_wage', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['annual_wage']) && ($this->container['annual_wage'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'annual_wage', must be bigger than or equal to -922337203685477.6.";
+        }
+
         if (!is_null($this->container['department']) && (mb_strlen($this->container['department']) > 60)) {
             $invalidProperties[] = "invalid value for 'department', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['department']) && (mb_strlen($this->container['department']) < 1)) {
-            $invalidProperties[] = "invalid value for 'department', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['full_time_equivalency']) && ($this->container['full_time_equivalency'] > 9.9999)) {
+            $invalidProperties[] = "invalid value for 'full_time_equivalency', must be smaller than or equal to 9.9999.";
         }
 
         if (!is_null($this->container['full_time_equivalency']) && ($this->container['full_time_equivalency'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'full_time_equivalency', must be bigger than or equal to 0.0.";
+        }
+
+        if (!is_null($this->container['hourly_wage']) && ($this->container['hourly_wage'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'hourly_wage', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['hourly_wage']) && ($this->container['hourly_wage'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'hourly_wage', must be bigger than or equal to -922337203685477.6.";
         }
 
         if (!is_null($this->container['separation_descriptor']) && (mb_strlen($this->container['separation_descriptor']) > 306)) {
@@ -625,6 +641,14 @@ class EdFiStaffEducationOrganizationEmploymentAssociation implements ModelInterf
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($annual_wage) && ($annual_wage > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $annual_wage when calling EdFiStaffEducationOrganizationEmploymentAssociation., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($annual_wage) && ($annual_wage < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $annual_wage when calling EdFiStaffEducationOrganizationEmploymentAssociation., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['annual_wage'] = $annual_wage;
 
         return $this;
@@ -661,9 +685,6 @@ class EdFiStaffEducationOrganizationEmploymentAssociation implements ModelInterf
         }
         if (!is_null($department) && (mb_strlen($department) > 60)) {
             throw new \InvalidArgumentException('invalid length for $department when calling EdFiStaffEducationOrganizationEmploymentAssociation., must be smaller than or equal to 60.');
-        }
-        if (!is_null($department) && (mb_strlen($department) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $department when calling EdFiStaffEducationOrganizationEmploymentAssociation., must be bigger than or equal to 1.');
         }
 
         $this->container['department'] = $department;
@@ -735,6 +756,9 @@ class EdFiStaffEducationOrganizationEmploymentAssociation implements ModelInterf
             }
         }
 
+        if (!is_null($full_time_equivalency) && ($full_time_equivalency > 9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $full_time_equivalency when calling EdFiStaffEducationOrganizationEmploymentAssociation., must be smaller than or equal to 9.9999.');
+        }
         if (!is_null($full_time_equivalency) && ($full_time_equivalency < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $full_time_equivalency when calling EdFiStaffEducationOrganizationEmploymentAssociation., must be bigger than or equal to 0.0.');
         }
@@ -773,6 +797,14 @@ class EdFiStaffEducationOrganizationEmploymentAssociation implements ModelInterf
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($hourly_wage) && ($hourly_wage > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $hourly_wage when calling EdFiStaffEducationOrganizationEmploymentAssociation., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($hourly_wage) && ($hourly_wage < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $hourly_wage when calling EdFiStaffEducationOrganizationEmploymentAssociation., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['hourly_wage'] = $hourly_wage;
 
         return $this;

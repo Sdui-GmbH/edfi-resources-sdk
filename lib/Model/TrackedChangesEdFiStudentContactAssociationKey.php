@@ -285,16 +285,8 @@ class TrackedChangesEdFiStudentContactAssociationKey implements ModelInterface, 
             $invalidProperties[] = "invalid value for 'contact_unique_id', the character length must be smaller than or equal to 32.";
         }
 
-        if (!is_null($this->container['contact_unique_id']) && (mb_strlen($this->container['contact_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'contact_unique_id', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -337,9 +329,6 @@ class TrackedChangesEdFiStudentContactAssociationKey implements ModelInterface, 
         if ((mb_strlen($contact_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $contact_unique_id when calling TrackedChangesEdFiStudentContactAssociationKey., must be smaller than or equal to 32.');
         }
-        if ((mb_strlen($contact_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $contact_unique_id when calling TrackedChangesEdFiStudentContactAssociationKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['contact_unique_id'] = $contact_unique_id;
 
@@ -370,9 +359,6 @@ class TrackedChangesEdFiStudentContactAssociationKey implements ModelInterface, 
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentContactAssociationKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentContactAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

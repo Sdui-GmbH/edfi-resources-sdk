@@ -315,6 +315,10 @@ class EdFiSurveySectionResponse implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['survey_section_reference'] === null) {
             $invalidProperties[] = "'survey_section_reference' can't be null";
         }
+        if (!is_null($this->container['section_rating']) && ($this->container['section_rating'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'section_rating', must be smaller than or equal to 999999.999.";
+        }
+
         if (!is_null($this->container['section_rating']) && ($this->container['section_rating'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'section_rating', must be bigger than or equal to 0.0.";
         }
@@ -445,6 +449,9 @@ class EdFiSurveySectionResponse implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
 
+        if (!is_null($section_rating) && ($section_rating > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $section_rating when calling EdFiSurveySectionResponse., must be smaller than or equal to 999999.999.');
+        }
         if (!is_null($section_rating) && ($section_rating < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $section_rating when calling EdFiSurveySectionResponse., must be bigger than or equal to 0.0.');
         }

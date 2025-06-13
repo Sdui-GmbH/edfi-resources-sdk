@@ -313,10 +313,6 @@ class EdFiStudentCTEProgramAssociationCTEProgramService implements ModelInterfac
             $invalidProperties[] = "invalid value for 'cip_code', the character length must be smaller than or equal to 120.";
         }
 
-        if (!is_null($this->container['cip_code']) && (mb_strlen($this->container['cip_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'cip_code', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -394,9 +390,6 @@ class EdFiStudentCTEProgramAssociationCTEProgramService implements ModelInterfac
         }
         if (!is_null($cip_code) && (mb_strlen($cip_code) > 120)) {
             throw new \InvalidArgumentException('invalid length for $cip_code when calling EdFiStudentCTEProgramAssociationCTEProgramService., must be smaller than or equal to 120.');
-        }
-        if (!is_null($cip_code) && (mb_strlen($cip_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $cip_code when calling EdFiStudentCTEProgramAssociationCTEProgramService., must be bigger than or equal to 1.');
         }
 
         $this->container['cip_code'] = $cip_code;

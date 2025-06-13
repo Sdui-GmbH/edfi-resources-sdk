@@ -333,6 +333,70 @@ class EdFiLocalEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
         if ($this->container['fiscal_year'] === null) {
             $invalidProperties[] = "'fiscal_year' can't be null";
         }
+        if (!is_null($this->container['innovative_dollars_spent']) && ($this->container['innovative_dollars_spent'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'innovative_dollars_spent', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['innovative_dollars_spent']) && ($this->container['innovative_dollars_spent'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'innovative_dollars_spent', must be bigger than or equal to -922337203685477.6.";
+        }
+
+        if (!is_null($this->container['innovative_dollars_spent_strategic_priorities']) && ($this->container['innovative_dollars_spent_strategic_priorities'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'innovative_dollars_spent_strategic_priorities', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['innovative_dollars_spent_strategic_priorities']) && ($this->container['innovative_dollars_spent_strategic_priorities'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'innovative_dollars_spent_strategic_priorities', must be bigger than or equal to -922337203685477.6.";
+        }
+
+        if (!is_null($this->container['innovative_programs_funds_received']) && ($this->container['innovative_programs_funds_received'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'innovative_programs_funds_received', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['innovative_programs_funds_received']) && ($this->container['innovative_programs_funds_received'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'innovative_programs_funds_received', must be bigger than or equal to -922337203685477.6.";
+        }
+
+        if (!is_null($this->container['school_improvement_allocation']) && ($this->container['school_improvement_allocation'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'school_improvement_allocation', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['school_improvement_allocation']) && ($this->container['school_improvement_allocation'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'school_improvement_allocation', must be bigger than or equal to -922337203685477.6.";
+        }
+
+        if (!is_null($this->container['school_improvement_reserved_funds_percentage']) && ($this->container['school_improvement_reserved_funds_percentage'] > 9.9999)) {
+            $invalidProperties[] = "invalid value for 'school_improvement_reserved_funds_percentage', must be smaller than or equal to 9.9999.";
+        }
+
+        if (!is_null($this->container['school_improvement_reserved_funds_percentage']) && ($this->container['school_improvement_reserved_funds_percentage'] < -9.9999)) {
+            $invalidProperties[] = "invalid value for 'school_improvement_reserved_funds_percentage', must be bigger than or equal to -9.9999.";
+        }
+
+        if (!is_null($this->container['state_assessment_administration_funding']) && ($this->container['state_assessment_administration_funding'] > 9.9999)) {
+            $invalidProperties[] = "invalid value for 'state_assessment_administration_funding', must be smaller than or equal to 9.9999.";
+        }
+
+        if (!is_null($this->container['state_assessment_administration_funding']) && ($this->container['state_assessment_administration_funding'] < -9.9999)) {
+            $invalidProperties[] = "invalid value for 'state_assessment_administration_funding', must be bigger than or equal to -9.9999.";
+        }
+
+        if (!is_null($this->container['supplemental_educational_services_funds_spent']) && ($this->container['supplemental_educational_services_funds_spent'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'supplemental_educational_services_funds_spent', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['supplemental_educational_services_funds_spent']) && ($this->container['supplemental_educational_services_funds_spent'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'supplemental_educational_services_funds_spent', must be bigger than or equal to -922337203685477.6.";
+        }
+
+        if (!is_null($this->container['supplemental_educational_services_per_pupil_expenditure']) && ($this->container['supplemental_educational_services_per_pupil_expenditure'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'supplemental_educational_services_per_pupil_expenditure', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['supplemental_educational_services_per_pupil_expenditure']) && ($this->container['supplemental_educational_services_per_pupil_expenditure'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'supplemental_educational_services_per_pupil_expenditure', must be bigger than or equal to -922337203685477.6.";
+        }
+
         return $invalidProperties;
     }
 
@@ -404,6 +468,14 @@ class EdFiLocalEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($innovative_dollars_spent) && ($innovative_dollars_spent > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $innovative_dollars_spent when calling EdFiLocalEducationAgencyFederalFunds., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($innovative_dollars_spent) && ($innovative_dollars_spent < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $innovative_dollars_spent when calling EdFiLocalEducationAgencyFederalFunds., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['innovative_dollars_spent'] = $innovative_dollars_spent;
 
         return $this;
@@ -438,6 +510,14 @@ class EdFiLocalEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($innovative_dollars_spent_strategic_priorities) && ($innovative_dollars_spent_strategic_priorities > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $innovative_dollars_spent_strategic_priorities when calling EdFiLocalEducationAgencyFederalFunds., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($innovative_dollars_spent_strategic_priorities) && ($innovative_dollars_spent_strategic_priorities < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $innovative_dollars_spent_strategic_priorities when calling EdFiLocalEducationAgencyFederalFunds., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['innovative_dollars_spent_strategic_priorities'] = $innovative_dollars_spent_strategic_priorities;
 
         return $this;
@@ -472,6 +552,14 @@ class EdFiLocalEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($innovative_programs_funds_received) && ($innovative_programs_funds_received > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $innovative_programs_funds_received when calling EdFiLocalEducationAgencyFederalFunds., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($innovative_programs_funds_received) && ($innovative_programs_funds_received < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $innovative_programs_funds_received when calling EdFiLocalEducationAgencyFederalFunds., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['innovative_programs_funds_received'] = $innovative_programs_funds_received;
 
         return $this;
@@ -506,6 +594,14 @@ class EdFiLocalEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($school_improvement_allocation) && ($school_improvement_allocation > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $school_improvement_allocation when calling EdFiLocalEducationAgencyFederalFunds., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($school_improvement_allocation) && ($school_improvement_allocation < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $school_improvement_allocation when calling EdFiLocalEducationAgencyFederalFunds., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['school_improvement_allocation'] = $school_improvement_allocation;
 
         return $this;
@@ -540,6 +636,14 @@ class EdFiLocalEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($school_improvement_reserved_funds_percentage) && ($school_improvement_reserved_funds_percentage > 9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $school_improvement_reserved_funds_percentage when calling EdFiLocalEducationAgencyFederalFunds., must be smaller than or equal to 9.9999.');
+        }
+        if (!is_null($school_improvement_reserved_funds_percentage) && ($school_improvement_reserved_funds_percentage < -9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $school_improvement_reserved_funds_percentage when calling EdFiLocalEducationAgencyFederalFunds., must be bigger than or equal to -9.9999.');
+        }
+
         $this->container['school_improvement_reserved_funds_percentage'] = $school_improvement_reserved_funds_percentage;
 
         return $this;
@@ -574,6 +678,14 @@ class EdFiLocalEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($state_assessment_administration_funding) && ($state_assessment_administration_funding > 9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $state_assessment_administration_funding when calling EdFiLocalEducationAgencyFederalFunds., must be smaller than or equal to 9.9999.');
+        }
+        if (!is_null($state_assessment_administration_funding) && ($state_assessment_administration_funding < -9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $state_assessment_administration_funding when calling EdFiLocalEducationAgencyFederalFunds., must be bigger than or equal to -9.9999.');
+        }
+
         $this->container['state_assessment_administration_funding'] = $state_assessment_administration_funding;
 
         return $this;
@@ -608,6 +720,14 @@ class EdFiLocalEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($supplemental_educational_services_funds_spent) && ($supplemental_educational_services_funds_spent > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $supplemental_educational_services_funds_spent when calling EdFiLocalEducationAgencyFederalFunds., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($supplemental_educational_services_funds_spent) && ($supplemental_educational_services_funds_spent < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $supplemental_educational_services_funds_spent when calling EdFiLocalEducationAgencyFederalFunds., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['supplemental_educational_services_funds_spent'] = $supplemental_educational_services_funds_spent;
 
         return $this;
@@ -642,6 +762,14 @@ class EdFiLocalEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($supplemental_educational_services_per_pupil_expenditure) && ($supplemental_educational_services_per_pupil_expenditure > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $supplemental_educational_services_per_pupil_expenditure when calling EdFiLocalEducationAgencyFederalFunds., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($supplemental_educational_services_per_pupil_expenditure) && ($supplemental_educational_services_per_pupil_expenditure < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $supplemental_educational_services_per_pupil_expenditure when calling EdFiLocalEducationAgencyFederalFunds., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['supplemental_educational_services_per_pupil_expenditure'] = $supplemental_educational_services_per_pupil_expenditure;
 
         return $this;

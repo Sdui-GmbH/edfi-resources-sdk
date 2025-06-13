@@ -463,10 +463,6 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'course_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['course_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'course_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['identification_codes'] === null) {
             $invalidProperties[] = "'identification_codes' can't be null";
         }
@@ -485,10 +481,6 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'course_description', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['course_description']) && (mb_strlen($this->container['course_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'course_description', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['course_gpa_applicability_descriptor']) && (mb_strlen($this->container['course_gpa_applicability_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'course_gpa_applicability_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -500,12 +492,20 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'course_title', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['course_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'course_title', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['max_completions_for_credit']) && ($this->container['max_completions_for_credit'] < 1)) {
             $invalidProperties[] = "invalid value for 'max_completions_for_credit', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['maximum_available_credit_conversion']) && ($this->container['maximum_available_credit_conversion'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'maximum_available_credit_conversion', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['maximum_available_credit_conversion']) && ($this->container['maximum_available_credit_conversion'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'maximum_available_credit_conversion', must be bigger than or equal to -9999999.99.";
+        }
+
+        if (!is_null($this->container['maximum_available_credits']) && ($this->container['maximum_available_credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'maximum_available_credits', must be smaller than or equal to 999999.999.";
         }
 
         if (!is_null($this->container['maximum_available_credits']) && ($this->container['maximum_available_credits'] < 0.0)) {
@@ -514,6 +514,18 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (!is_null($this->container['maximum_available_credit_type_descriptor']) && (mb_strlen($this->container['maximum_available_credit_type_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'maximum_available_credit_type_descriptor', the character length must be smaller than or equal to 306.";
+        }
+
+        if (!is_null($this->container['minimum_available_credit_conversion']) && ($this->container['minimum_available_credit_conversion'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'minimum_available_credit_conversion', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['minimum_available_credit_conversion']) && ($this->container['minimum_available_credit_conversion'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'minimum_available_credit_conversion', must be bigger than or equal to -9999999.99.";
+        }
+
+        if (!is_null($this->container['minimum_available_credits']) && ($this->container['minimum_available_credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'minimum_available_credits', must be smaller than or equal to 999999.999.";
         }
 
         if (!is_null($this->container['minimum_available_credits']) && ($this->container['minimum_available_credits'] < 0.0)) {
@@ -605,9 +617,6 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($course_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $course_code when calling EdFiCourse., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($course_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $course_code when calling EdFiCourse., must be bigger than or equal to 1.');
         }
 
         $this->container['course_code'] = $course_code;
@@ -831,9 +840,6 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($course_description) && (mb_strlen($course_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $course_description when calling EdFiCourse., must be smaller than or equal to 1024.');
         }
-        if (!is_null($course_description) && (mb_strlen($course_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $course_description when calling EdFiCourse., must be bigger than or equal to 1.');
-        }
 
         $this->container['course_description'] = $course_description;
 
@@ -902,9 +908,6 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($course_title) > 60)) {
             throw new \InvalidArgumentException('invalid length for $course_title when calling EdFiCourse., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($course_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $course_title when calling EdFiCourse., must be bigger than or equal to 1.');
         }
 
         $this->container['course_title'] = $course_title;
@@ -1102,6 +1105,14 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($maximum_available_credit_conversion) && ($maximum_available_credit_conversion > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $maximum_available_credit_conversion when calling EdFiCourse., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($maximum_available_credit_conversion) && ($maximum_available_credit_conversion < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $maximum_available_credit_conversion when calling EdFiCourse., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['maximum_available_credit_conversion'] = $maximum_available_credit_conversion;
 
         return $this;
@@ -1137,6 +1148,9 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
 
+        if (!is_null($maximum_available_credits) && ($maximum_available_credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $maximum_available_credits when calling EdFiCourse., must be smaller than or equal to 999999.999.');
+        }
         if (!is_null($maximum_available_credits) && ($maximum_available_credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $maximum_available_credits when calling EdFiCourse., must be bigger than or equal to 0.0.');
         }
@@ -1213,6 +1227,14 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($minimum_available_credit_conversion) && ($minimum_available_credit_conversion > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $minimum_available_credit_conversion when calling EdFiCourse., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($minimum_available_credit_conversion) && ($minimum_available_credit_conversion < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $minimum_available_credit_conversion when calling EdFiCourse., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['minimum_available_credit_conversion'] = $minimum_available_credit_conversion;
 
         return $this;
@@ -1248,6 +1270,9 @@ class EdFiCourse implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
 
+        if (!is_null($minimum_available_credits) && ($minimum_available_credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $minimum_available_credits when calling EdFiCourse., must be smaller than or equal to 999999.999.');
+        }
         if (!is_null($minimum_available_credits) && ($minimum_available_credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $minimum_available_credits when calling EdFiCourse., must be bigger than or equal to 0.0.');
         }

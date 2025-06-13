@@ -1,6 +1,6 @@
 # Resources\EducationOrganizationNetworksApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getEducationOrganizationNetworks()`
 
 ```php
-getEducationOrganizationNetworks($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $use_snapshot): \Resources\Model\EdFiEducationOrganizationNetwork[]
+getEducationOrganizationNetworks($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $id, $use_snapshot): \Resources\Model\EdFiEducationOrganizationNetwork[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -176,12 +176,13 @@ $limit = 25; // int | Indicates the maximum number of items that should be retur
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
-$education_organization_network_id = 56; // int | The identifier assigned to a network of education organizations.
+$education_organization_network_id = 56; // int | The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $network_purpose_descriptor = 'network_purpose_descriptor_example'; // string | The purpose(s) of the network (e.g., shared services, collective procurement).
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getEducationOrganizationNetworks($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $use_snapshot);
+    $result = $apiInstance->getEducationOrganizationNetworks($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EducationOrganizationNetworksApi->getEducationOrganizationNetworks: ', $e->getMessage(), PHP_EOL;
@@ -197,8 +198,9 @@ try {
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
-| **education_organization_network_id** | **int**| The identifier assigned to a network of education organizations. | [optional] |
+| **education_organization_network_id** | **int**| The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **network_purpose_descriptor** | **string**| The purpose(s) of the network (e.g., shared services, collective procurement). | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

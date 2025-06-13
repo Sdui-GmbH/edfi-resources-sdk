@@ -1,6 +1,6 @@
 # Resources\StudentCompetencyObjectivesApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -181,7 +181,7 @@ $objective = 'objective_example'; // string | The designated title of the compet
 $objective_grade_level_descriptor = 'objective_grade_level_descriptor_example'; // string | The grade level for which the competency objective is targeted.
 $grading_period_descriptor = 'grading_period_descriptor_example'; // string | The state's name of the period for which grades are reported.
 $grading_period_name = 'grading_period_name_example'; // string | The school's descriptive name of the grading period.
-$grading_period_school_id = 56; // int | The identifier assigned to a school.
+$grading_period_school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $grading_period_school_year = 56; // int | The identifier for the grading period school year.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
 $competency_level_descriptor = 'competency_level_descriptor_example'; // string | The competency level assessed for the student for the referenced competency objective.
@@ -211,7 +211,7 @@ try {
 | **objective_grade_level_descriptor** | **string**| The grade level for which the competency objective is targeted. | [optional] |
 | **grading_period_descriptor** | **string**| The state&#39;s name of the period for which grades are reported. | [optional] |
 | **grading_period_name** | **string**| The school&#39;s descriptive name of the grading period. | [optional] |
-| **grading_period_school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **grading_period_school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **grading_period_school_year** | **int**| The identifier for the grading period school year. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
 | **competency_level_descriptor** | **string**| The competency level assessed for the student for the referenced competency objective. | [optional] |

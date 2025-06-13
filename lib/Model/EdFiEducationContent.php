@@ -463,12 +463,16 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'content_identifier', the character length must be smaller than or equal to 225.";
         }
 
-        if ((mb_strlen($this->container['content_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'content_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['content_class_descriptor']) && (mb_strlen($this->container['content_class_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'content_class_descriptor', the character length must be smaller than or equal to 306.";
+        }
+
+        if (!is_null($this->container['cost']) && ($this->container['cost'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'cost', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['cost']) && ($this->container['cost'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'cost', must be bigger than or equal to -922337203685477.6.";
         }
 
         if (!is_null($this->container['cost_rate_descriptor']) && (mb_strlen($this->container['cost_rate_descriptor']) > 306)) {
@@ -477,10 +481,6 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
 
         if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 1024)) {
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1024.";
-        }
-
-        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['interactivity_style_descriptor']) && (mb_strlen($this->container['interactivity_style_descriptor']) > 306)) {
@@ -510,16 +510,8 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'publisher', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['publisher']) && (mb_strlen($this->container['publisher']) < 1)) {
-            $invalidProperties[] = "invalid value for 'publisher', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['short_description']) && (mb_strlen($this->container['short_description']) > 75)) {
             $invalidProperties[] = "invalid value for 'short_description', the character length must be smaller than or equal to 75.";
-        }
-
-        if (!is_null($this->container['short_description']) && (mb_strlen($this->container['short_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'short_description', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['time_required']) && (mb_strlen($this->container['time_required']) > 30)) {
@@ -536,10 +528,6 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
 
         if (!is_null($this->container['version']) && (mb_strlen($this->container['version']) > 10)) {
             $invalidProperties[] = "invalid value for 'version', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['version']) && (mb_strlen($this->container['version']) < 1)) {
-            $invalidProperties[] = "invalid value for 'version', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -608,9 +596,6 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if ((mb_strlen($content_identifier) > 225)) {
             throw new \InvalidArgumentException('invalid length for $content_identifier when calling EdFiEducationContent., must be smaller than or equal to 225.');
-        }
-        if ((mb_strlen($content_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $content_identifier when calling EdFiEducationContent., must be bigger than or equal to 1.');
         }
 
         $this->container['content_identifier'] = $content_identifier;
@@ -827,6 +812,14 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($cost) && ($cost > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $cost when calling EdFiEducationContent., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($cost) && ($cost < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $cost when calling EdFiEducationContent., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['cost'] = $cost;
 
         return $this;
@@ -982,9 +975,6 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if (!is_null($description) && (mb_strlen($description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $description when calling EdFiEducationContent., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($description) && (mb_strlen($description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling EdFiEducationContent., must be bigger than or equal to 1.');
         }
 
         $this->container['description'] = $description;
@@ -1232,9 +1222,6 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
         if (!is_null($publisher) && (mb_strlen($publisher) > 50)) {
             throw new \InvalidArgumentException('invalid length for $publisher when calling EdFiEducationContent., must be smaller than or equal to 50.');
         }
-        if (!is_null($publisher) && (mb_strlen($publisher) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $publisher when calling EdFiEducationContent., must be bigger than or equal to 1.');
-        }
 
         $this->container['publisher'] = $publisher;
 
@@ -1272,9 +1259,6 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if (!is_null($short_description) && (mb_strlen($short_description) > 75)) {
             throw new \InvalidArgumentException('invalid length for $short_description when calling EdFiEducationContent., must be smaller than or equal to 75.');
-        }
-        if (!is_null($short_description) && (mb_strlen($short_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $short_description when calling EdFiEducationContent., must be bigger than or equal to 1.');
         }
 
         $this->container['short_description'] = $short_description;
@@ -1392,9 +1376,6 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if (!is_null($version) && (mb_strlen($version) > 10)) {
             throw new \InvalidArgumentException('invalid length for $version when calling EdFiEducationContent., must be smaller than or equal to 10.');
-        }
-        if (!is_null($version) && (mb_strlen($version) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $version when calling EdFiEducationContent., must be bigger than or equal to 1.');
         }
 
         $this->container['version'] = $version;

@@ -295,10 +295,6 @@ class EdFiGradebookEntryReference implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'gradebook_entry_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['gradebook_entry_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'gradebook_entry_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['namespace'] === null) {
             $invalidProperties[] = "'namespace' can't be null";
         }
@@ -349,9 +345,6 @@ class EdFiGradebookEntryReference implements ModelInterface, ArrayAccess, \JsonS
         }
         if ((mb_strlen($gradebook_entry_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $gradebook_entry_identifier when calling EdFiGradebookEntryReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($gradebook_entry_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $gradebook_entry_identifier when calling EdFiGradebookEntryReference., must be bigger than or equal to 1.');
         }
 
         $this->container['gradebook_entry_identifier'] = $gradebook_entry_identifier;

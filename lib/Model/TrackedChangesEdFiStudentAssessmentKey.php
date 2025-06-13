@@ -299,16 +299,8 @@ class TrackedChangesEdFiStudentAssessmentKey implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'student_assessment_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['student_assessment_identifier']) && (mb_strlen($this->container['student_assessment_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_assessment_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['assessment_identifier']) && (mb_strlen($this->container['assessment_identifier']) > 60)) {
             $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['assessment_identifier']) && (mb_strlen($this->container['assessment_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['namespace']) && (mb_strlen($this->container['namespace']) > 255)) {
@@ -321,10 +313,6 @@ class TrackedChangesEdFiStudentAssessmentKey implements ModelInterface, ArrayAcc
 
         if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -367,9 +355,6 @@ class TrackedChangesEdFiStudentAssessmentKey implements ModelInterface, ArrayAcc
         if ((mb_strlen($student_assessment_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $student_assessment_identifier when calling TrackedChangesEdFiStudentAssessmentKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($student_assessment_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_assessment_identifier when calling TrackedChangesEdFiStudentAssessmentKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['student_assessment_identifier'] = $student_assessment_identifier;
 
@@ -400,9 +385,6 @@ class TrackedChangesEdFiStudentAssessmentKey implements ModelInterface, ArrayAcc
         }
         if ((mb_strlen($assessment_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling TrackedChangesEdFiStudentAssessmentKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($assessment_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling TrackedChangesEdFiStudentAssessmentKey., must be bigger than or equal to 1.');
         }
 
         $this->container['assessment_identifier'] = $assessment_identifier;
@@ -468,9 +450,6 @@ class TrackedChangesEdFiStudentAssessmentKey implements ModelInterface, ArrayAcc
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentAssessmentKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentAssessmentKey., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

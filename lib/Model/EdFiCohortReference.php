@@ -295,10 +295,6 @@ class EdFiCohortReference implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'cohort_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if ((mb_strlen($this->container['cohort_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'cohort_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['education_organization_id'] === null) {
             $invalidProperties[] = "'education_organization_id' can't be null";
         }
@@ -341,9 +337,6 @@ class EdFiCohortReference implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ((mb_strlen($cohort_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $cohort_identifier when calling EdFiCohortReference., must be smaller than or equal to 36.');
-        }
-        if ((mb_strlen($cohort_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $cohort_identifier when calling EdFiCohortReference., must be bigger than or equal to 1.');
         }
 
         $this->container['cohort_identifier'] = $cohort_identifier;

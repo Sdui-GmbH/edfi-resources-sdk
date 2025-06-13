@@ -295,10 +295,6 @@ class EdFiClassPeriodReference implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'class_period_name', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['class_period_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'class_period_name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['school_id'] === null) {
             $invalidProperties[] = "'school_id' can't be null";
         }
@@ -342,9 +338,6 @@ class EdFiClassPeriodReference implements ModelInterface, ArrayAccess, \JsonSeri
         if ((mb_strlen($class_period_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $class_period_name when calling EdFiClassPeriodReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($class_period_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $class_period_name when calling EdFiClassPeriodReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['class_period_name'] = $class_period_name;
 
@@ -364,7 +357,7 @@ class EdFiClassPeriodReference implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets school_id
      *
-     * @param int $school_id The identifier assigned to a school.
+     * @param int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

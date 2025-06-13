@@ -312,7 +312,7 @@ class EdFiPostSecondaryInstitutionReference implements ModelInterface, ArrayAcce
     /**
      * Sets post_secondary_institution_id
      *
-     * @param int $post_secondary_institution_id The ID of the post secondary institution.
+     * @param int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

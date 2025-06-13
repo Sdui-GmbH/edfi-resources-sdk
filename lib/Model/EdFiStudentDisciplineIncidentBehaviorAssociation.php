@@ -340,10 +340,6 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
             $invalidProperties[] = "invalid value for 'behavior_detailed_description', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['behavior_detailed_description']) && (mb_strlen($this->container['behavior_detailed_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'behavior_detailed_description', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -502,9 +498,6 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
         }
         if (!is_null($behavior_detailed_description) && (mb_strlen($behavior_detailed_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $behavior_detailed_description when calling EdFiStudentDisciplineIncidentBehaviorAssociation., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($behavior_detailed_description) && (mb_strlen($behavior_detailed_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $behavior_detailed_description when calling EdFiStudentDisciplineIncidentBehaviorAssociation., must be bigger than or equal to 1.');
         }
 
         $this->container['behavior_detailed_description'] = $behavior_detailed_description;

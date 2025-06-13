@@ -316,10 +316,6 @@ class EdFiStaffEducationOrganizationContactAssociationTelephone implements Model
             $invalidProperties[] = "invalid value for 'telephone_number', the character length must be smaller than or equal to 24.";
         }
 
-        if ((mb_strlen($this->container['telephone_number']) < 1)) {
-            $invalidProperties[] = "invalid value for 'telephone_number', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['order_of_priority']) && ($this->container['order_of_priority'] < 1)) {
             $invalidProperties[] = "invalid value for 'order_of_priority', must be bigger than or equal to 1.";
         }
@@ -394,9 +390,6 @@ class EdFiStaffEducationOrganizationContactAssociationTelephone implements Model
         }
         if ((mb_strlen($telephone_number) > 24)) {
             throw new \InvalidArgumentException('invalid length for $telephone_number when calling EdFiStaffEducationOrganizationContactAssociationTelephone., must be smaller than or equal to 24.');
-        }
-        if ((mb_strlen($telephone_number) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $telephone_number when calling EdFiStaffEducationOrganizationContactAssociationTelephone., must be bigger than or equal to 1.');
         }
 
         $this->container['telephone_number'] = $telephone_number;

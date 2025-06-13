@@ -285,10 +285,6 @@ class TrackedChangesEdFiLocationKey implements ModelInterface, ArrayAccess, \Jso
             $invalidProperties[] = "invalid value for 'classroom_identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['classroom_identification_code']) && (mb_strlen($this->container['classroom_identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'classroom_identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -329,9 +325,6 @@ class TrackedChangesEdFiLocationKey implements ModelInterface, ArrayAccess, \Jso
         if ((mb_strlen($classroom_identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $classroom_identification_code when calling TrackedChangesEdFiLocationKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($classroom_identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $classroom_identification_code when calling TrackedChangesEdFiLocationKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['classroom_identification_code'] = $classroom_identification_code;
 
@@ -351,7 +344,7 @@ class TrackedChangesEdFiLocationKey implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets school_id
      *
-     * @param int|null $school_id The identifier assigned to a school.
+     * @param int|null $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

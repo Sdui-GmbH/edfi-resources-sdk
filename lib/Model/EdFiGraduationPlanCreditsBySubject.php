@@ -306,9 +306,21 @@ class EdFiGraduationPlanCreditsBySubject implements ModelInterface, ArrayAccess,
             $invalidProperties[] = "invalid value for 'credit_type_descriptor', the character length must be smaller than or equal to 306.";
         }
 
+        if (!is_null($this->container['credit_conversion']) && ($this->container['credit_conversion'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'credit_conversion', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['credit_conversion']) && ($this->container['credit_conversion'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'credit_conversion', must be bigger than or equal to -9999999.99.";
+        }
+
         if ($this->container['credits'] === null) {
             $invalidProperties[] = "'credits' can't be null";
         }
+        if (($this->container['credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'credits', must be smaller than or equal to 999999.999.";
+        }
+
         if (($this->container['credits'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'credits', must be bigger than or equal to 0.0.";
         }
@@ -426,6 +438,14 @@ class EdFiGraduationPlanCreditsBySubject implements ModelInterface, ArrayAccess,
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($credit_conversion) && ($credit_conversion > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $credit_conversion when calling EdFiGraduationPlanCreditsBySubject., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($credit_conversion) && ($credit_conversion < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $credit_conversion when calling EdFiGraduationPlanCreditsBySubject., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['credit_conversion'] = $credit_conversion;
 
         return $this;
@@ -454,6 +474,9 @@ class EdFiGraduationPlanCreditsBySubject implements ModelInterface, ArrayAccess,
             throw new \InvalidArgumentException('non-nullable credits cannot be null');
         }
 
+        if (($credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $credits when calling EdFiGraduationPlanCreditsBySubject., must be smaller than or equal to 999999.999.');
+        }
         if (($credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $credits when calling EdFiGraduationPlanCreditsBySubject., must be bigger than or equal to 0.0.');
         }

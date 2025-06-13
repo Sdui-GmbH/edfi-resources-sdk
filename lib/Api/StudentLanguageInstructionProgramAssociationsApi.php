@@ -772,6 +772,7 @@ class StudentLanguageInstructionProgramAssociationsApi
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  int $dosage The duration of time in minutes for which the student was assigned to participate in the program. (optional)
      * @param  bool $english_learner_participation An indication that an English learner student is served by an English language instruction educational program supported with Title III of ESEA funds. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentLanguageInstructionProgramAssociations'] to see the possible values for this operation
      *
@@ -779,9 +780,9 @@ class StudentLanguageInstructionProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiStudentLanguageInstructionProgramAssociation[]
      */
-    public function getStudentLanguageInstructionProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $dosage = null, $english_learner_participation = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentLanguageInstructionProgramAssociations'][0])
+    public function getStudentLanguageInstructionProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $dosage = null, $english_learner_participation = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentLanguageInstructionProgramAssociations'][0])
     {
-        list($response) = $this->getStudentLanguageInstructionProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $use_snapshot, $contentType);
+        list($response) = $this->getStudentLanguageInstructionProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -803,6 +804,7 @@ class StudentLanguageInstructionProgramAssociationsApi
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  int $dosage The duration of time in minutes for which the student was assigned to participate in the program. (optional)
      * @param  bool $english_learner_participation An indication that an English learner student is served by an English language instruction educational program supported with Title III of ESEA funds. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentLanguageInstructionProgramAssociations'] to see the possible values for this operation
      *
@@ -810,9 +812,9 @@ class StudentLanguageInstructionProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiStudentLanguageInstructionProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentLanguageInstructionProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $dosage = null, $english_learner_participation = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentLanguageInstructionProgramAssociations'][0])
+    public function getStudentLanguageInstructionProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $dosage = null, $english_learner_participation = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentLanguageInstructionProgramAssociations'][0])
     {
-        $request = $this->getStudentLanguageInstructionProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $use_snapshot, $contentType);
+        $request = $this->getStudentLanguageInstructionProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -941,15 +943,16 @@ class StudentLanguageInstructionProgramAssociationsApi
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  int $dosage The duration of time in minutes for which the student was assigned to participate in the program. (optional)
      * @param  bool $english_learner_participation An indication that an English learner student is served by an English language instruction educational program supported with Title III of ESEA funds. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentLanguageInstructionProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentLanguageInstructionProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $dosage = null, $english_learner_participation = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentLanguageInstructionProgramAssociations'][0])
+    public function getStudentLanguageInstructionProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $dosage = null, $english_learner_participation = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentLanguageInstructionProgramAssociations'][0])
     {
-        return $this->getStudentLanguageInstructionProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $use_snapshot, $contentType)
+        return $this->getStudentLanguageInstructionProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -975,16 +978,17 @@ class StudentLanguageInstructionProgramAssociationsApi
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  int $dosage The duration of time in minutes for which the student was assigned to participate in the program. (optional)
      * @param  bool $english_learner_participation An indication that an English learner student is served by an English language instruction educational program supported with Title III of ESEA funds. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentLanguageInstructionProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentLanguageInstructionProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $dosage = null, $english_learner_participation = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentLanguageInstructionProgramAssociations'][0])
+    public function getStudentLanguageInstructionProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $dosage = null, $english_learner_participation = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentLanguageInstructionProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentLanguageInstructionProgramAssociation[]';
-        $request = $this->getStudentLanguageInstructionProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $use_snapshot, $contentType);
+        $request = $this->getStudentLanguageInstructionProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1038,13 +1042,14 @@ class StudentLanguageInstructionProgramAssociationsApi
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  int $dosage The duration of time in minutes for which the student was assigned to participate in the program. (optional)
      * @param  bool $english_learner_participation An indication that an English learner student is served by an English language instruction educational program supported with Title III of ESEA funds. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentLanguageInstructionProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentLanguageInstructionProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $dosage = null, $english_learner_participation = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentLanguageInstructionProgramAssociations'][0])
+    public function getStudentLanguageInstructionProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $dosage = null, $english_learner_participation = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentLanguageInstructionProgramAssociations'][0])
     {
 
 
@@ -1073,6 +1078,7 @@ class StudentLanguageInstructionProgramAssociationsApi
             throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentLanguageInstructionProgramAssociationsApi.getStudentLanguageInstructionProgramAssociations, must be smaller than or equal to 32.');
         }
         
+
 
 
 
@@ -1197,6 +1203,15 @@ class StudentLanguageInstructionProgramAssociationsApi
             $english_learner_participation,
             'englishLearnerParticipation', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

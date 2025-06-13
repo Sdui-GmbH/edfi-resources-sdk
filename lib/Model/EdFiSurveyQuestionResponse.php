@@ -340,10 +340,6 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
             $invalidProperties[] = "invalid value for 'comment', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['comment']) && (mb_strlen($this->container['comment']) < 1)) {
-            $invalidProperties[] = "invalid value for 'comment', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -471,9 +467,6 @@ class EdFiSurveyQuestionResponse implements ModelInterface, ArrayAccess, \JsonSe
         }
         if (!is_null($comment) && (mb_strlen($comment) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $comment when calling EdFiSurveyQuestionResponse., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($comment) && (mb_strlen($comment) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $comment when calling EdFiSurveyQuestionResponse., must be bigger than or equal to 1.');
         }
 
         $this->container['comment'] = $comment;

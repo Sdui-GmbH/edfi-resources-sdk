@@ -1,6 +1,6 @@
 # Resources\EvaluationRatingsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -187,7 +187,7 @@ $term_descriptor = 'term_descriptor_example'; // string | The term for the sessi
 $person_id = 'person_id_example'; // string | A unique alphanumeric code assigned to a person.
 $source_system_descriptor = 'source_system_descriptor_example'; // string | This descriptor defines the originating record source system for the person.
 $local_course_code = 'local_course_code_example'; // string | The local code assigned by the School that identifies the course offering provided for the instruction of students.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $section_identifier = 'section_identifier_example'; // string | The local identifier assigned to a section.
 $session_name = 'session_name_example'; // string | The identifier for the calendar for the academic session.
 $evaluation_rating_level_descriptor = 'evaluation_rating_level_descriptor_example'; // string | The rating level achieved based upon the rating or score.
@@ -223,7 +223,7 @@ try {
 | **person_id** | **string**| A unique alphanumeric code assigned to a person. | [optional] |
 | **source_system_descriptor** | **string**| This descriptor defines the originating record source system for the person. | [optional] |
 | **local_course_code** | **string**| The local code assigned by the School that identifies the course offering provided for the instruction of students. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **section_identifier** | **string**| The local identifier assigned to a section. | [optional] |
 | **session_name** | **string**| The identifier for the calendar for the academic session. | [optional] |
 | **evaluation_rating_level_descriptor** | **string**| The rating level achieved based upon the rating or score. | [optional] |

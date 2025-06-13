@@ -1,6 +1,6 @@
 # Resources\RestraintEventsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -177,7 +177,7 @@ $min_change_version = 56; // int | Used in synchronization to set sequence minim
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
 $restraint_event_identifier = 'restraint_event_identifier_example'; // string | A unique number or alphanumeric code assigned to a restraint event by a school, school system, state, or other agency or entity.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
 $educational_environment_descriptor = 'educational_environment_descriptor_example'; // string | The setting where the RestraintEvent was exercised.
 $event_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Month, day, and year of the restraint event.
@@ -202,7 +202,7 @@ try {
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
 | **restraint_event_identifier** | **string**| A unique number or alphanumeric code assigned to a restraint event by a school, school system, state, or other agency or entity. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
 | **educational_environment_descriptor** | **string**| The setting where the RestraintEvent was exercised. | [optional] |
 | **event_date** | **\DateTime**| Month, day, and year of the restraint event. | [optional] |

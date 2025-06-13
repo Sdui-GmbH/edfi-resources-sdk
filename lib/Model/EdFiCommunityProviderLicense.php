@@ -379,10 +379,6 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'licensing_organization', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['licensing_organization']) < 1)) {
-            $invalidProperties[] = "invalid value for 'licensing_organization', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['community_provider_reference'] === null) {
             $invalidProperties[] = "'community_provider_reference' can't be null";
         }
@@ -497,9 +493,6 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
         }
         if ((mb_strlen($licensing_organization) > 75)) {
             throw new \InvalidArgumentException('invalid length for $licensing_organization when calling EdFiCommunityProviderLicense., must be smaller than or equal to 75.');
-        }
-        if ((mb_strlen($licensing_organization) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $licensing_organization when calling EdFiCommunityProviderLicense., must be bigger than or equal to 1.');
         }
 
         $this->container['licensing_organization'] = $licensing_organization;

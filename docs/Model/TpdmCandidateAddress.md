@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **do_not_publish_indicator** | **bool** | An indication that the address should not be published. | [optional]
 **latitude** | **string** | The geographic latitude of the physical address. | [optional]
 **longitude** | **string** | The geographic longitude of the physical address. | [optional]
-**name_of_county** | **string** | The name of the county, parish, borough, or comparable unit (within a state) in                       &#39;which an address is located. | [optional]
+**name_of_county** | **string** | The name of the county, parish, borough, or comparable unit (within a state) in which an address is located. | [optional]
 **periods** | [**\Resources\Model\TpdmCandidateAddressPeriod[]**](TpdmCandidateAddressPeriod.md) | An unordered collection of candidateAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

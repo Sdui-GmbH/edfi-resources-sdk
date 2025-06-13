@@ -323,10 +323,6 @@ class EdFiLocation implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'classroom_identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['classroom_identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'classroom_identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['school_reference'] === null) {
             $invalidProperties[] = "'school_reference' can't be null";
         }
@@ -396,9 +392,6 @@ class EdFiLocation implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($classroom_identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $classroom_identification_code when calling EdFiLocation., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($classroom_identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $classroom_identification_code when calling EdFiLocation., must be bigger than or equal to 1.');
         }
 
         $this->container['classroom_identification_code'] = $classroom_identification_code;

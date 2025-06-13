@@ -302,7 +302,7 @@ class TrackedChangesEdFiOrganizationDepartmentKey implements ModelInterface, Arr
     /**
      * Sets organization_department_id
      *
-     * @param int|null $organization_department_id The unique identification code for the organization department.
+     * @param int|null $organization_department_id The unique identification code for the organization department. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

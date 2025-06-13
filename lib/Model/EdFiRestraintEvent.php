@@ -344,10 +344,6 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'restraint_event_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if ((mb_strlen($this->container['restraint_event_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'restraint_event_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['school_reference'] === null) {
             $invalidProperties[] = "'school_reference' can't be null";
         }
@@ -427,9 +423,6 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($restraint_event_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $restraint_event_identifier when calling EdFiRestraintEvent., must be smaller than or equal to 36.');
-        }
-        if ((mb_strlen($restraint_event_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $restraint_event_identifier when calling EdFiRestraintEvent., must be bigger than or equal to 1.');
         }
 
         $this->container['restraint_event_identifier'] = $restraint_event_identifier;

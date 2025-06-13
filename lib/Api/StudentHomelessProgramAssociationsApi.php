@@ -773,6 +773,7 @@ class StudentHomelessProgramAssociationsApi
      * @param  string $homeless_primary_nighttime_residence_descriptor The primary nighttime residence of the student at the time the student is identified as homeless. (optional)
      * @param  bool $awaiting_foster_care State defined definition for awaiting foster care. (optional)
      * @param  bool $homeless_unaccompanied_youth A homeless unaccompanied youth is a youth who is not in the physical custody of a parent or guardian and who fits the McKinney-Vento definition of homeless. Students must be both unaccompanied and homeless to be included as an unaccompanied homeless youth. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
@@ -780,9 +781,9 @@ class StudentHomelessProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiStudentHomelessProgramAssociation[]
      */
-    public function getStudentHomelessProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
+    public function getStudentHomelessProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
     {
-        list($response) = $this->getStudentHomelessProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $use_snapshot, $contentType);
+        list($response) = $this->getStudentHomelessProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -805,6 +806,7 @@ class StudentHomelessProgramAssociationsApi
      * @param  string $homeless_primary_nighttime_residence_descriptor The primary nighttime residence of the student at the time the student is identified as homeless. (optional)
      * @param  bool $awaiting_foster_care State defined definition for awaiting foster care. (optional)
      * @param  bool $homeless_unaccompanied_youth A homeless unaccompanied youth is a youth who is not in the physical custody of a parent or guardian and who fits the McKinney-Vento definition of homeless. Students must be both unaccompanied and homeless to be included as an unaccompanied homeless youth. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
@@ -812,9 +814,9 @@ class StudentHomelessProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiStudentHomelessProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentHomelessProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
+    public function getStudentHomelessProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
     {
-        $request = $this->getStudentHomelessProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $use_snapshot, $contentType);
+        $request = $this->getStudentHomelessProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -944,15 +946,16 @@ class StudentHomelessProgramAssociationsApi
      * @param  string $homeless_primary_nighttime_residence_descriptor The primary nighttime residence of the student at the time the student is identified as homeless. (optional)
      * @param  bool $awaiting_foster_care State defined definition for awaiting foster care. (optional)
      * @param  bool $homeless_unaccompanied_youth A homeless unaccompanied youth is a youth who is not in the physical custody of a parent or guardian and who fits the McKinney-Vento definition of homeless. Students must be both unaccompanied and homeless to be included as an unaccompanied homeless youth. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentHomelessProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
+    public function getStudentHomelessProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
     {
-        return $this->getStudentHomelessProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $use_snapshot, $contentType)
+        return $this->getStudentHomelessProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -979,16 +982,17 @@ class StudentHomelessProgramAssociationsApi
      * @param  string $homeless_primary_nighttime_residence_descriptor The primary nighttime residence of the student at the time the student is identified as homeless. (optional)
      * @param  bool $awaiting_foster_care State defined definition for awaiting foster care. (optional)
      * @param  bool $homeless_unaccompanied_youth A homeless unaccompanied youth is a youth who is not in the physical custody of a parent or guardian and who fits the McKinney-Vento definition of homeless. Students must be both unaccompanied and homeless to be included as an unaccompanied homeless youth. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentHomelessProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
+    public function getStudentHomelessProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentHomelessProgramAssociation[]';
-        $request = $this->getStudentHomelessProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $use_snapshot, $contentType);
+        $request = $this->getStudentHomelessProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1043,13 +1047,14 @@ class StudentHomelessProgramAssociationsApi
      * @param  string $homeless_primary_nighttime_residence_descriptor The primary nighttime residence of the student at the time the student is identified as homeless. (optional)
      * @param  bool $awaiting_foster_care State defined definition for awaiting foster care. (optional)
      * @param  bool $homeless_unaccompanied_youth A homeless unaccompanied youth is a youth who is not in the physical custody of a parent or guardian and who fits the McKinney-Vento definition of homeless. Students must be both unaccompanied and homeless to be included as an unaccompanied homeless youth. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentHomelessProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentHomelessProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
+    public function getStudentHomelessProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $homeless_primary_nighttime_residence_descriptor = null, $awaiting_foster_care = null, $homeless_unaccompanied_youth = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentHomelessProgramAssociations'][0])
     {
 
 
@@ -1082,6 +1087,7 @@ class StudentHomelessProgramAssociationsApi
             throw new \InvalidArgumentException('invalid length for "$homeless_primary_nighttime_residence_descriptor" when calling StudentHomelessProgramAssociationsApi.getStudentHomelessProgramAssociations, must be smaller than or equal to 306.');
         }
         
+
 
 
 
@@ -1215,6 +1221,15 @@ class StudentHomelessProgramAssociationsApi
             $homeless_unaccompanied_youth,
             'homelessUnaccompaniedYouth', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

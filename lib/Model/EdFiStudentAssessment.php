@@ -463,10 +463,6 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'student_assessment_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['student_assessment_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_assessment_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['assessment_reference'] === null) {
             $invalidProperties[] = "'assessment_reference' can't be null";
         }
@@ -489,10 +485,6 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'event_description', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['event_description']) && (mb_strlen($this->container['event_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'event_description', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['platform_type_descriptor']) && (mb_strlen($this->container['platform_type_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'platform_type_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -505,20 +497,12 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'reported_school_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['reported_school_identifier']) && (mb_strlen($this->container['reported_school_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'reported_school_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['retest_indicator_descriptor']) && (mb_strlen($this->container['retest_indicator_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'retest_indicator_descriptor', the character length must be smaller than or equal to 306.";
         }
 
         if (!is_null($this->container['serial_number']) && (mb_strlen($this->container['serial_number']) > 60)) {
             $invalidProperties[] = "invalid value for 'serial_number', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['serial_number']) && (mb_strlen($this->container['serial_number']) < 1)) {
-            $invalidProperties[] = "invalid value for 'serial_number', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['when_assessed_grade_level_descriptor']) && (mb_strlen($this->container['when_assessed_grade_level_descriptor']) > 306)) {
@@ -591,9 +575,6 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
         }
         if ((mb_strlen($student_assessment_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $student_assessment_identifier when calling EdFiStudentAssessment., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($student_assessment_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_assessment_identifier when calling EdFiStudentAssessment., must be bigger than or equal to 1.');
         }
 
         $this->container['student_assessment_identifier'] = $student_assessment_identifier;
@@ -984,9 +965,6 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
         if (!is_null($event_description) && (mb_strlen($event_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $event_description when calling EdFiStudentAssessment., must be smaller than or equal to 1024.');
         }
-        if (!is_null($event_description) && (mb_strlen($event_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $event_description when calling EdFiStudentAssessment., must be bigger than or equal to 1.');
-        }
 
         $this->container['event_description'] = $event_description;
 
@@ -1182,9 +1160,6 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
         if (!is_null($reported_school_identifier) && (mb_strlen($reported_school_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $reported_school_identifier when calling EdFiStudentAssessment., must be smaller than or equal to 60.');
         }
-        if (!is_null($reported_school_identifier) && (mb_strlen($reported_school_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $reported_school_identifier when calling EdFiStudentAssessment., must be bigger than or equal to 1.');
-        }
 
         $this->container['reported_school_identifier'] = $reported_school_identifier;
 
@@ -1287,9 +1262,6 @@ class EdFiStudentAssessment implements ModelInterface, ArrayAccess, \JsonSeriali
         }
         if (!is_null($serial_number) && (mb_strlen($serial_number) > 60)) {
             throw new \InvalidArgumentException('invalid length for $serial_number when calling EdFiStudentAssessment., must be smaller than or equal to 60.');
-        }
-        if (!is_null($serial_number) && (mb_strlen($serial_number) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $serial_number when calling EdFiStudentAssessment., must be bigger than or equal to 1.');
         }
 
         $this->container['serial_number'] = $serial_number;

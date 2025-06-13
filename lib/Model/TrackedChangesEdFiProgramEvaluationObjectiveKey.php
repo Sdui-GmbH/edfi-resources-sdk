@@ -336,10 +336,6 @@ class TrackedChangesEdFiProgramEvaluationObjectiveKey implements ModelInterface,
             $invalidProperties[] = "invalid value for 'program_name', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['program_name']) && (mb_strlen($this->container['program_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'program_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['program_type_descriptor']) && (mb_strlen($this->container['program_type_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'program_type_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -534,9 +530,6 @@ class TrackedChangesEdFiProgramEvaluationObjectiveKey implements ModelInterface,
         }
         if ((mb_strlen($program_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $program_name when calling TrackedChangesEdFiProgramEvaluationObjectiveKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($program_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $program_name when calling TrackedChangesEdFiProgramEvaluationObjectiveKey., must be bigger than or equal to 1.');
         }
 
         $this->container['program_name'] = $program_name;

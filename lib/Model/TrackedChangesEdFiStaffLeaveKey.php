@@ -296,10 +296,6 @@ class TrackedChangesEdFiStaffLeaveKey implements ModelInterface, ArrayAccess, \J
             $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be smaller than or equal to 32.";
         }
 
-        if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -397,9 +393,6 @@ class TrackedChangesEdFiStaffLeaveKey implements ModelInterface, ArrayAccess, \J
         }
         if ((mb_strlen($staff_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiStaffLeaveKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($staff_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiStaffLeaveKey., must be bigger than or equal to 1.');
         }
 
         $this->container['staff_unique_id'] = $staff_unique_id;

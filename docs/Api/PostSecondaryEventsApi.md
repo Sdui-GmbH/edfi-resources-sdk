@@ -1,6 +1,6 @@
 # Resources\PostSecondaryEventsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -179,7 +179,7 @@ $total_count = false; // bool | Indicates if the total number of items available
 $post_secondary_event_category_descriptor = 'post_secondary_event_category_descriptor_example'; // string | The post secondary event that is logged.
 $event_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date the event occurred or was recorded.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
-$post_secondary_institution_id = 56; // int | The ID of the post secondary institution.
+$post_secondary_institution_id = 56; // int | The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
@@ -203,7 +203,7 @@ try {
 | **post_secondary_event_category_descriptor** | **string**| The post secondary event that is logged. | [optional] |
 | **event_date** | **\DateTime**| The date the event occurred or was recorded. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
-| **post_secondary_institution_id** | **int**| The ID of the post secondary institution. | [optional] |
+| **post_secondary_institution_id** | **int**| The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 

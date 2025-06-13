@@ -305,10 +305,6 @@ class EdFiProgramReference implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'program_name', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['program_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'program_name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['program_type_descriptor'] === null) {
             $invalidProperties[] = "'program_type_descriptor' can't be null";
         }
@@ -382,9 +378,6 @@ class EdFiProgramReference implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if ((mb_strlen($program_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $program_name when calling EdFiProgramReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($program_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $program_name when calling EdFiProgramReference., must be bigger than or equal to 1.');
         }
 
         $this->container['program_name'] = $program_name;

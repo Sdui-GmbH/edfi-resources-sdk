@@ -1,6 +1,6 @@
 # Resources\StudentSchoolAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -177,14 +177,14 @@ $min_change_version = 56; // int | Used in synchronization to set sequence minim
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
 $entry_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which an individual enters and begins to receive instructional services in a school.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
 $calendar_code = 'calendar_code_example'; // string | The identifier for the calendar.
 $school_year = 56; // int | The school year associated with the student's enrollment.
 $education_organization_id = 56; // int | The identifier assigned to an education organization.
 $graduation_plan_type_descriptor = 'graduation_plan_type_descriptor_example'; // string | The type of academic plan the student is following for graduation.
 $graduation_school_year = 56; // int | The school year the student is expected to graduate.
-$next_year_school_id = 56; // int | The identifier assigned to a school.
+$next_year_school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $class_of_school_year = 56; // int | Projected high school graduation year.
 $enrollment_type_descriptor = 'enrollment_type_descriptor_example'; // string | The type of enrollment reflected by the StudentSchoolAssociation.
 $entry_grade_level_reason_descriptor = 'entry_grade_level_reason_descriptor_example'; // string | The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term.
@@ -223,14 +223,14 @@ try {
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
 | **entry_date** | **\DateTime**| The month, day, and year on which an individual enters and begins to receive instructional services in a school. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
 | **calendar_code** | **string**| The identifier for the calendar. | [optional] |
 | **school_year** | **int**| The school year associated with the student&#39;s enrollment. | [optional] |
 | **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
 | **graduation_plan_type_descriptor** | **string**| The type of academic plan the student is following for graduation. | [optional] |
 | **graduation_school_year** | **int**| The school year the student is expected to graduate. | [optional] |
-| **next_year_school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **next_year_school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **class_of_school_year** | **int**| Projected high school graduation year. | [optional] |
 | **enrollment_type_descriptor** | **string**| The type of enrollment reflected by the StudentSchoolAssociation. | [optional] |
 | **entry_grade_level_reason_descriptor** | **string**| The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. | [optional] |

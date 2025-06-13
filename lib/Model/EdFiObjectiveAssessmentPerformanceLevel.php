@@ -331,24 +331,12 @@ class EdFiObjectiveAssessmentPerformanceLevel implements ModelInterface, ArrayAc
             $invalidProperties[] = "invalid value for 'maximum_score', the character length must be smaller than or equal to 35.";
         }
 
-        if (!is_null($this->container['maximum_score']) && (mb_strlen($this->container['maximum_score']) < 1)) {
-            $invalidProperties[] = "invalid value for 'maximum_score', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['minimum_score']) && (mb_strlen($this->container['minimum_score']) > 35)) {
             $invalidProperties[] = "invalid value for 'minimum_score', the character length must be smaller than or equal to 35.";
         }
 
-        if (!is_null($this->container['minimum_score']) && (mb_strlen($this->container['minimum_score']) < 1)) {
-            $invalidProperties[] = "invalid value for 'minimum_score', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['performance_level_indicator_name']) && (mb_strlen($this->container['performance_level_indicator_name']) > 60)) {
             $invalidProperties[] = "invalid value for 'performance_level_indicator_name', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['performance_level_indicator_name']) && (mb_strlen($this->container['performance_level_indicator_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'performance_level_indicator_name', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -498,9 +486,6 @@ class EdFiObjectiveAssessmentPerformanceLevel implements ModelInterface, ArrayAc
         if (!is_null($maximum_score) && (mb_strlen($maximum_score) > 35)) {
             throw new \InvalidArgumentException('invalid length for $maximum_score when calling EdFiObjectiveAssessmentPerformanceLevel., must be smaller than or equal to 35.');
         }
-        if (!is_null($maximum_score) && (mb_strlen($maximum_score) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $maximum_score when calling EdFiObjectiveAssessmentPerformanceLevel., must be bigger than or equal to 1.');
-        }
 
         $this->container['maximum_score'] = $maximum_score;
 
@@ -539,9 +524,6 @@ class EdFiObjectiveAssessmentPerformanceLevel implements ModelInterface, ArrayAc
         if (!is_null($minimum_score) && (mb_strlen($minimum_score) > 35)) {
             throw new \InvalidArgumentException('invalid length for $minimum_score when calling EdFiObjectiveAssessmentPerformanceLevel., must be smaller than or equal to 35.');
         }
-        if (!is_null($minimum_score) && (mb_strlen($minimum_score) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $minimum_score when calling EdFiObjectiveAssessmentPerformanceLevel., must be bigger than or equal to 1.');
-        }
 
         $this->container['minimum_score'] = $minimum_score;
 
@@ -579,9 +561,6 @@ class EdFiObjectiveAssessmentPerformanceLevel implements ModelInterface, ArrayAc
         }
         if (!is_null($performance_level_indicator_name) && (mb_strlen($performance_level_indicator_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $performance_level_indicator_name when calling EdFiObjectiveAssessmentPerformanceLevel., must be smaller than or equal to 60.');
-        }
-        if (!is_null($performance_level_indicator_name) && (mb_strlen($performance_level_indicator_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $performance_level_indicator_name when calling EdFiObjectiveAssessmentPerformanceLevel., must be bigger than or equal to 1.');
         }
 
         $this->container['performance_level_indicator_name'] = $performance_level_indicator_name;

@@ -313,19 +313,11 @@ class EdFiSurveySectionReference implements ModelInterface, ArrayAccess, \JsonSe
             $invalidProperties[] = "invalid value for 'survey_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['survey_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'survey_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['survey_section_title'] === null) {
             $invalidProperties[] = "'survey_section_title' can't be null";
         }
         if ((mb_strlen($this->container['survey_section_title']) > 255)) {
             $invalidProperties[] = "invalid value for 'survey_section_title', the character length must be smaller than or equal to 255.";
-        }
-
-        if ((mb_strlen($this->container['survey_section_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'survey_section_title', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -402,9 +394,6 @@ class EdFiSurveySectionReference implements ModelInterface, ArrayAccess, \JsonSe
         if ((mb_strlen($survey_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $survey_identifier when calling EdFiSurveySectionReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($survey_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $survey_identifier when calling EdFiSurveySectionReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['survey_identifier'] = $survey_identifier;
 
@@ -435,9 +424,6 @@ class EdFiSurveySectionReference implements ModelInterface, ArrayAccess, \JsonSe
         }
         if ((mb_strlen($survey_section_title) > 255)) {
             throw new \InvalidArgumentException('invalid length for $survey_section_title when calling EdFiSurveySectionReference., must be smaller than or equal to 255.');
-        }
-        if ((mb_strlen($survey_section_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $survey_section_title when calling EdFiSurveySectionReference., must be bigger than or equal to 1.');
         }
 
         $this->container['survey_section_title'] = $survey_section_title;

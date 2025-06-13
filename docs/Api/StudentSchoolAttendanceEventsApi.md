@@ -1,6 +1,6 @@
 # Resources\StudentSchoolAttendanceEventsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -178,7 +178,7 @@ $max_change_version = 56; // int | Used in synchronization to set sequence maxim
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
 $attendance_event_category_descriptor = 'attendance_event_category_descriptor_example'; // string | A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy.
 $event_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Date for this attendance event.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $school_year = 56; // int | The identifier for the school year.
 $session_name = 'session_name_example'; // string | The identifier for the calendar for the academic session.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
@@ -210,7 +210,7 @@ try {
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
 | **attendance_event_category_descriptor** | **string**| A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. | [optional] |
 | **event_date** | **\DateTime**| Date for this attendance event. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **school_year** | **int**| The identifier for the school year. | [optional] |
 | **session_name** | **string**| The identifier for the calendar for the academic session. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |

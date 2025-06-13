@@ -26,6 +26,7 @@ docs/Api/CourseOfferingsApi.md
 docs/Api/CourseTranscriptsApi.md
 docs/Api/CoursesApi.md
 docs/Api/CredentialsApi.md
+docs/Api/CrisisEventsApi.md
 docs/Api/DescriptorMappingsApi.md
 docs/Api/DisciplineActionsApi.md
 docs/Api/DisciplineIncidentsApi.md
@@ -113,6 +114,7 @@ docs/Api/StudentDisciplineIncidentNonOffenderAssociationsApi.md
 docs/Api/StudentEducationOrganizationAssociationsApi.md
 docs/Api/StudentEducationOrganizationResponsibilityAssociationsApi.md
 docs/Api/StudentGradebookEntriesApi.md
+docs/Api/StudentHealthsApi.md
 docs/Api/StudentHomelessProgramAssociationsApi.md
 docs/Api/StudentInterventionAssociationsApi.md
 docs/Api/StudentInterventionAttendanceEventsApi.md
@@ -130,6 +132,7 @@ docs/Api/StudentSectionAttendanceEventsApi.md
 docs/Api/StudentSpecialEducationProgramAssociationsApi.md
 docs/Api/StudentSpecialEducationProgramEligibilityAssociationsApi.md
 docs/Api/StudentTitleIPartAProgramAssociationsApi.md
+docs/Api/StudentTransportationsApi.md
 docs/Api/StudentsApi.md
 docs/Api/SurveyCourseAssociationsApi.md
 docs/Api/SurveyProgramAssociationsApi.md
@@ -236,6 +239,8 @@ docs/Model/EdFiCredentialAcademicSubject.md
 docs/Model/EdFiCredentialEndorsement.md
 docs/Model/EdFiCredentialGradeLevel.md
 docs/Model/EdFiCredentialReference.md
+docs/Model/EdFiCrisisEvent.md
+docs/Model/EdFiCrisisEventReference.md
 docs/Model/EdFiDescriptorMapping.md
 docs/Model/EdFiDescriptorMappingModelEntity.md
 docs/Model/EdFiDisciplineAction.md
@@ -503,6 +508,7 @@ docs/Model/EdFiStudentEducationOrganizationAssociationAncestryEthnicOrigin.md
 docs/Model/EdFiStudentEducationOrganizationAssociationCohortYear.md
 docs/Model/EdFiStudentEducationOrganizationAssociationDisability.md
 docs/Model/EdFiStudentEducationOrganizationAssociationDisabilityDesignation.md
+docs/Model/EdFiStudentEducationOrganizationAssociationDisplacedStudent.md
 docs/Model/EdFiStudentEducationOrganizationAssociationElectronicMail.md
 docs/Model/EdFiStudentEducationOrganizationAssociationInternationalAddress.md
 docs/Model/EdFiStudentEducationOrganizationAssociationLanguage.md
@@ -517,6 +523,11 @@ docs/Model/EdFiStudentEducationOrganizationAssociationTelephone.md
 docs/Model/EdFiStudentEducationOrganizationAssociationTribalAffiliation.md
 docs/Model/EdFiStudentEducationOrganizationResponsibilityAssociation.md
 docs/Model/EdFiStudentGradebookEntry.md
+docs/Model/EdFiStudentHealth.md
+docs/Model/EdFiStudentHealthAdditionalImmunization.md
+docs/Model/EdFiStudentHealthAdditionalImmunizationDate.md
+docs/Model/EdFiStudentHealthRequiredImmunization.md
+docs/Model/EdFiStudentHealthRequiredImmunizationDate.md
 docs/Model/EdFiStudentHomelessProgramAssociation.md
 docs/Model/EdFiStudentHomelessProgramAssociationHomelessProgramService.md
 docs/Model/EdFiStudentIdentificationDocument.md
@@ -560,6 +571,10 @@ docs/Model/EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramS
 docs/Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.md
 docs/Model/EdFiStudentTitleIPartAProgramAssociation.md
 docs/Model/EdFiStudentTitleIPartAProgramAssociationTitleIPartAProgramService.md
+docs/Model/EdFiStudentTransportation.md
+docs/Model/EdFiStudentTransportationStudentBusDetails.md
+docs/Model/EdFiStudentTransportationStudentBusDetailsTravelDayofWeek.md
+docs/Model/EdFiStudentTransportationStudentBusDetailsTravelDirection.md
 docs/Model/EdFiStudentVisa.md
 docs/Model/EdFiSurvey.md
 docs/Model/EdFiSurveyCourseAssociation.md
@@ -705,6 +720,9 @@ docs/Model/TrackedChangesEdFiCourseTranscriptKeyChange.md
 docs/Model/TrackedChangesEdFiCredentialDelete.md
 docs/Model/TrackedChangesEdFiCredentialKey.md
 docs/Model/TrackedChangesEdFiCredentialKeyChange.md
+docs/Model/TrackedChangesEdFiCrisisEventDelete.md
+docs/Model/TrackedChangesEdFiCrisisEventKey.md
+docs/Model/TrackedChangesEdFiCrisisEventKeyChange.md
 docs/Model/TrackedChangesEdFiDescriptorMappingDelete.md
 docs/Model/TrackedChangesEdFiDescriptorMappingKey.md
 docs/Model/TrackedChangesEdFiDescriptorMappingKeyChange.md
@@ -934,6 +952,9 @@ docs/Model/TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociati
 docs/Model/TrackedChangesEdFiStudentGradebookEntryDelete.md
 docs/Model/TrackedChangesEdFiStudentGradebookEntryKey.md
 docs/Model/TrackedChangesEdFiStudentGradebookEntryKeyChange.md
+docs/Model/TrackedChangesEdFiStudentHealthDelete.md
+docs/Model/TrackedChangesEdFiStudentHealthKey.md
+docs/Model/TrackedChangesEdFiStudentHealthKeyChange.md
 docs/Model/TrackedChangesEdFiStudentHomelessProgramAssociationDelete.md
 docs/Model/TrackedChangesEdFiStudentHomelessProgramAssociationKey.md
 docs/Model/TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange.md
@@ -987,6 +1008,9 @@ docs/Model/TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociatio
 docs/Model/TrackedChangesEdFiStudentTitleIPartAProgramAssociationDelete.md
 docs/Model/TrackedChangesEdFiStudentTitleIPartAProgramAssociationKey.md
 docs/Model/TrackedChangesEdFiStudentTitleIPartAProgramAssociationKeyChange.md
+docs/Model/TrackedChangesEdFiStudentTransportationDelete.md
+docs/Model/TrackedChangesEdFiStudentTransportationKey.md
+docs/Model/TrackedChangesEdFiStudentTransportationKeyChange.md
 docs/Model/TrackedChangesEdFiSurveyCourseAssociationDelete.md
 docs/Model/TrackedChangesEdFiSurveyCourseAssociationKey.md
 docs/Model/TrackedChangesEdFiSurveyCourseAssociationKeyChange.md
@@ -1094,6 +1118,7 @@ lib/Api/CourseOfferingsApi.php
 lib/Api/CourseTranscriptsApi.php
 lib/Api/CoursesApi.php
 lib/Api/CredentialsApi.php
+lib/Api/CrisisEventsApi.php
 lib/Api/DescriptorMappingsApi.php
 lib/Api/DisciplineActionsApi.php
 lib/Api/DisciplineIncidentsApi.php
@@ -1181,6 +1206,7 @@ lib/Api/StudentDisciplineIncidentNonOffenderAssociationsApi.php
 lib/Api/StudentEducationOrganizationAssociationsApi.php
 lib/Api/StudentEducationOrganizationResponsibilityAssociationsApi.php
 lib/Api/StudentGradebookEntriesApi.php
+lib/Api/StudentHealthsApi.php
 lib/Api/StudentHomelessProgramAssociationsApi.php
 lib/Api/StudentInterventionAssociationsApi.php
 lib/Api/StudentInterventionAttendanceEventsApi.php
@@ -1198,6 +1224,7 @@ lib/Api/StudentSectionAttendanceEventsApi.php
 lib/Api/StudentSpecialEducationProgramAssociationsApi.php
 lib/Api/StudentSpecialEducationProgramEligibilityAssociationsApi.php
 lib/Api/StudentTitleIPartAProgramAssociationsApi.php
+lib/Api/StudentTransportationsApi.php
 lib/Api/StudentsApi.php
 lib/Api/SurveyCourseAssociationsApi.php
 lib/Api/SurveyProgramAssociationsApi.php
@@ -1307,6 +1334,8 @@ lib/Model/EdFiCredentialAcademicSubject.php
 lib/Model/EdFiCredentialEndorsement.php
 lib/Model/EdFiCredentialGradeLevel.php
 lib/Model/EdFiCredentialReference.php
+lib/Model/EdFiCrisisEvent.php
+lib/Model/EdFiCrisisEventReference.php
 lib/Model/EdFiDescriptorMapping.php
 lib/Model/EdFiDescriptorMappingModelEntity.php
 lib/Model/EdFiDisciplineAction.php
@@ -1574,6 +1603,7 @@ lib/Model/EdFiStudentEducationOrganizationAssociationAncestryEthnicOrigin.php
 lib/Model/EdFiStudentEducationOrganizationAssociationCohortYear.php
 lib/Model/EdFiStudentEducationOrganizationAssociationDisability.php
 lib/Model/EdFiStudentEducationOrganizationAssociationDisabilityDesignation.php
+lib/Model/EdFiStudentEducationOrganizationAssociationDisplacedStudent.php
 lib/Model/EdFiStudentEducationOrganizationAssociationElectronicMail.php
 lib/Model/EdFiStudentEducationOrganizationAssociationInternationalAddress.php
 lib/Model/EdFiStudentEducationOrganizationAssociationLanguage.php
@@ -1588,6 +1618,11 @@ lib/Model/EdFiStudentEducationOrganizationAssociationTelephone.php
 lib/Model/EdFiStudentEducationOrganizationAssociationTribalAffiliation.php
 lib/Model/EdFiStudentEducationOrganizationResponsibilityAssociation.php
 lib/Model/EdFiStudentGradebookEntry.php
+lib/Model/EdFiStudentHealth.php
+lib/Model/EdFiStudentHealthAdditionalImmunization.php
+lib/Model/EdFiStudentHealthAdditionalImmunizationDate.php
+lib/Model/EdFiStudentHealthRequiredImmunization.php
+lib/Model/EdFiStudentHealthRequiredImmunizationDate.php
 lib/Model/EdFiStudentHomelessProgramAssociation.php
 lib/Model/EdFiStudentHomelessProgramAssociationHomelessProgramService.php
 lib/Model/EdFiStudentIdentificationDocument.php
@@ -1631,6 +1666,10 @@ lib/Model/EdFiStudentSpecialEducationProgramAssociationSpecialEducationProgramSe
 lib/Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.php
 lib/Model/EdFiStudentTitleIPartAProgramAssociation.php
 lib/Model/EdFiStudentTitleIPartAProgramAssociationTitleIPartAProgramService.php
+lib/Model/EdFiStudentTransportation.php
+lib/Model/EdFiStudentTransportationStudentBusDetails.php
+lib/Model/EdFiStudentTransportationStudentBusDetailsTravelDayofWeek.php
+lib/Model/EdFiStudentTransportationStudentBusDetailsTravelDirection.php
 lib/Model/EdFiStudentVisa.php
 lib/Model/EdFiSurvey.php
 lib/Model/EdFiSurveyCourseAssociation.php
@@ -1777,6 +1816,9 @@ lib/Model/TrackedChangesEdFiCourseTranscriptKeyChange.php
 lib/Model/TrackedChangesEdFiCredentialDelete.php
 lib/Model/TrackedChangesEdFiCredentialKey.php
 lib/Model/TrackedChangesEdFiCredentialKeyChange.php
+lib/Model/TrackedChangesEdFiCrisisEventDelete.php
+lib/Model/TrackedChangesEdFiCrisisEventKey.php
+lib/Model/TrackedChangesEdFiCrisisEventKeyChange.php
 lib/Model/TrackedChangesEdFiDescriptorMappingDelete.php
 lib/Model/TrackedChangesEdFiDescriptorMappingKey.php
 lib/Model/TrackedChangesEdFiDescriptorMappingKeyChange.php
@@ -2006,6 +2048,9 @@ lib/Model/TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociatio
 lib/Model/TrackedChangesEdFiStudentGradebookEntryDelete.php
 lib/Model/TrackedChangesEdFiStudentGradebookEntryKey.php
 lib/Model/TrackedChangesEdFiStudentGradebookEntryKeyChange.php
+lib/Model/TrackedChangesEdFiStudentHealthDelete.php
+lib/Model/TrackedChangesEdFiStudentHealthKey.php
+lib/Model/TrackedChangesEdFiStudentHealthKeyChange.php
 lib/Model/TrackedChangesEdFiStudentHomelessProgramAssociationDelete.php
 lib/Model/TrackedChangesEdFiStudentHomelessProgramAssociationKey.php
 lib/Model/TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange.php
@@ -2059,6 +2104,9 @@ lib/Model/TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociation
 lib/Model/TrackedChangesEdFiStudentTitleIPartAProgramAssociationDelete.php
 lib/Model/TrackedChangesEdFiStudentTitleIPartAProgramAssociationKey.php
 lib/Model/TrackedChangesEdFiStudentTitleIPartAProgramAssociationKeyChange.php
+lib/Model/TrackedChangesEdFiStudentTransportationDelete.php
+lib/Model/TrackedChangesEdFiStudentTransportationKey.php
+lib/Model/TrackedChangesEdFiStudentTransportationKeyChange.php
 lib/Model/TrackedChangesEdFiSurveyCourseAssociationDelete.php
 lib/Model/TrackedChangesEdFiSurveyCourseAssociationKey.php
 lib/Model/TrackedChangesEdFiSurveyCourseAssociationKeyChange.php
@@ -2145,3 +2193,27 @@ lib/Model/TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKey.php
 lib/Model/TrackedChangesTpdmSurveySectionResponsePersonTargetAssociationKeyChange.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/CrisisEventsApiTest.php
+test/Api/StudentHealthsApiTest.php
+test/Api/StudentTransportationsApiTest.php
+test/Model/EdFiCrisisEventReferenceTest.php
+test/Model/EdFiCrisisEventTest.php
+test/Model/EdFiStudentEducationOrganizationAssociationDisplacedStudentTest.php
+test/Model/EdFiStudentHealthAdditionalImmunizationDateTest.php
+test/Model/EdFiStudentHealthAdditionalImmunizationTest.php
+test/Model/EdFiStudentHealthRequiredImmunizationDateTest.php
+test/Model/EdFiStudentHealthRequiredImmunizationTest.php
+test/Model/EdFiStudentHealthTest.php
+test/Model/EdFiStudentTransportationStudentBusDetailsTest.php
+test/Model/EdFiStudentTransportationStudentBusDetailsTravelDayofWeekTest.php
+test/Model/EdFiStudentTransportationStudentBusDetailsTravelDirectionTest.php
+test/Model/EdFiStudentTransportationTest.php
+test/Model/TrackedChangesEdFiCrisisEventDeleteTest.php
+test/Model/TrackedChangesEdFiCrisisEventKeyChangeTest.php
+test/Model/TrackedChangesEdFiCrisisEventKeyTest.php
+test/Model/TrackedChangesEdFiStudentHealthDeleteTest.php
+test/Model/TrackedChangesEdFiStudentHealthKeyChangeTest.php
+test/Model/TrackedChangesEdFiStudentHealthKeyTest.php
+test/Model/TrackedChangesEdFiStudentTransportationDeleteTest.php
+test/Model/TrackedChangesEdFiStudentTransportationKeyChangeTest.php
+test/Model/TrackedChangesEdFiStudentTransportationKeyTest.php

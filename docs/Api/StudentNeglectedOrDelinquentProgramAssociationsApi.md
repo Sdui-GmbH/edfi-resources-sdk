@@ -1,6 +1,6 @@
 # Resources\StudentNeglectedOrDelinquentProgramAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getStudentNeglectedOrDelinquentProgramAssociations()`
 
 ```php
-getStudentNeglectedOrDelinquentProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot): \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]
+getStudentNeglectedOrDelinquentProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $id, $use_snapshot): \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -185,10 +185,11 @@ $student_unique_id = 'student_unique_id_example'; // string | A unique alphanume
 $neglected_or_delinquent_program_descriptor = 'neglected_or_delinquent_program_descriptor_example'; // string | The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA).
 $ela_progress_level_descriptor = 'ela_progress_level_descriptor_example'; // string | The progress measured from pre- to post- test for ELA.
 $mathematics_progress_level_descriptor = 'mathematics_progress_level_descriptor_example'; // string | The progress measured from pre- to post-test for Mathematics.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentNeglectedOrDelinquentProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot);
+    $result = $apiInstance->getStudentNeglectedOrDelinquentProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentNeglectedOrDelinquentProgramAssociationsApi->getStudentNeglectedOrDelinquentProgramAssociations: ', $e->getMessage(), PHP_EOL;
@@ -213,6 +214,7 @@ try {
 | **neglected_or_delinquent_program_descriptor** | **string**| The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). | [optional] |
 | **ela_progress_level_descriptor** | **string**| The progress measured from pre- to post- test for ELA. | [optional] |
 | **mathematics_progress_level_descriptor** | **string**| The progress measured from pre- to post-test for Mathematics. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

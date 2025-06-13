@@ -438,20 +438,12 @@ class EdFiLocalEducationAgency implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'name_of_institution', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['name_of_institution']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name_of_institution', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['operational_status_descriptor']) && (mb_strlen($this->container['operational_status_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'operational_status_descriptor', the character length must be smaller than or equal to 306.";
         }
 
         if (!is_null($this->container['short_name_of_institution']) && (mb_strlen($this->container['short_name_of_institution']) > 75)) {
             $invalidProperties[] = "invalid value for 'short_name_of_institution', the character length must be smaller than or equal to 75.";
-        }
-
-        if (!is_null($this->container['short_name_of_institution']) && (mb_strlen($this->container['short_name_of_institution']) < 1)) {
-            $invalidProperties[] = "invalid value for 'short_name_of_institution', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['web_site']) && (mb_strlen($this->container['web_site']) > 255)) {
@@ -544,7 +536,7 @@ class EdFiLocalEducationAgency implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets local_education_agency_id
      *
-     * @param int $local_education_agency_id The identifier assigned to a local education agency.
+     * @param int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication.
      *
      * @return self
      */
@@ -922,9 +914,6 @@ class EdFiLocalEducationAgency implements ModelInterface, ArrayAccess, \JsonSeri
         if ((mb_strlen($name_of_institution) > 75)) {
             throw new \InvalidArgumentException('invalid length for $name_of_institution when calling EdFiLocalEducationAgency., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($name_of_institution) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name_of_institution when calling EdFiLocalEducationAgency., must be bigger than or equal to 1.');
-        }
 
         $this->container['name_of_institution'] = $name_of_institution;
 
@@ -1000,9 +989,6 @@ class EdFiLocalEducationAgency implements ModelInterface, ArrayAccess, \JsonSeri
         }
         if (!is_null($short_name_of_institution) && (mb_strlen($short_name_of_institution) > 75)) {
             throw new \InvalidArgumentException('invalid length for $short_name_of_institution when calling EdFiLocalEducationAgency., must be smaller than or equal to 75.');
-        }
-        if (!is_null($short_name_of_institution) && (mb_strlen($short_name_of_institution) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $short_name_of_institution when calling EdFiLocalEducationAgency., must be bigger than or equal to 1.');
         }
 
         $this->container['short_name_of_institution'] = $short_name_of_institution;

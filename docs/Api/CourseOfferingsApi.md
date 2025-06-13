@@ -1,6 +1,6 @@
 # Resources\CourseOfferingsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -177,7 +177,7 @@ $min_change_version = 56; // int | Used in synchronization to set sequence minim
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
 $local_course_code = 'local_course_code_example'; // string | The local code assigned by the School that identifies the course offering provided for the instruction of students.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $school_year = 56; // int | The identifier for the school year.
 $session_name = 'session_name_example'; // string | The identifier for the calendar for the academic session.
 $course_code = 'course_code_example'; // string | A unique alphanumeric code assigned to a course.
@@ -205,7 +205,7 @@ try {
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
 | **local_course_code** | **string**| The local code assigned by the School that identifies the course offering provided for the instruction of students. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **school_year** | **int**| The identifier for the school year. | [optional] |
 | **session_name** | **string**| The identifier for the calendar for the academic session. | [optional] |
 | **course_code** | **string**| A unique alphanumeric code assigned to a course. | [optional] |

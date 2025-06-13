@@ -428,10 +428,6 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'intervention_identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['intervention_identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'intervention_identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['education_organization_reference'] === null) {
             $invalidProperties[] = "'education_organization_reference' can't be null";
         }
@@ -526,9 +522,6 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($intervention_identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $intervention_identification_code when calling EdFiIntervention., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($intervention_identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $intervention_identification_code when calling EdFiIntervention., must be bigger than or equal to 1.');
         }
 
         $this->container['intervention_identification_code'] = $intervention_identification_code;

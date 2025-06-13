@@ -1,6 +1,6 @@
 # Resources\StudentCTEProgramAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getStudentCTEProgramAssociations()`
 
 ```php
-getStudentCTEProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $use_snapshot): \Resources\Model\EdFiStudentCTEProgramAssociation[]
+getStudentCTEProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $id, $use_snapshot): \Resources\Model\EdFiStudentCTEProgramAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -185,10 +185,11 @@ $student_unique_id = 'student_unique_id_example'; // string | A unique alphanume
 $technical_skills_assessment_descriptor = 'technical_skills_assessment_descriptor_example'; // string | Results of technical skills assessment aligned with industry recognized standards.
 $non_traditional_gender_status = True; // bool | Indicator that student is from a gender group that comprises less than 25% of the individuals employed in an occupation or field of work.
 $private_cte_program = True; // bool | Indicator that student participated in career and technical education at private agencies or institutions that are reported by the state for purposes of the Elementary and Secondary Education Act (ESEA). Students in private institutions which do not receive Perkins funding are reported only in the state file.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentCTEProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $use_snapshot);
+    $result = $apiInstance->getStudentCTEProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentCTEProgramAssociationsApi->getStudentCTEProgramAssociations: ', $e->getMessage(), PHP_EOL;
@@ -213,6 +214,7 @@ try {
 | **technical_skills_assessment_descriptor** | **string**| Results of technical skills assessment aligned with industry recognized standards. | [optional] |
 | **non_traditional_gender_status** | **bool**| Indicator that student is from a gender group that comprises less than 25% of the individuals employed in an occupation or field of work. | [optional] |
 | **private_cte_program** | **bool**| Indicator that student participated in career and technical education at private agencies or institutions that are reported by the state for purposes of the Elementary and Secondary Education Act (ESEA). Students in private institutions which do not receive Perkins funding are reported only in the state file. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

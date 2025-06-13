@@ -302,7 +302,7 @@ class TrackedChangesEdFiLocalEducationAgencyKey implements ModelInterface, Array
     /**
      * Sets local_education_agency_id
      *
-     * @param int|null $local_education_agency_id The identifier assigned to a local education agency.
+     * @param int|null $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication.
      *
      * @return self
      */

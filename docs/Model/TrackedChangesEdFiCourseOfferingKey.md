@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **local_course_code** | **string** | The local code assigned by the School that identifies the course offering provided for the instruction of students. | [optional]
-**school_id** | **int** | The identifier assigned to a school. | [optional]
+**school_id** | **int** | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional]
 **school_year** | **int** | The identifier for the school year. | [optional]
 **session_name** | **string** | The identifier for the calendar for the academic session. | [optional]
 

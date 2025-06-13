@@ -295,10 +295,6 @@ class EdFiAssessmentReference implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['assessment_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['namespace'] === null) {
             $invalidProperties[] = "'namespace' can't be null";
         }
@@ -349,9 +345,6 @@ class EdFiAssessmentReference implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if ((mb_strlen($assessment_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling EdFiAssessmentReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($assessment_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling EdFiAssessmentReference., must be bigger than or equal to 1.');
         }
 
         $this->container['assessment_identifier'] = $assessment_identifier;

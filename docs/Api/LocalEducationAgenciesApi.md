@@ -1,6 +1,6 @@
 # Resources\LocalEducationAgenciesApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getLocalEducationAgencies()`
 
 ```php
-getLocalEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $use_snapshot): \Resources\Model\EdFiLocalEducationAgency[]
+getLocalEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $id, $use_snapshot): \Resources\Model\EdFiLocalEducationAgency[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -176,16 +176,17 @@ $limit = 25; // int | Indicates the maximum number of items that should be retur
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
-$local_education_agency_id = 56; // int | The identifier assigned to a local education agency.
-$education_service_center_id = 56; // int | The identifier assigned to an education service center.
-$parent_local_education_agency_id = 56; // int | The identifier assigned to a local education agency.
-$state_education_agency_id = 56; // int | The identifier assigned to a state education agency.
+$local_education_agency_id = 56; // int | The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication.
+$education_service_center_id = 56; // int | The identifier assigned to an education service center. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
+$parent_local_education_agency_id = 56; // int | The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication.
+$state_education_agency_id = 56; // int | The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $charter_status_descriptor = 'charter_status_descriptor_example'; // string | A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school.
 $local_education_agency_category_descriptor = 'local_education_agency_category_descriptor_example'; // string | The category of local education agency/district.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getLocalEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $use_snapshot);
+    $result = $apiInstance->getLocalEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocalEducationAgenciesApi->getLocalEducationAgencies: ', $e->getMessage(), PHP_EOL;
@@ -201,12 +202,13 @@ try {
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
-| **local_education_agency_id** | **int**| The identifier assigned to a local education agency. | [optional] |
-| **education_service_center_id** | **int**| The identifier assigned to an education service center. | [optional] |
-| **parent_local_education_agency_id** | **int**| The identifier assigned to a local education agency. | [optional] |
-| **state_education_agency_id** | **int**| The identifier assigned to a state education agency. | [optional] |
+| **local_education_agency_id** | **int**| The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. | [optional] |
+| **education_service_center_id** | **int**| The identifier assigned to an education service center. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
+| **parent_local_education_agency_id** | **int**| The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. | [optional] |
+| **state_education_agency_id** | **int**| The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **charter_status_descriptor** | **string**| A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. | [optional] |
 | **local_education_agency_category_descriptor** | **string**| The category of local education agency/district. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

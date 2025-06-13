@@ -783,6 +783,7 @@ class StudentSpecialEducationProgramAssociationsApi
      * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
      * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
      * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
@@ -790,9 +791,9 @@ class StudentSpecialEducationProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiStudentSpecialEducationProgramAssociation[]
      */
-    public function getStudentSpecialEducationProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
+    public function getStudentSpecialEducationProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
     {
-        list($response) = $this->getStudentSpecialEducationProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $use_snapshot, $contentType);
+        list($response) = $this->getStudentSpecialEducationProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -825,6 +826,7 @@ class StudentSpecialEducationProgramAssociationsApi
      * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
      * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
      * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
@@ -832,9 +834,9 @@ class StudentSpecialEducationProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiStudentSpecialEducationProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentSpecialEducationProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
+    public function getStudentSpecialEducationProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
     {
-        $request = $this->getStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $use_snapshot, $contentType);
+        $request = $this->getStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -974,15 +976,16 @@ class StudentSpecialEducationProgramAssociationsApi
      * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
      * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
      * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSpecialEducationProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
+    public function getStudentSpecialEducationProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
     {
-        return $this->getStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $use_snapshot, $contentType)
+        return $this->getStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1019,16 +1022,17 @@ class StudentSpecialEducationProgramAssociationsApi
      * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
      * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
      * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
+    public function getStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentSpecialEducationProgramAssociation[]';
-        $request = $this->getStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $use_snapshot, $contentType);
+        $request = $this->getStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1093,13 +1097,14 @@ class StudentSpecialEducationProgramAssociationsApi
      * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
      * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
      * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentSpecialEducationProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
+    public function getStudentSpecialEducationProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
     {
 
 
@@ -1149,6 +1154,7 @@ class StudentSpecialEducationProgramAssociationsApi
             throw new \InvalidArgumentException('invalid length for "$special_education_exit_explained" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociations, must be smaller than or equal to 1024.');
         }
         
+
 
 
 
@@ -1371,6 +1377,15 @@ class StudentSpecialEducationProgramAssociationsApi
             $special_education_hours_per_week,
             'specialEducationHoursPerWeek', // param base name
             'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

@@ -764,8 +764,9 @@ class EducationOrganizationNetworksApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $education_organization_network_id The identifier assigned to a network of education organizations. (optional)
+     * @param  int $education_organization_network_id The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $network_purpose_descriptor The purpose(s) of the network (e.g., shared services, collective procurement). (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationNetworks'] to see the possible values for this operation
      *
@@ -773,9 +774,9 @@ class EducationOrganizationNetworksApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiEducationOrganizationNetwork[]
      */
-    public function getEducationOrganizationNetworks($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_network_id = null, $network_purpose_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationNetworks'][0])
+    public function getEducationOrganizationNetworks($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_network_id = null, $network_purpose_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationNetworks'][0])
     {
-        list($response) = $this->getEducationOrganizationNetworksWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $use_snapshot, $contentType);
+        list($response) = $this->getEducationOrganizationNetworksWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -789,8 +790,9 @@ class EducationOrganizationNetworksApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $education_organization_network_id The identifier assigned to a network of education organizations. (optional)
+     * @param  int $education_organization_network_id The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $network_purpose_descriptor The purpose(s) of the network (e.g., shared services, collective procurement). (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationNetworks'] to see the possible values for this operation
      *
@@ -798,9 +800,9 @@ class EducationOrganizationNetworksApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiEducationOrganizationNetwork[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEducationOrganizationNetworksWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_network_id = null, $network_purpose_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationNetworks'][0])
+    public function getEducationOrganizationNetworksWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_network_id = null, $network_purpose_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationNetworks'][0])
     {
-        $request = $this->getEducationOrganizationNetworksRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $use_snapshot, $contentType);
+        $request = $this->getEducationOrganizationNetworksRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -921,17 +923,18 @@ class EducationOrganizationNetworksApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $education_organization_network_id The identifier assigned to a network of education organizations. (optional)
+     * @param  int $education_organization_network_id The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $network_purpose_descriptor The purpose(s) of the network (e.g., shared services, collective procurement). (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationNetworks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEducationOrganizationNetworksAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_network_id = null, $network_purpose_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationNetworks'][0])
+    public function getEducationOrganizationNetworksAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_network_id = null, $network_purpose_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationNetworks'][0])
     {
-        return $this->getEducationOrganizationNetworksAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $use_snapshot, $contentType)
+        return $this->getEducationOrganizationNetworksAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -949,18 +952,19 @@ class EducationOrganizationNetworksApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $education_organization_network_id The identifier assigned to a network of education organizations. (optional)
+     * @param  int $education_organization_network_id The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $network_purpose_descriptor The purpose(s) of the network (e.g., shared services, collective procurement). (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationNetworks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEducationOrganizationNetworksAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_network_id = null, $network_purpose_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationNetworks'][0])
+    public function getEducationOrganizationNetworksAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_network_id = null, $network_purpose_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationNetworks'][0])
     {
         $returnType = '\Resources\Model\EdFiEducationOrganizationNetwork[]';
-        $request = $this->getEducationOrganizationNetworksRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $use_snapshot, $contentType);
+        $request = $this->getEducationOrganizationNetworksRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1006,15 +1010,16 @@ class EducationOrganizationNetworksApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $education_organization_network_id The identifier assigned to a network of education organizations. (optional)
+     * @param  int $education_organization_network_id The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $network_purpose_descriptor The purpose(s) of the network (e.g., shared services, collective procurement). (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationOrganizationNetworks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEducationOrganizationNetworksRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_network_id = null, $network_purpose_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationNetworks'][0])
+    public function getEducationOrganizationNetworksRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_network_id = null, $network_purpose_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationOrganizationNetworks'][0])
     {
 
 
@@ -1033,6 +1038,7 @@ class EducationOrganizationNetworksApi
             throw new \InvalidArgumentException('invalid length for "$network_purpose_descriptor" when calling EducationOrganizationNetworksApi.getEducationOrganizationNetworks, must be smaller than or equal to 306.');
         }
         
+
 
 
         $resourcePath = '/ed-fi/educationOrganizationNetworks';
@@ -1100,6 +1106,15 @@ class EducationOrganizationNetworksApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $network_purpose_descriptor,
             'networkPurposeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

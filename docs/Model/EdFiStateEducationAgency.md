@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **categories** | [**\Resources\Model\EdFiEducationOrganizationCategory[]**](EdFiEducationOrganizationCategory.md) | An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state. |
-**state_education_agency_id** | **int** | The identifier assigned to a state education agency. |
+**state_education_agency_id** | **int** | The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. |
 **accountabilities** | [**\Resources\Model\EdFiStateEducationAgencyAccountability[]**](EdFiStateEducationAgencyAccountability.md) | An unordered collection of stateEducationAgencyAccountabilities. This entity maintains information about federal reporting and accountability for state education agencies. | [optional]
 **addresses** | [**\Resources\Model\EdFiEducationOrganizationAddress[]**](EdFiEducationOrganizationAddress.md) | An unordered collection of educationOrganizationAddresses. The set of elements that describes an address for the education entity, including the street address, city, state, ZIP code, and ZIP code + 4. | [optional]
 **federal_funds** | [**\Resources\Model\EdFiStateEducationAgencyFederalFunds[]**](EdFiStateEducationAgencyFederalFunds.md) | An unordered collection of stateEducationAgencyFederalFunds. Contains the information about the reception and use of federal funds for reporting purposes. | [optional]

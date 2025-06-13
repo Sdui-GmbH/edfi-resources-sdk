@@ -309,10 +309,6 @@ class EdFiStudentAssessmentScoreResult implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = "invalid value for 'result', the character length must be smaller than or equal to 35.";
         }
 
-        if ((mb_strlen($this->container['result']) < 1)) {
-            $invalidProperties[] = "invalid value for 'result', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -414,9 +410,6 @@ class EdFiStudentAssessmentScoreResult implements ModelInterface, ArrayAccess, \
         }
         if ((mb_strlen($result) > 35)) {
             throw new \InvalidArgumentException('invalid length for $result when calling EdFiStudentAssessmentScoreResult., must be smaller than or equal to 35.');
-        }
-        if ((mb_strlen($result) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $result when calling EdFiStudentAssessmentScoreResult., must be bigger than or equal to 1.');
         }
 
         $this->container['result'] = $result;

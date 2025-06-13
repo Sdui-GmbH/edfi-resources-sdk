@@ -1,6 +1,6 @@
 # Resources\StudentSchoolFoodServiceProgramAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getStudentSchoolFoodServiceProgramAssociations()`
 
 ```php
-getStudentSchoolFoodServiceProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $use_snapshot): \Resources\Model\EdFiStudentSchoolFoodServiceProgramAssociation[]
+getStudentSchoolFoodServiceProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $id, $use_snapshot): \Resources\Model\EdFiStudentSchoolFoodServiceProgramAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -183,10 +183,11 @@ $program_name = 'program_name_example'; // string | The formal name of the progr
 $program_type_descriptor = 'program_type_descriptor_example'; // string | The type of program.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
 $direct_certification = True; // bool | Indicates that the student's National School Lunch Program (NSLP) eligibility has been determined through direct certification.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentSchoolFoodServiceProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $use_snapshot);
+    $result = $apiInstance->getStudentSchoolFoodServiceProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentSchoolFoodServiceProgramAssociationsApi->getStudentSchoolFoodServiceProgramAssociations: ', $e->getMessage(), PHP_EOL;
@@ -209,6 +210,7 @@ try {
 | **program_type_descriptor** | **string**| The type of program. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
 | **direct_certification** | **bool**| Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

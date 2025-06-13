@@ -1,6 +1,6 @@
 # Resources\PostSecondaryInstitutionsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getPostSecondaryInstitutions()`
 
 ```php
-getPostSecondaryInstitutions($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $use_snapshot): \Resources\Model\EdFiPostSecondaryInstitution[]
+getPostSecondaryInstitutions($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $id, $use_snapshot): \Resources\Model\EdFiPostSecondaryInstitution[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -176,13 +176,14 @@ $limit = 25; // int | Indicates the maximum number of items that should be retur
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
-$post_secondary_institution_id = 56; // int | The ID of the post secondary institution.
+$post_secondary_institution_id = 56; // int | The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $administrative_funding_control_descriptor = 'administrative_funding_control_descriptor_example'; // string | A classification of whether a postsecondary institution is operated by publicly elected or appointed officials (public control) or by privately elected or appointed officials and derives its major source of funds from private sources (private control).
 $post_secondary_institution_level_descriptor = 'post_secondary_institution_level_descriptor_example'; // string | A classification of whether a post secondary institution's highest level of offering is a program of 4-years or higher (4 year), 2-but-less-than 4-years (2 year), or less than 2-years.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getPostSecondaryInstitutions($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $use_snapshot);
+    $result = $apiInstance->getPostSecondaryInstitutions($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostSecondaryInstitutionsApi->getPostSecondaryInstitutions: ', $e->getMessage(), PHP_EOL;
@@ -198,9 +199,10 @@ try {
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
-| **post_secondary_institution_id** | **int**| The ID of the post secondary institution. | [optional] |
+| **post_secondary_institution_id** | **int**| The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **administrative_funding_control_descriptor** | **string**| A classification of whether a postsecondary institution is operated by publicly elected or appointed officials (public control) or by privately elected or appointed officials and derives its major source of funds from private sources (private control). | [optional] |
 | **post_secondary_institution_level_descriptor** | **string**| A classification of whether a post secondary institution&#39;s highest level of offering is a program of 4-years or higher (4 year), 2-but-less-than 4-years (2 year), or less than 2-years. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

@@ -336,10 +336,6 @@ class TpdmRubricDimension implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'criterion_description', the character length must be smaller than or equal to 1024.";
         }
 
-        if ((mb_strlen($this->container['criterion_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'criterion_description', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['rubric_rating_level_descriptor']) && (mb_strlen($this->container['rubric_rating_level_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'rubric_rating_level_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -464,9 +460,6 @@ class TpdmRubricDimension implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ((mb_strlen($criterion_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $criterion_description when calling TpdmRubricDimension., must be smaller than or equal to 1024.');
-        }
-        if ((mb_strlen($criterion_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $criterion_description when calling TpdmRubricDimension., must be bigger than or equal to 1.');
         }
 
         $this->container['criterion_description'] = $criterion_description;

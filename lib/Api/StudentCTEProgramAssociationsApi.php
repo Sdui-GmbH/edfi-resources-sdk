@@ -773,6 +773,7 @@ class StudentCTEProgramAssociationsApi
      * @param  string $technical_skills_assessment_descriptor Results of technical skills assessment aligned with industry recognized standards. (optional)
      * @param  bool $non_traditional_gender_status Indicator that student is from a gender group that comprises less than 25% of the individuals employed in an occupation or field of work. (optional)
      * @param  bool $private_cte_program Indicator that student participated in career and technical education at private agencies or institutions that are reported by the state for purposes of the Elementary and Secondary Education Act (ESEA). Students in private institutions which do not receive Perkins funding are reported only in the state file. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentCTEProgramAssociations'] to see the possible values for this operation
      *
@@ -780,9 +781,9 @@ class StudentCTEProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiStudentCTEProgramAssociation[]
      */
-    public function getStudentCTEProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $technical_skills_assessment_descriptor = null, $non_traditional_gender_status = null, $private_cte_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentCTEProgramAssociations'][0])
+    public function getStudentCTEProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $technical_skills_assessment_descriptor = null, $non_traditional_gender_status = null, $private_cte_program = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentCTEProgramAssociations'][0])
     {
-        list($response) = $this->getStudentCTEProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $use_snapshot, $contentType);
+        list($response) = $this->getStudentCTEProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -805,6 +806,7 @@ class StudentCTEProgramAssociationsApi
      * @param  string $technical_skills_assessment_descriptor Results of technical skills assessment aligned with industry recognized standards. (optional)
      * @param  bool $non_traditional_gender_status Indicator that student is from a gender group that comprises less than 25% of the individuals employed in an occupation or field of work. (optional)
      * @param  bool $private_cte_program Indicator that student participated in career and technical education at private agencies or institutions that are reported by the state for purposes of the Elementary and Secondary Education Act (ESEA). Students in private institutions which do not receive Perkins funding are reported only in the state file. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentCTEProgramAssociations'] to see the possible values for this operation
      *
@@ -812,9 +814,9 @@ class StudentCTEProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiStudentCTEProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentCTEProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $technical_skills_assessment_descriptor = null, $non_traditional_gender_status = null, $private_cte_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentCTEProgramAssociations'][0])
+    public function getStudentCTEProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $technical_skills_assessment_descriptor = null, $non_traditional_gender_status = null, $private_cte_program = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentCTEProgramAssociations'][0])
     {
-        $request = $this->getStudentCTEProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $use_snapshot, $contentType);
+        $request = $this->getStudentCTEProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -944,15 +946,16 @@ class StudentCTEProgramAssociationsApi
      * @param  string $technical_skills_assessment_descriptor Results of technical skills assessment aligned with industry recognized standards. (optional)
      * @param  bool $non_traditional_gender_status Indicator that student is from a gender group that comprises less than 25% of the individuals employed in an occupation or field of work. (optional)
      * @param  bool $private_cte_program Indicator that student participated in career and technical education at private agencies or institutions that are reported by the state for purposes of the Elementary and Secondary Education Act (ESEA). Students in private institutions which do not receive Perkins funding are reported only in the state file. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentCTEProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentCTEProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $technical_skills_assessment_descriptor = null, $non_traditional_gender_status = null, $private_cte_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentCTEProgramAssociations'][0])
+    public function getStudentCTEProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $technical_skills_assessment_descriptor = null, $non_traditional_gender_status = null, $private_cte_program = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentCTEProgramAssociations'][0])
     {
-        return $this->getStudentCTEProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $use_snapshot, $contentType)
+        return $this->getStudentCTEProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -979,16 +982,17 @@ class StudentCTEProgramAssociationsApi
      * @param  string $technical_skills_assessment_descriptor Results of technical skills assessment aligned with industry recognized standards. (optional)
      * @param  bool $non_traditional_gender_status Indicator that student is from a gender group that comprises less than 25% of the individuals employed in an occupation or field of work. (optional)
      * @param  bool $private_cte_program Indicator that student participated in career and technical education at private agencies or institutions that are reported by the state for purposes of the Elementary and Secondary Education Act (ESEA). Students in private institutions which do not receive Perkins funding are reported only in the state file. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentCTEProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentCTEProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $technical_skills_assessment_descriptor = null, $non_traditional_gender_status = null, $private_cte_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentCTEProgramAssociations'][0])
+    public function getStudentCTEProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $technical_skills_assessment_descriptor = null, $non_traditional_gender_status = null, $private_cte_program = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentCTEProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentCTEProgramAssociation[]';
-        $request = $this->getStudentCTEProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $use_snapshot, $contentType);
+        $request = $this->getStudentCTEProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $technical_skills_assessment_descriptor, $non_traditional_gender_status, $private_cte_program, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1043,13 +1047,14 @@ class StudentCTEProgramAssociationsApi
      * @param  string $technical_skills_assessment_descriptor Results of technical skills assessment aligned with industry recognized standards. (optional)
      * @param  bool $non_traditional_gender_status Indicator that student is from a gender group that comprises less than 25% of the individuals employed in an occupation or field of work. (optional)
      * @param  bool $private_cte_program Indicator that student participated in career and technical education at private agencies or institutions that are reported by the state for purposes of the Elementary and Secondary Education Act (ESEA). Students in private institutions which do not receive Perkins funding are reported only in the state file. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentCTEProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentCTEProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $technical_skills_assessment_descriptor = null, $non_traditional_gender_status = null, $private_cte_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentCTEProgramAssociations'][0])
+    public function getStudentCTEProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $technical_skills_assessment_descriptor = null, $non_traditional_gender_status = null, $private_cte_program = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentCTEProgramAssociations'][0])
     {
 
 
@@ -1082,6 +1087,7 @@ class StudentCTEProgramAssociationsApi
             throw new \InvalidArgumentException('invalid length for "$technical_skills_assessment_descriptor" when calling StudentCTEProgramAssociationsApi.getStudentCTEProgramAssociations, must be smaller than or equal to 306.');
         }
         
+
 
 
 
@@ -1215,6 +1221,15 @@ class StudentCTEProgramAssociationsApi
             $private_cte_program,
             'privateCTEProgram', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

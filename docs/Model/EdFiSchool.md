@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 **education_organization_categories** | [**\Resources\Model\EdFiEducationOrganizationCategory[]**](EdFiEducationOrganizationCategory.md) | An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state. |
 **grade_levels** | [**\Resources\Model\EdFiSchoolGradeLevel[]**](EdFiSchoolGradeLevel.md) | An unordered collection of schoolGradeLevels. The grade levels served at the school. |
-**school_id** | **int** | The identifier assigned to a school. |
+**school_id** | **int** | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. |
 **charter_approval_school_year_type_reference** | [**\Resources\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  | [optional]
 **local_education_agency_reference** | [**\Resources\Model\EdFiLocalEducationAgencyReference**](EdFiLocalEducationAgencyReference.md) |  | [optional]
 **addresses** | [**\Resources\Model\EdFiEducationOrganizationAddress[]**](EdFiEducationOrganizationAddress.md) | An unordered collection of educationOrganizationAddresses. The set of elements that describes an address for the education entity, including the street address, city, state, ZIP code, and ZIP code + 4. | [optional]

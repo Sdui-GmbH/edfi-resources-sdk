@@ -365,10 +365,6 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['assessment_reference'] === null) {
             $invalidProperties[] = "'assessment_reference' can't be null";
         }
@@ -392,16 +388,16 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'item_text', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['item_text']) && (mb_strlen($this->container['item_text']) < 1)) {
-            $invalidProperties[] = "invalid value for 'item_text', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['max_raw_score']) && ($this->container['max_raw_score'] > 9999999999.99999)) {
+            $invalidProperties[] = "invalid value for 'max_raw_score', must be smaller than or equal to 9999999999.99999.";
+        }
+
+        if (!is_null($this->container['max_raw_score']) && ($this->container['max_raw_score'] < -9999999999.99999)) {
+            $invalidProperties[] = "invalid value for 'max_raw_score', must be bigger than or equal to -9999999999.99999.";
         }
 
         if (!is_null($this->container['nomenclature']) && (mb_strlen($this->container['nomenclature']) > 100)) {
             $invalidProperties[] = "invalid value for 'nomenclature', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['nomenclature']) && (mb_strlen($this->container['nomenclature']) < 1)) {
-            $invalidProperties[] = "invalid value for 'nomenclature', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -470,9 +466,6 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiAssessmentItem., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiAssessmentItem., must be bigger than or equal to 1.');
         }
 
         $this->container['identification_code'] = $identification_code;
@@ -656,9 +649,6 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
         if (!is_null($item_text) && (mb_strlen($item_text) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $item_text when calling EdFiAssessmentItem., must be smaller than or equal to 1024.');
         }
-        if (!is_null($item_text) && (mb_strlen($item_text) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $item_text when calling EdFiAssessmentItem., must be bigger than or equal to 1.');
-        }
 
         $this->container['item_text'] = $item_text;
 
@@ -721,6 +711,14 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($max_raw_score) && ($max_raw_score > 9999999999.99999)) {
+            throw new \InvalidArgumentException('invalid value for $max_raw_score when calling EdFiAssessmentItem., must be smaller than or equal to 9999999999.99999.');
+        }
+        if (!is_null($max_raw_score) && ($max_raw_score < -9999999999.99999)) {
+            throw new \InvalidArgumentException('invalid value for $max_raw_score when calling EdFiAssessmentItem., must be bigger than or equal to -9999999999.99999.');
+        }
+
         $this->container['max_raw_score'] = $max_raw_score;
 
         return $this;
@@ -757,9 +755,6 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if (!is_null($nomenclature) && (mb_strlen($nomenclature) > 100)) {
             throw new \InvalidArgumentException('invalid length for $nomenclature when calling EdFiAssessmentItem., must be smaller than or equal to 100.');
-        }
-        if (!is_null($nomenclature) && (mb_strlen($nomenclature) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $nomenclature when calling EdFiAssessmentItem., must be bigger than or equal to 1.');
         }
 
         $this->container['nomenclature'] = $nomenclature;

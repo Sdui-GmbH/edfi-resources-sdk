@@ -312,7 +312,7 @@ class EdFiCommunityOrganizationReference implements ModelInterface, ArrayAccess,
     /**
      * Sets community_organization_id
      *
-     * @param int $community_organization_id The identifier assigned to a community organization.
+     * @param int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

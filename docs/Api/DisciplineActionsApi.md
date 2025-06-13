@@ -1,6 +1,6 @@
 # Resources\DisciplineActionsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -179,8 +179,8 @@ $total_count = false; // bool | Indicates if the total number of items available
 $discipline_action_identifier = 'discipline_action_identifier_example'; // string | Identifier assigned by the education organization to the discipline action.
 $discipline_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date of the discipline action.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
-$responsibility_school_id = 56; // int | The identifier assigned to a school.
-$assignment_school_id = 56; // int | The identifier assigned to a school.
+$responsibility_school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
+$assignment_school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $discipline_action_length_difference_reason_descriptor = 'discipline_action_length_difference_reason_descriptor_example'; // string | Indicates the reason for the difference, if any, between the official and actual lengths of a student's disciplinary assignment.
 $actual_discipline_action_length = 3.4; // float | Indicates the actual length in school days of a student's disciplinary assignment.
 $discipline_action_length = 3.4; // float | The length of time in school days for the discipline action (e.g. removal, detention), if applicable.
@@ -209,8 +209,8 @@ try {
 | **discipline_action_identifier** | **string**| Identifier assigned by the education organization to the discipline action. | [optional] |
 | **discipline_date** | **\DateTime**| The date of the discipline action. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
-| **responsibility_school_id** | **int**| The identifier assigned to a school. | [optional] |
-| **assignment_school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **responsibility_school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
+| **assignment_school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **discipline_action_length_difference_reason_descriptor** | **string**| Indicates the reason for the difference, if any, between the official and actual lengths of a student&#39;s disciplinary assignment. | [optional] |
 | **actual_discipline_action_length** | **float**| Indicates the actual length in school days of a student&#39;s disciplinary assignment. | [optional] |
 | **discipline_action_length** | **float**| The length of time in school days for the discipline action (e.g. removal, detention), if applicable. | [optional] |

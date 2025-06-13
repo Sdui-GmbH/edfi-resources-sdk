@@ -285,10 +285,6 @@ class TrackedChangesEdFiDisciplineIncidentKey implements ModelInterface, ArrayAc
             $invalidProperties[] = "invalid value for 'incident_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if (!is_null($this->container['incident_identifier']) && (mb_strlen($this->container['incident_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'incident_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -329,9 +325,6 @@ class TrackedChangesEdFiDisciplineIncidentKey implements ModelInterface, ArrayAc
         if ((mb_strlen($incident_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $incident_identifier when calling TrackedChangesEdFiDisciplineIncidentKey., must be smaller than or equal to 36.');
         }
-        if ((mb_strlen($incident_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $incident_identifier when calling TrackedChangesEdFiDisciplineIncidentKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['incident_identifier'] = $incident_identifier;
 
@@ -351,7 +344,7 @@ class TrackedChangesEdFiDisciplineIncidentKey implements ModelInterface, ArrayAc
     /**
      * Sets school_id
      *
-     * @param int|null $school_id The identifier assigned to a school.
+     * @param int|null $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

@@ -361,10 +361,6 @@ class EdFiStudentContactAssociation implements ModelInterface, ArrayAccess, \Jso
             $invalidProperties[] = "invalid value for 'contact_restrictions', the character length must be smaller than or equal to 250.";
         }
 
-        if (!is_null($this->container['contact_restrictions']) && (mb_strlen($this->container['contact_restrictions']) < 1)) {
-            $invalidProperties[] = "invalid value for 'contact_restrictions', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['relation_descriptor']) && (mb_strlen($this->container['relation_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'relation_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -530,9 +526,6 @@ class EdFiStudentContactAssociation implements ModelInterface, ArrayAccess, \Jso
         }
         if (!is_null($contact_restrictions) && (mb_strlen($contact_restrictions) > 250)) {
             throw new \InvalidArgumentException('invalid length for $contact_restrictions when calling EdFiStudentContactAssociation., must be smaller than or equal to 250.');
-        }
-        if (!is_null($contact_restrictions) && (mb_strlen($contact_restrictions) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $contact_restrictions when calling EdFiStudentContactAssociation., must be bigger than or equal to 1.');
         }
 
         $this->container['contact_restrictions'] = $contact_restrictions;

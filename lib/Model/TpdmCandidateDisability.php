@@ -317,10 +317,6 @@ class TpdmCandidateDisability implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'disability_diagnosis', the character length must be smaller than or equal to 80.";
         }
 
-        if (!is_null($this->container['disability_diagnosis']) && (mb_strlen($this->container['disability_diagnosis']) < 1)) {
-            $invalidProperties[] = "invalid value for 'disability_diagnosis', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -436,9 +432,6 @@ class TpdmCandidateDisability implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if (!is_null($disability_diagnosis) && (mb_strlen($disability_diagnosis) > 80)) {
             throw new \InvalidArgumentException('invalid length for $disability_diagnosis when calling TpdmCandidateDisability., must be smaller than or equal to 80.');
-        }
-        if (!is_null($disability_diagnosis) && (mb_strlen($disability_diagnosis) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $disability_diagnosis when calling TpdmCandidateDisability., must be bigger than or equal to 1.');
         }
 
         $this->container['disability_diagnosis'] = $disability_diagnosis;

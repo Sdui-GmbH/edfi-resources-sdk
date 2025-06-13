@@ -378,9 +378,21 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
         if ($this->container['graduation_school_year_type_reference'] === null) {
             $invalidProperties[] = "'graduation_school_year_type_reference' can't be null";
         }
+        if (!is_null($this->container['total_required_credit_conversion']) && ($this->container['total_required_credit_conversion'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'total_required_credit_conversion', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['total_required_credit_conversion']) && ($this->container['total_required_credit_conversion'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'total_required_credit_conversion', must be bigger than or equal to -9999999.99.";
+        }
+
         if ($this->container['total_required_credits'] === null) {
             $invalidProperties[] = "'total_required_credits' can't be null";
         }
+        if (($this->container['total_required_credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'total_required_credits', must be smaller than or equal to 999999.999.";
+        }
+
         if (($this->container['total_required_credits'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'total_required_credits', must be bigger than or equal to 0.0.";
         }
@@ -687,6 +699,14 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($total_required_credit_conversion) && ($total_required_credit_conversion > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $total_required_credit_conversion when calling EdFiGraduationPlan., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($total_required_credit_conversion) && ($total_required_credit_conversion < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $total_required_credit_conversion when calling EdFiGraduationPlan., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['total_required_credit_conversion'] = $total_required_credit_conversion;
 
         return $this;
@@ -715,6 +735,9 @@ class EdFiGraduationPlan implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable total_required_credits cannot be null');
         }
 
+        if (($total_required_credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $total_required_credits when calling EdFiGraduationPlan., must be smaller than or equal to 999999.999.');
+        }
         if (($total_required_credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $total_required_credits when calling EdFiGraduationPlan., must be bigger than or equal to 0.0.');
         }

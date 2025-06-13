@@ -1,6 +1,6 @@
 # Resources\StudentTitleIPartAProgramAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getStudentTitleIPartAProgramAssociations()`
 
 ```php
-getStudentTitleIPartAProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $use_snapshot): \Resources\Model\EdFiStudentTitleIPartAProgramAssociation[]
+getStudentTitleIPartAProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $id, $use_snapshot): \Resources\Model\EdFiStudentTitleIPartAProgramAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -183,10 +183,11 @@ $program_name = 'program_name_example'; // string | The formal name of the progr
 $program_type_descriptor = 'program_type_descriptor_example'; // string | The type of program.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
 $title_i_part_a_participant_descriptor = 'title_i_part_a_participant_descriptor_example'; // string | An indication of the type of Title I program, if any, in which the student is participating and by which the student is served.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentTitleIPartAProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $use_snapshot);
+    $result = $apiInstance->getStudentTitleIPartAProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentTitleIPartAProgramAssociationsApi->getStudentTitleIPartAProgramAssociations: ', $e->getMessage(), PHP_EOL;
@@ -209,6 +210,7 @@ try {
 | **program_type_descriptor** | **string**| The type of program. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
 | **title_i_part_a_participant_descriptor** | **string**| An indication of the type of Title I program, if any, in which the student is participating and by which the student is served. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

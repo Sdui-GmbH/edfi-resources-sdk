@@ -764,13 +764,14 @@ class CommunityProvidersApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_provider_id The identifier assigned to a community provider. (optional)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $provider_category_descriptor Indicates the category of the provider. (optional)
      * @param  string $provider_profitability_descriptor Indicates the profitability status of the provider. (optional)
      * @param  string $provider_status_descriptor Indicates the status of the provider. (optional)
      * @param  bool $license_exempt_indicator An indication of whether the provider is exempt from having a license. (optional)
      * @param  bool $school_indicator An indication of whether the community provider is a school. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviders'] to see the possible values for this operation
      *
@@ -778,9 +779,9 @@ class CommunityProvidersApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiCommunityProvider[]
      */
-    public function getCommunityProviders($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
+    public function getCommunityProviders($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
     {
-        list($response) = $this->getCommunityProvidersWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $use_snapshot, $contentType);
+        list($response) = $this->getCommunityProvidersWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -794,13 +795,14 @@ class CommunityProvidersApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_provider_id The identifier assigned to a community provider. (optional)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $provider_category_descriptor Indicates the category of the provider. (optional)
      * @param  string $provider_profitability_descriptor Indicates the profitability status of the provider. (optional)
      * @param  string $provider_status_descriptor Indicates the status of the provider. (optional)
      * @param  bool $license_exempt_indicator An indication of whether the provider is exempt from having a license. (optional)
      * @param  bool $school_indicator An indication of whether the community provider is a school. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviders'] to see the possible values for this operation
      *
@@ -808,9 +810,9 @@ class CommunityProvidersApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiCommunityProvider[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCommunityProvidersWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
+    public function getCommunityProvidersWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
     {
-        $request = $this->getCommunityProvidersRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $use_snapshot, $contentType);
+        $request = $this->getCommunityProvidersRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -931,22 +933,23 @@ class CommunityProvidersApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_provider_id The identifier assigned to a community provider. (optional)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $provider_category_descriptor Indicates the category of the provider. (optional)
      * @param  string $provider_profitability_descriptor Indicates the profitability status of the provider. (optional)
      * @param  string $provider_status_descriptor Indicates the status of the provider. (optional)
      * @param  bool $license_exempt_indicator An indication of whether the provider is exempt from having a license. (optional)
      * @param  bool $school_indicator An indication of whether the community provider is a school. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommunityProvidersAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
+    public function getCommunityProvidersAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
     {
-        return $this->getCommunityProvidersAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $use_snapshot, $contentType)
+        return $this->getCommunityProvidersAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -964,23 +967,24 @@ class CommunityProvidersApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_provider_id The identifier assigned to a community provider. (optional)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $provider_category_descriptor Indicates the category of the provider. (optional)
      * @param  string $provider_profitability_descriptor Indicates the profitability status of the provider. (optional)
      * @param  string $provider_status_descriptor Indicates the status of the provider. (optional)
      * @param  bool $license_exempt_indicator An indication of whether the provider is exempt from having a license. (optional)
      * @param  bool $school_indicator An indication of whether the community provider is a school. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommunityProvidersAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
+    public function getCommunityProvidersAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
     {
         $returnType = '\Resources\Model\EdFiCommunityProvider[]';
-        $request = $this->getCommunityProvidersRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $use_snapshot, $contentType);
+        $request = $this->getCommunityProvidersRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1026,20 +1030,21 @@ class CommunityProvidersApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_provider_id The identifier assigned to a community provider. (optional)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $provider_category_descriptor Indicates the category of the provider. (optional)
      * @param  string $provider_profitability_descriptor Indicates the profitability status of the provider. (optional)
      * @param  string $provider_status_descriptor Indicates the status of the provider. (optional)
      * @param  bool $license_exempt_indicator An indication of whether the provider is exempt from having a license. (optional)
      * @param  bool $school_indicator An indication of whether the community provider is a school. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviders'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCommunityProvidersRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
+    public function getCommunityProvidersRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_provider_id = null, $community_organization_id = null, $provider_category_descriptor = null, $provider_profitability_descriptor = null, $provider_status_descriptor = null, $license_exempt_indicator = null, $school_indicator = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviders'][0])
     {
 
 
@@ -1067,6 +1072,7 @@ class CommunityProvidersApi
             throw new \InvalidArgumentException('invalid length for "$provider_status_descriptor" when calling CommunityProvidersApi.getCommunityProviders, must be smaller than or equal to 306.');
         }
         
+
 
 
 
@@ -1182,6 +1188,15 @@ class CommunityProvidersApi
             $school_indicator,
             'schoolIndicator', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

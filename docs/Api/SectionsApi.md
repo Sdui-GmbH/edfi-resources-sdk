@@ -1,6 +1,6 @@
 # Resources\SectionsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -178,11 +178,11 @@ $max_change_version = 56; // int | Used in synchronization to set sequence maxim
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
 $section_identifier = 'section_identifier_example'; // string | The local identifier assigned to a section.
 $local_course_code = 'local_course_code_example'; // string | The local code assigned by the School that identifies the course offering provided for the instruction of students.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $school_year = 56; // int | The identifier for the school year.
 $session_name = 'session_name_example'; // string | The identifier for the calendar for the academic session.
 $location_classroom_identification_code = 'location_classroom_identification_code_example'; // string | A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity.
-$location_school_id = 56; // int | The identifier assigned to a school.
+$location_school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $available_credit_type_descriptor = 'available_credit_type_descriptor_example'; // string | The type of credits or units of value awarded for the completion of a course.
 $educational_environment_descriptor = 'educational_environment_descriptor_example'; // string | The setting in which a student receives education and related services.
 $instruction_language_descriptor = 'instruction_language_descriptor_example'; // string | The primary language of instruction. If omitted, English is assumed.
@@ -216,11 +216,11 @@ try {
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
 | **section_identifier** | **string**| The local identifier assigned to a section. | [optional] |
 | **local_course_code** | **string**| The local code assigned by the School that identifies the course offering provided for the instruction of students. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **school_year** | **int**| The identifier for the school year. | [optional] |
 | **session_name** | **string**| The identifier for the calendar for the academic session. | [optional] |
 | **location_classroom_identification_code** | **string**| A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. | [optional] |
-| **location_school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **location_school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **available_credit_type_descriptor** | **string**| The type of credits or units of value awarded for the completion of a course. | [optional] |
 | **educational_environment_descriptor** | **string**| The setting in which a student receives education and related services. | [optional] |
 | **instruction_language_descriptor** | **string**| The primary language of instruction. If omitted, English is assumed. | [optional] |

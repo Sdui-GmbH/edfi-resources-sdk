@@ -330,10 +330,6 @@ class EdFiCalendar implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'calendar_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['calendar_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'calendar_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['school_reference'] === null) {
             $invalidProperties[] = "'school_reference' can't be null";
         }
@@ -413,9 +409,6 @@ class EdFiCalendar implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($calendar_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $calendar_code when calling EdFiCalendar., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($calendar_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $calendar_code when calling EdFiCalendar., must be bigger than or equal to 1.');
         }
 
         $this->container['calendar_code'] = $calendar_code;

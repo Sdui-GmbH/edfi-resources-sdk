@@ -435,13 +435,21 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'section_identifier', the character length must be smaller than or equal to 255.";
         }
 
-        if ((mb_strlen($this->container['section_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'section_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['course_offering_reference'] === null) {
             $invalidProperties[] = "'course_offering_reference' can't be null";
         }
+        if (!is_null($this->container['available_credit_conversion']) && ($this->container['available_credit_conversion'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'available_credit_conversion', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['available_credit_conversion']) && ($this->container['available_credit_conversion'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'available_credit_conversion', must be bigger than or equal to -9999999.99.";
+        }
+
+        if (!is_null($this->container['available_credits']) && ($this->container['available_credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'available_credits', must be smaller than or equal to 999999.999.";
+        }
+
         if (!is_null($this->container['available_credits']) && ($this->container['available_credits'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'available_credits', must be bigger than or equal to 0.0.";
         }
@@ -468,10 +476,6 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (!is_null($this->container['section_name']) && (mb_strlen($this->container['section_name']) > 100)) {
             $invalidProperties[] = "invalid value for 'section_name', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['section_name']) && (mb_strlen($this->container['section_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'section_name', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['section_type_descriptor']) && (mb_strlen($this->container['section_type_descriptor']) > 306)) {
@@ -552,9 +556,6 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($section_identifier) > 255)) {
             throw new \InvalidArgumentException('invalid length for $section_identifier when calling EdFiSection., must be smaller than or equal to 255.');
-        }
-        if ((mb_strlen($section_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $section_identifier when calling EdFiSection., must be bigger than or equal to 1.');
         }
 
         $this->container['section_identifier'] = $section_identifier;
@@ -672,6 +673,14 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($available_credit_conversion) && ($available_credit_conversion > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $available_credit_conversion when calling EdFiSection., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($available_credit_conversion) && ($available_credit_conversion < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $available_credit_conversion when calling EdFiSection., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['available_credit_conversion'] = $available_credit_conversion;
 
         return $this;
@@ -707,6 +716,9 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
 
+        if (!is_null($available_credits) && ($available_credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $available_credits when calling EdFiSection., must be smaller than or equal to 999999.999.');
+        }
         if (!is_null($available_credits) && ($available_credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $available_credits when calling EdFiSection., must be bigger than or equal to 0.0.');
         }
@@ -1106,9 +1118,6 @@ class EdFiSection implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($section_name) && (mb_strlen($section_name) > 100)) {
             throw new \InvalidArgumentException('invalid length for $section_name when calling EdFiSection., must be smaller than or equal to 100.');
-        }
-        if (!is_null($section_name) && (mb_strlen($section_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $section_name when calling EdFiSection., must be bigger than or equal to 1.');
         }
 
         $this->container['section_name'] = $section_name;

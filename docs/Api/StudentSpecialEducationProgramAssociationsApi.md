@@ -1,6 +1,6 @@
 # Resources\StudentSpecialEducationProgramAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getStudentSpecialEducationProgramAssociations()`
 
 ```php
-getStudentSpecialEducationProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $use_snapshot): \Resources\Model\EdFiStudentSpecialEducationProgramAssociation[]
+getStudentSpecialEducationProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $id, $use_snapshot): \Resources\Model\EdFiStudentSpecialEducationProgramAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -195,10 +195,11 @@ $school_hours_per_week = 3.4; // float | Indicate the total number of hours of i
 $special_education_exit_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The  month, day and year on which a person stops receiving special education services.
 $special_education_exit_explained = 'special_education_exit_explained_example'; // string | Explanation on why a person stops receiving special education services.
 $special_education_hours_per_week = 3.4; // float | The number of hours per week for special education instruction and therapy.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentSpecialEducationProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $use_snapshot);
+    $result = $apiInstance->getStudentSpecialEducationProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentSpecialEducationProgramAssociationsApi->getStudentSpecialEducationProgramAssociations: ', $e->getMessage(), PHP_EOL;
@@ -233,6 +234,7 @@ try {
 | **special_education_exit_date** | **\DateTime**| The  month, day and year on which a person stops receiving special education services. | [optional] |
 | **special_education_exit_explained** | **string**| Explanation on why a person stops receiving special education services. | [optional] |
 | **special_education_hours_per_week** | **float**| The number of hours per week for special education instruction and therapy. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

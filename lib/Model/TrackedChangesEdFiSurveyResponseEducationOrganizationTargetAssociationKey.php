@@ -307,16 +307,8 @@ class TrackedChangesEdFiSurveyResponseEducationOrganizationTargetAssociationKey 
             $invalidProperties[] = "invalid value for 'survey_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['survey_identifier']) && (mb_strlen($this->container['survey_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'survey_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['survey_response_identifier']) && (mb_strlen($this->container['survey_response_identifier']) > 60)) {
             $invalidProperties[] = "invalid value for 'survey_response_identifier', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['survey_response_identifier']) && (mb_strlen($this->container['survey_response_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'survey_response_identifier', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -420,9 +412,6 @@ class TrackedChangesEdFiSurveyResponseEducationOrganizationTargetAssociationKey 
         if ((mb_strlen($survey_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $survey_identifier when calling TrackedChangesEdFiSurveyResponseEducationOrganizationTargetAssociationKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($survey_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $survey_identifier when calling TrackedChangesEdFiSurveyResponseEducationOrganizationTargetAssociationKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['survey_identifier'] = $survey_identifier;
 
@@ -453,9 +442,6 @@ class TrackedChangesEdFiSurveyResponseEducationOrganizationTargetAssociationKey 
         }
         if ((mb_strlen($survey_response_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $survey_response_identifier when calling TrackedChangesEdFiSurveyResponseEducationOrganizationTargetAssociationKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($survey_response_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $survey_response_identifier when calling TrackedChangesEdFiSurveyResponseEducationOrganizationTargetAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['survey_response_identifier'] = $survey_response_identifier;

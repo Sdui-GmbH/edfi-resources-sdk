@@ -344,10 +344,6 @@ class EdFiStudentCompetencyObjectiveReference implements ModelInterface, ArrayAc
             $invalidProperties[] = "invalid value for 'grading_period_name', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['grading_period_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'grading_period_name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['grading_period_school_id'] === null) {
             $invalidProperties[] = "'grading_period_school_id' can't be null";
         }
@@ -359,10 +355,6 @@ class EdFiStudentCompetencyObjectiveReference implements ModelInterface, ArrayAc
         }
         if ((mb_strlen($this->container['objective']) > 60)) {
             $invalidProperties[] = "invalid value for 'objective', the character length must be smaller than or equal to 60.";
-        }
-
-        if ((mb_strlen($this->container['objective']) < 1)) {
-            $invalidProperties[] = "invalid value for 'objective', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['objective_education_organization_id'] === null) {
@@ -380,10 +372,6 @@ class EdFiStudentCompetencyObjectiveReference implements ModelInterface, ArrayAc
         }
         if ((mb_strlen($this->container['student_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if ((mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -457,9 +445,6 @@ class EdFiStudentCompetencyObjectiveReference implements ModelInterface, ArrayAc
         if ((mb_strlen($grading_period_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $grading_period_name when calling EdFiStudentCompetencyObjectiveReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($grading_period_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $grading_period_name when calling EdFiStudentCompetencyObjectiveReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['grading_period_name'] = $grading_period_name;
 
@@ -479,7 +464,7 @@ class EdFiStudentCompetencyObjectiveReference implements ModelInterface, ArrayAc
     /**
      * Sets grading_period_school_id
      *
-     * @param int $grading_period_school_id The identifier assigned to a school.
+     * @param int $grading_period_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -544,9 +529,6 @@ class EdFiStudentCompetencyObjectiveReference implements ModelInterface, ArrayAc
         }
         if ((mb_strlen($objective) > 60)) {
             throw new \InvalidArgumentException('invalid length for $objective when calling EdFiStudentCompetencyObjectiveReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($objective) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $objective when calling EdFiStudentCompetencyObjectiveReference., must be bigger than or equal to 1.');
         }
 
         $this->container['objective'] = $objective;
@@ -636,9 +618,6 @@ class EdFiStudentCompetencyObjectiveReference implements ModelInterface, ArrayAc
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling EdFiStudentCompetencyObjectiveReference., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling EdFiStudentCompetencyObjectiveReference., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

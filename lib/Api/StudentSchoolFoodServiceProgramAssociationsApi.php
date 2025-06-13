@@ -771,6 +771,7 @@ class StudentSchoolFoodServiceProgramAssociationsApi
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  bool $direct_certification Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'] to see the possible values for this operation
      *
@@ -778,9 +779,9 @@ class StudentSchoolFoodServiceProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiStudentSchoolFoodServiceProgramAssociation[]
      */
-    public function getStudentSchoolFoodServiceProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $direct_certification = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'][0])
+    public function getStudentSchoolFoodServiceProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $direct_certification = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'][0])
     {
-        list($response) = $this->getStudentSchoolFoodServiceProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $use_snapshot, $contentType);
+        list($response) = $this->getStudentSchoolFoodServiceProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -801,6 +802,7 @@ class StudentSchoolFoodServiceProgramAssociationsApi
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  bool $direct_certification Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'] to see the possible values for this operation
      *
@@ -808,9 +810,9 @@ class StudentSchoolFoodServiceProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiStudentSchoolFoodServiceProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentSchoolFoodServiceProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $direct_certification = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'][0])
+    public function getStudentSchoolFoodServiceProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $direct_certification = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'][0])
     {
-        $request = $this->getStudentSchoolFoodServiceProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $use_snapshot, $contentType);
+        $request = $this->getStudentSchoolFoodServiceProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -938,15 +940,16 @@ class StudentSchoolFoodServiceProgramAssociationsApi
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  bool $direct_certification Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSchoolFoodServiceProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $direct_certification = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'][0])
+    public function getStudentSchoolFoodServiceProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $direct_certification = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'][0])
     {
-        return $this->getStudentSchoolFoodServiceProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $use_snapshot, $contentType)
+        return $this->getStudentSchoolFoodServiceProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -971,16 +974,17 @@ class StudentSchoolFoodServiceProgramAssociationsApi
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  bool $direct_certification Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSchoolFoodServiceProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $direct_certification = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'][0])
+    public function getStudentSchoolFoodServiceProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $direct_certification = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentSchoolFoodServiceProgramAssociation[]';
-        $request = $this->getStudentSchoolFoodServiceProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $use_snapshot, $contentType);
+        $request = $this->getStudentSchoolFoodServiceProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $direct_certification, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1033,13 +1037,14 @@ class StudentSchoolFoodServiceProgramAssociationsApi
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  bool $direct_certification Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentSchoolFoodServiceProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $direct_certification = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'][0])
+    public function getStudentSchoolFoodServiceProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $direct_certification = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolFoodServiceProgramAssociations'][0])
     {
 
 
@@ -1068,6 +1073,7 @@ class StudentSchoolFoodServiceProgramAssociationsApi
             throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentSchoolFoodServiceProgramAssociationsApi.getStudentSchoolFoodServiceProgramAssociations, must be smaller than or equal to 32.');
         }
         
+
 
 
 
@@ -1182,6 +1188,15 @@ class StudentSchoolFoodServiceProgramAssociationsApi
             $direct_certification,
             'directCertification', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

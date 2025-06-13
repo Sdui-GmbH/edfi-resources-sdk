@@ -317,16 +317,8 @@ class TrackedChangesEdFiStudentSchoolAttendanceEventKey implements ModelInterfac
             $invalidProperties[] = "invalid value for 'session_name', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['session_name']) && (mb_strlen($this->container['session_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'session_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -415,7 +407,7 @@ class TrackedChangesEdFiStudentSchoolAttendanceEventKey implements ModelInterfac
     /**
      * Sets school_id
      *
-     * @param int|null $school_id The identifier assigned to a school.
+     * @param int|null $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -481,9 +473,6 @@ class TrackedChangesEdFiStudentSchoolAttendanceEventKey implements ModelInterfac
         if ((mb_strlen($session_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $session_name when calling TrackedChangesEdFiStudentSchoolAttendanceEventKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($session_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $session_name when calling TrackedChangesEdFiStudentSchoolAttendanceEventKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['session_name'] = $session_name;
 
@@ -514,9 +503,6 @@ class TrackedChangesEdFiStudentSchoolAttendanceEventKey implements ModelInterfac
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentSchoolAttendanceEventKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentSchoolAttendanceEventKey., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

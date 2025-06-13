@@ -76,7 +76,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://api.ed-fi.org:443/v7.1/api/data/v3*
+All URIs are relative to *https://api.ed-fi.org:443/v7.2/api/data/v3*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -241,6 +241,13 @@ Class | Method | HTTP request | Description
 *CredentialsApi* | [**keyChangesCredentials**](docs/Api/CredentialsApi.md#keychangescredentials) | **GET** /ed-fi/credentials/keyChanges | Retrieves resources key changes based on change version.
 *CredentialsApi* | [**postCredential**](docs/Api/CredentialsApi.md#postcredential) | **POST** /ed-fi/credentials | Creates or updates resources based on the natural key values of the supplied resource.
 *CredentialsApi* | [**putCredential**](docs/Api/CredentialsApi.md#putcredential) | **PUT** /ed-fi/credentials/{id} | Updates a resource based on the resource identifier.
+*CrisisEventsApi* | [**deleteCrisisEventById**](docs/Api/CrisisEventsApi.md#deletecrisiseventbyid) | **DELETE** /ed-fi/crisisEvents/{id} | Deletes an existing resource using the resource identifier.
+*CrisisEventsApi* | [**deletesCrisisEvents**](docs/Api/CrisisEventsApi.md#deletescrisisevents) | **GET** /ed-fi/crisisEvents/deletes | Retrieves deleted resources based on change version.
+*CrisisEventsApi* | [**getCrisisEvents**](docs/Api/CrisisEventsApi.md#getcrisisevents) | **GET** /ed-fi/crisisEvents | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
+*CrisisEventsApi* | [**getCrisisEventsById**](docs/Api/CrisisEventsApi.md#getcrisiseventsbyid) | **GET** /ed-fi/crisisEvents/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
+*CrisisEventsApi* | [**keyChangesCrisisEvents**](docs/Api/CrisisEventsApi.md#keychangescrisisevents) | **GET** /ed-fi/crisisEvents/keyChanges | Retrieves resources key changes based on change version.
+*CrisisEventsApi* | [**postCrisisEvent**](docs/Api/CrisisEventsApi.md#postcrisisevent) | **POST** /ed-fi/crisisEvents | Creates or updates resources based on the natural key values of the supplied resource.
+*CrisisEventsApi* | [**putCrisisEvent**](docs/Api/CrisisEventsApi.md#putcrisisevent) | **PUT** /ed-fi/crisisEvents/{id} | Updates a resource based on the resource identifier.
 *DescriptorMappingsApi* | [**deleteDescriptorMappingById**](docs/Api/DescriptorMappingsApi.md#deletedescriptormappingbyid) | **DELETE** /ed-fi/descriptorMappings/{id} | Deletes an existing resource using the resource identifier.
 *DescriptorMappingsApi* | [**deletesDescriptorMappings**](docs/Api/DescriptorMappingsApi.md#deletesdescriptormappings) | **GET** /ed-fi/descriptorMappings/deletes | Retrieves deleted resources based on change version.
 *DescriptorMappingsApi* | [**getDescriptorMappings**](docs/Api/DescriptorMappingsApi.md#getdescriptormappings) | **GET** /ed-fi/descriptorMappings | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -848,6 +855,13 @@ Class | Method | HTTP request | Description
 *StudentGradebookEntriesApi* | [**keyChangesStudentGradebookEntries**](docs/Api/StudentGradebookEntriesApi.md#keychangesstudentgradebookentries) | **GET** /ed-fi/studentGradebookEntries/keyChanges | Retrieves resources key changes based on change version.
 *StudentGradebookEntriesApi* | [**postStudentGradebookEntry**](docs/Api/StudentGradebookEntriesApi.md#poststudentgradebookentry) | **POST** /ed-fi/studentGradebookEntries | Creates or updates resources based on the natural key values of the supplied resource.
 *StudentGradebookEntriesApi* | [**putStudentGradebookEntry**](docs/Api/StudentGradebookEntriesApi.md#putstudentgradebookentry) | **PUT** /ed-fi/studentGradebookEntries/{id} | Updates a resource based on the resource identifier.
+*StudentHealthsApi* | [**deleteStudentHealthById**](docs/Api/StudentHealthsApi.md#deletestudenthealthbyid) | **DELETE** /ed-fi/studentHealths/{id} | Deletes an existing resource using the resource identifier.
+*StudentHealthsApi* | [**deletesStudentHealths**](docs/Api/StudentHealthsApi.md#deletesstudenthealths) | **GET** /ed-fi/studentHealths/deletes | Retrieves deleted resources based on change version.
+*StudentHealthsApi* | [**getStudentHealths**](docs/Api/StudentHealthsApi.md#getstudenthealths) | **GET** /ed-fi/studentHealths | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
+*StudentHealthsApi* | [**getStudentHealthsById**](docs/Api/StudentHealthsApi.md#getstudenthealthsbyid) | **GET** /ed-fi/studentHealths/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
+*StudentHealthsApi* | [**keyChangesStudentHealths**](docs/Api/StudentHealthsApi.md#keychangesstudenthealths) | **GET** /ed-fi/studentHealths/keyChanges | Retrieves resources key changes based on change version.
+*StudentHealthsApi* | [**postStudentHealth**](docs/Api/StudentHealthsApi.md#poststudenthealth) | **POST** /ed-fi/studentHealths | Creates or updates resources based on the natural key values of the supplied resource.
+*StudentHealthsApi* | [**putStudentHealth**](docs/Api/StudentHealthsApi.md#putstudenthealth) | **PUT** /ed-fi/studentHealths/{id} | Updates a resource based on the resource identifier.
 *StudentHomelessProgramAssociationsApi* | [**deleteStudentHomelessProgramAssociationById**](docs/Api/StudentHomelessProgramAssociationsApi.md#deletestudenthomelessprogramassociationbyid) | **DELETE** /ed-fi/studentHomelessProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
 *StudentHomelessProgramAssociationsApi* | [**deletesStudentHomelessProgramAssociations**](docs/Api/StudentHomelessProgramAssociationsApi.md#deletesstudenthomelessprogramassociations) | **GET** /ed-fi/studentHomelessProgramAssociations/deletes | Retrieves deleted resources based on change version.
 *StudentHomelessProgramAssociationsApi* | [**getStudentHomelessProgramAssociations**](docs/Api/StudentHomelessProgramAssociationsApi.md#getstudenthomelessprogramassociations) | **GET** /ed-fi/studentHomelessProgramAssociations | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -967,6 +981,13 @@ Class | Method | HTTP request | Description
 *StudentTitleIPartAProgramAssociationsApi* | [**keyChangesStudentTitleIPartAProgramAssociations**](docs/Api/StudentTitleIPartAProgramAssociationsApi.md#keychangesstudenttitleipartaprogramassociations) | **GET** /ed-fi/studentTitleIPartAProgramAssociations/keyChanges | Retrieves resources key changes based on change version.
 *StudentTitleIPartAProgramAssociationsApi* | [**postStudentTitleIPartAProgramAssociation**](docs/Api/StudentTitleIPartAProgramAssociationsApi.md#poststudenttitleipartaprogramassociation) | **POST** /ed-fi/studentTitleIPartAProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
 *StudentTitleIPartAProgramAssociationsApi* | [**putStudentTitleIPartAProgramAssociation**](docs/Api/StudentTitleIPartAProgramAssociationsApi.md#putstudenttitleipartaprogramassociation) | **PUT** /ed-fi/studentTitleIPartAProgramAssociations/{id} | Updates a resource based on the resource identifier.
+*StudentTransportationsApi* | [**deleteStudentTransportationById**](docs/Api/StudentTransportationsApi.md#deletestudenttransportationbyid) | **DELETE** /ed-fi/studentTransportations/{id} | Deletes an existing resource using the resource identifier.
+*StudentTransportationsApi* | [**deletesStudentTransportations**](docs/Api/StudentTransportationsApi.md#deletesstudenttransportations) | **GET** /ed-fi/studentTransportations/deletes | Retrieves deleted resources based on change version.
+*StudentTransportationsApi* | [**getStudentTransportations**](docs/Api/StudentTransportationsApi.md#getstudenttransportations) | **GET** /ed-fi/studentTransportations | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
+*StudentTransportationsApi* | [**getStudentTransportationsById**](docs/Api/StudentTransportationsApi.md#getstudenttransportationsbyid) | **GET** /ed-fi/studentTransportations/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
+*StudentTransportationsApi* | [**keyChangesStudentTransportations**](docs/Api/StudentTransportationsApi.md#keychangesstudenttransportations) | **GET** /ed-fi/studentTransportations/keyChanges | Retrieves resources key changes based on change version.
+*StudentTransportationsApi* | [**postStudentTransportation**](docs/Api/StudentTransportationsApi.md#poststudenttransportation) | **POST** /ed-fi/studentTransportations | Creates or updates resources based on the natural key values of the supplied resource.
+*StudentTransportationsApi* | [**putStudentTransportation**](docs/Api/StudentTransportationsApi.md#putstudenttransportation) | **PUT** /ed-fi/studentTransportations/{id} | Updates a resource based on the resource identifier.
 *StudentsApi* | [**deleteStudentById**](docs/Api/StudentsApi.md#deletestudentbyid) | **DELETE** /ed-fi/students/{id} | Deletes an existing resource using the resource identifier.
 *StudentsApi* | [**deletesStudents**](docs/Api/StudentsApi.md#deletesstudents) | **GET** /ed-fi/students/deletes | Retrieves deleted resources based on change version.
 *StudentsApi* | [**getStudents**](docs/Api/StudentsApi.md#getstudents) | **GET** /ed-fi/students | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -1172,6 +1193,8 @@ Class | Method | HTTP request | Description
 - [EdFiCredentialEndorsement](docs/Model/EdFiCredentialEndorsement.md)
 - [EdFiCredentialGradeLevel](docs/Model/EdFiCredentialGradeLevel.md)
 - [EdFiCredentialReference](docs/Model/EdFiCredentialReference.md)
+- [EdFiCrisisEvent](docs/Model/EdFiCrisisEvent.md)
+- [EdFiCrisisEventReference](docs/Model/EdFiCrisisEventReference.md)
 - [EdFiDescriptorMapping](docs/Model/EdFiDescriptorMapping.md)
 - [EdFiDescriptorMappingModelEntity](docs/Model/EdFiDescriptorMappingModelEntity.md)
 - [EdFiDisciplineAction](docs/Model/EdFiDisciplineAction.md)
@@ -1439,6 +1462,7 @@ Class | Method | HTTP request | Description
 - [EdFiStudentEducationOrganizationAssociationCohortYear](docs/Model/EdFiStudentEducationOrganizationAssociationCohortYear.md)
 - [EdFiStudentEducationOrganizationAssociationDisability](docs/Model/EdFiStudentEducationOrganizationAssociationDisability.md)
 - [EdFiStudentEducationOrganizationAssociationDisabilityDesignation](docs/Model/EdFiStudentEducationOrganizationAssociationDisabilityDesignation.md)
+- [EdFiStudentEducationOrganizationAssociationDisplacedStudent](docs/Model/EdFiStudentEducationOrganizationAssociationDisplacedStudent.md)
 - [EdFiStudentEducationOrganizationAssociationElectronicMail](docs/Model/EdFiStudentEducationOrganizationAssociationElectronicMail.md)
 - [EdFiStudentEducationOrganizationAssociationInternationalAddress](docs/Model/EdFiStudentEducationOrganizationAssociationInternationalAddress.md)
 - [EdFiStudentEducationOrganizationAssociationLanguage](docs/Model/EdFiStudentEducationOrganizationAssociationLanguage.md)
@@ -1453,6 +1477,11 @@ Class | Method | HTTP request | Description
 - [EdFiStudentEducationOrganizationAssociationTribalAffiliation](docs/Model/EdFiStudentEducationOrganizationAssociationTribalAffiliation.md)
 - [EdFiStudentEducationOrganizationResponsibilityAssociation](docs/Model/EdFiStudentEducationOrganizationResponsibilityAssociation.md)
 - [EdFiStudentGradebookEntry](docs/Model/EdFiStudentGradebookEntry.md)
+- [EdFiStudentHealth](docs/Model/EdFiStudentHealth.md)
+- [EdFiStudentHealthAdditionalImmunization](docs/Model/EdFiStudentHealthAdditionalImmunization.md)
+- [EdFiStudentHealthAdditionalImmunizationDate](docs/Model/EdFiStudentHealthAdditionalImmunizationDate.md)
+- [EdFiStudentHealthRequiredImmunization](docs/Model/EdFiStudentHealthRequiredImmunization.md)
+- [EdFiStudentHealthRequiredImmunizationDate](docs/Model/EdFiStudentHealthRequiredImmunizationDate.md)
 - [EdFiStudentHomelessProgramAssociation](docs/Model/EdFiStudentHomelessProgramAssociation.md)
 - [EdFiStudentHomelessProgramAssociationHomelessProgramService](docs/Model/EdFiStudentHomelessProgramAssociationHomelessProgramService.md)
 - [EdFiStudentIdentificationDocument](docs/Model/EdFiStudentIdentificationDocument.md)
@@ -1496,6 +1525,10 @@ Class | Method | HTTP request | Description
 - [EdFiStudentSpecialEducationProgramEligibilityAssociation](docs/Model/EdFiStudentSpecialEducationProgramEligibilityAssociation.md)
 - [EdFiStudentTitleIPartAProgramAssociation](docs/Model/EdFiStudentTitleIPartAProgramAssociation.md)
 - [EdFiStudentTitleIPartAProgramAssociationTitleIPartAProgramService](docs/Model/EdFiStudentTitleIPartAProgramAssociationTitleIPartAProgramService.md)
+- [EdFiStudentTransportation](docs/Model/EdFiStudentTransportation.md)
+- [EdFiStudentTransportationStudentBusDetails](docs/Model/EdFiStudentTransportationStudentBusDetails.md)
+- [EdFiStudentTransportationStudentBusDetailsTravelDayofWeek](docs/Model/EdFiStudentTransportationStudentBusDetailsTravelDayofWeek.md)
+- [EdFiStudentTransportationStudentBusDetailsTravelDirection](docs/Model/EdFiStudentTransportationStudentBusDetailsTravelDirection.md)
 - [EdFiStudentVisa](docs/Model/EdFiStudentVisa.md)
 - [EdFiSurvey](docs/Model/EdFiSurvey.md)
 - [EdFiSurveyCourseAssociation](docs/Model/EdFiSurveyCourseAssociation.md)
@@ -1641,6 +1674,9 @@ Class | Method | HTTP request | Description
 - [TrackedChangesEdFiCredentialDelete](docs/Model/TrackedChangesEdFiCredentialDelete.md)
 - [TrackedChangesEdFiCredentialKey](docs/Model/TrackedChangesEdFiCredentialKey.md)
 - [TrackedChangesEdFiCredentialKeyChange](docs/Model/TrackedChangesEdFiCredentialKeyChange.md)
+- [TrackedChangesEdFiCrisisEventDelete](docs/Model/TrackedChangesEdFiCrisisEventDelete.md)
+- [TrackedChangesEdFiCrisisEventKey](docs/Model/TrackedChangesEdFiCrisisEventKey.md)
+- [TrackedChangesEdFiCrisisEventKeyChange](docs/Model/TrackedChangesEdFiCrisisEventKeyChange.md)
 - [TrackedChangesEdFiDescriptorMappingDelete](docs/Model/TrackedChangesEdFiDescriptorMappingDelete.md)
 - [TrackedChangesEdFiDescriptorMappingKey](docs/Model/TrackedChangesEdFiDescriptorMappingKey.md)
 - [TrackedChangesEdFiDescriptorMappingKeyChange](docs/Model/TrackedChangesEdFiDescriptorMappingKeyChange.md)
@@ -1870,6 +1906,9 @@ Class | Method | HTTP request | Description
 - [TrackedChangesEdFiStudentGradebookEntryDelete](docs/Model/TrackedChangesEdFiStudentGradebookEntryDelete.md)
 - [TrackedChangesEdFiStudentGradebookEntryKey](docs/Model/TrackedChangesEdFiStudentGradebookEntryKey.md)
 - [TrackedChangesEdFiStudentGradebookEntryKeyChange](docs/Model/TrackedChangesEdFiStudentGradebookEntryKeyChange.md)
+- [TrackedChangesEdFiStudentHealthDelete](docs/Model/TrackedChangesEdFiStudentHealthDelete.md)
+- [TrackedChangesEdFiStudentHealthKey](docs/Model/TrackedChangesEdFiStudentHealthKey.md)
+- [TrackedChangesEdFiStudentHealthKeyChange](docs/Model/TrackedChangesEdFiStudentHealthKeyChange.md)
 - [TrackedChangesEdFiStudentHomelessProgramAssociationDelete](docs/Model/TrackedChangesEdFiStudentHomelessProgramAssociationDelete.md)
 - [TrackedChangesEdFiStudentHomelessProgramAssociationKey](docs/Model/TrackedChangesEdFiStudentHomelessProgramAssociationKey.md)
 - [TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange](docs/Model/TrackedChangesEdFiStudentHomelessProgramAssociationKeyChange.md)
@@ -1923,6 +1962,9 @@ Class | Method | HTTP request | Description
 - [TrackedChangesEdFiStudentTitleIPartAProgramAssociationDelete](docs/Model/TrackedChangesEdFiStudentTitleIPartAProgramAssociationDelete.md)
 - [TrackedChangesEdFiStudentTitleIPartAProgramAssociationKey](docs/Model/TrackedChangesEdFiStudentTitleIPartAProgramAssociationKey.md)
 - [TrackedChangesEdFiStudentTitleIPartAProgramAssociationKeyChange](docs/Model/TrackedChangesEdFiStudentTitleIPartAProgramAssociationKeyChange.md)
+- [TrackedChangesEdFiStudentTransportationDelete](docs/Model/TrackedChangesEdFiStudentTransportationDelete.md)
+- [TrackedChangesEdFiStudentTransportationKey](docs/Model/TrackedChangesEdFiStudentTransportationKey.md)
+- [TrackedChangesEdFiStudentTransportationKeyChange](docs/Model/TrackedChangesEdFiStudentTransportationKeyChange.md)
 - [TrackedChangesEdFiSurveyCourseAssociationDelete](docs/Model/TrackedChangesEdFiSurveyCourseAssociationDelete.md)
 - [TrackedChangesEdFiSurveyCourseAssociationKey](docs/Model/TrackedChangesEdFiSurveyCourseAssociationKey.md)
 - [TrackedChangesEdFiSurveyCourseAssociationKeyChange](docs/Model/TrackedChangesEdFiSurveyCourseAssociationKeyChange.md)

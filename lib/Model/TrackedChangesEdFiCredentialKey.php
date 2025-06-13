@@ -289,10 +289,6 @@ class TrackedChangesEdFiCredentialKey implements ModelInterface, ArrayAccess, \J
             $invalidProperties[] = "invalid value for 'credential_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['credential_identifier']) && (mb_strlen($this->container['credential_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'credential_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -363,9 +359,6 @@ class TrackedChangesEdFiCredentialKey implements ModelInterface, ArrayAccess, \J
         }
         if ((mb_strlen($credential_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $credential_identifier when calling TrackedChangesEdFiCredentialKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($credential_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $credential_identifier when calling TrackedChangesEdFiCredentialKey., must be bigger than or equal to 1.');
         }
 
         $this->container['credential_identifier'] = $credential_identifier;

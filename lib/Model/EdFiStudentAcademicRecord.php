@@ -465,12 +465,36 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['student_reference'] === null) {
             $invalidProperties[] = "'student_reference' can't be null";
         }
+        if (!is_null($this->container['cumulative_attempted_credit_conversion']) && ($this->container['cumulative_attempted_credit_conversion'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'cumulative_attempted_credit_conversion', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['cumulative_attempted_credit_conversion']) && ($this->container['cumulative_attempted_credit_conversion'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'cumulative_attempted_credit_conversion', must be bigger than or equal to -9999999.99.";
+        }
+
+        if (!is_null($this->container['cumulative_attempted_credits']) && ($this->container['cumulative_attempted_credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'cumulative_attempted_credits', must be smaller than or equal to 999999.999.";
+        }
+
         if (!is_null($this->container['cumulative_attempted_credits']) && ($this->container['cumulative_attempted_credits'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'cumulative_attempted_credits', must be bigger than or equal to 0.0.";
         }
 
         if (!is_null($this->container['cumulative_attempted_credit_type_descriptor']) && (mb_strlen($this->container['cumulative_attempted_credit_type_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'cumulative_attempted_credit_type_descriptor', the character length must be smaller than or equal to 306.";
+        }
+
+        if (!is_null($this->container['cumulative_earned_credit_conversion']) && ($this->container['cumulative_earned_credit_conversion'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'cumulative_earned_credit_conversion', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['cumulative_earned_credit_conversion']) && ($this->container['cumulative_earned_credit_conversion'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'cumulative_earned_credit_conversion', must be bigger than or equal to -9999999.99.";
+        }
+
+        if (!is_null($this->container['cumulative_earned_credits']) && ($this->container['cumulative_earned_credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'cumulative_earned_credits', must be smaller than or equal to 999999.999.";
         }
 
         if (!is_null($this->container['cumulative_earned_credits']) && ($this->container['cumulative_earned_credits'] < 0.0)) {
@@ -481,12 +505,36 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = "invalid value for 'cumulative_earned_credit_type_descriptor', the character length must be smaller than or equal to 306.";
         }
 
+        if (!is_null($this->container['session_attempted_credit_conversion']) && ($this->container['session_attempted_credit_conversion'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'session_attempted_credit_conversion', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['session_attempted_credit_conversion']) && ($this->container['session_attempted_credit_conversion'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'session_attempted_credit_conversion', must be bigger than or equal to -9999999.99.";
+        }
+
+        if (!is_null($this->container['session_attempted_credits']) && ($this->container['session_attempted_credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'session_attempted_credits', must be smaller than or equal to 999999.999.";
+        }
+
         if (!is_null($this->container['session_attempted_credits']) && ($this->container['session_attempted_credits'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'session_attempted_credits', must be bigger than or equal to 0.0.";
         }
 
         if (!is_null($this->container['session_attempted_credit_type_descriptor']) && (mb_strlen($this->container['session_attempted_credit_type_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'session_attempted_credit_type_descriptor', the character length must be smaller than or equal to 306.";
+        }
+
+        if (!is_null($this->container['session_earned_credit_conversion']) && ($this->container['session_earned_credit_conversion'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'session_earned_credit_conversion', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['session_earned_credit_conversion']) && ($this->container['session_earned_credit_conversion'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'session_earned_credit_conversion', must be bigger than or equal to -9999999.99.";
+        }
+
+        if (!is_null($this->container['session_earned_credits']) && ($this->container['session_earned_credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'session_earned_credits', must be smaller than or equal to 999999.999.";
         }
 
         if (!is_null($this->container['session_earned_credits']) && ($this->container['session_earned_credits'] < 0.0)) {
@@ -734,6 +782,14 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($cumulative_attempted_credit_conversion) && ($cumulative_attempted_credit_conversion > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $cumulative_attempted_credit_conversion when calling EdFiStudentAcademicRecord., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($cumulative_attempted_credit_conversion) && ($cumulative_attempted_credit_conversion < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $cumulative_attempted_credit_conversion when calling EdFiStudentAcademicRecord., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['cumulative_attempted_credit_conversion'] = $cumulative_attempted_credit_conversion;
 
         return $this;
@@ -769,6 +825,9 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
 
+        if (!is_null($cumulative_attempted_credits) && ($cumulative_attempted_credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $cumulative_attempted_credits when calling EdFiStudentAcademicRecord., must be smaller than or equal to 999999.999.');
+        }
         if (!is_null($cumulative_attempted_credits) && ($cumulative_attempted_credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $cumulative_attempted_credits when calling EdFiStudentAcademicRecord., must be bigger than or equal to 0.0.');
         }
@@ -845,6 +904,14 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($cumulative_earned_credit_conversion) && ($cumulative_earned_credit_conversion > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $cumulative_earned_credit_conversion when calling EdFiStudentAcademicRecord., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($cumulative_earned_credit_conversion) && ($cumulative_earned_credit_conversion < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $cumulative_earned_credit_conversion when calling EdFiStudentAcademicRecord., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['cumulative_earned_credit_conversion'] = $cumulative_earned_credit_conversion;
 
         return $this;
@@ -880,6 +947,9 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
 
+        if (!is_null($cumulative_earned_credits) && ($cumulative_earned_credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $cumulative_earned_credits when calling EdFiStudentAcademicRecord., must be smaller than or equal to 999999.999.');
+        }
         if (!is_null($cumulative_earned_credits) && ($cumulative_earned_credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $cumulative_earned_credits when calling EdFiStudentAcademicRecord., must be bigger than or equal to 0.0.');
         }
@@ -1098,6 +1168,14 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($session_attempted_credit_conversion) && ($session_attempted_credit_conversion > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $session_attempted_credit_conversion when calling EdFiStudentAcademicRecord., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($session_attempted_credit_conversion) && ($session_attempted_credit_conversion < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $session_attempted_credit_conversion when calling EdFiStudentAcademicRecord., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['session_attempted_credit_conversion'] = $session_attempted_credit_conversion;
 
         return $this;
@@ -1133,6 +1211,9 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
 
+        if (!is_null($session_attempted_credits) && ($session_attempted_credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $session_attempted_credits when calling EdFiStudentAcademicRecord., must be smaller than or equal to 999999.999.');
+        }
         if (!is_null($session_attempted_credits) && ($session_attempted_credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $session_attempted_credits when calling EdFiStudentAcademicRecord., must be bigger than or equal to 0.0.');
         }
@@ -1209,6 +1290,14 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($session_earned_credit_conversion) && ($session_earned_credit_conversion > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $session_earned_credit_conversion when calling EdFiStudentAcademicRecord., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($session_earned_credit_conversion) && ($session_earned_credit_conversion < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $session_earned_credit_conversion when calling EdFiStudentAcademicRecord., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['session_earned_credit_conversion'] = $session_earned_credit_conversion;
 
         return $this;
@@ -1244,6 +1333,9 @@ class EdFiStudentAcademicRecord implements ModelInterface, ArrayAccess, \JsonSer
             }
         }
 
+        if (!is_null($session_earned_credits) && ($session_earned_credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $session_earned_credits when calling EdFiStudentAcademicRecord., must be smaller than or equal to 999999.999.');
+        }
         if (!is_null($session_earned_credits) && ($session_earned_credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $session_earned_credits when calling EdFiStudentAcademicRecord., must be bigger than or equal to 0.0.');
         }

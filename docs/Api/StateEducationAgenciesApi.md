@@ -1,6 +1,6 @@
 # Resources\StateEducationAgenciesApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getStateEducationAgencies()`
 
 ```php
-getStateEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $use_snapshot): \Resources\Model\EdFiStateEducationAgency[]
+getStateEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $id, $use_snapshot): \Resources\Model\EdFiStateEducationAgency[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -176,11 +176,12 @@ $limit = 25; // int | Indicates the maximum number of items that should be retur
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
-$state_education_agency_id = 56; // int | The identifier assigned to a state education agency.
+$state_education_agency_id = 56; // int | The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStateEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $use_snapshot);
+    $result = $apiInstance->getStateEducationAgencies($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StateEducationAgenciesApi->getStateEducationAgencies: ', $e->getMessage(), PHP_EOL;
@@ -196,7 +197,8 @@ try {
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
-| **state_education_agency_id** | **int**| The identifier assigned to a state education agency. | [optional] |
+| **state_education_agency_id** | **int**| The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

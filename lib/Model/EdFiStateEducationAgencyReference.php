@@ -312,7 +312,7 @@ class EdFiStateEducationAgencyReference implements ModelInterface, ArrayAccess, 
     /**
      * Sets state_education_agency_id
      *
-     * @param int $state_education_agency_id The identifier assigned to a state education agency.
+     * @param int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

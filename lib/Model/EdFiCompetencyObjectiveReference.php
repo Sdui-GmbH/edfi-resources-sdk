@@ -305,10 +305,6 @@ class EdFiCompetencyObjectiveReference implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = "invalid value for 'objective', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['objective']) < 1)) {
-            $invalidProperties[] = "invalid value for 'objective', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['objective_grade_level_descriptor'] === null) {
             $invalidProperties[] = "'objective_grade_level_descriptor' can't be null";
         }
@@ -382,9 +378,6 @@ class EdFiCompetencyObjectiveReference implements ModelInterface, ArrayAccess, \
         }
         if ((mb_strlen($objective) > 60)) {
             throw new \InvalidArgumentException('invalid length for $objective when calling EdFiCompetencyObjectiveReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($objective) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $objective when calling EdFiCompetencyObjectiveReference., must be bigger than or equal to 1.');
         }
 
         $this->container['objective'] = $objective;

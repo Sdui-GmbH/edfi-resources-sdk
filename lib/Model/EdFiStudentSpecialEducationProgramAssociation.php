@@ -472,12 +472,28 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
             $invalidProperties[] = "invalid value for 'reason_exited_descriptor', the character length must be smaller than or equal to 306.";
         }
 
+        if (!is_null($this->container['school_hours_per_week']) && ($this->container['school_hours_per_week'] > 999.99)) {
+            $invalidProperties[] = "invalid value for 'school_hours_per_week', must be smaller than or equal to 999.99.";
+        }
+
+        if (!is_null($this->container['school_hours_per_week']) && ($this->container['school_hours_per_week'] < -999.99)) {
+            $invalidProperties[] = "invalid value for 'school_hours_per_week', must be bigger than or equal to -999.99.";
+        }
+
         if (!is_null($this->container['special_education_exit_explained']) && (mb_strlen($this->container['special_education_exit_explained']) > 1024)) {
             $invalidProperties[] = "invalid value for 'special_education_exit_explained', the character length must be smaller than or equal to 1024.";
         }
 
         if (!is_null($this->container['special_education_exit_reason_descriptor']) && (mb_strlen($this->container['special_education_exit_reason_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'special_education_exit_reason_descriptor', the character length must be smaller than or equal to 306.";
+        }
+
+        if (!is_null($this->container['special_education_hours_per_week']) && ($this->container['special_education_hours_per_week'] > 999.99)) {
+            $invalidProperties[] = "invalid value for 'special_education_hours_per_week', must be smaller than or equal to 999.99.";
+        }
+
+        if (!is_null($this->container['special_education_hours_per_week']) && ($this->container['special_education_hours_per_week'] < -999.99)) {
+            $invalidProperties[] = "invalid value for 'special_education_hours_per_week', must be bigger than or equal to -999.99.";
         }
 
         if (!is_null($this->container['special_education_setting_descriptor']) && (mb_strlen($this->container['special_education_setting_descriptor']) > 306)) {
@@ -1027,6 +1043,14 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($school_hours_per_week) && ($school_hours_per_week > 999.99)) {
+            throw new \InvalidArgumentException('invalid value for $school_hours_per_week when calling EdFiStudentSpecialEducationProgramAssociation., must be smaller than or equal to 999.99.');
+        }
+        if (!is_null($school_hours_per_week) && ($school_hours_per_week < -999.99)) {
+            throw new \InvalidArgumentException('invalid value for $school_hours_per_week when calling EdFiStudentSpecialEducationProgramAssociation., must be bigger than or equal to -999.99.');
+        }
+
         $this->container['school_hours_per_week'] = $school_hours_per_week;
 
         return $this;
@@ -1232,6 +1256,14 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($special_education_hours_per_week) && ($special_education_hours_per_week > 999.99)) {
+            throw new \InvalidArgumentException('invalid value for $special_education_hours_per_week when calling EdFiStudentSpecialEducationProgramAssociation., must be smaller than or equal to 999.99.');
+        }
+        if (!is_null($special_education_hours_per_week) && ($special_education_hours_per_week < -999.99)) {
+            throw new \InvalidArgumentException('invalid value for $special_education_hours_per_week when calling EdFiStudentSpecialEducationProgramAssociation., must be bigger than or equal to -999.99.');
+        }
+
         $this->container['special_education_hours_per_week'] = $special_education_hours_per_week;
 
         return $this;

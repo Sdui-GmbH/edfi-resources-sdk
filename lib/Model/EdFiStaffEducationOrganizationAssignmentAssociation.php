@@ -374,16 +374,16 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
         if ($this->container['staff_reference'] === null) {
             $invalidProperties[] = "'staff_reference' can't be null";
         }
+        if (!is_null($this->container['full_time_equivalency']) && ($this->container['full_time_equivalency'] > 9.9999)) {
+            $invalidProperties[] = "invalid value for 'full_time_equivalency', must be smaller than or equal to 9.9999.";
+        }
+
         if (!is_null($this->container['full_time_equivalency']) && ($this->container['full_time_equivalency'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'full_time_equivalency', must be bigger than or equal to 0.0.";
         }
 
         if (!is_null($this->container['position_title']) && (mb_strlen($this->container['position_title']) > 100)) {
             $invalidProperties[] = "invalid value for 'position_title', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['position_title']) && (mb_strlen($this->container['position_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'position_title', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -658,6 +658,9 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
             }
         }
 
+        if (!is_null($full_time_equivalency) && ($full_time_equivalency > 9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $full_time_equivalency when calling EdFiStaffEducationOrganizationAssignmentAssociation., must be smaller than or equal to 9.9999.');
+        }
         if (!is_null($full_time_equivalency) && ($full_time_equivalency < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $full_time_equivalency when calling EdFiStaffEducationOrganizationAssignmentAssociation., must be bigger than or equal to 0.0.');
         }
@@ -732,9 +735,6 @@ class EdFiStaffEducationOrganizationAssignmentAssociation implements ModelInterf
         }
         if (!is_null($position_title) && (mb_strlen($position_title) > 100)) {
             throw new \InvalidArgumentException('invalid length for $position_title when calling EdFiStaffEducationOrganizationAssignmentAssociation., must be smaller than or equal to 100.');
-        }
-        if (!is_null($position_title) && (mb_strlen($position_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $position_title when calling EdFiStaffEducationOrganizationAssignmentAssociation., must be bigger than or equal to 1.');
         }
 
         $this->container['position_title'] = $position_title;

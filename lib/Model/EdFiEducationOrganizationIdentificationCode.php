@@ -295,10 +295,6 @@ class EdFiEducationOrganizationIdentificationCode implements ModelInterface, Arr
             $invalidProperties[] = "invalid value for 'identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -369,9 +365,6 @@ class EdFiEducationOrganizationIdentificationCode implements ModelInterface, Arr
         }
         if ((mb_strlen($identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiEducationOrganizationIdentificationCode., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiEducationOrganizationIdentificationCode., must be bigger than or equal to 1.');
         }
 
         $this->container['identification_code'] = $identification_code;

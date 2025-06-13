@@ -764,9 +764,10 @@ class PostSecondaryInstitutionsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $post_secondary_institution_id The ID of the post secondary institution. (optional)
+     * @param  int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $administrative_funding_control_descriptor A classification of whether a postsecondary institution is operated by publicly elected or appointed officials (public control) or by privately elected or appointed officials and derives its major source of funds from private sources (private control). (optional)
      * @param  string $post_secondary_institution_level_descriptor A classification of whether a post secondary institution&#39;s highest level of offering is a program of 4-years or higher (4 year), 2-but-less-than 4-years (2 year), or less than 2-years. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryInstitutions'] to see the possible values for this operation
      *
@@ -774,9 +775,9 @@ class PostSecondaryInstitutionsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiPostSecondaryInstitution[]
      */
-    public function getPostSecondaryInstitutions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
+    public function getPostSecondaryInstitutions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
     {
-        list($response) = $this->getPostSecondaryInstitutionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $use_snapshot, $contentType);
+        list($response) = $this->getPostSecondaryInstitutionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -790,9 +791,10 @@ class PostSecondaryInstitutionsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $post_secondary_institution_id The ID of the post secondary institution. (optional)
+     * @param  int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $administrative_funding_control_descriptor A classification of whether a postsecondary institution is operated by publicly elected or appointed officials (public control) or by privately elected or appointed officials and derives its major source of funds from private sources (private control). (optional)
      * @param  string $post_secondary_institution_level_descriptor A classification of whether a post secondary institution&#39;s highest level of offering is a program of 4-years or higher (4 year), 2-but-less-than 4-years (2 year), or less than 2-years. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryInstitutions'] to see the possible values for this operation
      *
@@ -800,9 +802,9 @@ class PostSecondaryInstitutionsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiPostSecondaryInstitution[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPostSecondaryInstitutionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
+    public function getPostSecondaryInstitutionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
     {
-        $request = $this->getPostSecondaryInstitutionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $use_snapshot, $contentType);
+        $request = $this->getPostSecondaryInstitutionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -923,18 +925,19 @@ class PostSecondaryInstitutionsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $post_secondary_institution_id The ID of the post secondary institution. (optional)
+     * @param  int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $administrative_funding_control_descriptor A classification of whether a postsecondary institution is operated by publicly elected or appointed officials (public control) or by privately elected or appointed officials and derives its major source of funds from private sources (private control). (optional)
      * @param  string $post_secondary_institution_level_descriptor A classification of whether a post secondary institution&#39;s highest level of offering is a program of 4-years or higher (4 year), 2-but-less-than 4-years (2 year), or less than 2-years. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryInstitutions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPostSecondaryInstitutionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
+    public function getPostSecondaryInstitutionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
     {
-        return $this->getPostSecondaryInstitutionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $use_snapshot, $contentType)
+        return $this->getPostSecondaryInstitutionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -952,19 +955,20 @@ class PostSecondaryInstitutionsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $post_secondary_institution_id The ID of the post secondary institution. (optional)
+     * @param  int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $administrative_funding_control_descriptor A classification of whether a postsecondary institution is operated by publicly elected or appointed officials (public control) or by privately elected or appointed officials and derives its major source of funds from private sources (private control). (optional)
      * @param  string $post_secondary_institution_level_descriptor A classification of whether a post secondary institution&#39;s highest level of offering is a program of 4-years or higher (4 year), 2-but-less-than 4-years (2 year), or less than 2-years. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryInstitutions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPostSecondaryInstitutionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
+    public function getPostSecondaryInstitutionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
     {
         $returnType = '\Resources\Model\EdFiPostSecondaryInstitution[]';
-        $request = $this->getPostSecondaryInstitutionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $use_snapshot, $contentType);
+        $request = $this->getPostSecondaryInstitutionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $post_secondary_institution_id, $administrative_funding_control_descriptor, $post_secondary_institution_level_descriptor, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1010,16 +1014,17 @@ class PostSecondaryInstitutionsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $post_secondary_institution_id The ID of the post secondary institution. (optional)
+     * @param  int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $administrative_funding_control_descriptor A classification of whether a postsecondary institution is operated by publicly elected or appointed officials (public control) or by privately elected or appointed officials and derives its major source of funds from private sources (private control). (optional)
      * @param  string $post_secondary_institution_level_descriptor A classification of whether a post secondary institution&#39;s highest level of offering is a program of 4-years or higher (4 year), 2-but-less-than 4-years (2 year), or less than 2-years. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryInstitutions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPostSecondaryInstitutionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
+    public function getPostSecondaryInstitutionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $post_secondary_institution_id = null, $administrative_funding_control_descriptor = null, $post_secondary_institution_level_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getPostSecondaryInstitutions'][0])
     {
 
 
@@ -1042,6 +1047,7 @@ class PostSecondaryInstitutionsApi
             throw new \InvalidArgumentException('invalid length for "$post_secondary_institution_level_descriptor" when calling PostSecondaryInstitutionsApi.getPostSecondaryInstitutions, must be smaller than or equal to 306.');
         }
         
+
 
 
         $resourcePath = '/ed-fi/postSecondaryInstitutions';
@@ -1118,6 +1124,15 @@ class PostSecondaryInstitutionsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $post_secondary_institution_level_descriptor,
             'postSecondaryInstitutionLevelDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

@@ -309,10 +309,6 @@ class EdFiSurveySection implements ModelInterface, ArrayAccess, \JsonSerializabl
             $invalidProperties[] = "invalid value for 'survey_section_title', the character length must be smaller than or equal to 255.";
         }
 
-        if ((mb_strlen($this->container['survey_section_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'survey_section_title', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['survey_reference'] === null) {
             $invalidProperties[] = "'survey_reference' can't be null";
         }
@@ -382,9 +378,6 @@ class EdFiSurveySection implements ModelInterface, ArrayAccess, \JsonSerializabl
         }
         if ((mb_strlen($survey_section_title) > 255)) {
             throw new \InvalidArgumentException('invalid length for $survey_section_title when calling EdFiSurveySection., must be smaller than or equal to 255.');
-        }
-        if ((mb_strlen($survey_section_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $survey_section_title when calling EdFiSurveySection., must be bigger than or equal to 1.');
         }
 
         $this->container['survey_section_title'] = $survey_section_title;

@@ -339,20 +339,12 @@ class TrackedChangesEdFiStudentProgramEvaluationKey implements ModelInterface, A
             $invalidProperties[] = "invalid value for 'program_name', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['program_name']) && (mb_strlen($this->container['program_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'program_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['program_type_descriptor']) && (mb_strlen($this->container['program_type_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'program_type_descriptor', the character length must be smaller than or equal to 306.";
         }
 
         if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -542,9 +534,6 @@ class TrackedChangesEdFiStudentProgramEvaluationKey implements ModelInterface, A
         if ((mb_strlen($program_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $program_name when calling TrackedChangesEdFiStudentProgramEvaluationKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($program_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $program_name when calling TrackedChangesEdFiStudentProgramEvaluationKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['program_name'] = $program_name;
 
@@ -606,9 +595,6 @@ class TrackedChangesEdFiStudentProgramEvaluationKey implements ModelInterface, A
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentProgramEvaluationKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentProgramEvaluationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

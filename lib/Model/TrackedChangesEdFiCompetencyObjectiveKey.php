@@ -296,10 +296,6 @@ class TrackedChangesEdFiCompetencyObjectiveKey implements ModelInterface, ArrayA
             $invalidProperties[] = "invalid value for 'objective', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['objective']) && (mb_strlen($this->container['objective']) < 1)) {
-            $invalidProperties[] = "invalid value for 'objective', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -370,9 +366,6 @@ class TrackedChangesEdFiCompetencyObjectiveKey implements ModelInterface, ArrayA
         }
         if ((mb_strlen($objective) > 60)) {
             throw new \InvalidArgumentException('invalid length for $objective when calling TrackedChangesEdFiCompetencyObjectiveKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($objective) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $objective when calling TrackedChangesEdFiCompetencyObjectiveKey., must be bigger than or equal to 1.');
         }
 
         $this->container['objective'] = $objective;

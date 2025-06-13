@@ -1,6 +1,6 @@
 # Resources\StudentDisciplineIncidentBehaviorAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -178,7 +178,7 @@ $max_change_version = 56; // int | Used in synchronization to set sequence maxim
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
 $behavior_descriptor = 'behavior_descriptor_example'; // string | Describes behavior by category.
 $incident_identifier = 'incident_identifier_example'; // string | A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
 $behavior_detailed_description = 'behavior_detailed_description_example'; // string | Specifies a more granular level of detail of a behavior involved in the incident.
 $id = 'id_example'; // string | 
@@ -203,7 +203,7 @@ try {
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
 | **behavior_descriptor** | **string**| Describes behavior by category. | [optional] |
 | **incident_identifier** | **string**| A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
 | **behavior_detailed_description** | **string**| Specifies a more granular level of detail of a behavior involved in the incident. | [optional] |
 | **id** | **string**|  | [optional] |

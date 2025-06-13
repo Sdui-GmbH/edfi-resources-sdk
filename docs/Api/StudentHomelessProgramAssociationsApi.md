@@ -1,6 +1,6 @@
 # Resources\StudentHomelessProgramAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getStudentHomelessProgramAssociations()`
 
 ```php
-getStudentHomelessProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $use_snapshot): \Resources\Model\EdFiStudentHomelessProgramAssociation[]
+getStudentHomelessProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $id, $use_snapshot): \Resources\Model\EdFiStudentHomelessProgramAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -185,10 +185,11 @@ $student_unique_id = 'student_unique_id_example'; // string | A unique alphanume
 $homeless_primary_nighttime_residence_descriptor = 'homeless_primary_nighttime_residence_descriptor_example'; // string | The primary nighttime residence of the student at the time the student is identified as homeless.
 $awaiting_foster_care = True; // bool | State defined definition for awaiting foster care.
 $homeless_unaccompanied_youth = True; // bool | A homeless unaccompanied youth is a youth who is not in the physical custody of a parent or guardian and who fits the McKinney-Vento definition of homeless. Students must be both unaccompanied and homeless to be included as an unaccompanied homeless youth.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentHomelessProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $use_snapshot);
+    $result = $apiInstance->getStudentHomelessProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $homeless_primary_nighttime_residence_descriptor, $awaiting_foster_care, $homeless_unaccompanied_youth, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentHomelessProgramAssociationsApi->getStudentHomelessProgramAssociations: ', $e->getMessage(), PHP_EOL;
@@ -213,6 +214,7 @@ try {
 | **homeless_primary_nighttime_residence_descriptor** | **string**| The primary nighttime residence of the student at the time the student is identified as homeless. | [optional] |
 | **awaiting_foster_care** | **bool**| State defined definition for awaiting foster care. | [optional] |
 | **homeless_unaccompanied_youth** | **bool**| A homeless unaccompanied youth is a youth who is not in the physical custody of a parent or guardian and who fits the McKinney-Vento definition of homeless. Students must be both unaccompanied and homeless to be included as an unaccompanied homeless youth. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

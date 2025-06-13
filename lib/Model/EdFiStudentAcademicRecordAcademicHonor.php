@@ -372,10 +372,6 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'honor_description', the character length must be smaller than or equal to 80.";
         }
 
-        if ((mb_strlen($this->container['honor_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'honor_description', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['achievement_category_descriptor']) && (mb_strlen($this->container['achievement_category_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'achievement_category_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -384,24 +380,12 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'achievement_category_system', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['achievement_category_system']) && (mb_strlen($this->container['achievement_category_system']) < 1)) {
-            $invalidProperties[] = "invalid value for 'achievement_category_system', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['achievement_title']) && (mb_strlen($this->container['achievement_title']) > 60)) {
             $invalidProperties[] = "invalid value for 'achievement_title', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['achievement_title']) && (mb_strlen($this->container['achievement_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'achievement_title', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['criteria']) && (mb_strlen($this->container['criteria']) > 150)) {
             $invalidProperties[] = "invalid value for 'criteria', the character length must be smaller than or equal to 150.";
-        }
-
-        if (!is_null($this->container['criteria']) && (mb_strlen($this->container['criteria']) < 1)) {
-            $invalidProperties[] = "invalid value for 'criteria', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['criteria_url']) && (mb_strlen($this->container['criteria_url']) > 255)) {
@@ -416,10 +400,6 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'evidence_statement', the character length must be smaller than or equal to 150.";
         }
 
-        if (!is_null($this->container['evidence_statement']) && (mb_strlen($this->container['evidence_statement']) < 1)) {
-            $invalidProperties[] = "invalid value for 'evidence_statement', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['image_url']) && (mb_strlen($this->container['image_url']) > 255)) {
             $invalidProperties[] = "invalid value for 'image_url', the character length must be smaller than or equal to 255.";
         }
@@ -430,10 +410,6 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
 
         if (!is_null($this->container['issuer_name']) && (mb_strlen($this->container['issuer_name']) > 150)) {
             $invalidProperties[] = "invalid value for 'issuer_name', the character length must be smaller than or equal to 150.";
-        }
-
-        if (!is_null($this->container['issuer_name']) && (mb_strlen($this->container['issuer_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'issuer_name', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['issuer_origin_url']) && (mb_strlen($this->container['issuer_origin_url']) > 255)) {
@@ -515,9 +491,6 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
         if ((mb_strlen($honor_description) > 80)) {
             throw new \InvalidArgumentException('invalid length for $honor_description when calling EdFiStudentAcademicRecordAcademicHonor., must be smaller than or equal to 80.');
         }
-        if ((mb_strlen($honor_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $honor_description when calling EdFiStudentAcademicRecordAcademicHonor., must be bigger than or equal to 1.');
-        }
 
         $this->container['honor_description'] = $honor_description;
 
@@ -594,9 +567,6 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
         if (!is_null($achievement_category_system) && (mb_strlen($achievement_category_system) > 60)) {
             throw new \InvalidArgumentException('invalid length for $achievement_category_system when calling EdFiStudentAcademicRecordAcademicHonor., must be smaller than or equal to 60.');
         }
-        if (!is_null($achievement_category_system) && (mb_strlen($achievement_category_system) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $achievement_category_system when calling EdFiStudentAcademicRecordAcademicHonor., must be bigger than or equal to 1.');
-        }
 
         $this->container['achievement_category_system'] = $achievement_category_system;
 
@@ -635,9 +605,6 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
         if (!is_null($achievement_title) && (mb_strlen($achievement_title) > 60)) {
             throw new \InvalidArgumentException('invalid length for $achievement_title when calling EdFiStudentAcademicRecordAcademicHonor., must be smaller than or equal to 60.');
         }
-        if (!is_null($achievement_title) && (mb_strlen($achievement_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $achievement_title when calling EdFiStudentAcademicRecordAcademicHonor., must be bigger than or equal to 1.');
-        }
 
         $this->container['achievement_title'] = $achievement_title;
 
@@ -675,9 +642,6 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
         }
         if (!is_null($criteria) && (mb_strlen($criteria) > 150)) {
             throw new \InvalidArgumentException('invalid length for $criteria when calling EdFiStudentAcademicRecordAcademicHonor., must be smaller than or equal to 150.');
-        }
-        if (!is_null($criteria) && (mb_strlen($criteria) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $criteria when calling EdFiStudentAcademicRecordAcademicHonor., must be bigger than or equal to 1.');
         }
 
         $this->container['criteria'] = $criteria;
@@ -757,9 +721,6 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
         }
         if (!is_null($evidence_statement) && (mb_strlen($evidence_statement) > 150)) {
             throw new \InvalidArgumentException('invalid length for $evidence_statement when calling EdFiStudentAcademicRecordAcademicHonor., must be smaller than or equal to 150.');
-        }
-        if (!is_null($evidence_statement) && (mb_strlen($evidence_statement) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $evidence_statement when calling EdFiStudentAcademicRecordAcademicHonor., must be bigger than or equal to 1.');
         }
 
         $this->container['evidence_statement'] = $evidence_statement;
@@ -907,9 +868,6 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
         }
         if (!is_null($issuer_name) && (mb_strlen($issuer_name) > 150)) {
             throw new \InvalidArgumentException('invalid length for $issuer_name when calling EdFiStudentAcademicRecordAcademicHonor., must be smaller than or equal to 150.');
-        }
-        if (!is_null($issuer_name) && (mb_strlen($issuer_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $issuer_name when calling EdFiStudentAcademicRecordAcademicHonor., must be bigger than or equal to 1.');
         }
 
         $this->container['issuer_name'] = $issuer_name;

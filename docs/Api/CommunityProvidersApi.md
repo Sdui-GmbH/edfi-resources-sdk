@@ -1,6 +1,6 @@
 # Resources\CommunityProvidersApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getCommunityProviders()`
 
 ```php
-getCommunityProviders($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $use_snapshot): \Resources\Model\EdFiCommunityProvider[]
+getCommunityProviders($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $id, $use_snapshot): \Resources\Model\EdFiCommunityProvider[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -176,17 +176,18 @@ $limit = 25; // int | Indicates the maximum number of items that should be retur
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
-$community_provider_id = 56; // int | The identifier assigned to a community provider.
-$community_organization_id = 56; // int | The identifier assigned to a community organization.
+$community_provider_id = 56; // int | The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
+$community_organization_id = 56; // int | The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $provider_category_descriptor = 'provider_category_descriptor_example'; // string | Indicates the category of the provider.
 $provider_profitability_descriptor = 'provider_profitability_descriptor_example'; // string | Indicates the profitability status of the provider.
 $provider_status_descriptor = 'provider_status_descriptor_example'; // string | Indicates the status of the provider.
 $license_exempt_indicator = True; // bool | An indication of whether the provider is exempt from having a license.
 $school_indicator = True; // bool | An indication of whether the community provider is a school.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getCommunityProviders($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $use_snapshot);
+    $result = $apiInstance->getCommunityProviders($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_provider_id, $community_organization_id, $provider_category_descriptor, $provider_profitability_descriptor, $provider_status_descriptor, $license_exempt_indicator, $school_indicator, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CommunityProvidersApi->getCommunityProviders: ', $e->getMessage(), PHP_EOL;
@@ -202,13 +203,14 @@ try {
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
-| **community_provider_id** | **int**| The identifier assigned to a community provider. | [optional] |
-| **community_organization_id** | **int**| The identifier assigned to a community organization. | [optional] |
+| **community_provider_id** | **int**| The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
+| **community_organization_id** | **int**| The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **provider_category_descriptor** | **string**| Indicates the category of the provider. | [optional] |
 | **provider_profitability_descriptor** | **string**| Indicates the profitability status of the provider. | [optional] |
 | **provider_status_descriptor** | **string**| Indicates the status of the provider. | [optional] |
 | **license_exempt_indicator** | **bool**| An indication of whether the provider is exempt from having a license. | [optional] |
 | **school_indicator** | **bool**| An indication of whether the community provider is a school. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

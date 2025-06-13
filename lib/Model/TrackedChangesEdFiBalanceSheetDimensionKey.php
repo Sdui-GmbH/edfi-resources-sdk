@@ -285,10 +285,6 @@ class TrackedChangesEdFiBalanceSheetDimensionKey implements ModelInterface, Arra
             $invalidProperties[] = "invalid value for 'code', the character length must be smaller than or equal to 16.";
         }
 
-        if (!is_null($this->container['code']) && (mb_strlen($this->container['code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'code', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['fiscal_year']) && ($this->container['fiscal_year'] > 2040)) {
             $invalidProperties[] = "invalid value for 'fiscal_year', must be smaller than or equal to 2040.";
         }
@@ -336,9 +332,6 @@ class TrackedChangesEdFiBalanceSheetDimensionKey implements ModelInterface, Arra
         }
         if ((mb_strlen($code) > 16)) {
             throw new \InvalidArgumentException('invalid length for $code when calling TrackedChangesEdFiBalanceSheetDimensionKey., must be smaller than or equal to 16.');
-        }
-        if ((mb_strlen($code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling TrackedChangesEdFiBalanceSheetDimensionKey., must be bigger than or equal to 1.');
         }
 
         $this->container['code'] = $code;

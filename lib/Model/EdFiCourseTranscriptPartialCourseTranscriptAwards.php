@@ -312,6 +312,10 @@ class EdFiCourseTranscriptPartialCourseTranscriptAwards implements ModelInterfac
         if ($this->container['earned_credits'] === null) {
             $invalidProperties[] = "'earned_credits' can't be null";
         }
+        if (($this->container['earned_credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'earned_credits', must be smaller than or equal to 999999.999.";
+        }
+
         if (($this->container['earned_credits'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'earned_credits', must be bigger than or equal to 0.0.";
         }
@@ -320,16 +324,8 @@ class EdFiCourseTranscriptPartialCourseTranscriptAwards implements ModelInterfac
             $invalidProperties[] = "invalid value for 'letter_grade_earned', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['letter_grade_earned']) && (mb_strlen($this->container['letter_grade_earned']) < 1)) {
-            $invalidProperties[] = "invalid value for 'letter_grade_earned', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['numeric_grade_earned']) && (mb_strlen($this->container['numeric_grade_earned']) > 20)) {
             $invalidProperties[] = "invalid value for 'numeric_grade_earned', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['numeric_grade_earned']) && (mb_strlen($this->container['numeric_grade_earned']) < 1)) {
-            $invalidProperties[] = "invalid value for 'numeric_grade_earned', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -435,6 +431,9 @@ class EdFiCourseTranscriptPartialCourseTranscriptAwards implements ModelInterfac
             throw new \InvalidArgumentException('non-nullable earned_credits cannot be null');
         }
 
+        if (($earned_credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $earned_credits when calling EdFiCourseTranscriptPartialCourseTranscriptAwards., must be smaller than or equal to 999999.999.');
+        }
         if (($earned_credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $earned_credits when calling EdFiCourseTranscriptPartialCourseTranscriptAwards., must be bigger than or equal to 0.0.');
         }
@@ -476,9 +475,6 @@ class EdFiCourseTranscriptPartialCourseTranscriptAwards implements ModelInterfac
         if (!is_null($letter_grade_earned) && (mb_strlen($letter_grade_earned) > 20)) {
             throw new \InvalidArgumentException('invalid length for $letter_grade_earned when calling EdFiCourseTranscriptPartialCourseTranscriptAwards., must be smaller than or equal to 20.');
         }
-        if (!is_null($letter_grade_earned) && (mb_strlen($letter_grade_earned) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $letter_grade_earned when calling EdFiCourseTranscriptPartialCourseTranscriptAwards., must be bigger than or equal to 1.');
-        }
 
         $this->container['letter_grade_earned'] = $letter_grade_earned;
 
@@ -516,9 +512,6 @@ class EdFiCourseTranscriptPartialCourseTranscriptAwards implements ModelInterfac
         }
         if (!is_null($numeric_grade_earned) && (mb_strlen($numeric_grade_earned) > 20)) {
             throw new \InvalidArgumentException('invalid length for $numeric_grade_earned when calling EdFiCourseTranscriptPartialCourseTranscriptAwards., must be smaller than or equal to 20.');
-        }
-        if (!is_null($numeric_grade_earned) && (mb_strlen($numeric_grade_earned) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $numeric_grade_earned when calling EdFiCourseTranscriptPartialCourseTranscriptAwards., must be bigger than or equal to 1.');
         }
 
         $this->container['numeric_grade_earned'] = $numeric_grade_earned;

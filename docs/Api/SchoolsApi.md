@@ -1,6 +1,6 @@
 # Resources\SchoolsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getSchools()`
 
 ```php
-getSchools($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $use_snapshot): \Resources\Model\EdFiSchool[]
+getSchools($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $id, $use_snapshot): \Resources\Model\EdFiSchool[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -176,8 +176,8 @@ $limit = 25; // int | Indicates the maximum number of items that should be retur
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
-$school_id = 56; // int | The identifier assigned to a school.
-$local_education_agency_id = 56; // int | The identifier assigned to a local education agency.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
+$local_education_agency_id = 56; // int | The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication.
 $charter_approval_school_year = 56; // int | The school year in which a charter school was initially approved.
 $administrative_funding_control_descriptor = 'administrative_funding_control_descriptor_example'; // string | The type of education institution as classified by its funding source, for example public or private.
 $charter_approval_agency_type_descriptor = 'charter_approval_agency_type_descriptor_example'; // string | The type of agency that approved the establishment or continuation of a charter school.
@@ -186,10 +186,11 @@ $internet_access_descriptor = 'internet_access_descriptor_example'; // string | 
 $magnet_special_program_emphasis_school_descriptor = 'magnet_special_program_emphasis_school_descriptor_example'; // string | A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language).
 $school_type_descriptor = 'school_type_descriptor_example'; // string | The type of education institution as classified by its primary focus.
 $title_i_part_a_school_designation_descriptor = 'title_i_part_a_school_designation_descriptor_example'; // string | Denotes the Title I Part A designation for the school.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getSchools($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $use_snapshot);
+    $result = $apiInstance->getSchools($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SchoolsApi->getSchools: ', $e->getMessage(), PHP_EOL;
@@ -205,8 +206,8 @@ try {
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
-| **local_education_agency_id** | **int**| The identifier assigned to a local education agency. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
+| **local_education_agency_id** | **int**| The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. | [optional] |
 | **charter_approval_school_year** | **int**| The school year in which a charter school was initially approved. | [optional] |
 | **administrative_funding_control_descriptor** | **string**| The type of education institution as classified by its funding source, for example public or private. | [optional] |
 | **charter_approval_agency_type_descriptor** | **string**| The type of agency that approved the establishment or continuation of a charter school. | [optional] |
@@ -215,6 +216,7 @@ try {
 | **magnet_special_program_emphasis_school_descriptor** | **string**| A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). | [optional] |
 | **school_type_descriptor** | **string**| The type of education institution as classified by its primary focus. | [optional] |
 | **title_i_part_a_school_designation_descriptor** | **string**| Denotes the Title I Part A designation for the school. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

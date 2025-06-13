@@ -335,6 +335,14 @@ class EdFiLocalPayroll implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
+        if (($this->container['amount'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'amount', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (($this->container['amount'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'amount', must be bigger than or equal to -922337203685477.6.";
+        }
+
         if (!is_null($this->container['financial_collection_descriptor']) && (mb_strlen($this->container['financial_collection_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'financial_collection_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -484,6 +492,14 @@ class EdFiLocalPayroll implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($amount)) {
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
+
+        if (($amount > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling EdFiLocalPayroll., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (($amount < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling EdFiLocalPayroll., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['amount'] = $amount;
 
         return $this;

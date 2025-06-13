@@ -358,10 +358,6 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'session_name', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['session_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'session_name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['school_reference'] === null) {
             $invalidProperties[] = "'school_reference' can't be null";
         }
@@ -454,9 +450,6 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($session_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $session_name when calling EdFiSession., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($session_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $session_name when calling EdFiSession., must be bigger than or equal to 1.');
         }
 
         $this->container['session_name'] = $session_name;

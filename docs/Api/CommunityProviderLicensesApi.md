@@ -1,6 +1,6 @@
 # Resources\CommunityProviderLicensesApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -178,7 +178,7 @@ $max_change_version = 56; // int | Used in synchronization to set sequence maxim
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
 $license_identifier = 'license_identifier_example'; // string | The unique identifier issued by the licensing organization.
 $licensing_organization = 'licensing_organization_example'; // string | The organization issuing the license.
-$community_provider_id = 56; // int | The identifier assigned to a community provider.
+$community_provider_id = 56; // int | The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $license_status_descriptor = 'license_status_descriptor_example'; // string | An indication of the status of the license.
 $license_type_descriptor = 'license_type_descriptor_example'; // string | An indication of the category of the license.
 $authorized_facility_capacity = 56; // int | The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve.
@@ -209,7 +209,7 @@ try {
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
 | **license_identifier** | **string**| The unique identifier issued by the licensing organization. | [optional] |
 | **licensing_organization** | **string**| The organization issuing the license. | [optional] |
-| **community_provider_id** | **int**| The identifier assigned to a community provider. | [optional] |
+| **community_provider_id** | **int**| The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **license_status_descriptor** | **string**| An indication of the status of the license. | [optional] |
 | **license_type_descriptor** | **string**| An indication of the category of the license. | [optional] |
 | **authorized_facility_capacity** | **int**| The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. | [optional] |

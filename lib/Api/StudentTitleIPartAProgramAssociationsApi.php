@@ -771,6 +771,7 @@ class StudentTitleIPartAProgramAssociationsApi
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $title_i_part_a_participant_descriptor An indication of the type of Title I program, if any, in which the student is participating and by which the student is served. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentTitleIPartAProgramAssociations'] to see the possible values for this operation
      *
@@ -778,9 +779,9 @@ class StudentTitleIPartAProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiStudentTitleIPartAProgramAssociation[]
      */
-    public function getStudentTitleIPartAProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $title_i_part_a_participant_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentTitleIPartAProgramAssociations'][0])
+    public function getStudentTitleIPartAProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $title_i_part_a_participant_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentTitleIPartAProgramAssociations'][0])
     {
-        list($response) = $this->getStudentTitleIPartAProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $use_snapshot, $contentType);
+        list($response) = $this->getStudentTitleIPartAProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -801,6 +802,7 @@ class StudentTitleIPartAProgramAssociationsApi
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $title_i_part_a_participant_descriptor An indication of the type of Title I program, if any, in which the student is participating and by which the student is served. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentTitleIPartAProgramAssociations'] to see the possible values for this operation
      *
@@ -808,9 +810,9 @@ class StudentTitleIPartAProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiStudentTitleIPartAProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentTitleIPartAProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $title_i_part_a_participant_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentTitleIPartAProgramAssociations'][0])
+    public function getStudentTitleIPartAProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $title_i_part_a_participant_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentTitleIPartAProgramAssociations'][0])
     {
-        $request = $this->getStudentTitleIPartAProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $use_snapshot, $contentType);
+        $request = $this->getStudentTitleIPartAProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -938,15 +940,16 @@ class StudentTitleIPartAProgramAssociationsApi
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $title_i_part_a_participant_descriptor An indication of the type of Title I program, if any, in which the student is participating and by which the student is served. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentTitleIPartAProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentTitleIPartAProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $title_i_part_a_participant_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentTitleIPartAProgramAssociations'][0])
+    public function getStudentTitleIPartAProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $title_i_part_a_participant_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentTitleIPartAProgramAssociations'][0])
     {
-        return $this->getStudentTitleIPartAProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $use_snapshot, $contentType)
+        return $this->getStudentTitleIPartAProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -971,16 +974,17 @@ class StudentTitleIPartAProgramAssociationsApi
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $title_i_part_a_participant_descriptor An indication of the type of Title I program, if any, in which the student is participating and by which the student is served. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentTitleIPartAProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentTitleIPartAProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $title_i_part_a_participant_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentTitleIPartAProgramAssociations'][0])
+    public function getStudentTitleIPartAProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $title_i_part_a_participant_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentTitleIPartAProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentTitleIPartAProgramAssociation[]';
-        $request = $this->getStudentTitleIPartAProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $use_snapshot, $contentType);
+        $request = $this->getStudentTitleIPartAProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $title_i_part_a_participant_descriptor, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1033,13 +1037,14 @@ class StudentTitleIPartAProgramAssociationsApi
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $title_i_part_a_participant_descriptor An indication of the type of Title I program, if any, in which the student is participating and by which the student is served. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentTitleIPartAProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentTitleIPartAProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $title_i_part_a_participant_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentTitleIPartAProgramAssociations'][0])
+    public function getStudentTitleIPartAProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $title_i_part_a_participant_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentTitleIPartAProgramAssociations'][0])
     {
 
 
@@ -1072,6 +1077,7 @@ class StudentTitleIPartAProgramAssociationsApi
             throw new \InvalidArgumentException('invalid length for "$title_i_part_a_participant_descriptor" when calling StudentTitleIPartAProgramAssociationsApi.getStudentTitleIPartAProgramAssociations, must be smaller than or equal to 306.');
         }
         
+
 
 
         $resourcePath = '/ed-fi/studentTitleIPartAProgramAssociations';
@@ -1184,6 +1190,15 @@ class StudentTitleIPartAProgramAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $title_i_part_a_participant_descriptor,
             'titleIPartAParticipantDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

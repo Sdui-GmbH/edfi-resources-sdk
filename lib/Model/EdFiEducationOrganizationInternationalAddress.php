@@ -358,48 +358,24 @@ class EdFiEducationOrganizationInternationalAddress implements ModelInterface, A
             $invalidProperties[] = "invalid value for 'address_line1', the character length must be smaller than or equal to 150.";
         }
 
-        if ((mb_strlen($this->container['address_line1']) < 1)) {
-            $invalidProperties[] = "invalid value for 'address_line1', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['address_line2']) && (mb_strlen($this->container['address_line2']) > 150)) {
             $invalidProperties[] = "invalid value for 'address_line2', the character length must be smaller than or equal to 150.";
-        }
-
-        if (!is_null($this->container['address_line2']) && (mb_strlen($this->container['address_line2']) < 1)) {
-            $invalidProperties[] = "invalid value for 'address_line2', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['address_line3']) && (mb_strlen($this->container['address_line3']) > 150)) {
             $invalidProperties[] = "invalid value for 'address_line3', the character length must be smaller than or equal to 150.";
         }
 
-        if (!is_null($this->container['address_line3']) && (mb_strlen($this->container['address_line3']) < 1)) {
-            $invalidProperties[] = "invalid value for 'address_line3', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['address_line4']) && (mb_strlen($this->container['address_line4']) > 150)) {
             $invalidProperties[] = "invalid value for 'address_line4', the character length must be smaller than or equal to 150.";
-        }
-
-        if (!is_null($this->container['address_line4']) && (mb_strlen($this->container['address_line4']) < 1)) {
-            $invalidProperties[] = "invalid value for 'address_line4', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['latitude']) && (mb_strlen($this->container['latitude']) > 20)) {
             $invalidProperties[] = "invalid value for 'latitude', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['latitude']) && (mb_strlen($this->container['latitude']) < 1)) {
-            $invalidProperties[] = "invalid value for 'latitude', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['longitude']) && (mb_strlen($this->container['longitude']) > 20)) {
             $invalidProperties[] = "invalid value for 'longitude', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['longitude']) && (mb_strlen($this->container['longitude']) < 1)) {
-            $invalidProperties[] = "invalid value for 'longitude', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -504,9 +480,6 @@ class EdFiEducationOrganizationInternationalAddress implements ModelInterface, A
         if ((mb_strlen($address_line1) > 150)) {
             throw new \InvalidArgumentException('invalid length for $address_line1 when calling EdFiEducationOrganizationInternationalAddress., must be smaller than or equal to 150.');
         }
-        if ((mb_strlen($address_line1) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $address_line1 when calling EdFiEducationOrganizationInternationalAddress., must be bigger than or equal to 1.');
-        }
 
         $this->container['address_line1'] = $address_line1;
 
@@ -544,9 +517,6 @@ class EdFiEducationOrganizationInternationalAddress implements ModelInterface, A
         }
         if (!is_null($address_line2) && (mb_strlen($address_line2) > 150)) {
             throw new \InvalidArgumentException('invalid length for $address_line2 when calling EdFiEducationOrganizationInternationalAddress., must be smaller than or equal to 150.');
-        }
-        if (!is_null($address_line2) && (mb_strlen($address_line2) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $address_line2 when calling EdFiEducationOrganizationInternationalAddress., must be bigger than or equal to 1.');
         }
 
         $this->container['address_line2'] = $address_line2;
@@ -586,9 +556,6 @@ class EdFiEducationOrganizationInternationalAddress implements ModelInterface, A
         if (!is_null($address_line3) && (mb_strlen($address_line3) > 150)) {
             throw new \InvalidArgumentException('invalid length for $address_line3 when calling EdFiEducationOrganizationInternationalAddress., must be smaller than or equal to 150.');
         }
-        if (!is_null($address_line3) && (mb_strlen($address_line3) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $address_line3 when calling EdFiEducationOrganizationInternationalAddress., must be bigger than or equal to 1.');
-        }
 
         $this->container['address_line3'] = $address_line3;
 
@@ -626,9 +593,6 @@ class EdFiEducationOrganizationInternationalAddress implements ModelInterface, A
         }
         if (!is_null($address_line4) && (mb_strlen($address_line4) > 150)) {
             throw new \InvalidArgumentException('invalid length for $address_line4 when calling EdFiEducationOrganizationInternationalAddress., must be smaller than or equal to 150.');
-        }
-        if (!is_null($address_line4) && (mb_strlen($address_line4) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $address_line4 when calling EdFiEducationOrganizationInternationalAddress., must be bigger than or equal to 1.');
         }
 
         $this->container['address_line4'] = $address_line4;
@@ -736,9 +700,6 @@ class EdFiEducationOrganizationInternationalAddress implements ModelInterface, A
         if (!is_null($latitude) && (mb_strlen($latitude) > 20)) {
             throw new \InvalidArgumentException('invalid length for $latitude when calling EdFiEducationOrganizationInternationalAddress., must be smaller than or equal to 20.');
         }
-        if (!is_null($latitude) && (mb_strlen($latitude) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $latitude when calling EdFiEducationOrganizationInternationalAddress., must be bigger than or equal to 1.');
-        }
 
         $this->container['latitude'] = $latitude;
 
@@ -776,9 +737,6 @@ class EdFiEducationOrganizationInternationalAddress implements ModelInterface, A
         }
         if (!is_null($longitude) && (mb_strlen($longitude) > 20)) {
             throw new \InvalidArgumentException('invalid length for $longitude when calling EdFiEducationOrganizationInternationalAddress., must be smaller than or equal to 20.');
-        }
-        if (!is_null($longitude) && (mb_strlen($longitude) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $longitude when calling EdFiEducationOrganizationInternationalAddress., must be bigger than or equal to 1.');
         }
 
         $this->container['longitude'] = $longitude;

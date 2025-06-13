@@ -502,6 +502,10 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'exit_withdraw_type_descriptor', the character length must be smaller than or equal to 306.";
         }
 
+        if (!is_null($this->container['full_time_equivalency']) && ($this->container['full_time_equivalency'] > 9.9999)) {
+            $invalidProperties[] = "invalid value for 'full_time_equivalency', must be smaller than or equal to 9.9999.";
+        }
+
         if (!is_null($this->container['full_time_equivalency']) && ($this->container['full_time_equivalency'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'full_time_equivalency', must be bigger than or equal to 0.0.";
         }
@@ -1111,6 +1115,9 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
             }
         }
 
+        if (!is_null($full_time_equivalency) && ($full_time_equivalency > 9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $full_time_equivalency when calling EdFiStudentSchoolAssociation., must be smaller than or equal to 9.9999.');
+        }
         if (!is_null($full_time_equivalency) && ($full_time_equivalency < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $full_time_equivalency when calling EdFiStudentSchoolAssociation., must be bigger than or equal to 0.0.');
         }

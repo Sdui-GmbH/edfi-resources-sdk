@@ -1,6 +1,6 @@
 # Resources\BellSchedulesApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -177,7 +177,7 @@ $min_change_version = 56; // int | Used in synchronization to set sequence minim
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
 $bell_schedule_name = 'bell_schedule_name_example'; // string | Name or title of the bell schedule.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $alternate_day_name = 'alternate_day_name_example'; // string | An alternate name for the day (e.g., Red, Blue).
 $end_time = 'end_time_example'; // string | An indication of the time of day the bell schedule ends.
 $id = 'id_example'; // string | 
@@ -203,7 +203,7 @@ try {
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
 | **bell_schedule_name** | **string**| Name or title of the bell schedule. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **alternate_day_name** | **string**| An alternate name for the day (e.g., Red, Blue). | [optional] |
 | **end_time** | **string**| An indication of the time of day the bell schedule ends. | [optional] |
 | **id** | **string**|  | [optional] |

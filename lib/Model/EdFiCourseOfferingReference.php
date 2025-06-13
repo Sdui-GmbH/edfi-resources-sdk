@@ -309,10 +309,6 @@ class EdFiCourseOfferingReference implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'local_course_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['local_course_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'local_course_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['school_id'] === null) {
             $invalidProperties[] = "'school_id' can't be null";
         }
@@ -324,10 +320,6 @@ class EdFiCourseOfferingReference implements ModelInterface, ArrayAccess, \JsonS
         }
         if ((mb_strlen($this->container['session_name']) > 60)) {
             $invalidProperties[] = "invalid value for 'session_name', the character length must be smaller than or equal to 60.";
-        }
-
-        if ((mb_strlen($this->container['session_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'session_name', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -370,9 +362,6 @@ class EdFiCourseOfferingReference implements ModelInterface, ArrayAccess, \JsonS
         if ((mb_strlen($local_course_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $local_course_code when calling EdFiCourseOfferingReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($local_course_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $local_course_code when calling EdFiCourseOfferingReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['local_course_code'] = $local_course_code;
 
@@ -392,7 +381,7 @@ class EdFiCourseOfferingReference implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets school_id
      *
-     * @param int $school_id The identifier assigned to a school.
+     * @param int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -457,9 +446,6 @@ class EdFiCourseOfferingReference implements ModelInterface, ArrayAccess, \JsonS
         }
         if ((mb_strlen($session_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $session_name when calling EdFiCourseOfferingReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($session_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $session_name when calling EdFiCourseOfferingReference., must be bigger than or equal to 1.');
         }
 
         $this->container['session_name'] = $session_name;

@@ -300,16 +300,8 @@ class TrackedChangesEdFiLearningStandardEquivalenceAssociationKey implements Mod
             $invalidProperties[] = "invalid value for 'source_learning_standard_id', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['source_learning_standard_id']) && (mb_strlen($this->container['source_learning_standard_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'source_learning_standard_id', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['target_learning_standard_id']) && (mb_strlen($this->container['target_learning_standard_id']) > 60)) {
             $invalidProperties[] = "invalid value for 'target_learning_standard_id', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['target_learning_standard_id']) && (mb_strlen($this->container['target_learning_standard_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'target_learning_standard_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -386,9 +378,6 @@ class TrackedChangesEdFiLearningStandardEquivalenceAssociationKey implements Mod
         if ((mb_strlen($source_learning_standard_id) > 60)) {
             throw new \InvalidArgumentException('invalid length for $source_learning_standard_id when calling TrackedChangesEdFiLearningStandardEquivalenceAssociationKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($source_learning_standard_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $source_learning_standard_id when calling TrackedChangesEdFiLearningStandardEquivalenceAssociationKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['source_learning_standard_id'] = $source_learning_standard_id;
 
@@ -419,9 +408,6 @@ class TrackedChangesEdFiLearningStandardEquivalenceAssociationKey implements Mod
         }
         if ((mb_strlen($target_learning_standard_id) > 60)) {
             throw new \InvalidArgumentException('invalid length for $target_learning_standard_id when calling TrackedChangesEdFiLearningStandardEquivalenceAssociationKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($target_learning_standard_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $target_learning_standard_id when calling TrackedChangesEdFiLearningStandardEquivalenceAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['target_learning_standard_id'] = $target_learning_standard_id;

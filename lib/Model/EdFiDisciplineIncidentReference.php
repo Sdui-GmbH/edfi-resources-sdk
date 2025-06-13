@@ -295,10 +295,6 @@ class EdFiDisciplineIncidentReference implements ModelInterface, ArrayAccess, \J
             $invalidProperties[] = "invalid value for 'incident_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if ((mb_strlen($this->container['incident_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'incident_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['school_id'] === null) {
             $invalidProperties[] = "'school_id' can't be null";
         }
@@ -342,9 +338,6 @@ class EdFiDisciplineIncidentReference implements ModelInterface, ArrayAccess, \J
         if ((mb_strlen($incident_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $incident_identifier when calling EdFiDisciplineIncidentReference., must be smaller than or equal to 36.');
         }
-        if ((mb_strlen($incident_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $incident_identifier when calling EdFiDisciplineIncidentReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['incident_identifier'] = $incident_identifier;
 
@@ -364,7 +357,7 @@ class EdFiDisciplineIncidentReference implements ModelInterface, ArrayAccess, \J
     /**
      * Sets school_id
      *
-     * @param int $school_id The identifier assigned to a school.
+     * @param int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

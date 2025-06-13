@@ -291,6 +291,14 @@ class TpdmEvaluationElementRatingResult implements ModelInterface, ArrayAccess, 
         if ($this->container['rating'] === null) {
             $invalidProperties[] = "'rating' can't be null";
         }
+        if (($this->container['rating'] > 999.999)) {
+            $invalidProperties[] = "invalid value for 'rating', must be smaller than or equal to 999.999.";
+        }
+
+        if (($this->container['rating'] < -999.999)) {
+            $invalidProperties[] = "invalid value for 'rating', must be bigger than or equal to -999.999.";
+        }
+
         if ($this->container['rating_result_title'] === null) {
             $invalidProperties[] = "'rating_result_title' can't be null";
         }
@@ -346,6 +354,14 @@ class TpdmEvaluationElementRatingResult implements ModelInterface, ArrayAccess, 
         if (is_null($rating)) {
             throw new \InvalidArgumentException('non-nullable rating cannot be null');
         }
+
+        if (($rating > 999.999)) {
+            throw new \InvalidArgumentException('invalid value for $rating when calling TpdmEvaluationElementRatingResult., must be smaller than or equal to 999.999.');
+        }
+        if (($rating < -999.999)) {
+            throw new \InvalidArgumentException('invalid value for $rating when calling TpdmEvaluationElementRatingResult., must be bigger than or equal to -999.999.');
+        }
+
         $this->container['rating'] = $rating;
 
         return $this;

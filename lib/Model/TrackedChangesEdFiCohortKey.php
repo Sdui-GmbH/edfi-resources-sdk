@@ -285,10 +285,6 @@ class TrackedChangesEdFiCohortKey implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'cohort_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if (!is_null($this->container['cohort_identifier']) && (mb_strlen($this->container['cohort_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'cohort_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -328,9 +324,6 @@ class TrackedChangesEdFiCohortKey implements ModelInterface, ArrayAccess, \JsonS
         }
         if ((mb_strlen($cohort_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $cohort_identifier when calling TrackedChangesEdFiCohortKey., must be smaller than or equal to 36.');
-        }
-        if ((mb_strlen($cohort_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $cohort_identifier when calling TrackedChangesEdFiCohortKey., must be bigger than or equal to 1.');
         }
 
         $this->container['cohort_identifier'] = $cohort_identifier;

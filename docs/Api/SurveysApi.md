@@ -1,6 +1,6 @@
 # Resources\SurveysApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -180,7 +180,7 @@ $namespace = 'namespace_example'; // string | Namespace for the survey.
 $survey_identifier = 'survey_identifier_example'; // string | The unique survey identifier from the survey tool.
 $school_year = 56; // int | The school year associated with the survey.
 $education_organization_id = 56; // int | The identifier assigned to an education organization.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $session_name = 'session_name_example'; // string | The identifier for the calendar for the academic session.
 $survey_category_descriptor = 'survey_category_descriptor_example'; // string | The category or type of survey.
 $id = 'id_example'; // string | 
@@ -209,7 +209,7 @@ try {
 | **survey_identifier** | **string**| The unique survey identifier from the survey tool. | [optional] |
 | **school_year** | **int**| The school year associated with the survey. | [optional] |
 | **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **session_name** | **string**| The identifier for the calendar for the academic session. | [optional] |
 | **survey_category_descriptor** | **string**| The category or type of survey. | [optional] |
 | **id** | **string**|  | [optional] |

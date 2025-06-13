@@ -292,10 +292,6 @@ class TrackedChangesEdFiAccountabilityRatingKey implements ModelInterface, Array
             $invalidProperties[] = "invalid value for 'rating_title', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['rating_title']) && (mb_strlen($this->container['rating_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'rating_title', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -335,9 +331,6 @@ class TrackedChangesEdFiAccountabilityRatingKey implements ModelInterface, Array
         }
         if ((mb_strlen($rating_title) > 60)) {
             throw new \InvalidArgumentException('invalid length for $rating_title when calling TrackedChangesEdFiAccountabilityRatingKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($rating_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $rating_title when calling TrackedChangesEdFiAccountabilityRatingKey., must be bigger than or equal to 1.');
         }
 
         $this->container['rating_title'] = $rating_title;

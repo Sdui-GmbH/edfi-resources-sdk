@@ -764,12 +764,13 @@ class LocalEducationAgenciesApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $local_education_agency_id The identifier assigned to a local education agency. (optional)
-     * @param  int $education_service_center_id The identifier assigned to an education service center. (optional)
-     * @param  int $parent_local_education_agency_id The identifier assigned to a local education agency. (optional)
-     * @param  int $state_education_agency_id The identifier assigned to a state education agency. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $education_service_center_id The identifier assigned to an education service center. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $parent_local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $charter_status_descriptor A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. (optional)
      * @param  string $local_education_agency_category_descriptor The category of local education agency/district. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEducationAgencies'] to see the possible values for this operation
      *
@@ -777,9 +778,9 @@ class LocalEducationAgenciesApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiLocalEducationAgency[]
      */
-    public function getLocalEducationAgencies($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
+    public function getLocalEducationAgencies($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
     {
-        list($response) = $this->getLocalEducationAgenciesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $use_snapshot, $contentType);
+        list($response) = $this->getLocalEducationAgenciesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -793,12 +794,13 @@ class LocalEducationAgenciesApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $local_education_agency_id The identifier assigned to a local education agency. (optional)
-     * @param  int $education_service_center_id The identifier assigned to an education service center. (optional)
-     * @param  int $parent_local_education_agency_id The identifier assigned to a local education agency. (optional)
-     * @param  int $state_education_agency_id The identifier assigned to a state education agency. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $education_service_center_id The identifier assigned to an education service center. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $parent_local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $charter_status_descriptor A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. (optional)
      * @param  string $local_education_agency_category_descriptor The category of local education agency/district. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEducationAgencies'] to see the possible values for this operation
      *
@@ -806,9 +808,9 @@ class LocalEducationAgenciesApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiLocalEducationAgency[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLocalEducationAgenciesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
+    public function getLocalEducationAgenciesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
     {
-        $request = $this->getLocalEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $use_snapshot, $contentType);
+        $request = $this->getLocalEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -929,21 +931,22 @@ class LocalEducationAgenciesApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $local_education_agency_id The identifier assigned to a local education agency. (optional)
-     * @param  int $education_service_center_id The identifier assigned to an education service center. (optional)
-     * @param  int $parent_local_education_agency_id The identifier assigned to a local education agency. (optional)
-     * @param  int $state_education_agency_id The identifier assigned to a state education agency. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $education_service_center_id The identifier assigned to an education service center. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $parent_local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $charter_status_descriptor A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. (optional)
      * @param  string $local_education_agency_category_descriptor The category of local education agency/district. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEducationAgencies'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLocalEducationAgenciesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
+    public function getLocalEducationAgenciesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
     {
-        return $this->getLocalEducationAgenciesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $use_snapshot, $contentType)
+        return $this->getLocalEducationAgenciesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -961,22 +964,23 @@ class LocalEducationAgenciesApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $local_education_agency_id The identifier assigned to a local education agency. (optional)
-     * @param  int $education_service_center_id The identifier assigned to an education service center. (optional)
-     * @param  int $parent_local_education_agency_id The identifier assigned to a local education agency. (optional)
-     * @param  int $state_education_agency_id The identifier assigned to a state education agency. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $education_service_center_id The identifier assigned to an education service center. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $parent_local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $charter_status_descriptor A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. (optional)
      * @param  string $local_education_agency_category_descriptor The category of local education agency/district. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEducationAgencies'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLocalEducationAgenciesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
+    public function getLocalEducationAgenciesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
     {
         $returnType = '\Resources\Model\EdFiLocalEducationAgency[]';
-        $request = $this->getLocalEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $use_snapshot, $contentType);
+        $request = $this->getLocalEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $local_education_agency_id, $education_service_center_id, $parent_local_education_agency_id, $state_education_agency_id, $charter_status_descriptor, $local_education_agency_category_descriptor, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1022,19 +1026,20 @@ class LocalEducationAgenciesApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $local_education_agency_id The identifier assigned to a local education agency. (optional)
-     * @param  int $education_service_center_id The identifier assigned to an education service center. (optional)
-     * @param  int $parent_local_education_agency_id The identifier assigned to a local education agency. (optional)
-     * @param  int $state_education_agency_id The identifier assigned to a state education agency. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $education_service_center_id The identifier assigned to an education service center. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $parent_local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $charter_status_descriptor A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. (optional)
      * @param  string $local_education_agency_category_descriptor The category of local education agency/district. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocalEducationAgencies'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getLocalEducationAgenciesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
+    public function getLocalEducationAgenciesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $local_education_agency_id = null, $education_service_center_id = null, $parent_local_education_agency_id = null, $state_education_agency_id = null, $charter_status_descriptor = null, $local_education_agency_category_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocalEducationAgencies'][0])
     {
 
 
@@ -1060,6 +1065,7 @@ class LocalEducationAgenciesApi
             throw new \InvalidArgumentException('invalid length for "$local_education_agency_category_descriptor" when calling LocalEducationAgenciesApi.getLocalEducationAgencies, must be smaller than or equal to 306.');
         }
         
+
 
 
         $resourcePath = '/ed-fi/localEducationAgencies';
@@ -1163,6 +1169,15 @@ class LocalEducationAgenciesApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $local_education_agency_category_descriptor,
             'localEducationAgencyCategoryDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

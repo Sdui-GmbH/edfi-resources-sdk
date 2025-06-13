@@ -1,6 +1,6 @@
 # Resources\StudentLanguageInstructionProgramAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getStudentLanguageInstructionProgramAssociations()`
 
 ```php
-getStudentLanguageInstructionProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $use_snapshot): \Resources\Model\EdFiStudentLanguageInstructionProgramAssociation[]
+getStudentLanguageInstructionProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $id, $use_snapshot): \Resources\Model\EdFiStudentLanguageInstructionProgramAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -184,10 +184,11 @@ $program_type_descriptor = 'program_type_descriptor_example'; // string | The ty
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
 $dosage = 56; // int | The duration of time in minutes for which the student was assigned to participate in the program.
 $english_learner_participation = True; // bool | An indication that an English learner student is served by an English language instruction educational program supported with Title III of ESEA funds.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentLanguageInstructionProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $use_snapshot);
+    $result = $apiInstance->getStudentLanguageInstructionProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $dosage, $english_learner_participation, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentLanguageInstructionProgramAssociationsApi->getStudentLanguageInstructionProgramAssociations: ', $e->getMessage(), PHP_EOL;
@@ -211,6 +212,7 @@ try {
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
 | **dosage** | **int**| The duration of time in minutes for which the student was assigned to participate in the program. | [optional] |
 | **english_learner_participation** | **bool**| An indication that an English learner student is served by an English language instruction educational program supported with Title III of ESEA funds. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

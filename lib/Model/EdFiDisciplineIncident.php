@@ -393,10 +393,6 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'incident_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if ((mb_strlen($this->container['incident_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'incident_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['school_reference'] === null) {
             $invalidProperties[] = "'school_reference' can't be null";
         }
@@ -404,8 +400,12 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'case_number', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['case_number']) && (mb_strlen($this->container['case_number']) < 1)) {
-            $invalidProperties[] = "invalid value for 'case_number', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['incident_cost']) && ($this->container['incident_cost'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'incident_cost', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['incident_cost']) && ($this->container['incident_cost'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'incident_cost', must be bigger than or equal to -922337203685477.6.";
         }
 
         if ($this->container['incident_date'] === null) {
@@ -413,10 +413,6 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
         }
         if (!is_null($this->container['incident_description']) && (mb_strlen($this->container['incident_description']) > 1024)) {
             $invalidProperties[] = "invalid value for 'incident_description', the character length must be smaller than or equal to 1024.";
-        }
-
-        if (!is_null($this->container['incident_description']) && (mb_strlen($this->container['incident_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'incident_description', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['incident_location_descriptor']) && (mb_strlen($this->container['incident_location_descriptor']) > 306)) {
@@ -429,10 +425,6 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
 
         if (!is_null($this->container['reporter_name']) && (mb_strlen($this->container['reporter_name']) > 75)) {
             $invalidProperties[] = "invalid value for 'reporter_name', the character length must be smaller than or equal to 75.";
-        }
-
-        if (!is_null($this->container['reporter_name']) && (mb_strlen($this->container['reporter_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'reporter_name', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -501,9 +493,6 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
         }
         if ((mb_strlen($incident_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $incident_identifier when calling EdFiDisciplineIncident., must be smaller than or equal to 36.');
-        }
-        if ((mb_strlen($incident_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $incident_identifier when calling EdFiDisciplineIncident., must be bigger than or equal to 1.');
         }
 
         $this->container['incident_identifier'] = $incident_identifier;
@@ -597,9 +586,6 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
         if (!is_null($case_number) && (mb_strlen($case_number) > 20)) {
             throw new \InvalidArgumentException('invalid length for $case_number when calling EdFiDisciplineIncident., must be smaller than or equal to 20.');
         }
-        if (!is_null($case_number) && (mb_strlen($case_number) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $case_number when calling EdFiDisciplineIncident., must be bigger than or equal to 1.');
-        }
 
         $this->container['case_number'] = $case_number;
 
@@ -662,6 +648,14 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($incident_cost) && ($incident_cost > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $incident_cost when calling EdFiDisciplineIncident., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($incident_cost) && ($incident_cost < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $incident_cost when calling EdFiDisciplineIncident., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['incident_cost'] = $incident_cost;
 
         return $this;
@@ -725,9 +719,6 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
         }
         if (!is_null($incident_description) && (mb_strlen($incident_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $incident_description when calling EdFiDisciplineIncident., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($incident_description) && (mb_strlen($incident_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $incident_description when calling EdFiDisciplineIncident., must be bigger than or equal to 1.');
         }
 
         $this->container['incident_description'] = $incident_description;
@@ -910,9 +901,6 @@ class EdFiDisciplineIncident implements ModelInterface, ArrayAccess, \JsonSerial
         }
         if (!is_null($reporter_name) && (mb_strlen($reporter_name) > 75)) {
             throw new \InvalidArgumentException('invalid length for $reporter_name when calling EdFiDisciplineIncident., must be smaller than or equal to 75.');
-        }
-        if (!is_null($reporter_name) && (mb_strlen($reporter_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $reporter_name when calling EdFiDisciplineIncident., must be bigger than or equal to 1.');
         }
 
         $this->container['reporter_name'] = $reporter_name;

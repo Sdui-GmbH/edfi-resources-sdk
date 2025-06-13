@@ -1,6 +1,6 @@
 # Resources\GradesApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -179,7 +179,7 @@ $total_count = false; // bool | Indicates if the total number of items available
 $grade_type_descriptor = 'grade_type_descriptor_example'; // string | The type of grade reported (e.g., exam, final, grading period).
 $grading_period_descriptor = 'grading_period_descriptor_example'; // string | The state's name of the period for which grades are reported.
 $grading_period_name = 'grading_period_name_example'; // string | The school's descriptive name of the grading period.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $grading_period_school_year = 56; // int | The identifier for the grading period school year.
 $begin_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Month, day, and year of the student's entry or assignment to the section.
 $local_course_code = 'local_course_code_example'; // string | The local code assigned by the School that identifies the course offering provided for the instruction of students.
@@ -217,7 +217,7 @@ try {
 | **grade_type_descriptor** | **string**| The type of grade reported (e.g., exam, final, grading period). | [optional] |
 | **grading_period_descriptor** | **string**| The state&#39;s name of the period for which grades are reported. | [optional] |
 | **grading_period_name** | **string**| The school&#39;s descriptive name of the grading period. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **grading_period_school_year** | **int**| The identifier for the grading period school year. | [optional] |
 | **begin_date** | **\DateTime**| Month, day, and year of the student&#39;s entry or assignment to the section. | [optional] |
 | **local_course_code** | **string**| The local code assigned by the School that identifies the course offering provided for the instruction of students. | [optional] |

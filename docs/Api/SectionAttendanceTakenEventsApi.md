@@ -1,6 +1,6 @@
 # Resources\SectionAttendanceTakenEventsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -178,7 +178,7 @@ $max_change_version = 56; // int | Used in synchronization to set sequence maxim
 $total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
 $calendar_code = 'calendar_code_example'; // string | The identifier for the calendar.
 $date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year of the calendar event.
-$school_id = 56; // int | The identifier assigned to a school.
+$school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $school_year = 56; // int | The identifier for the school year.
 $local_course_code = 'local_course_code_example'; // string | The local code assigned by the School that identifies the course offering provided for the instruction of students.
 $section_identifier = 'section_identifier_example'; // string | The local identifier assigned to a section.
@@ -207,7 +207,7 @@ try {
 | **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
 | **calendar_code** | **string**| The identifier for the calendar. | [optional] |
 | **date** | **\DateTime**| The month, day, and year of the calendar event. | [optional] |
-| **school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **school_year** | **int**| The identifier for the school year. | [optional] |
 | **local_course_code** | **string**| The local code assigned by the School that identifies the course offering provided for the instruction of students. | [optional] |
 | **section_identifier** | **string**| The local identifier assigned to a section. | [optional] |

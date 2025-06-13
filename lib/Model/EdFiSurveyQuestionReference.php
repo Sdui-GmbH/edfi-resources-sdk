@@ -313,19 +313,11 @@ class EdFiSurveyQuestionReference implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'question_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['question_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'question_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['survey_identifier'] === null) {
             $invalidProperties[] = "'survey_identifier' can't be null";
         }
         if ((mb_strlen($this->container['survey_identifier']) > 60)) {
             $invalidProperties[] = "invalid value for 'survey_identifier', the character length must be smaller than or equal to 60.";
-        }
-
-        if ((mb_strlen($this->container['survey_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'survey_identifier', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -402,9 +394,6 @@ class EdFiSurveyQuestionReference implements ModelInterface, ArrayAccess, \JsonS
         if ((mb_strlen($question_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $question_code when calling EdFiSurveyQuestionReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($question_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $question_code when calling EdFiSurveyQuestionReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['question_code'] = $question_code;
 
@@ -435,9 +424,6 @@ class EdFiSurveyQuestionReference implements ModelInterface, ArrayAccess, \JsonS
         }
         if ((mb_strlen($survey_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $survey_identifier when calling EdFiSurveyQuestionReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($survey_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $survey_identifier when calling EdFiSurveyQuestionReference., must be bigger than or equal to 1.');
         }
 
         $this->container['survey_identifier'] = $survey_identifier;

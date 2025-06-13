@@ -764,7 +764,8 @@ class StateEducationAgenciesApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $state_education_agency_id The identifier assigned to a state education agency. (optional)
+     * @param  int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStateEducationAgencies'] to see the possible values for this operation
      *
@@ -772,9 +773,9 @@ class StateEducationAgenciesApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiStateEducationAgency[]
      */
-    public function getStateEducationAgencies($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_education_agency_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStateEducationAgencies'][0])
+    public function getStateEducationAgencies($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_education_agency_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStateEducationAgencies'][0])
     {
-        list($response) = $this->getStateEducationAgenciesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $use_snapshot, $contentType);
+        list($response) = $this->getStateEducationAgenciesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -788,7 +789,8 @@ class StateEducationAgenciesApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $state_education_agency_id The identifier assigned to a state education agency. (optional)
+     * @param  int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStateEducationAgencies'] to see the possible values for this operation
      *
@@ -796,9 +798,9 @@ class StateEducationAgenciesApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiStateEducationAgency[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStateEducationAgenciesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_education_agency_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStateEducationAgencies'][0])
+    public function getStateEducationAgenciesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_education_agency_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStateEducationAgencies'][0])
     {
-        $request = $this->getStateEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $use_snapshot, $contentType);
+        $request = $this->getStateEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -919,16 +921,17 @@ class StateEducationAgenciesApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $state_education_agency_id The identifier assigned to a state education agency. (optional)
+     * @param  int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStateEducationAgencies'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStateEducationAgenciesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_education_agency_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStateEducationAgencies'][0])
+    public function getStateEducationAgenciesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_education_agency_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStateEducationAgencies'][0])
     {
-        return $this->getStateEducationAgenciesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $use_snapshot, $contentType)
+        return $this->getStateEducationAgenciesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -946,17 +949,18 @@ class StateEducationAgenciesApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $state_education_agency_id The identifier assigned to a state education agency. (optional)
+     * @param  int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStateEducationAgencies'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStateEducationAgenciesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_education_agency_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStateEducationAgencies'][0])
+    public function getStateEducationAgenciesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_education_agency_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStateEducationAgencies'][0])
     {
         $returnType = '\Resources\Model\EdFiStateEducationAgency[]';
-        $request = $this->getStateEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $use_snapshot, $contentType);
+        $request = $this->getStateEducationAgenciesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $state_education_agency_id, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1002,14 +1006,15 @@ class StateEducationAgenciesApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $state_education_agency_id The identifier assigned to a state education agency. (optional)
+     * @param  int $state_education_agency_id The identifier assigned to a state education agency. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStateEducationAgencies'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStateEducationAgenciesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_education_agency_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStateEducationAgencies'][0])
+    public function getStateEducationAgenciesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $state_education_agency_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStateEducationAgencies'][0])
     {
 
 
@@ -1020,6 +1025,7 @@ class StateEducationAgenciesApi
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StateEducationAgenciesApi.getStateEducationAgencies, must be bigger than or equal to 0.');
         }
         
+
 
 
 
@@ -1083,6 +1089,15 @@ class StateEducationAgenciesApi
             $state_education_agency_id,
             'stateEducationAgencyId', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

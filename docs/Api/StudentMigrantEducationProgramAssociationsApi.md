@@ -1,6 +1,6 @@
 # Resources\StudentMigrantEducationProgramAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -147,7 +147,7 @@ try {
 ## `getStudentMigrantEducationProgramAssociations()`
 
 ```php
-getStudentMigrantEducationProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $use_snapshot): \Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]
+getStudentMigrantEducationProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $id, $use_snapshot): \Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -191,10 +191,11 @@ $state_residency_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
 $us_initial_entry = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which the student first entered the U.S.
 $us_initial_school_entry = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which the student first entered a U.S. school.
 $us_most_recent_entry = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year of the student's most recent entry into the U.S.
+$id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentMigrantEducationProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $use_snapshot);
+    $result = $apiInstance->getStudentMigrantEducationProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $id, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentMigrantEducationProgramAssociationsApi->getStudentMigrantEducationProgramAssociations: ', $e->getMessage(), PHP_EOL;
@@ -225,6 +226,7 @@ try {
 | **us_initial_entry** | **\DateTime**| The month, day, and year on which the student first entered the U.S. | [optional] |
 | **us_initial_school_entry** | **\DateTime**| The month, day, and year on which the student first entered a U.S. school. | [optional] |
 | **us_most_recent_entry** | **\DateTime**| The month, day, and year of the student&#39;s most recent entry into the U.S. | [optional] |
+| **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

@@ -291,6 +291,10 @@ class EdFiCourseTranscriptEarnedAdditionalCredits implements ModelInterface, Arr
         if ($this->container['credits'] === null) {
             $invalidProperties[] = "'credits' can't be null";
         }
+        if (($this->container['credits'] > 999999.999)) {
+            $invalidProperties[] = "invalid value for 'credits', must be smaller than or equal to 999999.999.";
+        }
+
         if (($this->container['credits'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'credits', must be bigger than or equal to 0.0.";
         }
@@ -364,6 +368,9 @@ class EdFiCourseTranscriptEarnedAdditionalCredits implements ModelInterface, Arr
             throw new \InvalidArgumentException('non-nullable credits cannot be null');
         }
 
+        if (($credits > 999999.999)) {
+            throw new \InvalidArgumentException('invalid value for $credits when calling EdFiCourseTranscriptEarnedAdditionalCredits., must be smaller than or equal to 999999.999.');
+        }
         if (($credits < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $credits when calling EdFiCourseTranscriptEarnedAdditionalCredits., must be bigger than or equal to 0.0.');
         }

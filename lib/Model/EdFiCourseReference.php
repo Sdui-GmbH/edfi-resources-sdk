@@ -295,10 +295,6 @@ class EdFiCourseReference implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'course_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['course_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'course_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['education_organization_id'] === null) {
             $invalidProperties[] = "'education_organization_id' can't be null";
         }
@@ -341,9 +337,6 @@ class EdFiCourseReference implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ((mb_strlen($course_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $course_code when calling EdFiCourseReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($course_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $course_code when calling EdFiCourseReference., must be bigger than or equal to 1.');
         }
 
         $this->container['course_code'] = $course_code;

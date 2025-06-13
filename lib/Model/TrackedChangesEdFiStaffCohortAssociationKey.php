@@ -299,16 +299,8 @@ class TrackedChangesEdFiStaffCohortAssociationKey implements ModelInterface, Arr
             $invalidProperties[] = "invalid value for 'cohort_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if (!is_null($this->container['cohort_identifier']) && (mb_strlen($this->container['cohort_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'cohort_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -378,9 +370,6 @@ class TrackedChangesEdFiStaffCohortAssociationKey implements ModelInterface, Arr
         if ((mb_strlen($cohort_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $cohort_identifier when calling TrackedChangesEdFiStaffCohortAssociationKey., must be smaller than or equal to 36.');
         }
-        if ((mb_strlen($cohort_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $cohort_identifier when calling TrackedChangesEdFiStaffCohortAssociationKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['cohort_identifier'] = $cohort_identifier;
 
@@ -438,9 +427,6 @@ class TrackedChangesEdFiStaffCohortAssociationKey implements ModelInterface, Arr
         }
         if ((mb_strlen($staff_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiStaffCohortAssociationKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($staff_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiStaffCohortAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['staff_unique_id'] = $staff_unique_id;

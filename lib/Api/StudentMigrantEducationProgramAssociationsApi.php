@@ -779,6 +779,7 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  \DateTime $us_initial_entry The month, day, and year on which the student first entered the U.S. (optional)
      * @param  \DateTime $us_initial_school_entry The month, day, and year on which the student first entered a U.S. school. (optional)
      * @param  \DateTime $us_most_recent_entry The month, day, and year of the student&#39;s most recent entry into the U.S. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
@@ -786,9 +787,9 @@ class StudentMigrantEducationProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]
      */
-    public function getStudentMigrantEducationProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
+    public function getStudentMigrantEducationProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
     {
-        list($response) = $this->getStudentMigrantEducationProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $use_snapshot, $contentType);
+        list($response) = $this->getStudentMigrantEducationProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -817,6 +818,7 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  \DateTime $us_initial_entry The month, day, and year on which the student first entered the U.S. (optional)
      * @param  \DateTime $us_initial_school_entry The month, day, and year on which the student first entered a U.S. school. (optional)
      * @param  \DateTime $us_most_recent_entry The month, day, and year of the student&#39;s most recent entry into the U.S. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
@@ -824,9 +826,9 @@ class StudentMigrantEducationProgramAssociationsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiStudentMigrantEducationProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentMigrantEducationProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
+    public function getStudentMigrantEducationProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
     {
-        $request = $this->getStudentMigrantEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $use_snapshot, $contentType);
+        $request = $this->getStudentMigrantEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -962,15 +964,16 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  \DateTime $us_initial_entry The month, day, and year on which the student first entered the U.S. (optional)
      * @param  \DateTime $us_initial_school_entry The month, day, and year on which the student first entered a U.S. school. (optional)
      * @param  \DateTime $us_most_recent_entry The month, day, and year of the student&#39;s most recent entry into the U.S. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentMigrantEducationProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
+    public function getStudentMigrantEducationProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
     {
-        return $this->getStudentMigrantEducationProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $use_snapshot, $contentType)
+        return $this->getStudentMigrantEducationProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1003,16 +1006,17 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  \DateTime $us_initial_entry The month, day, and year on which the student first entered the U.S. (optional)
      * @param  \DateTime $us_initial_school_entry The month, day, and year on which the student first entered a U.S. school. (optional)
      * @param  \DateTime $us_most_recent_entry The month, day, and year of the student&#39;s most recent entry into the U.S. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentMigrantEducationProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
+    public function getStudentMigrantEducationProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentMigrantEducationProgramAssociation[]';
-        $request = $this->getStudentMigrantEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $use_snapshot, $contentType);
+        $request = $this->getStudentMigrantEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $continuation_of_services_reason_descriptor, $eligibility_expiration_date, $last_qualifying_move, $priority_for_services, $qualifying_arrival_date, $state_residency_date, $us_initial_entry, $us_initial_school_entry, $us_most_recent_entry, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1073,13 +1077,14 @@ class StudentMigrantEducationProgramAssociationsApi
      * @param  \DateTime $us_initial_entry The month, day, and year on which the student first entered the U.S. (optional)
      * @param  \DateTime $us_initial_school_entry The month, day, and year on which the student first entered a U.S. school. (optional)
      * @param  \DateTime $us_most_recent_entry The month, day, and year of the student&#39;s most recent entry into the U.S. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentMigrantEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentMigrantEducationProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
+    public function getStudentMigrantEducationProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $continuation_of_services_reason_descriptor = null, $eligibility_expiration_date = null, $last_qualifying_move = null, $priority_for_services = null, $qualifying_arrival_date = null, $state_residency_date = null, $us_initial_entry = null, $us_initial_school_entry = null, $us_most_recent_entry = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentMigrantEducationProgramAssociations'][0])
     {
 
 
@@ -1112,6 +1117,7 @@ class StudentMigrantEducationProgramAssociationsApi
             throw new \InvalidArgumentException('invalid length for "$continuation_of_services_reason_descriptor" when calling StudentMigrantEducationProgramAssociationsApi.getStudentMigrantEducationProgramAssociations, must be smaller than or equal to 306.');
         }
         
+
 
 
 
@@ -1304,6 +1310,15 @@ class StudentMigrantEducationProgramAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $us_most_recent_entry,
             'usMostRecentEntry', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

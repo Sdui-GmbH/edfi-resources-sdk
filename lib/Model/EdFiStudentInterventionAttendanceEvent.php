@@ -364,10 +364,6 @@ class EdFiStudentInterventionAttendanceEvent implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'attendance_event_reason', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['attendance_event_reason']) && (mb_strlen($this->container['attendance_event_reason']) < 1)) {
-            $invalidProperties[] = "invalid value for 'attendance_event_reason', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['educational_environment_descriptor']) && (mb_strlen($this->container['educational_environment_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'educational_environment_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -573,9 +569,6 @@ class EdFiStudentInterventionAttendanceEvent implements ModelInterface, ArrayAcc
         }
         if (!is_null($attendance_event_reason) && (mb_strlen($attendance_event_reason) > 255)) {
             throw new \InvalidArgumentException('invalid length for $attendance_event_reason when calling EdFiStudentInterventionAttendanceEvent., must be smaller than or equal to 255.');
-        }
-        if (!is_null($attendance_event_reason) && (mb_strlen($attendance_event_reason) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $attendance_event_reason when calling EdFiStudentInterventionAttendanceEvent., must be bigger than or equal to 1.');
         }
 
         $this->container['attendance_event_reason'] = $attendance_event_reason;

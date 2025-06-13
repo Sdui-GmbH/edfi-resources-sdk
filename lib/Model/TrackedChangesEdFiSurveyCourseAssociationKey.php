@@ -299,10 +299,6 @@ class TrackedChangesEdFiSurveyCourseAssociationKey implements ModelInterface, Ar
             $invalidProperties[] = "invalid value for 'course_code', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['course_code']) && (mb_strlen($this->container['course_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'course_code', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['namespace']) && (mb_strlen($this->container['namespace']) > 255)) {
             $invalidProperties[] = "invalid value for 'namespace', the character length must be smaller than or equal to 255.";
         }
@@ -313,10 +309,6 @@ class TrackedChangesEdFiSurveyCourseAssociationKey implements ModelInterface, Ar
 
         if (!is_null($this->container['survey_identifier']) && (mb_strlen($this->container['survey_identifier']) > 60)) {
             $invalidProperties[] = "invalid value for 'survey_identifier', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['survey_identifier']) && (mb_strlen($this->container['survey_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'survey_identifier', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -358,9 +350,6 @@ class TrackedChangesEdFiSurveyCourseAssociationKey implements ModelInterface, Ar
         }
         if ((mb_strlen($course_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $course_code when calling TrackedChangesEdFiSurveyCourseAssociationKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($course_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $course_code when calling TrackedChangesEdFiSurveyCourseAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['course_code'] = $course_code;
@@ -453,9 +442,6 @@ class TrackedChangesEdFiSurveyCourseAssociationKey implements ModelInterface, Ar
         }
         if ((mb_strlen($survey_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $survey_identifier when calling TrackedChangesEdFiSurveyCourseAssociationKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($survey_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $survey_identifier when calling TrackedChangesEdFiSurveyCourseAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['survey_identifier'] = $survey_identifier;

@@ -312,7 +312,7 @@ class EdFiCommunityProviderReference implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets community_provider_id
      *
-     * @param int $community_provider_id The identifier assigned to a community provider.
+     * @param int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

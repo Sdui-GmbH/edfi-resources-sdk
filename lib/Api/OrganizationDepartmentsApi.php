@@ -764,9 +764,10 @@ class OrganizationDepartmentsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $organization_department_id The unique identification code for the organization department. (optional)
+     * @param  int $organization_department_id The unique identification code for the organization department. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $parent_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $academic_subject_descriptor The intended major subject area of the department. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganizationDepartments'] to see the possible values for this operation
      *
@@ -774,9 +775,9 @@ class OrganizationDepartmentsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiOrganizationDepartment[]
      */
-    public function getOrganizationDepartments($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
+    public function getOrganizationDepartments($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
     {
-        list($response) = $this->getOrganizationDepartmentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $use_snapshot, $contentType);
+        list($response) = $this->getOrganizationDepartmentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -790,9 +791,10 @@ class OrganizationDepartmentsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $organization_department_id The unique identification code for the organization department. (optional)
+     * @param  int $organization_department_id The unique identification code for the organization department. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $parent_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $academic_subject_descriptor The intended major subject area of the department. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganizationDepartments'] to see the possible values for this operation
      *
@@ -800,9 +802,9 @@ class OrganizationDepartmentsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiOrganizationDepartment[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrganizationDepartmentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
+    public function getOrganizationDepartmentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
     {
-        $request = $this->getOrganizationDepartmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $use_snapshot, $contentType);
+        $request = $this->getOrganizationDepartmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -923,18 +925,19 @@ class OrganizationDepartmentsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $organization_department_id The unique identification code for the organization department. (optional)
+     * @param  int $organization_department_id The unique identification code for the organization department. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $parent_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $academic_subject_descriptor The intended major subject area of the department. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganizationDepartments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrganizationDepartmentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
+    public function getOrganizationDepartmentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
     {
-        return $this->getOrganizationDepartmentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $use_snapshot, $contentType)
+        return $this->getOrganizationDepartmentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -952,19 +955,20 @@ class OrganizationDepartmentsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $organization_department_id The unique identification code for the organization department. (optional)
+     * @param  int $organization_department_id The unique identification code for the organization department. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $parent_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $academic_subject_descriptor The intended major subject area of the department. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganizationDepartments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrganizationDepartmentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
+    public function getOrganizationDepartmentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
     {
         $returnType = '\Resources\Model\EdFiOrganizationDepartment[]';
-        $request = $this->getOrganizationDepartmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $use_snapshot, $contentType);
+        $request = $this->getOrganizationDepartmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $organization_department_id, $parent_education_organization_id, $academic_subject_descriptor, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1010,16 +1014,17 @@ class OrganizationDepartmentsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $organization_department_id The unique identification code for the organization department. (optional)
+     * @param  int $organization_department_id The unique identification code for the organization department. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $parent_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $academic_subject_descriptor The intended major subject area of the department. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrganizationDepartments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrganizationDepartmentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
+    public function getOrganizationDepartmentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $organization_department_id = null, $parent_education_organization_id = null, $academic_subject_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getOrganizationDepartments'][0])
     {
 
 
@@ -1039,6 +1044,7 @@ class OrganizationDepartmentsApi
             throw new \InvalidArgumentException('invalid length for "$academic_subject_descriptor" when calling OrganizationDepartmentsApi.getOrganizationDepartments, must be smaller than or equal to 306.');
         }
         
+
 
 
         $resourcePath = '/ed-fi/organizationDepartments';
@@ -1115,6 +1121,15 @@ class OrganizationDepartmentsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $academic_subject_descriptor,
             'academicSubjectDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

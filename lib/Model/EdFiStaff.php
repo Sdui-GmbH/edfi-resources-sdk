@@ -540,10 +540,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be smaller than or equal to 32.";
         }
 
-        if ((mb_strlen($this->container['staff_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['citizenship_status_descriptor']) && (mb_strlen($this->container['citizenship_status_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'citizenship_status_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -555,20 +551,12 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'first_name', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['first_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'first_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['gender_identity']) && (mb_strlen($this->container['gender_identity']) > 60)) {
             $invalidProperties[] = "invalid value for 'gender_identity', the character length must be smaller than or equal to 60.";
         }
 
         if (!is_null($this->container['generation_code_suffix']) && (mb_strlen($this->container['generation_code_suffix']) > 10)) {
             $invalidProperties[] = "invalid value for 'generation_code_suffix', the character length must be smaller than or equal to 10.";
-        }
-
-        if (!is_null($this->container['generation_code_suffix']) && (mb_strlen($this->container['generation_code_suffix']) < 1)) {
-            $invalidProperties[] = "invalid value for 'generation_code_suffix', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['highest_completed_level_of_education_descriptor']) && (mb_strlen($this->container['highest_completed_level_of_education_descriptor']) > 306)) {
@@ -582,60 +570,48 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'last_surname', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['last_surname']) < 1)) {
-            $invalidProperties[] = "invalid value for 'last_surname', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['login_id']) && (mb_strlen($this->container['login_id']) > 60)) {
             $invalidProperties[] = "invalid value for 'login_id', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['login_id']) && (mb_strlen($this->container['login_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'login_id', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['maiden_name']) && (mb_strlen($this->container['maiden_name']) > 75)) {
             $invalidProperties[] = "invalid value for 'maiden_name', the character length must be smaller than or equal to 75.";
         }
 
-        if (!is_null($this->container['maiden_name']) && (mb_strlen($this->container['maiden_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'maiden_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['middle_name']) && (mb_strlen($this->container['middle_name']) > 75)) {
             $invalidProperties[] = "invalid value for 'middle_name', the character length must be smaller than or equal to 75.";
-        }
-
-        if (!is_null($this->container['middle_name']) && (mb_strlen($this->container['middle_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'middle_name', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['personal_title_prefix']) && (mb_strlen($this->container['personal_title_prefix']) > 30)) {
             $invalidProperties[] = "invalid value for 'personal_title_prefix', the character length must be smaller than or equal to 30.";
         }
 
-        if (!is_null($this->container['personal_title_prefix']) && (mb_strlen($this->container['personal_title_prefix']) < 1)) {
-            $invalidProperties[] = "invalid value for 'personal_title_prefix', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['preferred_first_name']) && (mb_strlen($this->container['preferred_first_name']) > 75)) {
             $invalidProperties[] = "invalid value for 'preferred_first_name', the character length must be smaller than or equal to 75.";
-        }
-
-        if (!is_null($this->container['preferred_first_name']) && (mb_strlen($this->container['preferred_first_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'preferred_first_name', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['preferred_last_surname']) && (mb_strlen($this->container['preferred_last_surname']) > 75)) {
             $invalidProperties[] = "invalid value for 'preferred_last_surname', the character length must be smaller than or equal to 75.";
         }
 
-        if (!is_null($this->container['preferred_last_surname']) && (mb_strlen($this->container['preferred_last_surname']) < 1)) {
-            $invalidProperties[] = "invalid value for 'preferred_last_surname', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['sex_descriptor']) && (mb_strlen($this->container['sex_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'sex_descriptor', the character length must be smaller than or equal to 306.";
+        }
+
+        if (!is_null($this->container['years_of_prior_professional_experience']) && ($this->container['years_of_prior_professional_experience'] > 999.99)) {
+            $invalidProperties[] = "invalid value for 'years_of_prior_professional_experience', must be smaller than or equal to 999.99.";
+        }
+
+        if (!is_null($this->container['years_of_prior_professional_experience']) && ($this->container['years_of_prior_professional_experience'] < -999.99)) {
+            $invalidProperties[] = "invalid value for 'years_of_prior_professional_experience', must be bigger than or equal to -999.99.";
+        }
+
+        if (!is_null($this->container['years_of_prior_teaching_experience']) && ($this->container['years_of_prior_teaching_experience'] > 999.99)) {
+            $invalidProperties[] = "invalid value for 'years_of_prior_teaching_experience', must be smaller than or equal to 999.99.";
+        }
+
+        if (!is_null($this->container['years_of_prior_teaching_experience']) && ($this->container['years_of_prior_teaching_experience'] < -999.99)) {
+            $invalidProperties[] = "invalid value for 'years_of_prior_teaching_experience', must be bigger than or equal to -999.99.";
         }
 
         return $invalidProperties;
@@ -704,9 +680,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($staff_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling EdFiStaff., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($staff_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling EdFiStaff., must be bigger than or equal to 1.');
         }
 
         $this->container['staff_unique_id'] = $staff_unique_id;
@@ -946,9 +919,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
         if ((mb_strlen($first_name) > 75)) {
             throw new \InvalidArgumentException('invalid length for $first_name when calling EdFiStaff., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($first_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $first_name when calling EdFiStaff., must be bigger than or equal to 1.');
-        }
 
         $this->container['first_name'] = $first_name;
 
@@ -1024,9 +994,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($generation_code_suffix) && (mb_strlen($generation_code_suffix) > 10)) {
             throw new \InvalidArgumentException('invalid length for $generation_code_suffix when calling EdFiStaff., must be smaller than or equal to 10.');
-        }
-        if (!is_null($generation_code_suffix) && (mb_strlen($generation_code_suffix) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $generation_code_suffix when calling EdFiStaff., must be bigger than or equal to 1.');
         }
 
         $this->container['generation_code_suffix'] = $generation_code_suffix;
@@ -1273,9 +1240,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
         if ((mb_strlen($last_surname) > 75)) {
             throw new \InvalidArgumentException('invalid length for $last_surname when calling EdFiStaff., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($last_surname) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $last_surname when calling EdFiStaff., must be bigger than or equal to 1.');
-        }
 
         $this->container['last_surname'] = $last_surname;
 
@@ -1313,9 +1277,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($login_id) && (mb_strlen($login_id) > 60)) {
             throw new \InvalidArgumentException('invalid length for $login_id when calling EdFiStaff., must be smaller than or equal to 60.');
-        }
-        if (!is_null($login_id) && (mb_strlen($login_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $login_id when calling EdFiStaff., must be bigger than or equal to 1.');
         }
 
         $this->container['login_id'] = $login_id;
@@ -1355,9 +1316,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($maiden_name) && (mb_strlen($maiden_name) > 75)) {
             throw new \InvalidArgumentException('invalid length for $maiden_name when calling EdFiStaff., must be smaller than or equal to 75.');
         }
-        if (!is_null($maiden_name) && (mb_strlen($maiden_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $maiden_name when calling EdFiStaff., must be bigger than or equal to 1.');
-        }
 
         $this->container['maiden_name'] = $maiden_name;
 
@@ -1395,9 +1353,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($middle_name) && (mb_strlen($middle_name) > 75)) {
             throw new \InvalidArgumentException('invalid length for $middle_name when calling EdFiStaff., must be smaller than or equal to 75.');
-        }
-        if (!is_null($middle_name) && (mb_strlen($middle_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $middle_name when calling EdFiStaff., must be bigger than or equal to 1.');
         }
 
         $this->container['middle_name'] = $middle_name;
@@ -1491,9 +1446,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($personal_title_prefix) && (mb_strlen($personal_title_prefix) > 30)) {
             throw new \InvalidArgumentException('invalid length for $personal_title_prefix when calling EdFiStaff., must be smaller than or equal to 30.');
         }
-        if (!is_null($personal_title_prefix) && (mb_strlen($personal_title_prefix) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $personal_title_prefix when calling EdFiStaff., must be bigger than or equal to 1.');
-        }
 
         $this->container['personal_title_prefix'] = $personal_title_prefix;
 
@@ -1532,9 +1484,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($preferred_first_name) && (mb_strlen($preferred_first_name) > 75)) {
             throw new \InvalidArgumentException('invalid length for $preferred_first_name when calling EdFiStaff., must be smaller than or equal to 75.');
         }
-        if (!is_null($preferred_first_name) && (mb_strlen($preferred_first_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $preferred_first_name when calling EdFiStaff., must be bigger than or equal to 1.');
-        }
 
         $this->container['preferred_first_name'] = $preferred_first_name;
 
@@ -1572,9 +1521,6 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($preferred_last_surname) && (mb_strlen($preferred_last_surname) > 75)) {
             throw new \InvalidArgumentException('invalid length for $preferred_last_surname when calling EdFiStaff., must be smaller than or equal to 75.');
-        }
-        if (!is_null($preferred_last_surname) && (mb_strlen($preferred_last_surname) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $preferred_last_surname when calling EdFiStaff., must be bigger than or equal to 1.');
         }
 
         $this->container['preferred_last_surname'] = $preferred_last_surname;
@@ -1784,6 +1730,14 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($years_of_prior_professional_experience) && ($years_of_prior_professional_experience > 999.99)) {
+            throw new \InvalidArgumentException('invalid value for $years_of_prior_professional_experience when calling EdFiStaff., must be smaller than or equal to 999.99.');
+        }
+        if (!is_null($years_of_prior_professional_experience) && ($years_of_prior_professional_experience < -999.99)) {
+            throw new \InvalidArgumentException('invalid value for $years_of_prior_professional_experience when calling EdFiStaff., must be bigger than or equal to -999.99.');
+        }
+
         $this->container['years_of_prior_professional_experience'] = $years_of_prior_professional_experience;
 
         return $this;
@@ -1818,6 +1772,14 @@ class EdFiStaff implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($years_of_prior_teaching_experience) && ($years_of_prior_teaching_experience > 999.99)) {
+            throw new \InvalidArgumentException('invalid value for $years_of_prior_teaching_experience when calling EdFiStaff., must be smaller than or equal to 999.99.');
+        }
+        if (!is_null($years_of_prior_teaching_experience) && ($years_of_prior_teaching_experience < -999.99)) {
+            throw new \InvalidArgumentException('invalid value for $years_of_prior_teaching_experience when calling EdFiStaff., must be bigger than or equal to -999.99.');
+        }
+
         $this->container['years_of_prior_teaching_experience'] = $years_of_prior_teaching_experience;
 
         return $this;

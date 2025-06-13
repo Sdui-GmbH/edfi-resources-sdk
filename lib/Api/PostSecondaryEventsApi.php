@@ -767,7 +767,7 @@ class PostSecondaryEventsApi
      * @param  string $post_secondary_event_category_descriptor The post secondary event that is logged. (optional)
      * @param  \DateTime $event_date The date the event occurred or was recorded. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
-     * @param  int $post_secondary_institution_id The ID of the post secondary institution. (optional)
+     * @param  int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryEvents'] to see the possible values for this operation
@@ -795,7 +795,7 @@ class PostSecondaryEventsApi
      * @param  string $post_secondary_event_category_descriptor The post secondary event that is logged. (optional)
      * @param  \DateTime $event_date The date the event occurred or was recorded. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
-     * @param  int $post_secondary_institution_id The ID of the post secondary institution. (optional)
+     * @param  int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryEvents'] to see the possible values for this operation
@@ -930,7 +930,7 @@ class PostSecondaryEventsApi
      * @param  string $post_secondary_event_category_descriptor The post secondary event that is logged. (optional)
      * @param  \DateTime $event_date The date the event occurred or was recorded. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
-     * @param  int $post_secondary_institution_id The ID of the post secondary institution. (optional)
+     * @param  int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryEvents'] to see the possible values for this operation
@@ -961,7 +961,7 @@ class PostSecondaryEventsApi
      * @param  string $post_secondary_event_category_descriptor The post secondary event that is logged. (optional)
      * @param  \DateTime $event_date The date the event occurred or was recorded. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
-     * @param  int $post_secondary_institution_id The ID of the post secondary institution. (optional)
+     * @param  int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryEvents'] to see the possible values for this operation
@@ -1021,7 +1021,7 @@ class PostSecondaryEventsApi
      * @param  string $post_secondary_event_category_descriptor The post secondary event that is logged. (optional)
      * @param  \DateTime $event_date The date the event occurred or was recorded. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
-     * @param  int $post_secondary_institution_id The ID of the post secondary institution. (optional)
+     * @param  int $post_secondary_institution_id The ID of the post secondary institution. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPostSecondaryEvents'] to see the possible values for this operation

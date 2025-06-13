@@ -302,19 +302,11 @@ class EdFiAssessmentItemReference implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['assessment_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['identification_code'] === null) {
             $invalidProperties[] = "'identification_code' can't be null";
         }
         if ((mb_strlen($this->container['identification_code']) > 60)) {
             $invalidProperties[] = "invalid value for 'identification_code', the character length must be smaller than or equal to 60.";
-        }
-
-        if ((mb_strlen($this->container['identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'identification_code', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['namespace'] === null) {
@@ -368,9 +360,6 @@ class EdFiAssessmentItemReference implements ModelInterface, ArrayAccess, \JsonS
         if ((mb_strlen($assessment_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling EdFiAssessmentItemReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($assessment_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling EdFiAssessmentItemReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['assessment_identifier'] = $assessment_identifier;
 
@@ -401,9 +390,6 @@ class EdFiAssessmentItemReference implements ModelInterface, ArrayAccess, \JsonS
         }
         if ((mb_strlen($identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiAssessmentItemReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiAssessmentItemReference., must be bigger than or equal to 1.');
         }
 
         $this->container['identification_code'] = $identification_code;

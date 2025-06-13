@@ -1,6 +1,6 @@
 # Resources\StudentAssessmentsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -180,7 +180,7 @@ $student_assessment_identifier = 'student_assessment_identifier_example'; // str
 $assessment_identifier = 'assessment_identifier_example'; // string | A unique number or alphanumeric code assigned to an assessment.
 $namespace = 'namespace_example'; // string | Namespace for the assessment.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
-$reported_school_id = 56; // int | The identifier assigned to a school.
+$reported_school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $school_year = 56; // int | The school year for which the assessment was administered to a student. Among other uses, handles cases in which a student takes a prior-year exam in a subsequent school year during an exam re-test.
 $administration_environment_descriptor = 'administration_environment_descriptor_example'; // string | The environment in which the test was administered.
 $event_circumstance_descriptor = 'event_circumstance_descriptor_example'; // string | An unusual event occurred during the administration of the assessment. This could include fire alarm, student became ill, etc.
@@ -219,7 +219,7 @@ try {
 | **assessment_identifier** | **string**| A unique number or alphanumeric code assigned to an assessment. | [optional] |
 | **namespace** | **string**| Namespace for the assessment. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
-| **reported_school_id** | **int**| The identifier assigned to a school. | [optional] |
+| **reported_school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **school_year** | **int**| The school year for which the assessment was administered to a student. Among other uses, handles cases in which a student takes a prior-year exam in a subsequent school year during an exam re-test. | [optional] |
 | **administration_environment_descriptor** | **string**| The environment in which the test was administered. | [optional] |
 | **event_circumstance_descriptor** | **string**| An unusual event occurred during the administration of the assessment. This could include fire alarm, student became ill, etc. | [optional] |

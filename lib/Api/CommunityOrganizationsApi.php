@@ -764,7 +764,8 @@ class CommunityOrganizationsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizations'] to see the possible values for this operation
      *
@@ -772,9 +773,9 @@ class CommunityOrganizationsApi
      * @throws \InvalidArgumentException
      * @return \Resources\Model\EdFiCommunityOrganization[]
      */
-    public function getCommunityOrganizations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
+    public function getCommunityOrganizations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
     {
-        list($response) = $this->getCommunityOrganizationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $use_snapshot, $contentType);
+        list($response) = $this->getCommunityOrganizationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -788,7 +789,8 @@ class CommunityOrganizationsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizations'] to see the possible values for this operation
      *
@@ -796,9 +798,9 @@ class CommunityOrganizationsApi
      * @throws \InvalidArgumentException
      * @return array of \Resources\Model\EdFiCommunityOrganization[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCommunityOrganizationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
+    public function getCommunityOrganizationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
     {
-        $request = $this->getCommunityOrganizationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $use_snapshot, $contentType);
+        $request = $this->getCommunityOrganizationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -919,16 +921,17 @@ class CommunityOrganizationsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommunityOrganizationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
+    public function getCommunityOrganizationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
     {
-        return $this->getCommunityOrganizationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $use_snapshot, $contentType)
+        return $this->getCommunityOrganizationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -946,17 +949,18 @@ class CommunityOrganizationsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommunityOrganizationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
+    public function getCommunityOrganizationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
     {
         $returnType = '\Resources\Model\EdFiCommunityOrganization[]';
-        $request = $this->getCommunityOrganizationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $use_snapshot, $contentType);
+        $request = $this->getCommunityOrganizationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1002,14 +1006,15 @@ class CommunityOrganizationsApi
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
      * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCommunityOrganizationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
+    public function getCommunityOrganizationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
     {
 
 
@@ -1020,6 +1025,7 @@ class CommunityOrganizationsApi
             throw new \InvalidArgumentException('invalid value for "$limit" when calling CommunityOrganizationsApi.getCommunityOrganizations, must be bigger than or equal to 0.');
         }
         
+
 
 
 
@@ -1083,6 +1089,15 @@ class CommunityOrganizationsApi
             $community_organization_id,
             'communityOrganizationId', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

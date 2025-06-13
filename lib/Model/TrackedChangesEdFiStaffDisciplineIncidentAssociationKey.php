@@ -292,16 +292,8 @@ class TrackedChangesEdFiStaffDisciplineIncidentAssociationKey implements ModelIn
             $invalidProperties[] = "invalid value for 'incident_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if (!is_null($this->container['incident_identifier']) && (mb_strlen($this->container['incident_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'incident_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -344,9 +336,6 @@ class TrackedChangesEdFiStaffDisciplineIncidentAssociationKey implements ModelIn
         if ((mb_strlen($incident_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $incident_identifier when calling TrackedChangesEdFiStaffDisciplineIncidentAssociationKey., must be smaller than or equal to 36.');
         }
-        if ((mb_strlen($incident_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $incident_identifier when calling TrackedChangesEdFiStaffDisciplineIncidentAssociationKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['incident_identifier'] = $incident_identifier;
 
@@ -366,7 +355,7 @@ class TrackedChangesEdFiStaffDisciplineIncidentAssociationKey implements ModelIn
     /**
      * Sets school_id
      *
-     * @param int|null $school_id The identifier assigned to a school.
+     * @param int|null $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -404,9 +393,6 @@ class TrackedChangesEdFiStaffDisciplineIncidentAssociationKey implements ModelIn
         }
         if ((mb_strlen($staff_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiStaffDisciplineIncidentAssociationKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($staff_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiStaffDisciplineIncidentAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['staff_unique_id'] = $staff_unique_id;

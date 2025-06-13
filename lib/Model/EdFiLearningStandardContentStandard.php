@@ -348,10 +348,6 @@ class EdFiLearningStandardContentStandard implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'title', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['uri']) && (mb_strlen($this->container['uri']) > 255)) {
             $invalidProperties[] = "invalid value for 'uri', the character length must be smaller than or equal to 255.";
         }
@@ -362,10 +358,6 @@ class EdFiLearningStandardContentStandard implements ModelInterface, ArrayAccess
 
         if (!is_null($this->container['version']) && (mb_strlen($this->container['version']) > 50)) {
             $invalidProperties[] = "invalid value for 'version', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['version']) && (mb_strlen($this->container['version']) < 1)) {
-            $invalidProperties[] = "invalid value for 'version', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -582,9 +574,6 @@ class EdFiLearningStandardContentStandard implements ModelInterface, ArrayAccess
         if ((mb_strlen($title) > 75)) {
             throw new \InvalidArgumentException('invalid length for $title when calling EdFiLearningStandardContentStandard., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling EdFiLearningStandardContentStandard., must be bigger than or equal to 1.');
-        }
 
         $this->container['title'] = $title;
 
@@ -663,9 +652,6 @@ class EdFiLearningStandardContentStandard implements ModelInterface, ArrayAccess
         }
         if (!is_null($version) && (mb_strlen($version) > 50)) {
             throw new \InvalidArgumentException('invalid length for $version when calling EdFiLearningStandardContentStandard., must be smaller than or equal to 50.');
-        }
-        if (!is_null($version) && (mb_strlen($version) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $version when calling EdFiLearningStandardContentStandard., must be bigger than or equal to 1.');
         }
 
         $this->container['version'] = $version;

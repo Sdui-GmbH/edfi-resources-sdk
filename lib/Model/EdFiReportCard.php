@@ -360,8 +360,16 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['student_reference'] === null) {
             $invalidProperties[] = "'student_reference' can't be null";
         }
+        if (!is_null($this->container['number_of_days_absent']) && ($this->container['number_of_days_absent'] > 1.0E+14)) {
+            $invalidProperties[] = "invalid value for 'number_of_days_absent', must be smaller than or equal to 1.0E+14.";
+        }
+
         if (!is_null($this->container['number_of_days_absent']) && ($this->container['number_of_days_absent'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'number_of_days_absent', must be bigger than or equal to 0.0.";
+        }
+
+        if (!is_null($this->container['number_of_days_in_attendance']) && ($this->container['number_of_days_in_attendance'] > 1.0E+14)) {
+            $invalidProperties[] = "invalid value for 'number_of_days_in_attendance', must be smaller than or equal to 1.0E+14.";
         }
 
         if (!is_null($this->container['number_of_days_in_attendance']) && ($this->container['number_of_days_in_attendance'] < 0.0)) {
@@ -579,6 +587,9 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
 
+        if (!is_null($number_of_days_absent) && ($number_of_days_absent > 1.0E+14)) {
+            throw new \InvalidArgumentException('invalid value for $number_of_days_absent when calling EdFiReportCard., must be smaller than or equal to 1.0E+14.');
+        }
         if (!is_null($number_of_days_absent) && ($number_of_days_absent < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $number_of_days_absent when calling EdFiReportCard., must be bigger than or equal to 0.0.');
         }
@@ -618,6 +629,9 @@ class EdFiReportCard implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
 
+        if (!is_null($number_of_days_in_attendance) && ($number_of_days_in_attendance > 1.0E+14)) {
+            throw new \InvalidArgumentException('invalid value for $number_of_days_in_attendance when calling EdFiReportCard., must be smaller than or equal to 1.0E+14.');
+        }
         if (!is_null($number_of_days_in_attendance) && ($number_of_days_in_attendance < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $number_of_days_in_attendance when calling EdFiReportCard., must be bigger than or equal to 0.0.');
         }

@@ -336,10 +336,6 @@ class EdFiEvaluationRubricDimension implements ModelInterface, ArrayAccess, \Jso
             $invalidProperties[] = "invalid value for 'evaluation_criterion_description', the character length must be smaller than or equal to 1024.";
         }
 
-        if ((mb_strlen($this->container['evaluation_criterion_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'evaluation_criterion_description', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['evaluation_rubric_rating_level_descriptor']) && (mb_strlen($this->container['evaluation_rubric_rating_level_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'evaluation_rubric_rating_level_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -464,9 +460,6 @@ class EdFiEvaluationRubricDimension implements ModelInterface, ArrayAccess, \Jso
         }
         if ((mb_strlen($evaluation_criterion_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $evaluation_criterion_description when calling EdFiEvaluationRubricDimension., must be smaller than or equal to 1024.');
-        }
-        if ((mb_strlen($evaluation_criterion_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $evaluation_criterion_description when calling EdFiEvaluationRubricDimension., must be bigger than or equal to 1.');
         }
 
         $this->container['evaluation_criterion_description'] = $evaluation_criterion_description;

@@ -292,6 +292,14 @@ class EdFiStudentProgramEvaluationStudentEvaluationElement implements ModelInter
             $invalidProperties[] = "invalid value for 'evaluation_element_rating_level_descriptor', the character length must be smaller than or equal to 306.";
         }
 
+        if (!is_null($this->container['evaluation_element_numeric_rating']) && ($this->container['evaluation_element_numeric_rating'] > 999.999)) {
+            $invalidProperties[] = "invalid value for 'evaluation_element_numeric_rating', must be smaller than or equal to 999.999.";
+        }
+
+        if (!is_null($this->container['evaluation_element_numeric_rating']) && ($this->container['evaluation_element_numeric_rating'] < -999.999)) {
+            $invalidProperties[] = "invalid value for 'evaluation_element_numeric_rating', must be bigger than or equal to -999.999.";
+        }
+
         if ($this->container['program_evaluation_element_reference'] === null) {
             $invalidProperties[] = "'program_evaluation_element_reference' can't be null";
         }
@@ -377,6 +385,14 @@ class EdFiStudentProgramEvaluationStudentEvaluationElement implements ModelInter
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($evaluation_element_numeric_rating) && ($evaluation_element_numeric_rating > 999.999)) {
+            throw new \InvalidArgumentException('invalid value for $evaluation_element_numeric_rating when calling EdFiStudentProgramEvaluationStudentEvaluationElement., must be smaller than or equal to 999.999.');
+        }
+        if (!is_null($evaluation_element_numeric_rating) && ($evaluation_element_numeric_rating < -999.999)) {
+            throw new \InvalidArgumentException('invalid value for $evaluation_element_numeric_rating when calling EdFiStudentProgramEvaluationStudentEvaluationElement., must be bigger than or equal to -999.999.');
+        }
+
         $this->container['evaluation_element_numeric_rating'] = $evaluation_element_numeric_rating;
 
         return $this;
