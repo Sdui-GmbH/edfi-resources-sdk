@@ -83,6 +83,9 @@ class BellSchedulesApi
         'getBellSchedulesById' => [
             'application/json',
         ],
+        'getBellSchedulesPartitions' => [
+            'application/json',
+        ],
         'keyChangesBellSchedules' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class BellSchedulesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesBellSchedules'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiBellScheduleDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiBellScheduleDelete[]
      */
-    public function deletesBellSchedules($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
+    public function deletesBellSchedules($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
     {
         list($response) = $this->deletesBellSchedulesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class BellSchedulesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesBellSchedules'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiBellScheduleDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiBellScheduleDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesBellSchedulesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
+    public function deletesBellSchedulesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
     {
         $request = $this->deletesBellSchedulesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class BellSchedulesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesBellSchedules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesBellSchedulesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
+    public function deletesBellSchedulesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
     {
         return $this->deletesBellSchedulesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class BellSchedulesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesBellSchedules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesBellSchedulesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
+    public function deletesBellSchedulesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiBellScheduleDelete[]';
         $request = $this->deletesBellSchedulesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class BellSchedulesApi
     /**
      * Create request for operation 'deletesBellSchedules'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesBellSchedules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesBellSchedulesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
+    public function deletesBellSchedulesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesBellSchedules'][0])
     {
 
 
@@ -759,11 +762,13 @@ class BellSchedulesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $bell_schedule_name Name or title of the bell schedule. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $alternate_day_name An alternate name for the day (e.g., Red, Blue). (optional)
@@ -776,11 +781,11 @@ class BellSchedulesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiBellSchedule[]
+     * @return |\Resources\Model\EdFiBellSchedule[]
      */
-    public function getBellSchedules($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
+    public function getBellSchedules($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
     {
-        list($response) = $this->getBellSchedulesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType);
+        list($response) = $this->getBellSchedulesWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -789,11 +794,13 @@ class BellSchedulesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $bell_schedule_name Name or title of the bell schedule. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $alternate_day_name An alternate name for the day (e.g., Red, Blue). (optional)
@@ -806,11 +813,11 @@ class BellSchedulesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiBellSchedule[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiBellSchedule[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBellSchedulesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
+    public function getBellSchedulesWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
     {
-        $request = $this->getBellSchedulesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType);
+        $request = $this->getBellSchedulesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -926,11 +933,13 @@ class BellSchedulesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $bell_schedule_name Name or title of the bell schedule. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $alternate_day_name An alternate name for the day (e.g., Red, Blue). (optional)
@@ -944,9 +953,9 @@ class BellSchedulesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBellSchedulesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
+    public function getBellSchedulesAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
     {
-        return $this->getBellSchedulesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType)
+        return $this->getBellSchedulesAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -959,11 +968,13 @@ class BellSchedulesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $bell_schedule_name Name or title of the bell schedule. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $alternate_day_name An alternate name for the day (e.g., Red, Blue). (optional)
@@ -977,10 +988,10 @@ class BellSchedulesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBellSchedulesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
+    public function getBellSchedulesAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
     {
         $returnType = '\Resources\Model\EdFiBellSchedule[]';
-        $request = $this->getBellSchedulesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType);
+        $request = $this->getBellSchedulesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1021,11 +1032,13 @@ class BellSchedulesApi
     /**
      * Create request for operation 'getBellSchedules'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $bell_schedule_name Name or title of the bell schedule. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $alternate_day_name An alternate name for the day (e.g., Red, Blue). (optional)
@@ -1039,7 +1052,7 @@ class BellSchedulesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBellSchedulesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
+    public function getBellSchedulesRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedules'][0])
     {
 
 
@@ -1048,6 +1061,11 @@ class BellSchedulesApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling BellSchedulesApi.getBellSchedules, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling BellSchedulesApi.getBellSchedules, must be bigger than or equal to 0.');
         }
         
 
@@ -1088,6 +1106,24 @@ class BellSchedulesApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1260,7 +1296,7 @@ class BellSchedulesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiBellSchedule
+     * @return |\Resources\Model\EdFiBellSchedule
      */
     public function getBellSchedulesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedulesById'][0])
     {
@@ -1280,7 +1316,7 @@ class BellSchedulesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiBellSchedule, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiBellSchedule, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBellSchedulesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedulesById'][0])
     {
@@ -1581,23 +1617,487 @@ class BellSchedulesApi
     }
 
     /**
+     * Operation getBellSchedulesPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $bell_schedule_name Name or title of the bell schedule. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $alternate_day_name An alternate name for the day (e.g., Red, Blue). (optional)
+     * @param  string $end_time An indication of the time of day the bell schedule ends. (optional)
+     * @param  string $id  (optional)
+     * @param  string $start_time An indication of the time of day the bell schedule begins. (optional)
+     * @param  int $total_instructional_time The total instructional time in minutes per day for the bell schedule. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBellSchedulesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getBellSchedulesPartitions($number = null, $min_change_version = null, $max_change_version = null, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedulesPartitions'][0])
+    {
+        list($response) = $this->getBellSchedulesPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getBellSchedulesPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $bell_schedule_name Name or title of the bell schedule. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $alternate_day_name An alternate name for the day (e.g., Red, Blue). (optional)
+     * @param  string $end_time An indication of the time of day the bell schedule ends. (optional)
+     * @param  string $id  (optional)
+     * @param  string $start_time An indication of the time of day the bell schedule begins. (optional)
+     * @param  int $total_instructional_time The total instructional time in minutes per day for the bell schedule. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBellSchedulesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getBellSchedulesPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedulesPartitions'][0])
+    {
+        $request = $this->getBellSchedulesPartitionsRequest($number, $min_change_version, $max_change_version, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getBellSchedulesPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $bell_schedule_name Name or title of the bell schedule. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $alternate_day_name An alternate name for the day (e.g., Red, Blue). (optional)
+     * @param  string $end_time An indication of the time of day the bell schedule ends. (optional)
+     * @param  string $id  (optional)
+     * @param  string $start_time An indication of the time of day the bell schedule begins. (optional)
+     * @param  int $total_instructional_time The total instructional time in minutes per day for the bell schedule. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBellSchedulesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getBellSchedulesPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedulesPartitions'][0])
+    {
+        return $this->getBellSchedulesPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getBellSchedulesPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $bell_schedule_name Name or title of the bell schedule. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $alternate_day_name An alternate name for the day (e.g., Red, Blue). (optional)
+     * @param  string $end_time An indication of the time of day the bell schedule ends. (optional)
+     * @param  string $id  (optional)
+     * @param  string $start_time An indication of the time of day the bell schedule begins. (optional)
+     * @param  int $total_instructional_time The total instructional time in minutes per day for the bell schedule. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBellSchedulesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getBellSchedulesPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedulesPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getBellSchedulesPartitionsRequest($number, $min_change_version, $max_change_version, $bell_schedule_name, $school_id, $alternate_day_name, $end_time, $id, $start_time, $total_instructional_time, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getBellSchedulesPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $bell_schedule_name Name or title of the bell schedule. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $alternate_day_name An alternate name for the day (e.g., Red, Blue). (optional)
+     * @param  string $end_time An indication of the time of day the bell schedule ends. (optional)
+     * @param  string $id  (optional)
+     * @param  string $start_time An indication of the time of day the bell schedule begins. (optional)
+     * @param  int $total_instructional_time The total instructional time in minutes per day for the bell schedule. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBellSchedulesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getBellSchedulesPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $bell_schedule_name = null, $school_id = null, $alternate_day_name = null, $end_time = null, $id = null, $start_time = null, $total_instructional_time = null, $use_snapshot = false, string $contentType = self::contentTypes['getBellSchedulesPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling BellSchedulesApi.getBellSchedulesPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling BellSchedulesApi.getBellSchedulesPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($bell_schedule_name !== null && strlen($bell_schedule_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$bell_schedule_name" when calling BellSchedulesApi.getBellSchedulesPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        if ($alternate_day_name !== null && strlen($alternate_day_name) > 20) {
+            throw new \InvalidArgumentException('invalid length for "$alternate_day_name" when calling BellSchedulesApi.getBellSchedulesPartitions, must be smaller than or equal to 20.');
+        }
+        
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/bellSchedules/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $bell_schedule_name,
+            'bellScheduleName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_id,
+            'schoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $alternate_day_name,
+            'alternateDayName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_time,
+            'endTime', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_time,
+            'startTime', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $total_instructional_time,
+            'totalInstructionalTime', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesBellSchedules
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesBellSchedules'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]
      */
-    public function keyChangesBellSchedules($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
+    public function keyChangesBellSchedules($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
     {
         list($response) = $this->keyChangesBellSchedulesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1608,19 +2108,19 @@ class BellSchedulesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesBellSchedules'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesBellSchedulesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
+    public function keyChangesBellSchedulesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
     {
         $request = $this->keyChangesBellSchedulesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1738,18 +2238,18 @@ class BellSchedulesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesBellSchedules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesBellSchedulesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
+    public function keyChangesBellSchedulesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
     {
         return $this->keyChangesBellSchedulesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1764,18 +2264,18 @@ class BellSchedulesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesBellSchedules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesBellSchedulesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
+    public function keyChangesBellSchedulesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiBellScheduleKeyChange[]';
         $request = $this->keyChangesBellSchedulesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1819,18 +2319,18 @@ class BellSchedulesApi
     /**
      * Create request for operation 'keyChangesBellSchedules'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesBellSchedules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesBellSchedulesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
+    public function keyChangesBellSchedulesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesBellSchedules'][0])
     {
 
 

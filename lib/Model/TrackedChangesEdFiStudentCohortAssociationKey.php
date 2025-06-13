@@ -331,7 +331,7 @@ class TrackedChangesEdFiStudentCohortAssociationKey implements ModelInterface, A
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The month, day, and year on which the student was first identified as part of the cohort.
+     * @param \DateTime|null $begin_date The month, day, and year on which the student was first identified as part of the cohort.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

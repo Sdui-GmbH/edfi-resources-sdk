@@ -1,6 +1,6 @@
 # Resources\SurveyResponsesApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if t
 | [**deletesSurveyResponses()**](SurveyResponsesApi.md#deletesSurveyResponses) | **GET** /ed-fi/surveyResponses/deletes | Retrieves deleted resources based on change version. |
 | [**getSurveyResponses()**](SurveyResponsesApi.md#getSurveyResponses) | **GET** /ed-fi/surveyResponses | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getSurveyResponsesById()**](SurveyResponsesApi.md#getSurveyResponsesById) | **GET** /ed-fi/surveyResponses/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getSurveyResponsesPartitions()**](SurveyResponsesApi.md#getSurveyResponsesPartitions) | **GET** /ed-fi/surveyResponses/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesSurveyResponses()**](SurveyResponsesApi.md#keyChangesSurveyResponses) | **GET** /ed-fi/surveyResponses/keyChanges | Retrieves resources key changes based on change version. |
 | [**postSurveyResponse()**](SurveyResponsesApi.md#postSurveyResponse) | **POST** /ed-fi/surveyResponses | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putSurveyResponse()**](SurveyResponsesApi.md#putSurveyResponse) | **PUT** /ed-fi/surveyResponses/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\SurveyResponsesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getSurveyResponses()`
 
 ```php
-getSurveyResponses($offset, $limit, $min_change_version, $max_change_version, $total_count, $survey_response_identifier, $namespace, $survey_identifier, $contact_unique_id, $staff_unique_id, $student_unique_id, $electronic_mail_address, $full_name, $id, $location, $response_date, $response_time, $use_snapshot): \Resources\Model\EdFiSurveyResponse[]
+getSurveyResponses($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $survey_response_identifier, $namespace, $survey_identifier, $contact_unique_id, $staff_unique_id, $student_unique_id, $electronic_mail_address, $full_name, $id, $location, $response_date, $response_time, $use_snapshot): \Resources\Model\EdFiSurveyResponse[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,11 +172,13 @@ $apiInstance = new Resources\Api\SurveyResponsesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $survey_response_identifier = 'survey_response_identifier_example'; // string | The identifier of the survey typically from the survey application.
 $namespace = 'namespace_example'; // string | Namespace for the survey.
 $survey_identifier = 'survey_identifier_example'; // string | The unique survey identifier from the survey tool.
@@ -187,11 +190,11 @@ $full_name = 'full_name_example'; // string | Full name of the respondent.
 $id = 'id_example'; // string | 
 $location = 'location_example'; // string | Location of the respondent, often a city, district, or school.
 $response_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Date of the survey response.
-$response_time = 56; // int | The amount of time (in seconds) it took for the respondent to complete the survey.
+$response_time = 56; // int | The amount of time in seconds it took for the respondent to complete the survey.
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getSurveyResponses($offset, $limit, $min_change_version, $max_change_version, $total_count, $survey_response_identifier, $namespace, $survey_identifier, $contact_unique_id, $staff_unique_id, $student_unique_id, $electronic_mail_address, $full_name, $id, $location, $response_date, $response_time, $use_snapshot);
+    $result = $apiInstance->getSurveyResponses($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $survey_response_identifier, $namespace, $survey_identifier, $contact_unique_id, $staff_unique_id, $student_unique_id, $electronic_mail_address, $full_name, $id, $location, $response_date, $response_time, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SurveyResponsesApi->getSurveyResponses: ', $e->getMessage(), PHP_EOL;
@@ -202,11 +205,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **survey_response_identifier** | **string**| The identifier of the survey typically from the survey application. | [optional] |
 | **namespace** | **string**| Namespace for the survey. | [optional] |
 | **survey_identifier** | **string**| The unique survey identifier from the survey tool. | [optional] |
@@ -218,7 +223,7 @@ try {
 | **id** | **string**|  | [optional] |
 | **location** | **string**| Location of the respondent, often a city, district, or school. | [optional] |
 | **response_date** | **\DateTime**| Date of the survey response. | [optional] |
-| **response_time** | **int**| The amount of time (in seconds) it took for the respondent to complete the survey. | [optional] |
+| **response_time** | **int**| The amount of time in seconds it took for the respondent to complete the survey. | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -302,6 +307,96 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSurveyResponsesPartitions()`
+
+```php
+getSurveyResponsesPartitions($number, $min_change_version, $max_change_version, $survey_response_identifier, $namespace, $survey_identifier, $contact_unique_id, $staff_unique_id, $student_unique_id, $electronic_mail_address, $full_name, $id, $location, $response_date, $response_time, $use_snapshot): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\SurveyResponsesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$survey_response_identifier = 'survey_response_identifier_example'; // string | The identifier of the survey typically from the survey application.
+$namespace = 'namespace_example'; // string | Namespace for the survey.
+$survey_identifier = 'survey_identifier_example'; // string | The unique survey identifier from the survey tool.
+$contact_unique_id = 'contact_unique_id_example'; // string | A unique alphanumeric code assigned to a contact.
+$staff_unique_id = 'staff_unique_id_example'; // string | A unique alphanumeric code assigned to a staff.
+$student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
+$electronic_mail_address = 'electronic_mail_address_example'; // string | Email address of the respondent.
+$full_name = 'full_name_example'; // string | Full name of the respondent.
+$id = 'id_example'; // string | 
+$location = 'location_example'; // string | Location of the respondent, often a city, district, or school.
+$response_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Date of the survey response.
+$response_time = 56; // int | The amount of time in seconds it took for the respondent to complete the survey.
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+
+try {
+    $result = $apiInstance->getSurveyResponsesPartitions($number, $min_change_version, $max_change_version, $survey_response_identifier, $namespace, $survey_identifier, $contact_unique_id, $staff_unique_id, $student_unique_id, $electronic_mail_address, $full_name, $id, $location, $response_date, $response_time, $use_snapshot);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SurveyResponsesApi->getSurveyResponsesPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **survey_response_identifier** | **string**| The identifier of the survey typically from the survey application. | [optional] |
+| **namespace** | **string**| Namespace for the survey. | [optional] |
+| **survey_identifier** | **string**| The unique survey identifier from the survey tool. | [optional] |
+| **contact_unique_id** | **string**| A unique alphanumeric code assigned to a contact. | [optional] |
+| **staff_unique_id** | **string**| A unique alphanumeric code assigned to a staff. | [optional] |
+| **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
+| **electronic_mail_address** | **string**| Email address of the respondent. | [optional] |
+| **full_name** | **string**| Full name of the respondent. | [optional] |
+| **id** | **string**|  | [optional] |
+| **location** | **string**| Location of the respondent, often a city, district, or school. | [optional] |
+| **response_date** | **\DateTime**| Date of the survey response. | [optional] |
+| **response_time** | **int**| The amount of time in seconds it took for the respondent to complete the survey. | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesSurveyResponses()`
 
 ```php
@@ -329,11 +424,11 @@ $apiInstance = new Resources\Api\SurveyResponsesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -348,11 +443,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

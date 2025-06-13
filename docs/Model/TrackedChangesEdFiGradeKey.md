@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **grading_period_name** | **string** | The school&#39;s descriptive name of the grading period. | [optional]
 **school_id** | **int** | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional]
 **grading_period_school_year** | **int** | The identifier for the grading period school year. | [optional]
-**begin_date** | **\DateTime** | Month, day, and year of the student&#39;s entry or assignment to the section. | [optional]
+**begin_date** | **\DateTime** | Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional]
 **local_course_code** | **string** | The local code assigned by the School that identifies the course offering provided for the instruction of students. | [optional]
 **school_year** | **int** | The identifier for the school year. | [optional]
 **section_identifier** | **string** | The local identifier assigned to a section. | [optional]

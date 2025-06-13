@@ -83,6 +83,9 @@ class StaffsApi
         'getStaffsById' => [
             'application/json',
         ],
+        'getStaffsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStaffs' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StaffsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffs'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStaffDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStaffDelete[]
      */
-    public function deletesStaffs($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffs'][0])
+    public function deletesStaffs($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffs'][0])
     {
         list($response) = $this->deletesStaffsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StaffsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffs'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStaffDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStaffDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStaffsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffs'][0])
+    public function deletesStaffsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffs'][0])
     {
         $request = $this->deletesStaffsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StaffsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStaffsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffs'][0])
+    public function deletesStaffsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffs'][0])
     {
         return $this->deletesStaffsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StaffsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStaffsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffs'][0])
+    public function deletesStaffsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffs'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStaffDelete[]';
         $request = $this->deletesStaffsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StaffsApi
     /**
      * Create request for operation 'deletesStaffs'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStaffsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffs'][0])
+    public function deletesStaffsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffs'][0])
     {
 
 
@@ -759,11 +762,13 @@ class StaffsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
@@ -787,15 +792,18 @@ class StaffsApi
      * @param  float $years_of_prior_professional_experience The total number of years that an individual has previously held a similar professional position in one or more education institutions prior to the current school year. (optional)
      * @param  float $years_of_prior_teaching_experience The total number of years that an individual has previously held a teaching position in one or more education institutions prior to the current school year. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $staff_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a staff member. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the staff Identification Code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffs'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStaff[]
+     * @return |\Resources\Model\EdFiStaff[]
      */
-    public function getStaffs($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffs'][0])
+    public function getStaffs($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, $staff_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStaffs'][0])
     {
-        list($response) = $this->getStaffsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $contentType);
+        list($response) = $this->getStaffsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $staff_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
         return $response;
     }
 
@@ -804,11 +812,13 @@ class StaffsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
@@ -832,15 +842,18 @@ class StaffsApi
      * @param  float $years_of_prior_professional_experience The total number of years that an individual has previously held a similar professional position in one or more education institutions prior to the current school year. (optional)
      * @param  float $years_of_prior_teaching_experience The total number of years that an individual has previously held a teaching position in one or more education institutions prior to the current school year. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $staff_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a staff member. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the staff Identification Code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffs'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStaff[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStaff[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStaffsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffs'][0])
+    public function getStaffsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, $staff_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStaffs'][0])
     {
-        $request = $this->getStaffsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $contentType);
+        $request = $this->getStaffsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $staff_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -956,11 +969,13 @@ class StaffsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
@@ -984,14 +999,17 @@ class StaffsApi
      * @param  float $years_of_prior_professional_experience The total number of years that an individual has previously held a similar professional position in one or more education institutions prior to the current school year. (optional)
      * @param  float $years_of_prior_teaching_experience The total number of years that an individual has previously held a teaching position in one or more education institutions prior to the current school year. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $staff_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a staff member. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the staff Identification Code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStaffsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffs'][0])
+    public function getStaffsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, $staff_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStaffs'][0])
     {
-        return $this->getStaffsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $contentType)
+        return $this->getStaffsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $staff_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1004,11 +1022,13 @@ class StaffsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
@@ -1032,15 +1052,18 @@ class StaffsApi
      * @param  float $years_of_prior_professional_experience The total number of years that an individual has previously held a similar professional position in one or more education institutions prior to the current school year. (optional)
      * @param  float $years_of_prior_teaching_experience The total number of years that an individual has previously held a teaching position in one or more education institutions prior to the current school year. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $staff_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a staff member. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the staff Identification Code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStaffsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffs'][0])
+    public function getStaffsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, $staff_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStaffs'][0])
     {
         $returnType = '\Resources\Model\EdFiStaff[]';
-        $request = $this->getStaffsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $contentType);
+        $request = $this->getStaffsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $staff_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1081,11 +1104,13 @@ class StaffsApi
     /**
      * Create request for operation 'getStaffs'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
@@ -1109,12 +1134,15 @@ class StaffsApi
      * @param  float $years_of_prior_professional_experience The total number of years that an individual has previously held a similar professional position in one or more education institutions prior to the current school year. (optional)
      * @param  float $years_of_prior_teaching_experience The total number of years that an individual has previously held a teaching position in one or more education institutions prior to the current school year. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $staff_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a staff member. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the staff Identification Code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStaffsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffs'][0])
+    public function getStaffsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, $staff_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStaffs'][0])
     {
 
 
@@ -1123,6 +1151,11 @@ class StaffsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StaffsApi.getStaffs, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StaffsApi.getStaffs, must be bigger than or equal to 0.');
         }
         
 
@@ -1199,6 +1232,18 @@ class StaffsApi
 
 
 
+        if ($staff_identification_system_descriptor !== null && strlen($staff_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$staff_identification_system_descriptor" when calling StaffsApi.getStaffs, must be smaller than or equal to 306.');
+        }
+        
+        if ($assigning_organization_identification_code !== null && strlen($assigning_organization_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assigning_organization_identification_code" when calling StaffsApi.getStaffs, must be smaller than or equal to 60.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling StaffsApi.getStaffs, must be smaller than or equal to 60.');
+        }
+        
 
         $resourcePath = '/ed-fi/staffs';
         $formParams = [];
@@ -1220,6 +1265,24 @@ class StaffsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1450,6 +1513,33 @@ class StaffsApi
             true, // explode
             false // required
         ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $staff_identification_system_descriptor,
+            'staffIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assigning_organization_identification_code,
+            'assigningOrganizationIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
         // header params
         if ($use_snapshot !== null) {
@@ -1527,7 +1617,7 @@ class StaffsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStaff
+     * @return |\Resources\Model\EdFiStaff
      */
     public function getStaffsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffsById'][0])
     {
@@ -1547,7 +1637,7 @@ class StaffsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStaff, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStaff, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStaffsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffsById'][0])
     {
@@ -1848,23 +1938,808 @@ class StaffsApi
     }
 
     /**
+     * Operation getStaffsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $citizenship_status_descriptor An indicator of whether or not the person is a U.S. citizen. (optional)
+     * @param  string $highest_completed_level_of_education_descriptor The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received). (optional)
+     * @param  string $sex_descriptor The birth sex of the staff member. (optional)
+     * @param  \DateTime $birth_date The month, day, and year on which an individual was born. (optional)
+     * @param  string $first_name A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)
+     * @param  string $gender_identity The gender the staff member identifies themselves as. (optional)
+     * @param  string $generation_code_suffix An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)
+     * @param  bool $highly_qualified_teacher An indication of whether a teacher is classified as highly qualified for his/her assignment according to state definition. This attribute indicates the teacher is highly qualified for ALL Sections being taught. (optional)
+     * @param  bool $hispanic_latino_ethnicity An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race. The term, \&quot;Spanish origin,\&quot; can be used in addition to \&quot;Hispanic or Latino.\&quot; (optional)
+     * @param  string $id  (optional)
+     * @param  string $last_surname The name borne in common by members of a family. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $maiden_name The individual&#39;s maiden name. (optional)
+     * @param  string $middle_name A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)
+     * @param  string $personal_title_prefix A prefix used to denote the title, degree, position, or seniority of the individual. (optional)
+     * @param  string $preferred_first_name The first name the individual prefers, if different from their legal first name (optional)
+     * @param  string $preferred_last_surname The last name the individual prefers, if different from their legal last name (optional)
+     * @param  float $years_of_prior_professional_experience The total number of years that an individual has previously held a similar professional position in one or more education institutions prior to the current school year. (optional)
+     * @param  float $years_of_prior_teaching_experience The total number of years that an individual has previously held a teaching position in one or more education institutions prior to the current school year. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $staff_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a staff member. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the staff Identification Code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStaffsPartitions($number = null, $min_change_version = null, $max_change_version = null, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, $staff_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStaffsPartitions'][0])
+    {
+        list($response) = $this->getStaffsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $staff_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStaffsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $citizenship_status_descriptor An indicator of whether or not the person is a U.S. citizen. (optional)
+     * @param  string $highest_completed_level_of_education_descriptor The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received). (optional)
+     * @param  string $sex_descriptor The birth sex of the staff member. (optional)
+     * @param  \DateTime $birth_date The month, day, and year on which an individual was born. (optional)
+     * @param  string $first_name A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)
+     * @param  string $gender_identity The gender the staff member identifies themselves as. (optional)
+     * @param  string $generation_code_suffix An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)
+     * @param  bool $highly_qualified_teacher An indication of whether a teacher is classified as highly qualified for his/her assignment according to state definition. This attribute indicates the teacher is highly qualified for ALL Sections being taught. (optional)
+     * @param  bool $hispanic_latino_ethnicity An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race. The term, \&quot;Spanish origin,\&quot; can be used in addition to \&quot;Hispanic or Latino.\&quot; (optional)
+     * @param  string $id  (optional)
+     * @param  string $last_surname The name borne in common by members of a family. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $maiden_name The individual&#39;s maiden name. (optional)
+     * @param  string $middle_name A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)
+     * @param  string $personal_title_prefix A prefix used to denote the title, degree, position, or seniority of the individual. (optional)
+     * @param  string $preferred_first_name The first name the individual prefers, if different from their legal first name (optional)
+     * @param  string $preferred_last_surname The last name the individual prefers, if different from their legal last name (optional)
+     * @param  float $years_of_prior_professional_experience The total number of years that an individual has previously held a similar professional position in one or more education institutions prior to the current school year. (optional)
+     * @param  float $years_of_prior_teaching_experience The total number of years that an individual has previously held a teaching position in one or more education institutions prior to the current school year. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $staff_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a staff member. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the staff Identification Code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStaffsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, $staff_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStaffsPartitions'][0])
+    {
+        $request = $this->getStaffsPartitionsRequest($number, $min_change_version, $max_change_version, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $staff_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStaffsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $citizenship_status_descriptor An indicator of whether or not the person is a U.S. citizen. (optional)
+     * @param  string $highest_completed_level_of_education_descriptor The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received). (optional)
+     * @param  string $sex_descriptor The birth sex of the staff member. (optional)
+     * @param  \DateTime $birth_date The month, day, and year on which an individual was born. (optional)
+     * @param  string $first_name A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)
+     * @param  string $gender_identity The gender the staff member identifies themselves as. (optional)
+     * @param  string $generation_code_suffix An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)
+     * @param  bool $highly_qualified_teacher An indication of whether a teacher is classified as highly qualified for his/her assignment according to state definition. This attribute indicates the teacher is highly qualified for ALL Sections being taught. (optional)
+     * @param  bool $hispanic_latino_ethnicity An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race. The term, \&quot;Spanish origin,\&quot; can be used in addition to \&quot;Hispanic or Latino.\&quot; (optional)
+     * @param  string $id  (optional)
+     * @param  string $last_surname The name borne in common by members of a family. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $maiden_name The individual&#39;s maiden name. (optional)
+     * @param  string $middle_name A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)
+     * @param  string $personal_title_prefix A prefix used to denote the title, degree, position, or seniority of the individual. (optional)
+     * @param  string $preferred_first_name The first name the individual prefers, if different from their legal first name (optional)
+     * @param  string $preferred_last_surname The last name the individual prefers, if different from their legal last name (optional)
+     * @param  float $years_of_prior_professional_experience The total number of years that an individual has previously held a similar professional position in one or more education institutions prior to the current school year. (optional)
+     * @param  float $years_of_prior_teaching_experience The total number of years that an individual has previously held a teaching position in one or more education institutions prior to the current school year. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $staff_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a staff member. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the staff Identification Code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStaffsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, $staff_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStaffsPartitions'][0])
+    {
+        return $this->getStaffsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $staff_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStaffsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $citizenship_status_descriptor An indicator of whether or not the person is a U.S. citizen. (optional)
+     * @param  string $highest_completed_level_of_education_descriptor The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received). (optional)
+     * @param  string $sex_descriptor The birth sex of the staff member. (optional)
+     * @param  \DateTime $birth_date The month, day, and year on which an individual was born. (optional)
+     * @param  string $first_name A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)
+     * @param  string $gender_identity The gender the staff member identifies themselves as. (optional)
+     * @param  string $generation_code_suffix An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)
+     * @param  bool $highly_qualified_teacher An indication of whether a teacher is classified as highly qualified for his/her assignment according to state definition. This attribute indicates the teacher is highly qualified for ALL Sections being taught. (optional)
+     * @param  bool $hispanic_latino_ethnicity An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race. The term, \&quot;Spanish origin,\&quot; can be used in addition to \&quot;Hispanic or Latino.\&quot; (optional)
+     * @param  string $id  (optional)
+     * @param  string $last_surname The name borne in common by members of a family. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $maiden_name The individual&#39;s maiden name. (optional)
+     * @param  string $middle_name A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)
+     * @param  string $personal_title_prefix A prefix used to denote the title, degree, position, or seniority of the individual. (optional)
+     * @param  string $preferred_first_name The first name the individual prefers, if different from their legal first name (optional)
+     * @param  string $preferred_last_surname The last name the individual prefers, if different from their legal last name (optional)
+     * @param  float $years_of_prior_professional_experience The total number of years that an individual has previously held a similar professional position in one or more education institutions prior to the current school year. (optional)
+     * @param  float $years_of_prior_teaching_experience The total number of years that an individual has previously held a teaching position in one or more education institutions prior to the current school year. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $staff_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a staff member. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the staff Identification Code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStaffsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, $staff_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStaffsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStaffsPartitionsRequest($number, $min_change_version, $max_change_version, $staff_unique_id, $person_id, $source_system_descriptor, $citizenship_status_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $birth_date, $first_name, $gender_identity, $generation_code_suffix, $highly_qualified_teacher, $hispanic_latino_ethnicity, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $years_of_prior_professional_experience, $years_of_prior_teaching_experience, $use_snapshot, $staff_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStaffsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $citizenship_status_descriptor An indicator of whether or not the person is a U.S. citizen. (optional)
+     * @param  string $highest_completed_level_of_education_descriptor The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received). (optional)
+     * @param  string $sex_descriptor The birth sex of the staff member. (optional)
+     * @param  \DateTime $birth_date The month, day, and year on which an individual was born. (optional)
+     * @param  string $first_name A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)
+     * @param  string $gender_identity The gender the staff member identifies themselves as. (optional)
+     * @param  string $generation_code_suffix An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)
+     * @param  bool $highly_qualified_teacher An indication of whether a teacher is classified as highly qualified for his/her assignment according to state definition. This attribute indicates the teacher is highly qualified for ALL Sections being taught. (optional)
+     * @param  bool $hispanic_latino_ethnicity An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race. The term, \&quot;Spanish origin,\&quot; can be used in addition to \&quot;Hispanic or Latino.\&quot; (optional)
+     * @param  string $id  (optional)
+     * @param  string $last_surname The name borne in common by members of a family. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $maiden_name The individual&#39;s maiden name. (optional)
+     * @param  string $middle_name A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)
+     * @param  string $personal_title_prefix A prefix used to denote the title, degree, position, or seniority of the individual. (optional)
+     * @param  string $preferred_first_name The first name the individual prefers, if different from their legal first name (optional)
+     * @param  string $preferred_last_surname The last name the individual prefers, if different from their legal last name (optional)
+     * @param  float $years_of_prior_professional_experience The total number of years that an individual has previously held a similar professional position in one or more education institutions prior to the current school year. (optional)
+     * @param  float $years_of_prior_teaching_experience The total number of years that an individual has previously held a teaching position in one or more education institutions prior to the current school year. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $staff_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a staff member. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the staff Identification Code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a staff member by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStaffsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $staff_unique_id = null, $person_id = null, $source_system_descriptor = null, $citizenship_status_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $birth_date = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $highly_qualified_teacher = null, $hispanic_latino_ethnicity = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $years_of_prior_professional_experience = null, $years_of_prior_teaching_experience = null, $use_snapshot = false, $staff_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStaffsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StaffsApi.getStaffsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($staff_unique_id !== null && strlen($staff_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$staff_unique_id" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($person_id !== null && strlen($person_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$person_id" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($source_system_descriptor !== null && strlen($source_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$source_system_descriptor" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($citizenship_status_descriptor !== null && strlen($citizenship_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$citizenship_status_descriptor" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($highest_completed_level_of_education_descriptor !== null && strlen($highest_completed_level_of_education_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$highest_completed_level_of_education_descriptor" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($sex_descriptor !== null && strlen($sex_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$sex_descriptor" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($first_name !== null && strlen($first_name) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$first_name" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($gender_identity !== null && strlen($gender_identity) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$gender_identity" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($generation_code_suffix !== null && strlen($generation_code_suffix) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$generation_code_suffix" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 10.');
+        }
+        
+
+
+
+        if ($last_surname !== null && strlen($last_surname) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$last_surname" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($login_id !== null && strlen($login_id) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$login_id" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($maiden_name !== null && strlen($maiden_name) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$maiden_name" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($middle_name !== null && strlen($middle_name) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$middle_name" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($personal_title_prefix !== null && strlen($personal_title_prefix) > 30) {
+            throw new \InvalidArgumentException('invalid length for "$personal_title_prefix" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 30.');
+        }
+        
+        if ($preferred_first_name !== null && strlen($preferred_first_name) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$preferred_first_name" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($preferred_last_surname !== null && strlen($preferred_last_surname) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$preferred_last_surname" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 75.');
+        }
+        
+
+
+
+        if ($staff_identification_system_descriptor !== null && strlen($staff_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$staff_identification_system_descriptor" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($assigning_organization_identification_code !== null && strlen($assigning_organization_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assigning_organization_identification_code" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling StaffsApi.getStaffsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        $resourcePath = '/ed-fi/staffs/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $staff_unique_id,
+            'staffUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $person_id,
+            'personId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_system_descriptor,
+            'sourceSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $citizenship_status_descriptor,
+            'citizenshipStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $highest_completed_level_of_education_descriptor,
+            'highestCompletedLevelOfEducationDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sex_descriptor,
+            'sexDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $birth_date,
+            'birthDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $first_name,
+            'firstName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $gender_identity,
+            'genderIdentity', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $generation_code_suffix,
+            'generationCodeSuffix', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $highly_qualified_teacher,
+            'highlyQualifiedTeacher', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $hispanic_latino_ethnicity,
+            'hispanicLatinoEthnicity', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $last_surname,
+            'lastSurname', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $login_id,
+            'loginId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $maiden_name,
+            'maidenName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $middle_name,
+            'middleName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $personal_title_prefix,
+            'personalTitlePrefix', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $preferred_first_name,
+            'preferredFirstName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $preferred_last_surname,
+            'preferredLastSurname', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $years_of_prior_professional_experience,
+            'yearsOfPriorProfessionalExperience', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $years_of_prior_teaching_experience,
+            'yearsOfPriorTeachingExperience', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $staff_identification_system_descriptor,
+            'staffIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assigning_organization_identification_code,
+            'assigningOrganizationIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStaffs
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffs'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStaffKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStaffKeyChange[]
      */
-    public function keyChangesStaffs($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffs'][0])
+    public function keyChangesStaffs($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffs'][0])
     {
         list($response) = $this->keyChangesStaffsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1875,19 +2750,19 @@ class StaffsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffs'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStaffKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStaffKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStaffsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffs'][0])
+    public function keyChangesStaffsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffs'][0])
     {
         $request = $this->keyChangesStaffsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -2005,18 +2880,18 @@ class StaffsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStaffsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffs'][0])
+    public function keyChangesStaffsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffs'][0])
     {
         return $this->keyChangesStaffsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -2031,18 +2906,18 @@ class StaffsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStaffsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffs'][0])
+    public function keyChangesStaffsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffs'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStaffKeyChange[]';
         $request = $this->keyChangesStaffsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -2086,18 +2961,18 @@ class StaffsApi
     /**
      * Create request for operation 'keyChangesStaffs'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStaffsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffs'][0])
+    public function keyChangesStaffsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffs'][0])
     {
 
 

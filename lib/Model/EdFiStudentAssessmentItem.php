@@ -606,7 +606,7 @@ class EdFiStudentAssessmentItem implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets time_assessed
      *
-     * @param string|null $time_assessed The overall time a student actually spent during the assessment item.
+     * @param string|null $time_assessed The overall time that a student actually spent on the assessment item expressed in minutes.
      *
      * @return self
      */

@@ -368,7 +368,7 @@ class EdFiGeneralStudentProgramAssociationProgramParticipationStatus implements 
     /**
      * Sets status_begin_date
      *
-     * @param \DateTime $status_begin_date The date the student's program participation status began.
+     * @param \DateTime $status_begin_date The date the student's program participation status began.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class EdFiGeneralStudentProgramAssociationProgramParticipationStatus implements 
     /**
      * Sets status_end_date
      *
-     * @param \DateTime|null $status_end_date The date the student's program participation status ended.
+     * @param \DateTime|null $status_end_date The date the student's program participation status ended.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

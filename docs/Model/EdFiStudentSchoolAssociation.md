@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
-**entry_date** | **\DateTime** | The month, day, and year on which an individual enters and begins to receive instructional services in a school. |
+**entry_date** | **\DateTime** | The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. |
 **calendar_reference** | [**\Resources\Model\EdFiCalendarReference**](EdFiCalendarReference.md) |  | [optional]
 **class_of_school_year_type_reference** | [**\Resources\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  | [optional]
 **graduation_plan_reference** | [**\Resources\Model\EdFiGraduationPlanReference**](EdFiGraduationPlanReference.md) |  | [optional]
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **entry_grade_level_descriptor** | **string** | The grade level or primary instructional level at which a student enters and receives services in a school or an educational institution during a given academic session. |
 **entry_grade_level_reason_descriptor** | **string** | The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. | [optional]
 **entry_type_descriptor** | **string** | The process by which a student enters a school during a given academic session. | [optional]
-**exit_withdraw_date** | **\DateTime** | The recorded exit or withdraw date for the student. | [optional]
+**exit_withdraw_date** | **\DateTime** | The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional]
 **exit_withdraw_type_descriptor** | **string** | The circumstances under which the student exited from membership in an educational institution. | [optional]
 **full_time_equivalency** | **float** | The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. | [optional]
 **next_year_grade_level_descriptor** | **string** | The anticipated grade level for the student for the next school year. | [optional]

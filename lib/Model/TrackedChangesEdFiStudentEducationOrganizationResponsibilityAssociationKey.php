@@ -362,7 +362,7 @@ class TrackedChangesEdFiStudentEducationOrganizationResponsibilityAssociationKey
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date Month, day, and year of the start date of an education organization's responsibility for a student.
+     * @param \DateTime|null $begin_date Month, day, and year of the start date of an education organization's responsibility for a student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

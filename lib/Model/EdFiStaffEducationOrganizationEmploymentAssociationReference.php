@@ -408,7 +408,7 @@ class EdFiStaffEducationOrganizationEmploymentAssociationReference implements Mo
     /**
      * Sets hire_date
      *
-     * @param \DateTime $hire_date The month, day, and year on which an individual was hired for a position.
+     * @param \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

@@ -83,6 +83,9 @@ class DisciplineActionsApi
         'getDisciplineActionsById' => [
             'application/json',
         ],
+        'getDisciplineActionsPartitions' => [
+            'application/json',
+        ],
         'keyChangesDisciplineActions' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class DisciplineActionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineActions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]
      */
-    public function deletesDisciplineActions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
+    public function deletesDisciplineActions($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
     {
         list($response) = $this->deletesDisciplineActionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class DisciplineActionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineActions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiDisciplineActionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiDisciplineActionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesDisciplineActionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
+    public function deletesDisciplineActionsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
     {
         $request = $this->deletesDisciplineActionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class DisciplineActionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineActions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesDisciplineActionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
+    public function deletesDisciplineActionsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
     {
         return $this->deletesDisciplineActionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class DisciplineActionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineActions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesDisciplineActionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
+    public function deletesDisciplineActionsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineActionDelete[]';
         $request = $this->deletesDisciplineActionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class DisciplineActionsApi
     /**
      * Create request for operation 'deletesDisciplineActions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineActions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesDisciplineActionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
+    public function deletesDisciplineActionsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineActions'][0])
     {
 
 
@@ -759,11 +762,13 @@ class DisciplineActionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $discipline_action_identifier Identifier assigned by the education organization to the discipline action. (optional)
      * @param  \DateTime $discipline_date The date of the discipline action. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -780,11 +785,11 @@ class DisciplineActionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiDisciplineAction[]
+     * @return |\Resources\Model\EdFiDisciplineAction[]
      */
-    public function getDisciplineActions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
+    public function getDisciplineActions($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
     {
-        list($response) = $this->getDisciplineActionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType);
+        list($response) = $this->getDisciplineActionsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -793,11 +798,13 @@ class DisciplineActionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $discipline_action_identifier Identifier assigned by the education organization to the discipline action. (optional)
      * @param  \DateTime $discipline_date The date of the discipline action. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -814,11 +821,11 @@ class DisciplineActionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiDisciplineAction[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiDisciplineAction[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDisciplineActionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
+    public function getDisciplineActionsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
     {
-        $request = $this->getDisciplineActionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType);
+        $request = $this->getDisciplineActionsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -934,11 +941,13 @@ class DisciplineActionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $discipline_action_identifier Identifier assigned by the education organization to the discipline action. (optional)
      * @param  \DateTime $discipline_date The date of the discipline action. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -956,9 +965,9 @@ class DisciplineActionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDisciplineActionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
+    public function getDisciplineActionsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
     {
-        return $this->getDisciplineActionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType)
+        return $this->getDisciplineActionsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -971,11 +980,13 @@ class DisciplineActionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $discipline_action_identifier Identifier assigned by the education organization to the discipline action. (optional)
      * @param  \DateTime $discipline_date The date of the discipline action. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -993,10 +1004,10 @@ class DisciplineActionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDisciplineActionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
+    public function getDisciplineActionsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
     {
         $returnType = '\Resources\Model\EdFiDisciplineAction[]';
-        $request = $this->getDisciplineActionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType);
+        $request = $this->getDisciplineActionsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1037,11 +1048,13 @@ class DisciplineActionsApi
     /**
      * Create request for operation 'getDisciplineActions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $discipline_action_identifier Identifier assigned by the education organization to the discipline action. (optional)
      * @param  \DateTime $discipline_date The date of the discipline action. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -1059,7 +1072,7 @@ class DisciplineActionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDisciplineActionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
+    public function getDisciplineActionsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActions'][0])
     {
 
 
@@ -1068,6 +1081,11 @@ class DisciplineActionsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling DisciplineActionsApi.getDisciplineActions, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling DisciplineActionsApi.getDisciplineActions, must be bigger than or equal to 0.');
         }
         
 
@@ -1115,6 +1133,24 @@ class DisciplineActionsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1323,7 +1359,7 @@ class DisciplineActionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiDisciplineAction
+     * @return |\Resources\Model\EdFiDisciplineAction
      */
     public function getDisciplineActionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActionsById'][0])
     {
@@ -1343,7 +1379,7 @@ class DisciplineActionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiDisciplineAction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiDisciplineAction, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDisciplineActionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActionsById'][0])
     {
@@ -1644,23 +1680,550 @@ class DisciplineActionsApi
     }
 
     /**
+     * Operation getDisciplineActionsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $discipline_action_identifier Identifier assigned by the education organization to the discipline action. (optional)
+     * @param  \DateTime $discipline_date The date of the discipline action. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $responsibility_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $assignment_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $discipline_action_length_difference_reason_descriptor Indicates the reason for the difference, if any, between the official and actual lengths of a student&#39;s disciplinary assignment. (optional)
+     * @param  float $actual_discipline_action_length Indicates the actual length in school days of a student&#39;s disciplinary assignment. (optional)
+     * @param  float $discipline_action_length The length of time in school days for the discipline action (e.g. removal, detention), if applicable. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $iep_placement_meeting_indicator An indication as to whether an offense and/or disciplinary action resulted in a meeting of a student&#39;s Individualized Education Program (IEP) team to determine appropriate placement. (optional)
+     * @param  bool $related_to_zero_tolerance_policy An indication of whether or not this disciplinary action taken against a student was imposed as a consequence of state or local zero tolerance policies. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineActionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getDisciplineActionsPartitions($number = null, $min_change_version = null, $max_change_version = null, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActionsPartitions'][0])
+    {
+        list($response) = $this->getDisciplineActionsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getDisciplineActionsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $discipline_action_identifier Identifier assigned by the education organization to the discipline action. (optional)
+     * @param  \DateTime $discipline_date The date of the discipline action. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $responsibility_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $assignment_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $discipline_action_length_difference_reason_descriptor Indicates the reason for the difference, if any, between the official and actual lengths of a student&#39;s disciplinary assignment. (optional)
+     * @param  float $actual_discipline_action_length Indicates the actual length in school days of a student&#39;s disciplinary assignment. (optional)
+     * @param  float $discipline_action_length The length of time in school days for the discipline action (e.g. removal, detention), if applicable. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $iep_placement_meeting_indicator An indication as to whether an offense and/or disciplinary action resulted in a meeting of a student&#39;s Individualized Education Program (IEP) team to determine appropriate placement. (optional)
+     * @param  bool $related_to_zero_tolerance_policy An indication of whether or not this disciplinary action taken against a student was imposed as a consequence of state or local zero tolerance policies. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineActionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getDisciplineActionsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActionsPartitions'][0])
+    {
+        $request = $this->getDisciplineActionsPartitionsRequest($number, $min_change_version, $max_change_version, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getDisciplineActionsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $discipline_action_identifier Identifier assigned by the education organization to the discipline action. (optional)
+     * @param  \DateTime $discipline_date The date of the discipline action. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $responsibility_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $assignment_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $discipline_action_length_difference_reason_descriptor Indicates the reason for the difference, if any, between the official and actual lengths of a student&#39;s disciplinary assignment. (optional)
+     * @param  float $actual_discipline_action_length Indicates the actual length in school days of a student&#39;s disciplinary assignment. (optional)
+     * @param  float $discipline_action_length The length of time in school days for the discipline action (e.g. removal, detention), if applicable. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $iep_placement_meeting_indicator An indication as to whether an offense and/or disciplinary action resulted in a meeting of a student&#39;s Individualized Education Program (IEP) team to determine appropriate placement. (optional)
+     * @param  bool $related_to_zero_tolerance_policy An indication of whether or not this disciplinary action taken against a student was imposed as a consequence of state or local zero tolerance policies. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineActionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getDisciplineActionsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActionsPartitions'][0])
+    {
+        return $this->getDisciplineActionsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getDisciplineActionsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $discipline_action_identifier Identifier assigned by the education organization to the discipline action. (optional)
+     * @param  \DateTime $discipline_date The date of the discipline action. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $responsibility_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $assignment_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $discipline_action_length_difference_reason_descriptor Indicates the reason for the difference, if any, between the official and actual lengths of a student&#39;s disciplinary assignment. (optional)
+     * @param  float $actual_discipline_action_length Indicates the actual length in school days of a student&#39;s disciplinary assignment. (optional)
+     * @param  float $discipline_action_length The length of time in school days for the discipline action (e.g. removal, detention), if applicable. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $iep_placement_meeting_indicator An indication as to whether an offense and/or disciplinary action resulted in a meeting of a student&#39;s Individualized Education Program (IEP) team to determine appropriate placement. (optional)
+     * @param  bool $related_to_zero_tolerance_policy An indication of whether or not this disciplinary action taken against a student was imposed as a consequence of state or local zero tolerance policies. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineActionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getDisciplineActionsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActionsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getDisciplineActionsPartitionsRequest($number, $min_change_version, $max_change_version, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getDisciplineActionsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $discipline_action_identifier Identifier assigned by the education organization to the discipline action. (optional)
+     * @param  \DateTime $discipline_date The date of the discipline action. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $responsibility_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $assignment_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $discipline_action_length_difference_reason_descriptor Indicates the reason for the difference, if any, between the official and actual lengths of a student&#39;s disciplinary assignment. (optional)
+     * @param  float $actual_discipline_action_length Indicates the actual length in school days of a student&#39;s disciplinary assignment. (optional)
+     * @param  float $discipline_action_length The length of time in school days for the discipline action (e.g. removal, detention), if applicable. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $iep_placement_meeting_indicator An indication as to whether an offense and/or disciplinary action resulted in a meeting of a student&#39;s Individualized Education Program (IEP) team to determine appropriate placement. (optional)
+     * @param  bool $related_to_zero_tolerance_policy An indication of whether or not this disciplinary action taken against a student was imposed as a consequence of state or local zero tolerance policies. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineActionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getDisciplineActionsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $discipline_action_identifier = null, $discipline_date = null, $student_unique_id = null, $responsibility_school_id = null, $assignment_school_id = null, $discipline_action_length_difference_reason_descriptor = null, $actual_discipline_action_length = null, $discipline_action_length = null, $id = null, $iep_placement_meeting_indicator = null, $related_to_zero_tolerance_policy = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineActionsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling DisciplineActionsApi.getDisciplineActionsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling DisciplineActionsApi.getDisciplineActionsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($discipline_action_identifier !== null && strlen($discipline_action_identifier) > 36) {
+            throw new \InvalidArgumentException('invalid length for "$discipline_action_identifier" when calling DisciplineActionsApi.getDisciplineActionsPartitions, must be smaller than or equal to 36.');
+        }
+        
+
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling DisciplineActionsApi.getDisciplineActionsPartitions, must be smaller than or equal to 32.');
+        }
+        
+
+
+        if ($discipline_action_length_difference_reason_descriptor !== null && strlen($discipline_action_length_difference_reason_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$discipline_action_length_difference_reason_descriptor" when calling DisciplineActionsApi.getDisciplineActionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/disciplineActions/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $discipline_action_identifier,
+            'disciplineActionIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $discipline_date,
+            'disciplineDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $responsibility_school_id,
+            'responsibilitySchoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assignment_school_id,
+            'assignmentSchoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $discipline_action_length_difference_reason_descriptor,
+            'disciplineActionLengthDifferenceReasonDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $actual_discipline_action_length,
+            'actualDisciplineActionLength', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $discipline_action_length,
+            'disciplineActionLength', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iep_placement_meeting_indicator,
+            'iepPlacementMeetingIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $related_to_zero_tolerance_policy,
+            'relatedToZeroTolerancePolicy', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesDisciplineActions
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineActions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]
      */
-    public function keyChangesDisciplineActions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
+    public function keyChangesDisciplineActions($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
     {
         list($response) = $this->keyChangesDisciplineActionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1671,19 +2234,19 @@ class DisciplineActionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineActions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesDisciplineActionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
+    public function keyChangesDisciplineActionsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
     {
         $request = $this->keyChangesDisciplineActionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1801,18 +2364,18 @@ class DisciplineActionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineActions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesDisciplineActionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
+    public function keyChangesDisciplineActionsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
     {
         return $this->keyChangesDisciplineActionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1827,18 +2390,18 @@ class DisciplineActionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineActions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesDisciplineActionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
+    public function keyChangesDisciplineActionsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineActionKeyChange[]';
         $request = $this->keyChangesDisciplineActionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1882,18 +2445,18 @@ class DisciplineActionsApi
     /**
      * Create request for operation 'keyChangesDisciplineActions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineActions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesDisciplineActionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
+    public function keyChangesDisciplineActionsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineActions'][0])
     {
 
 

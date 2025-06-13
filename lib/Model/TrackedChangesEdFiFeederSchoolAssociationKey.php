@@ -316,7 +316,7 @@ class TrackedChangesEdFiFeederSchoolAssociationKey implements ModelInterface, Ar
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The month, day, and year of the first day of the feeder school association.
+     * @param \DateTime|null $begin_date The month, day, and year of the first day of the feeder school association.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

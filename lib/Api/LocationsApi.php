@@ -83,6 +83,9 @@ class LocationsApi
         'getLocationsById' => [
             'application/json',
         ],
+        'getLocationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesLocations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class LocationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiLocationDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiLocationDelete[]
      */
-    public function deletesLocations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
+    public function deletesLocations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
     {
         list($response) = $this->deletesLocationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class LocationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiLocationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiLocationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesLocationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
+    public function deletesLocationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
     {
         $request = $this->deletesLocationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class LocationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesLocationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
+    public function deletesLocationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
     {
         return $this->deletesLocationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class LocationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesLocationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
+    public function deletesLocationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiLocationDelete[]';
         $request = $this->deletesLocationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class LocationsApi
     /**
      * Create request for operation 'deletesLocations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLocations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesLocationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
+    public function deletesLocationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLocations'][0])
     {
 
 
@@ -759,11 +762,13 @@ class LocationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $id  (optional)
@@ -774,11 +779,11 @@ class LocationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiLocation[]
+     * @return |\Resources\Model\EdFiLocation[]
      */
-    public function getLocations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
+    public function getLocations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
     {
-        list($response) = $this->getLocationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType);
+        list($response) = $this->getLocationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -787,11 +792,13 @@ class LocationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $id  (optional)
@@ -802,11 +809,11 @@ class LocationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiLocation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiLocation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLocationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
+    public function getLocationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
     {
-        $request = $this->getLocationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType);
+        $request = $this->getLocationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -922,11 +929,13 @@ class LocationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $id  (optional)
@@ -938,9 +947,9 @@ class LocationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLocationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
+    public function getLocationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
     {
-        return $this->getLocationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType)
+        return $this->getLocationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -953,11 +962,13 @@ class LocationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $id  (optional)
@@ -969,10 +980,10 @@ class LocationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLocationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
+    public function getLocationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
     {
         $returnType = '\Resources\Model\EdFiLocation[]';
-        $request = $this->getLocationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType);
+        $request = $this->getLocationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1013,11 +1024,13 @@ class LocationsApi
     /**
      * Create request for operation 'getLocations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $id  (optional)
@@ -1029,7 +1042,7 @@ class LocationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getLocationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
+    public function getLocationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocations'][0])
     {
 
 
@@ -1038,6 +1051,11 @@ class LocationsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling LocationsApi.getLocations, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling LocationsApi.getLocations, must be bigger than or equal to 0.');
         }
         
 
@@ -1073,6 +1091,24 @@ class LocationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1227,7 +1263,7 @@ class LocationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiLocation
+     * @return |\Resources\Model\EdFiLocation
      */
     public function getLocationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocationsById'][0])
     {
@@ -1247,7 +1283,7 @@ class LocationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiLocation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiLocation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLocationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocationsById'][0])
     {
@@ -1548,23 +1584,454 @@ class LocationsApi
     }
 
     /**
+     * Operation getLocationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
+     * @param  int $maximum_number_of_seats The most number of seats the class can maintain. (optional)
+     * @param  int $optimal_number_of_seats The number of seats that is most favorable to the class. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getLocationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocationsPartitions'][0])
+    {
+        list($response) = $this->getLocationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getLocationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
+     * @param  int $maximum_number_of_seats The most number of seats the class can maintain. (optional)
+     * @param  int $optimal_number_of_seats The number of seats that is most favorable to the class. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getLocationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocationsPartitions'][0])
+    {
+        $request = $this->getLocationsPartitionsRequest($number, $min_change_version, $max_change_version, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getLocationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
+     * @param  int $maximum_number_of_seats The most number of seats the class can maintain. (optional)
+     * @param  int $optimal_number_of_seats The number of seats that is most favorable to the class. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getLocationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocationsPartitions'][0])
+    {
+        return $this->getLocationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getLocationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
+     * @param  int $maximum_number_of_seats The most number of seats the class can maintain. (optional)
+     * @param  int $optimal_number_of_seats The number of seats that is most favorable to the class. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getLocationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getLocationsPartitionsRequest($number, $min_change_version, $max_change_version, $classroom_identification_code, $school_id, $id, $maximum_number_of_seats, $optimal_number_of_seats, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getLocationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $id  (optional)
+     * @param  int $maximum_number_of_seats The most number of seats the class can maintain. (optional)
+     * @param  int $optimal_number_of_seats The number of seats that is most favorable to the class. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLocationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getLocationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $classroom_identification_code = null, $school_id = null, $id = null, $maximum_number_of_seats = null, $optimal_number_of_seats = null, $use_snapshot = false, string $contentType = self::contentTypes['getLocationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling LocationsApi.getLocationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling LocationsApi.getLocationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($classroom_identification_code !== null && strlen($classroom_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$classroom_identification_code" when calling LocationsApi.getLocationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/locations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $classroom_identification_code,
+            'classroomIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_id,
+            'schoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $maximum_number_of_seats,
+            'maximumNumberOfSeats', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $optimal_number_of_seats,
+            'optimalNumberOfSeats', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesLocations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiLocationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiLocationKeyChange[]
      */
-    public function keyChangesLocations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
+    public function keyChangesLocations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
     {
         list($response) = $this->keyChangesLocationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1575,19 +2042,19 @@ class LocationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiLocationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiLocationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesLocationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
+    public function keyChangesLocationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
     {
         $request = $this->keyChangesLocationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1705,18 +2172,18 @@ class LocationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesLocationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
+    public function keyChangesLocationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
     {
         return $this->keyChangesLocationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1731,18 +2198,18 @@ class LocationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesLocationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
+    public function keyChangesLocationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiLocationKeyChange[]';
         $request = $this->keyChangesLocationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1786,18 +2253,18 @@ class LocationsApi
     /**
      * Create request for operation 'keyChangesLocations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLocations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesLocationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
+    public function keyChangesLocationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLocations'][0])
     {
 
 

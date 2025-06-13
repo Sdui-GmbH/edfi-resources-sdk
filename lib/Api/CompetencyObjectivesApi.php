@@ -83,6 +83,9 @@ class CompetencyObjectivesApi
         'getCompetencyObjectivesById' => [
             'application/json',
         ],
+        'getCompetencyObjectivesPartitions' => [
+            'application/json',
+        ],
         'keyChangesCompetencyObjectives' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class CompetencyObjectivesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCompetencyObjectives'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]
      */
-    public function deletesCompetencyObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
+    public function deletesCompetencyObjectives($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
     {
         list($response) = $this->deletesCompetencyObjectivesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class CompetencyObjectivesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCompetencyObjectives'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesCompetencyObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
+    public function deletesCompetencyObjectivesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
     {
         $request = $this->deletesCompetencyObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class CompetencyObjectivesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCompetencyObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesCompetencyObjectivesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
+    public function deletesCompetencyObjectivesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
     {
         return $this->deletesCompetencyObjectivesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class CompetencyObjectivesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCompetencyObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesCompetencyObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
+    public function deletesCompetencyObjectivesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiCompetencyObjectiveDelete[]';
         $request = $this->deletesCompetencyObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class CompetencyObjectivesApi
     /**
      * Create request for operation 'deletesCompetencyObjectives'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCompetencyObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesCompetencyObjectivesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
+    public function deletesCompetencyObjectivesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCompetencyObjectives'][0])
     {
 
 
@@ -759,11 +762,13 @@ class CompetencyObjectivesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $objective_grade_level_descriptor The grade level for which the competency objective is targeted. (optional)
      * @param  string $objective The designated title of the competency objective. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -776,11 +781,11 @@ class CompetencyObjectivesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiCompetencyObjective[]
+     * @return |\Resources\Model\EdFiCompetencyObjective[]
      */
-    public function getCompetencyObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
+    public function getCompetencyObjectives($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
     {
-        list($response) = $this->getCompetencyObjectivesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType);
+        list($response) = $this->getCompetencyObjectivesWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -789,11 +794,13 @@ class CompetencyObjectivesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $objective_grade_level_descriptor The grade level for which the competency objective is targeted. (optional)
      * @param  string $objective The designated title of the competency objective. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -806,11 +813,11 @@ class CompetencyObjectivesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiCompetencyObjective[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiCompetencyObjective[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCompetencyObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
+    public function getCompetencyObjectivesWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
     {
-        $request = $this->getCompetencyObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType);
+        $request = $this->getCompetencyObjectivesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -926,11 +933,13 @@ class CompetencyObjectivesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $objective_grade_level_descriptor The grade level for which the competency objective is targeted. (optional)
      * @param  string $objective The designated title of the competency objective. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -944,9 +953,9 @@ class CompetencyObjectivesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCompetencyObjectivesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
+    public function getCompetencyObjectivesAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
     {
-        return $this->getCompetencyObjectivesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType)
+        return $this->getCompetencyObjectivesAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -959,11 +968,13 @@ class CompetencyObjectivesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $objective_grade_level_descriptor The grade level for which the competency objective is targeted. (optional)
      * @param  string $objective The designated title of the competency objective. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -977,10 +988,10 @@ class CompetencyObjectivesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCompetencyObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
+    public function getCompetencyObjectivesAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
     {
         $returnType = '\Resources\Model\EdFiCompetencyObjective[]';
-        $request = $this->getCompetencyObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType);
+        $request = $this->getCompetencyObjectivesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1021,11 +1032,13 @@ class CompetencyObjectivesApi
     /**
      * Create request for operation 'getCompetencyObjectives'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $objective_grade_level_descriptor The grade level for which the competency objective is targeted. (optional)
      * @param  string $objective The designated title of the competency objective. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -1039,7 +1052,7 @@ class CompetencyObjectivesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCompetencyObjectivesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
+    public function getCompetencyObjectivesRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectives'][0])
     {
 
 
@@ -1048,6 +1061,11 @@ class CompetencyObjectivesApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling CompetencyObjectivesApi.getCompetencyObjectives, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling CompetencyObjectivesApi.getCompetencyObjectives, must be bigger than or equal to 0.');
         }
         
 
@@ -1097,6 +1115,24 @@ class CompetencyObjectivesApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1269,7 +1305,7 @@ class CompetencyObjectivesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiCompetencyObjective
+     * @return |\Resources\Model\EdFiCompetencyObjective
      */
     public function getCompetencyObjectivesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectivesById'][0])
     {
@@ -1289,7 +1325,7 @@ class CompetencyObjectivesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiCompetencyObjective, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiCompetencyObjective, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCompetencyObjectivesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectivesById'][0])
     {
@@ -1590,23 +1626,496 @@ class CompetencyObjectivesApi
     }
 
     /**
+     * Operation getCompetencyObjectivesPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $objective_grade_level_descriptor The grade level for which the competency objective is targeted. (optional)
+     * @param  string $objective The designated title of the competency objective. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $competency_objective_id The Identifier for the competency objective. (optional)
+     * @param  string $description The description of the student competency objective. (optional)
+     * @param  string $id  (optional)
+     * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a competency objective. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the competency objective. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompetencyObjectivesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getCompetencyObjectivesPartitions($number = null, $min_change_version = null, $max_change_version = null, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectivesPartitions'][0])
+    {
+        list($response) = $this->getCompetencyObjectivesPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCompetencyObjectivesPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $objective_grade_level_descriptor The grade level for which the competency objective is targeted. (optional)
+     * @param  string $objective The designated title of the competency objective. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $competency_objective_id The Identifier for the competency objective. (optional)
+     * @param  string $description The description of the student competency objective. (optional)
+     * @param  string $id  (optional)
+     * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a competency objective. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the competency objective. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompetencyObjectivesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCompetencyObjectivesPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectivesPartitions'][0])
+    {
+        $request = $this->getCompetencyObjectivesPartitionsRequest($number, $min_change_version, $max_change_version, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCompetencyObjectivesPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $objective_grade_level_descriptor The grade level for which the competency objective is targeted. (optional)
+     * @param  string $objective The designated title of the competency objective. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $competency_objective_id The Identifier for the competency objective. (optional)
+     * @param  string $description The description of the student competency objective. (optional)
+     * @param  string $id  (optional)
+     * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a competency objective. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the competency objective. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompetencyObjectivesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCompetencyObjectivesPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectivesPartitions'][0])
+    {
+        return $this->getCompetencyObjectivesPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCompetencyObjectivesPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $objective_grade_level_descriptor The grade level for which the competency objective is targeted. (optional)
+     * @param  string $objective The designated title of the competency objective. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $competency_objective_id The Identifier for the competency objective. (optional)
+     * @param  string $description The description of the student competency objective. (optional)
+     * @param  string $id  (optional)
+     * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a competency objective. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the competency objective. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompetencyObjectivesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCompetencyObjectivesPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectivesPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getCompetencyObjectivesPartitionsRequest($number, $min_change_version, $max_change_version, $objective_grade_level_descriptor, $objective, $education_organization_id, $competency_objective_id, $description, $id, $success_criteria, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCompetencyObjectivesPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $objective_grade_level_descriptor The grade level for which the competency objective is targeted. (optional)
+     * @param  string $objective The designated title of the competency objective. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $competency_objective_id The Identifier for the competency objective. (optional)
+     * @param  string $description The description of the student competency objective. (optional)
+     * @param  string $id  (optional)
+     * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a competency objective. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the competency objective. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCompetencyObjectivesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCompetencyObjectivesPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $objective_grade_level_descriptor = null, $objective = null, $education_organization_id = null, $competency_objective_id = null, $description = null, $id = null, $success_criteria = null, $use_snapshot = false, string $contentType = self::contentTypes['getCompetencyObjectivesPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling CompetencyObjectivesApi.getCompetencyObjectivesPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling CompetencyObjectivesApi.getCompetencyObjectivesPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($objective_grade_level_descriptor !== null && strlen($objective_grade_level_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$objective_grade_level_descriptor" when calling CompetencyObjectivesApi.getCompetencyObjectivesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($objective !== null && strlen($objective) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$objective" when calling CompetencyObjectivesApi.getCompetencyObjectivesPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        if ($competency_objective_id !== null && strlen($competency_objective_id) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$competency_objective_id" when calling CompetencyObjectivesApi.getCompetencyObjectivesPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($description !== null && strlen($description) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$description" when calling CompetencyObjectivesApi.getCompetencyObjectivesPartitions, must be smaller than or equal to 1024.');
+        }
+        
+
+        if ($success_criteria !== null && strlen($success_criteria) > 150) {
+            throw new \InvalidArgumentException('invalid length for "$success_criteria" when calling CompetencyObjectivesApi.getCompetencyObjectivesPartitions, must be smaller than or equal to 150.');
+        }
+        
+
+
+        $resourcePath = '/ed-fi/competencyObjectives/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $objective_grade_level_descriptor,
+            'objectiveGradeLevelDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $objective,
+            'objective', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $competency_objective_id,
+            'competencyObjectiveId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $description,
+            'description', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $success_criteria,
+            'successCriteria', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesCompetencyObjectives
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCompetencyObjectives'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]
      */
-    public function keyChangesCompetencyObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
+    public function keyChangesCompetencyObjectives($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
     {
         list($response) = $this->keyChangesCompetencyObjectivesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1617,19 +2126,19 @@ class CompetencyObjectivesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCompetencyObjectives'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesCompetencyObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
+    public function keyChangesCompetencyObjectivesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
     {
         $request = $this->keyChangesCompetencyObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1747,18 +2256,18 @@ class CompetencyObjectivesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCompetencyObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesCompetencyObjectivesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
+    public function keyChangesCompetencyObjectivesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
     {
         return $this->keyChangesCompetencyObjectivesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1773,18 +2282,18 @@ class CompetencyObjectivesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCompetencyObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesCompetencyObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
+    public function keyChangesCompetencyObjectivesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiCompetencyObjectiveKeyChange[]';
         $request = $this->keyChangesCompetencyObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1828,18 +2337,18 @@ class CompetencyObjectivesApi
     /**
      * Create request for operation 'keyChangesCompetencyObjectives'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCompetencyObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesCompetencyObjectivesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
+    public function keyChangesCompetencyObjectivesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCompetencyObjectives'][0])
     {
 
 

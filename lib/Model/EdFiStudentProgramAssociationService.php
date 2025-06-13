@@ -395,7 +395,7 @@ class EdFiStudentProgramAssociationService implements ModelInterface, ArrayAcces
     /**
      * Sets service_begin_date
      *
-     * @param \DateTime|null $service_begin_date First date the student was in this option for the current school year.
+     * @param \DateTime|null $service_begin_date First date the student was in this option for the current school year.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -429,7 +429,7 @@ class EdFiStudentProgramAssociationService implements ModelInterface, ArrayAcces
     /**
      * Sets service_end_date
      *
-     * @param \DateTime|null $service_end_date Last date the student was in this option for the current school year.
+     * @param \DateTime|null $service_end_date Last date the student was in this option for the current school year.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

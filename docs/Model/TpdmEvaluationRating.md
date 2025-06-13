@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **evaluation_reference** | [**\Resources\Model\TpdmEvaluationReference**](TpdmEvaluationReference.md) |  |
 **performance_evaluation_rating_reference** | [**\Resources\Model\TpdmPerformanceEvaluationRatingReference**](TpdmPerformanceEvaluationRatingReference.md) |  |
 **section_reference** | [**\Resources\Model\EdFiSectionReference**](EdFiSectionReference.md) |  | [optional]
+**actual_duration** | **int** | The actual or estimated number of clock minutes during which the evaluation was conducted. | [optional]
+**comments** | **string** | Any comments about the evaluation to be captured. | [optional]
 **evaluation_rating_level_descriptor** | **string** | The rating level achieved based upon the rating or score. | [optional]
 **evaluation_rating_status_descriptor** | **string** | The Status of the poerformance evaluation. | [optional]
 **results** | [**\Resources\Model\TpdmEvaluationRatingResult[]**](TpdmEvaluationRatingResult.md) | An unordered collection of evaluationRatingResults. The numerical summary rating or score for the evaluation. | [optional]

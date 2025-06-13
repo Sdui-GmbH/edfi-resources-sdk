@@ -544,7 +544,7 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets date_posted
      *
-     * @param \DateTime $date_posted Date the open staff position was posted.
+     * @param \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -571,7 +571,7 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets date_posting_removed
      *
-     * @param \DateTime|null $date_posting_removed The date the posting was removed or filled.
+     * @param \DateTime|null $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

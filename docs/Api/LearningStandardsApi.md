@@ -1,6 +1,6 @@
 # Resources\LearningStandardsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if t
 | [**deletesLearningStandards()**](LearningStandardsApi.md#deletesLearningStandards) | **GET** /ed-fi/learningStandards/deletes | Retrieves deleted resources based on change version. |
 | [**getLearningStandards()**](LearningStandardsApi.md#getLearningStandards) | **GET** /ed-fi/learningStandards | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getLearningStandardsById()**](LearningStandardsApi.md#getLearningStandardsById) | **GET** /ed-fi/learningStandards/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getLearningStandardsPartitions()**](LearningStandardsApi.md#getLearningStandardsPartitions) | **GET** /ed-fi/learningStandards/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesLearningStandards()**](LearningStandardsApi.md#keyChangesLearningStandards) | **GET** /ed-fi/learningStandards/keyChanges | Retrieves resources key changes based on change version. |
 | [**postLearningStandard()**](LearningStandardsApi.md#postLearningStandard) | **POST** /ed-fi/learningStandards | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putLearningStandard()**](LearningStandardsApi.md#putLearningStandard) | **PUT** /ed-fi/learningStandards/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\LearningStandardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getLearningStandards()`
 
 ```php
-getLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot): \Resources\Model\EdFiLearningStandard[]
+getLearningStandards($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code): \Resources\Model\EdFiLearningStandard[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,11 +172,13 @@ $apiInstance = new Resources\Api\LearningStandardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $learning_standard_id = 'learning_standard_id_example'; // string | The identifier for the specific learning standard (e.g., 111.15.3.1.A).
 $parent_learning_standard_id = 'parent_learning_standard_id_example'; // string | The identifier for the specific learning standard (e.g., 111.15.3.1.A).
 $learning_standard_category_descriptor = 'learning_standard_category_descriptor_example'; // string | An additional classification of the type of a specific learning standard.
@@ -188,9 +191,11 @@ $namespace = 'namespace_example'; // string | The namespace of the organization 
 $success_criteria = 'success_criteria_example'; // string | One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard.
 $uri = 'uri_example'; // string | An unambiguous reference to the statement using a network-resolvable URI.
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+$content_standard_name = 'content_standard_name_example'; // string | The name of the content standard, for example Common Core.
+$identification_code = 'identification_code_example'; // string | A unique number or alphanumeric code assigned to a Learning Standard.
 
 try {
-    $result = $apiInstance->getLearningStandards($offset, $limit, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot);
+    $result = $apiInstance->getLearningStandards($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LearningStandardsApi->getLearningStandards: ', $e->getMessage(), PHP_EOL;
@@ -201,11 +206,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **learning_standard_id** | **string**| The identifier for the specific learning standard (e.g., 111.15.3.1.A). | [optional] |
 | **parent_learning_standard_id** | **string**| The identifier for the specific learning standard (e.g., 111.15.3.1.A). | [optional] |
 | **learning_standard_category_descriptor** | **string**| An additional classification of the type of a specific learning standard. | [optional] |
@@ -218,6 +225,8 @@ try {
 | **success_criteria** | **string**| One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. | [optional] |
 | **uri** | **string**| An unambiguous reference to the statement using a network-resolvable URI. | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+| **content_standard_name** | **string**| The name of the content standard, for example Common Core. | [optional] |
+| **identification_code** | **string**| A unique number or alphanumeric code assigned to a Learning Standard. | [optional] |
 
 ### Return type
 
@@ -300,6 +309,98 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getLearningStandardsPartitions()`
+
+```php
+getLearningStandardsPartitions($number, $min_change_version, $max_change_version, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\LearningStandardsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$learning_standard_id = 'learning_standard_id_example'; // string | The identifier for the specific learning standard (e.g., 111.15.3.1.A).
+$parent_learning_standard_id = 'parent_learning_standard_id_example'; // string | The identifier for the specific learning standard (e.g., 111.15.3.1.A).
+$learning_standard_category_descriptor = 'learning_standard_category_descriptor_example'; // string | An additional classification of the type of a specific learning standard.
+$learning_standard_scope_descriptor = 'learning_standard_scope_descriptor_example'; // string | Signals the scope of usage the standard. Does not necessarily relate the standard to the governing body.
+$course_title = 'course_title_example'; // string | The official course title with which this learning standard is associated.
+$description = 'description_example'; // string | The text of the statement. The textual content that either describes a specific competency such as \"Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\" or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \"Understand and apply the Pythagorean Theorem,\" or \"Geometry\".
+$id = 'id_example'; // string | 
+$learning_standard_item_code = 'learning_standard_item_code_example'; // string | A code designated by the promulgating body to identify the statement, e.g. 1.N.3 (usually not globally unique).
+$namespace = 'namespace_example'; // string | The namespace of the organization or entity who governs the standard. It is recommended the namespaces observe a URI format and begin with a domain name under the governing organization or entity control.
+$success_criteria = 'success_criteria_example'; // string | One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard.
+$uri = 'uri_example'; // string | An unambiguous reference to the statement using a network-resolvable URI.
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+$content_standard_name = 'content_standard_name_example'; // string | The name of the content standard, for example Common Core.
+$identification_code = 'identification_code_example'; // string | A unique number or alphanumeric code assigned to a Learning Standard.
+
+try {
+    $result = $apiInstance->getLearningStandardsPartitions($number, $min_change_version, $max_change_version, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LearningStandardsApi->getLearningStandardsPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **learning_standard_id** | **string**| The identifier for the specific learning standard (e.g., 111.15.3.1.A). | [optional] |
+| **parent_learning_standard_id** | **string**| The identifier for the specific learning standard (e.g., 111.15.3.1.A). | [optional] |
+| **learning_standard_category_descriptor** | **string**| An additional classification of the type of a specific learning standard. | [optional] |
+| **learning_standard_scope_descriptor** | **string**| Signals the scope of usage the standard. Does not necessarily relate the standard to the governing body. | [optional] |
+| **course_title** | **string**| The official course title with which this learning standard is associated. | [optional] |
+| **description** | **string**| The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. | [optional] |
+| **id** | **string**|  | [optional] |
+| **learning_standard_item_code** | **string**| A code designated by the promulgating body to identify the statement, e.g. 1.N.3 (usually not globally unique). | [optional] |
+| **namespace** | **string**| The namespace of the organization or entity who governs the standard. It is recommended the namespaces observe a URI format and begin with a domain name under the governing organization or entity control. | [optional] |
+| **success_criteria** | **string**| One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. | [optional] |
+| **uri** | **string**| An unambiguous reference to the statement using a network-resolvable URI. | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+| **content_standard_name** | **string**| The name of the content standard, for example Common Core. | [optional] |
+| **identification_code** | **string**| A unique number or alphanumeric code assigned to a Learning Standard. | [optional] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesLearningStandards()`
 
 ```php
@@ -327,11 +428,11 @@ $apiInstance = new Resources\Api\LearningStandardsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -346,11 +447,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

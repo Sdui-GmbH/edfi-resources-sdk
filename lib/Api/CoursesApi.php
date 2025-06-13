@@ -83,6 +83,9 @@ class CoursesApi
         'getCoursesById' => [
             'application/json',
         ],
+        'getCoursesPartitions' => [
+            'application/json',
+        ],
         'keyChangesCourses' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class CoursesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCourses'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiCourseDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiCourseDelete[]
      */
-    public function deletesCourses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
+    public function deletesCourses($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
     {
         list($response) = $this->deletesCoursesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class CoursesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCourses'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiCourseDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiCourseDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesCoursesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
+    public function deletesCoursesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
     {
         $request = $this->deletesCoursesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class CoursesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCourses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesCoursesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
+    public function deletesCoursesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
     {
         return $this->deletesCoursesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class CoursesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCourses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesCoursesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
+    public function deletesCoursesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiCourseDelete[]';
         $request = $this->deletesCoursesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class CoursesApi
     /**
      * Create request for operation 'deletesCourses'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCourses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesCoursesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
+    public function deletesCoursesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCourses'][0])
     {
 
 
@@ -759,11 +762,13 @@ class CoursesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $course_code A unique alphanumeric code assigned to a course. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $career_pathway_descriptor Indicates the career cluster or pathway the course is associated with as part of a CTE curriculum. (optional)
@@ -784,15 +789,19 @@ class CoursesApi
      * @param  int $number_of_parts The number of parts identified for a course. (optional)
      * @param  int $time_required_for_completion The actual or estimated number of clock minutes required for class completion. This number is especially important for career and technical education classes and may represent (in minutes) the clock hour requirement of the class. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $course_identification_system_descriptor A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the Identification Code. (optional)
+     * @param  string $course_catalog_url The URL for the course catalog that defines the course identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCourses'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiCourse[]
+     * @return |\Resources\Model\EdFiCourse[]
      */
-    public function getCourses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, string $contentType = self::contentTypes['getCourses'][0])
+    public function getCourses($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, $course_identification_system_descriptor = null, $assigning_organization_identification_code = null, $course_catalog_url = null, $identification_code = null, string $contentType = self::contentTypes['getCourses'][0])
     {
-        list($response) = $this->getCoursesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $contentType);
+        list($response) = $this->getCoursesWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code, $course_catalog_url, $identification_code, $contentType);
         return $response;
     }
 
@@ -801,11 +810,13 @@ class CoursesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $course_code A unique alphanumeric code assigned to a course. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $career_pathway_descriptor Indicates the career cluster or pathway the course is associated with as part of a CTE curriculum. (optional)
@@ -826,15 +837,19 @@ class CoursesApi
      * @param  int $number_of_parts The number of parts identified for a course. (optional)
      * @param  int $time_required_for_completion The actual or estimated number of clock minutes required for class completion. This number is especially important for career and technical education classes and may represent (in minutes) the clock hour requirement of the class. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $course_identification_system_descriptor A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the Identification Code. (optional)
+     * @param  string $course_catalog_url The URL for the course catalog that defines the course identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCourses'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiCourse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiCourse[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCoursesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, string $contentType = self::contentTypes['getCourses'][0])
+    public function getCoursesWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, $course_identification_system_descriptor = null, $assigning_organization_identification_code = null, $course_catalog_url = null, $identification_code = null, string $contentType = self::contentTypes['getCourses'][0])
     {
-        $request = $this->getCoursesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $contentType);
+        $request = $this->getCoursesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code, $course_catalog_url, $identification_code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -950,11 +965,13 @@ class CoursesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $course_code A unique alphanumeric code assigned to a course. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $career_pathway_descriptor Indicates the career cluster or pathway the course is associated with as part of a CTE curriculum. (optional)
@@ -975,14 +992,18 @@ class CoursesApi
      * @param  int $number_of_parts The number of parts identified for a course. (optional)
      * @param  int $time_required_for_completion The actual or estimated number of clock minutes required for class completion. This number is especially important for career and technical education classes and may represent (in minutes) the clock hour requirement of the class. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $course_identification_system_descriptor A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the Identification Code. (optional)
+     * @param  string $course_catalog_url The URL for the course catalog that defines the course identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCourses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCoursesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, string $contentType = self::contentTypes['getCourses'][0])
+    public function getCoursesAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, $course_identification_system_descriptor = null, $assigning_organization_identification_code = null, $course_catalog_url = null, $identification_code = null, string $contentType = self::contentTypes['getCourses'][0])
     {
-        return $this->getCoursesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $contentType)
+        return $this->getCoursesAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code, $course_catalog_url, $identification_code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -995,11 +1016,13 @@ class CoursesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $course_code A unique alphanumeric code assigned to a course. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $career_pathway_descriptor Indicates the career cluster or pathway the course is associated with as part of a CTE curriculum. (optional)
@@ -1020,15 +1043,19 @@ class CoursesApi
      * @param  int $number_of_parts The number of parts identified for a course. (optional)
      * @param  int $time_required_for_completion The actual or estimated number of clock minutes required for class completion. This number is especially important for career and technical education classes and may represent (in minutes) the clock hour requirement of the class. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $course_identification_system_descriptor A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the Identification Code. (optional)
+     * @param  string $course_catalog_url The URL for the course catalog that defines the course identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCourses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCoursesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, string $contentType = self::contentTypes['getCourses'][0])
+    public function getCoursesAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, $course_identification_system_descriptor = null, $assigning_organization_identification_code = null, $course_catalog_url = null, $identification_code = null, string $contentType = self::contentTypes['getCourses'][0])
     {
         $returnType = '\Resources\Model\EdFiCourse[]';
-        $request = $this->getCoursesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $contentType);
+        $request = $this->getCoursesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code, $course_catalog_url, $identification_code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1069,11 +1096,13 @@ class CoursesApi
     /**
      * Create request for operation 'getCourses'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $course_code A unique alphanumeric code assigned to a course. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $career_pathway_descriptor Indicates the career cluster or pathway the course is associated with as part of a CTE curriculum. (optional)
@@ -1094,12 +1123,16 @@ class CoursesApi
      * @param  int $number_of_parts The number of parts identified for a course. (optional)
      * @param  int $time_required_for_completion The actual or estimated number of clock minutes required for class completion. This number is especially important for career and technical education classes and may represent (in minutes) the clock hour requirement of the class. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $course_identification_system_descriptor A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the Identification Code. (optional)
+     * @param  string $course_catalog_url The URL for the course catalog that defines the course identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCourses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCoursesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, string $contentType = self::contentTypes['getCourses'][0])
+    public function getCoursesRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, $course_identification_system_descriptor = null, $assigning_organization_identification_code = null, $course_catalog_url = null, $identification_code = null, string $contentType = self::contentTypes['getCourses'][0])
     {
 
 
@@ -1108,6 +1141,11 @@ class CoursesApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling CoursesApi.getCourses, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling CoursesApi.getCourses, must be bigger than or equal to 0.');
         }
         
 
@@ -1157,6 +1195,22 @@ class CoursesApi
 
 
 
+        if ($course_identification_system_descriptor !== null && strlen($course_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$course_identification_system_descriptor" when calling CoursesApi.getCourses, must be smaller than or equal to 306.');
+        }
+        
+        if ($assigning_organization_identification_code !== null && strlen($assigning_organization_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assigning_organization_identification_code" when calling CoursesApi.getCourses, must be smaller than or equal to 60.');
+        }
+        
+        if ($course_catalog_url !== null && strlen($course_catalog_url) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$course_catalog_url" when calling CoursesApi.getCourses, must be smaller than or equal to 255.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling CoursesApi.getCourses, must be smaller than or equal to 60.');
+        }
+        
 
         $resourcePath = '/ed-fi/courses';
         $formParams = [];
@@ -1178,6 +1232,24 @@ class CoursesApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1381,6 +1453,42 @@ class CoursesApi
             true, // explode
             false // required
         ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $course_identification_system_descriptor,
+            'courseIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assigning_organization_identification_code,
+            'assigningOrganizationIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $course_catalog_url,
+            'courseCatalogURL', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
         // header params
         if ($use_snapshot !== null) {
@@ -1458,7 +1566,7 @@ class CoursesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiCourse
+     * @return |\Resources\Model\EdFiCourse
      */
     public function getCoursesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCoursesById'][0])
     {
@@ -1478,7 +1586,7 @@ class CoursesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiCourse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiCourse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCoursesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCoursesById'][0])
     {
@@ -1779,23 +1887,757 @@ class CoursesApi
     }
 
     /**
+     * Operation getCoursesPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $course_code A unique alphanumeric code assigned to a course. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $career_pathway_descriptor Indicates the career cluster or pathway the course is associated with as part of a CTE curriculum. (optional)
+     * @param  string $course_defined_by_descriptor Specifies whether the course was defined by the SEA, LEA, School, or national organization. (optional)
+     * @param  string $course_gpa_applicability_descriptor An indicator of whether or not the course being described is included in the computation of the student&#39;s grade point average, and if so, if it is weighted differently from regular courses. (optional)
+     * @param  string $minimum_available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $maximum_available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $course_description A description of the content standards and goals covered in the course. Reference may be made to state or national content standards. (optional)
+     * @param  string $course_title The descriptive name given to a course of study offered in a school or other institution or organization. In departmentalized classes at the elementary, secondary, and postsecondary levels (and for staff development activities), this refers to the name by which a course is identified (e.g., American History, English III). For elementary and other non-departmentalized classes, it refers to any portion of the instruction for which a grade or report is assigned (e.g., reading, composition, spelling, and language arts). (optional)
+     * @param  \DateTime $date_course_adopted Date the course was adopted by the education agency. (optional)
+     * @param  bool $high_school_course_requirement An indication that this course may satisfy high school graduation requirements in the course&#39;s subject area. (optional)
+     * @param  string $id  (optional)
+     * @param  int $max_completions_for_credit Designates how many times the course may be taken with credit received by the student. (optional)
+     * @param  float $maximum_available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $maximum_available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $minimum_available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $minimum_available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  int $number_of_parts The number of parts identified for a course. (optional)
+     * @param  int $time_required_for_completion The actual or estimated number of clock minutes required for class completion. This number is especially important for career and technical education classes and may represent (in minutes) the clock hour requirement of the class. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $course_identification_system_descriptor A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the Identification Code. (optional)
+     * @param  string $course_catalog_url The URL for the course catalog that defines the course identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCoursesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getCoursesPartitions($number = null, $min_change_version = null, $max_change_version = null, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, $course_identification_system_descriptor = null, $assigning_organization_identification_code = null, $course_catalog_url = null, $identification_code = null, string $contentType = self::contentTypes['getCoursesPartitions'][0])
+    {
+        list($response) = $this->getCoursesPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code, $course_catalog_url, $identification_code, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCoursesPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $course_code A unique alphanumeric code assigned to a course. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $career_pathway_descriptor Indicates the career cluster or pathway the course is associated with as part of a CTE curriculum. (optional)
+     * @param  string $course_defined_by_descriptor Specifies whether the course was defined by the SEA, LEA, School, or national organization. (optional)
+     * @param  string $course_gpa_applicability_descriptor An indicator of whether or not the course being described is included in the computation of the student&#39;s grade point average, and if so, if it is weighted differently from regular courses. (optional)
+     * @param  string $minimum_available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $maximum_available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $course_description A description of the content standards and goals covered in the course. Reference may be made to state or national content standards. (optional)
+     * @param  string $course_title The descriptive name given to a course of study offered in a school or other institution or organization. In departmentalized classes at the elementary, secondary, and postsecondary levels (and for staff development activities), this refers to the name by which a course is identified (e.g., American History, English III). For elementary and other non-departmentalized classes, it refers to any portion of the instruction for which a grade or report is assigned (e.g., reading, composition, spelling, and language arts). (optional)
+     * @param  \DateTime $date_course_adopted Date the course was adopted by the education agency. (optional)
+     * @param  bool $high_school_course_requirement An indication that this course may satisfy high school graduation requirements in the course&#39;s subject area. (optional)
+     * @param  string $id  (optional)
+     * @param  int $max_completions_for_credit Designates how many times the course may be taken with credit received by the student. (optional)
+     * @param  float $maximum_available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $maximum_available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $minimum_available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $minimum_available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  int $number_of_parts The number of parts identified for a course. (optional)
+     * @param  int $time_required_for_completion The actual or estimated number of clock minutes required for class completion. This number is especially important for career and technical education classes and may represent (in minutes) the clock hour requirement of the class. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $course_identification_system_descriptor A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the Identification Code. (optional)
+     * @param  string $course_catalog_url The URL for the course catalog that defines the course identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCoursesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCoursesPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, $course_identification_system_descriptor = null, $assigning_organization_identification_code = null, $course_catalog_url = null, $identification_code = null, string $contentType = self::contentTypes['getCoursesPartitions'][0])
+    {
+        $request = $this->getCoursesPartitionsRequest($number, $min_change_version, $max_change_version, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code, $course_catalog_url, $identification_code, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCoursesPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $course_code A unique alphanumeric code assigned to a course. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $career_pathway_descriptor Indicates the career cluster or pathway the course is associated with as part of a CTE curriculum. (optional)
+     * @param  string $course_defined_by_descriptor Specifies whether the course was defined by the SEA, LEA, School, or national organization. (optional)
+     * @param  string $course_gpa_applicability_descriptor An indicator of whether or not the course being described is included in the computation of the student&#39;s grade point average, and if so, if it is weighted differently from regular courses. (optional)
+     * @param  string $minimum_available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $maximum_available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $course_description A description of the content standards and goals covered in the course. Reference may be made to state or national content standards. (optional)
+     * @param  string $course_title The descriptive name given to a course of study offered in a school or other institution or organization. In departmentalized classes at the elementary, secondary, and postsecondary levels (and for staff development activities), this refers to the name by which a course is identified (e.g., American History, English III). For elementary and other non-departmentalized classes, it refers to any portion of the instruction for which a grade or report is assigned (e.g., reading, composition, spelling, and language arts). (optional)
+     * @param  \DateTime $date_course_adopted Date the course was adopted by the education agency. (optional)
+     * @param  bool $high_school_course_requirement An indication that this course may satisfy high school graduation requirements in the course&#39;s subject area. (optional)
+     * @param  string $id  (optional)
+     * @param  int $max_completions_for_credit Designates how many times the course may be taken with credit received by the student. (optional)
+     * @param  float $maximum_available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $maximum_available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $minimum_available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $minimum_available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  int $number_of_parts The number of parts identified for a course. (optional)
+     * @param  int $time_required_for_completion The actual or estimated number of clock minutes required for class completion. This number is especially important for career and technical education classes and may represent (in minutes) the clock hour requirement of the class. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $course_identification_system_descriptor A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the Identification Code. (optional)
+     * @param  string $course_catalog_url The URL for the course catalog that defines the course identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCoursesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCoursesPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, $course_identification_system_descriptor = null, $assigning_organization_identification_code = null, $course_catalog_url = null, $identification_code = null, string $contentType = self::contentTypes['getCoursesPartitions'][0])
+    {
+        return $this->getCoursesPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code, $course_catalog_url, $identification_code, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCoursesPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $course_code A unique alphanumeric code assigned to a course. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $career_pathway_descriptor Indicates the career cluster or pathway the course is associated with as part of a CTE curriculum. (optional)
+     * @param  string $course_defined_by_descriptor Specifies whether the course was defined by the SEA, LEA, School, or national organization. (optional)
+     * @param  string $course_gpa_applicability_descriptor An indicator of whether or not the course being described is included in the computation of the student&#39;s grade point average, and if so, if it is weighted differently from regular courses. (optional)
+     * @param  string $minimum_available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $maximum_available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $course_description A description of the content standards and goals covered in the course. Reference may be made to state or national content standards. (optional)
+     * @param  string $course_title The descriptive name given to a course of study offered in a school or other institution or organization. In departmentalized classes at the elementary, secondary, and postsecondary levels (and for staff development activities), this refers to the name by which a course is identified (e.g., American History, English III). For elementary and other non-departmentalized classes, it refers to any portion of the instruction for which a grade or report is assigned (e.g., reading, composition, spelling, and language arts). (optional)
+     * @param  \DateTime $date_course_adopted Date the course was adopted by the education agency. (optional)
+     * @param  bool $high_school_course_requirement An indication that this course may satisfy high school graduation requirements in the course&#39;s subject area. (optional)
+     * @param  string $id  (optional)
+     * @param  int $max_completions_for_credit Designates how many times the course may be taken with credit received by the student. (optional)
+     * @param  float $maximum_available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $maximum_available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $minimum_available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $minimum_available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  int $number_of_parts The number of parts identified for a course. (optional)
+     * @param  int $time_required_for_completion The actual or estimated number of clock minutes required for class completion. This number is especially important for career and technical education classes and may represent (in minutes) the clock hour requirement of the class. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $course_identification_system_descriptor A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the Identification Code. (optional)
+     * @param  string $course_catalog_url The URL for the course catalog that defines the course identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCoursesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCoursesPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, $course_identification_system_descriptor = null, $assigning_organization_identification_code = null, $course_catalog_url = null, $identification_code = null, string $contentType = self::contentTypes['getCoursesPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getCoursesPartitionsRequest($number, $min_change_version, $max_change_version, $course_code, $education_organization_id, $career_pathway_descriptor, $course_defined_by_descriptor, $course_gpa_applicability_descriptor, $minimum_available_credit_type_descriptor, $maximum_available_credit_type_descriptor, $course_description, $course_title, $date_course_adopted, $high_school_course_requirement, $id, $max_completions_for_credit, $maximum_available_credit_conversion, $maximum_available_credits, $minimum_available_credit_conversion, $minimum_available_credits, $number_of_parts, $time_required_for_completion, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code, $course_catalog_url, $identification_code, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCoursesPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $course_code A unique alphanumeric code assigned to a course. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $career_pathway_descriptor Indicates the career cluster or pathway the course is associated with as part of a CTE curriculum. (optional)
+     * @param  string $course_defined_by_descriptor Specifies whether the course was defined by the SEA, LEA, School, or national organization. (optional)
+     * @param  string $course_gpa_applicability_descriptor An indicator of whether or not the course being described is included in the computation of the student&#39;s grade point average, and if so, if it is weighted differently from regular courses. (optional)
+     * @param  string $minimum_available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $maximum_available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $course_description A description of the content standards and goals covered in the course. Reference may be made to state or national content standards. (optional)
+     * @param  string $course_title The descriptive name given to a course of study offered in a school or other institution or organization. In departmentalized classes at the elementary, secondary, and postsecondary levels (and for staff development activities), this refers to the name by which a course is identified (e.g., American History, English III). For elementary and other non-departmentalized classes, it refers to any portion of the instruction for which a grade or report is assigned (e.g., reading, composition, spelling, and language arts). (optional)
+     * @param  \DateTime $date_course_adopted Date the course was adopted by the education agency. (optional)
+     * @param  bool $high_school_course_requirement An indication that this course may satisfy high school graduation requirements in the course&#39;s subject area. (optional)
+     * @param  string $id  (optional)
+     * @param  int $max_completions_for_credit Designates how many times the course may be taken with credit received by the student. (optional)
+     * @param  float $maximum_available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $maximum_available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $minimum_available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $minimum_available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  int $number_of_parts The number of parts identified for a course. (optional)
+     * @param  int $time_required_for_completion The actual or estimated number of clock minutes required for class completion. This number is especially important for career and technical education classes and may represent (in minutes) the clock hour requirement of the class. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $course_identification_system_descriptor A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the Identification Code. (optional)
+     * @param  string $course_catalog_url The URL for the course catalog that defines the course identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCoursesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCoursesPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $course_code = null, $education_organization_id = null, $career_pathway_descriptor = null, $course_defined_by_descriptor = null, $course_gpa_applicability_descriptor = null, $minimum_available_credit_type_descriptor = null, $maximum_available_credit_type_descriptor = null, $course_description = null, $course_title = null, $date_course_adopted = null, $high_school_course_requirement = null, $id = null, $max_completions_for_credit = null, $maximum_available_credit_conversion = null, $maximum_available_credits = null, $minimum_available_credit_conversion = null, $minimum_available_credits = null, $number_of_parts = null, $time_required_for_completion = null, $use_snapshot = false, $course_identification_system_descriptor = null, $assigning_organization_identification_code = null, $course_catalog_url = null, $identification_code = null, string $contentType = self::contentTypes['getCoursesPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling CoursesApi.getCoursesPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($course_code !== null && strlen($course_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$course_code" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        if ($career_pathway_descriptor !== null && strlen($career_pathway_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$career_pathway_descriptor" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($course_defined_by_descriptor !== null && strlen($course_defined_by_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$course_defined_by_descriptor" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($course_gpa_applicability_descriptor !== null && strlen($course_gpa_applicability_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$course_gpa_applicability_descriptor" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($minimum_available_credit_type_descriptor !== null && strlen($minimum_available_credit_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$minimum_available_credit_type_descriptor" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($maximum_available_credit_type_descriptor !== null && strlen($maximum_available_credit_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$maximum_available_credit_type_descriptor" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($course_description !== null && strlen($course_description) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$course_description" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 1024.');
+        }
+        
+        if ($course_title !== null && strlen($course_title) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$course_title" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+        if ($course_identification_system_descriptor !== null && strlen($course_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$course_identification_system_descriptor" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($assigning_organization_identification_code !== null && strlen($assigning_organization_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assigning_organization_identification_code" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($course_catalog_url !== null && strlen($course_catalog_url) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$course_catalog_url" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling CoursesApi.getCoursesPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        $resourcePath = '/ed-fi/courses/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $course_code,
+            'courseCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $career_pathway_descriptor,
+            'careerPathwayDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $course_defined_by_descriptor,
+            'courseDefinedByDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $course_gpa_applicability_descriptor,
+            'courseGPAApplicabilityDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $minimum_available_credit_type_descriptor,
+            'minimumAvailableCreditTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $maximum_available_credit_type_descriptor,
+            'maximumAvailableCreditTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $course_description,
+            'courseDescription', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $course_title,
+            'courseTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $date_course_adopted,
+            'dateCourseAdopted', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $high_school_course_requirement,
+            'highSchoolCourseRequirement', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_completions_for_credit,
+            'maxCompletionsForCredit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $maximum_available_credit_conversion,
+            'maximumAvailableCreditConversion', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $maximum_available_credits,
+            'maximumAvailableCredits', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $minimum_available_credit_conversion,
+            'minimumAvailableCreditConversion', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $minimum_available_credits,
+            'minimumAvailableCredits', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number_of_parts,
+            'numberOfParts', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $time_required_for_completion,
+            'timeRequiredForCompletion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $course_identification_system_descriptor,
+            'courseIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assigning_organization_identification_code,
+            'assigningOrganizationIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $course_catalog_url,
+            'courseCatalogURL', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesCourses
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCourses'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiCourseKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiCourseKeyChange[]
      */
-    public function keyChangesCourses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
+    public function keyChangesCourses($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
     {
         list($response) = $this->keyChangesCoursesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1806,19 +2648,19 @@ class CoursesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCourses'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiCourseKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiCourseKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesCoursesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
+    public function keyChangesCoursesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
     {
         $request = $this->keyChangesCoursesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1936,18 +2778,18 @@ class CoursesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCourses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesCoursesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
+    public function keyChangesCoursesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
     {
         return $this->keyChangesCoursesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1962,18 +2804,18 @@ class CoursesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCourses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesCoursesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
+    public function keyChangesCoursesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiCourseKeyChange[]';
         $request = $this->keyChangesCoursesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -2017,18 +2859,18 @@ class CoursesApi
     /**
      * Create request for operation 'keyChangesCourses'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCourses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesCoursesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
+    public function keyChangesCoursesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCourses'][0])
     {
 
 

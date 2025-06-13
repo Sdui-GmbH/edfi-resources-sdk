@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**begin_date** | **\DateTime** | Month, day, and year of the student&#39;s entry or assignment to the section. |
+**begin_date** | **\DateTime** | Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. |
 **grade_type_descriptor** | **string** | The type of grade reported (e.g., exam, final, grading period). |
 **grading_period_descriptor** | **string** | The state&#39;s name of the period for which grades are reported. |
 **grading_period_name** | **string** | The school&#39;s descriptive name of the grading period. |

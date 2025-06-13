@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **academic_subjects** | [**\Resources\Model\EdFiCredentialAcademicSubject[]**](EdFiCredentialAcademicSubject.md) | An unordered collection of credentialAcademicSubjects. The academic subjects to which the credential pertains. | [optional]
 **credential_field_descriptor** | **string** | The field of certification for the certificate (e.g., Mathematics, Music). | [optional]
 **credential_type_descriptor** | **string** | An indication of the category of credential an individual holds. |
-**effective_date** | **\DateTime** | The year, month and day on which an active credential held by an individual was issued. | [optional]
+**effective_date** | **\DateTime** | The year, month and day on which an active credential held by an individual was issued.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional]
 **endorsements** | [**\Resources\Model\EdFiCredentialEndorsement[]**](EdFiCredentialEndorsement.md) | An unordered collection of credentialEndorsements. Endorsements are attachments to teaching certificates and indicate areas of specialization. | [optional]
-**expiration_date** | **\DateTime** | The month, day, and year on which an active credential held by an individual will expire. | [optional]
+**expiration_date** | **\DateTime** | The month, day, and year on which an active credential held by an individual will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional]
 **grade_levels** | [**\Resources\Model\EdFiCredentialGradeLevel[]**](EdFiCredentialGradeLevel.md) | An unordered collection of credentialGradeLevels. The grade level(s) certified for teaching. | [optional]
 **issuance_date** | **\DateTime** | The month, day, and year on which an active credential was issued to an individual. |
 **namespace** | **string** | Namespace for the credential. |

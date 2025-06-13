@@ -574,7 +574,7 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets license_effective_date
      *
-     * @param \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.
+     * @param \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -601,7 +601,7 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets license_expiration_date
      *
-     * @param \DateTime|null $license_expiration_date The month, day, and year on which a license will expire.
+     * @param \DateTime|null $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

@@ -827,7 +827,7 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
     /**
      * Sets recognition_award_date
      *
-     * @param \DateTime|null $recognition_award_date The date the recognition was awarded or earned.
+     * @param \DateTime|null $recognition_award_date The date the recognition was awarded or earned.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -861,7 +861,7 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
     /**
      * Sets recognition_award_expires_date
      *
-     * @param \DateTime|null $recognition_award_expires_date Date on which the recognition expires.
+     * @param \DateTime|null $recognition_award_expires_date Date on which the recognition expires.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

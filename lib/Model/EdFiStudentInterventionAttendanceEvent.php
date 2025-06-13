@@ -627,7 +627,7 @@ class EdFiStudentInterventionAttendanceEvent implements ModelInterface, ArrayAcc
     /**
      * Sets event_duration
      *
-     * @param float|null $event_duration The amount of time for the event as recognized by the school: 1 day = 1, 1/2 day = 0.5, 1/3 day = 0.33.
+     * @param float|null $event_duration The amount of time in days for the event as recognized by the school: 1 day = 1, 1/2 day = 0.5, 1/3 day = 0.33.
      *
      * @return self
      */
@@ -669,7 +669,7 @@ class EdFiStudentInterventionAttendanceEvent implements ModelInterface, ArrayAcc
     /**
      * Sets intervention_duration
      *
-     * @param int|null $intervention_duration The duration in minutes in which the student participated in the intervention during this instance.
+     * @param int|null $intervention_duration The duration in minutes of the intervention attendance event.
      *
      * @return self
      */

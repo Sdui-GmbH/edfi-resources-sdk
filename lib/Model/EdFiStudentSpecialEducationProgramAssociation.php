@@ -73,9 +73,11 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
         'multiply_disabled' => 'bool',
         'program_participation_statuses' => '\Resources\Model\EdFiGeneralStudentProgramAssociationProgramParticipationStatus[]',
         'reason_exited_descriptor' => 'string',
+        'reduction_in_hours_per_week_compared_to_peers' => 'float',
         'school_hours_per_week' => 'float',
         'served_outside_of_regular_session' => 'bool',
         'service_providers' => '\Resources\Model\EdFiStudentSpecialEducationProgramAssociationServiceProvider[]',
+        'shortened_school_day_indicator' => 'bool',
         'special_education_exit_date' => '\DateTime',
         'special_education_exit_explained' => 'string',
         'special_education_exit_reason_descriptor' => 'string',
@@ -110,9 +112,11 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
         'multiply_disabled' => null,
         'program_participation_statuses' => null,
         'reason_exited_descriptor' => null,
+        'reduction_in_hours_per_week_compared_to_peers' => 'double',
         'school_hours_per_week' => 'double',
         'served_outside_of_regular_session' => null,
         'service_providers' => null,
+        'shortened_school_day_indicator' => null,
         'special_education_exit_date' => 'date',
         'special_education_exit_explained' => null,
         'special_education_exit_reason_descriptor' => null,
@@ -145,9 +149,11 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
         'multiply_disabled' => true,
         'program_participation_statuses' => false,
         'reason_exited_descriptor' => true,
+        'reduction_in_hours_per_week_compared_to_peers' => true,
         'school_hours_per_week' => true,
         'served_outside_of_regular_session' => true,
         'service_providers' => false,
+        'shortened_school_day_indicator' => true,
         'special_education_exit_date' => true,
         'special_education_exit_explained' => true,
         'special_education_exit_reason_descriptor' => true,
@@ -260,9 +266,11 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
         'multiply_disabled' => 'multiplyDisabled',
         'program_participation_statuses' => 'programParticipationStatuses',
         'reason_exited_descriptor' => 'reasonExitedDescriptor',
+        'reduction_in_hours_per_week_compared_to_peers' => 'reductionInHoursPerWeekComparedToPeers',
         'school_hours_per_week' => 'schoolHoursPerWeek',
         'served_outside_of_regular_session' => 'servedOutsideOfRegularSession',
         'service_providers' => 'serviceProviders',
+        'shortened_school_day_indicator' => 'shortenedSchoolDayIndicator',
         'special_education_exit_date' => 'specialEducationExitDate',
         'special_education_exit_explained' => 'specialEducationExitExplained',
         'special_education_exit_reason_descriptor' => 'specialEducationExitReasonDescriptor',
@@ -295,9 +303,11 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
         'multiply_disabled' => 'setMultiplyDisabled',
         'program_participation_statuses' => 'setProgramParticipationStatuses',
         'reason_exited_descriptor' => 'setReasonExitedDescriptor',
+        'reduction_in_hours_per_week_compared_to_peers' => 'setReductionInHoursPerWeekComparedToPeers',
         'school_hours_per_week' => 'setSchoolHoursPerWeek',
         'served_outside_of_regular_session' => 'setServedOutsideOfRegularSession',
         'service_providers' => 'setServiceProviders',
+        'shortened_school_day_indicator' => 'setShortenedSchoolDayIndicator',
         'special_education_exit_date' => 'setSpecialEducationExitDate',
         'special_education_exit_explained' => 'setSpecialEducationExitExplained',
         'special_education_exit_reason_descriptor' => 'setSpecialEducationExitReasonDescriptor',
@@ -330,9 +340,11 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
         'multiply_disabled' => 'getMultiplyDisabled',
         'program_participation_statuses' => 'getProgramParticipationStatuses',
         'reason_exited_descriptor' => 'getReasonExitedDescriptor',
+        'reduction_in_hours_per_week_compared_to_peers' => 'getReductionInHoursPerWeekComparedToPeers',
         'school_hours_per_week' => 'getSchoolHoursPerWeek',
         'served_outside_of_regular_session' => 'getServedOutsideOfRegularSession',
         'service_providers' => 'getServiceProviders',
+        'shortened_school_day_indicator' => 'getShortenedSchoolDayIndicator',
         'special_education_exit_date' => 'getSpecialEducationExitDate',
         'special_education_exit_explained' => 'getSpecialEducationExitExplained',
         'special_education_exit_reason_descriptor' => 'getSpecialEducationExitReasonDescriptor',
@@ -416,9 +428,11 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
         $this->setIfExists('multiply_disabled', $data ?? [], null);
         $this->setIfExists('program_participation_statuses', $data ?? [], null);
         $this->setIfExists('reason_exited_descriptor', $data ?? [], null);
+        $this->setIfExists('reduction_in_hours_per_week_compared_to_peers', $data ?? [], null);
         $this->setIfExists('school_hours_per_week', $data ?? [], null);
         $this->setIfExists('served_outside_of_regular_session', $data ?? [], null);
         $this->setIfExists('service_providers', $data ?? [], null);
+        $this->setIfExists('shortened_school_day_indicator', $data ?? [], null);
         $this->setIfExists('special_education_exit_date', $data ?? [], null);
         $this->setIfExists('special_education_exit_explained', $data ?? [], null);
         $this->setIfExists('special_education_exit_reason_descriptor', $data ?? [], null);
@@ -470,6 +484,14 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
         }
         if (!is_null($this->container['reason_exited_descriptor']) && (mb_strlen($this->container['reason_exited_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'reason_exited_descriptor', the character length must be smaller than or equal to 306.";
+        }
+
+        if (!is_null($this->container['reduction_in_hours_per_week_compared_to_peers']) && ($this->container['reduction_in_hours_per_week_compared_to_peers'] > 999.99)) {
+            $invalidProperties[] = "invalid value for 'reduction_in_hours_per_week_compared_to_peers', must be smaller than or equal to 999.99.";
+        }
+
+        if (!is_null($this->container['reduction_in_hours_per_week_compared_to_peers']) && ($this->container['reduction_in_hours_per_week_compared_to_peers'] < -999.99)) {
+            $invalidProperties[] = "invalid value for 'reduction_in_hours_per_week_compared_to_peers', must be bigger than or equal to -999.99.";
         }
 
         if (!is_null($this->container['school_hours_per_week']) && ($this->container['school_hours_per_week'] > 999.99)) {
@@ -555,7 +577,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.
+     * @param \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -690,7 +712,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The month, day, and year on which the student exited the program or stopped receiving services.
+     * @param \DateTime|null $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -758,7 +780,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets iep_begin_date
      *
-     * @param \DateTime|null $iep_begin_date The effective date of the most recent IEP.
+     * @param \DateTime|null $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -792,7 +814,7 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     /**
      * Sets iep_end_date
      *
-     * @param \DateTime|null $iep_end_date The end date of the most recent IEP.
+     * @param \DateTime|null $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -1015,6 +1037,48 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
     }
 
     /**
+     * Gets reduction_in_hours_per_week_compared_to_peers
+     *
+     * @return float|null
+     */
+    public function getReductionInHoursPerWeekComparedToPeers()
+    {
+        return $this->container['reduction_in_hours_per_week_compared_to_peers'];
+    }
+
+    /**
+     * Sets reduction_in_hours_per_week_compared_to_peers
+     *
+     * @param float|null $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education.
+     *
+     * @return self
+     */
+    public function setReductionInHoursPerWeekComparedToPeers($reduction_in_hours_per_week_compared_to_peers)
+    {
+        if (is_null($reduction_in_hours_per_week_compared_to_peers)) {
+            array_push($this->openAPINullablesSetToNull, 'reduction_in_hours_per_week_compared_to_peers');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('reduction_in_hours_per_week_compared_to_peers', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($reduction_in_hours_per_week_compared_to_peers) && ($reduction_in_hours_per_week_compared_to_peers > 999.99)) {
+            throw new \InvalidArgumentException('invalid value for $reduction_in_hours_per_week_compared_to_peers when calling EdFiStudentSpecialEducationProgramAssociation., must be smaller than or equal to 999.99.');
+        }
+        if (!is_null($reduction_in_hours_per_week_compared_to_peers) && ($reduction_in_hours_per_week_compared_to_peers < -999.99)) {
+            throw new \InvalidArgumentException('invalid value for $reduction_in_hours_per_week_compared_to_peers when calling EdFiStudentSpecialEducationProgramAssociation., must be bigger than or equal to -999.99.');
+        }
+
+        $this->container['reduction_in_hours_per_week_compared_to_peers'] = $reduction_in_hours_per_week_compared_to_peers;
+
+        return $this;
+    }
+
+    /**
      * Gets school_hours_per_week
      *
      * @return float|null
@@ -1113,6 +1177,40 @@ class EdFiStudentSpecialEducationProgramAssociation implements ModelInterface, A
             throw new \InvalidArgumentException('non-nullable service_providers cannot be null');
         }
         $this->container['service_providers'] = $service_providers;
+
+        return $this;
+    }
+
+    /**
+     * Gets shortened_school_day_indicator
+     *
+     * @return bool|null
+     */
+    public function getShortenedSchoolDayIndicator()
+    {
+        return $this->container['shortened_school_day_indicator'];
+    }
+
+    /**
+     * Sets shortened_school_day_indicator
+     *
+     * @param bool|null $shortened_school_day_indicator Indicator that the student's IEP requires a shortened school day.
+     *
+     * @return self
+     */
+    public function setShortenedSchoolDayIndicator($shortened_school_day_indicator)
+    {
+        if (is_null($shortened_school_day_indicator)) {
+            array_push($this->openAPINullablesSetToNull, 'shortened_school_day_indicator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('shortened_school_day_indicator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['shortened_school_day_indicator'] = $shortened_school_day_indicator;
 
         return $this;
     }

@@ -83,6 +83,9 @@ class StudentAcademicRecordsApi
         'getStudentAcademicRecordsById' => [
             'application/json',
         ],
+        'getStudentAcademicRecordsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStudentAcademicRecords' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StudentAcademicRecordsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentAcademicRecords'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentAcademicRecordDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentAcademicRecordDelete[]
      */
-    public function deletesStudentAcademicRecords($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentAcademicRecords'][0])
+    public function deletesStudentAcademicRecords($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentAcademicRecords'][0])
     {
         list($response) = $this->deletesStudentAcademicRecordsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StudentAcademicRecordsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentAcademicRecords'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentAcademicRecordDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentAcademicRecordDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStudentAcademicRecordsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentAcademicRecords'][0])
+    public function deletesStudentAcademicRecordsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentAcademicRecords'][0])
     {
         $request = $this->deletesStudentAcademicRecordsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StudentAcademicRecordsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentAcademicRecords'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentAcademicRecordsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentAcademicRecords'][0])
+    public function deletesStudentAcademicRecordsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentAcademicRecords'][0])
     {
         return $this->deletesStudentAcademicRecordsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StudentAcademicRecordsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentAcademicRecords'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentAcademicRecordsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentAcademicRecords'][0])
+    public function deletesStudentAcademicRecordsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentAcademicRecords'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentAcademicRecordDelete[]';
         $request = $this->deletesStudentAcademicRecordsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StudentAcademicRecordsApi
     /**
      * Create request for operation 'deletesStudentAcademicRecords'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentAcademicRecords'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStudentAcademicRecordsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentAcademicRecords'][0])
+    public function deletesStudentAcademicRecordsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentAcademicRecords'][0])
     {
 
 
@@ -759,11 +762,13 @@ class StudentAcademicRecordsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $term_descriptor The term for the session during the school year. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
@@ -787,11 +792,11 @@ class StudentAcademicRecordsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentAcademicRecord[]
+     * @return |\Resources\Model\EdFiStudentAcademicRecord[]
      */
-    public function getStudentAcademicRecords($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecords'][0])
+    public function getStudentAcademicRecords($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecords'][0])
     {
-        list($response) = $this->getStudentAcademicRecordsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType);
+        list($response) = $this->getStudentAcademicRecordsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -800,11 +805,13 @@ class StudentAcademicRecordsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $term_descriptor The term for the session during the school year. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
@@ -828,11 +835,11 @@ class StudentAcademicRecordsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentAcademicRecord[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentAcademicRecord[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentAcademicRecordsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecords'][0])
+    public function getStudentAcademicRecordsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecords'][0])
     {
-        $request = $this->getStudentAcademicRecordsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType);
+        $request = $this->getStudentAcademicRecordsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -948,11 +955,13 @@ class StudentAcademicRecordsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $term_descriptor The term for the session during the school year. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
@@ -977,9 +986,9 @@ class StudentAcademicRecordsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentAcademicRecordsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecords'][0])
+    public function getStudentAcademicRecordsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecords'][0])
     {
-        return $this->getStudentAcademicRecordsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType)
+        return $this->getStudentAcademicRecordsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -992,11 +1001,13 @@ class StudentAcademicRecordsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $term_descriptor The term for the session during the school year. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
@@ -1021,10 +1032,10 @@ class StudentAcademicRecordsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentAcademicRecordsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecords'][0])
+    public function getStudentAcademicRecordsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecords'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentAcademicRecord[]';
-        $request = $this->getStudentAcademicRecordsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType);
+        $request = $this->getStudentAcademicRecordsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1065,11 +1076,13 @@ class StudentAcademicRecordsApi
     /**
      * Create request for operation 'getStudentAcademicRecords'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $term_descriptor The term for the session during the school year. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
@@ -1094,7 +1107,7 @@ class StudentAcademicRecordsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentAcademicRecordsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecords'][0])
+    public function getStudentAcademicRecordsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecords'][0])
     {
 
 
@@ -1103,6 +1116,11 @@ class StudentAcademicRecordsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StudentAcademicRecordsApi.getStudentAcademicRecords, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StudentAcademicRecordsApi.getStudentAcademicRecords, must be bigger than or equal to 0.');
         }
         
 
@@ -1166,6 +1184,24 @@ class StudentAcademicRecordsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1437,7 +1473,7 @@ class StudentAcademicRecordsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentAcademicRecord
+     * @return |\Resources\Model\EdFiStudentAcademicRecord
      */
     public function getStudentAcademicRecordsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecordsById'][0])
     {
@@ -1457,7 +1493,7 @@ class StudentAcademicRecordsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentAcademicRecord, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentAcademicRecord, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentAcademicRecordsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecordsById'][0])
     {
@@ -1758,23 +1794,664 @@ class StudentAcademicRecordsApi
     }
 
     /**
+     * Operation getStudentAcademicRecordsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $term_descriptor The term for the session during the school year. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $cumulative_earned_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $cumulative_attempted_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $session_earned_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $session_attempted_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $cumulative_attempted_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $cumulative_attempted_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $cumulative_earned_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $cumulative_earned_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $projected_graduation_date The month and year the student is projected to graduate. (optional)
+     * @param  float $session_attempted_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $session_attempted_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $session_earned_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $session_earned_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentAcademicRecordsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStudentAcademicRecordsPartitions($number = null, $min_change_version = null, $max_change_version = null, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecordsPartitions'][0])
+    {
+        list($response) = $this->getStudentAcademicRecordsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStudentAcademicRecordsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $term_descriptor The term for the session during the school year. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $cumulative_earned_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $cumulative_attempted_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $session_earned_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $session_attempted_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $cumulative_attempted_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $cumulative_attempted_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $cumulative_earned_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $cumulative_earned_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $projected_graduation_date The month and year the student is projected to graduate. (optional)
+     * @param  float $session_attempted_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $session_attempted_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $session_earned_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $session_earned_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentAcademicRecordsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStudentAcademicRecordsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecordsPartitions'][0])
+    {
+        $request = $this->getStudentAcademicRecordsPartitionsRequest($number, $min_change_version, $max_change_version, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStudentAcademicRecordsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $term_descriptor The term for the session during the school year. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $cumulative_earned_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $cumulative_attempted_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $session_earned_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $session_attempted_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $cumulative_attempted_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $cumulative_attempted_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $cumulative_earned_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $cumulative_earned_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $projected_graduation_date The month and year the student is projected to graduate. (optional)
+     * @param  float $session_attempted_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $session_attempted_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $session_earned_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $session_earned_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentAcademicRecordsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentAcademicRecordsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecordsPartitions'][0])
+    {
+        return $this->getStudentAcademicRecordsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStudentAcademicRecordsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $term_descriptor The term for the session during the school year. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $cumulative_earned_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $cumulative_attempted_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $session_earned_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $session_attempted_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $cumulative_attempted_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $cumulative_attempted_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $cumulative_earned_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $cumulative_earned_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $projected_graduation_date The month and year the student is projected to graduate. (optional)
+     * @param  float $session_attempted_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $session_attempted_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $session_earned_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $session_earned_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentAcademicRecordsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentAcademicRecordsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecordsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStudentAcademicRecordsPartitionsRequest($number, $min_change_version, $max_change_version, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStudentAcademicRecordsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $term_descriptor The term for the session during the school year. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $cumulative_earned_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $cumulative_attempted_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $session_earned_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $session_attempted_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $cumulative_attempted_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $cumulative_attempted_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $cumulative_earned_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $cumulative_earned_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $projected_graduation_date The month and year the student is projected to graduate. (optional)
+     * @param  float $session_attempted_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $session_attempted_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  float $session_earned_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $session_earned_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentAcademicRecordsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStudentAcademicRecordsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $term_descriptor = null, $education_organization_id = null, $school_year = null, $student_unique_id = null, $cumulative_earned_credit_type_descriptor = null, $cumulative_attempted_credit_type_descriptor = null, $session_earned_credit_type_descriptor = null, $session_attempted_credit_type_descriptor = null, $cumulative_attempted_credit_conversion = null, $cumulative_attempted_credits = null, $cumulative_earned_credit_conversion = null, $cumulative_earned_credits = null, $id = null, $projected_graduation_date = null, $session_attempted_credit_conversion = null, $session_attempted_credits = null, $session_earned_credit_conversion = null, $session_earned_credits = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentAcademicRecordsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentAcademicRecordsApi.getStudentAcademicRecordsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentAcademicRecordsApi.getStudentAcademicRecordsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($term_descriptor !== null && strlen($term_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$term_descriptor" when calling StudentAcademicRecordsApi.getStudentAcademicRecordsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentAcademicRecordsApi.getStudentAcademicRecordsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($cumulative_earned_credit_type_descriptor !== null && strlen($cumulative_earned_credit_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$cumulative_earned_credit_type_descriptor" when calling StudentAcademicRecordsApi.getStudentAcademicRecordsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($cumulative_attempted_credit_type_descriptor !== null && strlen($cumulative_attempted_credit_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$cumulative_attempted_credit_type_descriptor" when calling StudentAcademicRecordsApi.getStudentAcademicRecordsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($session_earned_credit_type_descriptor !== null && strlen($session_earned_credit_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$session_earned_credit_type_descriptor" when calling StudentAcademicRecordsApi.getStudentAcademicRecordsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($session_attempted_credit_type_descriptor !== null && strlen($session_attempted_credit_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$session_attempted_credit_type_descriptor" when calling StudentAcademicRecordsApi.getStudentAcademicRecordsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/studentAcademicRecords/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $term_descriptor,
+            'termDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_year,
+            'schoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cumulative_earned_credit_type_descriptor,
+            'cumulativeEarnedCreditTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cumulative_attempted_credit_type_descriptor,
+            'cumulativeAttemptedCreditTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_earned_credit_type_descriptor,
+            'sessionEarnedCreditTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_attempted_credit_type_descriptor,
+            'sessionAttemptedCreditTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cumulative_attempted_credit_conversion,
+            'cumulativeAttemptedCreditConversion', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cumulative_attempted_credits,
+            'cumulativeAttemptedCredits', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cumulative_earned_credit_conversion,
+            'cumulativeEarnedCreditConversion', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cumulative_earned_credits,
+            'cumulativeEarnedCredits', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $projected_graduation_date,
+            'projectedGraduationDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_attempted_credit_conversion,
+            'sessionAttemptedCreditConversion', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_attempted_credits,
+            'sessionAttemptedCredits', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_earned_credit_conversion,
+            'sessionEarnedCreditConversion', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_earned_credits,
+            'sessionEarnedCredits', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStudentAcademicRecords
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentAcademicRecords'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentAcademicRecordKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentAcademicRecordKeyChange[]
      */
-    public function keyChangesStudentAcademicRecords($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentAcademicRecords'][0])
+    public function keyChangesStudentAcademicRecords($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentAcademicRecords'][0])
     {
         list($response) = $this->keyChangesStudentAcademicRecordsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1785,19 +2462,19 @@ class StudentAcademicRecordsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentAcademicRecords'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentAcademicRecordKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentAcademicRecordKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStudentAcademicRecordsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentAcademicRecords'][0])
+    public function keyChangesStudentAcademicRecordsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentAcademicRecords'][0])
     {
         $request = $this->keyChangesStudentAcademicRecordsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1915,18 +2592,18 @@ class StudentAcademicRecordsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentAcademicRecords'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentAcademicRecordsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentAcademicRecords'][0])
+    public function keyChangesStudentAcademicRecordsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentAcademicRecords'][0])
     {
         return $this->keyChangesStudentAcademicRecordsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1941,18 +2618,18 @@ class StudentAcademicRecordsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentAcademicRecords'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentAcademicRecordsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentAcademicRecords'][0])
+    public function keyChangesStudentAcademicRecordsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentAcademicRecords'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentAcademicRecordKeyChange[]';
         $request = $this->keyChangesStudentAcademicRecordsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1996,18 +2673,18 @@ class StudentAcademicRecordsApi
     /**
      * Create request for operation 'keyChangesStudentAcademicRecords'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentAcademicRecords'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStudentAcademicRecordsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentAcademicRecords'][0])
+    public function keyChangesStudentAcademicRecordsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentAcademicRecords'][0])
     {
 
 

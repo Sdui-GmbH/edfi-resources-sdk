@@ -83,6 +83,9 @@ class AccountabilityRatingsApi
         'getAccountabilityRatingsById' => [
             'application/json',
         ],
+        'getAccountabilityRatingsPartitions' => [
+            'application/json',
+        ],
         'keyChangesAccountabilityRatings' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class AccountabilityRatingsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAccountabilityRatings'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[]
      */
-    public function deletesAccountabilityRatings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
+    public function deletesAccountabilityRatings($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
     {
         list($response) = $this->deletesAccountabilityRatingsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class AccountabilityRatingsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAccountabilityRatings'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesAccountabilityRatingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
+    public function deletesAccountabilityRatingsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
     {
         $request = $this->deletesAccountabilityRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class AccountabilityRatingsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAccountabilityRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesAccountabilityRatingsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
+    public function deletesAccountabilityRatingsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
     {
         return $this->deletesAccountabilityRatingsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class AccountabilityRatingsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAccountabilityRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesAccountabilityRatingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
+    public function deletesAccountabilityRatingsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiAccountabilityRatingDelete[]';
         $request = $this->deletesAccountabilityRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class AccountabilityRatingsApi
     /**
      * Create request for operation 'deletesAccountabilityRatings'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAccountabilityRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesAccountabilityRatingsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
+    public function deletesAccountabilityRatingsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAccountabilityRatings'][0])
     {
 
 
@@ -759,11 +762,13 @@ class AccountabilityRatingsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $rating_title The title of the rating. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $school_year The school year for which the accountability rating is assessed. (optional)
@@ -777,11 +782,11 @@ class AccountabilityRatingsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiAccountabilityRating[]
+     * @return |\Resources\Model\EdFiAccountabilityRating[]
      */
-    public function getAccountabilityRatings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
+    public function getAccountabilityRatings($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
     {
-        list($response) = $this->getAccountabilityRatingsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType);
+        list($response) = $this->getAccountabilityRatingsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -790,11 +795,13 @@ class AccountabilityRatingsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $rating_title The title of the rating. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $school_year The school year for which the accountability rating is assessed. (optional)
@@ -808,11 +815,11 @@ class AccountabilityRatingsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiAccountabilityRating[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiAccountabilityRating[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAccountabilityRatingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
+    public function getAccountabilityRatingsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
     {
-        $request = $this->getAccountabilityRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType);
+        $request = $this->getAccountabilityRatingsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -928,11 +935,13 @@ class AccountabilityRatingsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $rating_title The title of the rating. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $school_year The school year for which the accountability rating is assessed. (optional)
@@ -947,9 +956,9 @@ class AccountabilityRatingsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccountabilityRatingsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
+    public function getAccountabilityRatingsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
     {
-        return $this->getAccountabilityRatingsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType)
+        return $this->getAccountabilityRatingsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -962,11 +971,13 @@ class AccountabilityRatingsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $rating_title The title of the rating. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $school_year The school year for which the accountability rating is assessed. (optional)
@@ -981,10 +992,10 @@ class AccountabilityRatingsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccountabilityRatingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
+    public function getAccountabilityRatingsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
     {
         $returnType = '\Resources\Model\EdFiAccountabilityRating[]';
-        $request = $this->getAccountabilityRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType);
+        $request = $this->getAccountabilityRatingsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1025,11 +1036,13 @@ class AccountabilityRatingsApi
     /**
      * Create request for operation 'getAccountabilityRatings'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $rating_title The title of the rating. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $school_year The school year for which the accountability rating is assessed. (optional)
@@ -1044,7 +1057,7 @@ class AccountabilityRatingsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAccountabilityRatingsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
+    public function getAccountabilityRatingsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatings'][0])
     {
 
 
@@ -1053,6 +1066,11 @@ class AccountabilityRatingsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling AccountabilityRatingsApi.getAccountabilityRatings, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling AccountabilityRatingsApi.getAccountabilityRatings, must be bigger than or equal to 0.');
         }
         
 
@@ -1100,6 +1118,24 @@ class AccountabilityRatingsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1281,7 +1317,7 @@ class AccountabilityRatingsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiAccountabilityRating
+     * @return |\Resources\Model\EdFiAccountabilityRating
      */
     public function getAccountabilityRatingsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatingsById'][0])
     {
@@ -1301,7 +1337,7 @@ class AccountabilityRatingsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiAccountabilityRating, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiAccountabilityRating, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountabilityRatingsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatingsById'][0])
     {
@@ -1602,23 +1638,508 @@ class AccountabilityRatingsApi
     }
 
     /**
+     * Operation getAccountabilityRatingsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $rating_title The title of the rating. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $school_year The school year for which the accountability rating is assessed. (optional)
+     * @param  string $id  (optional)
+     * @param  string $rating An accountability rating level, designation, or assessment. (optional)
+     * @param  \DateTime $rating_date The date the rating was awarded. (optional)
+     * @param  string $rating_organization The organization that assessed the rating. (optional)
+     * @param  string $rating_program The program associated with the accountability rating (e.g., NCLB, AEIS). (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountabilityRatingsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getAccountabilityRatingsPartitions($number = null, $min_change_version = null, $max_change_version = null, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatingsPartitions'][0])
+    {
+        list($response) = $this->getAccountabilityRatingsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAccountabilityRatingsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $rating_title The title of the rating. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $school_year The school year for which the accountability rating is assessed. (optional)
+     * @param  string $id  (optional)
+     * @param  string $rating An accountability rating level, designation, or assessment. (optional)
+     * @param  \DateTime $rating_date The date the rating was awarded. (optional)
+     * @param  string $rating_organization The organization that assessed the rating. (optional)
+     * @param  string $rating_program The program associated with the accountability rating (e.g., NCLB, AEIS). (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountabilityRatingsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAccountabilityRatingsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatingsPartitions'][0])
+    {
+        $request = $this->getAccountabilityRatingsPartitionsRequest($number, $min_change_version, $max_change_version, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAccountabilityRatingsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $rating_title The title of the rating. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $school_year The school year for which the accountability rating is assessed. (optional)
+     * @param  string $id  (optional)
+     * @param  string $rating An accountability rating level, designation, or assessment. (optional)
+     * @param  \DateTime $rating_date The date the rating was awarded. (optional)
+     * @param  string $rating_organization The organization that assessed the rating. (optional)
+     * @param  string $rating_program The program associated with the accountability rating (e.g., NCLB, AEIS). (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountabilityRatingsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAccountabilityRatingsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatingsPartitions'][0])
+    {
+        return $this->getAccountabilityRatingsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAccountabilityRatingsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $rating_title The title of the rating. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $school_year The school year for which the accountability rating is assessed. (optional)
+     * @param  string $id  (optional)
+     * @param  string $rating An accountability rating level, designation, or assessment. (optional)
+     * @param  \DateTime $rating_date The date the rating was awarded. (optional)
+     * @param  string $rating_organization The organization that assessed the rating. (optional)
+     * @param  string $rating_program The program associated with the accountability rating (e.g., NCLB, AEIS). (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountabilityRatingsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAccountabilityRatingsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatingsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getAccountabilityRatingsPartitionsRequest($number, $min_change_version, $max_change_version, $rating_title, $education_organization_id, $school_year, $id, $rating, $rating_date, $rating_organization, $rating_program, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAccountabilityRatingsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $rating_title The title of the rating. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $school_year The school year for which the accountability rating is assessed. (optional)
+     * @param  string $id  (optional)
+     * @param  string $rating An accountability rating level, designation, or assessment. (optional)
+     * @param  \DateTime $rating_date The date the rating was awarded. (optional)
+     * @param  string $rating_organization The organization that assessed the rating. (optional)
+     * @param  string $rating_program The program associated with the accountability rating (e.g., NCLB, AEIS). (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountabilityRatingsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAccountabilityRatingsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $rating_title = null, $education_organization_id = null, $school_year = null, $id = null, $rating = null, $rating_date = null, $rating_organization = null, $rating_program = null, $use_snapshot = false, string $contentType = self::contentTypes['getAccountabilityRatingsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling AccountabilityRatingsApi.getAccountabilityRatingsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling AccountabilityRatingsApi.getAccountabilityRatingsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($rating_title !== null && strlen($rating_title) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$rating_title" when calling AccountabilityRatingsApi.getAccountabilityRatingsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+
+        if ($rating !== null && strlen($rating) > 35) {
+            throw new \InvalidArgumentException('invalid length for "$rating" when calling AccountabilityRatingsApi.getAccountabilityRatingsPartitions, must be smaller than or equal to 35.');
+        }
+        
+
+        if ($rating_organization !== null && strlen($rating_organization) > 35) {
+            throw new \InvalidArgumentException('invalid length for "$rating_organization" when calling AccountabilityRatingsApi.getAccountabilityRatingsPartitions, must be smaller than or equal to 35.');
+        }
+        
+        if ($rating_program !== null && strlen($rating_program) > 30) {
+            throw new \InvalidArgumentException('invalid length for "$rating_program" when calling AccountabilityRatingsApi.getAccountabilityRatingsPartitions, must be smaller than or equal to 30.');
+        }
+        
+
+
+        $resourcePath = '/ed-fi/accountabilityRatings/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $rating_title,
+            'ratingTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_year,
+            'schoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $rating,
+            'rating', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $rating_date,
+            'ratingDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $rating_organization,
+            'ratingOrganization', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $rating_program,
+            'ratingProgram', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesAccountabilityRatings
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAccountabilityRatings'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]
      */
-    public function keyChangesAccountabilityRatings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
+    public function keyChangesAccountabilityRatings($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
     {
         list($response) = $this->keyChangesAccountabilityRatingsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1629,19 +2150,19 @@ class AccountabilityRatingsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAccountabilityRatings'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesAccountabilityRatingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
+    public function keyChangesAccountabilityRatingsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
     {
         $request = $this->keyChangesAccountabilityRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1759,18 +2280,18 @@ class AccountabilityRatingsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAccountabilityRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesAccountabilityRatingsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
+    public function keyChangesAccountabilityRatingsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
     {
         return $this->keyChangesAccountabilityRatingsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1785,18 +2306,18 @@ class AccountabilityRatingsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAccountabilityRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesAccountabilityRatingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
+    public function keyChangesAccountabilityRatingsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiAccountabilityRatingKeyChange[]';
         $request = $this->keyChangesAccountabilityRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1840,18 +2361,18 @@ class AccountabilityRatingsApi
     /**
      * Create request for operation 'keyChangesAccountabilityRatings'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAccountabilityRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesAccountabilityRatingsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
+    public function keyChangesAccountabilityRatingsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAccountabilityRatings'][0])
     {
 
 

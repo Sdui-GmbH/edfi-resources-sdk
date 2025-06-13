@@ -387,7 +387,7 @@ class EdFiStudentCohortAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The month, day, and year on which the student was first identified as part of the cohort.
+     * @param \DateTime $begin_date The month, day, and year on which the student was first identified as part of the cohort.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class EdFiStudentCohortAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The month, day, and year on which the student was removed as part of the cohort.
+     * @param \DateTime|null $end_date The month, day, and year on which the student was removed as part of the cohort.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

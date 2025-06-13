@@ -1,6 +1,6 @@
 # Resources\CommunityProviderLicensesApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if t
 | [**deletesCommunityProviderLicenses()**](CommunityProviderLicensesApi.md#deletesCommunityProviderLicenses) | **GET** /ed-fi/communityProviderLicenses/deletes | Retrieves deleted resources based on change version. |
 | [**getCommunityProviderLicenses()**](CommunityProviderLicensesApi.md#getCommunityProviderLicenses) | **GET** /ed-fi/communityProviderLicenses | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getCommunityProviderLicensesById()**](CommunityProviderLicensesApi.md#getCommunityProviderLicensesById) | **GET** /ed-fi/communityProviderLicenses/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getCommunityProviderLicensesPartitions()**](CommunityProviderLicensesApi.md#getCommunityProviderLicensesPartitions) | **GET** /ed-fi/communityProviderLicenses/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesCommunityProviderLicenses()**](CommunityProviderLicensesApi.md#keyChangesCommunityProviderLicenses) | **GET** /ed-fi/communityProviderLicenses/keyChanges | Retrieves resources key changes based on change version. |
 | [**postCommunityProviderLicense()**](CommunityProviderLicensesApi.md#postCommunityProviderLicense) | **POST** /ed-fi/communityProviderLicenses | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putCommunityProviderLicense()**](CommunityProviderLicensesApi.md#putCommunityProviderLicense) | **PUT** /ed-fi/communityProviderLicenses/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\CommunityProviderLicensesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getCommunityProviderLicenses()`
 
 ```php
-getCommunityProviderLicenses($offset, $limit, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot): \Resources\Model\EdFiCommunityProviderLicense[]
+getCommunityProviderLicenses($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot): \Resources\Model\EdFiCommunityProviderLicense[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,11 +172,13 @@ $apiInstance = new Resources\Api\CommunityProviderLicensesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $license_identifier = 'license_identifier_example'; // string | The unique identifier issued by the licensing organization.
 $licensing_organization = 'licensing_organization_example'; // string | The organization issuing the license.
 $community_provider_id = 56; // int | The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
@@ -183,15 +186,15 @@ $license_status_descriptor = 'license_status_descriptor_example'; // string | An
 $license_type_descriptor = 'license_type_descriptor_example'; // string | An indication of the category of the license.
 $authorized_facility_capacity = 56; // int | The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve.
 $id = 'id_example'; // string | 
-$license_effective_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which a license is active or becomes effective.
-$license_expiration_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which a license will expire.
+$license_effective_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
+$license_expiration_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
 $license_issue_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which an active license was issued.
 $oldest_age_authorized_to_serve = 56; // int | The oldest age of children a provider is authorized or licensed to serve.
 $youngest_age_authorized_to_serve = 56; // int | The youngest age of children a provider is authorized or licensed to serve.
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getCommunityProviderLicenses($offset, $limit, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot);
+    $result = $apiInstance->getCommunityProviderLicenses($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CommunityProviderLicensesApi->getCommunityProviderLicenses: ', $e->getMessage(), PHP_EOL;
@@ -202,11 +205,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **license_identifier** | **string**| The unique identifier issued by the licensing organization. | [optional] |
 | **licensing_organization** | **string**| The organization issuing the license. | [optional] |
 | **community_provider_id** | **int**| The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
@@ -214,8 +219,8 @@ try {
 | **license_type_descriptor** | **string**| An indication of the category of the license. | [optional] |
 | **authorized_facility_capacity** | **int**| The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. | [optional] |
 | **id** | **string**|  | [optional] |
-| **license_effective_date** | **\DateTime**| The month, day, and year on which a license is active or becomes effective. | [optional] |
-| **license_expiration_date** | **\DateTime**| The month, day, and year on which a license will expire. | [optional] |
+| **license_effective_date** | **\DateTime**| The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
+| **license_expiration_date** | **\DateTime**| The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
 | **license_issue_date** | **\DateTime**| The month, day, and year on which an active license was issued. | [optional] |
 | **oldest_age_authorized_to_serve** | **int**| The oldest age of children a provider is authorized or licensed to serve. | [optional] |
 | **youngest_age_authorized_to_serve** | **int**| The youngest age of children a provider is authorized or licensed to serve. | [optional] |
@@ -302,6 +307,96 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getCommunityProviderLicensesPartitions()`
+
+```php
+getCommunityProviderLicensesPartitions($number, $min_change_version, $max_change_version, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\CommunityProviderLicensesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$license_identifier = 'license_identifier_example'; // string | The unique identifier issued by the licensing organization.
+$licensing_organization = 'licensing_organization_example'; // string | The organization issuing the license.
+$community_provider_id = 56; // int | The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
+$license_status_descriptor = 'license_status_descriptor_example'; // string | An indication of the status of the license.
+$license_type_descriptor = 'license_type_descriptor_example'; // string | An indication of the category of the license.
+$authorized_facility_capacity = 56; // int | The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve.
+$id = 'id_example'; // string | 
+$license_effective_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
+$license_expiration_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
+$license_issue_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which an active license was issued.
+$oldest_age_authorized_to_serve = 56; // int | The oldest age of children a provider is authorized or licensed to serve.
+$youngest_age_authorized_to_serve = 56; // int | The youngest age of children a provider is authorized or licensed to serve.
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+
+try {
+    $result = $apiInstance->getCommunityProviderLicensesPartitions($number, $min_change_version, $max_change_version, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CommunityProviderLicensesApi->getCommunityProviderLicensesPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **license_identifier** | **string**| The unique identifier issued by the licensing organization. | [optional] |
+| **licensing_organization** | **string**| The organization issuing the license. | [optional] |
+| **community_provider_id** | **int**| The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
+| **license_status_descriptor** | **string**| An indication of the status of the license. | [optional] |
+| **license_type_descriptor** | **string**| An indication of the category of the license. | [optional] |
+| **authorized_facility_capacity** | **int**| The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. | [optional] |
+| **id** | **string**|  | [optional] |
+| **license_effective_date** | **\DateTime**| The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
+| **license_expiration_date** | **\DateTime**| The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
+| **license_issue_date** | **\DateTime**| The month, day, and year on which an active license was issued. | [optional] |
+| **oldest_age_authorized_to_serve** | **int**| The oldest age of children a provider is authorized or licensed to serve. | [optional] |
+| **youngest_age_authorized_to_serve** | **int**| The youngest age of children a provider is authorized or licensed to serve. | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesCommunityProviderLicenses()`
 
 ```php
@@ -329,11 +424,11 @@ $apiInstance = new Resources\Api\CommunityProviderLicensesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -348,11 +443,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

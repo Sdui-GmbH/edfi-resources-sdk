@@ -62,6 +62,8 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
         'evaluation_reference' => '\Resources\Model\TpdmEvaluationReference',
         'performance_evaluation_rating_reference' => '\Resources\Model\TpdmPerformanceEvaluationRatingReference',
         'section_reference' => '\Resources\Model\EdFiSectionReference',
+        'actual_duration' => 'int',
+        'comments' => 'string',
         'evaluation_rating_level_descriptor' => 'string',
         'evaluation_rating_status_descriptor' => 'string',
         'results' => '\Resources\Model\TpdmEvaluationRatingResult[]',
@@ -83,6 +85,8 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
         'evaluation_reference' => null,
         'performance_evaluation_rating_reference' => null,
         'section_reference' => null,
+        'actual_duration' => 'int32',
+        'comments' => null,
         'evaluation_rating_level_descriptor' => null,
         'evaluation_rating_status_descriptor' => null,
         'results' => null,
@@ -102,6 +106,8 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
         'evaluation_reference' => false,
         'performance_evaluation_rating_reference' => false,
         'section_reference' => false,
+        'actual_duration' => true,
+        'comments' => true,
         'evaluation_rating_level_descriptor' => true,
         'evaluation_rating_status_descriptor' => true,
         'results' => false,
@@ -201,6 +207,8 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
         'evaluation_reference' => 'evaluationReference',
         'performance_evaluation_rating_reference' => 'performanceEvaluationRatingReference',
         'section_reference' => 'sectionReference',
+        'actual_duration' => 'actualDuration',
+        'comments' => 'comments',
         'evaluation_rating_level_descriptor' => 'evaluationRatingLevelDescriptor',
         'evaluation_rating_status_descriptor' => 'evaluationRatingStatusDescriptor',
         'results' => 'results',
@@ -220,6 +228,8 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
         'evaluation_reference' => 'setEvaluationReference',
         'performance_evaluation_rating_reference' => 'setPerformanceEvaluationRatingReference',
         'section_reference' => 'setSectionReference',
+        'actual_duration' => 'setActualDuration',
+        'comments' => 'setComments',
         'evaluation_rating_level_descriptor' => 'setEvaluationRatingLevelDescriptor',
         'evaluation_rating_status_descriptor' => 'setEvaluationRatingStatusDescriptor',
         'results' => 'setResults',
@@ -239,6 +249,8 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
         'evaluation_reference' => 'getEvaluationReference',
         'performance_evaluation_rating_reference' => 'getPerformanceEvaluationRatingReference',
         'section_reference' => 'getSectionReference',
+        'actual_duration' => 'getActualDuration',
+        'comments' => 'getComments',
         'evaluation_rating_level_descriptor' => 'getEvaluationRatingLevelDescriptor',
         'evaluation_rating_status_descriptor' => 'getEvaluationRatingStatusDescriptor',
         'results' => 'getResults',
@@ -309,6 +321,8 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('evaluation_reference', $data ?? [], null);
         $this->setIfExists('performance_evaluation_rating_reference', $data ?? [], null);
         $this->setIfExists('section_reference', $data ?? [], null);
+        $this->setIfExists('actual_duration', $data ?? [], null);
+        $this->setIfExists('comments', $data ?? [], null);
         $this->setIfExists('evaluation_rating_level_descriptor', $data ?? [], null);
         $this->setIfExists('evaluation_rating_status_descriptor', $data ?? [], null);
         $this->setIfExists('results', $data ?? [], null);
@@ -353,6 +367,18 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['performance_evaluation_rating_reference'] === null) {
             $invalidProperties[] = "'performance_evaluation_rating_reference' can't be null";
         }
+        if (!is_null($this->container['actual_duration']) && ($this->container['actual_duration'] < 1)) {
+            $invalidProperties[] = "invalid value for 'actual_duration', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['comments']) && (mb_strlen($this->container['comments']) > 1024)) {
+            $invalidProperties[] = "invalid value for 'comments', the character length must be smaller than or equal to 1024.";
+        }
+
+        if (!is_null($this->container['comments']) && (mb_strlen($this->container['comments']) < 1)) {
+            $invalidProperties[] = "invalid value for 'comments', the character length must be bigger than or equal to 1.";
+        }
+
         if (!is_null($this->container['evaluation_rating_level_descriptor']) && (mb_strlen($this->container['evaluation_rating_level_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'evaluation_rating_level_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -507,6 +533,86 @@ class TpdmEvaluationRating implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable section_reference cannot be null');
         }
         $this->container['section_reference'] = $section_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets actual_duration
+     *
+     * @return int|null
+     */
+    public function getActualDuration()
+    {
+        return $this->container['actual_duration'];
+    }
+
+    /**
+     * Sets actual_duration
+     *
+     * @param int|null $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted.
+     *
+     * @return self
+     */
+    public function setActualDuration($actual_duration)
+    {
+        if (is_null($actual_duration)) {
+            array_push($this->openAPINullablesSetToNull, 'actual_duration');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('actual_duration', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($actual_duration) && ($actual_duration < 1)) {
+            throw new \InvalidArgumentException('invalid value for $actual_duration when calling TpdmEvaluationRating., must be bigger than or equal to 1.');
+        }
+
+        $this->container['actual_duration'] = $actual_duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets comments
+     *
+     * @return string|null
+     */
+    public function getComments()
+    {
+        return $this->container['comments'];
+    }
+
+    /**
+     * Sets comments
+     *
+     * @param string|null $comments Any comments about the evaluation to be captured.
+     *
+     * @return self
+     */
+    public function setComments($comments)
+    {
+        if (is_null($comments)) {
+            array_push($this->openAPINullablesSetToNull, 'comments');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('comments', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($comments) && (mb_strlen($comments) > 1024)) {
+            throw new \InvalidArgumentException('invalid length for $comments when calling TpdmEvaluationRating., must be smaller than or equal to 1024.');
+        }
+        if (!is_null($comments) && (mb_strlen($comments) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $comments when calling TpdmEvaluationRating., must be bigger than or equal to 1.');
+        }
+
+        $this->container['comments'] = $comments;
 
         return $this;
     }

@@ -431,7 +431,7 @@ class EdFiEducationOrganizationNetworkAssociation implements ModelInterface, Arr
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The date on which the education organization joined this network.
+     * @param \DateTime|null $begin_date The date on which the education organization joined this network.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -465,7 +465,7 @@ class EdFiEducationOrganizationNetworkAssociation implements ModelInterface, Arr
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The date on which the education organization left this network.
+     * @param \DateTime|null $end_date The date on which the education organization left this network.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

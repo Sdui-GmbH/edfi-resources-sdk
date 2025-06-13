@@ -83,6 +83,9 @@ class FinancialAidsApi
         'getFinancialAidsById' => [
             'application/json',
         ],
+        'getFinancialAidsPartitions' => [
+            'application/json',
+        ],
         'keyChangesFinancialAids' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class FinancialAidsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesFinancialAids'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesTpdmFinancialAidDelete[]
+     * @return |\Resources\Model\TrackedChangesTpdmFinancialAidDelete[]
      */
-    public function deletesFinancialAids($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
+    public function deletesFinancialAids($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
     {
         list($response) = $this->deletesFinancialAidsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class FinancialAidsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesFinancialAids'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesTpdmFinancialAidDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesTpdmFinancialAidDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesFinancialAidsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
+    public function deletesFinancialAidsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
     {
         $request = $this->deletesFinancialAidsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class FinancialAidsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesFinancialAids'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesFinancialAidsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
+    public function deletesFinancialAidsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
     {
         return $this->deletesFinancialAidsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class FinancialAidsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesFinancialAids'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesFinancialAidsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
+    public function deletesFinancialAidsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesTpdmFinancialAidDelete[]';
         $request = $this->deletesFinancialAidsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class FinancialAidsApi
     /**
      * Create request for operation 'deletesFinancialAids'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesFinancialAids'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesFinancialAidsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
+    public function deletesFinancialAidsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesFinancialAids'][0])
     {
 
 
@@ -759,17 +762,19 @@ class FinancialAidsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $aid_type_descriptor The classification of financial aid awarded to a person for the academic term/year. (optional)
-     * @param  \DateTime $begin_date The date the award was designated. (optional)
+     * @param  \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  float $aid_amount The amount of financial aid awarded to a person for the term/year. (optional)
      * @param  string $aid_condition_description The description of the condition (e.g., placement in a high need school) under which the aid was given. (optional)
-     * @param  \DateTime $end_date The date the award was removed. (optional)
+     * @param  \DateTime $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $id  (optional)
      * @param  bool $pell_grant_recipient Indicates a person who receives Pell Grant aid. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -777,11 +782,11 @@ class FinancialAidsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TpdmFinancialAid[]
+     * @return |\Resources\Model\TpdmFinancialAid[]
      */
-    public function getFinancialAids($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
+    public function getFinancialAids($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
     {
-        list($response) = $this->getFinancialAidsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType);
+        list($response) = $this->getFinancialAidsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -790,17 +795,19 @@ class FinancialAidsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $aid_type_descriptor The classification of financial aid awarded to a person for the academic term/year. (optional)
-     * @param  \DateTime $begin_date The date the award was designated. (optional)
+     * @param  \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  float $aid_amount The amount of financial aid awarded to a person for the term/year. (optional)
      * @param  string $aid_condition_description The description of the condition (e.g., placement in a high need school) under which the aid was given. (optional)
-     * @param  \DateTime $end_date The date the award was removed. (optional)
+     * @param  \DateTime $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $id  (optional)
      * @param  bool $pell_grant_recipient Indicates a person who receives Pell Grant aid. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -808,11 +815,11 @@ class FinancialAidsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TpdmFinancialAid[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TpdmFinancialAid[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFinancialAidsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
+    public function getFinancialAidsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
     {
-        $request = $this->getFinancialAidsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType);
+        $request = $this->getFinancialAidsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -928,17 +935,19 @@ class FinancialAidsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $aid_type_descriptor The classification of financial aid awarded to a person for the academic term/year. (optional)
-     * @param  \DateTime $begin_date The date the award was designated. (optional)
+     * @param  \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  float $aid_amount The amount of financial aid awarded to a person for the term/year. (optional)
      * @param  string $aid_condition_description The description of the condition (e.g., placement in a high need school) under which the aid was given. (optional)
-     * @param  \DateTime $end_date The date the award was removed. (optional)
+     * @param  \DateTime $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $id  (optional)
      * @param  bool $pell_grant_recipient Indicates a person who receives Pell Grant aid. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -947,9 +956,9 @@ class FinancialAidsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFinancialAidsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
+    public function getFinancialAidsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
     {
-        return $this->getFinancialAidsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType)
+        return $this->getFinancialAidsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -962,17 +971,19 @@ class FinancialAidsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $aid_type_descriptor The classification of financial aid awarded to a person for the academic term/year. (optional)
-     * @param  \DateTime $begin_date The date the award was designated. (optional)
+     * @param  \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  float $aid_amount The amount of financial aid awarded to a person for the term/year. (optional)
      * @param  string $aid_condition_description The description of the condition (e.g., placement in a high need school) under which the aid was given. (optional)
-     * @param  \DateTime $end_date The date the award was removed. (optional)
+     * @param  \DateTime $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $id  (optional)
      * @param  bool $pell_grant_recipient Indicates a person who receives Pell Grant aid. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -981,10 +992,10 @@ class FinancialAidsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFinancialAidsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
+    public function getFinancialAidsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
     {
         $returnType = '\Resources\Model\TpdmFinancialAid[]';
-        $request = $this->getFinancialAidsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType);
+        $request = $this->getFinancialAidsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1025,17 +1036,19 @@ class FinancialAidsApi
     /**
      * Create request for operation 'getFinancialAids'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $aid_type_descriptor The classification of financial aid awarded to a person for the academic term/year. (optional)
-     * @param  \DateTime $begin_date The date the award was designated. (optional)
+     * @param  \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  float $aid_amount The amount of financial aid awarded to a person for the term/year. (optional)
      * @param  string $aid_condition_description The description of the condition (e.g., placement in a high need school) under which the aid was given. (optional)
-     * @param  \DateTime $end_date The date the award was removed. (optional)
+     * @param  \DateTime $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $id  (optional)
      * @param  bool $pell_grant_recipient Indicates a person who receives Pell Grant aid. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -1044,7 +1057,7 @@ class FinancialAidsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getFinancialAidsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
+    public function getFinancialAidsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAids'][0])
     {
 
 
@@ -1053,6 +1066,11 @@ class FinancialAidsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling FinancialAidsApi.getFinancialAids, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling FinancialAidsApi.getFinancialAids, must be bigger than or equal to 0.');
         }
         
 
@@ -1097,6 +1115,24 @@ class FinancialAidsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1278,7 +1314,7 @@ class FinancialAidsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TpdmFinancialAid
+     * @return |\Resources\Model\TpdmFinancialAid
      */
     public function getFinancialAidsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAidsById'][0])
     {
@@ -1298,7 +1334,7 @@ class FinancialAidsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TpdmFinancialAid, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TpdmFinancialAid, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFinancialAidsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAidsById'][0])
     {
@@ -1599,23 +1635,505 @@ class FinancialAidsApi
     }
 
     /**
+     * Operation getFinancialAidsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $aid_type_descriptor The classification of financial aid awarded to a person for the academic term/year. (optional)
+     * @param  \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  float $aid_amount The amount of financial aid awarded to a person for the term/year. (optional)
+     * @param  string $aid_condition_description The description of the condition (e.g., placement in a high need school) under which the aid was given. (optional)
+     * @param  \DateTime $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $pell_grant_recipient Indicates a person who receives Pell Grant aid. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFinancialAidsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getFinancialAidsPartitions($number = null, $min_change_version = null, $max_change_version = null, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAidsPartitions'][0])
+    {
+        list($response) = $this->getFinancialAidsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getFinancialAidsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $aid_type_descriptor The classification of financial aid awarded to a person for the academic term/year. (optional)
+     * @param  \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  float $aid_amount The amount of financial aid awarded to a person for the term/year. (optional)
+     * @param  string $aid_condition_description The description of the condition (e.g., placement in a high need school) under which the aid was given. (optional)
+     * @param  \DateTime $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $pell_grant_recipient Indicates a person who receives Pell Grant aid. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFinancialAidsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getFinancialAidsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAidsPartitions'][0])
+    {
+        $request = $this->getFinancialAidsPartitionsRequest($number, $min_change_version, $max_change_version, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getFinancialAidsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $aid_type_descriptor The classification of financial aid awarded to a person for the academic term/year. (optional)
+     * @param  \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  float $aid_amount The amount of financial aid awarded to a person for the term/year. (optional)
+     * @param  string $aid_condition_description The description of the condition (e.g., placement in a high need school) under which the aid was given. (optional)
+     * @param  \DateTime $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $pell_grant_recipient Indicates a person who receives Pell Grant aid. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFinancialAidsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFinancialAidsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAidsPartitions'][0])
+    {
+        return $this->getFinancialAidsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getFinancialAidsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $aid_type_descriptor The classification of financial aid awarded to a person for the academic term/year. (optional)
+     * @param  \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  float $aid_amount The amount of financial aid awarded to a person for the term/year. (optional)
+     * @param  string $aid_condition_description The description of the condition (e.g., placement in a high need school) under which the aid was given. (optional)
+     * @param  \DateTime $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $pell_grant_recipient Indicates a person who receives Pell Grant aid. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFinancialAidsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFinancialAidsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAidsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getFinancialAidsPartitionsRequest($number, $min_change_version, $max_change_version, $aid_type_descriptor, $begin_date, $student_unique_id, $aid_amount, $aid_condition_description, $end_date, $id, $pell_grant_recipient, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getFinancialAidsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $aid_type_descriptor The classification of financial aid awarded to a person for the academic term/year. (optional)
+     * @param  \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  float $aid_amount The amount of financial aid awarded to a person for the term/year. (optional)
+     * @param  string $aid_condition_description The description of the condition (e.g., placement in a high need school) under which the aid was given. (optional)
+     * @param  \DateTime $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $pell_grant_recipient Indicates a person who receives Pell Grant aid. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFinancialAidsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getFinancialAidsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $aid_type_descriptor = null, $begin_date = null, $student_unique_id = null, $aid_amount = null, $aid_condition_description = null, $end_date = null, $id = null, $pell_grant_recipient = null, $use_snapshot = false, string $contentType = self::contentTypes['getFinancialAidsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling FinancialAidsApi.getFinancialAidsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling FinancialAidsApi.getFinancialAidsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($aid_type_descriptor !== null && strlen($aid_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$aid_type_descriptor" when calling FinancialAidsApi.getFinancialAidsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling FinancialAidsApi.getFinancialAidsPartitions, must be smaller than or equal to 32.');
+        }
+        
+
+        if ($aid_condition_description !== null && strlen($aid_condition_description) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$aid_condition_description" when calling FinancialAidsApi.getFinancialAidsPartitions, must be smaller than or equal to 1024.');
+        }
+        
+
+
+
+
+
+        $resourcePath = '/tpdm/financialAids/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $aid_type_descriptor,
+            'aidTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $begin_date,
+            'beginDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $aid_amount,
+            'aidAmount', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $aid_condition_description,
+            'aidConditionDescription', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $pell_grant_recipient,
+            'pellGrantRecipient', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesFinancialAids
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesFinancialAids'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]
+     * @return |\Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]
      */
-    public function keyChangesFinancialAids($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
+    public function keyChangesFinancialAids($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
     {
         list($response) = $this->keyChangesFinancialAidsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1626,19 +2144,19 @@ class FinancialAidsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesFinancialAids'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesFinancialAidsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
+    public function keyChangesFinancialAidsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
     {
         $request = $this->keyChangesFinancialAidsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1756,18 +2274,18 @@ class FinancialAidsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesFinancialAids'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesFinancialAidsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
+    public function keyChangesFinancialAidsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
     {
         return $this->keyChangesFinancialAidsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1782,18 +2300,18 @@ class FinancialAidsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesFinancialAids'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesFinancialAidsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
+    public function keyChangesFinancialAidsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesTpdmFinancialAidKeyChange[]';
         $request = $this->keyChangesFinancialAidsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1837,18 +2355,18 @@ class FinancialAidsApi
     /**
      * Create request for operation 'keyChangesFinancialAids'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesFinancialAids'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesFinancialAidsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
+    public function keyChangesFinancialAidsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesFinancialAids'][0])
     {
 
 

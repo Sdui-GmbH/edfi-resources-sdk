@@ -577,7 +577,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets entry_date
      *
-     * @param \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school.
+     * @param \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student's enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -1026,7 +1026,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets exit_withdraw_date
      *
-     * @param \DateTime|null $exit_withdraw_date The recorded exit or withdraw date for the student.
+     * @param \DateTime|null $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

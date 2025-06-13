@@ -362,7 +362,7 @@ class TrackedChangesEdFiStaffEducationOrganizationAssignmentAssociationKey imple
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date Month, day, and year of the start or effective date of a staff member's employment, contract, or relationship with the education organization.
+     * @param \DateTime|null $begin_date Month, day, and year of the start or effective date of a staff member's employment, contract, or relationship with the education organization.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

@@ -1,6 +1,6 @@
 # Resources\InterventionPrescriptionsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if t
 | [**deletesInterventionPrescriptions()**](InterventionPrescriptionsApi.md#deletesInterventionPrescriptions) | **GET** /ed-fi/interventionPrescriptions/deletes | Retrieves deleted resources based on change version. |
 | [**getInterventionPrescriptions()**](InterventionPrescriptionsApi.md#getInterventionPrescriptions) | **GET** /ed-fi/interventionPrescriptions | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getInterventionPrescriptionsById()**](InterventionPrescriptionsApi.md#getInterventionPrescriptionsById) | **GET** /ed-fi/interventionPrescriptions/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getInterventionPrescriptionsPartitions()**](InterventionPrescriptionsApi.md#getInterventionPrescriptionsPartitions) | **GET** /ed-fi/interventionPrescriptions/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesInterventionPrescriptions()**](InterventionPrescriptionsApi.md#keyChangesInterventionPrescriptions) | **GET** /ed-fi/interventionPrescriptions/keyChanges | Retrieves resources key changes based on change version. |
 | [**postInterventionPrescription()**](InterventionPrescriptionsApi.md#postInterventionPrescription) | **POST** /ed-fi/interventionPrescriptions | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putInterventionPrescription()**](InterventionPrescriptionsApi.md#putInterventionPrescription) | **PUT** /ed-fi/interventionPrescriptions/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\InterventionPrescriptionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getInterventionPrescriptions()`
 
 ```php
-getInterventionPrescriptions($offset, $limit, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot): \Resources\Model\EdFiInterventionPrescription[]
+getInterventionPrescriptions($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot): \Resources\Model\EdFiInterventionPrescription[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,11 +172,13 @@ $apiInstance = new Resources\Api\InterventionPrescriptionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $intervention_prescription_identification_code = 'intervention_prescription_identification_code_example'; // string | A unique number or alphanumeric code assigned to an intervention prescription.
 $education_organization_id = 56; // int | The identifier assigned to an education organization.
 $delivery_method_descriptor = 'delivery_method_descriptor_example'; // string | The way in which an intervention was implemented: individual, small group, whole class, or whole school.
@@ -187,7 +190,7 @@ $namespace = 'namespace_example'; // string | Namespace for the intervention.
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getInterventionPrescriptions($offset, $limit, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot);
+    $result = $apiInstance->getInterventionPrescriptions($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InterventionPrescriptionsApi->getInterventionPrescriptions: ', $e->getMessage(), PHP_EOL;
@@ -198,11 +201,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **intervention_prescription_identification_code** | **string**| A unique number or alphanumeric code assigned to an intervention prescription. | [optional] |
 | **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
 | **delivery_method_descriptor** | **string**| The way in which an intervention was implemented: individual, small group, whole class, or whole school. | [optional] |
@@ -294,6 +299,88 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getInterventionPrescriptionsPartitions()`
+
+```php
+getInterventionPrescriptionsPartitions($number, $min_change_version, $max_change_version, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\InterventionPrescriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$intervention_prescription_identification_code = 'intervention_prescription_identification_code_example'; // string | A unique number or alphanumeric code assigned to an intervention prescription.
+$education_organization_id = 56; // int | The identifier assigned to an education organization.
+$delivery_method_descriptor = 'delivery_method_descriptor_example'; // string | The way in which an intervention was implemented: individual, small group, whole class, or whole school.
+$intervention_class_descriptor = 'intervention_class_descriptor_example'; // string | The way in which an intervention is used: curriculum, supplement, or practice.
+$id = 'id_example'; // string | 
+$max_dosage = 56; // int | The maximum duration of time in minutes that is recommended for the intervention.
+$min_dosage = 56; // int | The minimum duration of time in minutes that is recommended for the intervention.
+$namespace = 'namespace_example'; // string | Namespace for the intervention.
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+
+try {
+    $result = $apiInstance->getInterventionPrescriptionsPartitions($number, $min_change_version, $max_change_version, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InterventionPrescriptionsApi->getInterventionPrescriptionsPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **intervention_prescription_identification_code** | **string**| A unique number or alphanumeric code assigned to an intervention prescription. | [optional] |
+| **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
+| **delivery_method_descriptor** | **string**| The way in which an intervention was implemented: individual, small group, whole class, or whole school. | [optional] |
+| **intervention_class_descriptor** | **string**| The way in which an intervention is used: curriculum, supplement, or practice. | [optional] |
+| **id** | **string**|  | [optional] |
+| **max_dosage** | **int**| The maximum duration of time in minutes that is recommended for the intervention. | [optional] |
+| **min_dosage** | **int**| The minimum duration of time in minutes that is recommended for the intervention. | [optional] |
+| **namespace** | **string**| Namespace for the intervention. | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesInterventionPrescriptions()`
 
 ```php
@@ -321,11 +408,11 @@ $apiInstance = new Resources\Api\InterventionPrescriptionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -340,11 +427,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

@@ -551,7 +551,7 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date Month, day, and year of the first day of the session.
+     * @param \DateTime $begin_date Month, day, and year of the first day of the session.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -578,7 +578,7 @@ class EdFiSession implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date Month, day and year of the last day of the session.
+     * @param \DateTime $end_date Month, day and year of the last day of the session.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

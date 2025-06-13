@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
-**begin_date** | **\DateTime** | The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. |
+**begin_date** | **\DateTime** | The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. |
 **education_organization_reference** | [**\Resources\Model\EdFiEducationOrganizationReference**](EdFiEducationOrganizationReference.md) |  |
 **program_reference** | [**\Resources\Model\EdFiProgramReference**](EdFiProgramReference.md) |  |
 **student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
 **awaiting_foster_care** | **bool** | State defined definition for awaiting foster care. | [optional]
-**end_date** | **\DateTime** | The month, day, and year on which the student exited the program or stopped receiving services. | [optional]
+**end_date** | **\DateTime** | The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional]
 **homeless_primary_nighttime_residence_descriptor** | **string** | The primary nighttime residence of the student at the time the student is identified as homeless. | [optional]
 **homeless_program_services** | [**\Resources\Model\EdFiStudentHomelessProgramAssociationHomelessProgramService[]**](EdFiStudentHomelessProgramAssociationHomelessProgramService.md) | An unordered collection of studentHomelessProgramAssociationHomelessProgramServices. Indicates the service(s) being provided to the student by the homeless program. | [optional]
 **homeless_unaccompanied_youth** | **bool** | A homeless unaccompanied youth is a youth who is not in the physical custody of a parent or guardian and who fits the McKinney-Vento definition of homeless. Students must be both unaccompanied and homeless to be included as an unaccompanied homeless youth. | [optional]

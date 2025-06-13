@@ -342,7 +342,7 @@ class TrackedChangesEdFiStaffProgramAssociationKey implements ModelInterface, Ar
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date Start date for the association of staff to this program.
+     * @param \DateTime|null $begin_date Start date for the association of staff to this program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

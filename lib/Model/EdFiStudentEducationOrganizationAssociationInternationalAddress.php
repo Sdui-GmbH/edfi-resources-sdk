@@ -613,7 +613,7 @@ class EdFiStudentEducationOrganizationAssociationInternationalAddress implements
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The first date the address is valid. For physical addresses, the date the individual moved to that address.
+     * @param \DateTime|null $begin_date The first date the address is valid. For physical addresses, the date the individual moved to that address.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -647,7 +647,7 @@ class EdFiStudentEducationOrganizationAssociationInternationalAddress implements
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The last date the address is valid. For physical addresses, the date the individual moved from that address.
+     * @param \DateTime|null $end_date The last date the address is valid. For physical addresses, the date the individual moved from that address.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

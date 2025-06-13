@@ -465,7 +465,7 @@ class EdFiCrisisEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets crisis_end_date
      *
-     * @param \DateTime|null $crisis_end_date The date on which the crisis ceased to affect the student.
+     * @param \DateTime|null $crisis_end_date The date on which the crisis ceased to affect the student. Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -499,7 +499,7 @@ class EdFiCrisisEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets crisis_start_date
      *
-     * @param \DateTime|null $crisis_start_date The year, month and day on which the crisis affected the student. This date may not be the same as the date the crisis occurred if evacuation orders are implemented in anticipation of a crisis.
+     * @param \DateTime|null $crisis_start_date The year, month and day on which the crisis affected the student. This date may not be the same as the date the crisis occurred if evacuation orders are implemented in anticipation of a crisis.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

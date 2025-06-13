@@ -83,6 +83,9 @@ class OpenStaffPositionsApi
         'getOpenStaffPositionsById' => [
             'application/json',
         ],
+        'getOpenStaffPositionsPartitions' => [
+            'application/json',
+        ],
         'keyChangesOpenStaffPositions' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class OpenStaffPositionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesOpenStaffPositions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiOpenStaffPositionDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiOpenStaffPositionDelete[]
      */
-    public function deletesOpenStaffPositions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOpenStaffPositions'][0])
+    public function deletesOpenStaffPositions($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOpenStaffPositions'][0])
     {
         list($response) = $this->deletesOpenStaffPositionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class OpenStaffPositionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesOpenStaffPositions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiOpenStaffPositionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiOpenStaffPositionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesOpenStaffPositionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOpenStaffPositions'][0])
+    public function deletesOpenStaffPositionsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOpenStaffPositions'][0])
     {
         $request = $this->deletesOpenStaffPositionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class OpenStaffPositionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesOpenStaffPositions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesOpenStaffPositionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOpenStaffPositions'][0])
+    public function deletesOpenStaffPositionsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOpenStaffPositions'][0])
     {
         return $this->deletesOpenStaffPositionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class OpenStaffPositionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesOpenStaffPositions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesOpenStaffPositionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOpenStaffPositions'][0])
+    public function deletesOpenStaffPositionsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOpenStaffPositions'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiOpenStaffPositionDelete[]';
         $request = $this->deletesOpenStaffPositionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class OpenStaffPositionsApi
     /**
      * Create request for operation 'deletesOpenStaffPositions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesOpenStaffPositions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesOpenStaffPositionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOpenStaffPositions'][0])
+    public function deletesOpenStaffPositionsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesOpenStaffPositions'][0])
     {
 
 
@@ -759,19 +762,21 @@ class OpenStaffPositionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $requisition_number The number or identifier assigned to an open staff position, typically a requisition number assigned by Human Resources. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $employment_status_descriptor Reflects the type of employment or contract desired for the position. (optional)
      * @param  string $posting_result_descriptor Indication of whether the OpenStaffPosition was filled or retired without filling. (optional)
      * @param  string $program_assignment_descriptor The name of the program for which the open staff position will be assigned. (optional)
      * @param  string $staff_classification_descriptor The titles of employment, official status, or rank of education staff. (optional)
-     * @param  \DateTime $date_posted Date the open staff position was posted. (optional)
-     * @param  \DateTime $date_posting_removed The date the posting was removed or filled. (optional)
+     * @param  \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $id  (optional)
      * @param  string $position_title The descriptive name of an individual&#39;s position. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -779,11 +784,11 @@ class OpenStaffPositionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiOpenStaffPosition[]
+     * @return |\Resources\Model\EdFiOpenStaffPosition[]
      */
-    public function getOpenStaffPositions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositions'][0])
+    public function getOpenStaffPositions($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositions'][0])
     {
-        list($response) = $this->getOpenStaffPositionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType);
+        list($response) = $this->getOpenStaffPositionsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -792,19 +797,21 @@ class OpenStaffPositionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $requisition_number The number or identifier assigned to an open staff position, typically a requisition number assigned by Human Resources. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $employment_status_descriptor Reflects the type of employment or contract desired for the position. (optional)
      * @param  string $posting_result_descriptor Indication of whether the OpenStaffPosition was filled or retired without filling. (optional)
      * @param  string $program_assignment_descriptor The name of the program for which the open staff position will be assigned. (optional)
      * @param  string $staff_classification_descriptor The titles of employment, official status, or rank of education staff. (optional)
-     * @param  \DateTime $date_posted Date the open staff position was posted. (optional)
-     * @param  \DateTime $date_posting_removed The date the posting was removed or filled. (optional)
+     * @param  \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $id  (optional)
      * @param  string $position_title The descriptive name of an individual&#39;s position. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -812,11 +819,11 @@ class OpenStaffPositionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiOpenStaffPosition[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiOpenStaffPosition[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOpenStaffPositionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositions'][0])
+    public function getOpenStaffPositionsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositions'][0])
     {
-        $request = $this->getOpenStaffPositionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType);
+        $request = $this->getOpenStaffPositionsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -932,19 +939,21 @@ class OpenStaffPositionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $requisition_number The number or identifier assigned to an open staff position, typically a requisition number assigned by Human Resources. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $employment_status_descriptor Reflects the type of employment or contract desired for the position. (optional)
      * @param  string $posting_result_descriptor Indication of whether the OpenStaffPosition was filled or retired without filling. (optional)
      * @param  string $program_assignment_descriptor The name of the program for which the open staff position will be assigned. (optional)
      * @param  string $staff_classification_descriptor The titles of employment, official status, or rank of education staff. (optional)
-     * @param  \DateTime $date_posted Date the open staff position was posted. (optional)
-     * @param  \DateTime $date_posting_removed The date the posting was removed or filled. (optional)
+     * @param  \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $id  (optional)
      * @param  string $position_title The descriptive name of an individual&#39;s position. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -953,9 +962,9 @@ class OpenStaffPositionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOpenStaffPositionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositions'][0])
+    public function getOpenStaffPositionsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositions'][0])
     {
-        return $this->getOpenStaffPositionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType)
+        return $this->getOpenStaffPositionsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -968,19 +977,21 @@ class OpenStaffPositionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $requisition_number The number or identifier assigned to an open staff position, typically a requisition number assigned by Human Resources. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $employment_status_descriptor Reflects the type of employment or contract desired for the position. (optional)
      * @param  string $posting_result_descriptor Indication of whether the OpenStaffPosition was filled or retired without filling. (optional)
      * @param  string $program_assignment_descriptor The name of the program for which the open staff position will be assigned. (optional)
      * @param  string $staff_classification_descriptor The titles of employment, official status, or rank of education staff. (optional)
-     * @param  \DateTime $date_posted Date the open staff position was posted. (optional)
-     * @param  \DateTime $date_posting_removed The date the posting was removed or filled. (optional)
+     * @param  \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $id  (optional)
      * @param  string $position_title The descriptive name of an individual&#39;s position. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -989,10 +1000,10 @@ class OpenStaffPositionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOpenStaffPositionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositions'][0])
+    public function getOpenStaffPositionsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositions'][0])
     {
         $returnType = '\Resources\Model\EdFiOpenStaffPosition[]';
-        $request = $this->getOpenStaffPositionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType);
+        $request = $this->getOpenStaffPositionsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1033,19 +1044,21 @@ class OpenStaffPositionsApi
     /**
      * Create request for operation 'getOpenStaffPositions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $requisition_number The number or identifier assigned to an open staff position, typically a requisition number assigned by Human Resources. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $employment_status_descriptor Reflects the type of employment or contract desired for the position. (optional)
      * @param  string $posting_result_descriptor Indication of whether the OpenStaffPosition was filled or retired without filling. (optional)
      * @param  string $program_assignment_descriptor The name of the program for which the open staff position will be assigned. (optional)
      * @param  string $staff_classification_descriptor The titles of employment, official status, or rank of education staff. (optional)
-     * @param  \DateTime $date_posted Date the open staff position was posted. (optional)
-     * @param  \DateTime $date_posting_removed The date the posting was removed or filled. (optional)
+     * @param  \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $id  (optional)
      * @param  string $position_title The descriptive name of an individual&#39;s position. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -1054,7 +1067,7 @@ class OpenStaffPositionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOpenStaffPositionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositions'][0])
+    public function getOpenStaffPositionsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositions'][0])
     {
 
 
@@ -1063,6 +1076,11 @@ class OpenStaffPositionsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling OpenStaffPositionsApi.getOpenStaffPositions, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling OpenStaffPositionsApi.getOpenStaffPositions, must be bigger than or equal to 0.');
         }
         
 
@@ -1118,6 +1136,24 @@ class OpenStaffPositionsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1317,7 +1353,7 @@ class OpenStaffPositionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiOpenStaffPosition
+     * @return |\Resources\Model\EdFiOpenStaffPosition
      */
     public function getOpenStaffPositionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositionsById'][0])
     {
@@ -1337,7 +1373,7 @@ class OpenStaffPositionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiOpenStaffPosition, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiOpenStaffPosition, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOpenStaffPositionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositionsById'][0])
     {
@@ -1638,23 +1674,544 @@ class OpenStaffPositionsApi
     }
 
     /**
+     * Operation getOpenStaffPositionsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $requisition_number The number or identifier assigned to an open staff position, typically a requisition number assigned by Human Resources. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $employment_status_descriptor Reflects the type of employment or contract desired for the position. (optional)
+     * @param  string $posting_result_descriptor Indication of whether the OpenStaffPosition was filled or retired without filling. (optional)
+     * @param  string $program_assignment_descriptor The name of the program for which the open staff position will be assigned. (optional)
+     * @param  string $staff_classification_descriptor The titles of employment, official status, or rank of education staff. (optional)
+     * @param  \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  string $position_title The descriptive name of an individual&#39;s position. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOpenStaffPositionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getOpenStaffPositionsPartitions($number = null, $min_change_version = null, $max_change_version = null, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositionsPartitions'][0])
+    {
+        list($response) = $this->getOpenStaffPositionsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getOpenStaffPositionsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $requisition_number The number or identifier assigned to an open staff position, typically a requisition number assigned by Human Resources. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $employment_status_descriptor Reflects the type of employment or contract desired for the position. (optional)
+     * @param  string $posting_result_descriptor Indication of whether the OpenStaffPosition was filled or retired without filling. (optional)
+     * @param  string $program_assignment_descriptor The name of the program for which the open staff position will be assigned. (optional)
+     * @param  string $staff_classification_descriptor The titles of employment, official status, or rank of education staff. (optional)
+     * @param  \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  string $position_title The descriptive name of an individual&#39;s position. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOpenStaffPositionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getOpenStaffPositionsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositionsPartitions'][0])
+    {
+        $request = $this->getOpenStaffPositionsPartitionsRequest($number, $min_change_version, $max_change_version, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getOpenStaffPositionsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $requisition_number The number or identifier assigned to an open staff position, typically a requisition number assigned by Human Resources. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $employment_status_descriptor Reflects the type of employment or contract desired for the position. (optional)
+     * @param  string $posting_result_descriptor Indication of whether the OpenStaffPosition was filled or retired without filling. (optional)
+     * @param  string $program_assignment_descriptor The name of the program for which the open staff position will be assigned. (optional)
+     * @param  string $staff_classification_descriptor The titles of employment, official status, or rank of education staff. (optional)
+     * @param  \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  string $position_title The descriptive name of an individual&#39;s position. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOpenStaffPositionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOpenStaffPositionsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositionsPartitions'][0])
+    {
+        return $this->getOpenStaffPositionsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getOpenStaffPositionsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $requisition_number The number or identifier assigned to an open staff position, typically a requisition number assigned by Human Resources. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $employment_status_descriptor Reflects the type of employment or contract desired for the position. (optional)
+     * @param  string $posting_result_descriptor Indication of whether the OpenStaffPosition was filled or retired without filling. (optional)
+     * @param  string $program_assignment_descriptor The name of the program for which the open staff position will be assigned. (optional)
+     * @param  string $staff_classification_descriptor The titles of employment, official status, or rank of education staff. (optional)
+     * @param  \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  string $position_title The descriptive name of an individual&#39;s position. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOpenStaffPositionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOpenStaffPositionsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositionsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getOpenStaffPositionsPartitionsRequest($number, $min_change_version, $max_change_version, $requisition_number, $education_organization_id, $employment_status_descriptor, $posting_result_descriptor, $program_assignment_descriptor, $staff_classification_descriptor, $date_posted, $date_posting_removed, $id, $position_title, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getOpenStaffPositionsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $requisition_number The number or identifier assigned to an open staff position, typically a requisition number assigned by Human Resources. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $employment_status_descriptor Reflects the type of employment or contract desired for the position. (optional)
+     * @param  string $posting_result_descriptor Indication of whether the OpenStaffPosition was filled or retired without filling. (optional)
+     * @param  string $program_assignment_descriptor The name of the program for which the open staff position will be assigned. (optional)
+     * @param  string $staff_classification_descriptor The titles of employment, official status, or rank of education staff. (optional)
+     * @param  \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  string $position_title The descriptive name of an individual&#39;s position. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOpenStaffPositionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getOpenStaffPositionsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $requisition_number = null, $education_organization_id = null, $employment_status_descriptor = null, $posting_result_descriptor = null, $program_assignment_descriptor = null, $staff_classification_descriptor = null, $date_posted = null, $date_posting_removed = null, $id = null, $position_title = null, $use_snapshot = false, string $contentType = self::contentTypes['getOpenStaffPositionsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling OpenStaffPositionsApi.getOpenStaffPositionsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling OpenStaffPositionsApi.getOpenStaffPositionsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($requisition_number !== null && strlen($requisition_number) > 20) {
+            throw new \InvalidArgumentException('invalid length for "$requisition_number" when calling OpenStaffPositionsApi.getOpenStaffPositionsPartitions, must be smaller than or equal to 20.');
+        }
+        
+
+        if ($employment_status_descriptor !== null && strlen($employment_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$employment_status_descriptor" when calling OpenStaffPositionsApi.getOpenStaffPositionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($posting_result_descriptor !== null && strlen($posting_result_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$posting_result_descriptor" when calling OpenStaffPositionsApi.getOpenStaffPositionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($program_assignment_descriptor !== null && strlen($program_assignment_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_assignment_descriptor" when calling OpenStaffPositionsApi.getOpenStaffPositionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($staff_classification_descriptor !== null && strlen($staff_classification_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$staff_classification_descriptor" when calling OpenStaffPositionsApi.getOpenStaffPositionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+        if ($position_title !== null && strlen($position_title) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$position_title" when calling OpenStaffPositionsApi.getOpenStaffPositionsPartitions, must be smaller than or equal to 100.');
+        }
+        
+
+
+        $resourcePath = '/ed-fi/openStaffPositions/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $requisition_number,
+            'requisitionNumber', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $employment_status_descriptor,
+            'employmentStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $posting_result_descriptor,
+            'postingResultDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_assignment_descriptor,
+            'programAssignmentDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $staff_classification_descriptor,
+            'staffClassificationDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $date_posted,
+            'datePosted', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $date_posting_removed,
+            'datePostingRemoved', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $position_title,
+            'positionTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesOpenStaffPositions
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesOpenStaffPositions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiOpenStaffPositionKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiOpenStaffPositionKeyChange[]
      */
-    public function keyChangesOpenStaffPositions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOpenStaffPositions'][0])
+    public function keyChangesOpenStaffPositions($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOpenStaffPositions'][0])
     {
         list($response) = $this->keyChangesOpenStaffPositionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1665,19 +2222,19 @@ class OpenStaffPositionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesOpenStaffPositions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiOpenStaffPositionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiOpenStaffPositionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesOpenStaffPositionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOpenStaffPositions'][0])
+    public function keyChangesOpenStaffPositionsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOpenStaffPositions'][0])
     {
         $request = $this->keyChangesOpenStaffPositionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1795,18 +2352,18 @@ class OpenStaffPositionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesOpenStaffPositions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesOpenStaffPositionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOpenStaffPositions'][0])
+    public function keyChangesOpenStaffPositionsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOpenStaffPositions'][0])
     {
         return $this->keyChangesOpenStaffPositionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1821,18 +2378,18 @@ class OpenStaffPositionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesOpenStaffPositions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesOpenStaffPositionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOpenStaffPositions'][0])
+    public function keyChangesOpenStaffPositionsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOpenStaffPositions'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiOpenStaffPositionKeyChange[]';
         $request = $this->keyChangesOpenStaffPositionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1876,18 +2433,18 @@ class OpenStaffPositionsApi
     /**
      * Create request for operation 'keyChangesOpenStaffPositions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesOpenStaffPositions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesOpenStaffPositionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOpenStaffPositions'][0])
+    public function keyChangesOpenStaffPositionsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesOpenStaffPositions'][0])
     {
 
 

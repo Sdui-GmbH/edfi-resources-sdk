@@ -497,7 +497,7 @@ class EdFiStudentAcademicRecordDiploma implements ModelInterface, ArrayAccess, \
     /**
      * Sets diploma_award_date
      *
-     * @param \DateTime $diploma_award_date The month, day, and year on which the student met  graduation requirements and was awarded a diploma.
+     * @param \DateTime $diploma_award_date The month, day, and year on which the student met  graduation requirements and was awarded a diploma.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -789,7 +789,7 @@ class EdFiStudentAcademicRecordDiploma implements ModelInterface, ArrayAccess, \
     /**
      * Sets diploma_award_expires_date
      *
-     * @param \DateTime|null $diploma_award_expires_date Date on which the diploma expires.
+     * @param \DateTime|null $diploma_award_expires_date Date on which the diploma expires.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

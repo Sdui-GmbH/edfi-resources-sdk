@@ -1,6 +1,6 @@
 # Resources\DisciplineActionsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if t
 | [**deletesDisciplineActions()**](DisciplineActionsApi.md#deletesDisciplineActions) | **GET** /ed-fi/disciplineActions/deletes | Retrieves deleted resources based on change version. |
 | [**getDisciplineActions()**](DisciplineActionsApi.md#getDisciplineActions) | **GET** /ed-fi/disciplineActions | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getDisciplineActionsById()**](DisciplineActionsApi.md#getDisciplineActionsById) | **GET** /ed-fi/disciplineActions/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getDisciplineActionsPartitions()**](DisciplineActionsApi.md#getDisciplineActionsPartitions) | **GET** /ed-fi/disciplineActions/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesDisciplineActions()**](DisciplineActionsApi.md#keyChangesDisciplineActions) | **GET** /ed-fi/disciplineActions/keyChanges | Retrieves resources key changes based on change version. |
 | [**postDisciplineAction()**](DisciplineActionsApi.md#postDisciplineAction) | **POST** /ed-fi/disciplineActions | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putDisciplineAction()**](DisciplineActionsApi.md#putDisciplineAction) | **PUT** /ed-fi/disciplineActions/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\DisciplineActionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getDisciplineActions()`
 
 ```php
-getDisciplineActions($offset, $limit, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot): \Resources\Model\EdFiDisciplineAction[]
+getDisciplineActions($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot): \Resources\Model\EdFiDisciplineAction[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,11 +172,13 @@ $apiInstance = new Resources\Api\DisciplineActionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $discipline_action_identifier = 'discipline_action_identifier_example'; // string | Identifier assigned by the education organization to the discipline action.
 $discipline_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date of the discipline action.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
@@ -190,7 +193,7 @@ $related_to_zero_tolerance_policy = True; // bool | An indication of whether or 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getDisciplineActions($offset, $limit, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot);
+    $result = $apiInstance->getDisciplineActions($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DisciplineActionsApi->getDisciplineActions: ', $e->getMessage(), PHP_EOL;
@@ -201,11 +204,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **discipline_action_identifier** | **string**| Identifier assigned by the education organization to the discipline action. | [optional] |
 | **discipline_date** | **\DateTime**| The date of the discipline action. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
@@ -300,6 +305,94 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getDisciplineActionsPartitions()`
+
+```php
+getDisciplineActionsPartitions($number, $min_change_version, $max_change_version, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\DisciplineActionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$discipline_action_identifier = 'discipline_action_identifier_example'; // string | Identifier assigned by the education organization to the discipline action.
+$discipline_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date of the discipline action.
+$student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
+$responsibility_school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
+$assignment_school_id = 56; // int | The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
+$discipline_action_length_difference_reason_descriptor = 'discipline_action_length_difference_reason_descriptor_example'; // string | Indicates the reason for the difference, if any, between the official and actual lengths of a student's disciplinary assignment.
+$actual_discipline_action_length = 3.4; // float | Indicates the actual length in school days of a student's disciplinary assignment.
+$discipline_action_length = 3.4; // float | The length of time in school days for the discipline action (e.g. removal, detention), if applicable.
+$id = 'id_example'; // string | 
+$iep_placement_meeting_indicator = True; // bool | An indication as to whether an offense and/or disciplinary action resulted in a meeting of a student's Individualized Education Program (IEP) team to determine appropriate placement.
+$related_to_zero_tolerance_policy = True; // bool | An indication of whether or not this disciplinary action taken against a student was imposed as a consequence of state or local zero tolerance policies.
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+
+try {
+    $result = $apiInstance->getDisciplineActionsPartitions($number, $min_change_version, $max_change_version, $discipline_action_identifier, $discipline_date, $student_unique_id, $responsibility_school_id, $assignment_school_id, $discipline_action_length_difference_reason_descriptor, $actual_discipline_action_length, $discipline_action_length, $id, $iep_placement_meeting_indicator, $related_to_zero_tolerance_policy, $use_snapshot);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DisciplineActionsApi->getDisciplineActionsPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **discipline_action_identifier** | **string**| Identifier assigned by the education organization to the discipline action. | [optional] |
+| **discipline_date** | **\DateTime**| The date of the discipline action. | [optional] |
+| **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
+| **responsibility_school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
+| **assignment_school_id** | **int**| The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
+| **discipline_action_length_difference_reason_descriptor** | **string**| Indicates the reason for the difference, if any, between the official and actual lengths of a student&#39;s disciplinary assignment. | [optional] |
+| **actual_discipline_action_length** | **float**| Indicates the actual length in school days of a student&#39;s disciplinary assignment. | [optional] |
+| **discipline_action_length** | **float**| The length of time in school days for the discipline action (e.g. removal, detention), if applicable. | [optional] |
+| **id** | **string**|  | [optional] |
+| **iep_placement_meeting_indicator** | **bool**| An indication as to whether an offense and/or disciplinary action resulted in a meeting of a student&#39;s Individualized Education Program (IEP) team to determine appropriate placement. | [optional] |
+| **related_to_zero_tolerance_policy** | **bool**| An indication of whether or not this disciplinary action taken against a student was imposed as a consequence of state or local zero tolerance policies. | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesDisciplineActions()`
 
 ```php
@@ -327,11 +420,11 @@ $apiInstance = new Resources\Api\DisciplineActionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -346,11 +439,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

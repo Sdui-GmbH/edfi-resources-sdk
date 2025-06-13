@@ -741,7 +741,7 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
     /**
      * Sets honor_award_date
      *
-     * @param \DateTime|null $honor_award_date The date the honor was awarded.
+     * @param \DateTime|null $honor_award_date The date the honor was awarded.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -775,7 +775,7 @@ class EdFiStudentAcademicRecordAcademicHonor implements ModelInterface, ArrayAcc
     /**
      * Sets honor_award_expires_date
      *
-     * @param \DateTime|null $honor_award_expires_date Date on which the honor expires.
+     * @param \DateTime|null $honor_award_expires_date Date on which the honor expires.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

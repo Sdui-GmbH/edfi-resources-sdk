@@ -623,7 +623,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The start date for the intervention implementation.
+     * @param \DateTime $begin_date The start date for the intervention implementation.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -735,7 +735,7 @@ class EdFiIntervention implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The end date for the intervention implementation.
+     * @param \DateTime|null $end_date The end date for the intervention implementation.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

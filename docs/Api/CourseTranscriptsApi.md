@@ -1,6 +1,6 @@
 # Resources\CourseTranscriptsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if t
 | [**deletesCourseTranscripts()**](CourseTranscriptsApi.md#deletesCourseTranscripts) | **GET** /ed-fi/courseTranscripts/deletes | Retrieves deleted resources based on change version. |
 | [**getCourseTranscripts()**](CourseTranscriptsApi.md#getCourseTranscripts) | **GET** /ed-fi/courseTranscripts | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getCourseTranscriptsById()**](CourseTranscriptsApi.md#getCourseTranscriptsById) | **GET** /ed-fi/courseTranscripts/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getCourseTranscriptsPartitions()**](CourseTranscriptsApi.md#getCourseTranscriptsPartitions) | **GET** /ed-fi/courseTranscripts/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesCourseTranscripts()**](CourseTranscriptsApi.md#keyChangesCourseTranscripts) | **GET** /ed-fi/courseTranscripts/keyChanges | Retrieves resources key changes based on change version. |
 | [**postCourseTranscript()**](CourseTranscriptsApi.md#postCourseTranscript) | **POST** /ed-fi/courseTranscripts | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putCourseTranscript()**](CourseTranscriptsApi.md#putCourseTranscript) | **PUT** /ed-fi/courseTranscripts/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\CourseTranscriptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getCourseTranscripts()`
 
 ```php
-getCourseTranscripts($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_attempt_result_descriptor, $course_code, $course_education_organization_id, $education_organization_id, $school_year, $student_unique_id, $term_descriptor, $external_education_organization_id, $responsible_teacher_staff_unique_id, $course_repeat_code_descriptor, $attempted_credit_type_descriptor, $earned_credit_type_descriptor, $when_taken_grade_level_descriptor, $method_credit_earned_descriptor, $alternative_course_title, $assigning_organization_identification_code, $attempted_credit_conversion, $attempted_credits, $course_catalog_url, $course_title, $earned_credit_conversion, $earned_credits, $external_education_organization_name_of_institution, $final_letter_grade_earned, $final_numeric_grade_earned, $id, $use_snapshot): \Resources\Model\EdFiCourseTranscript[]
+getCourseTranscripts($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $course_attempt_result_descriptor, $course_code, $course_education_organization_id, $education_organization_id, $school_year, $student_unique_id, $term_descriptor, $external_education_organization_id, $responsible_teacher_staff_unique_id, $course_repeat_code_descriptor, $attempted_credit_type_descriptor, $earned_credit_type_descriptor, $when_taken_grade_level_descriptor, $method_credit_earned_descriptor, $alternative_course_title, $assigning_organization_identification_code, $attempted_credit_conversion, $attempted_credits, $course_catalog_url, $course_title, $earned_credit_conversion, $earned_credits, $external_education_organization_name_of_institution, $final_letter_grade_earned, $final_numeric_grade_earned, $id, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code2, $course_catalog_url2, $identification_code): \Resources\Model\EdFiCourseTranscript[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,11 +172,13 @@ $apiInstance = new Resources\Api\CourseTranscriptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $course_attempt_result_descriptor = 'course_attempt_result_descriptor_example'; // string | The result from the student's attempt to take the course.
 $course_code = 'course_code_example'; // string | A unique alphanumeric code assigned to a course.
 $course_education_organization_id = 56; // int | The identifier assigned to an education organization.
@@ -203,9 +206,13 @@ $final_letter_grade_earned = 'final_letter_grade_earned_example'; // string | Th
 $final_numeric_grade_earned = 3.4; // float | The final indicator of student performance in a class as submitted by the instructor.
 $id = 'id_example'; // string | 
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+$course_identification_system_descriptor = 'course_identification_system_descriptor_example'; // string | A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students.
+$assigning_organization_identification_code2 = 'assigning_organization_identification_code_example'; // string | The organization code or name assigning the Identification Code.
+$course_catalog_url2 = 'course_catalog_url_example'; // string | The URL for the course catalog that defines the course identification code.
+$identification_code = 'identification_code_example'; // string | A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \"/\". For example, consider the following SCED code-    subject = 20 Math    course = 272 Geometry    level = G General    credits = 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1.
 
 try {
-    $result = $apiInstance->getCourseTranscripts($offset, $limit, $min_change_version, $max_change_version, $total_count, $course_attempt_result_descriptor, $course_code, $course_education_organization_id, $education_organization_id, $school_year, $student_unique_id, $term_descriptor, $external_education_organization_id, $responsible_teacher_staff_unique_id, $course_repeat_code_descriptor, $attempted_credit_type_descriptor, $earned_credit_type_descriptor, $when_taken_grade_level_descriptor, $method_credit_earned_descriptor, $alternative_course_title, $assigning_organization_identification_code, $attempted_credit_conversion, $attempted_credits, $course_catalog_url, $course_title, $earned_credit_conversion, $earned_credits, $external_education_organization_name_of_institution, $final_letter_grade_earned, $final_numeric_grade_earned, $id, $use_snapshot);
+    $result = $apiInstance->getCourseTranscripts($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $course_attempt_result_descriptor, $course_code, $course_education_organization_id, $education_organization_id, $school_year, $student_unique_id, $term_descriptor, $external_education_organization_id, $responsible_teacher_staff_unique_id, $course_repeat_code_descriptor, $attempted_credit_type_descriptor, $earned_credit_type_descriptor, $when_taken_grade_level_descriptor, $method_credit_earned_descriptor, $alternative_course_title, $assigning_organization_identification_code, $attempted_credit_conversion, $attempted_credits, $course_catalog_url, $course_title, $earned_credit_conversion, $earned_credits, $external_education_organization_name_of_institution, $final_letter_grade_earned, $final_numeric_grade_earned, $id, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code2, $course_catalog_url2, $identification_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseTranscriptsApi->getCourseTranscripts: ', $e->getMessage(), PHP_EOL;
@@ -216,11 +223,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **course_attempt_result_descriptor** | **string**| The result from the student&#39;s attempt to take the course. | [optional] |
 | **course_code** | **string**| A unique alphanumeric code assigned to a course. | [optional] |
 | **course_education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
@@ -248,6 +257,10 @@ try {
 | **final_numeric_grade_earned** | **float**| The final indicator of student performance in a class as submitted by the instructor. | [optional] |
 | **id** | **string**|  | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+| **course_identification_system_descriptor** | **string**| A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. | [optional] |
+| **assigning_organization_identification_code2** | **string**| The organization code or name assigning the Identification Code. | [optional] |
+| **course_catalog_url2** | **string**| The URL for the course catalog that defines the course identification code. | [optional] |
+| **identification_code** | **string**| A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. | [optional] |
 
 ### Return type
 
@@ -330,6 +343,132 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getCourseTranscriptsPartitions()`
+
+```php
+getCourseTranscriptsPartitions($number, $min_change_version, $max_change_version, $course_attempt_result_descriptor, $course_code, $course_education_organization_id, $education_organization_id, $school_year, $student_unique_id, $term_descriptor, $external_education_organization_id, $responsible_teacher_staff_unique_id, $course_repeat_code_descriptor, $attempted_credit_type_descriptor, $earned_credit_type_descriptor, $when_taken_grade_level_descriptor, $method_credit_earned_descriptor, $alternative_course_title, $assigning_organization_identification_code, $attempted_credit_conversion, $attempted_credits, $course_catalog_url, $course_title, $earned_credit_conversion, $earned_credits, $external_education_organization_name_of_institution, $final_letter_grade_earned, $final_numeric_grade_earned, $id, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code2, $course_catalog_url2, $identification_code): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\CourseTranscriptsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$course_attempt_result_descriptor = 'course_attempt_result_descriptor_example'; // string | The result from the student's attempt to take the course.
+$course_code = 'course_code_example'; // string | A unique alphanumeric code assigned to a course.
+$course_education_organization_id = 56; // int | The identifier assigned to an education organization.
+$education_organization_id = 56; // int | The identifier assigned to an education organization.
+$school_year = 56; // int | The identifier for the school year.
+$student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
+$term_descriptor = 'term_descriptor_example'; // string | The term for the session during the school year.
+$external_education_organization_id = 56; // int | The identifier assigned to an education organization.
+$responsible_teacher_staff_unique_id = 'responsible_teacher_staff_unique_id_example'; // string | A unique alphanumeric code assigned to a responsibleteacherstaff.
+$course_repeat_code_descriptor = 'course_repeat_code_descriptor_example'; // string | Indicates that an academic course has been repeated by a student and how that repeat is to be computed in the student's academic grade average.
+$attempted_credit_type_descriptor = 'attempted_credit_type_descriptor_example'; // string | The type of credits or units of value awarded for the completion of a course.
+$earned_credit_type_descriptor = 'earned_credit_type_descriptor_example'; // string | The type of credits or units of value awarded for the completion of a course.
+$when_taken_grade_level_descriptor = 'when_taken_grade_level_descriptor_example'; // string | Student's grade level at time of course.
+$method_credit_earned_descriptor = 'method_credit_earned_descriptor_example'; // string | The method the credits were earned.
+$alternative_course_title = 'alternative_course_title_example'; // string | The descriptive name given to a course of study offered in the school, if different from the CourseTitle.
+$assigning_organization_identification_code = 'assigning_organization_identification_code_example'; // string | The organization code or name assigning the course identification code.
+$attempted_credit_conversion = 3.4; // float | Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units.
+$attempted_credits = 3.4; // float | The value of credits or units of value awarded for the completion of a course.
+$course_catalog_url = 'course_catalog_url_example'; // string | The URL for the course catalog that defines the course identification code.
+$course_title = 'course_title_example'; // string | The descriptive name given to a course of study offered in a school or other institution or organization. In departmentalized classes at the elementary, secondary, and postsecondary levels (and for staff development activities), this refers to the name by which a course is identified (e.g., American History, English III). For elementary and other non-departmentalized classes, it refers to any portion of the instruction for which a grade or report is assigned (e.g., reading, composition, spelling, language arts).
+$earned_credit_conversion = 3.4; // float | Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units.
+$earned_credits = 3.4; // float | The value of credits or units of value awarded for the completion of a course.
+$external_education_organization_name_of_institution = 'external_education_organization_name_of_institution_example'; // string | Name of the external institution where the student completed the course; to be used only when the reference external education organization is not available.
+$final_letter_grade_earned = 'final_letter_grade_earned_example'; // string | The final indicator of student performance in a class as submitted by the instructor.
+$final_numeric_grade_earned = 3.4; // float | The final indicator of student performance in a class as submitted by the instructor.
+$id = 'id_example'; // string | 
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+$course_identification_system_descriptor = 'course_identification_system_descriptor_example'; // string | A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students.
+$assigning_organization_identification_code2 = 'assigning_organization_identification_code_example'; // string | The organization code or name assigning the Identification Code.
+$course_catalog_url2 = 'course_catalog_url_example'; // string | The URL for the course catalog that defines the course identification code.
+$identification_code = 'identification_code_example'; // string | A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \"/\". For example, consider the following SCED code-    subject = 20 Math    course = 272 Geometry    level = G General    credits = 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1.
+
+try {
+    $result = $apiInstance->getCourseTranscriptsPartitions($number, $min_change_version, $max_change_version, $course_attempt_result_descriptor, $course_code, $course_education_organization_id, $education_organization_id, $school_year, $student_unique_id, $term_descriptor, $external_education_organization_id, $responsible_teacher_staff_unique_id, $course_repeat_code_descriptor, $attempted_credit_type_descriptor, $earned_credit_type_descriptor, $when_taken_grade_level_descriptor, $method_credit_earned_descriptor, $alternative_course_title, $assigning_organization_identification_code, $attempted_credit_conversion, $attempted_credits, $course_catalog_url, $course_title, $earned_credit_conversion, $earned_credits, $external_education_organization_name_of_institution, $final_letter_grade_earned, $final_numeric_grade_earned, $id, $use_snapshot, $course_identification_system_descriptor, $assigning_organization_identification_code2, $course_catalog_url2, $identification_code);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseTranscriptsApi->getCourseTranscriptsPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **course_attempt_result_descriptor** | **string**| The result from the student&#39;s attempt to take the course. | [optional] |
+| **course_code** | **string**| A unique alphanumeric code assigned to a course. | [optional] |
+| **course_education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
+| **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
+| **school_year** | **int**| The identifier for the school year. | [optional] |
+| **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
+| **term_descriptor** | **string**| The term for the session during the school year. | [optional] |
+| **external_education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
+| **responsible_teacher_staff_unique_id** | **string**| A unique alphanumeric code assigned to a responsibleteacherstaff. | [optional] |
+| **course_repeat_code_descriptor** | **string**| Indicates that an academic course has been repeated by a student and how that repeat is to be computed in the student&#39;s academic grade average. | [optional] |
+| **attempted_credit_type_descriptor** | **string**| The type of credits or units of value awarded for the completion of a course. | [optional] |
+| **earned_credit_type_descriptor** | **string**| The type of credits or units of value awarded for the completion of a course. | [optional] |
+| **when_taken_grade_level_descriptor** | **string**| Student&#39;s grade level at time of course. | [optional] |
+| **method_credit_earned_descriptor** | **string**| The method the credits were earned. | [optional] |
+| **alternative_course_title** | **string**| The descriptive name given to a course of study offered in the school, if different from the CourseTitle. | [optional] |
+| **assigning_organization_identification_code** | **string**| The organization code or name assigning the course identification code. | [optional] |
+| **attempted_credit_conversion** | **float**| Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. | [optional] |
+| **attempted_credits** | **float**| The value of credits or units of value awarded for the completion of a course. | [optional] |
+| **course_catalog_url** | **string**| The URL for the course catalog that defines the course identification code. | [optional] |
+| **course_title** | **string**| The descriptive name given to a course of study offered in a school or other institution or organization. In departmentalized classes at the elementary, secondary, and postsecondary levels (and for staff development activities), this refers to the name by which a course is identified (e.g., American History, English III). For elementary and other non-departmentalized classes, it refers to any portion of the instruction for which a grade or report is assigned (e.g., reading, composition, spelling, language arts). | [optional] |
+| **earned_credit_conversion** | **float**| Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. | [optional] |
+| **earned_credits** | **float**| The value of credits or units of value awarded for the completion of a course. | [optional] |
+| **external_education_organization_name_of_institution** | **string**| Name of the external institution where the student completed the course; to be used only when the reference external education organization is not available. | [optional] |
+| **final_letter_grade_earned** | **string**| The final indicator of student performance in a class as submitted by the instructor. | [optional] |
+| **final_numeric_grade_earned** | **float**| The final indicator of student performance in a class as submitted by the instructor. | [optional] |
+| **id** | **string**|  | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+| **course_identification_system_descriptor** | **string**| A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students. | [optional] |
+| **assigning_organization_identification_code2** | **string**| The organization code or name assigning the Identification Code. | [optional] |
+| **course_catalog_url2** | **string**| The URL for the course catalog that defines the course identification code. | [optional] |
+| **identification_code** | **string**| A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \&quot;/\&quot;. For example, consider the following SCED code-    subject &#x3D; 20 Math    course &#x3D; 272 Geometry    level &#x3D; G General    credits &#x3D; 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1. | [optional] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesCourseTranscripts()`
 
 ```php
@@ -357,11 +496,11 @@ $apiInstance = new Resources\Api\CourseTranscriptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -376,11 +515,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

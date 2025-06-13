@@ -517,7 +517,7 @@ class EdFiStaffEducationOrganizationEmploymentAssociation implements ModelInterf
     /**
      * Sets hire_date
      *
-     * @param \DateTime $hire_date The month, day, and year on which an individual was hired for a position.
+     * @param \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -705,7 +705,7 @@ class EdFiStaffEducationOrganizationEmploymentAssociation implements ModelInterf
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).
+     * @param \DateTime|null $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

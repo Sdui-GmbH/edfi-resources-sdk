@@ -405,7 +405,7 @@ class EdFiStudentEducationOrganizationAssociationDisplacedStudent implements Mod
     /**
      * Sets displaced_student_end_date
      *
-     * @param \DateTime|null $displaced_student_end_date The date marking the end of the period during which a student is considered displaced due to a crisis event.
+     * @param \DateTime|null $displaced_student_end_date The date marking the end of the period during which a student is considered displaced due to a crisis event.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -439,7 +439,7 @@ class EdFiStudentEducationOrganizationAssociationDisplacedStudent implements Mod
     /**
      * Sets displaced_student_start_date
      *
-     * @param \DateTime|null $displaced_student_start_date The date on which a student is officially identified as displaced due to a crisis event.
+     * @param \DateTime|null $displaced_student_start_date The date on which a student is officially identified as displaced due to a crisis event.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

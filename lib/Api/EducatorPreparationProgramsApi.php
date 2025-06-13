@@ -83,6 +83,9 @@ class EducatorPreparationProgramsApi
         'getEducatorPreparationProgramsById' => [
             'application/json',
         ],
+        'getEducatorPreparationProgramsPartitions' => [
+            'application/json',
+        ],
         'keyChangesEducatorPreparationPrograms' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducatorPreparationPrograms'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]
+     * @return |\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]
      */
-    public function deletesEducatorPreparationPrograms($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
+    public function deletesEducatorPreparationPrograms($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
     {
         list($response) = $this->deletesEducatorPreparationProgramsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducatorPreparationPrograms'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesEducatorPreparationProgramsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
+    public function deletesEducatorPreparationProgramsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
     {
         $request = $this->deletesEducatorPreparationProgramsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducatorPreparationPrograms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesEducatorPreparationProgramsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
+    public function deletesEducatorPreparationProgramsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
     {
         return $this->deletesEducatorPreparationProgramsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducatorPreparationPrograms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesEducatorPreparationProgramsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
+    public function deletesEducatorPreparationProgramsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramDelete[]';
         $request = $this->deletesEducatorPreparationProgramsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class EducatorPreparationProgramsApi
     /**
      * Create request for operation 'deletesEducatorPreparationPrograms'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducatorPreparationPrograms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesEducatorPreparationProgramsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
+    public function deletesEducatorPreparationProgramsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducatorPreparationPrograms'][0])
     {
 
 
@@ -759,11 +762,13 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $program_name The name of the Educator Preparation Program. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -775,11 +780,11 @@ class EducatorPreparationProgramsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TpdmEducatorPreparationProgram[]
+     * @return |\Resources\Model\TpdmEducatorPreparationProgram[]
      */
-    public function getEducatorPreparationPrograms($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
+    public function getEducatorPreparationPrograms($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
     {
-        list($response) = $this->getEducatorPreparationProgramsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType);
+        list($response) = $this->getEducatorPreparationProgramsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -788,11 +793,13 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $program_name The name of the Educator Preparation Program. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -804,11 +811,11 @@ class EducatorPreparationProgramsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TpdmEducatorPreparationProgram[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TpdmEducatorPreparationProgram[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEducatorPreparationProgramsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
+    public function getEducatorPreparationProgramsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
     {
-        $request = $this->getEducatorPreparationProgramsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType);
+        $request = $this->getEducatorPreparationProgramsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -924,11 +931,13 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $program_name The name of the Educator Preparation Program. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -941,9 +950,9 @@ class EducatorPreparationProgramsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEducatorPreparationProgramsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
+    public function getEducatorPreparationProgramsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
     {
-        return $this->getEducatorPreparationProgramsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType)
+        return $this->getEducatorPreparationProgramsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -956,11 +965,13 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $program_name The name of the Educator Preparation Program. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -973,10 +984,10 @@ class EducatorPreparationProgramsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEducatorPreparationProgramsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
+    public function getEducatorPreparationProgramsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
     {
         $returnType = '\Resources\Model\TpdmEducatorPreparationProgram[]';
-        $request = $this->getEducatorPreparationProgramsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType);
+        $request = $this->getEducatorPreparationProgramsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1017,11 +1028,13 @@ class EducatorPreparationProgramsApi
     /**
      * Create request for operation 'getEducatorPreparationPrograms'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $program_name The name of the Educator Preparation Program. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -1034,7 +1047,7 @@ class EducatorPreparationProgramsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEducatorPreparationProgramsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
+    public function getEducatorPreparationProgramsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationPrograms'][0])
     {
 
 
@@ -1043,6 +1056,11 @@ class EducatorPreparationProgramsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling EducatorPreparationProgramsApi.getEducatorPreparationPrograms, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling EducatorPreparationProgramsApi.getEducatorPreparationPrograms, must be bigger than or equal to 0.');
         }
         
 
@@ -1088,6 +1106,24 @@ class EducatorPreparationProgramsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1251,7 +1287,7 @@ class EducatorPreparationProgramsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TpdmEducatorPreparationProgram
+     * @return |\Resources\Model\TpdmEducatorPreparationProgram
      */
     public function getEducatorPreparationProgramsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationProgramsById'][0])
     {
@@ -1271,7 +1307,7 @@ class EducatorPreparationProgramsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TpdmEducatorPreparationProgram, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TpdmEducatorPreparationProgram, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEducatorPreparationProgramsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationProgramsById'][0])
     {
@@ -1572,23 +1608,478 @@ class EducatorPreparationProgramsApi
     }
 
     /**
+     * Operation getEducatorPreparationProgramsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $program_name The name of the Educator Preparation Program. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $accreditation_status_descriptor The current accreditation status of the Educator Preparation Program. (optional)
+     * @param  string $id  (optional)
+     * @param  string $program_id A unique number or alphanumeric code assigned to a program by a school, school system, a state, or other agency or entity. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducatorPreparationProgramsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getEducatorPreparationProgramsPartitions($number = null, $min_change_version = null, $max_change_version = null, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationProgramsPartitions'][0])
+    {
+        list($response) = $this->getEducatorPreparationProgramsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getEducatorPreparationProgramsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $program_name The name of the Educator Preparation Program. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $accreditation_status_descriptor The current accreditation status of the Educator Preparation Program. (optional)
+     * @param  string $id  (optional)
+     * @param  string $program_id A unique number or alphanumeric code assigned to a program by a school, school system, a state, or other agency or entity. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducatorPreparationProgramsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEducatorPreparationProgramsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationProgramsPartitions'][0])
+    {
+        $request = $this->getEducatorPreparationProgramsPartitionsRequest($number, $min_change_version, $max_change_version, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEducatorPreparationProgramsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $program_name The name of the Educator Preparation Program. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $accreditation_status_descriptor The current accreditation status of the Educator Preparation Program. (optional)
+     * @param  string $id  (optional)
+     * @param  string $program_id A unique number or alphanumeric code assigned to a program by a school, school system, a state, or other agency or entity. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducatorPreparationProgramsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEducatorPreparationProgramsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationProgramsPartitions'][0])
+    {
+        return $this->getEducatorPreparationProgramsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEducatorPreparationProgramsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $program_name The name of the Educator Preparation Program. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $accreditation_status_descriptor The current accreditation status of the Educator Preparation Program. (optional)
+     * @param  string $id  (optional)
+     * @param  string $program_id A unique number or alphanumeric code assigned to a program by a school, school system, a state, or other agency or entity. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducatorPreparationProgramsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEducatorPreparationProgramsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationProgramsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getEducatorPreparationProgramsPartitionsRequest($number, $min_change_version, $max_change_version, $program_type_descriptor, $program_name, $education_organization_id, $accreditation_status_descriptor, $id, $program_id, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEducatorPreparationProgramsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $program_name The name of the Educator Preparation Program. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $accreditation_status_descriptor The current accreditation status of the Educator Preparation Program. (optional)
+     * @param  string $id  (optional)
+     * @param  string $program_id A unique number or alphanumeric code assigned to a program by a school, school system, a state, or other agency or entity. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducatorPreparationProgramsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEducatorPreparationProgramsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $program_type_descriptor = null, $program_name = null, $education_organization_id = null, $accreditation_status_descriptor = null, $id = null, $program_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducatorPreparationProgramsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling EducatorPreparationProgramsApi.getEducatorPreparationProgramsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling EducatorPreparationProgramsApi.getEducatorPreparationProgramsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($program_type_descriptor !== null && strlen($program_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_type_descriptor" when calling EducatorPreparationProgramsApi.getEducatorPreparationProgramsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($program_name !== null && strlen($program_name) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$program_name" when calling EducatorPreparationProgramsApi.getEducatorPreparationProgramsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+        if ($accreditation_status_descriptor !== null && strlen($accreditation_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$accreditation_status_descriptor" when calling EducatorPreparationProgramsApi.getEducatorPreparationProgramsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($program_id !== null && strlen($program_id) > 20) {
+            throw new \InvalidArgumentException('invalid length for "$program_id" when calling EducatorPreparationProgramsApi.getEducatorPreparationProgramsPartitions, must be smaller than or equal to 20.');
+        }
+        
+
+
+        $resourcePath = '/tpdm/educatorPreparationPrograms/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_type_descriptor,
+            'programTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_name,
+            'programName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $accreditation_status_descriptor,
+            'accreditationStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_id,
+            'programId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesEducatorPreparationPrograms
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducatorPreparationPrograms'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]
+     * @return |\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]
      */
-    public function keyChangesEducatorPreparationPrograms($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
+    public function keyChangesEducatorPreparationPrograms($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
     {
         list($response) = $this->keyChangesEducatorPreparationProgramsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1599,19 +2090,19 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducatorPreparationPrograms'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesEducatorPreparationProgramsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
+    public function keyChangesEducatorPreparationProgramsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
     {
         $request = $this->keyChangesEducatorPreparationProgramsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1729,18 +2220,18 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducatorPreparationPrograms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesEducatorPreparationProgramsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
+    public function keyChangesEducatorPreparationProgramsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
     {
         return $this->keyChangesEducatorPreparationProgramsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1755,18 +2246,18 @@ class EducatorPreparationProgramsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducatorPreparationPrograms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesEducatorPreparationProgramsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
+    public function keyChangesEducatorPreparationProgramsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesTpdmEducatorPreparationProgramKeyChange[]';
         $request = $this->keyChangesEducatorPreparationProgramsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1810,18 +2301,18 @@ class EducatorPreparationProgramsApi
     /**
      * Create request for operation 'keyChangesEducatorPreparationPrograms'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducatorPreparationPrograms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesEducatorPreparationProgramsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
+    public function keyChangesEducatorPreparationProgramsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducatorPreparationPrograms'][0])
     {
 
 

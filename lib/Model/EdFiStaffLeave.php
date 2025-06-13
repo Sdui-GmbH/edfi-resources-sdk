@@ -402,7 +402,7 @@ class EdFiStaffLeave implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The begin date of the staff leave.
+     * @param \DateTime $begin_date The begin date of the staff leave.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -487,7 +487,7 @@ class EdFiStaffLeave implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The end date of the staff leave.
+     * @param \DateTime|null $end_date The end date of the staff leave.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

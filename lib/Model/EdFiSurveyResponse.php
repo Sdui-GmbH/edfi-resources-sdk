@@ -739,7 +739,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets response_time
      *
-     * @param int|null $response_time The amount of time (in seconds) it took for the respondent to complete the survey.
+     * @param int|null $response_time The amount of time in seconds it took for the respondent to complete the survey.
      *
      * @return self
      */

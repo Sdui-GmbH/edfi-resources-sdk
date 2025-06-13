@@ -182,7 +182,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         'preferred_first_name' => true,
         'preferred_last_surname' => true,
         'races' => false,
-        'sex_descriptor' => false,
+        'sex_descriptor' => true,
         'telephones' => false,
         '_etag' => false,
         '_last_modified_date' => false
@@ -622,10 +622,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'preferred_last_surname', the character length must be smaller than or equal to 75.";
         }
 
-        if ($this->container['sex_descriptor'] === null) {
-            $invalidProperties[] = "'sex_descriptor' can't be null";
-        }
-        if ((mb_strlen($this->container['sex_descriptor']) > 306)) {
+        if (!is_null($this->container['sex_descriptor']) && (mb_strlen($this->container['sex_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'sex_descriptor', the character length must be smaller than or equal to 306.";
         }
 
@@ -1759,7 +1756,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sex_descriptor
      *
-     * @return string
+     * @return string|null
      */
     public function getSexDescriptor()
     {
@@ -1769,16 +1766,23 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sex_descriptor
      *
-     * @param string $sex_descriptor The sex of the candidate.
+     * @param string|null $sex_descriptor The sex of the candidate.
      *
      * @return self
      */
     public function setSexDescriptor($sex_descriptor)
     {
         if (is_null($sex_descriptor)) {
-            throw new \InvalidArgumentException('non-nullable sex_descriptor cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sex_descriptor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sex_descriptor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if ((mb_strlen($sex_descriptor) > 306)) {
+        if (!is_null($sex_descriptor) && (mb_strlen($sex_descriptor) > 306)) {
             throw new \InvalidArgumentException('invalid length for $sex_descriptor when calling TpdmCandidate., must be smaller than or equal to 306.');
         }
 

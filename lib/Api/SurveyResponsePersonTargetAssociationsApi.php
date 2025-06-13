@@ -83,6 +83,9 @@ class SurveyResponsePersonTargetAssociationsApi
         'getSurveyResponsePersonTargetAssociationsById' => [
             'application/json',
         ],
+        'getSurveyResponsePersonTargetAssociationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesSurveyResponsePersonTargetAssociations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSurveyResponsePersonTargetAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete[]
+     * @return |\Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete[]
      */
-    public function deletesSurveyResponsePersonTargetAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyResponsePersonTargetAssociations'][0])
+    public function deletesSurveyResponsePersonTargetAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyResponsePersonTargetAssociations'][0])
     {
         list($response) = $this->deletesSurveyResponsePersonTargetAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSurveyResponsePersonTargetAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesSurveyResponsePersonTargetAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyResponsePersonTargetAssociations'][0])
+    public function deletesSurveyResponsePersonTargetAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyResponsePersonTargetAssociations'][0])
     {
         $request = $this->deletesSurveyResponsePersonTargetAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSurveyResponsePersonTargetAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesSurveyResponsePersonTargetAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyResponsePersonTargetAssociations'][0])
+    public function deletesSurveyResponsePersonTargetAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyResponsePersonTargetAssociations'][0])
     {
         return $this->deletesSurveyResponsePersonTargetAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSurveyResponsePersonTargetAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesSurveyResponsePersonTargetAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyResponsePersonTargetAssociations'][0])
+    public function deletesSurveyResponsePersonTargetAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyResponsePersonTargetAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationDelete[]';
         $request = $this->deletesSurveyResponsePersonTargetAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class SurveyResponsePersonTargetAssociationsApi
     /**
      * Create request for operation 'deletesSurveyResponsePersonTargetAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSurveyResponsePersonTargetAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesSurveyResponsePersonTargetAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyResponsePersonTargetAssociations'][0])
+    public function deletesSurveyResponsePersonTargetAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSurveyResponsePersonTargetAssociations'][0])
     {
 
 
@@ -759,11 +762,13 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
      * @param  string $namespace Namespace for the survey. (optional)
@@ -775,11 +780,11 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TpdmSurveyResponsePersonTargetAssociation[]
+     * @return |\Resources\Model\TpdmSurveyResponsePersonTargetAssociation[]
      */
-    public function getSurveyResponsePersonTargetAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociations'][0])
+    public function getSurveyResponsePersonTargetAssociations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociations'][0])
     {
-        list($response) = $this->getSurveyResponsePersonTargetAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType);
+        list($response) = $this->getSurveyResponsePersonTargetAssociationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -788,11 +793,13 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
      * @param  string $namespace Namespace for the survey. (optional)
@@ -804,11 +811,11 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TpdmSurveyResponsePersonTargetAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TpdmSurveyResponsePersonTargetAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSurveyResponsePersonTargetAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociations'][0])
+    public function getSurveyResponsePersonTargetAssociationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociations'][0])
     {
-        $request = $this->getSurveyResponsePersonTargetAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType);
+        $request = $this->getSurveyResponsePersonTargetAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -924,11 +931,13 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
      * @param  string $namespace Namespace for the survey. (optional)
@@ -941,9 +950,9 @@ class SurveyResponsePersonTargetAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSurveyResponsePersonTargetAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociations'][0])
+    public function getSurveyResponsePersonTargetAssociationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociations'][0])
     {
-        return $this->getSurveyResponsePersonTargetAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType)
+        return $this->getSurveyResponsePersonTargetAssociationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -956,11 +965,13 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
      * @param  string $namespace Namespace for the survey. (optional)
@@ -973,10 +984,10 @@ class SurveyResponsePersonTargetAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSurveyResponsePersonTargetAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociations'][0])
+    public function getSurveyResponsePersonTargetAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociations'][0])
     {
         $returnType = '\Resources\Model\TpdmSurveyResponsePersonTargetAssociation[]';
-        $request = $this->getSurveyResponsePersonTargetAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType);
+        $request = $this->getSurveyResponsePersonTargetAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1017,11 +1028,13 @@ class SurveyResponsePersonTargetAssociationsApi
     /**
      * Create request for operation 'getSurveyResponsePersonTargetAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
      * @param  string $namespace Namespace for the survey. (optional)
@@ -1034,7 +1047,7 @@ class SurveyResponsePersonTargetAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSurveyResponsePersonTargetAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociations'][0])
+    public function getSurveyResponsePersonTargetAssociationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociations'][0])
     {
 
 
@@ -1043,6 +1056,11 @@ class SurveyResponsePersonTargetAssociationsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling SurveyResponsePersonTargetAssociationsApi.getSurveyResponsePersonTargetAssociations, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling SurveyResponsePersonTargetAssociationsApi.getSurveyResponsePersonTargetAssociations, must be bigger than or equal to 0.');
         }
         
 
@@ -1091,6 +1109,24 @@ class SurveyResponsePersonTargetAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1254,7 +1290,7 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TpdmSurveyResponsePersonTargetAssociation
+     * @return |\Resources\Model\TpdmSurveyResponsePersonTargetAssociation
      */
     public function getSurveyResponsePersonTargetAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociationsById'][0])
     {
@@ -1274,7 +1310,7 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TpdmSurveyResponsePersonTargetAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TpdmSurveyResponsePersonTargetAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSurveyResponsePersonTargetAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociationsById'][0])
     {
@@ -1575,23 +1611,481 @@ class SurveyResponsePersonTargetAssociationsApi
     }
 
     /**
+     * Operation getSurveyResponsePersonTargetAssociationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $namespace Namespace for the survey. (optional)
+     * @param  string $survey_identifier The unique survey identifier from the survey tool. (optional)
+     * @param  string $survey_response_identifier The identifier of the survey typically from the survey application. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveyResponsePersonTargetAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getSurveyResponsePersonTargetAssociationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociationsPartitions'][0])
+    {
+        list($response) = $this->getSurveyResponsePersonTargetAssociationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getSurveyResponsePersonTargetAssociationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $namespace Namespace for the survey. (optional)
+     * @param  string $survey_identifier The unique survey identifier from the survey tool. (optional)
+     * @param  string $survey_response_identifier The identifier of the survey typically from the survey application. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveyResponsePersonTargetAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSurveyResponsePersonTargetAssociationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociationsPartitions'][0])
+    {
+        $request = $this->getSurveyResponsePersonTargetAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getSurveyResponsePersonTargetAssociationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $namespace Namespace for the survey. (optional)
+     * @param  string $survey_identifier The unique survey identifier from the survey tool. (optional)
+     * @param  string $survey_response_identifier The identifier of the survey typically from the survey application. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveyResponsePersonTargetAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSurveyResponsePersonTargetAssociationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociationsPartitions'][0])
+    {
+        return $this->getSurveyResponsePersonTargetAssociationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getSurveyResponsePersonTargetAssociationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $namespace Namespace for the survey. (optional)
+     * @param  string $survey_identifier The unique survey identifier from the survey tool. (optional)
+     * @param  string $survey_response_identifier The identifier of the survey typically from the survey application. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveyResponsePersonTargetAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSurveyResponsePersonTargetAssociationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getSurveyResponsePersonTargetAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $person_id, $source_system_descriptor, $namespace, $survey_identifier, $survey_response_identifier, $id, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getSurveyResponsePersonTargetAssociationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $namespace Namespace for the survey. (optional)
+     * @param  string $survey_identifier The unique survey identifier from the survey tool. (optional)
+     * @param  string $survey_response_identifier The identifier of the survey typically from the survey application. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSurveyResponsePersonTargetAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getSurveyResponsePersonTargetAssociationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $person_id = null, $source_system_descriptor = null, $namespace = null, $survey_identifier = null, $survey_response_identifier = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getSurveyResponsePersonTargetAssociationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling SurveyResponsePersonTargetAssociationsApi.getSurveyResponsePersonTargetAssociationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling SurveyResponsePersonTargetAssociationsApi.getSurveyResponsePersonTargetAssociationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($person_id !== null && strlen($person_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$person_id" when calling SurveyResponsePersonTargetAssociationsApi.getSurveyResponsePersonTargetAssociationsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($source_system_descriptor !== null && strlen($source_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$source_system_descriptor" when calling SurveyResponsePersonTargetAssociationsApi.getSurveyResponsePersonTargetAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($namespace !== null && strlen($namespace) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$namespace" when calling SurveyResponsePersonTargetAssociationsApi.getSurveyResponsePersonTargetAssociationsPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($survey_identifier !== null && strlen($survey_identifier) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$survey_identifier" when calling SurveyResponsePersonTargetAssociationsApi.getSurveyResponsePersonTargetAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($survey_response_identifier !== null && strlen($survey_response_identifier) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$survey_response_identifier" when calling SurveyResponsePersonTargetAssociationsApi.getSurveyResponsePersonTargetAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+
+        $resourcePath = '/tpdm/surveyResponsePersonTargetAssociations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $person_id,
+            'personId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_system_descriptor,
+            'sourceSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $namespace,
+            'namespace', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $survey_identifier,
+            'surveyIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $survey_response_identifier,
+            'surveyResponseIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesSurveyResponsePersonTargetAssociations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange[]
      */
-    public function keyChangesSurveyResponsePersonTargetAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'][0])
+    public function keyChangesSurveyResponsePersonTargetAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'][0])
     {
         list($response) = $this->keyChangesSurveyResponsePersonTargetAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1602,19 +2096,19 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesSurveyResponsePersonTargetAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'][0])
+    public function keyChangesSurveyResponsePersonTargetAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'][0])
     {
         $request = $this->keyChangesSurveyResponsePersonTargetAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1732,18 +2226,18 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesSurveyResponsePersonTargetAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'][0])
+    public function keyChangesSurveyResponsePersonTargetAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'][0])
     {
         return $this->keyChangesSurveyResponsePersonTargetAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1758,18 +2252,18 @@ class SurveyResponsePersonTargetAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesSurveyResponsePersonTargetAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'][0])
+    public function keyChangesSurveyResponsePersonTargetAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesTpdmSurveyResponsePersonTargetAssociationKeyChange[]';
         $request = $this->keyChangesSurveyResponsePersonTargetAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1813,18 +2307,18 @@ class SurveyResponsePersonTargetAssociationsApi
     /**
      * Create request for operation 'keyChangesSurveyResponsePersonTargetAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesSurveyResponsePersonTargetAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'][0])
+    public function keyChangesSurveyResponsePersonTargetAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSurveyResponsePersonTargetAssociations'][0])
     {
 
 

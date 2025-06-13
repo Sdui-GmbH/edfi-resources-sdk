@@ -1279,7 +1279,7 @@ class EdFiEducationContent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets time_required
      *
-     * @param string|null $time_required Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience.
+     * @param string|null $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes.
      *
      * @return self
      */

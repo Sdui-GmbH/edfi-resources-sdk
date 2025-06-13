@@ -646,7 +646,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets effective_date
      *
-     * @param \DateTime|null $effective_date The year, month and day on which an active credential held by an individual was issued.
+     * @param \DateTime|null $effective_date The year, month and day on which an active credential held by an individual was issued.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -707,7 +707,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiration_date
      *
-     * @param \DateTime|null $expiration_date The month, day, and year on which an active credential held by an individual will expire.
+     * @param \DateTime|null $expiration_date The month, day, and year on which an active credential held by an individual will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

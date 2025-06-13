@@ -362,7 +362,7 @@ class TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKey imple
     /**
      * Sets hire_date
      *
-     * @param \DateTime|null $hire_date The month, day, and year on which an individual was hired for a position.
+     * @param \DateTime|null $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

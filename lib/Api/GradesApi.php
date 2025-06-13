@@ -83,6 +83,9 @@ class GradesApi
         'getGradesById' => [
             'application/json',
         ],
+        'getGradesPartitions' => [
+            'application/json',
+        ],
         'keyChangesGrades' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class GradesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesGrades'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiGradeDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiGradeDelete[]
      */
-    public function deletesGrades($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGrades'][0])
+    public function deletesGrades($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGrades'][0])
     {
         list($response) = $this->deletesGradesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class GradesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesGrades'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiGradeDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiGradeDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesGradesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGrades'][0])
+    public function deletesGradesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGrades'][0])
     {
         $request = $this->deletesGradesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class GradesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesGrades'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesGradesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGrades'][0])
+    public function deletesGradesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGrades'][0])
     {
         return $this->deletesGradesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class GradesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesGrades'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesGradesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGrades'][0])
+    public function deletesGradesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGrades'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiGradeDelete[]';
         $request = $this->deletesGradesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class GradesApi
     /**
      * Create request for operation 'deletesGrades'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesGrades'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesGradesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGrades'][0])
+    public function deletesGradesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesGrades'][0])
     {
 
 
@@ -759,17 +762,19 @@ class GradesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $grade_type_descriptor The type of grade reported (e.g., exam, final, grading period). (optional)
      * @param  string $grading_period_descriptor The state&#39;s name of the period for which grades are reported. (optional)
      * @param  string $grading_period_name The school&#39;s descriptive name of the grading period. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $grading_period_school_year The identifier for the grading period school year. (optional)
-     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section. (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
@@ -788,11 +793,11 @@ class GradesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiGrade[]
+     * @return |\Resources\Model\EdFiGrade[]
      */
-    public function getGrades($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGrades'][0])
+    public function getGrades($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGrades'][0])
     {
-        list($response) = $this->getGradesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType);
+        list($response) = $this->getGradesWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -801,17 +806,19 @@ class GradesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $grade_type_descriptor The type of grade reported (e.g., exam, final, grading period). (optional)
      * @param  string $grading_period_descriptor The state&#39;s name of the period for which grades are reported. (optional)
      * @param  string $grading_period_name The school&#39;s descriptive name of the grading period. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $grading_period_school_year The identifier for the grading period school year. (optional)
-     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section. (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
@@ -830,11 +837,11 @@ class GradesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiGrade[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiGrade[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getGradesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGrades'][0])
+    public function getGradesWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGrades'][0])
     {
-        $request = $this->getGradesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType);
+        $request = $this->getGradesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -950,17 +957,19 @@ class GradesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $grade_type_descriptor The type of grade reported (e.g., exam, final, grading period). (optional)
      * @param  string $grading_period_descriptor The state&#39;s name of the period for which grades are reported. (optional)
      * @param  string $grading_period_name The school&#39;s descriptive name of the grading period. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $grading_period_school_year The identifier for the grading period school year. (optional)
-     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section. (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
@@ -980,9 +989,9 @@ class GradesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGradesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGrades'][0])
+    public function getGradesAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGrades'][0])
     {
-        return $this->getGradesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType)
+        return $this->getGradesAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -995,17 +1004,19 @@ class GradesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $grade_type_descriptor The type of grade reported (e.g., exam, final, grading period). (optional)
      * @param  string $grading_period_descriptor The state&#39;s name of the period for which grades are reported. (optional)
      * @param  string $grading_period_name The school&#39;s descriptive name of the grading period. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $grading_period_school_year The identifier for the grading period school year. (optional)
-     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section. (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
@@ -1025,10 +1036,10 @@ class GradesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGradesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGrades'][0])
+    public function getGradesAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGrades'][0])
     {
         $returnType = '\Resources\Model\EdFiGrade[]';
-        $request = $this->getGradesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType);
+        $request = $this->getGradesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1069,17 +1080,19 @@ class GradesApi
     /**
      * Create request for operation 'getGrades'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $grade_type_descriptor The type of grade reported (e.g., exam, final, grading period). (optional)
      * @param  string $grading_period_descriptor The state&#39;s name of the period for which grades are reported. (optional)
      * @param  string $grading_period_name The school&#39;s descriptive name of the grading period. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $grading_period_school_year The identifier for the grading period school year. (optional)
-     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section. (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
@@ -1099,7 +1112,7 @@ class GradesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getGradesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGrades'][0])
+    public function getGradesRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGrades'][0])
     {
 
 
@@ -1108,6 +1121,11 @@ class GradesApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling GradesApi.getGrades, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling GradesApi.getGrades, must be bigger than or equal to 0.');
         }
         
 
@@ -1187,6 +1205,24 @@ class GradesApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1467,7 +1503,7 @@ class GradesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiGrade
+     * @return |\Resources\Model\EdFiGrade
      */
     public function getGradesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradesById'][0])
     {
@@ -1487,7 +1523,7 @@ class GradesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiGrade, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiGrade, HTTP status code, HTTP response headers (array of strings)
      */
     public function getGradesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradesById'][0])
     {
@@ -1788,23 +1824,694 @@ class GradesApi
     }
 
     /**
+     * Operation getGradesPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $grade_type_descriptor The type of grade reported (e.g., exam, final, grading period). (optional)
+     * @param  string $grading_period_descriptor The state&#39;s name of the period for which grades are reported. (optional)
+     * @param  string $grading_period_name The school&#39;s descriptive name of the grading period. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $grading_period_school_year The identifier for the grading period school year. (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $performance_base_conversion_descriptor A conversion of the level to a standard set of performance levels. (optional)
+     * @param  \DateTime $current_grade_as_of_date As-Of date for a grade posted as the current grade. (optional)
+     * @param  bool $current_grade_indicator An indicator that the posted grade is an interim grade for the grading period and not the final grade. (optional)
+     * @param  string $diagnostic_statement A statement provided by the teacher that provides information in addition to the grade or assessment score. (optional)
+     * @param  string $grade_earned_description A description of the grade earned by the learner. (optional)
+     * @param  string $id  (optional)
+     * @param  string $letter_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $numeric_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGradesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getGradesPartitions($number = null, $min_change_version = null, $max_change_version = null, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradesPartitions'][0])
+    {
+        list($response) = $this->getGradesPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getGradesPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $grade_type_descriptor The type of grade reported (e.g., exam, final, grading period). (optional)
+     * @param  string $grading_period_descriptor The state&#39;s name of the period for which grades are reported. (optional)
+     * @param  string $grading_period_name The school&#39;s descriptive name of the grading period. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $grading_period_school_year The identifier for the grading period school year. (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $performance_base_conversion_descriptor A conversion of the level to a standard set of performance levels. (optional)
+     * @param  \DateTime $current_grade_as_of_date As-Of date for a grade posted as the current grade. (optional)
+     * @param  bool $current_grade_indicator An indicator that the posted grade is an interim grade for the grading period and not the final grade. (optional)
+     * @param  string $diagnostic_statement A statement provided by the teacher that provides information in addition to the grade or assessment score. (optional)
+     * @param  string $grade_earned_description A description of the grade earned by the learner. (optional)
+     * @param  string $id  (optional)
+     * @param  string $letter_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $numeric_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGradesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGradesPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradesPartitions'][0])
+    {
+        $request = $this->getGradesPartitionsRequest($number, $min_change_version, $max_change_version, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getGradesPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $grade_type_descriptor The type of grade reported (e.g., exam, final, grading period). (optional)
+     * @param  string $grading_period_descriptor The state&#39;s name of the period for which grades are reported. (optional)
+     * @param  string $grading_period_name The school&#39;s descriptive name of the grading period. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $grading_period_school_year The identifier for the grading period school year. (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $performance_base_conversion_descriptor A conversion of the level to a standard set of performance levels. (optional)
+     * @param  \DateTime $current_grade_as_of_date As-Of date for a grade posted as the current grade. (optional)
+     * @param  bool $current_grade_indicator An indicator that the posted grade is an interim grade for the grading period and not the final grade. (optional)
+     * @param  string $diagnostic_statement A statement provided by the teacher that provides information in addition to the grade or assessment score. (optional)
+     * @param  string $grade_earned_description A description of the grade earned by the learner. (optional)
+     * @param  string $id  (optional)
+     * @param  string $letter_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $numeric_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGradesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGradesPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradesPartitions'][0])
+    {
+        return $this->getGradesPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getGradesPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $grade_type_descriptor The type of grade reported (e.g., exam, final, grading period). (optional)
+     * @param  string $grading_period_descriptor The state&#39;s name of the period for which grades are reported. (optional)
+     * @param  string $grading_period_name The school&#39;s descriptive name of the grading period. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $grading_period_school_year The identifier for the grading period school year. (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $performance_base_conversion_descriptor A conversion of the level to a standard set of performance levels. (optional)
+     * @param  \DateTime $current_grade_as_of_date As-Of date for a grade posted as the current grade. (optional)
+     * @param  bool $current_grade_indicator An indicator that the posted grade is an interim grade for the grading period and not the final grade. (optional)
+     * @param  string $diagnostic_statement A statement provided by the teacher that provides information in addition to the grade or assessment score. (optional)
+     * @param  string $grade_earned_description A description of the grade earned by the learner. (optional)
+     * @param  string $id  (optional)
+     * @param  string $letter_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $numeric_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGradesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGradesPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradesPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getGradesPartitionsRequest($number, $min_change_version, $max_change_version, $grade_type_descriptor, $grading_period_descriptor, $grading_period_name, $school_id, $grading_period_school_year, $begin_date, $local_course_code, $school_year, $section_identifier, $session_name, $student_unique_id, $performance_base_conversion_descriptor, $current_grade_as_of_date, $current_grade_indicator, $diagnostic_statement, $grade_earned_description, $id, $letter_grade_earned, $numeric_grade_earned, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getGradesPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $grade_type_descriptor The type of grade reported (e.g., exam, final, grading period). (optional)
+     * @param  string $grading_period_descriptor The state&#39;s name of the period for which grades are reported. (optional)
+     * @param  string $grading_period_name The school&#39;s descriptive name of the grading period. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $grading_period_school_year The identifier for the grading period school year. (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $performance_base_conversion_descriptor A conversion of the level to a standard set of performance levels. (optional)
+     * @param  \DateTime $current_grade_as_of_date As-Of date for a grade posted as the current grade. (optional)
+     * @param  bool $current_grade_indicator An indicator that the posted grade is an interim grade for the grading period and not the final grade. (optional)
+     * @param  string $diagnostic_statement A statement provided by the teacher that provides information in addition to the grade or assessment score. (optional)
+     * @param  string $grade_earned_description A description of the grade earned by the learner. (optional)
+     * @param  string $id  (optional)
+     * @param  string $letter_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $numeric_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGradesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getGradesPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $grade_type_descriptor = null, $grading_period_descriptor = null, $grading_period_name = null, $school_id = null, $grading_period_school_year = null, $begin_date = null, $local_course_code = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $performance_base_conversion_descriptor = null, $current_grade_as_of_date = null, $current_grade_indicator = null, $diagnostic_statement = null, $grade_earned_description = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $use_snapshot = false, string $contentType = self::contentTypes['getGradesPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling GradesApi.getGradesPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($grade_type_descriptor !== null && strlen($grade_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$grade_type_descriptor" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($grading_period_descriptor !== null && strlen($grading_period_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$grading_period_descriptor" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($grading_period_name !== null && strlen($grading_period_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$grading_period_name" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+
+        if ($local_course_code !== null && strlen($local_course_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$local_course_code" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        if ($section_identifier !== null && strlen($section_identifier) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$section_identifier" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($session_name !== null && strlen($session_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$session_name" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($performance_base_conversion_descriptor !== null && strlen($performance_base_conversion_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$performance_base_conversion_descriptor" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+        if ($diagnostic_statement !== null && strlen($diagnostic_statement) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$diagnostic_statement" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 1024.');
+        }
+        
+        if ($grade_earned_description !== null && strlen($grade_earned_description) > 64) {
+            throw new \InvalidArgumentException('invalid length for "$grade_earned_description" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 64.');
+        }
+        
+
+        if ($letter_grade_earned !== null && strlen($letter_grade_earned) > 20) {
+            throw new \InvalidArgumentException('invalid length for "$letter_grade_earned" when calling GradesApi.getGradesPartitions, must be smaller than or equal to 20.');
+        }
+        
+
+
+
+        $resourcePath = '/ed-fi/grades/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $grade_type_descriptor,
+            'gradeTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $grading_period_descriptor,
+            'gradingPeriodDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $grading_period_name,
+            'gradingPeriodName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_id,
+            'schoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $grading_period_school_year,
+            'gradingPeriodSchoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $begin_date,
+            'beginDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $local_course_code,
+            'localCourseCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_year,
+            'schoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $section_identifier,
+            'sectionIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_name,
+            'sessionName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $performance_base_conversion_descriptor,
+            'performanceBaseConversionDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $current_grade_as_of_date,
+            'currentGradeAsOfDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $current_grade_indicator,
+            'currentGradeIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $diagnostic_statement,
+            'diagnosticStatement', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $grade_earned_description,
+            'gradeEarnedDescription', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $letter_grade_earned,
+            'letterGradeEarned', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $numeric_grade_earned,
+            'numericGradeEarned', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesGrades
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesGrades'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiGradeKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiGradeKeyChange[]
      */
-    public function keyChangesGrades($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGrades'][0])
+    public function keyChangesGrades($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGrades'][0])
     {
         list($response) = $this->keyChangesGradesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1815,19 +2522,19 @@ class GradesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesGrades'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiGradeKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiGradeKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesGradesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGrades'][0])
+    public function keyChangesGradesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGrades'][0])
     {
         $request = $this->keyChangesGradesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1945,18 +2652,18 @@ class GradesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesGrades'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesGradesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGrades'][0])
+    public function keyChangesGradesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGrades'][0])
     {
         return $this->keyChangesGradesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1971,18 +2678,18 @@ class GradesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesGrades'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesGradesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGrades'][0])
+    public function keyChangesGradesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGrades'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiGradeKeyChange[]';
         $request = $this->keyChangesGradesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -2026,18 +2733,18 @@ class GradesApi
     /**
      * Create request for operation 'keyChangesGrades'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesGrades'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesGradesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGrades'][0])
+    public function keyChangesGradesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesGrades'][0])
     {
 
 

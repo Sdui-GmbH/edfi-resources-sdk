@@ -391,7 +391,7 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The month, day, and year of the first day of the feeder school association.
+     * @param \DateTime $begin_date The month, day, and year of the first day of the feeder school association.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -472,7 +472,7 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The month, day, and year of the last day of the feeder school association.
+     * @param \DateTime|null $end_date The month, day, and year of the last day of the feeder school association.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

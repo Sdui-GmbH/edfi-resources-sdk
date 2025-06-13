@@ -320,7 +320,7 @@ class TrackedChangesEdFiStudentSchoolAssociationKey implements ModelInterface, A
     /**
      * Sets entry_date
      *
-     * @param \DateTime|null $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school.
+     * @param \DateTime|null $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student's enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

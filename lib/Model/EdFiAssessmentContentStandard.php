@@ -426,7 +426,7 @@ class EdFiAssessmentContentStandard implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The beginning of the period during which this learning standard document is intended for use.
+     * @param \DateTime|null $begin_date The beginning of the period during which this learning standard document is intended for use.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class EdFiAssessmentContentStandard implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The end of the period during which this learning standard document is intended for use.
+     * @param \DateTime|null $end_date The end of the period during which this learning standard document is intended for use.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

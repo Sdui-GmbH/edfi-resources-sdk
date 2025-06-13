@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **full_name** | **string** | Full name of the respondent. | [optional]
 **location** | **string** | Location of the respondent, often a city, district, or school. | [optional]
 **response_date** | **\DateTime** | Date of the survey response. |
-**response_time** | **int** | The amount of time (in seconds) it took for the respondent to complete the survey. | [optional]
+**response_time** | **int** | The amount of time in seconds it took for the respondent to complete the survey. | [optional]
 **survey_levels** | [**\Resources\Model\EdFiSurveyResponseSurveyLevel[]**](EdFiSurveyResponseSurveyLevel.md) | An unordered collection of surveyResponseSurveyLevels. Provides information about the respondents of a survey and how they can be grouped together. | [optional]
 **_etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional]
 **_last_modified_date** | **\DateTime** | The date and time the resource was last modified. | [optional]

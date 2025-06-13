@@ -548,7 +548,7 @@ class EdFiGradingPeriod implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date Month, day, and year of the first day of the grading period.
+     * @param \DateTime $begin_date Month, day, and year of the first day of the grading period.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -575,7 +575,7 @@ class EdFiGradingPeriod implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date Month, day, and year of the last day of the grading period.
+     * @param \DateTime $end_date Month, day, and year of the last day of the grading period.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

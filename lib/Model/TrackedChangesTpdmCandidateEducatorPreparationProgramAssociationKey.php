@@ -350,7 +350,7 @@ class TrackedChangesTpdmCandidateEducatorPreparationProgramAssociationKey implem
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The begin date for the association.
+     * @param \DateTime|null $begin_date The begin date for the association.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

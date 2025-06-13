@@ -83,6 +83,9 @@ class StudentSectionAttendanceEventsApi
         'getStudentSectionAttendanceEventsById' => [
             'application/json',
         ],
+        'getStudentSectionAttendanceEventsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStudentSectionAttendanceEvents' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSectionAttendanceEvents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentSectionAttendanceEventDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentSectionAttendanceEventDelete[]
      */
-    public function deletesStudentSectionAttendanceEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAttendanceEvents'][0])
+    public function deletesStudentSectionAttendanceEvents($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAttendanceEvents'][0])
     {
         list($response) = $this->deletesStudentSectionAttendanceEventsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSectionAttendanceEvents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentSectionAttendanceEventDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentSectionAttendanceEventDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStudentSectionAttendanceEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAttendanceEvents'][0])
+    public function deletesStudentSectionAttendanceEventsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAttendanceEvents'][0])
     {
         $request = $this->deletesStudentSectionAttendanceEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSectionAttendanceEvents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentSectionAttendanceEventsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAttendanceEvents'][0])
+    public function deletesStudentSectionAttendanceEventsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAttendanceEvents'][0])
     {
         return $this->deletesStudentSectionAttendanceEventsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSectionAttendanceEvents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentSectionAttendanceEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAttendanceEvents'][0])
+    public function deletesStudentSectionAttendanceEventsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAttendanceEvents'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentSectionAttendanceEventDelete[]';
         $request = $this->deletesStudentSectionAttendanceEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StudentSectionAttendanceEventsApi
     /**
      * Create request for operation 'deletesStudentSectionAttendanceEvents'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSectionAttendanceEvents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStudentSectionAttendanceEventsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAttendanceEvents'][0])
+    public function deletesStudentSectionAttendanceEventsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAttendanceEvents'][0])
     {
 
 
@@ -759,11 +762,13 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $attendance_event_category_descriptor A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. (optional)
      * @param  \DateTime $event_date Date for this attendance event. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
@@ -776,7 +781,7 @@ class StudentSectionAttendanceEventsApi
      * @param  string $arrival_time The time of day the student arrived for the attendance event in ISO 8601 format. (optional)
      * @param  string $attendance_event_reason The reported reason for a student&#39;s absence. (optional)
      * @param  string $departure_time The time of day the student departed for the attendance event in ISO 8601 format. (optional)
-     * @param  float $event_duration The amount of time for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
+     * @param  float $event_duration The amount of time in days for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
      * @param  string $id  (optional)
      * @param  int $section_attendance_duration The duration in minutes of the section attendance event. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -784,11 +789,11 @@ class StudentSectionAttendanceEventsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentSectionAttendanceEvent[]
+     * @return |\Resources\Model\EdFiStudentSectionAttendanceEvent[]
      */
-    public function getStudentSectionAttendanceEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEvents'][0])
+    public function getStudentSectionAttendanceEvents($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEvents'][0])
     {
-        list($response) = $this->getStudentSectionAttendanceEventsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType);
+        list($response) = $this->getStudentSectionAttendanceEventsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -797,11 +802,13 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $attendance_event_category_descriptor A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. (optional)
      * @param  \DateTime $event_date Date for this attendance event. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
@@ -814,7 +821,7 @@ class StudentSectionAttendanceEventsApi
      * @param  string $arrival_time The time of day the student arrived for the attendance event in ISO 8601 format. (optional)
      * @param  string $attendance_event_reason The reported reason for a student&#39;s absence. (optional)
      * @param  string $departure_time The time of day the student departed for the attendance event in ISO 8601 format. (optional)
-     * @param  float $event_duration The amount of time for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
+     * @param  float $event_duration The amount of time in days for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
      * @param  string $id  (optional)
      * @param  int $section_attendance_duration The duration in minutes of the section attendance event. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -822,11 +829,11 @@ class StudentSectionAttendanceEventsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentSectionAttendanceEvent[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentSectionAttendanceEvent[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentSectionAttendanceEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEvents'][0])
+    public function getStudentSectionAttendanceEventsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEvents'][0])
     {
-        $request = $this->getStudentSectionAttendanceEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType);
+        $request = $this->getStudentSectionAttendanceEventsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -942,11 +949,13 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $attendance_event_category_descriptor A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. (optional)
      * @param  \DateTime $event_date Date for this attendance event. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
@@ -959,7 +968,7 @@ class StudentSectionAttendanceEventsApi
      * @param  string $arrival_time The time of day the student arrived for the attendance event in ISO 8601 format. (optional)
      * @param  string $attendance_event_reason The reported reason for a student&#39;s absence. (optional)
      * @param  string $departure_time The time of day the student departed for the attendance event in ISO 8601 format. (optional)
-     * @param  float $event_duration The amount of time for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
+     * @param  float $event_duration The amount of time in days for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
      * @param  string $id  (optional)
      * @param  int $section_attendance_duration The duration in minutes of the section attendance event. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -968,9 +977,9 @@ class StudentSectionAttendanceEventsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSectionAttendanceEventsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEvents'][0])
+    public function getStudentSectionAttendanceEventsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEvents'][0])
     {
-        return $this->getStudentSectionAttendanceEventsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType)
+        return $this->getStudentSectionAttendanceEventsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -983,11 +992,13 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $attendance_event_category_descriptor A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. (optional)
      * @param  \DateTime $event_date Date for this attendance event. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
@@ -1000,7 +1011,7 @@ class StudentSectionAttendanceEventsApi
      * @param  string $arrival_time The time of day the student arrived for the attendance event in ISO 8601 format. (optional)
      * @param  string $attendance_event_reason The reported reason for a student&#39;s absence. (optional)
      * @param  string $departure_time The time of day the student departed for the attendance event in ISO 8601 format. (optional)
-     * @param  float $event_duration The amount of time for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
+     * @param  float $event_duration The amount of time in days for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
      * @param  string $id  (optional)
      * @param  int $section_attendance_duration The duration in minutes of the section attendance event. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -1009,10 +1020,10 @@ class StudentSectionAttendanceEventsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSectionAttendanceEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEvents'][0])
+    public function getStudentSectionAttendanceEventsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEvents'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentSectionAttendanceEvent[]';
-        $request = $this->getStudentSectionAttendanceEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType);
+        $request = $this->getStudentSectionAttendanceEventsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1053,11 +1064,13 @@ class StudentSectionAttendanceEventsApi
     /**
      * Create request for operation 'getStudentSectionAttendanceEvents'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $attendance_event_category_descriptor A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. (optional)
      * @param  \DateTime $event_date Date for this attendance event. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
@@ -1070,7 +1083,7 @@ class StudentSectionAttendanceEventsApi
      * @param  string $arrival_time The time of day the student arrived for the attendance event in ISO 8601 format. (optional)
      * @param  string $attendance_event_reason The reported reason for a student&#39;s absence. (optional)
      * @param  string $departure_time The time of day the student departed for the attendance event in ISO 8601 format. (optional)
-     * @param  float $event_duration The amount of time for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
+     * @param  float $event_duration The amount of time in days for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
      * @param  string $id  (optional)
      * @param  int $section_attendance_duration The duration in minutes of the section attendance event. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -1079,7 +1092,7 @@ class StudentSectionAttendanceEventsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentSectionAttendanceEventsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEvents'][0])
+    public function getStudentSectionAttendanceEventsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEvents'][0])
     {
 
 
@@ -1088,6 +1101,11 @@ class StudentSectionAttendanceEventsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEvents, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEvents, must be bigger than or equal to 0.');
         }
         
 
@@ -1151,6 +1169,24 @@ class StudentSectionAttendanceEventsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1395,7 +1431,7 @@ class StudentSectionAttendanceEventsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentSectionAttendanceEvent
+     * @return |\Resources\Model\EdFiStudentSectionAttendanceEvent
      */
     public function getStudentSectionAttendanceEventsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEventsById'][0])
     {
@@ -1415,7 +1451,7 @@ class StudentSectionAttendanceEventsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentSectionAttendanceEvent, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentSectionAttendanceEvent, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentSectionAttendanceEventsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEventsById'][0])
     {
@@ -1716,23 +1752,622 @@ class StudentSectionAttendanceEventsApi
     }
 
     /**
+     * Operation getStudentSectionAttendanceEventsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $attendance_event_category_descriptor A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. (optional)
+     * @param  \DateTime $event_date Date for this attendance event. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $educational_environment_descriptor The setting in which a child receives education and related services. This attribute is only used if it differs from the EducationalEnvironment of the Section. This is only used in the AttendanceEvent if different from the associated Section. (optional)
+     * @param  string $arrival_time The time of day the student arrived for the attendance event in ISO 8601 format. (optional)
+     * @param  string $attendance_event_reason The reported reason for a student&#39;s absence. (optional)
+     * @param  string $departure_time The time of day the student departed for the attendance event in ISO 8601 format. (optional)
+     * @param  float $event_duration The amount of time in days for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
+     * @param  string $id  (optional)
+     * @param  int $section_attendance_duration The duration in minutes of the section attendance event. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSectionAttendanceEventsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStudentSectionAttendanceEventsPartitions($number = null, $min_change_version = null, $max_change_version = null, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEventsPartitions'][0])
+    {
+        list($response) = $this->getStudentSectionAttendanceEventsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStudentSectionAttendanceEventsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $attendance_event_category_descriptor A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. (optional)
+     * @param  \DateTime $event_date Date for this attendance event. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $educational_environment_descriptor The setting in which a child receives education and related services. This attribute is only used if it differs from the EducationalEnvironment of the Section. This is only used in the AttendanceEvent if different from the associated Section. (optional)
+     * @param  string $arrival_time The time of day the student arrived for the attendance event in ISO 8601 format. (optional)
+     * @param  string $attendance_event_reason The reported reason for a student&#39;s absence. (optional)
+     * @param  string $departure_time The time of day the student departed for the attendance event in ISO 8601 format. (optional)
+     * @param  float $event_duration The amount of time in days for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
+     * @param  string $id  (optional)
+     * @param  int $section_attendance_duration The duration in minutes of the section attendance event. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSectionAttendanceEventsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStudentSectionAttendanceEventsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEventsPartitions'][0])
+    {
+        $request = $this->getStudentSectionAttendanceEventsPartitionsRequest($number, $min_change_version, $max_change_version, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStudentSectionAttendanceEventsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $attendance_event_category_descriptor A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. (optional)
+     * @param  \DateTime $event_date Date for this attendance event. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $educational_environment_descriptor The setting in which a child receives education and related services. This attribute is only used if it differs from the EducationalEnvironment of the Section. This is only used in the AttendanceEvent if different from the associated Section. (optional)
+     * @param  string $arrival_time The time of day the student arrived for the attendance event in ISO 8601 format. (optional)
+     * @param  string $attendance_event_reason The reported reason for a student&#39;s absence. (optional)
+     * @param  string $departure_time The time of day the student departed for the attendance event in ISO 8601 format. (optional)
+     * @param  float $event_duration The amount of time in days for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
+     * @param  string $id  (optional)
+     * @param  int $section_attendance_duration The duration in minutes of the section attendance event. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSectionAttendanceEventsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentSectionAttendanceEventsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEventsPartitions'][0])
+    {
+        return $this->getStudentSectionAttendanceEventsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStudentSectionAttendanceEventsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $attendance_event_category_descriptor A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. (optional)
+     * @param  \DateTime $event_date Date for this attendance event. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $educational_environment_descriptor The setting in which a child receives education and related services. This attribute is only used if it differs from the EducationalEnvironment of the Section. This is only used in the AttendanceEvent if different from the associated Section. (optional)
+     * @param  string $arrival_time The time of day the student arrived for the attendance event in ISO 8601 format. (optional)
+     * @param  string $attendance_event_reason The reported reason for a student&#39;s absence. (optional)
+     * @param  string $departure_time The time of day the student departed for the attendance event in ISO 8601 format. (optional)
+     * @param  float $event_duration The amount of time in days for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
+     * @param  string $id  (optional)
+     * @param  int $section_attendance_duration The duration in minutes of the section attendance event. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSectionAttendanceEventsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentSectionAttendanceEventsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEventsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStudentSectionAttendanceEventsPartitionsRequest($number, $min_change_version, $max_change_version, $attendance_event_category_descriptor, $event_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $educational_environment_descriptor, $arrival_time, $attendance_event_reason, $departure_time, $event_duration, $id, $section_attendance_duration, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStudentSectionAttendanceEventsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $attendance_event_category_descriptor A code describing the attendance event, for example:         Present         Unexcused absence         Excused absence         Tardy. (optional)
+     * @param  \DateTime $event_date Date for this attendance event. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $educational_environment_descriptor The setting in which a child receives education and related services. This attribute is only used if it differs from the EducationalEnvironment of the Section. This is only used in the AttendanceEvent if different from the associated Section. (optional)
+     * @param  string $arrival_time The time of day the student arrived for the attendance event in ISO 8601 format. (optional)
+     * @param  string $attendance_event_reason The reported reason for a student&#39;s absence. (optional)
+     * @param  string $departure_time The time of day the student departed for the attendance event in ISO 8601 format. (optional)
+     * @param  float $event_duration The amount of time in days for the event as recognized by the school: 1 day &#x3D; 1, 1/2 day &#x3D; 0.5, 1/3 day &#x3D; 0.33. (optional)
+     * @param  string $id  (optional)
+     * @param  int $section_attendance_duration The duration in minutes of the section attendance event. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSectionAttendanceEventsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStudentSectionAttendanceEventsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $attendance_event_category_descriptor = null, $event_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $educational_environment_descriptor = null, $arrival_time = null, $attendance_event_reason = null, $departure_time = null, $event_duration = null, $id = null, $section_attendance_duration = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAttendanceEventsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEventsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEventsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($attendance_event_category_descriptor !== null && strlen($attendance_event_category_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$attendance_event_category_descriptor" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEventsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($local_course_code !== null && strlen($local_course_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$local_course_code" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEventsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+        if ($section_identifier !== null && strlen($section_identifier) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$section_identifier" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEventsPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($session_name !== null && strlen($session_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$session_name" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEventsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEventsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($educational_environment_descriptor !== null && strlen($educational_environment_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$educational_environment_descriptor" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEventsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($attendance_event_reason !== null && strlen($attendance_event_reason) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$attendance_event_reason" when calling StudentSectionAttendanceEventsApi.getStudentSectionAttendanceEventsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/studentSectionAttendanceEvents/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $attendance_event_category_descriptor,
+            'attendanceEventCategoryDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $event_date,
+            'eventDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $local_course_code,
+            'localCourseCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_id,
+            'schoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_year,
+            'schoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $section_identifier,
+            'sectionIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_name,
+            'sessionName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $educational_environment_descriptor,
+            'educationalEnvironmentDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $arrival_time,
+            'arrivalTime', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $attendance_event_reason,
+            'attendanceEventReason', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $departure_time,
+            'departureTime', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $event_duration,
+            'eventDuration', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $section_attendance_duration,
+            'sectionAttendanceDuration', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStudentSectionAttendanceEvents
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSectionAttendanceEvents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentSectionAttendanceEventKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentSectionAttendanceEventKeyChange[]
      */
-    public function keyChangesStudentSectionAttendanceEvents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAttendanceEvents'][0])
+    public function keyChangesStudentSectionAttendanceEvents($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAttendanceEvents'][0])
     {
         list($response) = $this->keyChangesStudentSectionAttendanceEventsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1743,19 +2378,19 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSectionAttendanceEvents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentSectionAttendanceEventKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentSectionAttendanceEventKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStudentSectionAttendanceEventsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAttendanceEvents'][0])
+    public function keyChangesStudentSectionAttendanceEventsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAttendanceEvents'][0])
     {
         $request = $this->keyChangesStudentSectionAttendanceEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1873,18 +2508,18 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSectionAttendanceEvents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentSectionAttendanceEventsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAttendanceEvents'][0])
+    public function keyChangesStudentSectionAttendanceEventsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAttendanceEvents'][0])
     {
         return $this->keyChangesStudentSectionAttendanceEventsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1899,18 +2534,18 @@ class StudentSectionAttendanceEventsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSectionAttendanceEvents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentSectionAttendanceEventsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAttendanceEvents'][0])
+    public function keyChangesStudentSectionAttendanceEventsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAttendanceEvents'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentSectionAttendanceEventKeyChange[]';
         $request = $this->keyChangesStudentSectionAttendanceEventsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1954,18 +2589,18 @@ class StudentSectionAttendanceEventsApi
     /**
      * Create request for operation 'keyChangesStudentSectionAttendanceEvents'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSectionAttendanceEvents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStudentSectionAttendanceEventsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAttendanceEvents'][0])
+    public function keyChangesStudentSectionAttendanceEventsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAttendanceEvents'][0])
     {
 
 

@@ -746,7 +746,7 @@ class EdFiStudentSchoolAttendanceEvent implements ModelInterface, ArrayAccess, \
     /**
      * Sets event_duration
      *
-     * @param float|null $event_duration The amount of time for the event as recognized by the school: 1 day = 1, 1/2 day = 0.5, 1/3 day = 0.33.
+     * @param float|null $event_duration The amount of time in days for the event as recognized by the school: 1 day = 1, 1/2 day = 0.5, 1/3 day = 0.33.
      *
      * @return self
      */

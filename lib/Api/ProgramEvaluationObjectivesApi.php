@@ -83,6 +83,9 @@ class ProgramEvaluationObjectivesApi
         'getProgramEvaluationObjectivesById' => [
             'application/json',
         ],
+        'getProgramEvaluationObjectivesPartitions' => [
+            'application/json',
+        ],
         'keyChangesProgramEvaluationObjectives' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesProgramEvaluationObjectives'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiProgramEvaluationObjectiveDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiProgramEvaluationObjectiveDelete[]
      */
-    public function deletesProgramEvaluationObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluationObjectives'][0])
+    public function deletesProgramEvaluationObjectives($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluationObjectives'][0])
     {
         list($response) = $this->deletesProgramEvaluationObjectivesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesProgramEvaluationObjectives'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiProgramEvaluationObjectiveDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiProgramEvaluationObjectiveDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesProgramEvaluationObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluationObjectives'][0])
+    public function deletesProgramEvaluationObjectivesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluationObjectives'][0])
     {
         $request = $this->deletesProgramEvaluationObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesProgramEvaluationObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesProgramEvaluationObjectivesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluationObjectives'][0])
+    public function deletesProgramEvaluationObjectivesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluationObjectives'][0])
     {
         return $this->deletesProgramEvaluationObjectivesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesProgramEvaluationObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesProgramEvaluationObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluationObjectives'][0])
+    public function deletesProgramEvaluationObjectivesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluationObjectives'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiProgramEvaluationObjectiveDelete[]';
         $request = $this->deletesProgramEvaluationObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class ProgramEvaluationObjectivesApi
     /**
      * Create request for operation 'deletesProgramEvaluationObjectives'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesProgramEvaluationObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesProgramEvaluationObjectivesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluationObjectives'][0])
+    public function deletesProgramEvaluationObjectivesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesProgramEvaluationObjectives'][0])
     {
 
 
@@ -759,11 +762,13 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $program_evaluation_objective_title The name or title of the program evaluation objective. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
@@ -781,11 +786,11 @@ class ProgramEvaluationObjectivesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiProgramEvaluationObjective[]
+     * @return |\Resources\Model\EdFiProgramEvaluationObjective[]
      */
-    public function getProgramEvaluationObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectives'][0])
+    public function getProgramEvaluationObjectives($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectives'][0])
     {
-        list($response) = $this->getProgramEvaluationObjectivesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType);
+        list($response) = $this->getProgramEvaluationObjectivesWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -794,11 +799,13 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $program_evaluation_objective_title The name or title of the program evaluation objective. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
@@ -816,11 +823,11 @@ class ProgramEvaluationObjectivesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiProgramEvaluationObjective[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiProgramEvaluationObjective[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getProgramEvaluationObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectives'][0])
+    public function getProgramEvaluationObjectivesWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectives'][0])
     {
-        $request = $this->getProgramEvaluationObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType);
+        $request = $this->getProgramEvaluationObjectivesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -936,11 +943,13 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $program_evaluation_objective_title The name or title of the program evaluation objective. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
@@ -959,9 +968,9 @@ class ProgramEvaluationObjectivesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProgramEvaluationObjectivesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectives'][0])
+    public function getProgramEvaluationObjectivesAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectives'][0])
     {
-        return $this->getProgramEvaluationObjectivesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType)
+        return $this->getProgramEvaluationObjectivesAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -974,11 +983,13 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $program_evaluation_objective_title The name or title of the program evaluation objective. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
@@ -997,10 +1008,10 @@ class ProgramEvaluationObjectivesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProgramEvaluationObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectives'][0])
+    public function getProgramEvaluationObjectivesAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectives'][0])
     {
         $returnType = '\Resources\Model\EdFiProgramEvaluationObjective[]';
-        $request = $this->getProgramEvaluationObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType);
+        $request = $this->getProgramEvaluationObjectivesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1041,11 +1052,13 @@ class ProgramEvaluationObjectivesApi
     /**
      * Create request for operation 'getProgramEvaluationObjectives'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $program_evaluation_objective_title The name or title of the program evaluation objective. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
@@ -1064,7 +1077,7 @@ class ProgramEvaluationObjectivesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getProgramEvaluationObjectivesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectives'][0])
+    public function getProgramEvaluationObjectivesRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectives'][0])
     {
 
 
@@ -1073,6 +1086,11 @@ class ProgramEvaluationObjectivesApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectives, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectives, must be bigger than or equal to 0.');
         }
         
 
@@ -1133,6 +1151,24 @@ class ProgramEvaluationObjectivesApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1350,7 +1386,7 @@ class ProgramEvaluationObjectivesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiProgramEvaluationObjective
+     * @return |\Resources\Model\EdFiProgramEvaluationObjective
      */
     public function getProgramEvaluationObjectivesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectivesById'][0])
     {
@@ -1370,7 +1406,7 @@ class ProgramEvaluationObjectivesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiProgramEvaluationObjective, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiProgramEvaluationObjective, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProgramEvaluationObjectivesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectivesById'][0])
     {
@@ -1671,23 +1707,577 @@ class ProgramEvaluationObjectivesApi
     }
 
     /**
+     * Operation getProgramEvaluationObjectivesPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $program_evaluation_objective_title The name or title of the program evaluation objective. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
+     * @param  string $program_evaluation_title An assigned unique identifier for the student program evaluation. (optional)
+     * @param  string $program_evaluation_type_descriptor The type of program evaluation conducted. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $id  (optional)
+     * @param  float $objective_max_numeric_rating The maximum summary numerical rating or score for the program evaluation objective. (optional)
+     * @param  float $objective_min_numeric_rating The minimum summary numerical rating or score for the program evaluation objective. If omitted, assumed to be 0.0 (optional)
+     * @param  int $objective_sort_order The sort order of this program evaluation objective. (optional)
+     * @param  string $program_evaluation_objective_description The long description of the program evaluation objective. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramEvaluationObjectivesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getProgramEvaluationObjectivesPartitions($number = null, $min_change_version = null, $max_change_version = null, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectivesPartitions'][0])
+    {
+        list($response) = $this->getProgramEvaluationObjectivesPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getProgramEvaluationObjectivesPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $program_evaluation_objective_title The name or title of the program evaluation objective. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
+     * @param  string $program_evaluation_title An assigned unique identifier for the student program evaluation. (optional)
+     * @param  string $program_evaluation_type_descriptor The type of program evaluation conducted. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $id  (optional)
+     * @param  float $objective_max_numeric_rating The maximum summary numerical rating or score for the program evaluation objective. (optional)
+     * @param  float $objective_min_numeric_rating The minimum summary numerical rating or score for the program evaluation objective. If omitted, assumed to be 0.0 (optional)
+     * @param  int $objective_sort_order The sort order of this program evaluation objective. (optional)
+     * @param  string $program_evaluation_objective_description The long description of the program evaluation objective. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramEvaluationObjectivesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getProgramEvaluationObjectivesPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectivesPartitions'][0])
+    {
+        $request = $this->getProgramEvaluationObjectivesPartitionsRequest($number, $min_change_version, $max_change_version, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getProgramEvaluationObjectivesPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $program_evaluation_objective_title The name or title of the program evaluation objective. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
+     * @param  string $program_evaluation_title An assigned unique identifier for the student program evaluation. (optional)
+     * @param  string $program_evaluation_type_descriptor The type of program evaluation conducted. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $id  (optional)
+     * @param  float $objective_max_numeric_rating The maximum summary numerical rating or score for the program evaluation objective. (optional)
+     * @param  float $objective_min_numeric_rating The minimum summary numerical rating or score for the program evaluation objective. If omitted, assumed to be 0.0 (optional)
+     * @param  int $objective_sort_order The sort order of this program evaluation objective. (optional)
+     * @param  string $program_evaluation_objective_description The long description of the program evaluation objective. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramEvaluationObjectivesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getProgramEvaluationObjectivesPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectivesPartitions'][0])
+    {
+        return $this->getProgramEvaluationObjectivesPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getProgramEvaluationObjectivesPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $program_evaluation_objective_title The name or title of the program evaluation objective. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
+     * @param  string $program_evaluation_title An assigned unique identifier for the student program evaluation. (optional)
+     * @param  string $program_evaluation_type_descriptor The type of program evaluation conducted. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $id  (optional)
+     * @param  float $objective_max_numeric_rating The maximum summary numerical rating or score for the program evaluation objective. (optional)
+     * @param  float $objective_min_numeric_rating The minimum summary numerical rating or score for the program evaluation objective. If omitted, assumed to be 0.0 (optional)
+     * @param  int $objective_sort_order The sort order of this program evaluation objective. (optional)
+     * @param  string $program_evaluation_objective_description The long description of the program evaluation objective. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramEvaluationObjectivesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getProgramEvaluationObjectivesPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectivesPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getProgramEvaluationObjectivesPartitionsRequest($number, $min_change_version, $max_change_version, $program_evaluation_objective_title, $program_education_organization_id, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $id, $objective_max_numeric_rating, $objective_min_numeric_rating, $objective_sort_order, $program_evaluation_objective_description, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getProgramEvaluationObjectivesPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $program_evaluation_objective_title The name or title of the program evaluation objective. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
+     * @param  string $program_evaluation_title An assigned unique identifier for the student program evaluation. (optional)
+     * @param  string $program_evaluation_type_descriptor The type of program evaluation conducted. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $id  (optional)
+     * @param  float $objective_max_numeric_rating The maximum summary numerical rating or score for the program evaluation objective. (optional)
+     * @param  float $objective_min_numeric_rating The minimum summary numerical rating or score for the program evaluation objective. If omitted, assumed to be 0.0 (optional)
+     * @param  int $objective_sort_order The sort order of this program evaluation objective. (optional)
+     * @param  string $program_evaluation_objective_description The long description of the program evaluation objective. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getProgramEvaluationObjectivesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getProgramEvaluationObjectivesPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $program_evaluation_objective_title = null, $program_education_organization_id = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $id = null, $objective_max_numeric_rating = null, $objective_min_numeric_rating = null, $objective_sort_order = null, $program_evaluation_objective_description = null, $use_snapshot = false, string $contentType = self::contentTypes['getProgramEvaluationObjectivesPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectivesPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectivesPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($program_evaluation_objective_title !== null && strlen($program_evaluation_objective_title) > 50) {
+            throw new \InvalidArgumentException('invalid length for "$program_evaluation_objective_title" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectivesPartitions, must be smaller than or equal to 50.');
+        }
+        
+
+        if ($program_evaluation_period_descriptor !== null && strlen($program_evaluation_period_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_evaluation_period_descriptor" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectivesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($program_evaluation_title !== null && strlen($program_evaluation_title) > 50) {
+            throw new \InvalidArgumentException('invalid length for "$program_evaluation_title" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectivesPartitions, must be smaller than or equal to 50.');
+        }
+        
+        if ($program_evaluation_type_descriptor !== null && strlen($program_evaluation_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_evaluation_type_descriptor" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectivesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($program_name !== null && strlen($program_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$program_name" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectivesPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($program_type_descriptor !== null && strlen($program_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_type_descriptor" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectivesPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+        if ($program_evaluation_objective_description !== null && strlen($program_evaluation_objective_description) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$program_evaluation_objective_description" when calling ProgramEvaluationObjectivesApi.getProgramEvaluationObjectivesPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+
+        $resourcePath = '/ed-fi/programEvaluationObjectives/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_evaluation_objective_title,
+            'programEvaluationObjectiveTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_education_organization_id,
+            'programEducationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_evaluation_period_descriptor,
+            'programEvaluationPeriodDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_evaluation_title,
+            'programEvaluationTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_evaluation_type_descriptor,
+            'programEvaluationTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_name,
+            'programName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_type_descriptor,
+            'programTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $objective_max_numeric_rating,
+            'objectiveMaxNumericRating', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $objective_min_numeric_rating,
+            'objectiveMinNumericRating', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $objective_sort_order,
+            'objectiveSortOrder', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_evaluation_objective_description,
+            'programEvaluationObjectiveDescription', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesProgramEvaluationObjectives
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesProgramEvaluationObjectives'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiProgramEvaluationObjectiveKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiProgramEvaluationObjectiveKeyChange[]
      */
-    public function keyChangesProgramEvaluationObjectives($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluationObjectives'][0])
+    public function keyChangesProgramEvaluationObjectives($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluationObjectives'][0])
     {
         list($response) = $this->keyChangesProgramEvaluationObjectivesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1698,19 +2288,19 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesProgramEvaluationObjectives'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiProgramEvaluationObjectiveKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiProgramEvaluationObjectiveKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesProgramEvaluationObjectivesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluationObjectives'][0])
+    public function keyChangesProgramEvaluationObjectivesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluationObjectives'][0])
     {
         $request = $this->keyChangesProgramEvaluationObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1828,18 +2418,18 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesProgramEvaluationObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesProgramEvaluationObjectivesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluationObjectives'][0])
+    public function keyChangesProgramEvaluationObjectivesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluationObjectives'][0])
     {
         return $this->keyChangesProgramEvaluationObjectivesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1854,18 +2444,18 @@ class ProgramEvaluationObjectivesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesProgramEvaluationObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesProgramEvaluationObjectivesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluationObjectives'][0])
+    public function keyChangesProgramEvaluationObjectivesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluationObjectives'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiProgramEvaluationObjectiveKeyChange[]';
         $request = $this->keyChangesProgramEvaluationObjectivesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1909,18 +2499,18 @@ class ProgramEvaluationObjectivesApi
     /**
      * Create request for operation 'keyChangesProgramEvaluationObjectives'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesProgramEvaluationObjectives'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesProgramEvaluationObjectivesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluationObjectives'][0])
+    public function keyChangesProgramEvaluationObjectivesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesProgramEvaluationObjectives'][0])
     {
 
 

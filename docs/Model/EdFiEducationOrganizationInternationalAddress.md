@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **address_line2** | **string** | The second line of the address. | [optional]
 **address_line3** | **string** | The third line of the address. | [optional]
 **address_line4** | **string** | The fourth line of the address. | [optional]
-**begin_date** | **\DateTime** | The first date the address is valid. For physical addresses, the date the individual moved to that address. | [optional]
-**end_date** | **\DateTime** | The last date the address is valid. For physical addresses, the date the individual moved from that address. | [optional]
+**begin_date** | **\DateTime** | The first date the address is valid. For physical addresses, the date the individual moved to that address.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional]
+**end_date** | **\DateTime** | The last date the address is valid. For physical addresses, the date the individual moved from that address.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional]
 **latitude** | **string** | The geographic latitude of the physical address. | [optional]
 **longitude** | **string** | The geographic longitude of the physical address. | [optional]
 

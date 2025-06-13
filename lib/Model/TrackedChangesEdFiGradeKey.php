@@ -547,7 +547,7 @@ class TrackedChangesEdFiGradeKey implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date Month, day, and year of the student's entry or assignment to the section.
+     * @param \DateTime|null $begin_date Month, day, and year of the student's entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

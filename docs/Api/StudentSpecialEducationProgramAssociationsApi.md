@@ -1,6 +1,6 @@
 # Resources\StudentSpecialEducationProgramAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if t
 | [**deletesStudentSpecialEducationProgramAssociations()**](StudentSpecialEducationProgramAssociationsApi.md#deletesStudentSpecialEducationProgramAssociations) | **GET** /ed-fi/studentSpecialEducationProgramAssociations/deletes | Retrieves deleted resources based on change version. |
 | [**getStudentSpecialEducationProgramAssociations()**](StudentSpecialEducationProgramAssociationsApi.md#getStudentSpecialEducationProgramAssociations) | **GET** /ed-fi/studentSpecialEducationProgramAssociations | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getStudentSpecialEducationProgramAssociationsById()**](StudentSpecialEducationProgramAssociationsApi.md#getStudentSpecialEducationProgramAssociationsById) | **GET** /ed-fi/studentSpecialEducationProgramAssociations/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getStudentSpecialEducationProgramAssociationsPartitions()**](StudentSpecialEducationProgramAssociationsApi.md#getStudentSpecialEducationProgramAssociationsPartitions) | **GET** /ed-fi/studentSpecialEducationProgramAssociations/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesStudentSpecialEducationProgramAssociations()**](StudentSpecialEducationProgramAssociationsApi.md#keyChangesStudentSpecialEducationProgramAssociations) | **GET** /ed-fi/studentSpecialEducationProgramAssociations/keyChanges | Retrieves resources key changes based on change version. |
 | [**postStudentSpecialEducationProgramAssociation()**](StudentSpecialEducationProgramAssociationsApi.md#postStudentSpecialEducationProgramAssociation) | **POST** /ed-fi/studentSpecialEducationProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putStudentSpecialEducationProgramAssociation()**](StudentSpecialEducationProgramAssociationsApi.md#putStudentSpecialEducationProgramAssociation) | **PUT** /ed-fi/studentSpecialEducationProgramAssociations/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\StudentSpecialEducationProgramAssociationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getStudentSpecialEducationProgramAssociations()`
 
 ```php
-getStudentSpecialEducationProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $id, $use_snapshot): \Resources\Model\EdFiStudentSpecialEducationProgramAssociation[]
+getStudentSpecialEducationProgramAssociations($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot): \Resources\Model\EdFiStudentSpecialEducationProgramAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,12 +172,14 @@ $apiInstance = new Resources\Api\StudentSpecialEducationProgramAssociationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
-$begin_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
+$begin_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
 $education_organization_id = 56; // int | The identifier assigned to an education organization.
 $program_education_organization_id = 56; // int | The identifier assigned to an education organization.
 $program_name = 'program_name_example'; // string | The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies.
@@ -185,21 +188,26 @@ $student_unique_id = 'student_unique_id_example'; // string | A unique alphanume
 $special_education_exit_reason_descriptor = 'special_education_exit_reason_descriptor_example'; // string | The reason why a person stops receiving special education services.
 $special_education_setting_descriptor = 'special_education_setting_descriptor_example'; // string | The major instructional setting (more than 50 percent of a student's special education program).
 $idea_eligibility = True; // bool | Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA).
-$iep_begin_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The effective date of the most recent IEP.
-$iep_end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date of the most recent IEP.
+$iep_begin_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
+$iep_end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
 $iep_review_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date of the last IEP review.
 $last_evaluation_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date of the last special education evaluation.
 $medically_fragile = True; // bool | Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements.
 $multiply_disabled = True; // bool | Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements.
+$reduction_in_hours_per_week_compared_to_peers = 3.4; // float | Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education.
 $school_hours_per_week = 3.4; // float | Indicate the total number of hours of instructional time per week for the school that the student attends.
+$shortened_school_day_indicator = True; // bool | Indicator that the student's IEP requires a shortened school day.
 $special_education_exit_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The  month, day and year on which a person stops receiving special education services.
 $special_education_exit_explained = 'special_education_exit_explained_example'; // string | Explanation on why a person stops receiving special education services.
 $special_education_hours_per_week = 3.4; // float | The number of hours per week for special education instruction and therapy.
+$reason_exited_descriptor = 'reason_exited_descriptor_example'; // string | The reason the student left the program within a school or district.
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
 $id = 'id_example'; // string | 
+$served_outside_of_regular_session = True; // bool | Indicates whether the student received services during the summer session or between sessions.
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentSpecialEducationProgramAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $id, $use_snapshot);
+    $result = $apiInstance->getStudentSpecialEducationProgramAssociations($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentSpecialEducationProgramAssociationsApi->getStudentSpecialEducationProgramAssociations: ', $e->getMessage(), PHP_EOL;
@@ -210,12 +218,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
-| **begin_date** | **\DateTime**| The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. | [optional] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
+| **begin_date** | **\DateTime**| The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
 | **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
 | **program_education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
 | **program_name** | **string**| The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] |
@@ -224,17 +234,22 @@ try {
 | **special_education_exit_reason_descriptor** | **string**| The reason why a person stops receiving special education services. | [optional] |
 | **special_education_setting_descriptor** | **string**| The major instructional setting (more than 50 percent of a student&#39;s special education program). | [optional] |
 | **idea_eligibility** | **bool**| Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). | [optional] |
-| **iep_begin_date** | **\DateTime**| The effective date of the most recent IEP. | [optional] |
-| **iep_end_date** | **\DateTime**| The end date of the most recent IEP. | [optional] |
+| **iep_begin_date** | **\DateTime**| The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
+| **iep_end_date** | **\DateTime**| The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
 | **iep_review_date** | **\DateTime**| The date of the last IEP review. | [optional] |
 | **last_evaluation_date** | **\DateTime**| The date of the last special education evaluation. | [optional] |
 | **medically_fragile** | **bool**| Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. | [optional] |
 | **multiply_disabled** | **bool**| Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. | [optional] |
+| **reduction_in_hours_per_week_compared_to_peers** | **float**| Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. | [optional] |
 | **school_hours_per_week** | **float**| Indicate the total number of hours of instructional time per week for the school that the student attends. | [optional] |
+| **shortened_school_day_indicator** | **bool**| Indicator that the student&#39;s IEP requires a shortened school day. | [optional] |
 | **special_education_exit_date** | **\DateTime**| The  month, day and year on which a person stops receiving special education services. | [optional] |
 | **special_education_exit_explained** | **string**| Explanation on why a person stops receiving special education services. | [optional] |
 | **special_education_hours_per_week** | **float**| The number of hours per week for special education instruction and therapy. | [optional] |
+| **reason_exited_descriptor** | **string**| The reason the student left the program within a school or district. | [optional] |
+| **end_date** | **\DateTime**| The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
 | **id** | **string**|  | [optional] |
+| **served_outside_of_regular_session** | **bool**| Indicates whether the student received services during the summer session or between sessions. | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -318,6 +333,122 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getStudentSpecialEducationProgramAssociationsPartitions()`
+
+```php
+getStudentSpecialEducationProgramAssociationsPartitions($number, $min_change_version, $max_change_version, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\StudentSpecialEducationProgramAssociationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$begin_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
+$education_organization_id = 56; // int | The identifier assigned to an education organization.
+$program_education_organization_id = 56; // int | The identifier assigned to an education organization.
+$program_name = 'program_name_example'; // string | The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies.
+$program_type_descriptor = 'program_type_descriptor_example'; // string | The type of program.
+$student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
+$special_education_exit_reason_descriptor = 'special_education_exit_reason_descriptor_example'; // string | The reason why a person stops receiving special education services.
+$special_education_setting_descriptor = 'special_education_setting_descriptor_example'; // string | The major instructional setting (more than 50 percent of a student's special education program).
+$idea_eligibility = True; // bool | Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA).
+$iep_begin_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
+$iep_end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
+$iep_review_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date of the last IEP review.
+$last_evaluation_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date of the last special education evaluation.
+$medically_fragile = True; // bool | Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements.
+$multiply_disabled = True; // bool | Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements.
+$reduction_in_hours_per_week_compared_to_peers = 3.4; // float | Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education.
+$school_hours_per_week = 3.4; // float | Indicate the total number of hours of instructional time per week for the school that the student attends.
+$shortened_school_day_indicator = True; // bool | Indicator that the student's IEP requires a shortened school day.
+$special_education_exit_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The  month, day and year on which a person stops receiving special education services.
+$special_education_exit_explained = 'special_education_exit_explained_example'; // string | Explanation on why a person stops receiving special education services.
+$special_education_hours_per_week = 3.4; // float | The number of hours per week for special education instruction and therapy.
+$reason_exited_descriptor = 'reason_exited_descriptor_example'; // string | The reason the student left the program within a school or district.
+$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
+$id = 'id_example'; // string | 
+$served_outside_of_regular_session = True; // bool | Indicates whether the student received services during the summer session or between sessions.
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+
+try {
+    $result = $apiInstance->getStudentSpecialEducationProgramAssociationsPartitions($number, $min_change_version, $max_change_version, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling StudentSpecialEducationProgramAssociationsApi->getStudentSpecialEducationProgramAssociationsPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **begin_date** | **\DateTime**| The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
+| **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
+| **program_education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
+| **program_name** | **string**| The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] |
+| **program_type_descriptor** | **string**| The type of program. | [optional] |
+| **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
+| **special_education_exit_reason_descriptor** | **string**| The reason why a person stops receiving special education services. | [optional] |
+| **special_education_setting_descriptor** | **string**| The major instructional setting (more than 50 percent of a student&#39;s special education program). | [optional] |
+| **idea_eligibility** | **bool**| Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). | [optional] |
+| **iep_begin_date** | **\DateTime**| The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
+| **iep_end_date** | **\DateTime**| The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
+| **iep_review_date** | **\DateTime**| The date of the last IEP review. | [optional] |
+| **last_evaluation_date** | **\DateTime**| The date of the last special education evaluation. | [optional] |
+| **medically_fragile** | **bool**| Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. | [optional] |
+| **multiply_disabled** | **bool**| Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. | [optional] |
+| **reduction_in_hours_per_week_compared_to_peers** | **float**| Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. | [optional] |
+| **school_hours_per_week** | **float**| Indicate the total number of hours of instructional time per week for the school that the student attends. | [optional] |
+| **shortened_school_day_indicator** | **bool**| Indicator that the student&#39;s IEP requires a shortened school day. | [optional] |
+| **special_education_exit_date** | **\DateTime**| The  month, day and year on which a person stops receiving special education services. | [optional] |
+| **special_education_exit_explained** | **string**| Explanation on why a person stops receiving special education services. | [optional] |
+| **special_education_hours_per_week** | **float**| The number of hours per week for special education instruction and therapy. | [optional] |
+| **reason_exited_descriptor** | **string**| The reason the student left the program within a school or district. | [optional] |
+| **end_date** | **\DateTime**| The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional] |
+| **id** | **string**|  | [optional] |
+| **served_outside_of_regular_session** | **bool**| Indicates whether the student received services during the summer session or between sessions. | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesStudentSpecialEducationProgramAssociations()`
 
 ```php
@@ -345,11 +476,11 @@ $apiInstance = new Resources\Api\StudentSpecialEducationProgramAssociationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -364,11 +495,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

@@ -1,6 +1,6 @@
 # Resources\StudentSpecialEducationProgramEligibilityAssociationsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.2/api/data/v3, except if t
 | [**deletesStudentSpecialEducationProgramEligibilityAssociations()**](StudentSpecialEducationProgramEligibilityAssociationsApi.md#deletesStudentSpecialEducationProgramEligibilityAssociations) | **GET** /ed-fi/studentSpecialEducationProgramEligibilityAssociations/deletes | Retrieves deleted resources based on change version. |
 | [**getStudentSpecialEducationProgramEligibilityAssociations()**](StudentSpecialEducationProgramEligibilityAssociationsApi.md#getStudentSpecialEducationProgramEligibilityAssociations) | **GET** /ed-fi/studentSpecialEducationProgramEligibilityAssociations | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getStudentSpecialEducationProgramEligibilityAssociationsById()**](StudentSpecialEducationProgramEligibilityAssociationsApi.md#getStudentSpecialEducationProgramEligibilityAssociationsById) | **GET** /ed-fi/studentSpecialEducationProgramEligibilityAssociations/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getStudentSpecialEducationProgramEligibilityAssociationsPartitions()**](StudentSpecialEducationProgramEligibilityAssociationsApi.md#getStudentSpecialEducationProgramEligibilityAssociationsPartitions) | **GET** /ed-fi/studentSpecialEducationProgramEligibilityAssociations/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesStudentSpecialEducationProgramEligibilityAssociations()**](StudentSpecialEducationProgramEligibilityAssociationsApi.md#keyChangesStudentSpecialEducationProgramEligibilityAssociations) | **GET** /ed-fi/studentSpecialEducationProgramEligibilityAssociations/keyChanges | Retrieves resources key changes based on change version. |
 | [**postStudentSpecialEducationProgramEligibilityAssociation()**](StudentSpecialEducationProgramEligibilityAssociationsApi.md#postStudentSpecialEducationProgramEligibilityAssociation) | **POST** /ed-fi/studentSpecialEducationProgramEligibilityAssociations | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putStudentSpecialEducationProgramEligibilityAssociation()**](StudentSpecialEducationProgramEligibilityAssociationsApi.md#putStudentSpecialEducationProgramEligibilityAssociation) | **PUT** /ed-fi/studentSpecialEducationProgramEligibilityAssociations/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssoci
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getStudentSpecialEducationProgramEligibilityAssociations()`
 
 ```php
-getStudentSpecialEducationProgramEligibilityAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot): \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[]
+getStudentSpecialEducationProgramEligibilityAssociations($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot): \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,13 +172,16 @@ $apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssoci
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $consent_to_evaluation_received_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Indicates the date on which the local education agency received written consent for the evaluation from the student's parent or guardian. This is the first day of the evaluation timeframe.
 $education_organization_id = 56; // int | The identifier assigned to an education organization.
+$program_education_organization_id = 56; // int | The identifier assigned to an education organization.
 $program_name = 'program_name_example'; // string | The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies.
 $program_type_descriptor = 'program_type_descriptor_example'; // string | The type of program.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
@@ -200,7 +204,7 @@ $transition_notification_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentSpecialEducationProgramEligibilityAssociations($offset, $limit, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot);
+    $result = $apiInstance->getStudentSpecialEducationProgramEligibilityAssociations($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentSpecialEducationProgramEligibilityAssociationsApi->getStudentSpecialEducationProgramEligibilityAssociations: ', $e->getMessage(), PHP_EOL;
@@ -211,13 +215,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **consent_to_evaluation_received_date** | **\DateTime**| Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. | [optional] |
 | **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
+| **program_education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
 | **program_name** | **string**| The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] |
 | **program_type_descriptor** | **string**| The type of program. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
@@ -320,6 +327,116 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getStudentSpecialEducationProgramEligibilityAssociationsPartitions()`
+
+```php
+getStudentSpecialEducationProgramEligibilityAssociationsPartitions($number, $min_change_version, $max_change_version, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssociationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$consent_to_evaluation_received_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Indicates the date on which the local education agency received written consent for the evaluation from the student's parent or guardian. This is the first day of the evaluation timeframe.
+$education_organization_id = 56; // int | The identifier assigned to an education organization.
+$program_education_organization_id = 56; // int | The identifier assigned to an education organization.
+$program_name = 'program_name_example'; // string | The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies.
+$program_type_descriptor = 'program_type_descriptor_example'; // string | The type of program.
+$student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
+$eligibility_delay_reason_descriptor = 'eligibility_delay_reason_descriptor_example'; // string | The reason why the eligibility determination was completed beyond the required timeframe.
+$eligibility_evaluation_type_descriptor = 'eligibility_evaluation_type_descriptor_example'; // string | Indicates if this is an initial evaluation or a reevaluation.
+$evaluation_delay_reason_descriptor = 'evaluation_delay_reason_descriptor_example'; // string | Refers to the justification as to why the evaluation report was completed beyond the state-established timeframe. This descriptor field will have allowed reasons as descriptor values.
+$idea_part_descriptor = 'idea_part_descriptor_example'; // string | Indicates if the evaluation is done under Part B IDEA or Part C IDEA.
+$consent_to_evaluation_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date on which the student's parent gave a consent (Parent Consent Date).
+$eligibility_conference_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, day, and year when the eligibility conference is held between the parent(s)/guardian(s) and the educational organization responsible staff member(s) to review and make decision on special education related services eligibility.
+$eligibility_determination_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Indicates the month, day, and year the local education agency (LEA) held the admission, review, and dismissal committee meeting regarding the child's eligibility determination for special education and related services. An individualized education plan (IEP) would be developed and implemented for a child admitted into special education on this same date.
+$eligibility_evaluation_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Indicates the month, day, and year when the written individual evaluation report was completed.
+$evaluation_complete_indicator = True; // bool | Indicates the evaluation completed status.
+$evaluation_delay_days = 56; // int | Indicates the number of student absences, if any, beginning the first instructional day following the date on which the local education agency (LEA) received written parental or guardian consent for the evaluation.
+$evaluation_late_reason = 'evaluation_late_reason_example'; // string | Refers to additional information for delay in doing the evaluation.
+$id = 'id_example'; // string | 
+$idea_indicator = True; // bool | Indicates whether or not the student was determined eligible as a result of an evaluation.
+$original_eci_services_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month, date, and year when an infant or toddler, from birth through age 2, began participating in the early childhood intervention (ECI) program.
+$transition_conference_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Indicates the month, day, and year when the transition conference was held (for a child receiving early childhood intervention (ECI) services) among the lead agency, the family, and the local education agency (LEA) where the child resides to discuss the child's potential eligibility for early childhood special education (ECSE) services.
+$transition_notification_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Indicates the month, day, and year the LEA Notification of Potentially Eligible for Special Education Services was sent by the early childhood intervention (ECI) contractor to the local education agency (LEA) to notify them that a child enrolled in ECI will shortly reach the age of eligibility for Part B services and the child is potentially eligible for services under Part B, early childhood special education (ECSE). The LEA Notification constitutes a referral to the LEA for an initial evaluation and eligibility determination of the child which the parent or guardian may opt out from the referral.
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+
+try {
+    $result = $apiInstance->getStudentSpecialEducationProgramEligibilityAssociationsPartitions($number, $min_change_version, $max_change_version, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling StudentSpecialEducationProgramEligibilityAssociationsApi->getStudentSpecialEducationProgramEligibilityAssociationsPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **consent_to_evaluation_received_date** | **\DateTime**| Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. | [optional] |
+| **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
+| **program_education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
+| **program_name** | **string**| The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] |
+| **program_type_descriptor** | **string**| The type of program. | [optional] |
+| **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
+| **eligibility_delay_reason_descriptor** | **string**| The reason why the eligibility determination was completed beyond the required timeframe. | [optional] |
+| **eligibility_evaluation_type_descriptor** | **string**| Indicates if this is an initial evaluation or a reevaluation. | [optional] |
+| **evaluation_delay_reason_descriptor** | **string**| Refers to the justification as to why the evaluation report was completed beyond the state-established timeframe. This descriptor field will have allowed reasons as descriptor values. | [optional] |
+| **idea_part_descriptor** | **string**| Indicates if the evaluation is done under Part B IDEA or Part C IDEA. | [optional] |
+| **consent_to_evaluation_date** | **\DateTime**| The date on which the student&#39;s parent gave a consent (Parent Consent Date). | [optional] |
+| **eligibility_conference_date** | **\DateTime**| The month, day, and year when the eligibility conference is held between the parent(s)/guardian(s) and the educational organization responsible staff member(s) to review and make decision on special education related services eligibility. | [optional] |
+| **eligibility_determination_date** | **\DateTime**| Indicates the month, day, and year the local education agency (LEA) held the admission, review, and dismissal committee meeting regarding the child&#39;s eligibility determination for special education and related services. An individualized education plan (IEP) would be developed and implemented for a child admitted into special education on this same date. | [optional] |
+| **eligibility_evaluation_date** | **\DateTime**| Indicates the month, day, and year when the written individual evaluation report was completed. | [optional] |
+| **evaluation_complete_indicator** | **bool**| Indicates the evaluation completed status. | [optional] |
+| **evaluation_delay_days** | **int**| Indicates the number of student absences, if any, beginning the first instructional day following the date on which the local education agency (LEA) received written parental or guardian consent for the evaluation. | [optional] |
+| **evaluation_late_reason** | **string**| Refers to additional information for delay in doing the evaluation. | [optional] |
+| **id** | **string**|  | [optional] |
+| **idea_indicator** | **bool**| Indicates whether or not the student was determined eligible as a result of an evaluation. | [optional] |
+| **original_eci_services_date** | **\DateTime**| The month, date, and year when an infant or toddler, from birth through age 2, began participating in the early childhood intervention (ECI) program. | [optional] |
+| **transition_conference_date** | **\DateTime**| Indicates the month, day, and year when the transition conference was held (for a child receiving early childhood intervention (ECI) services) among the lead agency, the family, and the local education agency (LEA) where the child resides to discuss the child&#39;s potential eligibility for early childhood special education (ECSE) services. | [optional] |
+| **transition_notification_date** | **\DateTime**| Indicates the month, day, and year the LEA Notification of Potentially Eligible for Special Education Services was sent by the early childhood intervention (ECI) contractor to the local education agency (LEA) to notify them that a child enrolled in ECI will shortly reach the age of eligibility for Part B services and the child is potentially eligible for services under Part B, early childhood special education (ECSE). The LEA Notification constitutes a referral to the LEA for an initial evaluation and eligibility determination of the child which the parent or guardian may opt out from the referral. | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesStudentSpecialEducationProgramEligibilityAssociations()`
 
 ```php
@@ -347,11 +464,11 @@ $apiInstance = new Resources\Api\StudentSpecialEducationProgramEligibilityAssoci
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -366,11 +483,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

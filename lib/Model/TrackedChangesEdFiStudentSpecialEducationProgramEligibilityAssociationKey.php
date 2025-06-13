@@ -59,6 +59,7 @@ class TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKey 
     protected static $openAPITypes = [
         'consent_to_evaluation_received_date' => '\DateTime',
         'education_organization_id' => 'int',
+        'program_education_organization_id' => 'int',
         'program_name' => 'string',
         'program_type_descriptor' => 'string',
         'student_unique_id' => 'string'
@@ -74,6 +75,7 @@ class TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKey 
     protected static $openAPIFormats = [
         'consent_to_evaluation_received_date' => 'date',
         'education_organization_id' => 'int64',
+        'program_education_organization_id' => 'int64',
         'program_name' => null,
         'program_type_descriptor' => null,
         'student_unique_id' => null
@@ -87,6 +89,7 @@ class TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKey 
     protected static array $openAPINullables = [
         'consent_to_evaluation_received_date' => false,
         'education_organization_id' => false,
+        'program_education_organization_id' => false,
         'program_name' => false,
         'program_type_descriptor' => false,
         'student_unique_id' => false
@@ -180,6 +183,7 @@ class TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKey 
     protected static $attributeMap = [
         'consent_to_evaluation_received_date' => 'consentToEvaluationReceivedDate',
         'education_organization_id' => 'educationOrganizationId',
+        'program_education_organization_id' => 'programEducationOrganizationId',
         'program_name' => 'programName',
         'program_type_descriptor' => 'programTypeDescriptor',
         'student_unique_id' => 'studentUniqueId'
@@ -193,6 +197,7 @@ class TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKey 
     protected static $setters = [
         'consent_to_evaluation_received_date' => 'setConsentToEvaluationReceivedDate',
         'education_organization_id' => 'setEducationOrganizationId',
+        'program_education_organization_id' => 'setProgramEducationOrganizationId',
         'program_name' => 'setProgramName',
         'program_type_descriptor' => 'setProgramTypeDescriptor',
         'student_unique_id' => 'setStudentUniqueId'
@@ -206,6 +211,7 @@ class TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKey 
     protected static $getters = [
         'consent_to_evaluation_received_date' => 'getConsentToEvaluationReceivedDate',
         'education_organization_id' => 'getEducationOrganizationId',
+        'program_education_organization_id' => 'getProgramEducationOrganizationId',
         'program_name' => 'getProgramName',
         'program_type_descriptor' => 'getProgramTypeDescriptor',
         'student_unique_id' => 'getStudentUniqueId'
@@ -270,6 +276,7 @@ class TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKey 
     {
         $this->setIfExists('consent_to_evaluation_received_date', $data ?? [], null);
         $this->setIfExists('education_organization_id', $data ?? [], null);
+        $this->setIfExists('program_education_organization_id', $data ?? [], null);
         $this->setIfExists('program_name', $data ?? [], null);
         $this->setIfExists('program_type_descriptor', $data ?? [], null);
         $this->setIfExists('student_unique_id', $data ?? [], null);
@@ -379,6 +386,33 @@ class TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKey 
             throw new \InvalidArgumentException('non-nullable education_organization_id cannot be null');
         }
         $this->container['education_organization_id'] = $education_organization_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets program_education_organization_id
+     *
+     * @return int|null
+     */
+    public function getProgramEducationOrganizationId()
+    {
+        return $this->container['program_education_organization_id'];
+    }
+
+    /**
+     * Sets program_education_organization_id
+     *
+     * @param int|null $program_education_organization_id The identifier assigned to an education organization.
+     *
+     * @return self
+     */
+    public function setProgramEducationOrganizationId($program_education_organization_id)
+    {
+        if (is_null($program_education_organization_id)) {
+            throw new \InvalidArgumentException('non-nullable program_education_organization_id cannot be null');
+        }
+        $this->container['program_education_organization_id'] = $program_education_organization_id;
 
         return $this;
     }

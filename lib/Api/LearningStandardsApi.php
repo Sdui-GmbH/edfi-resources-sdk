@@ -83,6 +83,9 @@ class LearningStandardsApi
         'getLearningStandardsById' => [
             'application/json',
         ],
+        'getLearningStandardsPartitions' => [
+            'application/json',
+        ],
         'keyChangesLearningStandards' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class LearningStandardsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLearningStandards'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiLearningStandardDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiLearningStandardDelete[]
      */
-    public function deletesLearningStandards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
+    public function deletesLearningStandards($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
     {
         list($response) = $this->deletesLearningStandardsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class LearningStandardsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLearningStandards'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiLearningStandardDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiLearningStandardDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesLearningStandardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
+    public function deletesLearningStandardsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
     {
         $request = $this->deletesLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class LearningStandardsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesLearningStandardsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
+    public function deletesLearningStandardsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
     {
         return $this->deletesLearningStandardsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class LearningStandardsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesLearningStandardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
+    public function deletesLearningStandardsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiLearningStandardDelete[]';
         $request = $this->deletesLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class LearningStandardsApi
     /**
      * Create request for operation 'deletesLearningStandards'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesLearningStandardsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
+    public function deletesLearningStandardsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesLearningStandards'][0])
     {
 
 
@@ -759,11 +762,13 @@ class LearningStandardsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $parent_learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $learning_standard_category_descriptor An additional classification of the type of a specific learning standard. (optional)
@@ -776,15 +781,17 @@ class LearningStandardsApi
      * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. (optional)
      * @param  string $uri An unambiguous reference to the statement using a network-resolvable URI. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $content_standard_name The name of the content standard, for example Common Core. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a Learning Standard. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandards'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiLearningStandard[]
+     * @return |\Resources\Model\EdFiLearningStandard[]
      */
-    public function getLearningStandards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandards'][0])
+    public function getLearningStandards($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, $content_standard_name = null, $identification_code = null, string $contentType = self::contentTypes['getLearningStandards'][0])
     {
-        list($response) = $this->getLearningStandardsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $contentType);
+        list($response) = $this->getLearningStandardsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code, $contentType);
         return $response;
     }
 
@@ -793,11 +800,13 @@ class LearningStandardsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $parent_learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $learning_standard_category_descriptor An additional classification of the type of a specific learning standard. (optional)
@@ -810,15 +819,17 @@ class LearningStandardsApi
      * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. (optional)
      * @param  string $uri An unambiguous reference to the statement using a network-resolvable URI. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $content_standard_name The name of the content standard, for example Common Core. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a Learning Standard. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandards'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiLearningStandard[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiLearningStandard[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLearningStandardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandards'][0])
+    public function getLearningStandardsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, $content_standard_name = null, $identification_code = null, string $contentType = self::contentTypes['getLearningStandards'][0])
     {
-        $request = $this->getLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $contentType);
+        $request = $this->getLearningStandardsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -934,11 +945,13 @@ class LearningStandardsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $parent_learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $learning_standard_category_descriptor An additional classification of the type of a specific learning standard. (optional)
@@ -951,14 +964,16 @@ class LearningStandardsApi
      * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. (optional)
      * @param  string $uri An unambiguous reference to the statement using a network-resolvable URI. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $content_standard_name The name of the content standard, for example Common Core. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a Learning Standard. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLearningStandardsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandards'][0])
+    public function getLearningStandardsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, $content_standard_name = null, $identification_code = null, string $contentType = self::contentTypes['getLearningStandards'][0])
     {
-        return $this->getLearningStandardsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $contentType)
+        return $this->getLearningStandardsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -971,11 +986,13 @@ class LearningStandardsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $parent_learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $learning_standard_category_descriptor An additional classification of the type of a specific learning standard. (optional)
@@ -988,15 +1005,17 @@ class LearningStandardsApi
      * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. (optional)
      * @param  string $uri An unambiguous reference to the statement using a network-resolvable URI. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $content_standard_name The name of the content standard, for example Common Core. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a Learning Standard. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLearningStandardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandards'][0])
+    public function getLearningStandardsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, $content_standard_name = null, $identification_code = null, string $contentType = self::contentTypes['getLearningStandards'][0])
     {
         $returnType = '\Resources\Model\EdFiLearningStandard[]';
-        $request = $this->getLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $contentType);
+        $request = $this->getLearningStandardsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1037,11 +1056,13 @@ class LearningStandardsApi
     /**
      * Create request for operation 'getLearningStandards'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $parent_learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $learning_standard_category_descriptor An additional classification of the type of a specific learning standard. (optional)
@@ -1054,12 +1075,14 @@ class LearningStandardsApi
      * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. (optional)
      * @param  string $uri An unambiguous reference to the statement using a network-resolvable URI. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $content_standard_name The name of the content standard, for example Common Core. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a Learning Standard. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getLearningStandardsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandards'][0])
+    public function getLearningStandardsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, $content_standard_name = null, $identification_code = null, string $contentType = self::contentTypes['getLearningStandards'][0])
     {
 
 
@@ -1068,6 +1091,11 @@ class LearningStandardsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling LearningStandardsApi.getLearningStandards, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling LearningStandardsApi.getLearningStandards, must be bigger than or equal to 0.');
         }
         
 
@@ -1115,6 +1143,14 @@ class LearningStandardsApi
         }
         
 
+        if ($content_standard_name !== null && strlen($content_standard_name) > 65) {
+            throw new \InvalidArgumentException('invalid length for "$content_standard_name" when calling LearningStandardsApi.getLearningStandards, must be smaller than or equal to 65.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling LearningStandardsApi.getLearningStandards, must be smaller than or equal to 60.');
+        }
+        
 
         $resourcePath = '/ed-fi/learningStandards';
         $formParams = [];
@@ -1136,6 +1172,24 @@ class LearningStandardsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1267,6 +1321,24 @@ class LearningStandardsApi
             true, // explode
             false // required
         ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $content_standard_name,
+            'contentStandardName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
         // header params
         if ($use_snapshot !== null) {
@@ -1344,7 +1416,7 @@ class LearningStandardsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiLearningStandard
+     * @return |\Resources\Model\EdFiLearningStandard
      */
     public function getLearningStandardsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardsById'][0])
     {
@@ -1364,7 +1436,7 @@ class LearningStandardsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiLearningStandard, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiLearningStandard, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLearningStandardsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getLearningStandardsById'][0])
     {
@@ -1665,23 +1737,607 @@ class LearningStandardsApi
     }
 
     /**
+     * Operation getLearningStandardsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $parent_learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $learning_standard_category_descriptor An additional classification of the type of a specific learning standard. (optional)
+     * @param  string $learning_standard_scope_descriptor Signals the scope of usage the standard. Does not necessarily relate the standard to the governing body. (optional)
+     * @param  string $course_title The official course title with which this learning standard is associated. (optional)
+     * @param  string $description The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)
+     * @param  string $id  (optional)
+     * @param  string $learning_standard_item_code A code designated by the promulgating body to identify the statement, e.g. 1.N.3 (usually not globally unique). (optional)
+     * @param  string $namespace The namespace of the organization or entity who governs the standard. It is recommended the namespaces observe a URI format and begin with a domain name under the governing organization or entity control. (optional)
+     * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. (optional)
+     * @param  string $uri An unambiguous reference to the statement using a network-resolvable URI. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $content_standard_name The name of the content standard, for example Common Core. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a Learning Standard. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getLearningStandardsPartitions($number = null, $min_change_version = null, $max_change_version = null, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, $content_standard_name = null, $identification_code = null, string $contentType = self::contentTypes['getLearningStandardsPartitions'][0])
+    {
+        list($response) = $this->getLearningStandardsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getLearningStandardsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $parent_learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $learning_standard_category_descriptor An additional classification of the type of a specific learning standard. (optional)
+     * @param  string $learning_standard_scope_descriptor Signals the scope of usage the standard. Does not necessarily relate the standard to the governing body. (optional)
+     * @param  string $course_title The official course title with which this learning standard is associated. (optional)
+     * @param  string $description The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)
+     * @param  string $id  (optional)
+     * @param  string $learning_standard_item_code A code designated by the promulgating body to identify the statement, e.g. 1.N.3 (usually not globally unique). (optional)
+     * @param  string $namespace The namespace of the organization or entity who governs the standard. It is recommended the namespaces observe a URI format and begin with a domain name under the governing organization or entity control. (optional)
+     * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. (optional)
+     * @param  string $uri An unambiguous reference to the statement using a network-resolvable URI. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $content_standard_name The name of the content standard, for example Common Core. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a Learning Standard. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getLearningStandardsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, $content_standard_name = null, $identification_code = null, string $contentType = self::contentTypes['getLearningStandardsPartitions'][0])
+    {
+        $request = $this->getLearningStandardsPartitionsRequest($number, $min_change_version, $max_change_version, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getLearningStandardsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $parent_learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $learning_standard_category_descriptor An additional classification of the type of a specific learning standard. (optional)
+     * @param  string $learning_standard_scope_descriptor Signals the scope of usage the standard. Does not necessarily relate the standard to the governing body. (optional)
+     * @param  string $course_title The official course title with which this learning standard is associated. (optional)
+     * @param  string $description The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)
+     * @param  string $id  (optional)
+     * @param  string $learning_standard_item_code A code designated by the promulgating body to identify the statement, e.g. 1.N.3 (usually not globally unique). (optional)
+     * @param  string $namespace The namespace of the organization or entity who governs the standard. It is recommended the namespaces observe a URI format and begin with a domain name under the governing organization or entity control. (optional)
+     * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. (optional)
+     * @param  string $uri An unambiguous reference to the statement using a network-resolvable URI. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $content_standard_name The name of the content standard, for example Common Core. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a Learning Standard. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getLearningStandardsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, $content_standard_name = null, $identification_code = null, string $contentType = self::contentTypes['getLearningStandardsPartitions'][0])
+    {
+        return $this->getLearningStandardsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getLearningStandardsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $parent_learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $learning_standard_category_descriptor An additional classification of the type of a specific learning standard. (optional)
+     * @param  string $learning_standard_scope_descriptor Signals the scope of usage the standard. Does not necessarily relate the standard to the governing body. (optional)
+     * @param  string $course_title The official course title with which this learning standard is associated. (optional)
+     * @param  string $description The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)
+     * @param  string $id  (optional)
+     * @param  string $learning_standard_item_code A code designated by the promulgating body to identify the statement, e.g. 1.N.3 (usually not globally unique). (optional)
+     * @param  string $namespace The namespace of the organization or entity who governs the standard. It is recommended the namespaces observe a URI format and begin with a domain name under the governing organization or entity control. (optional)
+     * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. (optional)
+     * @param  string $uri An unambiguous reference to the statement using a network-resolvable URI. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $content_standard_name The name of the content standard, for example Common Core. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a Learning Standard. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getLearningStandardsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, $content_standard_name = null, $identification_code = null, string $contentType = self::contentTypes['getLearningStandardsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getLearningStandardsPartitionsRequest($number, $min_change_version, $max_change_version, $learning_standard_id, $parent_learning_standard_id, $learning_standard_category_descriptor, $learning_standard_scope_descriptor, $course_title, $description, $id, $learning_standard_item_code, $namespace, $success_criteria, $uri, $use_snapshot, $content_standard_name, $identification_code, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getLearningStandardsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $parent_learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $learning_standard_category_descriptor An additional classification of the type of a specific learning standard. (optional)
+     * @param  string $learning_standard_scope_descriptor Signals the scope of usage the standard. Does not necessarily relate the standard to the governing body. (optional)
+     * @param  string $course_title The official course title with which this learning standard is associated. (optional)
+     * @param  string $description The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)
+     * @param  string $id  (optional)
+     * @param  string $learning_standard_item_code A code designated by the promulgating body to identify the statement, e.g. 1.N.3 (usually not globally unique). (optional)
+     * @param  string $namespace The namespace of the organization or entity who governs the standard. It is recommended the namespaces observe a URI format and begin with a domain name under the governing organization or entity control. (optional)
+     * @param  string $success_criteria One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the learning standard. (optional)
+     * @param  string $uri An unambiguous reference to the statement using a network-resolvable URI. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $content_standard_name The name of the content standard, for example Common Core. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a Learning Standard. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getLearningStandardsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getLearningStandardsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $learning_standard_id = null, $parent_learning_standard_id = null, $learning_standard_category_descriptor = null, $learning_standard_scope_descriptor = null, $course_title = null, $description = null, $id = null, $learning_standard_item_code = null, $namespace = null, $success_criteria = null, $uri = null, $use_snapshot = false, $content_standard_name = null, $identification_code = null, string $contentType = self::contentTypes['getLearningStandardsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling LearningStandardsApi.getLearningStandardsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($learning_standard_id !== null && strlen($learning_standard_id) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$learning_standard_id" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($parent_learning_standard_id !== null && strlen($parent_learning_standard_id) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$parent_learning_standard_id" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($learning_standard_category_descriptor !== null && strlen($learning_standard_category_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$learning_standard_category_descriptor" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($learning_standard_scope_descriptor !== null && strlen($learning_standard_scope_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$learning_standard_scope_descriptor" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($course_title !== null && strlen($course_title) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$course_title" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($description !== null && strlen($description) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$description" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 1024.');
+        }
+        
+
+        if ($learning_standard_item_code !== null && strlen($learning_standard_item_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$learning_standard_item_code" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($namespace !== null && strlen($namespace) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$namespace" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($success_criteria !== null && strlen($success_criteria) > 150) {
+            throw new \InvalidArgumentException('invalid length for "$success_criteria" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 150.');
+        }
+        
+        if ($uri !== null && strlen($uri) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$uri" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+        if ($content_standard_name !== null && strlen($content_standard_name) > 65) {
+            throw new \InvalidArgumentException('invalid length for "$content_standard_name" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 65.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling LearningStandardsApi.getLearningStandardsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        $resourcePath = '/ed-fi/learningStandards/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $learning_standard_id,
+            'learningStandardId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $parent_learning_standard_id,
+            'parentLearningStandardId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $learning_standard_category_descriptor,
+            'learningStandardCategoryDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $learning_standard_scope_descriptor,
+            'learningStandardScopeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $course_title,
+            'courseTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $description,
+            'description', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $learning_standard_item_code,
+            'learningStandardItemCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $namespace,
+            'namespace', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $success_criteria,
+            'successCriteria', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $uri,
+            'uri', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $content_standard_name,
+            'contentStandardName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesLearningStandards
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLearningStandards'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]
      */
-    public function keyChangesLearningStandards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
+    public function keyChangesLearningStandards($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
     {
         list($response) = $this->keyChangesLearningStandardsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1692,19 +2348,19 @@ class LearningStandardsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLearningStandards'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesLearningStandardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
+    public function keyChangesLearningStandardsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
     {
         $request = $this->keyChangesLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1822,18 +2478,18 @@ class LearningStandardsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesLearningStandardsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
+    public function keyChangesLearningStandardsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
     {
         return $this->keyChangesLearningStandardsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1848,18 +2504,18 @@ class LearningStandardsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesLearningStandardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
+    public function keyChangesLearningStandardsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiLearningStandardKeyChange[]';
         $request = $this->keyChangesLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1903,18 +2559,18 @@ class LearningStandardsApi
     /**
      * Create request for operation 'keyChangesLearningStandards'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesLearningStandardsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
+    public function keyChangesLearningStandardsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesLearningStandards'][0])
     {
 
 

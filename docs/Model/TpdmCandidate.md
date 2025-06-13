@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **preferred_first_name** | **string** | The first name the individual prefers, if different from their legal first name | [optional]
 **preferred_last_surname** | **string** | The last name the individual prefers, if different from their legal last name | [optional]
 **races** | [**\Resources\Model\TpdmCandidateRace[]**](TpdmCandidateRace.md) | An unordered collection of candidateRaces. The general racial category which most clearly reflects the individual&#39;s recognition of his or her community or with which the individual most identifies. The data model allows for multiple entries so that each individual can specify all appropriate races. | [optional]
-**sex_descriptor** | **string** | The sex of the candidate. |
+**sex_descriptor** | **string** | The sex of the candidate. | [optional]
 **telephones** | [**\Resources\Model\TpdmCandidateTelephone[]**](TpdmCandidateTelephone.md) | An unordered collection of candidateTelephones. The 10-digit telephone number, including the area code, for the person. | [optional]
 **_etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional]
 **_last_modified_date** | **\DateTime** | The date and time the resource was last modified. | [optional]

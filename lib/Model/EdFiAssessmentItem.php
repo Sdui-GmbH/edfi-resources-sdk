@@ -592,7 +592,7 @@ class EdFiAssessmentItem implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets expected_time_assessed
      *
-     * @param string|null $expected_time_assessed The duration of time allotted for the assessment item.
+     * @param string|null $expected_time_assessed The duration allotted for the assessment item expressed in minutes.
      *
      * @return self
      */

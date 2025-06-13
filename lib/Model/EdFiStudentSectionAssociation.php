@@ -59,9 +59,14 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPITypes = [
         'id' => 'string',
         'begin_date' => '\DateTime',
+        'dual_credit_education_organization_reference' => '\Resources\Model\EdFiEducationOrganizationReference',
         'section_reference' => '\Resources\Model\EdFiSectionReference',
         'student_reference' => '\Resources\Model\EdFiStudentReference',
         'attempt_status_descriptor' => 'string',
+        'dual_credit_indicator' => 'bool',
+        'dual_credit_institution_descriptor' => 'string',
+        'dual_credit_type_descriptor' => 'string',
+        'dual_high_school_credit_indicator' => 'bool',
         'end_date' => '\DateTime',
         'homeroom_indicator' => 'bool',
         'programs' => '\Resources\Model\EdFiStudentSectionAssociationProgram[]',
@@ -81,9 +86,14 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPIFormats = [
         'id' => null,
         'begin_date' => 'date',
+        'dual_credit_education_organization_reference' => null,
         'section_reference' => null,
         'student_reference' => null,
         'attempt_status_descriptor' => null,
+        'dual_credit_indicator' => null,
+        'dual_credit_institution_descriptor' => null,
+        'dual_credit_type_descriptor' => null,
+        'dual_high_school_credit_indicator' => null,
         'end_date' => 'date',
         'homeroom_indicator' => null,
         'programs' => null,
@@ -101,9 +111,14 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     protected static array $openAPINullables = [
         'id' => false,
         'begin_date' => false,
+        'dual_credit_education_organization_reference' => false,
         'section_reference' => false,
         'student_reference' => false,
         'attempt_status_descriptor' => true,
+        'dual_credit_indicator' => true,
+        'dual_credit_institution_descriptor' => true,
+        'dual_credit_type_descriptor' => true,
+        'dual_high_school_credit_indicator' => true,
         'end_date' => true,
         'homeroom_indicator' => true,
         'programs' => false,
@@ -201,9 +216,14 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     protected static $attributeMap = [
         'id' => 'id',
         'begin_date' => 'beginDate',
+        'dual_credit_education_organization_reference' => 'dualCreditEducationOrganizationReference',
         'section_reference' => 'sectionReference',
         'student_reference' => 'studentReference',
         'attempt_status_descriptor' => 'attemptStatusDescriptor',
+        'dual_credit_indicator' => 'dualCreditIndicator',
+        'dual_credit_institution_descriptor' => 'dualCreditInstitutionDescriptor',
+        'dual_credit_type_descriptor' => 'dualCreditTypeDescriptor',
+        'dual_high_school_credit_indicator' => 'dualHighSchoolCreditIndicator',
         'end_date' => 'endDate',
         'homeroom_indicator' => 'homeroomIndicator',
         'programs' => 'programs',
@@ -221,9 +241,14 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     protected static $setters = [
         'id' => 'setId',
         'begin_date' => 'setBeginDate',
+        'dual_credit_education_organization_reference' => 'setDualCreditEducationOrganizationReference',
         'section_reference' => 'setSectionReference',
         'student_reference' => 'setStudentReference',
         'attempt_status_descriptor' => 'setAttemptStatusDescriptor',
+        'dual_credit_indicator' => 'setDualCreditIndicator',
+        'dual_credit_institution_descriptor' => 'setDualCreditInstitutionDescriptor',
+        'dual_credit_type_descriptor' => 'setDualCreditTypeDescriptor',
+        'dual_high_school_credit_indicator' => 'setDualHighSchoolCreditIndicator',
         'end_date' => 'setEndDate',
         'homeroom_indicator' => 'setHomeroomIndicator',
         'programs' => 'setPrograms',
@@ -241,9 +266,14 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     protected static $getters = [
         'id' => 'getId',
         'begin_date' => 'getBeginDate',
+        'dual_credit_education_organization_reference' => 'getDualCreditEducationOrganizationReference',
         'section_reference' => 'getSectionReference',
         'student_reference' => 'getStudentReference',
         'attempt_status_descriptor' => 'getAttemptStatusDescriptor',
+        'dual_credit_indicator' => 'getDualCreditIndicator',
+        'dual_credit_institution_descriptor' => 'getDualCreditInstitutionDescriptor',
+        'dual_credit_type_descriptor' => 'getDualCreditTypeDescriptor',
+        'dual_high_school_credit_indicator' => 'getDualHighSchoolCreditIndicator',
         'end_date' => 'getEndDate',
         'homeroom_indicator' => 'getHomeroomIndicator',
         'programs' => 'getPrograms',
@@ -312,9 +342,14 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('begin_date', $data ?? [], null);
+        $this->setIfExists('dual_credit_education_organization_reference', $data ?? [], null);
         $this->setIfExists('section_reference', $data ?? [], null);
         $this->setIfExists('student_reference', $data ?? [], null);
         $this->setIfExists('attempt_status_descriptor', $data ?? [], null);
+        $this->setIfExists('dual_credit_indicator', $data ?? [], null);
+        $this->setIfExists('dual_credit_institution_descriptor', $data ?? [], null);
+        $this->setIfExists('dual_credit_type_descriptor', $data ?? [], null);
+        $this->setIfExists('dual_high_school_credit_indicator', $data ?? [], null);
         $this->setIfExists('end_date', $data ?? [], null);
         $this->setIfExists('homeroom_indicator', $data ?? [], null);
         $this->setIfExists('programs', $data ?? [], null);
@@ -362,6 +397,14 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
         }
         if (!is_null($this->container['attempt_status_descriptor']) && (mb_strlen($this->container['attempt_status_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'attempt_status_descriptor', the character length must be smaller than or equal to 306.";
+        }
+
+        if (!is_null($this->container['dual_credit_institution_descriptor']) && (mb_strlen($this->container['dual_credit_institution_descriptor']) > 306)) {
+            $invalidProperties[] = "invalid value for 'dual_credit_institution_descriptor', the character length must be smaller than or equal to 306.";
+        }
+
+        if (!is_null($this->container['dual_credit_type_descriptor']) && (mb_strlen($this->container['dual_credit_type_descriptor']) > 306)) {
+            $invalidProperties[] = "invalid value for 'dual_credit_type_descriptor', the character length must be smaller than or equal to 306.";
         }
 
         if (!is_null($this->container['repeat_identifier_descriptor']) && (mb_strlen($this->container['repeat_identifier_descriptor']) > 306)) {
@@ -423,7 +466,7 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date Month, day, and year of the student's entry or assignment to the section.
+     * @param \DateTime $begin_date Month, day, and year of the student's entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -433,6 +476,33 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
             throw new \InvalidArgumentException('non-nullable begin_date cannot be null');
         }
         $this->container['begin_date'] = $begin_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets dual_credit_education_organization_reference
+     *
+     * @return \Resources\Model\EdFiEducationOrganizationReference|null
+     */
+    public function getDualCreditEducationOrganizationReference()
+    {
+        return $this->container['dual_credit_education_organization_reference'];
+    }
+
+    /**
+     * Sets dual_credit_education_organization_reference
+     *
+     * @param \Resources\Model\EdFiEducationOrganizationReference|null $dual_credit_education_organization_reference dual_credit_education_organization_reference
+     *
+     * @return self
+     */
+    public function setDualCreditEducationOrganizationReference($dual_credit_education_organization_reference)
+    {
+        if (is_null($dual_credit_education_organization_reference)) {
+            throw new \InvalidArgumentException('non-nullable dual_credit_education_organization_reference cannot be null');
+        }
+        $this->container['dual_credit_education_organization_reference'] = $dual_credit_education_organization_reference;
 
         return $this;
     }
@@ -530,6 +600,150 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Gets dual_credit_indicator
+     *
+     * @return bool|null
+     */
+    public function getDualCreditIndicator()
+    {
+        return $this->container['dual_credit_indicator'];
+    }
+
+    /**
+     * Sets dual_credit_indicator
+     *
+     * @param bool|null $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion.
+     *
+     * @return self
+     */
+    public function setDualCreditIndicator($dual_credit_indicator)
+    {
+        if (is_null($dual_credit_indicator)) {
+            array_push($this->openAPINullablesSetToNull, 'dual_credit_indicator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dual_credit_indicator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['dual_credit_indicator'] = $dual_credit_indicator;
+
+        return $this;
+    }
+
+    /**
+     * Gets dual_credit_institution_descriptor
+     *
+     * @return string|null
+     */
+    public function getDualCreditInstitutionDescriptor()
+    {
+        return $this->container['dual_credit_institution_descriptor'];
+    }
+
+    /**
+     * Sets dual_credit_institution_descriptor
+     *
+     * @param string|null $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution.
+     *
+     * @return self
+     */
+    public function setDualCreditInstitutionDescriptor($dual_credit_institution_descriptor)
+    {
+        if (is_null($dual_credit_institution_descriptor)) {
+            array_push($this->openAPINullablesSetToNull, 'dual_credit_institution_descriptor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dual_credit_institution_descriptor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($dual_credit_institution_descriptor) && (mb_strlen($dual_credit_institution_descriptor) > 306)) {
+            throw new \InvalidArgumentException('invalid length for $dual_credit_institution_descriptor when calling EdFiStudentSectionAssociation., must be smaller than or equal to 306.');
+        }
+
+        $this->container['dual_credit_institution_descriptor'] = $dual_credit_institution_descriptor;
+
+        return $this;
+    }
+
+    /**
+     * Gets dual_credit_type_descriptor
+     *
+     * @return string|null
+     */
+    public function getDualCreditTypeDescriptor()
+    {
+        return $this->container['dual_credit_type_descriptor'];
+    }
+
+    /**
+     * Sets dual_credit_type_descriptor
+     *
+     * @param string|null $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program.
+     *
+     * @return self
+     */
+    public function setDualCreditTypeDescriptor($dual_credit_type_descriptor)
+    {
+        if (is_null($dual_credit_type_descriptor)) {
+            array_push($this->openAPINullablesSetToNull, 'dual_credit_type_descriptor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dual_credit_type_descriptor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($dual_credit_type_descriptor) && (mb_strlen($dual_credit_type_descriptor) > 306)) {
+            throw new \InvalidArgumentException('invalid length for $dual_credit_type_descriptor when calling EdFiStudentSectionAssociation., must be smaller than or equal to 306.');
+        }
+
+        $this->container['dual_credit_type_descriptor'] = $dual_credit_type_descriptor;
+
+        return $this;
+    }
+
+    /**
+     * Gets dual_high_school_credit_indicator
+     *
+     * @return bool|null
+     */
+    public function getDualHighSchoolCreditIndicator()
+    {
+        return $this->container['dual_high_school_credit_indicator'];
+    }
+
+    /**
+     * Sets dual_high_school_credit_indicator
+     *
+     * @param bool|null $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation.
+     *
+     * @return self
+     */
+    public function setDualHighSchoolCreditIndicator($dual_high_school_credit_indicator)
+    {
+        if (is_null($dual_high_school_credit_indicator)) {
+            array_push($this->openAPINullablesSetToNull, 'dual_high_school_credit_indicator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dual_high_school_credit_indicator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['dual_high_school_credit_indicator'] = $dual_high_school_credit_indicator;
+
+        return $this;
+    }
+
+    /**
      * Gets end_date
      *
      * @return \DateTime|null
@@ -542,7 +756,7 @@ class EdFiStudentSectionAssociation implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date Month, day, and year of the withdrawal or exit of the student from the section.
+     * @param \DateTime|null $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

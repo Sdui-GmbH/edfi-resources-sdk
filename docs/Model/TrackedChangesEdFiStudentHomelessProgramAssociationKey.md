@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**begin_date** | **\DateTime** | The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. | [optional]
+**begin_date** | **\DateTime** | The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional]
 **education_organization_id** | **int** | The identifier assigned to an education organization. | [optional]
 **program_education_organization_id** | **int** | The identifier assigned to an education organization. | [optional]
 **program_name** | **string** | The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional]

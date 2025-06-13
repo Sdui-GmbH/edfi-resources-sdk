@@ -448,7 +448,7 @@ class TpdmFinancialAid implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The date the award was designated.
+     * @param \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -582,7 +582,7 @@ class TpdmFinancialAid implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The date the award was removed.
+     * @param \DateTime|null $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

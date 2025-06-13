@@ -591,7 +591,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets evaluation_duration
      *
-     * @param int|null $evaluation_duration The actual or estimated number of clock minutes during which the evaluation was conducted.
+     * @param int|null $evaluation_duration The actual number of minutes to conduct the evaluation.
      *
      * @return self
      */

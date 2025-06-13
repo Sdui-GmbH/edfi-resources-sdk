@@ -83,6 +83,9 @@ class EducationContentsApi
         'getEducationContentsById' => [
             'application/json',
         ],
+        'getEducationContentsPartitions' => [
+            'application/json',
+        ],
         'keyChangesEducationContents' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class EducationContentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducationContents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiEducationContentDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiEducationContentDelete[]
      */
-    public function deletesEducationContents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationContents'][0])
+    public function deletesEducationContents($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationContents'][0])
     {
         list($response) = $this->deletesEducationContentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class EducationContentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducationContents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiEducationContentDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiEducationContentDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesEducationContentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationContents'][0])
+    public function deletesEducationContentsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationContents'][0])
     {
         $request = $this->deletesEducationContentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class EducationContentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducationContents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesEducationContentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationContents'][0])
+    public function deletesEducationContentsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationContents'][0])
     {
         return $this->deletesEducationContentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class EducationContentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducationContents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesEducationContentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationContents'][0])
+    public function deletesEducationContentsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationContents'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiEducationContentDelete[]';
         $request = $this->deletesEducationContentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class EducationContentsApi
     /**
      * Create request for operation 'deletesEducationContents'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEducationContents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesEducationContentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationContents'][0])
+    public function deletesEducationContentsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEducationContents'][0])
     {
 
 
@@ -759,11 +762,13 @@ class EducationContentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $content_identifier A unique identifier for the education content. (optional)
      * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $content_class_descriptor The predominate type or kind characterizing the learning resource. (optional)
@@ -779,7 +784,7 @@ class EducationContentsApi
      * @param  int $publication_year The year at which this content was first published. (optional)
      * @param  string $publisher The organization credited with publishing the resource. (optional)
      * @param  string $short_description A short description or name of the entity. (optional)
-     * @param  string $time_required Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience. (optional)
+     * @param  string $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. (optional)
      * @param  string $use_rights_url The URL where the owner specifies permissions for using the resource. (optional)
      * @param  string $version The version identifier for the content. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -787,11 +792,11 @@ class EducationContentsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiEducationContent[]
+     * @return |\Resources\Model\EdFiEducationContent[]
      */
-    public function getEducationContents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContents'][0])
+    public function getEducationContents($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContents'][0])
     {
-        list($response) = $this->getEducationContentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType);
+        list($response) = $this->getEducationContentsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -800,11 +805,13 @@ class EducationContentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $content_identifier A unique identifier for the education content. (optional)
      * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $content_class_descriptor The predominate type or kind characterizing the learning resource. (optional)
@@ -820,7 +827,7 @@ class EducationContentsApi
      * @param  int $publication_year The year at which this content was first published. (optional)
      * @param  string $publisher The organization credited with publishing the resource. (optional)
      * @param  string $short_description A short description or name of the entity. (optional)
-     * @param  string $time_required Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience. (optional)
+     * @param  string $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. (optional)
      * @param  string $use_rights_url The URL where the owner specifies permissions for using the resource. (optional)
      * @param  string $version The version identifier for the content. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -828,11 +835,11 @@ class EducationContentsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiEducationContent[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiEducationContent[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEducationContentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContents'][0])
+    public function getEducationContentsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContents'][0])
     {
-        $request = $this->getEducationContentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType);
+        $request = $this->getEducationContentsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -948,11 +955,13 @@ class EducationContentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $content_identifier A unique identifier for the education content. (optional)
      * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $content_class_descriptor The predominate type or kind characterizing the learning resource. (optional)
@@ -968,7 +977,7 @@ class EducationContentsApi
      * @param  int $publication_year The year at which this content was first published. (optional)
      * @param  string $publisher The organization credited with publishing the resource. (optional)
      * @param  string $short_description A short description or name of the entity. (optional)
-     * @param  string $time_required Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience. (optional)
+     * @param  string $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. (optional)
      * @param  string $use_rights_url The URL where the owner specifies permissions for using the resource. (optional)
      * @param  string $version The version identifier for the content. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -977,9 +986,9 @@ class EducationContentsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEducationContentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContents'][0])
+    public function getEducationContentsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContents'][0])
     {
-        return $this->getEducationContentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType)
+        return $this->getEducationContentsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -992,11 +1001,13 @@ class EducationContentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $content_identifier A unique identifier for the education content. (optional)
      * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $content_class_descriptor The predominate type or kind characterizing the learning resource. (optional)
@@ -1012,7 +1023,7 @@ class EducationContentsApi
      * @param  int $publication_year The year at which this content was first published. (optional)
      * @param  string $publisher The organization credited with publishing the resource. (optional)
      * @param  string $short_description A short description or name of the entity. (optional)
-     * @param  string $time_required Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience. (optional)
+     * @param  string $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. (optional)
      * @param  string $use_rights_url The URL where the owner specifies permissions for using the resource. (optional)
      * @param  string $version The version identifier for the content. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -1021,10 +1032,10 @@ class EducationContentsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEducationContentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContents'][0])
+    public function getEducationContentsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContents'][0])
     {
         $returnType = '\Resources\Model\EdFiEducationContent[]';
-        $request = $this->getEducationContentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType);
+        $request = $this->getEducationContentsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1065,11 +1076,13 @@ class EducationContentsApi
     /**
      * Create request for operation 'getEducationContents'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $content_identifier A unique identifier for the education content. (optional)
      * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
      * @param  string $content_class_descriptor The predominate type or kind characterizing the learning resource. (optional)
@@ -1085,7 +1098,7 @@ class EducationContentsApi
      * @param  int $publication_year The year at which this content was first published. (optional)
      * @param  string $publisher The organization credited with publishing the resource. (optional)
      * @param  string $short_description A short description or name of the entity. (optional)
-     * @param  string $time_required Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience. (optional)
+     * @param  string $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. (optional)
      * @param  string $use_rights_url The URL where the owner specifies permissions for using the resource. (optional)
      * @param  string $version The version identifier for the content. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
@@ -1094,7 +1107,7 @@ class EducationContentsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEducationContentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContents'][0])
+    public function getEducationContentsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContents'][0])
     {
 
 
@@ -1103,6 +1116,11 @@ class EducationContentsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling EducationContentsApi.getEducationContents, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling EducationContentsApi.getEducationContents, must be bigger than or equal to 0.');
         }
         
 
@@ -1187,6 +1205,24 @@ class EducationContentsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1458,7 +1494,7 @@ class EducationContentsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiEducationContent
+     * @return |\Resources\Model\EdFiEducationContent
      */
     public function getEducationContentsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContentsById'][0])
     {
@@ -1478,7 +1514,7 @@ class EducationContentsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiEducationContent, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiEducationContent, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEducationContentsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContentsById'][0])
     {
@@ -1779,23 +1815,685 @@ class EducationContentsApi
     }
 
     /**
+     * Operation getEducationContentsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $content_identifier A unique identifier for the education content. (optional)
+     * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $content_class_descriptor The predominate type or kind characterizing the learning resource. (optional)
+     * @param  string $cost_rate_descriptor The rate by which the cost applies. (optional)
+     * @param  string $interactivity_style_descriptor The predominate mode of learning supported by the learning resource. Acceptable values are active, expositive, or mixed. (optional)
+     * @param  bool $additional_authors_indicator Indicates whether there are additional un-named authors. In a research report, this is often marked by the abbreviation \&quot;et al\&quot;. (optional)
+     * @param  float $cost An amount that has to be paid or spent to buy or obtain the education content. (optional)
+     * @param  string $description An extended written representation of the education content. (optional)
+     * @param  string $id  (optional)
+     * @param  string $learning_resource_metadata_uri The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item. (optional)
+     * @param  string $namespace Namespace for the education content. (optional)
+     * @param  \DateTime $publication_date The date on which this content was first published. (optional)
+     * @param  int $publication_year The year at which this content was first published. (optional)
+     * @param  string $publisher The organization credited with publishing the resource. (optional)
+     * @param  string $short_description A short description or name of the entity. (optional)
+     * @param  string $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. (optional)
+     * @param  string $use_rights_url The URL where the owner specifies permissions for using the resource. (optional)
+     * @param  string $version The version identifier for the content. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationContentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getEducationContentsPartitions($number = null, $min_change_version = null, $max_change_version = null, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContentsPartitions'][0])
+    {
+        list($response) = $this->getEducationContentsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getEducationContentsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $content_identifier A unique identifier for the education content. (optional)
+     * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $content_class_descriptor The predominate type or kind characterizing the learning resource. (optional)
+     * @param  string $cost_rate_descriptor The rate by which the cost applies. (optional)
+     * @param  string $interactivity_style_descriptor The predominate mode of learning supported by the learning resource. Acceptable values are active, expositive, or mixed. (optional)
+     * @param  bool $additional_authors_indicator Indicates whether there are additional un-named authors. In a research report, this is often marked by the abbreviation \&quot;et al\&quot;. (optional)
+     * @param  float $cost An amount that has to be paid or spent to buy or obtain the education content. (optional)
+     * @param  string $description An extended written representation of the education content. (optional)
+     * @param  string $id  (optional)
+     * @param  string $learning_resource_metadata_uri The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item. (optional)
+     * @param  string $namespace Namespace for the education content. (optional)
+     * @param  \DateTime $publication_date The date on which this content was first published. (optional)
+     * @param  int $publication_year The year at which this content was first published. (optional)
+     * @param  string $publisher The organization credited with publishing the resource. (optional)
+     * @param  string $short_description A short description or name of the entity. (optional)
+     * @param  string $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. (optional)
+     * @param  string $use_rights_url The URL where the owner specifies permissions for using the resource. (optional)
+     * @param  string $version The version identifier for the content. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationContentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEducationContentsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContentsPartitions'][0])
+    {
+        $request = $this->getEducationContentsPartitionsRequest($number, $min_change_version, $max_change_version, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEducationContentsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $content_identifier A unique identifier for the education content. (optional)
+     * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $content_class_descriptor The predominate type or kind characterizing the learning resource. (optional)
+     * @param  string $cost_rate_descriptor The rate by which the cost applies. (optional)
+     * @param  string $interactivity_style_descriptor The predominate mode of learning supported by the learning resource. Acceptable values are active, expositive, or mixed. (optional)
+     * @param  bool $additional_authors_indicator Indicates whether there are additional un-named authors. In a research report, this is often marked by the abbreviation \&quot;et al\&quot;. (optional)
+     * @param  float $cost An amount that has to be paid or spent to buy or obtain the education content. (optional)
+     * @param  string $description An extended written representation of the education content. (optional)
+     * @param  string $id  (optional)
+     * @param  string $learning_resource_metadata_uri The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item. (optional)
+     * @param  string $namespace Namespace for the education content. (optional)
+     * @param  \DateTime $publication_date The date on which this content was first published. (optional)
+     * @param  int $publication_year The year at which this content was first published. (optional)
+     * @param  string $publisher The organization credited with publishing the resource. (optional)
+     * @param  string $short_description A short description or name of the entity. (optional)
+     * @param  string $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. (optional)
+     * @param  string $use_rights_url The URL where the owner specifies permissions for using the resource. (optional)
+     * @param  string $version The version identifier for the content. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationContentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEducationContentsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContentsPartitions'][0])
+    {
+        return $this->getEducationContentsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEducationContentsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $content_identifier A unique identifier for the education content. (optional)
+     * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $content_class_descriptor The predominate type or kind characterizing the learning resource. (optional)
+     * @param  string $cost_rate_descriptor The rate by which the cost applies. (optional)
+     * @param  string $interactivity_style_descriptor The predominate mode of learning supported by the learning resource. Acceptable values are active, expositive, or mixed. (optional)
+     * @param  bool $additional_authors_indicator Indicates whether there are additional un-named authors. In a research report, this is often marked by the abbreviation \&quot;et al\&quot;. (optional)
+     * @param  float $cost An amount that has to be paid or spent to buy or obtain the education content. (optional)
+     * @param  string $description An extended written representation of the education content. (optional)
+     * @param  string $id  (optional)
+     * @param  string $learning_resource_metadata_uri The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item. (optional)
+     * @param  string $namespace Namespace for the education content. (optional)
+     * @param  \DateTime $publication_date The date on which this content was first published. (optional)
+     * @param  int $publication_year The year at which this content was first published. (optional)
+     * @param  string $publisher The organization credited with publishing the resource. (optional)
+     * @param  string $short_description A short description or name of the entity. (optional)
+     * @param  string $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. (optional)
+     * @param  string $use_rights_url The URL where the owner specifies permissions for using the resource. (optional)
+     * @param  string $version The version identifier for the content. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationContentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEducationContentsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContentsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getEducationContentsPartitionsRequest($number, $min_change_version, $max_change_version, $content_identifier, $learning_standard_id, $content_class_descriptor, $cost_rate_descriptor, $interactivity_style_descriptor, $additional_authors_indicator, $cost, $description, $id, $learning_resource_metadata_uri, $namespace, $publication_date, $publication_year, $publisher, $short_description, $time_required, $use_rights_url, $version, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEducationContentsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $content_identifier A unique identifier for the education content. (optional)
+     * @param  string $learning_standard_id The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)
+     * @param  string $content_class_descriptor The predominate type or kind characterizing the learning resource. (optional)
+     * @param  string $cost_rate_descriptor The rate by which the cost applies. (optional)
+     * @param  string $interactivity_style_descriptor The predominate mode of learning supported by the learning resource. Acceptable values are active, expositive, or mixed. (optional)
+     * @param  bool $additional_authors_indicator Indicates whether there are additional un-named authors. In a research report, this is often marked by the abbreviation \&quot;et al\&quot;. (optional)
+     * @param  float $cost An amount that has to be paid or spent to buy or obtain the education content. (optional)
+     * @param  string $description An extended written representation of the education content. (optional)
+     * @param  string $id  (optional)
+     * @param  string $learning_resource_metadata_uri The URI (typical a URL) pointing to the metadata entry in a LRMI metadata repository, which describes this content item. (optional)
+     * @param  string $namespace Namespace for the education content. (optional)
+     * @param  \DateTime $publication_date The date on which this content was first published. (optional)
+     * @param  int $publication_year The year at which this content was first published. (optional)
+     * @param  string $publisher The organization credited with publishing the resource. (optional)
+     * @param  string $short_description A short description or name of the entity. (optional)
+     * @param  string $time_required Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. (optional)
+     * @param  string $use_rights_url The URL where the owner specifies permissions for using the resource. (optional)
+     * @param  string $version The version identifier for the content. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEducationContentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEducationContentsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $content_identifier = null, $learning_standard_id = null, $content_class_descriptor = null, $cost_rate_descriptor = null, $interactivity_style_descriptor = null, $additional_authors_indicator = null, $cost = null, $description = null, $id = null, $learning_resource_metadata_uri = null, $namespace = null, $publication_date = null, $publication_year = null, $publisher = null, $short_description = null, $time_required = null, $use_rights_url = null, $version = null, $use_snapshot = false, string $contentType = self::contentTypes['getEducationContentsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling EducationContentsApi.getEducationContentsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($content_identifier !== null && strlen($content_identifier) > 225) {
+            throw new \InvalidArgumentException('invalid length for "$content_identifier" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 225.');
+        }
+        
+        if ($learning_standard_id !== null && strlen($learning_standard_id) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$learning_standard_id" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($content_class_descriptor !== null && strlen($content_class_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$content_class_descriptor" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($cost_rate_descriptor !== null && strlen($cost_rate_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$cost_rate_descriptor" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($interactivity_style_descriptor !== null && strlen($interactivity_style_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$interactivity_style_descriptor" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+        if ($description !== null && strlen($description) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$description" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 1024.');
+        }
+        
+
+        if ($learning_resource_metadata_uri !== null && strlen($learning_resource_metadata_uri) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$learning_resource_metadata_uri" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($namespace !== null && strlen($namespace) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$namespace" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+
+        if ($publisher !== null && strlen($publisher) > 50) {
+            throw new \InvalidArgumentException('invalid length for "$publisher" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 50.');
+        }
+        
+        if ($short_description !== null && strlen($short_description) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$short_description" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($time_required !== null && strlen($time_required) > 30) {
+            throw new \InvalidArgumentException('invalid length for "$time_required" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 30.');
+        }
+        
+        if ($use_rights_url !== null && strlen($use_rights_url) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$use_rights_url" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($version !== null && strlen($version) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$version" when calling EducationContentsApi.getEducationContentsPartitions, must be smaller than or equal to 10.');
+        }
+        
+
+
+        $resourcePath = '/ed-fi/educationContents/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $content_identifier,
+            'contentIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $learning_standard_id,
+            'learningStandardId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $content_class_descriptor,
+            'contentClassDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cost_rate_descriptor,
+            'costRateDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $interactivity_style_descriptor,
+            'interactivityStyleDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $additional_authors_indicator,
+            'additionalAuthorsIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cost,
+            'cost', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $description,
+            'description', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $learning_resource_metadata_uri,
+            'learningResourceMetadataURI', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $namespace,
+            'namespace', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $publication_date,
+            'publicationDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $publication_year,
+            'publicationYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $publisher,
+            'publisher', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $short_description,
+            'shortDescription', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $time_required,
+            'timeRequired', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $use_rights_url,
+            'useRightsURL', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $version,
+            'version', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesEducationContents
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducationContents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiEducationContentKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiEducationContentKeyChange[]
      */
-    public function keyChangesEducationContents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationContents'][0])
+    public function keyChangesEducationContents($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationContents'][0])
     {
         list($response) = $this->keyChangesEducationContentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1806,19 +2504,19 @@ class EducationContentsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducationContents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiEducationContentKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiEducationContentKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesEducationContentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationContents'][0])
+    public function keyChangesEducationContentsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationContents'][0])
     {
         $request = $this->keyChangesEducationContentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1936,18 +2634,18 @@ class EducationContentsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducationContents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesEducationContentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationContents'][0])
+    public function keyChangesEducationContentsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationContents'][0])
     {
         return $this->keyChangesEducationContentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1962,18 +2660,18 @@ class EducationContentsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducationContents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesEducationContentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationContents'][0])
+    public function keyChangesEducationContentsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationContents'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiEducationContentKeyChange[]';
         $request = $this->keyChangesEducationContentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -2017,18 +2715,18 @@ class EducationContentsApi
     /**
      * Create request for operation 'keyChangesEducationContents'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEducationContents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesEducationContentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationContents'][0])
+    public function keyChangesEducationContentsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEducationContents'][0])
     {
 
 

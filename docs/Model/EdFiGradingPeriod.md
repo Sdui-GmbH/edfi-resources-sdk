@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **grading_period_name** | **string** | The school&#39;s descriptive name of the grading period. |
 **school_reference** | [**\Resources\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
 **school_year_type_reference** | [**\Resources\Model\EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  |
-**begin_date** | **\DateTime** | Month, day, and year of the first day of the grading period. |
-**end_date** | **\DateTime** | Month, day, and year of the last day of the grading period. |
+**begin_date** | **\DateTime** | Month, day, and year of the first day of the grading period.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. |
+**end_date** | **\DateTime** | Month, day, and year of the last day of the grading period.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. |
 **period_sequence** | **int** | The sequential order of this period relative to other periods. | [optional]
 **total_instructional_days** | **int** | Total days available for educational instruction during the grading period. |
 **_etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional]

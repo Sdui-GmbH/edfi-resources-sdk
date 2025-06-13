@@ -83,6 +83,9 @@ class SectionsApi
         'getSectionsById' => [
             'application/json',
         ],
+        'getSectionsPartitions' => [
+            'application/json',
+        ],
         'keyChangesSections' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class SectionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSections'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiSectionDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiSectionDelete[]
      */
-    public function deletesSections($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
+    public function deletesSections($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
     {
         list($response) = $this->deletesSectionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class SectionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSections'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiSectionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiSectionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesSectionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
+    public function deletesSectionsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
     {
         $request = $this->deletesSectionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class SectionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesSectionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
+    public function deletesSectionsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
     {
         return $this->deletesSectionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class SectionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesSectionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
+    public function deletesSectionsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiSectionDelete[]';
         $request = $this->deletesSectionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class SectionsApi
     /**
      * Create request for operation 'deletesSections'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesSectionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
+    public function deletesSectionsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSections'][0])
     {
 
 
@@ -759,11 +762,13 @@ class SectionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
@@ -788,11 +793,11 @@ class SectionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiSection[]
+     * @return |\Resources\Model\EdFiSection[]
      */
-    public function getSections($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
+    public function getSections($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
     {
-        list($response) = $this->getSectionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType);
+        list($response) = $this->getSectionsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -801,11 +806,13 @@ class SectionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
@@ -830,11 +837,11 @@ class SectionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiSection[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiSection[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSectionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
+    public function getSectionsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
     {
-        $request = $this->getSectionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType);
+        $request = $this->getSectionsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -950,11 +957,13 @@ class SectionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
@@ -980,9 +989,9 @@ class SectionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSectionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
+    public function getSectionsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
     {
-        return $this->getSectionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType)
+        return $this->getSectionsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -995,11 +1004,13 @@ class SectionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
@@ -1025,10 +1036,10 @@ class SectionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSectionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
+    public function getSectionsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
     {
         $returnType = '\Resources\Model\EdFiSection[]';
-        $request = $this->getSectionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType);
+        $request = $this->getSectionsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1069,11 +1080,13 @@ class SectionsApi
     /**
      * Create request for operation 'getSections'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
      * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
@@ -1099,7 +1112,7 @@ class SectionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSectionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
+    public function getSectionsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSections'][0])
     {
 
 
@@ -1108,6 +1121,11 @@ class SectionsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling SectionsApi.getSections, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling SectionsApi.getSections, must be bigger than or equal to 0.');
         }
         
 
@@ -1187,6 +1205,24 @@ class SectionsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1467,7 +1503,7 @@ class SectionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiSection
+     * @return |\Resources\Model\EdFiSection
      */
     public function getSectionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSectionsById'][0])
     {
@@ -1487,7 +1523,7 @@ class SectionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiSection, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiSection, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSectionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSectionsById'][0])
     {
@@ -1788,23 +1824,694 @@ class SectionsApi
     }
 
     /**
+     * Operation getSectionsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $location_classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
+     * @param  int $location_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $educational_environment_descriptor The setting in which a student receives education and related services. (optional)
+     * @param  string $instruction_language_descriptor The primary language of instruction. If omitted, English is assumed. (optional)
+     * @param  string $medium_of_instruction_descriptor The media through which teachers provide instruction to students and students and teachers communicate about instructional matters. (optional)
+     * @param  string $population_served_descriptor The type of students the section is offered and tailored to. (optional)
+     * @param  string $section_type_descriptor Specifies whether the section is for attendance only, credit only, or both. (optional)
+     * @param  float $available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $official_attendance_period Indicator of whether this section is used for official daily attendance. Alternatively, official daily attendance may be tied to a class period. (optional)
+     * @param  string $section_name A locally-defined name for the section, generally created to make the section more recognizable in informal contexts and generally distinct from the section identifier. (optional)
+     * @param  int $sequence_of_course When a section is part of a sequence of parts for a course, the number of the sequence. If the course has only one part, the value of this section attribute should be 1. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSectionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getSectionsPartitions($number = null, $min_change_version = null, $max_change_version = null, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSectionsPartitions'][0])
+    {
+        list($response) = $this->getSectionsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getSectionsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $location_classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
+     * @param  int $location_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $educational_environment_descriptor The setting in which a student receives education and related services. (optional)
+     * @param  string $instruction_language_descriptor The primary language of instruction. If omitted, English is assumed. (optional)
+     * @param  string $medium_of_instruction_descriptor The media through which teachers provide instruction to students and students and teachers communicate about instructional matters. (optional)
+     * @param  string $population_served_descriptor The type of students the section is offered and tailored to. (optional)
+     * @param  string $section_type_descriptor Specifies whether the section is for attendance only, credit only, or both. (optional)
+     * @param  float $available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $official_attendance_period Indicator of whether this section is used for official daily attendance. Alternatively, official daily attendance may be tied to a class period. (optional)
+     * @param  string $section_name A locally-defined name for the section, generally created to make the section more recognizable in informal contexts and generally distinct from the section identifier. (optional)
+     * @param  int $sequence_of_course When a section is part of a sequence of parts for a course, the number of the sequence. If the course has only one part, the value of this section attribute should be 1. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSectionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSectionsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSectionsPartitions'][0])
+    {
+        $request = $this->getSectionsPartitionsRequest($number, $min_change_version, $max_change_version, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getSectionsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $location_classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
+     * @param  int $location_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $educational_environment_descriptor The setting in which a student receives education and related services. (optional)
+     * @param  string $instruction_language_descriptor The primary language of instruction. If omitted, English is assumed. (optional)
+     * @param  string $medium_of_instruction_descriptor The media through which teachers provide instruction to students and students and teachers communicate about instructional matters. (optional)
+     * @param  string $population_served_descriptor The type of students the section is offered and tailored to. (optional)
+     * @param  string $section_type_descriptor Specifies whether the section is for attendance only, credit only, or both. (optional)
+     * @param  float $available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $official_attendance_period Indicator of whether this section is used for official daily attendance. Alternatively, official daily attendance may be tied to a class period. (optional)
+     * @param  string $section_name A locally-defined name for the section, generally created to make the section more recognizable in informal contexts and generally distinct from the section identifier. (optional)
+     * @param  int $sequence_of_course When a section is part of a sequence of parts for a course, the number of the sequence. If the course has only one part, the value of this section attribute should be 1. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSectionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSectionsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSectionsPartitions'][0])
+    {
+        return $this->getSectionsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getSectionsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $location_classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
+     * @param  int $location_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $educational_environment_descriptor The setting in which a student receives education and related services. (optional)
+     * @param  string $instruction_language_descriptor The primary language of instruction. If omitted, English is assumed. (optional)
+     * @param  string $medium_of_instruction_descriptor The media through which teachers provide instruction to students and students and teachers communicate about instructional matters. (optional)
+     * @param  string $population_served_descriptor The type of students the section is offered and tailored to. (optional)
+     * @param  string $section_type_descriptor Specifies whether the section is for attendance only, credit only, or both. (optional)
+     * @param  float $available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $official_attendance_period Indicator of whether this section is used for official daily attendance. Alternatively, official daily attendance may be tied to a class period. (optional)
+     * @param  string $section_name A locally-defined name for the section, generally created to make the section more recognizable in informal contexts and generally distinct from the section identifier. (optional)
+     * @param  int $sequence_of_course When a section is part of a sequence of parts for a course, the number of the sequence. If the course has only one part, the value of this section attribute should be 1. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSectionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSectionsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSectionsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getSectionsPartitionsRequest($number, $min_change_version, $max_change_version, $section_identifier, $local_course_code, $school_id, $school_year, $session_name, $location_classroom_identification_code, $location_school_id, $available_credit_type_descriptor, $educational_environment_descriptor, $instruction_language_descriptor, $medium_of_instruction_descriptor, $population_served_descriptor, $section_type_descriptor, $available_credit_conversion, $available_credits, $id, $official_attendance_period, $section_name, $sequence_of_course, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getSectionsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $location_classroom_identification_code A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity. (optional)
+     * @param  int $location_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $available_credit_type_descriptor The type of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $educational_environment_descriptor The setting in which a student receives education and related services. (optional)
+     * @param  string $instruction_language_descriptor The primary language of instruction. If omitted, English is assumed. (optional)
+     * @param  string $medium_of_instruction_descriptor The media through which teachers provide instruction to students and students and teachers communicate about instructional matters. (optional)
+     * @param  string $population_served_descriptor The type of students the section is offered and tailored to. (optional)
+     * @param  string $section_type_descriptor Specifies whether the section is for attendance only, credit only, or both. (optional)
+     * @param  float $available_credit_conversion Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. (optional)
+     * @param  float $available_credits The value of credits or units of value awarded for the completion of a course. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $official_attendance_period Indicator of whether this section is used for official daily attendance. Alternatively, official daily attendance may be tied to a class period. (optional)
+     * @param  string $section_name A locally-defined name for the section, generally created to make the section more recognizable in informal contexts and generally distinct from the section identifier. (optional)
+     * @param  int $sequence_of_course When a section is part of a sequence of parts for a course, the number of the sequence. If the course has only one part, the value of this section attribute should be 1. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSectionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getSectionsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $section_identifier = null, $local_course_code = null, $school_id = null, $school_year = null, $session_name = null, $location_classroom_identification_code = null, $location_school_id = null, $available_credit_type_descriptor = null, $educational_environment_descriptor = null, $instruction_language_descriptor = null, $medium_of_instruction_descriptor = null, $population_served_descriptor = null, $section_type_descriptor = null, $available_credit_conversion = null, $available_credits = null, $id = null, $official_attendance_period = null, $section_name = null, $sequence_of_course = null, $use_snapshot = false, string $contentType = self::contentTypes['getSectionsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling SectionsApi.getSectionsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($section_identifier !== null && strlen($section_identifier) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$section_identifier" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($local_course_code !== null && strlen($local_course_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$local_course_code" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+        if ($session_name !== null && strlen($session_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$session_name" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($location_classroom_identification_code !== null && strlen($location_classroom_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$location_classroom_identification_code" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        if ($available_credit_type_descriptor !== null && strlen($available_credit_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$available_credit_type_descriptor" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($educational_environment_descriptor !== null && strlen($educational_environment_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$educational_environment_descriptor" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($instruction_language_descriptor !== null && strlen($instruction_language_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$instruction_language_descriptor" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($medium_of_instruction_descriptor !== null && strlen($medium_of_instruction_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$medium_of_instruction_descriptor" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($population_served_descriptor !== null && strlen($population_served_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$population_served_descriptor" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($section_type_descriptor !== null && strlen($section_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$section_type_descriptor" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+        if ($section_name !== null && strlen($section_name) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$section_name" when calling SectionsApi.getSectionsPartitions, must be smaller than or equal to 100.');
+        }
+        
+
+
+
+        $resourcePath = '/ed-fi/sections/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $section_identifier,
+            'sectionIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $local_course_code,
+            'localCourseCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_id,
+            'schoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_year,
+            'schoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_name,
+            'sessionName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $location_classroom_identification_code,
+            'locationClassroomIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $location_school_id,
+            'locationSchoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $available_credit_type_descriptor,
+            'availableCreditTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $educational_environment_descriptor,
+            'educationalEnvironmentDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $instruction_language_descriptor,
+            'instructionLanguageDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $medium_of_instruction_descriptor,
+            'mediumOfInstructionDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $population_served_descriptor,
+            'populationServedDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $section_type_descriptor,
+            'sectionTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $available_credit_conversion,
+            'availableCreditConversion', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $available_credits,
+            'availableCredits', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $official_attendance_period,
+            'officialAttendancePeriod', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $section_name,
+            'sectionName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sequence_of_course,
+            'sequenceOfCourse', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesSections
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSections'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiSectionKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiSectionKeyChange[]
      */
-    public function keyChangesSections($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
+    public function keyChangesSections($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
     {
         list($response) = $this->keyChangesSectionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1815,19 +2522,19 @@ class SectionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSections'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiSectionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiSectionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesSectionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
+    public function keyChangesSectionsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
     {
         $request = $this->keyChangesSectionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1945,18 +2652,18 @@ class SectionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesSectionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
+    public function keyChangesSectionsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
     {
         return $this->keyChangesSectionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1971,18 +2678,18 @@ class SectionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesSectionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
+    public function keyChangesSectionsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiSectionKeyChange[]';
         $request = $this->keyChangesSectionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -2026,18 +2733,18 @@ class SectionsApi
     /**
      * Create request for operation 'keyChangesSections'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesSectionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
+    public function keyChangesSectionsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSections'][0])
     {
 
 

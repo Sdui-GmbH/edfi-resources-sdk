@@ -331,7 +331,7 @@ class TrackedChangesEdFiStaffCohortAssociationKey implements ModelInterface, Arr
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date Start date for the association of staff to this cohort.
+     * @param \DateTime|null $begin_date Start date for the association of staff to this cohort.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

@@ -354,7 +354,7 @@ class EdFiAssessmentPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The first date the assessment is to be administered.
+     * @param \DateTime|null $begin_date The first date the assessment is to be administered.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class EdFiAssessmentPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The last date the assessment is to be administered.
+     * @param \DateTime|null $end_date The last date the assessment is to be administered.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
