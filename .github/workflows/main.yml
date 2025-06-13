@@ -36,7 +36,7 @@ jobs:
 
     - name: Generate PHP client SDK for resources
       run: |
-        java -jar ${{ runner.temp }}/openapi-generator-cli.jar generate -i swagger-resources.json -g php -o . -p phpVersion=8.2 -p invokerPackage=Resources -skip-validate-spec
+        java -jar ${{ runner.temp }}/openapi-generator-cli.jar generate -i swagger-resources.json -g php -o . -p phpVersion=8.2 -p invokerPackage=Resources --skip-validate-spec
 
     - name: Update name and version in composer.json
       run: |
