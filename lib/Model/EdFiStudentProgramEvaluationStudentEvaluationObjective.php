@@ -292,6 +292,14 @@ class EdFiStudentProgramEvaluationStudentEvaluationObjective implements ModelInt
             $invalidProperties[] = "invalid value for 'evaluation_objective_rating_level_descriptor', the character length must be smaller than or equal to 306.";
         }
 
+        if (!is_null($this->container['evaluation_objective_numeric_rating']) && ($this->container['evaluation_objective_numeric_rating'] > 999.999)) {
+            $invalidProperties[] = "invalid value for 'evaluation_objective_numeric_rating', must be smaller than or equal to 999.999.";
+        }
+
+        if (!is_null($this->container['evaluation_objective_numeric_rating']) && ($this->container['evaluation_objective_numeric_rating'] < -999.999)) {
+            $invalidProperties[] = "invalid value for 'evaluation_objective_numeric_rating', must be bigger than or equal to -999.999.";
+        }
+
         if ($this->container['program_evaluation_objective_reference'] === null) {
             $invalidProperties[] = "'program_evaluation_objective_reference' can't be null";
         }
@@ -377,6 +385,14 @@ class EdFiStudentProgramEvaluationStudentEvaluationObjective implements ModelInt
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($evaluation_objective_numeric_rating) && ($evaluation_objective_numeric_rating > 999.999)) {
+            throw new \InvalidArgumentException('invalid value for $evaluation_objective_numeric_rating when calling EdFiStudentProgramEvaluationStudentEvaluationObjective., must be smaller than or equal to 999.999.');
+        }
+        if (!is_null($evaluation_objective_numeric_rating) && ($evaluation_objective_numeric_rating < -999.999)) {
+            throw new \InvalidArgumentException('invalid value for $evaluation_objective_numeric_rating when calling EdFiStudentProgramEvaluationStudentEvaluationObjective., must be bigger than or equal to -999.999.');
+        }
+
         $this->container['evaluation_objective_numeric_rating'] = $evaluation_objective_numeric_rating;
 
         return $this;

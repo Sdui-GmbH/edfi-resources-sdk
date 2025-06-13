@@ -182,7 +182,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         'preferred_first_name' => true,
         'preferred_last_surname' => true,
         'races' => false,
-        'sex_descriptor' => false,
+        'sex_descriptor' => true,
         'telephones' => false,
         '_etag' => false,
         '_last_modified_date' => false
@@ -556,10 +556,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'birth_international_province', the character length must be smaller than or equal to 150.";
         }
 
-        if (!is_null($this->container['birth_international_province']) && (mb_strlen($this->container['birth_international_province']) < 1)) {
-            $invalidProperties[] = "invalid value for 'birth_international_province', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['birth_sex_descriptor']) && (mb_strlen($this->container['birth_sex_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'birth_sex_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -587,10 +583,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'first_name', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['first_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'first_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['gender_descriptor']) && (mb_strlen($this->container['gender_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'gender_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -599,19 +591,11 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'generation_code_suffix', the character length must be smaller than or equal to 10.";
         }
 
-        if (!is_null($this->container['generation_code_suffix']) && (mb_strlen($this->container['generation_code_suffix']) < 1)) {
-            $invalidProperties[] = "invalid value for 'generation_code_suffix', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['last_surname'] === null) {
             $invalidProperties[] = "'last_surname' can't be null";
         }
         if ((mb_strlen($this->container['last_surname']) > 75)) {
             $invalidProperties[] = "invalid value for 'last_surname', the character length must be smaller than or equal to 75.";
-        }
-
-        if ((mb_strlen($this->container['last_surname']) < 1)) {
-            $invalidProperties[] = "invalid value for 'last_surname', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['limited_english_proficiency_descriptor']) && (mb_strlen($this->container['limited_english_proficiency_descriptor']) > 306)) {
@@ -622,46 +606,23 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'maiden_name', the character length must be smaller than or equal to 75.";
         }
 
-        if (!is_null($this->container['maiden_name']) && (mb_strlen($this->container['maiden_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'maiden_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['middle_name']) && (mb_strlen($this->container['middle_name']) > 75)) {
             $invalidProperties[] = "invalid value for 'middle_name', the character length must be smaller than or equal to 75.";
-        }
-
-        if (!is_null($this->container['middle_name']) && (mb_strlen($this->container['middle_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'middle_name', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['personal_title_prefix']) && (mb_strlen($this->container['personal_title_prefix']) > 30)) {
             $invalidProperties[] = "invalid value for 'personal_title_prefix', the character length must be smaller than or equal to 30.";
         }
 
-        if (!is_null($this->container['personal_title_prefix']) && (mb_strlen($this->container['personal_title_prefix']) < 1)) {
-            $invalidProperties[] = "invalid value for 'personal_title_prefix', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['preferred_first_name']) && (mb_strlen($this->container['preferred_first_name']) > 75)) {
             $invalidProperties[] = "invalid value for 'preferred_first_name', the character length must be smaller than or equal to 75.";
-        }
-
-        if (!is_null($this->container['preferred_first_name']) && (mb_strlen($this->container['preferred_first_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'preferred_first_name', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['preferred_last_surname']) && (mb_strlen($this->container['preferred_last_surname']) > 75)) {
             $invalidProperties[] = "invalid value for 'preferred_last_surname', the character length must be smaller than or equal to 75.";
         }
 
-        if (!is_null($this->container['preferred_last_surname']) && (mb_strlen($this->container['preferred_last_surname']) < 1)) {
-            $invalidProperties[] = "invalid value for 'preferred_last_surname', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['sex_descriptor'] === null) {
-            $invalidProperties[] = "'sex_descriptor' can't be null";
-        }
-        if ((mb_strlen($this->container['sex_descriptor']) > 306)) {
+        if (!is_null($this->container['sex_descriptor']) && (mb_strlen($this->container['sex_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'sex_descriptor', the character length must be smaller than or equal to 306.";
         }
 
@@ -932,9 +893,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($birth_international_province) && (mb_strlen($birth_international_province) > 150)) {
             throw new \InvalidArgumentException('invalid length for $birth_international_province when calling TpdmCandidate., must be smaller than or equal to 150.');
-        }
-        if (!is_null($birth_international_province) && (mb_strlen($birth_international_province) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $birth_international_province when calling TpdmCandidate., must be bigger than or equal to 1.');
         }
 
         $this->container['birth_international_province'] = $birth_international_province;
@@ -1278,9 +1236,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         if ((mb_strlen($first_name) > 75)) {
             throw new \InvalidArgumentException('invalid length for $first_name when calling TpdmCandidate., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($first_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $first_name when calling TpdmCandidate., must be bigger than or equal to 1.');
-        }
 
         $this->container['first_name'] = $first_name;
 
@@ -1356,9 +1311,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($generation_code_suffix) && (mb_strlen($generation_code_suffix) > 10)) {
             throw new \InvalidArgumentException('invalid length for $generation_code_suffix when calling TpdmCandidate., must be smaller than or equal to 10.');
-        }
-        if (!is_null($generation_code_suffix) && (mb_strlen($generation_code_suffix) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $generation_code_suffix when calling TpdmCandidate., must be bigger than or equal to 1.');
         }
 
         $this->container['generation_code_suffix'] = $generation_code_suffix;
@@ -1452,9 +1404,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         if ((mb_strlen($last_surname) > 75)) {
             throw new \InvalidArgumentException('invalid length for $last_surname when calling TpdmCandidate., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($last_surname) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $last_surname when calling TpdmCandidate., must be bigger than or equal to 1.');
-        }
 
         $this->container['last_surname'] = $last_surname;
 
@@ -1531,9 +1480,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($maiden_name) && (mb_strlen($maiden_name) > 75)) {
             throw new \InvalidArgumentException('invalid length for $maiden_name when calling TpdmCandidate., must be smaller than or equal to 75.');
         }
-        if (!is_null($maiden_name) && (mb_strlen($maiden_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $maiden_name when calling TpdmCandidate., must be bigger than or equal to 1.');
-        }
 
         $this->container['maiden_name'] = $maiden_name;
 
@@ -1571,9 +1517,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($middle_name) && (mb_strlen($middle_name) > 75)) {
             throw new \InvalidArgumentException('invalid length for $middle_name when calling TpdmCandidate., must be smaller than or equal to 75.');
-        }
-        if (!is_null($middle_name) && (mb_strlen($middle_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $middle_name when calling TpdmCandidate., must be bigger than or equal to 1.');
         }
 
         $this->container['middle_name'] = $middle_name;
@@ -1701,9 +1644,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($personal_title_prefix) && (mb_strlen($personal_title_prefix) > 30)) {
             throw new \InvalidArgumentException('invalid length for $personal_title_prefix when calling TpdmCandidate., must be smaller than or equal to 30.');
         }
-        if (!is_null($personal_title_prefix) && (mb_strlen($personal_title_prefix) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $personal_title_prefix when calling TpdmCandidate., must be bigger than or equal to 1.');
-        }
 
         $this->container['personal_title_prefix'] = $personal_title_prefix;
 
@@ -1741,9 +1681,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($preferred_first_name) && (mb_strlen($preferred_first_name) > 75)) {
             throw new \InvalidArgumentException('invalid length for $preferred_first_name when calling TpdmCandidate., must be smaller than or equal to 75.');
-        }
-        if (!is_null($preferred_first_name) && (mb_strlen($preferred_first_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $preferred_first_name when calling TpdmCandidate., must be bigger than or equal to 1.');
         }
 
         $this->container['preferred_first_name'] = $preferred_first_name;
@@ -1783,9 +1720,6 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($preferred_last_surname) && (mb_strlen($preferred_last_surname) > 75)) {
             throw new \InvalidArgumentException('invalid length for $preferred_last_surname when calling TpdmCandidate., must be smaller than or equal to 75.');
         }
-        if (!is_null($preferred_last_surname) && (mb_strlen($preferred_last_surname) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $preferred_last_surname when calling TpdmCandidate., must be bigger than or equal to 1.');
-        }
 
         $this->container['preferred_last_surname'] = $preferred_last_surname;
 
@@ -1822,7 +1756,7 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sex_descriptor
      *
-     * @return string
+     * @return string|null
      */
     public function getSexDescriptor()
     {
@@ -1832,16 +1766,23 @@ class TpdmCandidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sex_descriptor
      *
-     * @param string $sex_descriptor The sex of the candidate.
+     * @param string|null $sex_descriptor The sex of the candidate.
      *
      * @return self
      */
     public function setSexDescriptor($sex_descriptor)
     {
         if (is_null($sex_descriptor)) {
-            throw new \InvalidArgumentException('non-nullable sex_descriptor cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sex_descriptor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sex_descriptor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        if ((mb_strlen($sex_descriptor) > 306)) {
+        if (!is_null($sex_descriptor) && (mb_strlen($sex_descriptor) > 306)) {
             throw new \InvalidArgumentException('invalid length for $sex_descriptor when calling TpdmCandidate., must be smaller than or equal to 306.');
         }
 

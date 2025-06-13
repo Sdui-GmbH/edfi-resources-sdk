@@ -296,10 +296,6 @@ class TrackedChangesTpdmFinancialAidKey implements ModelInterface, ArrayAccess, 
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
         }
 
-        if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -359,7 +355,7 @@ class TrackedChangesTpdmFinancialAidKey implements ModelInterface, ArrayAccess, 
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The date the award was designated.
+     * @param \DateTime|null $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -397,9 +393,6 @@ class TrackedChangesTpdmFinancialAidKey implements ModelInterface, ArrayAccess, 
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesTpdmFinancialAidKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesTpdmFinancialAidKey., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

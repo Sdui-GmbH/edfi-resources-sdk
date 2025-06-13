@@ -379,10 +379,6 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['assessment_reference'] === null) {
             $invalidProperties[] = "'assessment_reference' can't be null";
         }
@@ -394,16 +390,24 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['max_raw_score']) && ($this->container['max_raw_score'] > 9999999999.99999)) {
+            $invalidProperties[] = "invalid value for 'max_raw_score', must be smaller than or equal to 9999999999.99999.";
+        }
+
+        if (!is_null($this->container['max_raw_score']) && ($this->container['max_raw_score'] < -9999999999.99999)) {
+            $invalidProperties[] = "invalid value for 'max_raw_score', must be bigger than or equal to -9999999999.99999.";
         }
 
         if (!is_null($this->container['nomenclature']) && (mb_strlen($this->container['nomenclature']) > 100)) {
             $invalidProperties[] = "invalid value for 'nomenclature', the character length must be smaller than or equal to 100.";
         }
 
-        if (!is_null($this->container['nomenclature']) && (mb_strlen($this->container['nomenclature']) < 1)) {
-            $invalidProperties[] = "invalid value for 'nomenclature', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['percent_of_assessment']) && ($this->container['percent_of_assessment'] > 9.9999)) {
+            $invalidProperties[] = "invalid value for 'percent_of_assessment', must be smaller than or equal to 9.9999.";
+        }
+
+        if (!is_null($this->container['percent_of_assessment']) && ($this->container['percent_of_assessment'] < -9.9999)) {
+            $invalidProperties[] = "invalid value for 'percent_of_assessment', must be bigger than or equal to -9.9999.";
         }
 
         return $invalidProperties;
@@ -472,9 +476,6 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if ((mb_strlen($identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiObjectiveAssessment., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiObjectiveAssessment., must be bigger than or equal to 1.');
         }
 
         $this->container['identification_code'] = $identification_code;
@@ -633,9 +634,6 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
         if (!is_null($description) && (mb_strlen($description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $description when calling EdFiObjectiveAssessment., must be smaller than or equal to 1024.');
         }
-        if (!is_null($description) && (mb_strlen($description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling EdFiObjectiveAssessment., must be bigger than or equal to 1.');
-        }
 
         $this->container['description'] = $description;
 
@@ -698,6 +696,14 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($max_raw_score) && ($max_raw_score > 9999999999.99999)) {
+            throw new \InvalidArgumentException('invalid value for $max_raw_score when calling EdFiObjectiveAssessment., must be smaller than or equal to 9999999999.99999.');
+        }
+        if (!is_null($max_raw_score) && ($max_raw_score < -9999999999.99999)) {
+            throw new \InvalidArgumentException('invalid value for $max_raw_score when calling EdFiObjectiveAssessment., must be bigger than or equal to -9999999999.99999.');
+        }
+
         $this->container['max_raw_score'] = $max_raw_score;
 
         return $this;
@@ -735,9 +741,6 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
         if (!is_null($nomenclature) && (mb_strlen($nomenclature) > 100)) {
             throw new \InvalidArgumentException('invalid length for $nomenclature when calling EdFiObjectiveAssessment., must be smaller than or equal to 100.');
         }
-        if (!is_null($nomenclature) && (mb_strlen($nomenclature) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $nomenclature when calling EdFiObjectiveAssessment., must be bigger than or equal to 1.');
-        }
 
         $this->container['nomenclature'] = $nomenclature;
 
@@ -773,6 +776,14 @@ class EdFiObjectiveAssessment implements ModelInterface, ArrayAccess, \JsonSeria
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($percent_of_assessment) && ($percent_of_assessment > 9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $percent_of_assessment when calling EdFiObjectiveAssessment., must be smaller than or equal to 9.9999.');
+        }
+        if (!is_null($percent_of_assessment) && ($percent_of_assessment < -9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $percent_of_assessment when calling EdFiObjectiveAssessment., must be bigger than or equal to -9.9999.');
+        }
+
         $this->container['percent_of_assessment'] = $percent_of_assessment;
 
         return $this;

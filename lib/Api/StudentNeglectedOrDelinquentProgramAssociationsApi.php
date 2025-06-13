@@ -83,6 +83,9 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
         'getStudentNeglectedOrDelinquentProgramAssociationsById' => [
             'application/json',
         ],
+        'getStudentNeglectedOrDelinquentProgramAssociationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStudentNeglectedOrDelinquentProgramAssociations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]
      */
-    public function deletesStudentNeglectedOrDelinquentProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function deletesStudentNeglectedOrDelinquentProgramAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
         list($response) = $this->deletesStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function deletesStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
         $request = $this->deletesStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentNeglectedOrDelinquentProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function deletesStudentNeglectedOrDelinquentProgramAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
         return $this->deletesStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function deletesStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationDelete[]';
         $request = $this->deletesStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
     /**
      * Create request for operation 'deletesStudentNeglectedOrDelinquentProgramAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStudentNeglectedOrDelinquentProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function deletesStudentNeglectedOrDelinquentProgramAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
 
 
@@ -759,12 +762,14 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
@@ -773,16 +778,20 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
      * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
      * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]
+     * @return |\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]
      */
-    public function getStudentNeglectedOrDelinquentProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function getStudentNeglectedOrDelinquentProgramAssociations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
-        list($response) = $this->getStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot, $contentType);
+        list($response) = $this->getStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -791,12 +800,14 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
@@ -805,16 +816,20 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
      * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
      * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function getStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
-        $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot, $contentType);
+        $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -930,12 +945,14 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
@@ -944,15 +961,19 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
      * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
      * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentNeglectedOrDelinquentProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function getStudentNeglectedOrDelinquentProgramAssociationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
-        return $this->getStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot, $contentType)
+        return $this->getStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -965,12 +986,14 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
@@ -979,16 +1002,20 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
      * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
      * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function getStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation[]';
-        $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $use_snapshot, $contentType);
+        $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1029,12 +1056,14 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
     /**
      * Create request for operation 'getStudentNeglectedOrDelinquentProgramAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
@@ -1043,13 +1072,17 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
      * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
      * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function getStudentNeglectedOrDelinquentProgramAssociationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
 
 
@@ -1058,6 +1091,11 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociations, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociations, must be bigger than or equal to 0.');
         }
         
 
@@ -1090,6 +1128,13 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
             throw new \InvalidArgumentException('invalid length for "$mathematics_progress_level_descriptor" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociations, must be smaller than or equal to 306.');
         }
         
+        if ($reason_exited_descriptor !== null && strlen($reason_exited_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$reason_exited_descriptor" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociations, must be smaller than or equal to 306.');
+        }
+        
+
+
+
 
 
         $resourcePath = '/ed-fi/studentNeglectedOrDelinquentProgramAssociations';
@@ -1112,6 +1157,24 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1225,6 +1288,42 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
             true, // explode
             false // required
         ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $reason_exited_descriptor,
+            'reasonExitedDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $served_outside_of_regular_session,
+            'servedOutsideOfRegularSession', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
         // header params
         if ($use_snapshot !== null) {
@@ -1302,7 +1401,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation
+     * @return |\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation
      */
     public function getStudentNeglectedOrDelinquentProgramAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsById'][0])
     {
@@ -1322,7 +1421,7 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentNeglectedOrDelinquentProgramAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentNeglectedOrDelinquentProgramAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsById'][0])
     {
@@ -1623,23 +1722,592 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
     }
 
     /**
+     * Operation getStudentNeglectedOrDelinquentProgramAssociationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
+     * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
+     * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStudentNeglectedOrDelinquentProgramAssociationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsPartitions'][0])
+    {
+        list($response) = $this->getStudentNeglectedOrDelinquentProgramAssociationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStudentNeglectedOrDelinquentProgramAssociationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
+     * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
+     * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStudentNeglectedOrDelinquentProgramAssociationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsPartitions'][0])
+    {
+        $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStudentNeglectedOrDelinquentProgramAssociationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
+     * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
+     * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentNeglectedOrDelinquentProgramAssociationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsPartitions'][0])
+    {
+        return $this->getStudentNeglectedOrDelinquentProgramAssociationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStudentNeglectedOrDelinquentProgramAssociationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
+     * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
+     * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentNeglectedOrDelinquentProgramAssociationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStudentNeglectedOrDelinquentProgramAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $neglected_or_delinquent_program_descriptor, $ela_progress_level_descriptor, $mathematics_progress_level_descriptor, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStudentNeglectedOrDelinquentProgramAssociationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $neglected_or_delinquent_program_descriptor The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)
+     * @param  string $ela_progress_level_descriptor The progress measured from pre- to post- test for ELA. (optional)
+     * @param  string $mathematics_progress_level_descriptor The progress measured from pre- to post-test for Mathematics. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStudentNeglectedOrDelinquentProgramAssociationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $neglected_or_delinquent_program_descriptor = null, $ela_progress_level_descriptor = null, $mathematics_progress_level_descriptor = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentNeglectedOrDelinquentProgramAssociationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+
+
+        if ($program_name !== null && strlen($program_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$program_name" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($program_type_descriptor !== null && strlen($program_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_type_descriptor" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociationsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($neglected_or_delinquent_program_descriptor !== null && strlen($neglected_or_delinquent_program_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$neglected_or_delinquent_program_descriptor" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($ela_progress_level_descriptor !== null && strlen($ela_progress_level_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$ela_progress_level_descriptor" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($mathematics_progress_level_descriptor !== null && strlen($mathematics_progress_level_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$mathematics_progress_level_descriptor" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($reason_exited_descriptor !== null && strlen($reason_exited_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$reason_exited_descriptor" when calling StudentNeglectedOrDelinquentProgramAssociationsApi.getStudentNeglectedOrDelinquentProgramAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+
+        $resourcePath = '/ed-fi/studentNeglectedOrDelinquentProgramAssociations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $begin_date,
+            'beginDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_education_organization_id,
+            'programEducationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_name,
+            'programName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_type_descriptor,
+            'programTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $neglected_or_delinquent_program_descriptor,
+            'neglectedOrDelinquentProgramDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ela_progress_level_descriptor,
+            'elaProgressLevelDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $mathematics_progress_level_descriptor,
+            'mathematicsProgressLevelDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $reason_exited_descriptor,
+            'reasonExitedDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $served_outside_of_regular_session,
+            'servedOutsideOfRegularSession', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStudentNeglectedOrDelinquentProgramAssociations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]
      */
-    public function keyChangesStudentNeglectedOrDelinquentProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function keyChangesStudentNeglectedOrDelinquentProgramAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
         list($response) = $this->keyChangesStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1650,19 +2318,19 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function keyChangesStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
         $request = $this->keyChangesStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1780,18 +2448,18 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentNeglectedOrDelinquentProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function keyChangesStudentNeglectedOrDelinquentProgramAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
         return $this->keyChangesStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1806,18 +2474,18 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function keyChangesStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentNeglectedOrDelinquentProgramAssociationKeyChange[]';
         $request = $this->keyChangesStudentNeglectedOrDelinquentProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1861,18 +2529,18 @@ class StudentNeglectedOrDelinquentProgramAssociationsApi
     /**
      * Create request for operation 'keyChangesStudentNeglectedOrDelinquentProgramAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStudentNeglectedOrDelinquentProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
+    public function keyChangesStudentNeglectedOrDelinquentProgramAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentNeglectedOrDelinquentProgramAssociations'][0])
     {
 
 

@@ -324,16 +324,8 @@ class TrackedChangesEdFiCourseTranscriptKey implements ModelInterface, ArrayAcce
             $invalidProperties[] = "invalid value for 'course_code', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['course_code']) && (mb_strlen($this->container['course_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'course_code', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['term_descriptor']) && (mb_strlen($this->container['term_descriptor']) > 306)) {
@@ -410,9 +402,6 @@ class TrackedChangesEdFiCourseTranscriptKey implements ModelInterface, ArrayAcce
         }
         if ((mb_strlen($course_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $course_code when calling TrackedChangesEdFiCourseTranscriptKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($course_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $course_code when calling TrackedChangesEdFiCourseTranscriptKey., must be bigger than or equal to 1.');
         }
 
         $this->container['course_code'] = $course_code;
@@ -525,9 +514,6 @@ class TrackedChangesEdFiCourseTranscriptKey implements ModelInterface, ArrayAcce
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiCourseTranscriptKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiCourseTranscriptKey., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

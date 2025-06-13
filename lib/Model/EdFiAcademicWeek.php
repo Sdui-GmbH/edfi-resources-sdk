@@ -466,7 +466,7 @@ class EdFiAcademicWeek implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The start date for the academic week.
+     * @param \DateTime $begin_date The start date for the academic week.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -493,7 +493,7 @@ class EdFiAcademicWeek implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date The end date for the academic week.
+     * @param \DateTime $end_date The end date for the academic week.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

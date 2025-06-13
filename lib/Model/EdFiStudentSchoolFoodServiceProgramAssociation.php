@@ -429,7 +429,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.
+     * @param \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -571,7 +571,7 @@ class EdFiStudentSchoolFoodServiceProgramAssociation implements ModelInterface, 
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The month, day, and year on which the student exited the program or stopped receiving services.
+     * @param \DateTime|null $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

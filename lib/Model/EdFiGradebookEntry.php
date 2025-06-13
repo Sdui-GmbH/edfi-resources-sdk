@@ -386,10 +386,6 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'gradebook_entry_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['gradebook_entry_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'gradebook_entry_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['namespace'] === null) {
             $invalidProperties[] = "'namespace' can't be null";
         }
@@ -408,12 +404,16 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['gradebook_entry_type_descriptor']) && (mb_strlen($this->container['gradebook_entry_type_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'gradebook_entry_type_descriptor', the character length must be smaller than or equal to 306.";
+        }
+
+        if (!is_null($this->container['max_points']) && ($this->container['max_points'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'max_points', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['max_points']) && ($this->container['max_points'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'max_points', must be bigger than or equal to -9999999.99.";
         }
 
         if ($this->container['source_section_identifier'] === null) {
@@ -421,10 +421,6 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($this->container['source_section_identifier']) > 255)) {
             $invalidProperties[] = "invalid value for 'source_section_identifier', the character length must be smaller than or equal to 255.";
-        }
-
-        if ((mb_strlen($this->container['source_section_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'source_section_identifier', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['title'] === null) {
@@ -500,9 +496,6 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($gradebook_entry_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $gradebook_entry_identifier when calling EdFiGradebookEntry., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($gradebook_entry_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $gradebook_entry_identifier when calling EdFiGradebookEntry., must be bigger than or equal to 1.');
         }
 
         $this->container['gradebook_entry_identifier'] = $gradebook_entry_identifier;
@@ -656,9 +649,6 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if (!is_null($description) && (mb_strlen($description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $description when calling EdFiGradebookEntry., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($description) && (mb_strlen($description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling EdFiGradebookEntry., must be bigger than or equal to 1.');
         }
 
         $this->container['description'] = $description;
@@ -828,6 +818,14 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($max_points) && ($max_points > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $max_points when calling EdFiGradebookEntry., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($max_points) && ($max_points < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $max_points when calling EdFiGradebookEntry., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['max_points'] = $max_points;
 
         return $this;
@@ -857,9 +855,6 @@ class EdFiGradebookEntry implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($source_section_identifier) > 255)) {
             throw new \InvalidArgumentException('invalid length for $source_section_identifier when calling EdFiGradebookEntry., must be smaller than or equal to 255.');
-        }
-        if ((mb_strlen($source_section_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $source_section_identifier when calling EdFiGradebookEntry., must be bigger than or equal to 1.');
         }
 
         $this->container['source_section_identifier'] = $source_section_identifier;

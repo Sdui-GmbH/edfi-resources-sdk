@@ -350,12 +350,16 @@ class TpdmFinancialAid implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['student_reference'] === null) {
             $invalidProperties[] = "'student_reference' can't be null";
         }
-        if (!is_null($this->container['aid_condition_description']) && (mb_strlen($this->container['aid_condition_description']) > 1024)) {
-            $invalidProperties[] = "invalid value for 'aid_condition_description', the character length must be smaller than or equal to 1024.";
+        if (!is_null($this->container['aid_amount']) && ($this->container['aid_amount'] > 1.0E+15)) {
+            $invalidProperties[] = "invalid value for 'aid_amount', must be smaller than or equal to 1.0E+15.";
         }
 
-        if (!is_null($this->container['aid_condition_description']) && (mb_strlen($this->container['aid_condition_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'aid_condition_description', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['aid_amount']) && ($this->container['aid_amount'] < -1.0E+15)) {
+            $invalidProperties[] = "invalid value for 'aid_amount', must be bigger than or equal to -1.0E+15.";
+        }
+
+        if (!is_null($this->container['aid_condition_description']) && (mb_strlen($this->container['aid_condition_description']) > 1024)) {
+            $invalidProperties[] = "invalid value for 'aid_condition_description', the character length must be smaller than or equal to 1024.";
         }
 
         return $invalidProperties;
@@ -444,7 +448,7 @@ class TpdmFinancialAid implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The date the award was designated.
+     * @param \DateTime $begin_date The date the award was designated.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -514,6 +518,14 @@ class TpdmFinancialAid implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($aid_amount) && ($aid_amount > 1.0E+15)) {
+            throw new \InvalidArgumentException('invalid value for $aid_amount when calling TpdmFinancialAid., must be smaller than or equal to 1.0E+15.');
+        }
+        if (!is_null($aid_amount) && ($aid_amount < -1.0E+15)) {
+            throw new \InvalidArgumentException('invalid value for $aid_amount when calling TpdmFinancialAid., must be bigger than or equal to -1.0E+15.');
+        }
+
         $this->container['aid_amount'] = $aid_amount;
 
         return $this;
@@ -551,9 +563,6 @@ class TpdmFinancialAid implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($aid_condition_description) && (mb_strlen($aid_condition_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $aid_condition_description when calling TpdmFinancialAid., must be smaller than or equal to 1024.');
         }
-        if (!is_null($aid_condition_description) && (mb_strlen($aid_condition_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $aid_condition_description when calling TpdmFinancialAid., must be bigger than or equal to 1.');
-        }
 
         $this->container['aid_condition_description'] = $aid_condition_description;
 
@@ -573,7 +582,7 @@ class TpdmFinancialAid implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The date the award was removed.
+     * @param \DateTime|null $end_date The date the award was removed.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

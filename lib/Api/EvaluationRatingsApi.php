@@ -83,6 +83,9 @@ class EvaluationRatingsApi
         'getEvaluationRatingsById' => [
             'application/json',
         ],
+        'getEvaluationRatingsPartitions' => [
+            'application/json',
+        ],
         'keyChangesEvaluationRatings' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class EvaluationRatingsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesTpdmEvaluationRatingDelete[]
+     * @return |\Resources\Model\TrackedChangesTpdmEvaluationRatingDelete[]
      */
-    public function deletesEvaluationRatings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRatings'][0])
+    public function deletesEvaluationRatings($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRatings'][0])
     {
         list($response) = $this->deletesEvaluationRatingsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class EvaluationRatingsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesTpdmEvaluationRatingDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesTpdmEvaluationRatingDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesEvaluationRatingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRatings'][0])
+    public function deletesEvaluationRatingsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRatings'][0])
     {
         $request = $this->deletesEvaluationRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class EvaluationRatingsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesEvaluationRatingsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRatings'][0])
+    public function deletesEvaluationRatingsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRatings'][0])
     {
         return $this->deletesEvaluationRatingsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class EvaluationRatingsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesEvaluationRatingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRatings'][0])
+    public function deletesEvaluationRatingsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRatings'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesTpdmEvaluationRatingDelete[]';
         $request = $this->deletesEvaluationRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class EvaluationRatingsApi
     /**
      * Create request for operation 'deletesEvaluationRatings'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesEvaluationRatingsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRatings'][0])
+    public function deletesEvaluationRatingsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRatings'][0])
     {
 
 
@@ -759,11 +762,13 @@ class EvaluationRatingsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  \DateTime $evaluation_date The date for the person&#39;s evaluation. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $evaluation_period_descriptor The period for the evaluation. (optional)
@@ -775,22 +780,24 @@ class EvaluationRatingsApi
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $session_name The identifier for the calendar for the academic session. (optional)
      * @param  string $evaluation_rating_level_descriptor The rating level achieved based upon the rating or score. (optional)
      * @param  string $evaluation_rating_status_descriptor The Status of the poerformance evaluation. (optional)
+     * @param  int $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted. (optional)
+     * @param  string $comments Any comments about the evaluation to be captured. (optional)
      * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TpdmEvaluationRating[]
+     * @return |\Resources\Model\TpdmEvaluationRating[]
      */
-    public function getEvaluationRatings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatings'][0])
+    public function getEvaluationRatings($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $actual_duration = null, $comments = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatings'][0])
     {
-        list($response) = $this->getEvaluationRatingsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $id, $use_snapshot, $contentType);
+        list($response) = $this->getEvaluationRatingsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $actual_duration, $comments, $id, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -799,11 +806,13 @@ class EvaluationRatingsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  \DateTime $evaluation_date The date for the person&#39;s evaluation. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $evaluation_period_descriptor The period for the evaluation. (optional)
@@ -815,22 +824,24 @@ class EvaluationRatingsApi
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $session_name The identifier for the calendar for the academic session. (optional)
      * @param  string $evaluation_rating_level_descriptor The rating level achieved based upon the rating or score. (optional)
      * @param  string $evaluation_rating_status_descriptor The Status of the poerformance evaluation. (optional)
+     * @param  int $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted. (optional)
+     * @param  string $comments Any comments about the evaluation to be captured. (optional)
      * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TpdmEvaluationRating[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TpdmEvaluationRating[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEvaluationRatingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatings'][0])
+    public function getEvaluationRatingsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $actual_duration = null, $comments = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatings'][0])
     {
-        $request = $this->getEvaluationRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $id, $use_snapshot, $contentType);
+        $request = $this->getEvaluationRatingsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $actual_duration, $comments, $id, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -946,11 +957,13 @@ class EvaluationRatingsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  \DateTime $evaluation_date The date for the person&#39;s evaluation. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $evaluation_period_descriptor The period for the evaluation. (optional)
@@ -962,11 +975,13 @@ class EvaluationRatingsApi
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $session_name The identifier for the calendar for the academic session. (optional)
      * @param  string $evaluation_rating_level_descriptor The rating level achieved based upon the rating or score. (optional)
      * @param  string $evaluation_rating_status_descriptor The Status of the poerformance evaluation. (optional)
+     * @param  int $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted. (optional)
+     * @param  string $comments Any comments about the evaluation to be captured. (optional)
      * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRatings'] to see the possible values for this operation
@@ -974,9 +989,9 @@ class EvaluationRatingsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEvaluationRatingsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatings'][0])
+    public function getEvaluationRatingsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $actual_duration = null, $comments = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatings'][0])
     {
-        return $this->getEvaluationRatingsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $id, $use_snapshot, $contentType)
+        return $this->getEvaluationRatingsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $actual_duration, $comments, $id, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -989,11 +1004,13 @@ class EvaluationRatingsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  \DateTime $evaluation_date The date for the person&#39;s evaluation. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $evaluation_period_descriptor The period for the evaluation. (optional)
@@ -1005,11 +1022,13 @@ class EvaluationRatingsApi
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $session_name The identifier for the calendar for the academic session. (optional)
      * @param  string $evaluation_rating_level_descriptor The rating level achieved based upon the rating or score. (optional)
      * @param  string $evaluation_rating_status_descriptor The Status of the poerformance evaluation. (optional)
+     * @param  int $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted. (optional)
+     * @param  string $comments Any comments about the evaluation to be captured. (optional)
      * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRatings'] to see the possible values for this operation
@@ -1017,10 +1036,10 @@ class EvaluationRatingsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEvaluationRatingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatings'][0])
+    public function getEvaluationRatingsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $actual_duration = null, $comments = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatings'][0])
     {
         $returnType = '\Resources\Model\TpdmEvaluationRating[]';
-        $request = $this->getEvaluationRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $id, $use_snapshot, $contentType);
+        $request = $this->getEvaluationRatingsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $actual_duration, $comments, $id, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1061,11 +1080,13 @@ class EvaluationRatingsApi
     /**
      * Create request for operation 'getEvaluationRatings'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  \DateTime $evaluation_date The date for the person&#39;s evaluation. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $evaluation_period_descriptor The period for the evaluation. (optional)
@@ -1077,11 +1098,13 @@ class EvaluationRatingsApi
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $session_name The identifier for the calendar for the academic session. (optional)
      * @param  string $evaluation_rating_level_descriptor The rating level achieved based upon the rating or score. (optional)
      * @param  string $evaluation_rating_status_descriptor The Status of the poerformance evaluation. (optional)
+     * @param  int $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted. (optional)
+     * @param  string $comments Any comments about the evaluation to be captured. (optional)
      * @param  string $id  (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRatings'] to see the possible values for this operation
@@ -1089,7 +1112,7 @@ class EvaluationRatingsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEvaluationRatingsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatings'][0])
+    public function getEvaluationRatingsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $actual_duration = null, $comments = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatings'][0])
     {
 
 
@@ -1098,6 +1121,11 @@ class EvaluationRatingsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling EvaluationRatingsApi.getEvaluationRatings, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling EvaluationRatingsApi.getEvaluationRatings, must be bigger than or equal to 0.');
         }
         
 
@@ -1156,6 +1184,11 @@ class EvaluationRatingsApi
         }
         
 
+        if ($comments !== null && strlen($comments) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$comments" when calling EvaluationRatingsApi.getEvaluationRatings, must be smaller than or equal to 1024.');
+        }
+        
+
 
 
         $resourcePath = '/tpdm/evaluationRatings';
@@ -1178,6 +1211,24 @@ class EvaluationRatingsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1356,6 +1407,24 @@ class EvaluationRatingsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $actual_duration,
+            'actualDuration', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $comments,
+            'comments', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
             'string', // openApiType
@@ -1440,7 +1509,7 @@ class EvaluationRatingsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TpdmEvaluationRating
+     * @return |\Resources\Model\TpdmEvaluationRating
      */
     public function getEvaluationRatingsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatingsById'][0])
     {
@@ -1460,7 +1529,7 @@ class EvaluationRatingsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TpdmEvaluationRating, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TpdmEvaluationRating, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEvaluationRatingsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatingsById'][0])
     {
@@ -1761,23 +1830,700 @@ class EvaluationRatingsApi
     }
 
     /**
+     * Operation getEvaluationRatingsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $evaluation_date The date for the person&#39;s evaluation. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $evaluation_period_descriptor The period for the evaluation. (optional)
+     * @param  string $evaluation_title The name or title of the evaluation. (optional)
+     * @param  string $performance_evaluation_title An assigned unique identifier for the performance evaluation. (optional)
+     * @param  string $performance_evaluation_type_descriptor The type of performance evaluation conducted. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $term_descriptor The term for the session during the school year. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $evaluation_rating_level_descriptor The rating level achieved based upon the rating or score. (optional)
+     * @param  string $evaluation_rating_status_descriptor The Status of the poerformance evaluation. (optional)
+     * @param  int $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted. (optional)
+     * @param  string $comments Any comments about the evaluation to be captured. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRatingsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getEvaluationRatingsPartitions($number = null, $min_change_version = null, $max_change_version = null, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $actual_duration = null, $comments = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatingsPartitions'][0])
+    {
+        list($response) = $this->getEvaluationRatingsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $actual_duration, $comments, $id, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getEvaluationRatingsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $evaluation_date The date for the person&#39;s evaluation. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $evaluation_period_descriptor The period for the evaluation. (optional)
+     * @param  string $evaluation_title The name or title of the evaluation. (optional)
+     * @param  string $performance_evaluation_title An assigned unique identifier for the performance evaluation. (optional)
+     * @param  string $performance_evaluation_type_descriptor The type of performance evaluation conducted. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $term_descriptor The term for the session during the school year. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $evaluation_rating_level_descriptor The rating level achieved based upon the rating or score. (optional)
+     * @param  string $evaluation_rating_status_descriptor The Status of the poerformance evaluation. (optional)
+     * @param  int $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted. (optional)
+     * @param  string $comments Any comments about the evaluation to be captured. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRatingsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEvaluationRatingsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $actual_duration = null, $comments = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatingsPartitions'][0])
+    {
+        $request = $this->getEvaluationRatingsPartitionsRequest($number, $min_change_version, $max_change_version, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $actual_duration, $comments, $id, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEvaluationRatingsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $evaluation_date The date for the person&#39;s evaluation. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $evaluation_period_descriptor The period for the evaluation. (optional)
+     * @param  string $evaluation_title The name or title of the evaluation. (optional)
+     * @param  string $performance_evaluation_title An assigned unique identifier for the performance evaluation. (optional)
+     * @param  string $performance_evaluation_type_descriptor The type of performance evaluation conducted. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $term_descriptor The term for the session during the school year. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $evaluation_rating_level_descriptor The rating level achieved based upon the rating or score. (optional)
+     * @param  string $evaluation_rating_status_descriptor The Status of the poerformance evaluation. (optional)
+     * @param  int $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted. (optional)
+     * @param  string $comments Any comments about the evaluation to be captured. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRatingsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEvaluationRatingsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $actual_duration = null, $comments = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatingsPartitions'][0])
+    {
+        return $this->getEvaluationRatingsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $actual_duration, $comments, $id, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEvaluationRatingsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $evaluation_date The date for the person&#39;s evaluation. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $evaluation_period_descriptor The period for the evaluation. (optional)
+     * @param  string $evaluation_title The name or title of the evaluation. (optional)
+     * @param  string $performance_evaluation_title An assigned unique identifier for the performance evaluation. (optional)
+     * @param  string $performance_evaluation_type_descriptor The type of performance evaluation conducted. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $term_descriptor The term for the session during the school year. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $evaluation_rating_level_descriptor The rating level achieved based upon the rating or score. (optional)
+     * @param  string $evaluation_rating_status_descriptor The Status of the poerformance evaluation. (optional)
+     * @param  int $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted. (optional)
+     * @param  string $comments Any comments about the evaluation to be captured. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRatingsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEvaluationRatingsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $actual_duration = null, $comments = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatingsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getEvaluationRatingsPartitionsRequest($number, $min_change_version, $max_change_version, $evaluation_date, $education_organization_id, $evaluation_period_descriptor, $evaluation_title, $performance_evaluation_title, $performance_evaluation_type_descriptor, $school_year, $term_descriptor, $person_id, $source_system_descriptor, $local_course_code, $school_id, $section_identifier, $session_name, $evaluation_rating_level_descriptor, $evaluation_rating_status_descriptor, $actual_duration, $comments, $id, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEvaluationRatingsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $evaluation_date The date for the person&#39;s evaluation. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $evaluation_period_descriptor The period for the evaluation. (optional)
+     * @param  string $evaluation_title The name or title of the evaluation. (optional)
+     * @param  string $performance_evaluation_title An assigned unique identifier for the performance evaluation. (optional)
+     * @param  string $performance_evaluation_type_descriptor The type of performance evaluation conducted. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $term_descriptor The term for the session during the school year. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $evaluation_rating_level_descriptor The rating level achieved based upon the rating or score. (optional)
+     * @param  string $evaluation_rating_status_descriptor The Status of the poerformance evaluation. (optional)
+     * @param  int $actual_duration The actual or estimated number of clock minutes during which the evaluation was conducted. (optional)
+     * @param  string $comments Any comments about the evaluation to be captured. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRatingsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEvaluationRatingsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $evaluation_date = null, $education_organization_id = null, $evaluation_period_descriptor = null, $evaluation_title = null, $performance_evaluation_title = null, $performance_evaluation_type_descriptor = null, $school_year = null, $term_descriptor = null, $person_id = null, $source_system_descriptor = null, $local_course_code = null, $school_id = null, $section_identifier = null, $session_name = null, $evaluation_rating_level_descriptor = null, $evaluation_rating_status_descriptor = null, $actual_duration = null, $comments = null, $id = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRatingsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+
+        if ($evaluation_period_descriptor !== null && strlen($evaluation_period_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$evaluation_period_descriptor" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($evaluation_title !== null && strlen($evaluation_title) > 50) {
+            throw new \InvalidArgumentException('invalid length for "$evaluation_title" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 50.');
+        }
+        
+        if ($performance_evaluation_title !== null && strlen($performance_evaluation_title) > 50) {
+            throw new \InvalidArgumentException('invalid length for "$performance_evaluation_title" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 50.');
+        }
+        
+        if ($performance_evaluation_type_descriptor !== null && strlen($performance_evaluation_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$performance_evaluation_type_descriptor" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($term_descriptor !== null && strlen($term_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$term_descriptor" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($person_id !== null && strlen($person_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$person_id" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($source_system_descriptor !== null && strlen($source_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$source_system_descriptor" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($local_course_code !== null && strlen($local_course_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$local_course_code" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        if ($section_identifier !== null && strlen($section_identifier) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$section_identifier" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($session_name !== null && strlen($session_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$session_name" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($evaluation_rating_level_descriptor !== null && strlen($evaluation_rating_level_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$evaluation_rating_level_descriptor" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($evaluation_rating_status_descriptor !== null && strlen($evaluation_rating_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$evaluation_rating_status_descriptor" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($comments !== null && strlen($comments) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$comments" when calling EvaluationRatingsApi.getEvaluationRatingsPartitions, must be smaller than or equal to 1024.');
+        }
+        
+
+
+
+        $resourcePath = '/tpdm/evaluationRatings/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_date,
+            'evaluationDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_period_descriptor,
+            'evaluationPeriodDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_title,
+            'evaluationTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $performance_evaluation_title,
+            'performanceEvaluationTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $performance_evaluation_type_descriptor,
+            'performanceEvaluationTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_year,
+            'schoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $term_descriptor,
+            'termDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $person_id,
+            'personId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_system_descriptor,
+            'sourceSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $local_course_code,
+            'localCourseCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_id,
+            'schoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $section_identifier,
+            'sectionIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_name,
+            'sessionName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_rating_level_descriptor,
+            'evaluationRatingLevelDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_rating_status_descriptor,
+            'evaluationRatingStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $actual_duration,
+            'actualDuration', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $comments,
+            'comments', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesEvaluationRatings
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesTpdmEvaluationRatingKeyChange[]
+     * @return |\Resources\Model\TrackedChangesTpdmEvaluationRatingKeyChange[]
      */
-    public function keyChangesEvaluationRatings($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRatings'][0])
+    public function keyChangesEvaluationRatings($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRatings'][0])
     {
         list($response) = $this->keyChangesEvaluationRatingsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1788,19 +2534,19 @@ class EvaluationRatingsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesTpdmEvaluationRatingKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesTpdmEvaluationRatingKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesEvaluationRatingsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRatings'][0])
+    public function keyChangesEvaluationRatingsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRatings'][0])
     {
         $request = $this->keyChangesEvaluationRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1918,18 +2664,18 @@ class EvaluationRatingsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesEvaluationRatingsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRatings'][0])
+    public function keyChangesEvaluationRatingsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRatings'][0])
     {
         return $this->keyChangesEvaluationRatingsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1944,18 +2690,18 @@ class EvaluationRatingsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesEvaluationRatingsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRatings'][0])
+    public function keyChangesEvaluationRatingsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRatings'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesTpdmEvaluationRatingKeyChange[]';
         $request = $this->keyChangesEvaluationRatingsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1999,18 +2745,18 @@ class EvaluationRatingsApi
     /**
      * Create request for operation 'keyChangesEvaluationRatings'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRatings'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesEvaluationRatingsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRatings'][0])
+    public function keyChangesEvaluationRatingsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRatings'][0])
     {
 
 

@@ -302,10 +302,6 @@ class EdFiChartOfAccountReference implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'account_identifier', the character length must be smaller than or equal to 50.";
         }
 
-        if ((mb_strlen($this->container['account_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'account_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['education_organization_id'] === null) {
             $invalidProperties[] = "'education_organization_id' can't be null";
         }
@@ -359,9 +355,6 @@ class EdFiChartOfAccountReference implements ModelInterface, ArrayAccess, \JsonS
         }
         if ((mb_strlen($account_identifier) > 50)) {
             throw new \InvalidArgumentException('invalid length for $account_identifier when calling EdFiChartOfAccountReference., must be smaller than or equal to 50.');
-        }
-        if ((mb_strlen($account_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $account_identifier when calling EdFiChartOfAccountReference., must be bigger than or equal to 1.');
         }
 
         $this->container['account_identifier'] = $account_identifier;

@@ -309,10 +309,6 @@ class EdFiCalendarDateReference implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = "invalid value for 'calendar_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['calendar_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'calendar_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['date'] === null) {
             $invalidProperties[] = "'date' can't be null";
         }
@@ -362,9 +358,6 @@ class EdFiCalendarDateReference implements ModelInterface, ArrayAccess, \JsonSer
         if ((mb_strlen($calendar_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $calendar_code when calling EdFiCalendarDateReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($calendar_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $calendar_code when calling EdFiCalendarDateReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['calendar_code'] = $calendar_code;
 
@@ -411,7 +404,7 @@ class EdFiCalendarDateReference implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets school_id
      *
-     * @param int $school_id The identifier assigned to a school.
+     * @param int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

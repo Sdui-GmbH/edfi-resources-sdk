@@ -354,6 +354,22 @@ class EdFiProgramEvaluationElement implements ModelInterface, ArrayAccess, \Json
         if ($this->container['program_evaluation_reference'] === null) {
             $invalidProperties[] = "'program_evaluation_reference' can't be null";
         }
+        if (!is_null($this->container['element_max_numeric_rating']) && ($this->container['element_max_numeric_rating'] > 999.999)) {
+            $invalidProperties[] = "invalid value for 'element_max_numeric_rating', must be smaller than or equal to 999.999.";
+        }
+
+        if (!is_null($this->container['element_max_numeric_rating']) && ($this->container['element_max_numeric_rating'] < -999.999)) {
+            $invalidProperties[] = "invalid value for 'element_max_numeric_rating', must be bigger than or equal to -999.999.";
+        }
+
+        if (!is_null($this->container['element_min_numeric_rating']) && ($this->container['element_min_numeric_rating'] > 999.999)) {
+            $invalidProperties[] = "invalid value for 'element_min_numeric_rating', must be smaller than or equal to 999.999.";
+        }
+
+        if (!is_null($this->container['element_min_numeric_rating']) && ($this->container['element_min_numeric_rating'] < -999.999)) {
+            $invalidProperties[] = "invalid value for 'element_min_numeric_rating', must be bigger than or equal to -999.999.";
+        }
+
         if (!is_null($this->container['program_evaluation_element_description']) && (mb_strlen($this->container['program_evaluation_element_description']) > 255)) {
             $invalidProperties[] = "invalid value for 'program_evaluation_element_description', the character length must be smaller than or equal to 255.";
         }
@@ -514,6 +530,14 @@ class EdFiProgramEvaluationElement implements ModelInterface, ArrayAccess, \Json
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($element_max_numeric_rating) && ($element_max_numeric_rating > 999.999)) {
+            throw new \InvalidArgumentException('invalid value for $element_max_numeric_rating when calling EdFiProgramEvaluationElement., must be smaller than or equal to 999.999.');
+        }
+        if (!is_null($element_max_numeric_rating) && ($element_max_numeric_rating < -999.999)) {
+            throw new \InvalidArgumentException('invalid value for $element_max_numeric_rating when calling EdFiProgramEvaluationElement., must be bigger than or equal to -999.999.');
+        }
+
         $this->container['element_max_numeric_rating'] = $element_max_numeric_rating;
 
         return $this;
@@ -548,6 +572,14 @@ class EdFiProgramEvaluationElement implements ModelInterface, ArrayAccess, \Json
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($element_min_numeric_rating) && ($element_min_numeric_rating > 999.999)) {
+            throw new \InvalidArgumentException('invalid value for $element_min_numeric_rating when calling EdFiProgramEvaluationElement., must be smaller than or equal to 999.999.');
+        }
+        if (!is_null($element_min_numeric_rating) && ($element_min_numeric_rating < -999.999)) {
+            throw new \InvalidArgumentException('invalid value for $element_min_numeric_rating when calling EdFiProgramEvaluationElement., must be bigger than or equal to -999.999.');
+        }
+
         $this->container['element_min_numeric_rating'] = $element_min_numeric_rating;
 
         return $this;

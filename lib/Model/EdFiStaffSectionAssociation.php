@@ -360,6 +360,14 @@ class EdFiStaffSectionAssociation implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'classroom_position_descriptor', the character length must be smaller than or equal to 306.";
         }
 
+        if (!is_null($this->container['percentage_contribution']) && ($this->container['percentage_contribution'] > 9.9999)) {
+            $invalidProperties[] = "invalid value for 'percentage_contribution', must be smaller than or equal to 9.9999.";
+        }
+
+        if (!is_null($this->container['percentage_contribution']) && ($this->container['percentage_contribution'] < -9.9999)) {
+            $invalidProperties[] = "invalid value for 'percentage_contribution', must be bigger than or equal to -9.9999.";
+        }
+
         return $invalidProperties;
     }
 
@@ -415,7 +423,7 @@ class EdFiStaffSectionAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date Month, day, and year of a teacher's assignment to the section.
+     * @param \DateTime $begin_date Month, day, and year of a teacher's assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -527,7 +535,7 @@ class EdFiStaffSectionAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date Month, day, and year of the last day of a staff member's assignment to the section.
+     * @param \DateTime|null $end_date Month, day, and year of the last day of a staff member's assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -611,6 +619,14 @@ class EdFiStaffSectionAssociation implements ModelInterface, ArrayAccess, \JsonS
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($percentage_contribution) && ($percentage_contribution > 9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $percentage_contribution when calling EdFiStaffSectionAssociation., must be smaller than or equal to 9.9999.');
+        }
+        if (!is_null($percentage_contribution) && ($percentage_contribution < -9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $percentage_contribution when calling EdFiStaffSectionAssociation., must be bigger than or equal to -9.9999.');
+        }
+
         $this->container['percentage_contribution'] = $percentage_contribution;
 
         return $this;

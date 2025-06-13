@@ -83,6 +83,9 @@ class InterventionPrescriptionsApi
         'getInterventionPrescriptionsById' => [
             'application/json',
         ],
+        'getInterventionPrescriptionsPartitions' => [
+            'application/json',
+        ],
         'keyChangesInterventionPrescriptions' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class InterventionPrescriptionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesInterventionPrescriptions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiInterventionPrescriptionDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiInterventionPrescriptionDelete[]
      */
-    public function deletesInterventionPrescriptions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionPrescriptions'][0])
+    public function deletesInterventionPrescriptions($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionPrescriptions'][0])
     {
         list($response) = $this->deletesInterventionPrescriptionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class InterventionPrescriptionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesInterventionPrescriptions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiInterventionPrescriptionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiInterventionPrescriptionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesInterventionPrescriptionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionPrescriptions'][0])
+    public function deletesInterventionPrescriptionsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionPrescriptions'][0])
     {
         $request = $this->deletesInterventionPrescriptionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class InterventionPrescriptionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesInterventionPrescriptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesInterventionPrescriptionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionPrescriptions'][0])
+    public function deletesInterventionPrescriptionsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionPrescriptions'][0])
     {
         return $this->deletesInterventionPrescriptionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class InterventionPrescriptionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesInterventionPrescriptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesInterventionPrescriptionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionPrescriptions'][0])
+    public function deletesInterventionPrescriptionsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionPrescriptions'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiInterventionPrescriptionDelete[]';
         $request = $this->deletesInterventionPrescriptionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class InterventionPrescriptionsApi
     /**
      * Create request for operation 'deletesInterventionPrescriptions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesInterventionPrescriptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesInterventionPrescriptionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionPrescriptions'][0])
+    public function deletesInterventionPrescriptionsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesInterventionPrescriptions'][0])
     {
 
 
@@ -759,11 +762,13 @@ class InterventionPrescriptionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $intervention_prescription_identification_code A unique number or alphanumeric code assigned to an intervention prescription. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $delivery_method_descriptor The way in which an intervention was implemented: individual, small group, whole class, or whole school. (optional)
@@ -777,11 +782,11 @@ class InterventionPrescriptionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiInterventionPrescription[]
+     * @return |\Resources\Model\EdFiInterventionPrescription[]
      */
-    public function getInterventionPrescriptions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptions'][0])
+    public function getInterventionPrescriptions($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptions'][0])
     {
-        list($response) = $this->getInterventionPrescriptionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType);
+        list($response) = $this->getInterventionPrescriptionsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -790,11 +795,13 @@ class InterventionPrescriptionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $intervention_prescription_identification_code A unique number or alphanumeric code assigned to an intervention prescription. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $delivery_method_descriptor The way in which an intervention was implemented: individual, small group, whole class, or whole school. (optional)
@@ -808,11 +815,11 @@ class InterventionPrescriptionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiInterventionPrescription[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiInterventionPrescription[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInterventionPrescriptionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptions'][0])
+    public function getInterventionPrescriptionsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptions'][0])
     {
-        $request = $this->getInterventionPrescriptionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType);
+        $request = $this->getInterventionPrescriptionsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -928,11 +935,13 @@ class InterventionPrescriptionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $intervention_prescription_identification_code A unique number or alphanumeric code assigned to an intervention prescription. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $delivery_method_descriptor The way in which an intervention was implemented: individual, small group, whole class, or whole school. (optional)
@@ -947,9 +956,9 @@ class InterventionPrescriptionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInterventionPrescriptionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptions'][0])
+    public function getInterventionPrescriptionsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptions'][0])
     {
-        return $this->getInterventionPrescriptionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType)
+        return $this->getInterventionPrescriptionsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -962,11 +971,13 @@ class InterventionPrescriptionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $intervention_prescription_identification_code A unique number or alphanumeric code assigned to an intervention prescription. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $delivery_method_descriptor The way in which an intervention was implemented: individual, small group, whole class, or whole school. (optional)
@@ -981,10 +992,10 @@ class InterventionPrescriptionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInterventionPrescriptionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptions'][0])
+    public function getInterventionPrescriptionsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptions'][0])
     {
         $returnType = '\Resources\Model\EdFiInterventionPrescription[]';
-        $request = $this->getInterventionPrescriptionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType);
+        $request = $this->getInterventionPrescriptionsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1025,11 +1036,13 @@ class InterventionPrescriptionsApi
     /**
      * Create request for operation 'getInterventionPrescriptions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $intervention_prescription_identification_code A unique number or alphanumeric code assigned to an intervention prescription. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $delivery_method_descriptor The way in which an intervention was implemented: individual, small group, whole class, or whole school. (optional)
@@ -1044,7 +1057,7 @@ class InterventionPrescriptionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getInterventionPrescriptionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptions'][0])
+    public function getInterventionPrescriptionsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptions'][0])
     {
 
 
@@ -1053,6 +1066,11 @@ class InterventionPrescriptionsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling InterventionPrescriptionsApi.getInterventionPrescriptions, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling InterventionPrescriptionsApi.getInterventionPrescriptions, must be bigger than or equal to 0.');
         }
         
 
@@ -1100,6 +1118,24 @@ class InterventionPrescriptionsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1281,7 +1317,7 @@ class InterventionPrescriptionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiInterventionPrescription
+     * @return |\Resources\Model\EdFiInterventionPrescription
      */
     public function getInterventionPrescriptionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptionsById'][0])
     {
@@ -1301,7 +1337,7 @@ class InterventionPrescriptionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiInterventionPrescription, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiInterventionPrescription, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInterventionPrescriptionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptionsById'][0])
     {
@@ -1602,23 +1638,508 @@ class InterventionPrescriptionsApi
     }
 
     /**
+     * Operation getInterventionPrescriptionsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $intervention_prescription_identification_code A unique number or alphanumeric code assigned to an intervention prescription. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $delivery_method_descriptor The way in which an intervention was implemented: individual, small group, whole class, or whole school. (optional)
+     * @param  string $intervention_class_descriptor The way in which an intervention is used: curriculum, supplement, or practice. (optional)
+     * @param  string $id  (optional)
+     * @param  int $max_dosage The maximum duration of time in minutes that is recommended for the intervention. (optional)
+     * @param  int $min_dosage The minimum duration of time in minutes that is recommended for the intervention. (optional)
+     * @param  string $namespace Namespace for the intervention. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInterventionPrescriptionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getInterventionPrescriptionsPartitions($number = null, $min_change_version = null, $max_change_version = null, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptionsPartitions'][0])
+    {
+        list($response) = $this->getInterventionPrescriptionsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getInterventionPrescriptionsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $intervention_prescription_identification_code A unique number or alphanumeric code assigned to an intervention prescription. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $delivery_method_descriptor The way in which an intervention was implemented: individual, small group, whole class, or whole school. (optional)
+     * @param  string $intervention_class_descriptor The way in which an intervention is used: curriculum, supplement, or practice. (optional)
+     * @param  string $id  (optional)
+     * @param  int $max_dosage The maximum duration of time in minutes that is recommended for the intervention. (optional)
+     * @param  int $min_dosage The minimum duration of time in minutes that is recommended for the intervention. (optional)
+     * @param  string $namespace Namespace for the intervention. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInterventionPrescriptionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getInterventionPrescriptionsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptionsPartitions'][0])
+    {
+        $request = $this->getInterventionPrescriptionsPartitionsRequest($number, $min_change_version, $max_change_version, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getInterventionPrescriptionsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $intervention_prescription_identification_code A unique number or alphanumeric code assigned to an intervention prescription. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $delivery_method_descriptor The way in which an intervention was implemented: individual, small group, whole class, or whole school. (optional)
+     * @param  string $intervention_class_descriptor The way in which an intervention is used: curriculum, supplement, or practice. (optional)
+     * @param  string $id  (optional)
+     * @param  int $max_dosage The maximum duration of time in minutes that is recommended for the intervention. (optional)
+     * @param  int $min_dosage The minimum duration of time in minutes that is recommended for the intervention. (optional)
+     * @param  string $namespace Namespace for the intervention. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInterventionPrescriptionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getInterventionPrescriptionsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptionsPartitions'][0])
+    {
+        return $this->getInterventionPrescriptionsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getInterventionPrescriptionsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $intervention_prescription_identification_code A unique number or alphanumeric code assigned to an intervention prescription. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $delivery_method_descriptor The way in which an intervention was implemented: individual, small group, whole class, or whole school. (optional)
+     * @param  string $intervention_class_descriptor The way in which an intervention is used: curriculum, supplement, or practice. (optional)
+     * @param  string $id  (optional)
+     * @param  int $max_dosage The maximum duration of time in minutes that is recommended for the intervention. (optional)
+     * @param  int $min_dosage The minimum duration of time in minutes that is recommended for the intervention. (optional)
+     * @param  string $namespace Namespace for the intervention. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInterventionPrescriptionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getInterventionPrescriptionsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptionsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getInterventionPrescriptionsPartitionsRequest($number, $min_change_version, $max_change_version, $intervention_prescription_identification_code, $education_organization_id, $delivery_method_descriptor, $intervention_class_descriptor, $id, $max_dosage, $min_dosage, $namespace, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getInterventionPrescriptionsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $intervention_prescription_identification_code A unique number or alphanumeric code assigned to an intervention prescription. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $delivery_method_descriptor The way in which an intervention was implemented: individual, small group, whole class, or whole school. (optional)
+     * @param  string $intervention_class_descriptor The way in which an intervention is used: curriculum, supplement, or practice. (optional)
+     * @param  string $id  (optional)
+     * @param  int $max_dosage The maximum duration of time in minutes that is recommended for the intervention. (optional)
+     * @param  int $min_dosage The minimum duration of time in minutes that is recommended for the intervention. (optional)
+     * @param  string $namespace Namespace for the intervention. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getInterventionPrescriptionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getInterventionPrescriptionsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $intervention_prescription_identification_code = null, $education_organization_id = null, $delivery_method_descriptor = null, $intervention_class_descriptor = null, $id = null, $max_dosage = null, $min_dosage = null, $namespace = null, $use_snapshot = false, string $contentType = self::contentTypes['getInterventionPrescriptionsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling InterventionPrescriptionsApi.getInterventionPrescriptionsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling InterventionPrescriptionsApi.getInterventionPrescriptionsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($intervention_prescription_identification_code !== null && strlen($intervention_prescription_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$intervention_prescription_identification_code" when calling InterventionPrescriptionsApi.getInterventionPrescriptionsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        if ($delivery_method_descriptor !== null && strlen($delivery_method_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$delivery_method_descriptor" when calling InterventionPrescriptionsApi.getInterventionPrescriptionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($intervention_class_descriptor !== null && strlen($intervention_class_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$intervention_class_descriptor" when calling InterventionPrescriptionsApi.getInterventionPrescriptionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+        if ($namespace !== null && strlen($namespace) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$namespace" when calling InterventionPrescriptionsApi.getInterventionPrescriptionsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+
+        $resourcePath = '/ed-fi/interventionPrescriptions/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $intervention_prescription_identification_code,
+            'interventionPrescriptionIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $delivery_method_descriptor,
+            'deliveryMethodDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $intervention_class_descriptor,
+            'interventionClassDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_dosage,
+            'maxDosage', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_dosage,
+            'minDosage', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $namespace,
+            'namespace', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesInterventionPrescriptions
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesInterventionPrescriptions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiInterventionPrescriptionKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiInterventionPrescriptionKeyChange[]
      */
-    public function keyChangesInterventionPrescriptions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionPrescriptions'][0])
+    public function keyChangesInterventionPrescriptions($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionPrescriptions'][0])
     {
         list($response) = $this->keyChangesInterventionPrescriptionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1629,19 +2150,19 @@ class InterventionPrescriptionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesInterventionPrescriptions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiInterventionPrescriptionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiInterventionPrescriptionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesInterventionPrescriptionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionPrescriptions'][0])
+    public function keyChangesInterventionPrescriptionsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionPrescriptions'][0])
     {
         $request = $this->keyChangesInterventionPrescriptionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1759,18 +2280,18 @@ class InterventionPrescriptionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesInterventionPrescriptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesInterventionPrescriptionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionPrescriptions'][0])
+    public function keyChangesInterventionPrescriptionsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionPrescriptions'][0])
     {
         return $this->keyChangesInterventionPrescriptionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1785,18 +2306,18 @@ class InterventionPrescriptionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesInterventionPrescriptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesInterventionPrescriptionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionPrescriptions'][0])
+    public function keyChangesInterventionPrescriptionsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionPrescriptions'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiInterventionPrescriptionKeyChange[]';
         $request = $this->keyChangesInterventionPrescriptionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1840,18 +2361,18 @@ class InterventionPrescriptionsApi
     /**
      * Create request for operation 'keyChangesInterventionPrescriptions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesInterventionPrescriptions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesInterventionPrescriptionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionPrescriptions'][0])
+    public function keyChangesInterventionPrescriptionsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesInterventionPrescriptions'][0])
     {
 
 

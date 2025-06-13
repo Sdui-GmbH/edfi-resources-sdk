@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **program_evaluation_reference** | [**\Resources\Model\EdFiProgramEvaluationReference**](EdFiProgramEvaluationReference.md) |  |
 **staff_evaluator_staff_reference** | [**\Resources\Model\EdFiStaffReference**](EdFiStaffReference.md) |  | [optional]
 **student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
-**evaluation_duration** | **int** | The actual or estimated number of clock minutes during which the evaluation was conducted. | [optional]
+**evaluation_duration** | **int** | The actual number of minutes to conduct the evaluation. | [optional]
 **external_evaluators** | [**\Resources\Model\EdFiStudentProgramEvaluationExternalEvaluator[]**](EdFiStudentProgramEvaluationExternalEvaluator.md) | An unordered collection of studentProgramEvaluationExternalEvaluators. The external person(s) - not staff - that conducted the evaluation. | [optional]
 **student_evaluation_elements** | [**\Resources\Model\EdFiStudentProgramEvaluationStudentEvaluationElement[]**](EdFiStudentProgramEvaluationStudentEvaluationElement.md) | An unordered collection of studentProgramEvaluationStudentEvaluationElements. The student&#39;s rating and/or rating levels earned for a program evaluation element. | [optional]
 **student_evaluation_objectives** | [**\Resources\Model\EdFiStudentProgramEvaluationStudentEvaluationObjective[]**](EdFiStudentProgramEvaluationStudentEvaluationObjective.md) | An unordered collection of studentProgramEvaluationStudentEvaluationObjectives. The student&#39;s rating and/or rating levels earned for a program evaluation objective. | [optional]

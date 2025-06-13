@@ -83,6 +83,9 @@ class StudentContactAssociationsApi
         'getStudentContactAssociationsById' => [
             'application/json',
         ],
+        'getStudentContactAssociationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStudentContactAssociations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StudentContactAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentContactAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentContactAssociationDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentContactAssociationDelete[]
      */
-    public function deletesStudentContactAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentContactAssociations'][0])
+    public function deletesStudentContactAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentContactAssociations'][0])
     {
         list($response) = $this->deletesStudentContactAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StudentContactAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentContactAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentContactAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentContactAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStudentContactAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentContactAssociations'][0])
+    public function deletesStudentContactAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentContactAssociations'][0])
     {
         $request = $this->deletesStudentContactAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StudentContactAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentContactAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentContactAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentContactAssociations'][0])
+    public function deletesStudentContactAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentContactAssociations'][0])
     {
         return $this->deletesStudentContactAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StudentContactAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentContactAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentContactAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentContactAssociations'][0])
+    public function deletesStudentContactAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentContactAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentContactAssociationDelete[]';
         $request = $this->deletesStudentContactAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StudentContactAssociationsApi
     /**
      * Create request for operation 'deletesStudentContactAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentContactAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStudentContactAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentContactAssociations'][0])
+    public function deletesStudentContactAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentContactAssociations'][0])
     {
 
 
@@ -759,11 +762,13 @@ class StudentContactAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $relation_descriptor The nature of an individual&#39;s relationship to a student, primarily used to capture family relationships. (optional)
@@ -779,11 +784,11 @@ class StudentContactAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentContactAssociation[]
+     * @return |\Resources\Model\EdFiStudentContactAssociation[]
      */
-    public function getStudentContactAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociations'][0])
+    public function getStudentContactAssociations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociations'][0])
     {
-        list($response) = $this->getStudentContactAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType);
+        list($response) = $this->getStudentContactAssociationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -792,11 +797,13 @@ class StudentContactAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $relation_descriptor The nature of an individual&#39;s relationship to a student, primarily used to capture family relationships. (optional)
@@ -812,11 +819,11 @@ class StudentContactAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentContactAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentContactAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentContactAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociations'][0])
+    public function getStudentContactAssociationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociations'][0])
     {
-        $request = $this->getStudentContactAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType);
+        $request = $this->getStudentContactAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -932,11 +939,13 @@ class StudentContactAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $relation_descriptor The nature of an individual&#39;s relationship to a student, primarily used to capture family relationships. (optional)
@@ -953,9 +962,9 @@ class StudentContactAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentContactAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociations'][0])
+    public function getStudentContactAssociationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociations'][0])
     {
-        return $this->getStudentContactAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType)
+        return $this->getStudentContactAssociationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -968,11 +977,13 @@ class StudentContactAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $relation_descriptor The nature of an individual&#39;s relationship to a student, primarily used to capture family relationships. (optional)
@@ -989,10 +1000,10 @@ class StudentContactAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentContactAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociations'][0])
+    public function getStudentContactAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentContactAssociation[]';
-        $request = $this->getStudentContactAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType);
+        $request = $this->getStudentContactAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1033,11 +1044,13 @@ class StudentContactAssociationsApi
     /**
      * Create request for operation 'getStudentContactAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $relation_descriptor The nature of an individual&#39;s relationship to a student, primarily used to capture family relationships. (optional)
@@ -1054,7 +1067,7 @@ class StudentContactAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentContactAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociations'][0])
+    public function getStudentContactAssociationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociations'][0])
     {
 
 
@@ -1063,6 +1076,11 @@ class StudentContactAssociationsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StudentContactAssociationsApi.getStudentContactAssociations, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StudentContactAssociationsApi.getStudentContactAssociations, must be bigger than or equal to 0.');
         }
         
 
@@ -1112,6 +1130,24 @@ class StudentContactAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1311,7 +1347,7 @@ class StudentContactAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentContactAssociation
+     * @return |\Resources\Model\EdFiStudentContactAssociation
      */
     public function getStudentContactAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociationsById'][0])
     {
@@ -1331,7 +1367,7 @@ class StudentContactAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentContactAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentContactAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentContactAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociationsById'][0])
     {
@@ -1632,23 +1668,538 @@ class StudentContactAssociationsApi
     }
 
     /**
+     * Operation getStudentContactAssociationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $relation_descriptor The nature of an individual&#39;s relationship to a student, primarily used to capture family relationships. (optional)
+     * @param  int $contact_priority The numeric order of the preferred sequence or priority of contact. (optional)
+     * @param  string $contact_restrictions Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)
+     * @param  bool $emergency_contact_status Indicator of whether the person is a designated emergency contact for the student. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $legal_guardian Indicator of whether the person is a legal guardian for the student. (optional)
+     * @param  bool $lives_with Indicator of whether the student lives with the associated contact. (optional)
+     * @param  bool $primary_contact_status Indicator of whether the person is a primary contact for the student. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentContactAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStudentContactAssociationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociationsPartitions'][0])
+    {
+        list($response) = $this->getStudentContactAssociationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStudentContactAssociationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $relation_descriptor The nature of an individual&#39;s relationship to a student, primarily used to capture family relationships. (optional)
+     * @param  int $contact_priority The numeric order of the preferred sequence or priority of contact. (optional)
+     * @param  string $contact_restrictions Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)
+     * @param  bool $emergency_contact_status Indicator of whether the person is a designated emergency contact for the student. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $legal_guardian Indicator of whether the person is a legal guardian for the student. (optional)
+     * @param  bool $lives_with Indicator of whether the student lives with the associated contact. (optional)
+     * @param  bool $primary_contact_status Indicator of whether the person is a primary contact for the student. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentContactAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStudentContactAssociationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociationsPartitions'][0])
+    {
+        $request = $this->getStudentContactAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStudentContactAssociationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $relation_descriptor The nature of an individual&#39;s relationship to a student, primarily used to capture family relationships. (optional)
+     * @param  int $contact_priority The numeric order of the preferred sequence or priority of contact. (optional)
+     * @param  string $contact_restrictions Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)
+     * @param  bool $emergency_contact_status Indicator of whether the person is a designated emergency contact for the student. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $legal_guardian Indicator of whether the person is a legal guardian for the student. (optional)
+     * @param  bool $lives_with Indicator of whether the student lives with the associated contact. (optional)
+     * @param  bool $primary_contact_status Indicator of whether the person is a primary contact for the student. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentContactAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentContactAssociationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociationsPartitions'][0])
+    {
+        return $this->getStudentContactAssociationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStudentContactAssociationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $relation_descriptor The nature of an individual&#39;s relationship to a student, primarily used to capture family relationships. (optional)
+     * @param  int $contact_priority The numeric order of the preferred sequence or priority of contact. (optional)
+     * @param  string $contact_restrictions Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)
+     * @param  bool $emergency_contact_status Indicator of whether the person is a designated emergency contact for the student. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $legal_guardian Indicator of whether the person is a legal guardian for the student. (optional)
+     * @param  bool $lives_with Indicator of whether the student lives with the associated contact. (optional)
+     * @param  bool $primary_contact_status Indicator of whether the person is a primary contact for the student. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentContactAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentContactAssociationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStudentContactAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $contact_unique_id, $student_unique_id, $relation_descriptor, $contact_priority, $contact_restrictions, $emergency_contact_status, $id, $legal_guardian, $lives_with, $primary_contact_status, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStudentContactAssociationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $relation_descriptor The nature of an individual&#39;s relationship to a student, primarily used to capture family relationships. (optional)
+     * @param  int $contact_priority The numeric order of the preferred sequence or priority of contact. (optional)
+     * @param  string $contact_restrictions Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)
+     * @param  bool $emergency_contact_status Indicator of whether the person is a designated emergency contact for the student. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $legal_guardian Indicator of whether the person is a legal guardian for the student. (optional)
+     * @param  bool $lives_with Indicator of whether the student lives with the associated contact. (optional)
+     * @param  bool $primary_contact_status Indicator of whether the person is a primary contact for the student. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentContactAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStudentContactAssociationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $contact_unique_id = null, $student_unique_id = null, $relation_descriptor = null, $contact_priority = null, $contact_restrictions = null, $emergency_contact_status = null, $id = null, $legal_guardian = null, $lives_with = null, $primary_contact_status = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentContactAssociationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentContactAssociationsApi.getStudentContactAssociationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentContactAssociationsApi.getStudentContactAssociationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($contact_unique_id !== null && strlen($contact_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$contact_unique_id" when calling StudentContactAssociationsApi.getStudentContactAssociationsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentContactAssociationsApi.getStudentContactAssociationsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($relation_descriptor !== null && strlen($relation_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$relation_descriptor" when calling StudentContactAssociationsApi.getStudentContactAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($contact_restrictions !== null && strlen($contact_restrictions) > 250) {
+            throw new \InvalidArgumentException('invalid length for "$contact_restrictions" when calling StudentContactAssociationsApi.getStudentContactAssociationsPartitions, must be smaller than or equal to 250.');
+        }
+        
+
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/studentContactAssociations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $contact_unique_id,
+            'contactUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $relation_descriptor,
+            'relationDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $contact_priority,
+            'contactPriority', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $contact_restrictions,
+            'contactRestrictions', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $emergency_contact_status,
+            'emergencyContactStatus', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $legal_guardian,
+            'legalGuardian', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $lives_with,
+            'livesWith', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $primary_contact_status,
+            'primaryContactStatus', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStudentContactAssociations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentContactAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentContactAssociationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentContactAssociationKeyChange[]
      */
-    public function keyChangesStudentContactAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentContactAssociations'][0])
+    public function keyChangesStudentContactAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentContactAssociations'][0])
     {
         list($response) = $this->keyChangesStudentContactAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1659,19 +2210,19 @@ class StudentContactAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentContactAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentContactAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentContactAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStudentContactAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentContactAssociations'][0])
+    public function keyChangesStudentContactAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentContactAssociations'][0])
     {
         $request = $this->keyChangesStudentContactAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1789,18 +2340,18 @@ class StudentContactAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentContactAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentContactAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentContactAssociations'][0])
+    public function keyChangesStudentContactAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentContactAssociations'][0])
     {
         return $this->keyChangesStudentContactAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1815,18 +2366,18 @@ class StudentContactAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentContactAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentContactAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentContactAssociations'][0])
+    public function keyChangesStudentContactAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentContactAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentContactAssociationKeyChange[]';
         $request = $this->keyChangesStudentContactAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1870,18 +2421,18 @@ class StudentContactAssociationsApi
     /**
      * Create request for operation 'keyChangesStudentContactAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentContactAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStudentContactAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentContactAssociations'][0])
+    public function keyChangesStudentContactAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentContactAssociations'][0])
     {
 
 

@@ -449,10 +449,6 @@ class EdFiStudentSpecialEducationProgramEligibilityAssociation implements ModelI
             $invalidProperties[] = "invalid value for 'evaluation_late_reason', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['evaluation_late_reason']) && (mb_strlen($this->container['evaluation_late_reason']) < 1)) {
-            $invalidProperties[] = "invalid value for 'evaluation_late_reason', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['idea_part_descriptor'] === null) {
             $invalidProperties[] = "'idea_part_descriptor' can't be null";
         }
@@ -959,9 +955,6 @@ class EdFiStudentSpecialEducationProgramEligibilityAssociation implements ModelI
         }
         if (!is_null($evaluation_late_reason) && (mb_strlen($evaluation_late_reason) > 255)) {
             throw new \InvalidArgumentException('invalid length for $evaluation_late_reason when calling EdFiStudentSpecialEducationProgramEligibilityAssociation., must be smaller than or equal to 255.');
-        }
-        if (!is_null($evaluation_late_reason) && (mb_strlen($evaluation_late_reason) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $evaluation_late_reason when calling EdFiStudentSpecialEducationProgramEligibilityAssociation., must be bigger than or equal to 1.');
         }
 
         $this->container['evaluation_late_reason'] = $evaluation_late_reason;

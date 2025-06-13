@@ -328,16 +328,8 @@ class EdFiEducationOrganizationIndicator implements ModelInterface, ArrayAccess,
             $invalidProperties[] = "invalid value for 'designated_by', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['designated_by']) && (mb_strlen($this->container['designated_by']) < 1)) {
-            $invalidProperties[] = "invalid value for 'designated_by', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['indicator_value']) && (mb_strlen($this->container['indicator_value']) > 60)) {
             $invalidProperties[] = "invalid value for 'indicator_value', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['indicator_value']) && (mb_strlen($this->container['indicator_value']) < 1)) {
-            $invalidProperties[] = "invalid value for 'indicator_value', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -494,9 +486,6 @@ class EdFiEducationOrganizationIndicator implements ModelInterface, ArrayAccess,
         if (!is_null($designated_by) && (mb_strlen($designated_by) > 60)) {
             throw new \InvalidArgumentException('invalid length for $designated_by when calling EdFiEducationOrganizationIndicator., must be smaller than or equal to 60.');
         }
-        if (!is_null($designated_by) && (mb_strlen($designated_by) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $designated_by when calling EdFiEducationOrganizationIndicator., must be bigger than or equal to 1.');
-        }
 
         $this->container['designated_by'] = $designated_by;
 
@@ -534,9 +523,6 @@ class EdFiEducationOrganizationIndicator implements ModelInterface, ArrayAccess,
         }
         if (!is_null($indicator_value) && (mb_strlen($indicator_value) > 60)) {
             throw new \InvalidArgumentException('invalid length for $indicator_value when calling EdFiEducationOrganizationIndicator., must be smaller than or equal to 60.');
-        }
-        if (!is_null($indicator_value) && (mb_strlen($indicator_value) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $indicator_value when calling EdFiEducationOrganizationIndicator., must be bigger than or equal to 1.');
         }
 
         $this->container['indicator_value'] = $indicator_value;

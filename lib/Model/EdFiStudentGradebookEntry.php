@@ -383,16 +383,24 @@ class EdFiStudentGradebookEntry implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = "invalid value for 'diagnostic_statement', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['diagnostic_statement']) && (mb_strlen($this->container['diagnostic_statement']) < 1)) {
-            $invalidProperties[] = "invalid value for 'diagnostic_statement', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['letter_grade_earned']) && (mb_strlen($this->container['letter_grade_earned']) > 20)) {
             $invalidProperties[] = "invalid value for 'letter_grade_earned', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['letter_grade_earned']) && (mb_strlen($this->container['letter_grade_earned']) < 1)) {
-            $invalidProperties[] = "invalid value for 'letter_grade_earned', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['numeric_grade_earned']) && ($this->container['numeric_grade_earned'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'numeric_grade_earned', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['numeric_grade_earned']) && ($this->container['numeric_grade_earned'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'numeric_grade_earned', must be bigger than or equal to -9999999.99.";
+        }
+
+        if (!is_null($this->container['points_earned']) && ($this->container['points_earned'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'points_earned', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['points_earned']) && ($this->container['points_earned'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'points_earned', must be bigger than or equal to -9999999.99.";
         }
 
         if (!is_null($this->container['submission_status_descriptor']) && (mb_strlen($this->container['submission_status_descriptor']) > 306)) {
@@ -637,9 +645,6 @@ class EdFiStudentGradebookEntry implements ModelInterface, ArrayAccess, \JsonSer
         if (!is_null($diagnostic_statement) && (mb_strlen($diagnostic_statement) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $diagnostic_statement when calling EdFiStudentGradebookEntry., must be smaller than or equal to 1024.');
         }
-        if (!is_null($diagnostic_statement) && (mb_strlen($diagnostic_statement) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $diagnostic_statement when calling EdFiStudentGradebookEntry., must be bigger than or equal to 1.');
-        }
 
         $this->container['diagnostic_statement'] = $diagnostic_statement;
 
@@ -678,9 +683,6 @@ class EdFiStudentGradebookEntry implements ModelInterface, ArrayAccess, \JsonSer
         if (!is_null($letter_grade_earned) && (mb_strlen($letter_grade_earned) > 20)) {
             throw new \InvalidArgumentException('invalid length for $letter_grade_earned when calling EdFiStudentGradebookEntry., must be smaller than or equal to 20.');
         }
-        if (!is_null($letter_grade_earned) && (mb_strlen($letter_grade_earned) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $letter_grade_earned when calling EdFiStudentGradebookEntry., must be bigger than or equal to 1.');
-        }
 
         $this->container['letter_grade_earned'] = $letter_grade_earned;
 
@@ -716,6 +718,14 @@ class EdFiStudentGradebookEntry implements ModelInterface, ArrayAccess, \JsonSer
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($numeric_grade_earned) && ($numeric_grade_earned > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $numeric_grade_earned when calling EdFiStudentGradebookEntry., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($numeric_grade_earned) && ($numeric_grade_earned < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $numeric_grade_earned when calling EdFiStudentGradebookEntry., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['numeric_grade_earned'] = $numeric_grade_earned;
 
         return $this;
@@ -750,6 +760,14 @@ class EdFiStudentGradebookEntry implements ModelInterface, ArrayAccess, \JsonSer
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($points_earned) && ($points_earned > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $points_earned when calling EdFiStudentGradebookEntry., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($points_earned) && ($points_earned < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $points_earned when calling EdFiStudentGradebookEntry., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['points_earned'] = $points_earned;
 
         return $this;

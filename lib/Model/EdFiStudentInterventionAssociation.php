@@ -340,10 +340,6 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
             $invalidProperties[] = "invalid value for 'diagnostic_statement', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['diagnostic_statement']) && (mb_strlen($this->container['diagnostic_statement']) < 1)) {
-            $invalidProperties[] = "invalid value for 'diagnostic_statement', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -498,9 +494,6 @@ class EdFiStudentInterventionAssociation implements ModelInterface, ArrayAccess,
         }
         if (!is_null($diagnostic_statement) && (mb_strlen($diagnostic_statement) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $diagnostic_statement when calling EdFiStudentInterventionAssociation., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($diagnostic_statement) && (mb_strlen($diagnostic_statement) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $diagnostic_statement when calling EdFiStudentInterventionAssociation., must be bigger than or equal to 1.');
         }
 
         $this->container['diagnostic_statement'] = $diagnostic_statement;

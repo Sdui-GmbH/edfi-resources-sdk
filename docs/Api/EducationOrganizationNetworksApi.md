@@ -1,6 +1,6 @@
 # Resources\EducationOrganizationNetworksApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if t
 | [**deletesEducationOrganizationNetworks()**](EducationOrganizationNetworksApi.md#deletesEducationOrganizationNetworks) | **GET** /ed-fi/educationOrganizationNetworks/deletes | Retrieves deleted resources based on change version. |
 | [**getEducationOrganizationNetworks()**](EducationOrganizationNetworksApi.md#getEducationOrganizationNetworks) | **GET** /ed-fi/educationOrganizationNetworks | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getEducationOrganizationNetworksById()**](EducationOrganizationNetworksApi.md#getEducationOrganizationNetworksById) | **GET** /ed-fi/educationOrganizationNetworks/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getEducationOrganizationNetworksPartitions()**](EducationOrganizationNetworksApi.md#getEducationOrganizationNetworksPartitions) | **GET** /ed-fi/educationOrganizationNetworks/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesEducationOrganizationNetworks()**](EducationOrganizationNetworksApi.md#keyChangesEducationOrganizationNetworks) | **GET** /ed-fi/educationOrganizationNetworks/keyChanges | Retrieves resources key changes based on change version. |
 | [**postEducationOrganizationNetwork()**](EducationOrganizationNetworksApi.md#postEducationOrganizationNetwork) | **POST** /ed-fi/educationOrganizationNetworks | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putEducationOrganizationNetwork()**](EducationOrganizationNetworksApi.md#putEducationOrganizationNetwork) | **PUT** /ed-fi/educationOrganizationNetworks/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\EducationOrganizationNetworksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getEducationOrganizationNetworks()`
 
 ```php
-getEducationOrganizationNetworks($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $use_snapshot): \Resources\Model\EdFiEducationOrganizationNetwork[]
+getEducationOrganizationNetworks($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code): \Resources\Model\EdFiEducationOrganizationNetwork[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,17 +172,26 @@ $apiInstance = new Resources\Api\EducationOrganizationNetworksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
-$education_organization_network_id = 56; // int | The identifier assigned to a network of education organizations.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
+$education_organization_network_id = 56; // int | The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
 $network_purpose_descriptor = 'network_purpose_descriptor_example'; // string | The purpose(s) of the network (e.g., shared services, collective procurement).
+$operational_status_descriptor = 'operational_status_descriptor_example'; // string | The current operational status of the education organization (e.g., active, inactive).
+$id = 'id_example'; // string | 
+$name_of_institution = 'name_of_institution_example'; // string | The full, legally accepted name of the institution.
+$short_name_of_institution = 'short_name_of_institution_example'; // string | A short name for the institution.
+$web_site = 'web_site_example'; // string | The public web site address (URL) for the education organization.
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+$education_organization_identification_system_descriptor = 'education_organization_identification_system_descriptor_example'; // string | The school system, state, or agency assigning the identification code.
+$identification_code = 'identification_code_example'; // string | A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity.
 
 try {
-    $result = $apiInstance->getEducationOrganizationNetworks($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $use_snapshot);
+    $result = $apiInstance->getEducationOrganizationNetworks($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $education_organization_network_id, $network_purpose_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EducationOrganizationNetworksApi->getEducationOrganizationNetworks: ', $e->getMessage(), PHP_EOL;
@@ -192,14 +202,23 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
-| **education_organization_network_id** | **int**| The identifier assigned to a network of education organizations. | [optional] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
+| **education_organization_network_id** | **int**| The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
 | **network_purpose_descriptor** | **string**| The purpose(s) of the network (e.g., shared services, collective procurement). | [optional] |
+| **operational_status_descriptor** | **string**| The current operational status of the education organization (e.g., active, inactive). | [optional] |
+| **id** | **string**|  | [optional] |
+| **name_of_institution** | **string**| The full, legally accepted name of the institution. | [optional] |
+| **short_name_of_institution** | **string**| A short name for the institution. | [optional] |
+| **web_site** | **string**| The public web site address (URL) for the education organization. | [optional] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+| **education_organization_identification_system_descriptor** | **string**| The school system, state, or agency assigning the identification code. | [optional] |
+| **identification_code** | **string**| A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. | [optional] |
 
 ### Return type
 
@@ -282,6 +301,90 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getEducationOrganizationNetworksPartitions()`
+
+```php
+getEducationOrganizationNetworksPartitions($number, $min_change_version, $max_change_version, $education_organization_network_id, $network_purpose_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\EducationOrganizationNetworksApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$education_organization_network_id = 56; // int | The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
+$network_purpose_descriptor = 'network_purpose_descriptor_example'; // string | The purpose(s) of the network (e.g., shared services, collective procurement).
+$operational_status_descriptor = 'operational_status_descriptor_example'; // string | The current operational status of the education organization (e.g., active, inactive).
+$id = 'id_example'; // string | 
+$name_of_institution = 'name_of_institution_example'; // string | The full, legally accepted name of the institution.
+$short_name_of_institution = 'short_name_of_institution_example'; // string | A short name for the institution.
+$web_site = 'web_site_example'; // string | The public web site address (URL) for the education organization.
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+$education_organization_identification_system_descriptor = 'education_organization_identification_system_descriptor_example'; // string | The school system, state, or agency assigning the identification code.
+$identification_code = 'identification_code_example'; // string | A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity.
+
+try {
+    $result = $apiInstance->getEducationOrganizationNetworksPartitions($number, $min_change_version, $max_change_version, $education_organization_network_id, $network_purpose_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EducationOrganizationNetworksApi->getEducationOrganizationNetworksPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **education_organization_network_id** | **int**| The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. | [optional] |
+| **network_purpose_descriptor** | **string**| The purpose(s) of the network (e.g., shared services, collective procurement). | [optional] |
+| **operational_status_descriptor** | **string**| The current operational status of the education organization (e.g., active, inactive). | [optional] |
+| **id** | **string**|  | [optional] |
+| **name_of_institution** | **string**| The full, legally accepted name of the institution. | [optional] |
+| **short_name_of_institution** | **string**| A short name for the institution. | [optional] |
+| **web_site** | **string**| The public web site address (URL) for the education organization. | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+| **education_organization_identification_system_descriptor** | **string**| The school system, state, or agency assigning the identification code. | [optional] |
+| **identification_code** | **string**| A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. | [optional] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesEducationOrganizationNetworks()`
 
 ```php
@@ -309,11 +412,11 @@ $apiInstance = new Resources\Api\EducationOrganizationNetworksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -328,11 +431,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

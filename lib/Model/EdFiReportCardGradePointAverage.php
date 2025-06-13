@@ -305,8 +305,16 @@ class EdFiReportCardGradePointAverage implements ModelInterface, ArrayAccess, \J
         if ($this->container['grade_point_average_value'] === null) {
             $invalidProperties[] = "'grade_point_average_value' can't be null";
         }
+        if (($this->container['grade_point_average_value'] > 1.0E+14)) {
+            $invalidProperties[] = "invalid value for 'grade_point_average_value', must be smaller than or equal to 1.0E+14.";
+        }
+
         if (($this->container['grade_point_average_value'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'grade_point_average_value', must be bigger than or equal to 0.0.";
+        }
+
+        if (!is_null($this->container['max_grade_point_average_value']) && ($this->container['max_grade_point_average_value'] > 1.0E+14)) {
+            $invalidProperties[] = "invalid value for 'max_grade_point_average_value', must be smaller than or equal to 1.0E+14.";
         }
 
         if (!is_null($this->container['max_grade_point_average_value']) && ($this->container['max_grade_point_average_value'] < 0.0)) {
@@ -382,6 +390,9 @@ class EdFiReportCardGradePointAverage implements ModelInterface, ArrayAccess, \J
             throw new \InvalidArgumentException('non-nullable grade_point_average_value cannot be null');
         }
 
+        if (($grade_point_average_value > 1.0E+14)) {
+            throw new \InvalidArgumentException('invalid value for $grade_point_average_value when calling EdFiReportCardGradePointAverage., must be smaller than or equal to 1.0E+14.');
+        }
         if (($grade_point_average_value < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $grade_point_average_value when calling EdFiReportCardGradePointAverage., must be bigger than or equal to 0.0.');
         }
@@ -455,6 +466,9 @@ class EdFiReportCardGradePointAverage implements ModelInterface, ArrayAccess, \J
             }
         }
 
+        if (!is_null($max_grade_point_average_value) && ($max_grade_point_average_value > 1.0E+14)) {
+            throw new \InvalidArgumentException('invalid value for $max_grade_point_average_value when calling EdFiReportCardGradePointAverage., must be smaller than or equal to 1.0E+14.');
+        }
         if (!is_null($max_grade_point_average_value) && ($max_grade_point_average_value < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $max_grade_point_average_value when calling EdFiReportCardGradePointAverage., must be bigger than or equal to 0.0.');
         }

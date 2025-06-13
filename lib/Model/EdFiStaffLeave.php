@@ -347,10 +347,6 @@ class EdFiStaffLeave implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'reason', the character length must be smaller than or equal to 40.";
         }
 
-        if (!is_null($this->container['reason']) && (mb_strlen($this->container['reason']) < 1)) {
-            $invalidProperties[] = "invalid value for 'reason', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -406,7 +402,7 @@ class EdFiStaffLeave implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The begin date of the staff leave.
+     * @param \DateTime $begin_date The begin date of the staff leave.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -491,7 +487,7 @@ class EdFiStaffLeave implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The end date of the staff leave.
+     * @param \DateTime|null $end_date The end date of the staff leave.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -543,9 +539,6 @@ class EdFiStaffLeave implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($reason) && (mb_strlen($reason) > 40)) {
             throw new \InvalidArgumentException('invalid length for $reason when calling EdFiStaffLeave., must be smaller than or equal to 40.');
-        }
-        if (!is_null($reason) && (mb_strlen($reason) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $reason when calling EdFiStaffLeave., must be bigger than or equal to 1.');
         }
 
         $this->container['reason'] = $reason;

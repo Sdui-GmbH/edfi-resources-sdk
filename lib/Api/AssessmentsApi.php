@@ -83,6 +83,9 @@ class AssessmentsApi
         'getAssessmentsById' => [
             'application/json',
         ],
+        'getAssessmentsPartitions' => [
+            'application/json',
+        ],
         'keyChangesAssessments' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class AssessmentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessments'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiAssessmentDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiAssessmentDelete[]
      */
-    public function deletesAssessments($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessments'][0])
+    public function deletesAssessments($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessments'][0])
     {
         list($response) = $this->deletesAssessmentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class AssessmentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessments'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiAssessmentDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiAssessmentDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesAssessmentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessments'][0])
+    public function deletesAssessmentsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessments'][0])
     {
         $request = $this->deletesAssessmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class AssessmentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesAssessmentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessments'][0])
+    public function deletesAssessmentsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessments'][0])
     {
         return $this->deletesAssessmentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class AssessmentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesAssessmentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessments'][0])
+    public function deletesAssessmentsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessments'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiAssessmentDelete[]';
         $request = $this->deletesAssessmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class AssessmentsApi
     /**
      * Create request for operation 'deletesAssessments'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesAssessmentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessments'][0])
+    public function deletesAssessmentsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessments'][0])
     {
 
 
@@ -759,11 +762,13 @@ class AssessmentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
      * @param  string $namespace Namespace for the assessment. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -778,15 +783,18 @@ class AssessmentsApi
      * @param  string $nomenclature Reflects the specific nomenclature used for assessment. (optional)
      * @param  \DateTime $revision_date The month, day, and year that the conceptual design for the assessment was most recently revised substantially. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $assessment_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the assessment identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessments'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiAssessment[]
+     * @return |\Resources\Model\EdFiAssessment[]
      */
-    public function getAssessments($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessments'][0])
+    public function getAssessments($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, $assessment_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getAssessments'][0])
     {
-        list($response) = $this->getAssessmentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $contentType);
+        list($response) = $this->getAssessmentsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $assessment_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
         return $response;
     }
 
@@ -795,11 +803,13 @@ class AssessmentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
      * @param  string $namespace Namespace for the assessment. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -814,15 +824,18 @@ class AssessmentsApi
      * @param  string $nomenclature Reflects the specific nomenclature used for assessment. (optional)
      * @param  \DateTime $revision_date The month, day, and year that the conceptual design for the assessment was most recently revised substantially. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $assessment_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the assessment identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessments'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiAssessment[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiAssessment[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAssessmentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessments'][0])
+    public function getAssessmentsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, $assessment_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getAssessments'][0])
     {
-        $request = $this->getAssessmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $contentType);
+        $request = $this->getAssessmentsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $assessment_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -938,11 +951,13 @@ class AssessmentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
      * @param  string $namespace Namespace for the assessment. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -957,14 +972,17 @@ class AssessmentsApi
      * @param  string $nomenclature Reflects the specific nomenclature used for assessment. (optional)
      * @param  \DateTime $revision_date The month, day, and year that the conceptual design for the assessment was most recently revised substantially. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $assessment_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the assessment identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAssessmentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessments'][0])
+    public function getAssessmentsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, $assessment_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getAssessments'][0])
     {
-        return $this->getAssessmentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $contentType)
+        return $this->getAssessmentsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $assessment_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -977,11 +995,13 @@ class AssessmentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
      * @param  string $namespace Namespace for the assessment. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -996,15 +1016,18 @@ class AssessmentsApi
      * @param  string $nomenclature Reflects the specific nomenclature used for assessment. (optional)
      * @param  \DateTime $revision_date The month, day, and year that the conceptual design for the assessment was most recently revised substantially. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $assessment_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the assessment identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAssessmentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessments'][0])
+    public function getAssessmentsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, $assessment_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getAssessments'][0])
     {
         $returnType = '\Resources\Model\EdFiAssessment[]';
-        $request = $this->getAssessmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $contentType);
+        $request = $this->getAssessmentsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $assessment_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1045,11 +1068,13 @@ class AssessmentsApi
     /**
      * Create request for operation 'getAssessments'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
      * @param  string $namespace Namespace for the assessment. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
@@ -1064,12 +1089,15 @@ class AssessmentsApi
      * @param  string $nomenclature Reflects the specific nomenclature used for assessment. (optional)
      * @param  \DateTime $revision_date The month, day, and year that the conceptual design for the assessment was most recently revised substantially. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $assessment_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the assessment identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAssessmentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessments'][0])
+    public function getAssessmentsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, $assessment_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getAssessments'][0])
     {
 
 
@@ -1078,6 +1106,11 @@ class AssessmentsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling AssessmentsApi.getAssessments, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling AssessmentsApi.getAssessments, must be bigger than or equal to 0.');
         }
         
 
@@ -1118,6 +1151,18 @@ class AssessmentsApi
         
 
 
+        if ($assessment_identification_system_descriptor !== null && strlen($assessment_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$assessment_identification_system_descriptor" when calling AssessmentsApi.getAssessments, must be smaller than or equal to 306.');
+        }
+        
+        if ($assigning_organization_identification_code !== null && strlen($assigning_organization_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assigning_organization_identification_code" when calling AssessmentsApi.getAssessments, must be smaller than or equal to 60.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling AssessmentsApi.getAssessments, must be smaller than or equal to 60.');
+        }
+        
 
         $resourcePath = '/ed-fi/assessments';
         $formParams = [];
@@ -1139,6 +1184,24 @@ class AssessmentsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1288,6 +1351,33 @@ class AssessmentsApi
             true, // explode
             false // required
         ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assessment_identification_system_descriptor,
+            'assessmentIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assigning_organization_identification_code,
+            'assigningOrganizationIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
         // header params
         if ($use_snapshot !== null) {
@@ -1365,7 +1455,7 @@ class AssessmentsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiAssessment
+     * @return |\Resources\Model\EdFiAssessment
      */
     public function getAssessmentsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentsById'][0])
     {
@@ -1385,7 +1475,7 @@ class AssessmentsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiAssessment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiAssessment, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAssessmentsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentsById'][0])
     {
@@ -1686,23 +1776,646 @@ class AssessmentsApi
     }
 
     /**
+     * Operation getAssessmentsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
+     * @param  string $namespace Namespace for the assessment. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $assessment_category_descriptor The category of an assessment based on format and content. (optional)
+     * @param  bool $adaptive_assessment Indicates that the assessment is adaptive. (optional)
+     * @param  string $assessment_family The assessment family this assessment is a member of. (optional)
+     * @param  string $assessment_form Identifies the form of the assessment, for example a regular versus makeup form, multiple choice versus constructed response, etc. (optional)
+     * @param  string $assessment_title The title or name of the assessment. (optional)
+     * @param  int $assessment_version The version identifier for the assessment. (optional)
+     * @param  string $id  (optional)
+     * @param  float $max_raw_score The maximum raw score achievable across all assessment items that are correct and scored at the maximum. (optional)
+     * @param  string $nomenclature Reflects the specific nomenclature used for assessment. (optional)
+     * @param  \DateTime $revision_date The month, day, and year that the conceptual design for the assessment was most recently revised substantially. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $assessment_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the assessment identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getAssessmentsPartitions($number = null, $min_change_version = null, $max_change_version = null, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, $assessment_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getAssessmentsPartitions'][0])
+    {
+        list($response) = $this->getAssessmentsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $assessment_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAssessmentsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
+     * @param  string $namespace Namespace for the assessment. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $assessment_category_descriptor The category of an assessment based on format and content. (optional)
+     * @param  bool $adaptive_assessment Indicates that the assessment is adaptive. (optional)
+     * @param  string $assessment_family The assessment family this assessment is a member of. (optional)
+     * @param  string $assessment_form Identifies the form of the assessment, for example a regular versus makeup form, multiple choice versus constructed response, etc. (optional)
+     * @param  string $assessment_title The title or name of the assessment. (optional)
+     * @param  int $assessment_version The version identifier for the assessment. (optional)
+     * @param  string $id  (optional)
+     * @param  float $max_raw_score The maximum raw score achievable across all assessment items that are correct and scored at the maximum. (optional)
+     * @param  string $nomenclature Reflects the specific nomenclature used for assessment. (optional)
+     * @param  \DateTime $revision_date The month, day, and year that the conceptual design for the assessment was most recently revised substantially. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $assessment_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the assessment identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAssessmentsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, $assessment_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getAssessmentsPartitions'][0])
+    {
+        $request = $this->getAssessmentsPartitionsRequest($number, $min_change_version, $max_change_version, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $assessment_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAssessmentsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
+     * @param  string $namespace Namespace for the assessment. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $assessment_category_descriptor The category of an assessment based on format and content. (optional)
+     * @param  bool $adaptive_assessment Indicates that the assessment is adaptive. (optional)
+     * @param  string $assessment_family The assessment family this assessment is a member of. (optional)
+     * @param  string $assessment_form Identifies the form of the assessment, for example a regular versus makeup form, multiple choice versus constructed response, etc. (optional)
+     * @param  string $assessment_title The title or name of the assessment. (optional)
+     * @param  int $assessment_version The version identifier for the assessment. (optional)
+     * @param  string $id  (optional)
+     * @param  float $max_raw_score The maximum raw score achievable across all assessment items that are correct and scored at the maximum. (optional)
+     * @param  string $nomenclature Reflects the specific nomenclature used for assessment. (optional)
+     * @param  \DateTime $revision_date The month, day, and year that the conceptual design for the assessment was most recently revised substantially. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $assessment_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the assessment identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAssessmentsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, $assessment_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getAssessmentsPartitions'][0])
+    {
+        return $this->getAssessmentsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $assessment_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAssessmentsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
+     * @param  string $namespace Namespace for the assessment. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $assessment_category_descriptor The category of an assessment based on format and content. (optional)
+     * @param  bool $adaptive_assessment Indicates that the assessment is adaptive. (optional)
+     * @param  string $assessment_family The assessment family this assessment is a member of. (optional)
+     * @param  string $assessment_form Identifies the form of the assessment, for example a regular versus makeup form, multiple choice versus constructed response, etc. (optional)
+     * @param  string $assessment_title The title or name of the assessment. (optional)
+     * @param  int $assessment_version The version identifier for the assessment. (optional)
+     * @param  string $id  (optional)
+     * @param  float $max_raw_score The maximum raw score achievable across all assessment items that are correct and scored at the maximum. (optional)
+     * @param  string $nomenclature Reflects the specific nomenclature used for assessment. (optional)
+     * @param  \DateTime $revision_date The month, day, and year that the conceptual design for the assessment was most recently revised substantially. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $assessment_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the assessment identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAssessmentsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, $assessment_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getAssessmentsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getAssessmentsPartitionsRequest($number, $min_change_version, $max_change_version, $assessment_identifier, $namespace, $education_organization_id, $assessment_category_descriptor, $adaptive_assessment, $assessment_family, $assessment_form, $assessment_title, $assessment_version, $id, $max_raw_score, $nomenclature, $revision_date, $use_snapshot, $assessment_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAssessmentsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
+     * @param  string $namespace Namespace for the assessment. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $assessment_category_descriptor The category of an assessment based on format and content. (optional)
+     * @param  bool $adaptive_assessment Indicates that the assessment is adaptive. (optional)
+     * @param  string $assessment_family The assessment family this assessment is a member of. (optional)
+     * @param  string $assessment_form Identifies the form of the assessment, for example a regular versus makeup form, multiple choice versus constructed response, etc. (optional)
+     * @param  string $assessment_title The title or name of the assessment. (optional)
+     * @param  int $assessment_version The version identifier for the assessment. (optional)
+     * @param  string $id  (optional)
+     * @param  float $max_raw_score The maximum raw score achievable across all assessment items that are correct and scored at the maximum. (optional)
+     * @param  string $nomenclature Reflects the specific nomenclature used for assessment. (optional)
+     * @param  \DateTime $revision_date The month, day, and year that the conceptual design for the assessment was most recently revised substantially. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $assessment_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the assessment identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAssessmentsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $assessment_identifier = null, $namespace = null, $education_organization_id = null, $assessment_category_descriptor = null, $adaptive_assessment = null, $assessment_family = null, $assessment_form = null, $assessment_title = null, $assessment_version = null, $id = null, $max_raw_score = null, $nomenclature = null, $revision_date = null, $use_snapshot = false, $assessment_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getAssessmentsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling AssessmentsApi.getAssessmentsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($assessment_identifier !== null && strlen($assessment_identifier) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assessment_identifier" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($namespace !== null && strlen($namespace) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$namespace" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+        if ($assessment_category_descriptor !== null && strlen($assessment_category_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$assessment_category_descriptor" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($assessment_family !== null && strlen($assessment_family) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assessment_family" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($assessment_form !== null && strlen($assessment_form) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assessment_form" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($assessment_title !== null && strlen($assessment_title) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$assessment_title" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+
+
+        if ($nomenclature !== null && strlen($nomenclature) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$nomenclature" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 100.');
+        }
+        
+
+
+        if ($assessment_identification_system_descriptor !== null && strlen($assessment_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$assessment_identification_system_descriptor" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($assigning_organization_identification_code !== null && strlen($assigning_organization_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assigning_organization_identification_code" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling AssessmentsApi.getAssessmentsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        $resourcePath = '/ed-fi/assessments/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assessment_identifier,
+            'assessmentIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $namespace,
+            'namespace', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assessment_category_descriptor,
+            'assessmentCategoryDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $adaptive_assessment,
+            'adaptiveAssessment', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assessment_family,
+            'assessmentFamily', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assessment_form,
+            'assessmentForm', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assessment_title,
+            'assessmentTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assessment_version,
+            'assessmentVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_raw_score,
+            'maxRawScore', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $nomenclature,
+            'nomenclature', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $revision_date,
+            'revisionDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assessment_identification_system_descriptor,
+            'assessmentIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assigning_organization_identification_code,
+            'assigningOrganizationIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesAssessments
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessments'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiAssessmentKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiAssessmentKeyChange[]
      */
-    public function keyChangesAssessments($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessments'][0])
+    public function keyChangesAssessments($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessments'][0])
     {
         list($response) = $this->keyChangesAssessmentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1713,19 +2426,19 @@ class AssessmentsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessments'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiAssessmentKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiAssessmentKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesAssessmentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessments'][0])
+    public function keyChangesAssessmentsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessments'][0])
     {
         $request = $this->keyChangesAssessmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1843,18 +2556,18 @@ class AssessmentsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesAssessmentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessments'][0])
+    public function keyChangesAssessmentsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessments'][0])
     {
         return $this->keyChangesAssessmentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1869,18 +2582,18 @@ class AssessmentsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesAssessmentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessments'][0])
+    public function keyChangesAssessmentsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessments'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiAssessmentKeyChange[]';
         $request = $this->keyChangesAssessmentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1924,18 +2637,18 @@ class AssessmentsApi
     /**
      * Create request for operation 'keyChangesAssessments'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesAssessmentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessments'][0])
+    public function keyChangesAssessmentsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessments'][0])
     {
 
 

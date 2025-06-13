@@ -316,10 +316,6 @@ class EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse implements M
             $invalidProperties[] = "invalid value for 'matrix_element', the character length must be smaller than or equal to 255.";
         }
 
-        if ((mb_strlen($this->container['matrix_element']) < 1)) {
-            $invalidProperties[] = "invalid value for 'matrix_element', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['numeric_response']) && ($this->container['numeric_response'] > 100)) {
             $invalidProperties[] = "invalid value for 'numeric_response', must be smaller than or equal to 100.";
         }
@@ -330,10 +326,6 @@ class EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse implements M
 
         if (!is_null($this->container['text_response']) && (mb_strlen($this->container['text_response']) > 2048)) {
             $invalidProperties[] = "invalid value for 'text_response', the character length must be smaller than or equal to 2048.";
-        }
-
-        if (!is_null($this->container['text_response']) && (mb_strlen($this->container['text_response']) < 1)) {
-            $invalidProperties[] = "invalid value for 'text_response', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -375,9 +367,6 @@ class EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse implements M
         }
         if ((mb_strlen($matrix_element) > 255)) {
             throw new \InvalidArgumentException('invalid length for $matrix_element when calling EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse., must be smaller than or equal to 255.');
-        }
-        if ((mb_strlen($matrix_element) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $matrix_element when calling EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse., must be bigger than or equal to 1.');
         }
 
         $this->container['matrix_element'] = $matrix_element;
@@ -560,9 +549,6 @@ class EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse implements M
         }
         if (!is_null($text_response) && (mb_strlen($text_response) > 2048)) {
             throw new \InvalidArgumentException('invalid length for $text_response when calling EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse., must be smaller than or equal to 2048.');
-        }
-        if (!is_null($text_response) && (mb_strlen($text_response) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $text_response when calling EdFiSurveyQuestionResponseSurveyQuestionMatrixElementResponse., must be bigger than or equal to 1.');
         }
 
         $this->container['text_response'] = $text_response;

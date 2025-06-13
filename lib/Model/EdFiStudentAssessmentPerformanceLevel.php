@@ -306,10 +306,6 @@ class EdFiStudentAssessmentPerformanceLevel implements ModelInterface, ArrayAcce
             $invalidProperties[] = "invalid value for 'performance_level_indicator_name', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['performance_level_indicator_name']) && (mb_strlen($this->container['performance_level_indicator_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'performance_level_indicator_name', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -418,9 +414,6 @@ class EdFiStudentAssessmentPerformanceLevel implements ModelInterface, ArrayAcce
         }
         if (!is_null($performance_level_indicator_name) && (mb_strlen($performance_level_indicator_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $performance_level_indicator_name when calling EdFiStudentAssessmentPerformanceLevel., must be smaller than or equal to 60.');
-        }
-        if (!is_null($performance_level_indicator_name) && (mb_strlen($performance_level_indicator_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $performance_level_indicator_name when calling EdFiStudentAssessmentPerformanceLevel., must be bigger than or equal to 1.');
         }
 
         $this->container['performance_level_indicator_name'] = $performance_level_indicator_name;

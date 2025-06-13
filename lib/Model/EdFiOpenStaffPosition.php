@@ -372,10 +372,6 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'requisition_number', the character length must be smaller than or equal to 20.";
         }
 
-        if ((mb_strlen($this->container['requisition_number']) < 1)) {
-            $invalidProperties[] = "invalid value for 'requisition_number', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['education_organization_reference'] === null) {
             $invalidProperties[] = "'education_organization_reference' can't be null";
         }
@@ -391,10 +387,6 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         if (!is_null($this->container['position_title']) && (mb_strlen($this->container['position_title']) > 100)) {
             $invalidProperties[] = "invalid value for 'position_title', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['position_title']) && (mb_strlen($this->container['position_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'position_title', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['posting_result_descriptor']) && (mb_strlen($this->container['posting_result_descriptor']) > 306)) {
@@ -479,9 +471,6 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
         if ((mb_strlen($requisition_number) > 20)) {
             throw new \InvalidArgumentException('invalid length for $requisition_number when calling EdFiOpenStaffPosition., must be smaller than or equal to 20.');
         }
-        if ((mb_strlen($requisition_number) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $requisition_number when calling EdFiOpenStaffPosition., must be bigger than or equal to 1.');
-        }
 
         $this->container['requisition_number'] = $requisition_number;
 
@@ -555,7 +544,7 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets date_posted
      *
-     * @param \DateTime $date_posted Date the open staff position was posted.
+     * @param \DateTime $date_posted Date the open staff position was posted.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -582,7 +571,7 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets date_posting_removed
      *
-     * @param \DateTime|null $date_posting_removed The date the posting was removed or filled.
+     * @param \DateTime|null $date_posting_removed The date the posting was removed or filled.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -692,9 +681,6 @@ class EdFiOpenStaffPosition implements ModelInterface, ArrayAccess, \JsonSeriali
         }
         if (!is_null($position_title) && (mb_strlen($position_title) > 100)) {
             throw new \InvalidArgumentException('invalid length for $position_title when calling EdFiOpenStaffPosition., must be smaller than or equal to 100.');
-        }
-        if (!is_null($position_title) && (mb_strlen($position_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $position_title when calling EdFiOpenStaffPosition., must be bigger than or equal to 1.');
         }
 
         $this->container['position_title'] = $position_title;

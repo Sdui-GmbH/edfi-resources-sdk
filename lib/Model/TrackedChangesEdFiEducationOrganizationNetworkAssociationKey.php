@@ -336,7 +336,7 @@ class TrackedChangesEdFiEducationOrganizationNetworkAssociationKey implements Mo
     /**
      * Sets education_organization_network_id
      *
-     * @param int|null $education_organization_network_id The identifier assigned to a network of education organizations.
+     * @param int|null $education_organization_network_id The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

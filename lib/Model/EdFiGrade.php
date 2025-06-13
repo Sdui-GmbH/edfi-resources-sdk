@@ -382,10 +382,6 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'diagnostic_statement', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['diagnostic_statement']) && (mb_strlen($this->container['diagnostic_statement']) < 1)) {
-            $invalidProperties[] = "invalid value for 'diagnostic_statement', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['grade_earned_description']) && (mb_strlen($this->container['grade_earned_description']) > 64)) {
             $invalidProperties[] = "invalid value for 'grade_earned_description', the character length must be smaller than or equal to 64.";
         }
@@ -394,8 +390,12 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'letter_grade_earned', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['letter_grade_earned']) && (mb_strlen($this->container['letter_grade_earned']) < 1)) {
-            $invalidProperties[] = "invalid value for 'letter_grade_earned', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['numeric_grade_earned']) && ($this->container['numeric_grade_earned'] > 9999999.99)) {
+            $invalidProperties[] = "invalid value for 'numeric_grade_earned', must be smaller than or equal to 9999999.99.";
+        }
+
+        if (!is_null($this->container['numeric_grade_earned']) && ($this->container['numeric_grade_earned'] < -9999999.99)) {
+            $invalidProperties[] = "invalid value for 'numeric_grade_earned', must be bigger than or equal to -9999999.99.";
         }
 
         if (!is_null($this->container['performance_base_conversion_descriptor']) && (mb_strlen($this->container['performance_base_conversion_descriptor']) > 306)) {
@@ -629,9 +629,6 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($diagnostic_statement) && (mb_strlen($diagnostic_statement) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $diagnostic_statement when calling EdFiGrade., must be smaller than or equal to 1024.');
         }
-        if (!is_null($diagnostic_statement) && (mb_strlen($diagnostic_statement) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $diagnostic_statement when calling EdFiGrade., must be bigger than or equal to 1.');
-        }
 
         $this->container['diagnostic_statement'] = $diagnostic_statement;
 
@@ -735,9 +732,6 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
         if (!is_null($letter_grade_earned) && (mb_strlen($letter_grade_earned) > 20)) {
             throw new \InvalidArgumentException('invalid length for $letter_grade_earned when calling EdFiGrade., must be smaller than or equal to 20.');
         }
-        if (!is_null($letter_grade_earned) && (mb_strlen($letter_grade_earned) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $letter_grade_earned when calling EdFiGrade., must be bigger than or equal to 1.');
-        }
 
         $this->container['letter_grade_earned'] = $letter_grade_earned;
 
@@ -773,6 +767,14 @@ class EdFiGrade implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($numeric_grade_earned) && ($numeric_grade_earned > 9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $numeric_grade_earned when calling EdFiGrade., must be smaller than or equal to 9999999.99.');
+        }
+        if (!is_null($numeric_grade_earned) && ($numeric_grade_earned < -9999999.99)) {
+            throw new \InvalidArgumentException('invalid value for $numeric_grade_earned when calling EdFiGrade., must be bigger than or equal to -9999999.99.');
+        }
+
         $this->container['numeric_grade_earned'] = $numeric_grade_earned;
 
         return $this;

@@ -59,6 +59,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'id' => 'string',
         'restraint_event_identifier' => 'string',
+        'discipline_incident_reference' => '\Resources\Model\EdFiDisciplineIncidentReference',
         'school_reference' => '\Resources\Model\EdFiSchoolReference',
         'student_reference' => '\Resources\Model\EdFiStudentReference',
         'educational_environment_descriptor' => 'string',
@@ -79,6 +80,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'id' => null,
         'restraint_event_identifier' => null,
+        'discipline_incident_reference' => null,
         'school_reference' => null,
         'student_reference' => null,
         'educational_environment_descriptor' => null,
@@ -97,6 +99,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static array $openAPINullables = [
         'id' => false,
         'restraint_event_identifier' => false,
+        'discipline_incident_reference' => false,
         'school_reference' => false,
         'student_reference' => false,
         'educational_environment_descriptor' => true,
@@ -195,6 +198,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $attributeMap = [
         'id' => 'id',
         'restraint_event_identifier' => 'restraintEventIdentifier',
+        'discipline_incident_reference' => 'disciplineIncidentReference',
         'school_reference' => 'schoolReference',
         'student_reference' => 'studentReference',
         'educational_environment_descriptor' => 'educationalEnvironmentDescriptor',
@@ -213,6 +217,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $setters = [
         'id' => 'setId',
         'restraint_event_identifier' => 'setRestraintEventIdentifier',
+        'discipline_incident_reference' => 'setDisciplineIncidentReference',
         'school_reference' => 'setSchoolReference',
         'student_reference' => 'setStudentReference',
         'educational_environment_descriptor' => 'setEducationalEnvironmentDescriptor',
@@ -231,6 +236,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $getters = [
         'id' => 'getId',
         'restraint_event_identifier' => 'getRestraintEventIdentifier',
+        'discipline_incident_reference' => 'getDisciplineIncidentReference',
         'school_reference' => 'getSchoolReference',
         'student_reference' => 'getStudentReference',
         'educational_environment_descriptor' => 'getEducationalEnvironmentDescriptor',
@@ -300,6 +306,7 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('restraint_event_identifier', $data ?? [], null);
+        $this->setIfExists('discipline_incident_reference', $data ?? [], null);
         $this->setIfExists('school_reference', $data ?? [], null);
         $this->setIfExists('student_reference', $data ?? [], null);
         $this->setIfExists('educational_environment_descriptor', $data ?? [], null);
@@ -342,10 +349,6 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($this->container['restraint_event_identifier']) > 36)) {
             $invalidProperties[] = "invalid value for 'restraint_event_identifier', the character length must be smaller than or equal to 36.";
-        }
-
-        if ((mb_strlen($this->container['restraint_event_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'restraint_event_identifier', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['school_reference'] === null) {
@@ -428,11 +431,35 @@ class EdFiRestraintEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         if ((mb_strlen($restraint_event_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $restraint_event_identifier when calling EdFiRestraintEvent., must be smaller than or equal to 36.');
         }
-        if ((mb_strlen($restraint_event_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $restraint_event_identifier when calling EdFiRestraintEvent., must be bigger than or equal to 1.');
-        }
 
         $this->container['restraint_event_identifier'] = $restraint_event_identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets discipline_incident_reference
+     *
+     * @return \Resources\Model\EdFiDisciplineIncidentReference|null
+     */
+    public function getDisciplineIncidentReference()
+    {
+        return $this->container['discipline_incident_reference'];
+    }
+
+    /**
+     * Sets discipline_incident_reference
+     *
+     * @param \Resources\Model\EdFiDisciplineIncidentReference|null $discipline_incident_reference discipline_incident_reference
+     *
+     * @return self
+     */
+    public function setDisciplineIncidentReference($discipline_incident_reference)
+    {
+        if (is_null($discipline_incident_reference)) {
+            throw new \InvalidArgumentException('non-nullable discipline_incident_reference cannot be null');
+        }
+        $this->container['discipline_incident_reference'] = $discipline_incident_reference;
 
         return $this;
     }

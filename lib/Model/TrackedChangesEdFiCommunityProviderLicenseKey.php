@@ -296,10 +296,6 @@ class TrackedChangesEdFiCommunityProviderLicenseKey implements ModelInterface, A
             $invalidProperties[] = "invalid value for 'licensing_organization', the character length must be smaller than or equal to 75.";
         }
 
-        if (!is_null($this->container['licensing_organization']) && (mb_strlen($this->container['licensing_organization']) < 1)) {
-            $invalidProperties[] = "invalid value for 'licensing_organization', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -371,9 +367,6 @@ class TrackedChangesEdFiCommunityProviderLicenseKey implements ModelInterface, A
         if ((mb_strlen($licensing_organization) > 75)) {
             throw new \InvalidArgumentException('invalid length for $licensing_organization when calling TrackedChangesEdFiCommunityProviderLicenseKey., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($licensing_organization) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $licensing_organization when calling TrackedChangesEdFiCommunityProviderLicenseKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['licensing_organization'] = $licensing_organization;
 
@@ -393,7 +386,7 @@ class TrackedChangesEdFiCommunityProviderLicenseKey implements ModelInterface, A
     /**
      * Sets community_provider_id
      *
-     * @param int|null $community_provider_id The identifier assigned to a community provider.
+     * @param int|null $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

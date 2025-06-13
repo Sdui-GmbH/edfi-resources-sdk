@@ -416,7 +416,7 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The begin date for the association.
+     * @param \DateTime $begin_date The begin date for the association.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -551,7 +551,7 @@ class TpdmCandidateEducatorPreparationProgramAssociation implements ModelInterfa
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The end date for the association.
+     * @param \DateTime|null $end_date The end date for the association.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

@@ -295,10 +295,6 @@ class EdFiLocationReference implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'classroom_identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['classroom_identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'classroom_identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['school_id'] === null) {
             $invalidProperties[] = "'school_id' can't be null";
         }
@@ -342,9 +338,6 @@ class EdFiLocationReference implements ModelInterface, ArrayAccess, \JsonSeriali
         if ((mb_strlen($classroom_identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $classroom_identification_code when calling EdFiLocationReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($classroom_identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $classroom_identification_code when calling EdFiLocationReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['classroom_identification_code'] = $classroom_identification_code;
 
@@ -364,7 +357,7 @@ class EdFiLocationReference implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets school_id
      *
-     * @param int $school_id The identifier assigned to a school.
+     * @param int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

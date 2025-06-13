@@ -302,19 +302,11 @@ class EdFiDisciplineIncidentExternalParticipant implements ModelInterface, Array
             $invalidProperties[] = "invalid value for 'first_name', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['first_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'first_name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['last_surname'] === null) {
             $invalidProperties[] = "'last_surname' can't be null";
         }
         if ((mb_strlen($this->container['last_surname']) > 75)) {
             $invalidProperties[] = "invalid value for 'last_surname', the character length must be smaller than or equal to 75.";
-        }
-
-        if ((mb_strlen($this->container['last_surname']) < 1)) {
-            $invalidProperties[] = "invalid value for 'last_surname', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -388,9 +380,6 @@ class EdFiDisciplineIncidentExternalParticipant implements ModelInterface, Array
         if ((mb_strlen($first_name) > 75)) {
             throw new \InvalidArgumentException('invalid length for $first_name when calling EdFiDisciplineIncidentExternalParticipant., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($first_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $first_name when calling EdFiDisciplineIncidentExternalParticipant., must be bigger than or equal to 1.');
-        }
 
         $this->container['first_name'] = $first_name;
 
@@ -421,9 +410,6 @@ class EdFiDisciplineIncidentExternalParticipant implements ModelInterface, Array
         }
         if ((mb_strlen($last_surname) > 75)) {
             throw new \InvalidArgumentException('invalid length for $last_surname when calling EdFiDisciplineIncidentExternalParticipant., must be smaller than or equal to 75.');
-        }
-        if ((mb_strlen($last_surname) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $last_surname when calling EdFiDisciplineIncidentExternalParticipant., must be bigger than or equal to 1.');
         }
 
         $this->container['last_surname'] = $last_surname;

@@ -316,7 +316,7 @@ class TrackedChangesEdFiFeederSchoolAssociationKey implements ModelInterface, Ar
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The month, day, and year of the first day of the feeder school association.
+     * @param \DateTime|null $begin_date The month, day, and year of the first day of the feeder school association.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -343,7 +343,7 @@ class TrackedChangesEdFiFeederSchoolAssociationKey implements ModelInterface, Ar
     /**
      * Sets feeder_school_id
      *
-     * @param int|null $feeder_school_id The identifier assigned to a school.
+     * @param int|null $feeder_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -370,7 +370,7 @@ class TrackedChangesEdFiFeederSchoolAssociationKey implements ModelInterface, Ar
     /**
      * Sets school_id
      *
-     * @param int|null $school_id The identifier assigned to a school.
+     * @param int|null $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

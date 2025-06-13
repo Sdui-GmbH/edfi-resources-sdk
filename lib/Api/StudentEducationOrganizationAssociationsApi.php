@@ -83,6 +83,9 @@ class StudentEducationOrganizationAssociationsApi
         'getStudentEducationOrganizationAssociationsById' => [
             'application/json',
         ],
+        'getStudentEducationOrganizationAssociationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStudentEducationOrganizationAssociations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationDelete[]
      */
-    public function deletesStudentEducationOrganizationAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentEducationOrganizationAssociations'][0])
+    public function deletesStudentEducationOrganizationAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentEducationOrganizationAssociations'][0])
     {
         list($response) = $this->deletesStudentEducationOrganizationAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStudentEducationOrganizationAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentEducationOrganizationAssociations'][0])
+    public function deletesStudentEducationOrganizationAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentEducationOrganizationAssociations'][0])
     {
         $request = $this->deletesStudentEducationOrganizationAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentEducationOrganizationAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentEducationOrganizationAssociations'][0])
+    public function deletesStudentEducationOrganizationAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentEducationOrganizationAssociations'][0])
     {
         return $this->deletesStudentEducationOrganizationAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentEducationOrganizationAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentEducationOrganizationAssociations'][0])
+    public function deletesStudentEducationOrganizationAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentEducationOrganizationAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationDelete[]';
         $request = $this->deletesStudentEducationOrganizationAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StudentEducationOrganizationAssociationsApi
     /**
      * Create request for operation 'deletesStudentEducationOrganizationAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStudentEducationOrganizationAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentEducationOrganizationAssociations'][0])
+    public function deletesStudentEducationOrganizationAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentEducationOrganizationAssociations'][0])
     {
 
 
@@ -759,11 +762,13 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $barrier_to_internet_access_in_residence_descriptor An indication of the barrier to having internet access in the student s primary place of residence. (optional)
@@ -782,15 +787,18 @@ class StudentEducationOrganizationAssociationsApi
      * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
      * @param  string $profile_thumbnail Locator reference for the student photo. The specification for that reference is left to local definition. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $student_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the StudentIdentificationCode. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociation[]
+     * @return |\Resources\Model\EdFiStudentEducationOrganizationAssociation[]
      */
-    public function getStudentEducationOrganizationAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociations'][0])
+    public function getStudentEducationOrganizationAssociations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, $student_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociations'][0])
     {
-        list($response) = $this->getStudentEducationOrganizationAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $contentType);
+        list($response) = $this->getStudentEducationOrganizationAssociationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $student_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
         return $response;
     }
 
@@ -799,11 +807,13 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $barrier_to_internet_access_in_residence_descriptor An indication of the barrier to having internet access in the student s primary place of residence. (optional)
@@ -822,15 +832,18 @@ class StudentEducationOrganizationAssociationsApi
      * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
      * @param  string $profile_thumbnail Locator reference for the student photo. The specification for that reference is left to local definition. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $student_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the StudentIdentificationCode. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentEducationOrganizationAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentEducationOrganizationAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentEducationOrganizationAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociations'][0])
+    public function getStudentEducationOrganizationAssociationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, $student_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociations'][0])
     {
-        $request = $this->getStudentEducationOrganizationAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $contentType);
+        $request = $this->getStudentEducationOrganizationAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $student_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -946,11 +959,13 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $barrier_to_internet_access_in_residence_descriptor An indication of the barrier to having internet access in the student s primary place of residence. (optional)
@@ -969,14 +984,17 @@ class StudentEducationOrganizationAssociationsApi
      * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
      * @param  string $profile_thumbnail Locator reference for the student photo. The specification for that reference is left to local definition. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $student_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the StudentIdentificationCode. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentEducationOrganizationAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociations'][0])
+    public function getStudentEducationOrganizationAssociationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, $student_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociations'][0])
     {
-        return $this->getStudentEducationOrganizationAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $contentType)
+        return $this->getStudentEducationOrganizationAssociationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $student_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -989,11 +1007,13 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $barrier_to_internet_access_in_residence_descriptor An indication of the barrier to having internet access in the student s primary place of residence. (optional)
@@ -1012,15 +1032,18 @@ class StudentEducationOrganizationAssociationsApi
      * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
      * @param  string $profile_thumbnail Locator reference for the student photo. The specification for that reference is left to local definition. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $student_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the StudentIdentificationCode. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentEducationOrganizationAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociations'][0])
+    public function getStudentEducationOrganizationAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, $student_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentEducationOrganizationAssociation[]';
-        $request = $this->getStudentEducationOrganizationAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $contentType);
+        $request = $this->getStudentEducationOrganizationAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $student_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1061,11 +1084,13 @@ class StudentEducationOrganizationAssociationsApi
     /**
      * Create request for operation 'getStudentEducationOrganizationAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $barrier_to_internet_access_in_residence_descriptor An indication of the barrier to having internet access in the student s primary place of residence. (optional)
@@ -1084,12 +1109,15 @@ class StudentEducationOrganizationAssociationsApi
      * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
      * @param  string $profile_thumbnail Locator reference for the student photo. The specification for that reference is left to local definition. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $student_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the StudentIdentificationCode. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentEducationOrganizationAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociations'][0])
+    public function getStudentEducationOrganizationAssociationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, $student_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociations'][0])
     {
 
 
@@ -1098,6 +1126,11 @@ class StudentEducationOrganizationAssociationsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociations, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociations, must be bigger than or equal to 0.');
         }
         
 
@@ -1160,6 +1193,18 @@ class StudentEducationOrganizationAssociationsApi
         }
         
 
+        if ($student_identification_system_descriptor !== null && strlen($student_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$student_identification_system_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociations, must be smaller than or equal to 306.');
+        }
+        
+        if ($assigning_organization_identification_code !== null && strlen($assigning_organization_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assigning_organization_identification_code" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociations, must be smaller than or equal to 60.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociations, must be smaller than or equal to 60.');
+        }
+        
 
         $resourcePath = '/ed-fi/studentEducationOrganizationAssociations';
         $formParams = [];
@@ -1181,6 +1226,24 @@ class StudentEducationOrganizationAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1366,6 +1429,33 @@ class StudentEducationOrganizationAssociationsApi
             true, // explode
             false // required
         ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_identification_system_descriptor,
+            'studentIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assigning_organization_identification_code,
+            'assigningOrganizationIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
         // header params
         if ($use_snapshot !== null) {
@@ -1443,7 +1533,7 @@ class StudentEducationOrganizationAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociation
+     * @return |\Resources\Model\EdFiStudentEducationOrganizationAssociation
      */
     public function getStudentEducationOrganizationAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociationsById'][0])
     {
@@ -1463,7 +1553,7 @@ class StudentEducationOrganizationAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentEducationOrganizationAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentEducationOrganizationAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentEducationOrganizationAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociationsById'][0])
     {
@@ -1764,23 +1854,724 @@ class StudentEducationOrganizationAssociationsApi
     }
 
     /**
+     * Operation getStudentEducationOrganizationAssociationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $barrier_to_internet_access_in_residence_descriptor An indication of the barrier to having internet access in the student s primary place of residence. (optional)
+     * @param  string $internet_access_type_in_residence_descriptor The primary type of internet service used in the student s primary place of residence. (optional)
+     * @param  string $internet_performance_in_residence_descriptor An indication of whether the student can complete the full range of learning activities, including video streaming and assignment upload, without interruptions caused by poor internet performance in their primary place of residence. (optional)
+     * @param  string $limited_english_proficiency_descriptor An indication that the student has been identified as limited English proficient by the Language Proficiency Assessment Committee (LPAC), or English proficient. (optional)
+     * @param  string $primary_learning_device_access_descriptor An indication of whether the primary learning device is shared or not shared with another individual. (optional)
+     * @param  string $primary_learning_device_away_from_school_descriptor The type of device the student uses most often to complete learning activities away from school. (optional)
+     * @param  string $primary_learning_device_provider_descriptor The provider of the primary learning device. (optional)
+     * @param  string $sex_descriptor The student&#39;s birth sex as reported to the education organization. (optional)
+     * @param  string $supporter_military_connection_descriptor Military connection of the person/people whom the student is a dependent of. (optional)
+     * @param  string $gender_identity The student&#39;s gender as last reported to the education organization. (optional)
+     * @param  bool $hispanic_latino_ethnicity An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race, as last reported to the education organization. The term, \&quot;Spanish origin,\&quot; can be used in addition to \&quot;Hispanic or Latino.\&quot; (optional)
+     * @param  string $id  (optional)
+     * @param  bool $internet_access_in_residence An indication of whether the student is able to access the internet in their primary place of residence. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $profile_thumbnail Locator reference for the student photo. The specification for that reference is left to local definition. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $student_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the StudentIdentificationCode. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentEducationOrganizationAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStudentEducationOrganizationAssociationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, $student_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociationsPartitions'][0])
+    {
+        list($response) = $this->getStudentEducationOrganizationAssociationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $student_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStudentEducationOrganizationAssociationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $barrier_to_internet_access_in_residence_descriptor An indication of the barrier to having internet access in the student s primary place of residence. (optional)
+     * @param  string $internet_access_type_in_residence_descriptor The primary type of internet service used in the student s primary place of residence. (optional)
+     * @param  string $internet_performance_in_residence_descriptor An indication of whether the student can complete the full range of learning activities, including video streaming and assignment upload, without interruptions caused by poor internet performance in their primary place of residence. (optional)
+     * @param  string $limited_english_proficiency_descriptor An indication that the student has been identified as limited English proficient by the Language Proficiency Assessment Committee (LPAC), or English proficient. (optional)
+     * @param  string $primary_learning_device_access_descriptor An indication of whether the primary learning device is shared or not shared with another individual. (optional)
+     * @param  string $primary_learning_device_away_from_school_descriptor The type of device the student uses most often to complete learning activities away from school. (optional)
+     * @param  string $primary_learning_device_provider_descriptor The provider of the primary learning device. (optional)
+     * @param  string $sex_descriptor The student&#39;s birth sex as reported to the education organization. (optional)
+     * @param  string $supporter_military_connection_descriptor Military connection of the person/people whom the student is a dependent of. (optional)
+     * @param  string $gender_identity The student&#39;s gender as last reported to the education organization. (optional)
+     * @param  bool $hispanic_latino_ethnicity An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race, as last reported to the education organization. The term, \&quot;Spanish origin,\&quot; can be used in addition to \&quot;Hispanic or Latino.\&quot; (optional)
+     * @param  string $id  (optional)
+     * @param  bool $internet_access_in_residence An indication of whether the student is able to access the internet in their primary place of residence. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $profile_thumbnail Locator reference for the student photo. The specification for that reference is left to local definition. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $student_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the StudentIdentificationCode. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentEducationOrganizationAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStudentEducationOrganizationAssociationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, $student_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociationsPartitions'][0])
+    {
+        $request = $this->getStudentEducationOrganizationAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $student_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStudentEducationOrganizationAssociationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $barrier_to_internet_access_in_residence_descriptor An indication of the barrier to having internet access in the student s primary place of residence. (optional)
+     * @param  string $internet_access_type_in_residence_descriptor The primary type of internet service used in the student s primary place of residence. (optional)
+     * @param  string $internet_performance_in_residence_descriptor An indication of whether the student can complete the full range of learning activities, including video streaming and assignment upload, without interruptions caused by poor internet performance in their primary place of residence. (optional)
+     * @param  string $limited_english_proficiency_descriptor An indication that the student has been identified as limited English proficient by the Language Proficiency Assessment Committee (LPAC), or English proficient. (optional)
+     * @param  string $primary_learning_device_access_descriptor An indication of whether the primary learning device is shared or not shared with another individual. (optional)
+     * @param  string $primary_learning_device_away_from_school_descriptor The type of device the student uses most often to complete learning activities away from school. (optional)
+     * @param  string $primary_learning_device_provider_descriptor The provider of the primary learning device. (optional)
+     * @param  string $sex_descriptor The student&#39;s birth sex as reported to the education organization. (optional)
+     * @param  string $supporter_military_connection_descriptor Military connection of the person/people whom the student is a dependent of. (optional)
+     * @param  string $gender_identity The student&#39;s gender as last reported to the education organization. (optional)
+     * @param  bool $hispanic_latino_ethnicity An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race, as last reported to the education organization. The term, \&quot;Spanish origin,\&quot; can be used in addition to \&quot;Hispanic or Latino.\&quot; (optional)
+     * @param  string $id  (optional)
+     * @param  bool $internet_access_in_residence An indication of whether the student is able to access the internet in their primary place of residence. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $profile_thumbnail Locator reference for the student photo. The specification for that reference is left to local definition. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $student_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the StudentIdentificationCode. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentEducationOrganizationAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentEducationOrganizationAssociationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, $student_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociationsPartitions'][0])
+    {
+        return $this->getStudentEducationOrganizationAssociationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $student_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStudentEducationOrganizationAssociationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $barrier_to_internet_access_in_residence_descriptor An indication of the barrier to having internet access in the student s primary place of residence. (optional)
+     * @param  string $internet_access_type_in_residence_descriptor The primary type of internet service used in the student s primary place of residence. (optional)
+     * @param  string $internet_performance_in_residence_descriptor An indication of whether the student can complete the full range of learning activities, including video streaming and assignment upload, without interruptions caused by poor internet performance in their primary place of residence. (optional)
+     * @param  string $limited_english_proficiency_descriptor An indication that the student has been identified as limited English proficient by the Language Proficiency Assessment Committee (LPAC), or English proficient. (optional)
+     * @param  string $primary_learning_device_access_descriptor An indication of whether the primary learning device is shared or not shared with another individual. (optional)
+     * @param  string $primary_learning_device_away_from_school_descriptor The type of device the student uses most often to complete learning activities away from school. (optional)
+     * @param  string $primary_learning_device_provider_descriptor The provider of the primary learning device. (optional)
+     * @param  string $sex_descriptor The student&#39;s birth sex as reported to the education organization. (optional)
+     * @param  string $supporter_military_connection_descriptor Military connection of the person/people whom the student is a dependent of. (optional)
+     * @param  string $gender_identity The student&#39;s gender as last reported to the education organization. (optional)
+     * @param  bool $hispanic_latino_ethnicity An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race, as last reported to the education organization. The term, \&quot;Spanish origin,\&quot; can be used in addition to \&quot;Hispanic or Latino.\&quot; (optional)
+     * @param  string $id  (optional)
+     * @param  bool $internet_access_in_residence An indication of whether the student is able to access the internet in their primary place of residence. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $profile_thumbnail Locator reference for the student photo. The specification for that reference is left to local definition. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $student_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the StudentIdentificationCode. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentEducationOrganizationAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentEducationOrganizationAssociationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, $student_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStudentEducationOrganizationAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $education_organization_id, $student_unique_id, $barrier_to_internet_access_in_residence_descriptor, $internet_access_type_in_residence_descriptor, $internet_performance_in_residence_descriptor, $limited_english_proficiency_descriptor, $primary_learning_device_access_descriptor, $primary_learning_device_away_from_school_descriptor, $primary_learning_device_provider_descriptor, $sex_descriptor, $supporter_military_connection_descriptor, $gender_identity, $hispanic_latino_ethnicity, $id, $internet_access_in_residence, $login_id, $profile_thumbnail, $use_snapshot, $student_identification_system_descriptor, $assigning_organization_identification_code, $identification_code, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStudentEducationOrganizationAssociationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $barrier_to_internet_access_in_residence_descriptor An indication of the barrier to having internet access in the student s primary place of residence. (optional)
+     * @param  string $internet_access_type_in_residence_descriptor The primary type of internet service used in the student s primary place of residence. (optional)
+     * @param  string $internet_performance_in_residence_descriptor An indication of whether the student can complete the full range of learning activities, including video streaming and assignment upload, without interruptions caused by poor internet performance in their primary place of residence. (optional)
+     * @param  string $limited_english_proficiency_descriptor An indication that the student has been identified as limited English proficient by the Language Proficiency Assessment Committee (LPAC), or English proficient. (optional)
+     * @param  string $primary_learning_device_access_descriptor An indication of whether the primary learning device is shared or not shared with another individual. (optional)
+     * @param  string $primary_learning_device_away_from_school_descriptor The type of device the student uses most often to complete learning activities away from school. (optional)
+     * @param  string $primary_learning_device_provider_descriptor The provider of the primary learning device. (optional)
+     * @param  string $sex_descriptor The student&#39;s birth sex as reported to the education organization. (optional)
+     * @param  string $supporter_military_connection_descriptor Military connection of the person/people whom the student is a dependent of. (optional)
+     * @param  string $gender_identity The student&#39;s gender as last reported to the education organization. (optional)
+     * @param  bool $hispanic_latino_ethnicity An indication that the individual traces his or her origin or descent to Mexico, Puerto Rico, Cuba, Central, and South America, and other Spanish cultures, regardless of race, as last reported to the education organization. The term, \&quot;Spanish origin,\&quot; can be used in addition to \&quot;Hispanic or Latino.\&quot; (optional)
+     * @param  string $id  (optional)
+     * @param  bool $internet_access_in_residence An indication of whether the student is able to access the internet in their primary place of residence. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $profile_thumbnail Locator reference for the student photo. The specification for that reference is left to local definition. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $student_identification_system_descriptor A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student. (optional)
+     * @param  string $assigning_organization_identification_code The organization code or name assigning the StudentIdentificationCode. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentEducationOrganizationAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStudentEducationOrganizationAssociationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $education_organization_id = null, $student_unique_id = null, $barrier_to_internet_access_in_residence_descriptor = null, $internet_access_type_in_residence_descriptor = null, $internet_performance_in_residence_descriptor = null, $limited_english_proficiency_descriptor = null, $primary_learning_device_access_descriptor = null, $primary_learning_device_away_from_school_descriptor = null, $primary_learning_device_provider_descriptor = null, $sex_descriptor = null, $supporter_military_connection_descriptor = null, $gender_identity = null, $hispanic_latino_ethnicity = null, $id = null, $internet_access_in_residence = null, $login_id = null, $profile_thumbnail = null, $use_snapshot = false, $student_identification_system_descriptor = null, $assigning_organization_identification_code = null, $identification_code = null, string $contentType = self::contentTypes['getStudentEducationOrganizationAssociationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($barrier_to_internet_access_in_residence_descriptor !== null && strlen($barrier_to_internet_access_in_residence_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$barrier_to_internet_access_in_residence_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($internet_access_type_in_residence_descriptor !== null && strlen($internet_access_type_in_residence_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$internet_access_type_in_residence_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($internet_performance_in_residence_descriptor !== null && strlen($internet_performance_in_residence_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$internet_performance_in_residence_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($limited_english_proficiency_descriptor !== null && strlen($limited_english_proficiency_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$limited_english_proficiency_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($primary_learning_device_access_descriptor !== null && strlen($primary_learning_device_access_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$primary_learning_device_access_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($primary_learning_device_away_from_school_descriptor !== null && strlen($primary_learning_device_away_from_school_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$primary_learning_device_away_from_school_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($primary_learning_device_provider_descriptor !== null && strlen($primary_learning_device_provider_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$primary_learning_device_provider_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($sex_descriptor !== null && strlen($sex_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$sex_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($supporter_military_connection_descriptor !== null && strlen($supporter_military_connection_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$supporter_military_connection_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($gender_identity !== null && strlen($gender_identity) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$gender_identity" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+
+        if ($login_id !== null && strlen($login_id) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$login_id" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($profile_thumbnail !== null && strlen($profile_thumbnail) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$profile_thumbnail" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+        if ($student_identification_system_descriptor !== null && strlen($student_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$student_identification_system_descriptor" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($assigning_organization_identification_code !== null && strlen($assigning_organization_identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assigning_organization_identification_code" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling StudentEducationOrganizationAssociationsApi.getStudentEducationOrganizationAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        $resourcePath = '/ed-fi/studentEducationOrganizationAssociations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $barrier_to_internet_access_in_residence_descriptor,
+            'barrierToInternetAccessInResidenceDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $internet_access_type_in_residence_descriptor,
+            'internetAccessTypeInResidenceDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $internet_performance_in_residence_descriptor,
+            'internetPerformanceInResidenceDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limited_english_proficiency_descriptor,
+            'limitedEnglishProficiencyDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $primary_learning_device_access_descriptor,
+            'primaryLearningDeviceAccessDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $primary_learning_device_away_from_school_descriptor,
+            'primaryLearningDeviceAwayFromSchoolDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $primary_learning_device_provider_descriptor,
+            'primaryLearningDeviceProviderDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sex_descriptor,
+            'sexDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $supporter_military_connection_descriptor,
+            'supporterMilitaryConnectionDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $gender_identity,
+            'genderIdentity', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $hispanic_latino_ethnicity,
+            'hispanicLatinoEthnicity', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $internet_access_in_residence,
+            'internetAccessInResidence', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $login_id,
+            'loginId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $profile_thumbnail,
+            'profileThumbnail', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_identification_system_descriptor,
+            'studentIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assigning_organization_identification_code,
+            'assigningOrganizationIdentificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStudentEducationOrganizationAssociations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange[]
      */
-    public function keyChangesStudentEducationOrganizationAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentEducationOrganizationAssociations'][0])
+    public function keyChangesStudentEducationOrganizationAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentEducationOrganizationAssociations'][0])
     {
         list($response) = $this->keyChangesStudentEducationOrganizationAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1791,19 +2582,19 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStudentEducationOrganizationAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentEducationOrganizationAssociations'][0])
+    public function keyChangesStudentEducationOrganizationAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentEducationOrganizationAssociations'][0])
     {
         $request = $this->keyChangesStudentEducationOrganizationAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1921,18 +2712,18 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentEducationOrganizationAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentEducationOrganizationAssociations'][0])
+    public function keyChangesStudentEducationOrganizationAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentEducationOrganizationAssociations'][0])
     {
         return $this->keyChangesStudentEducationOrganizationAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1947,18 +2738,18 @@ class StudentEducationOrganizationAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentEducationOrganizationAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentEducationOrganizationAssociations'][0])
+    public function keyChangesStudentEducationOrganizationAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentEducationOrganizationAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentEducationOrganizationAssociationKeyChange[]';
         $request = $this->keyChangesStudentEducationOrganizationAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -2002,18 +2793,18 @@ class StudentEducationOrganizationAssociationsApi
     /**
      * Create request for operation 'keyChangesStudentEducationOrganizationAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentEducationOrganizationAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStudentEducationOrganizationAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentEducationOrganizationAssociations'][0])
+    public function keyChangesStudentEducationOrganizationAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentEducationOrganizationAssociations'][0])
     {
 
 

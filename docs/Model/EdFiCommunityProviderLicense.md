@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **licensing_organization** | **string** | The organization issuing the license. |
 **community_provider_reference** | [**\Resources\Model\EdFiCommunityProviderReference**](EdFiCommunityProviderReference.md) |  |
 **authorized_facility_capacity** | **int** | The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. | [optional]
-**license_effective_date** | **\DateTime** | The month, day, and year on which a license is active or becomes effective. |
-**license_expiration_date** | **\DateTime** | The month, day, and year on which a license will expire. | [optional]
+**license_effective_date** | **\DateTime** | The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. |
+**license_expiration_date** | **\DateTime** | The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional]
 **license_issue_date** | **\DateTime** | The month, day, and year on which an active license was issued. | [optional]
 **license_status_descriptor** | **string** | An indication of the status of the license. | [optional]
 **license_type_descriptor** | **string** | An indication of the category of the license. |

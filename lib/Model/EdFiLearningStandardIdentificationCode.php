@@ -288,19 +288,11 @@ class EdFiLearningStandardIdentificationCode implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'content_standard_name', the character length must be smaller than or equal to 65.";
         }
 
-        if ((mb_strlen($this->container['content_standard_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'content_standard_name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['identification_code'] === null) {
             $invalidProperties[] = "'identification_code' can't be null";
         }
         if ((mb_strlen($this->container['identification_code']) > 60)) {
             $invalidProperties[] = "invalid value for 'identification_code', the character length must be smaller than or equal to 60.";
-        }
-
-        if ((mb_strlen($this->container['identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'identification_code', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -343,9 +335,6 @@ class EdFiLearningStandardIdentificationCode implements ModelInterface, ArrayAcc
         if ((mb_strlen($content_standard_name) > 65)) {
             throw new \InvalidArgumentException('invalid length for $content_standard_name when calling EdFiLearningStandardIdentificationCode., must be smaller than or equal to 65.');
         }
-        if ((mb_strlen($content_standard_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $content_standard_name when calling EdFiLearningStandardIdentificationCode., must be bigger than or equal to 1.');
-        }
 
         $this->container['content_standard_name'] = $content_standard_name;
 
@@ -376,9 +365,6 @@ class EdFiLearningStandardIdentificationCode implements ModelInterface, ArrayAcc
         }
         if ((mb_strlen($identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiLearningStandardIdentificationCode., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiLearningStandardIdentificationCode., must be bigger than or equal to 1.');
         }
 
         $this->container['identification_code'] = $identification_code;

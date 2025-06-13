@@ -303,10 +303,6 @@ class EdFiSurveyQuestionResponseValue implements ModelInterface, ArrayAccess, \J
             $invalidProperties[] = "invalid value for 'text_response', the character length must be smaller than or equal to 2048.";
         }
 
-        if (!is_null($this->container['text_response']) && (mb_strlen($this->container['text_response']) < 1)) {
-            $invalidProperties[] = "invalid value for 'text_response', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -422,9 +418,6 @@ class EdFiSurveyQuestionResponseValue implements ModelInterface, ArrayAccess, \J
         }
         if (!is_null($text_response) && (mb_strlen($text_response) > 2048)) {
             throw new \InvalidArgumentException('invalid length for $text_response when calling EdFiSurveyQuestionResponseValue., must be smaller than or equal to 2048.');
-        }
-        if (!is_null($text_response) && (mb_strlen($text_response) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $text_response when calling EdFiSurveyQuestionResponseValue., must be bigger than or equal to 1.');
         }
 
         $this->container['text_response'] = $text_response;

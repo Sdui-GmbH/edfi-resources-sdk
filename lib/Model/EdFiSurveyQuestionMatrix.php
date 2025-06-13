@@ -295,10 +295,6 @@ class EdFiSurveyQuestionMatrix implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'matrix_element', the character length must be smaller than or equal to 255.";
         }
 
-        if ((mb_strlen($this->container['matrix_element']) < 1)) {
-            $invalidProperties[] = "invalid value for 'matrix_element', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -338,9 +334,6 @@ class EdFiSurveyQuestionMatrix implements ModelInterface, ArrayAccess, \JsonSeri
         }
         if ((mb_strlen($matrix_element) > 255)) {
             throw new \InvalidArgumentException('invalid length for $matrix_element when calling EdFiSurveyQuestionMatrix., must be smaller than or equal to 255.');
-        }
-        if ((mb_strlen($matrix_element) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $matrix_element when calling EdFiSurveyQuestionMatrix., must be bigger than or equal to 1.');
         }
 
         $this->container['matrix_element'] = $matrix_element;

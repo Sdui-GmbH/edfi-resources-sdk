@@ -312,7 +312,7 @@ class EdFiLocalEducationAgencyReference implements ModelInterface, ArrayAccess, 
     /**
      * Sets local_education_agency_id
      *
-     * @param int $local_education_agency_id The identifier assigned to a local education agency.
+     * @param int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication.
      *
      * @return self
      */

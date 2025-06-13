@@ -338,24 +338,12 @@ class EdFiContactPersonalIdentificationDocument implements ModelInterface, Array
             $invalidProperties[] = "invalid value for 'document_title', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['document_title']) && (mb_strlen($this->container['document_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'document_title', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['issuer_document_identification_code']) && (mb_strlen($this->container['issuer_document_identification_code']) > 60)) {
             $invalidProperties[] = "invalid value for 'issuer_document_identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['issuer_document_identification_code']) && (mb_strlen($this->container['issuer_document_identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'issuer_document_identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['issuer_name']) && (mb_strlen($this->container['issuer_name']) > 150)) {
             $invalidProperties[] = "invalid value for 'issuer_name', the character length must be smaller than or equal to 150.";
-        }
-
-        if (!is_null($this->container['issuer_name']) && (mb_strlen($this->container['issuer_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'issuer_name', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -539,9 +527,6 @@ class EdFiContactPersonalIdentificationDocument implements ModelInterface, Array
         if (!is_null($document_title) && (mb_strlen($document_title) > 60)) {
             throw new \InvalidArgumentException('invalid length for $document_title when calling EdFiContactPersonalIdentificationDocument., must be smaller than or equal to 60.');
         }
-        if (!is_null($document_title) && (mb_strlen($document_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $document_title when calling EdFiContactPersonalIdentificationDocument., must be bigger than or equal to 1.');
-        }
 
         $this->container['document_title'] = $document_title;
 
@@ -580,9 +565,6 @@ class EdFiContactPersonalIdentificationDocument implements ModelInterface, Array
         if (!is_null($issuer_document_identification_code) && (mb_strlen($issuer_document_identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $issuer_document_identification_code when calling EdFiContactPersonalIdentificationDocument., must be smaller than or equal to 60.');
         }
-        if (!is_null($issuer_document_identification_code) && (mb_strlen($issuer_document_identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $issuer_document_identification_code when calling EdFiContactPersonalIdentificationDocument., must be bigger than or equal to 1.');
-        }
 
         $this->container['issuer_document_identification_code'] = $issuer_document_identification_code;
 
@@ -620,9 +602,6 @@ class EdFiContactPersonalIdentificationDocument implements ModelInterface, Array
         }
         if (!is_null($issuer_name) && (mb_strlen($issuer_name) > 150)) {
             throw new \InvalidArgumentException('invalid length for $issuer_name when calling EdFiContactPersonalIdentificationDocument., must be smaller than or equal to 150.');
-        }
-        if (!is_null($issuer_name) && (mb_strlen($issuer_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $issuer_name when calling EdFiContactPersonalIdentificationDocument., must be bigger than or equal to 1.');
         }
 
         $this->container['issuer_name'] = $issuer_name;

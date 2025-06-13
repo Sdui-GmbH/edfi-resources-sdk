@@ -308,10 +308,6 @@ class EdFiSessionReference implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'session_name', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['session_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'session_name', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -340,7 +336,7 @@ class EdFiSessionReference implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets school_id
      *
-     * @param int $school_id The identifier assigned to a school.
+     * @param int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -405,9 +401,6 @@ class EdFiSessionReference implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if ((mb_strlen($session_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $session_name when calling EdFiSessionReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($session_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $session_name when calling EdFiSessionReference., must be bigger than or equal to 1.');
         }
 
         $this->container['session_name'] = $session_name;

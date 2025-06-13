@@ -83,6 +83,9 @@ class CommunityProviderLicensesApi
         'getCommunityProviderLicensesById' => [
             'application/json',
         ],
+        'getCommunityProviderLicensesPartitions' => [
+            'application/json',
+        ],
         'keyChangesCommunityProviderLicenses' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class CommunityProviderLicensesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityProviderLicenses'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]
      */
-    public function deletesCommunityProviderLicenses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
+    public function deletesCommunityProviderLicenses($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
     {
         list($response) = $this->deletesCommunityProviderLicensesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class CommunityProviderLicensesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityProviderLicenses'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesCommunityProviderLicensesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
+    public function deletesCommunityProviderLicensesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
     {
         $request = $this->deletesCommunityProviderLicensesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class CommunityProviderLicensesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityProviderLicenses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesCommunityProviderLicensesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
+    public function deletesCommunityProviderLicensesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
     {
         return $this->deletesCommunityProviderLicensesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class CommunityProviderLicensesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityProviderLicenses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesCommunityProviderLicensesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
+    public function deletesCommunityProviderLicensesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseDelete[]';
         $request = $this->deletesCommunityProviderLicensesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class CommunityProviderLicensesApi
     /**
      * Create request for operation 'deletesCommunityProviderLicenses'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityProviderLicenses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesCommunityProviderLicensesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
+    public function deletesCommunityProviderLicensesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityProviderLicenses'][0])
     {
 
 
@@ -759,20 +762,22 @@ class CommunityProviderLicensesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $license_identifier The unique identifier issued by the licensing organization. (optional)
      * @param  string $licensing_organization The organization issuing the license. (optional)
-     * @param  int $community_provider_id The identifier assigned to a community provider. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $license_status_descriptor An indication of the status of the license. (optional)
      * @param  string $license_type_descriptor An indication of the category of the license. (optional)
      * @param  int $authorized_facility_capacity The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. (optional)
      * @param  string $id  (optional)
-     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective. (optional)
-     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire. (optional)
+     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  \DateTime $license_issue_date The month, day, and year on which an active license was issued. (optional)
      * @param  int $oldest_age_authorized_to_serve The oldest age of children a provider is authorized or licensed to serve. (optional)
      * @param  int $youngest_age_authorized_to_serve The youngest age of children a provider is authorized or licensed to serve. (optional)
@@ -781,11 +786,11 @@ class CommunityProviderLicensesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiCommunityProviderLicense[]
+     * @return |\Resources\Model\EdFiCommunityProviderLicense[]
      */
-    public function getCommunityProviderLicenses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
+    public function getCommunityProviderLicenses($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
     {
-        list($response) = $this->getCommunityProviderLicensesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType);
+        list($response) = $this->getCommunityProviderLicensesWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -794,20 +799,22 @@ class CommunityProviderLicensesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $license_identifier The unique identifier issued by the licensing organization. (optional)
      * @param  string $licensing_organization The organization issuing the license. (optional)
-     * @param  int $community_provider_id The identifier assigned to a community provider. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $license_status_descriptor An indication of the status of the license. (optional)
      * @param  string $license_type_descriptor An indication of the category of the license. (optional)
      * @param  int $authorized_facility_capacity The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. (optional)
      * @param  string $id  (optional)
-     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective. (optional)
-     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire. (optional)
+     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  \DateTime $license_issue_date The month, day, and year on which an active license was issued. (optional)
      * @param  int $oldest_age_authorized_to_serve The oldest age of children a provider is authorized or licensed to serve. (optional)
      * @param  int $youngest_age_authorized_to_serve The youngest age of children a provider is authorized or licensed to serve. (optional)
@@ -816,11 +823,11 @@ class CommunityProviderLicensesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiCommunityProviderLicense[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiCommunityProviderLicense[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCommunityProviderLicensesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
+    public function getCommunityProviderLicensesWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
     {
-        $request = $this->getCommunityProviderLicensesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType);
+        $request = $this->getCommunityProviderLicensesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -936,20 +943,22 @@ class CommunityProviderLicensesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $license_identifier The unique identifier issued by the licensing organization. (optional)
      * @param  string $licensing_organization The organization issuing the license. (optional)
-     * @param  int $community_provider_id The identifier assigned to a community provider. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $license_status_descriptor An indication of the status of the license. (optional)
      * @param  string $license_type_descriptor An indication of the category of the license. (optional)
      * @param  int $authorized_facility_capacity The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. (optional)
      * @param  string $id  (optional)
-     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective. (optional)
-     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire. (optional)
+     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  \DateTime $license_issue_date The month, day, and year on which an active license was issued. (optional)
      * @param  int $oldest_age_authorized_to_serve The oldest age of children a provider is authorized or licensed to serve. (optional)
      * @param  int $youngest_age_authorized_to_serve The youngest age of children a provider is authorized or licensed to serve. (optional)
@@ -959,9 +968,9 @@ class CommunityProviderLicensesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommunityProviderLicensesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
+    public function getCommunityProviderLicensesAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
     {
-        return $this->getCommunityProviderLicensesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType)
+        return $this->getCommunityProviderLicensesAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -974,20 +983,22 @@ class CommunityProviderLicensesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $license_identifier The unique identifier issued by the licensing organization. (optional)
      * @param  string $licensing_organization The organization issuing the license. (optional)
-     * @param  int $community_provider_id The identifier assigned to a community provider. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $license_status_descriptor An indication of the status of the license. (optional)
      * @param  string $license_type_descriptor An indication of the category of the license. (optional)
      * @param  int $authorized_facility_capacity The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. (optional)
      * @param  string $id  (optional)
-     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective. (optional)
-     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire. (optional)
+     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  \DateTime $license_issue_date The month, day, and year on which an active license was issued. (optional)
      * @param  int $oldest_age_authorized_to_serve The oldest age of children a provider is authorized or licensed to serve. (optional)
      * @param  int $youngest_age_authorized_to_serve The youngest age of children a provider is authorized or licensed to serve. (optional)
@@ -997,10 +1008,10 @@ class CommunityProviderLicensesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommunityProviderLicensesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
+    public function getCommunityProviderLicensesAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
     {
         $returnType = '\Resources\Model\EdFiCommunityProviderLicense[]';
-        $request = $this->getCommunityProviderLicensesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType);
+        $request = $this->getCommunityProviderLicensesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1041,20 +1052,22 @@ class CommunityProviderLicensesApi
     /**
      * Create request for operation 'getCommunityProviderLicenses'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $license_identifier The unique identifier issued by the licensing organization. (optional)
      * @param  string $licensing_organization The organization issuing the license. (optional)
-     * @param  int $community_provider_id The identifier assigned to a community provider. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $license_status_descriptor An indication of the status of the license. (optional)
      * @param  string $license_type_descriptor An indication of the category of the license. (optional)
      * @param  int $authorized_facility_capacity The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. (optional)
      * @param  string $id  (optional)
-     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective. (optional)
-     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire. (optional)
+     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  \DateTime $license_issue_date The month, day, and year on which an active license was issued. (optional)
      * @param  int $oldest_age_authorized_to_serve The oldest age of children a provider is authorized or licensed to serve. (optional)
      * @param  int $youngest_age_authorized_to_serve The youngest age of children a provider is authorized or licensed to serve. (optional)
@@ -1064,7 +1077,7 @@ class CommunityProviderLicensesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCommunityProviderLicensesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
+    public function getCommunityProviderLicensesRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicenses'][0])
     {
 
 
@@ -1073,6 +1086,11 @@ class CommunityProviderLicensesApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling CommunityProviderLicensesApi.getCommunityProviderLicenses, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling CommunityProviderLicensesApi.getCommunityProviderLicenses, must be bigger than or equal to 0.');
         }
         
 
@@ -1124,6 +1142,24 @@ class CommunityProviderLicensesApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1341,7 +1377,7 @@ class CommunityProviderLicensesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiCommunityProviderLicense
+     * @return |\Resources\Model\EdFiCommunityProviderLicense
      */
     public function getCommunityProviderLicensesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicensesById'][0])
     {
@@ -1361,7 +1397,7 @@ class CommunityProviderLicensesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiCommunityProviderLicense, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiCommunityProviderLicense, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCommunityProviderLicensesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicensesById'][0])
     {
@@ -1662,23 +1698,568 @@ class CommunityProviderLicensesApi
     }
 
     /**
+     * Operation getCommunityProviderLicensesPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $license_identifier The unique identifier issued by the licensing organization. (optional)
+     * @param  string $licensing_organization The organization issuing the license. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $license_status_descriptor An indication of the status of the license. (optional)
+     * @param  string $license_type_descriptor An indication of the category of the license. (optional)
+     * @param  int $authorized_facility_capacity The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_issue_date The month, day, and year on which an active license was issued. (optional)
+     * @param  int $oldest_age_authorized_to_serve The oldest age of children a provider is authorized or licensed to serve. (optional)
+     * @param  int $youngest_age_authorized_to_serve The youngest age of children a provider is authorized or licensed to serve. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviderLicensesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getCommunityProviderLicensesPartitions($number = null, $min_change_version = null, $max_change_version = null, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicensesPartitions'][0])
+    {
+        list($response) = $this->getCommunityProviderLicensesPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCommunityProviderLicensesPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $license_identifier The unique identifier issued by the licensing organization. (optional)
+     * @param  string $licensing_organization The organization issuing the license. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $license_status_descriptor An indication of the status of the license. (optional)
+     * @param  string $license_type_descriptor An indication of the category of the license. (optional)
+     * @param  int $authorized_facility_capacity The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_issue_date The month, day, and year on which an active license was issued. (optional)
+     * @param  int $oldest_age_authorized_to_serve The oldest age of children a provider is authorized or licensed to serve. (optional)
+     * @param  int $youngest_age_authorized_to_serve The youngest age of children a provider is authorized or licensed to serve. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviderLicensesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCommunityProviderLicensesPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicensesPartitions'][0])
+    {
+        $request = $this->getCommunityProviderLicensesPartitionsRequest($number, $min_change_version, $max_change_version, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCommunityProviderLicensesPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $license_identifier The unique identifier issued by the licensing organization. (optional)
+     * @param  string $licensing_organization The organization issuing the license. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $license_status_descriptor An indication of the status of the license. (optional)
+     * @param  string $license_type_descriptor An indication of the category of the license. (optional)
+     * @param  int $authorized_facility_capacity The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_issue_date The month, day, and year on which an active license was issued. (optional)
+     * @param  int $oldest_age_authorized_to_serve The oldest age of children a provider is authorized or licensed to serve. (optional)
+     * @param  int $youngest_age_authorized_to_serve The youngest age of children a provider is authorized or licensed to serve. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviderLicensesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCommunityProviderLicensesPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicensesPartitions'][0])
+    {
+        return $this->getCommunityProviderLicensesPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCommunityProviderLicensesPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $license_identifier The unique identifier issued by the licensing organization. (optional)
+     * @param  string $licensing_organization The organization issuing the license. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $license_status_descriptor An indication of the status of the license. (optional)
+     * @param  string $license_type_descriptor An indication of the category of the license. (optional)
+     * @param  int $authorized_facility_capacity The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_issue_date The month, day, and year on which an active license was issued. (optional)
+     * @param  int $oldest_age_authorized_to_serve The oldest age of children a provider is authorized or licensed to serve. (optional)
+     * @param  int $youngest_age_authorized_to_serve The youngest age of children a provider is authorized or licensed to serve. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviderLicensesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCommunityProviderLicensesPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicensesPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getCommunityProviderLicensesPartitionsRequest($number, $min_change_version, $max_change_version, $license_identifier, $licensing_organization, $community_provider_id, $license_status_descriptor, $license_type_descriptor, $authorized_facility_capacity, $id, $license_effective_date, $license_expiration_date, $license_issue_date, $oldest_age_authorized_to_serve, $youngest_age_authorized_to_serve, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCommunityProviderLicensesPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $license_identifier The unique identifier issued by the licensing organization. (optional)
+     * @param  string $licensing_organization The organization issuing the license. (optional)
+     * @param  int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $license_status_descriptor An indication of the status of the license. (optional)
+     * @param  string $license_type_descriptor An indication of the category of the license. (optional)
+     * @param  int $authorized_facility_capacity The maximum number that can be contained or accommodated which a provider is authorized or licensed to serve. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $license_issue_date The month, day, and year on which an active license was issued. (optional)
+     * @param  int $oldest_age_authorized_to_serve The oldest age of children a provider is authorized or licensed to serve. (optional)
+     * @param  int $youngest_age_authorized_to_serve The youngest age of children a provider is authorized or licensed to serve. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityProviderLicensesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCommunityProviderLicensesPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $license_identifier = null, $licensing_organization = null, $community_provider_id = null, $license_status_descriptor = null, $license_type_descriptor = null, $authorized_facility_capacity = null, $id = null, $license_effective_date = null, $license_expiration_date = null, $license_issue_date = null, $oldest_age_authorized_to_serve = null, $youngest_age_authorized_to_serve = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityProviderLicensesPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling CommunityProviderLicensesApi.getCommunityProviderLicensesPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling CommunityProviderLicensesApi.getCommunityProviderLicensesPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($license_identifier !== null && strlen($license_identifier) > 36) {
+            throw new \InvalidArgumentException('invalid length for "$license_identifier" when calling CommunityProviderLicensesApi.getCommunityProviderLicensesPartitions, must be smaller than or equal to 36.');
+        }
+        
+        if ($licensing_organization !== null && strlen($licensing_organization) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$licensing_organization" when calling CommunityProviderLicensesApi.getCommunityProviderLicensesPartitions, must be smaller than or equal to 75.');
+        }
+        
+
+        if ($license_status_descriptor !== null && strlen($license_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$license_status_descriptor" when calling CommunityProviderLicensesApi.getCommunityProviderLicensesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($license_type_descriptor !== null && strlen($license_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$license_type_descriptor" when calling CommunityProviderLicensesApi.getCommunityProviderLicensesPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/communityProviderLicenses/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $license_identifier,
+            'licenseIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $licensing_organization,
+            'licensingOrganization', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $community_provider_id,
+            'communityProviderId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $license_status_descriptor,
+            'licenseStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $license_type_descriptor,
+            'licenseTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $authorized_facility_capacity,
+            'authorizedFacilityCapacity', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $license_effective_date,
+            'licenseEffectiveDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $license_expiration_date,
+            'licenseExpirationDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $license_issue_date,
+            'licenseIssueDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $oldest_age_authorized_to_serve,
+            'oldestAgeAuthorizedToServe', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $youngest_age_authorized_to_serve,
+            'youngestAgeAuthorizedToServe', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesCommunityProviderLicenses
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityProviderLicenses'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]
      */
-    public function keyChangesCommunityProviderLicenses($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
+    public function keyChangesCommunityProviderLicenses($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
     {
         list($response) = $this->keyChangesCommunityProviderLicensesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1689,19 +2270,19 @@ class CommunityProviderLicensesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityProviderLicenses'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesCommunityProviderLicensesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
+    public function keyChangesCommunityProviderLicensesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
     {
         $request = $this->keyChangesCommunityProviderLicensesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1819,18 +2400,18 @@ class CommunityProviderLicensesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityProviderLicenses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesCommunityProviderLicensesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
+    public function keyChangesCommunityProviderLicensesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
     {
         return $this->keyChangesCommunityProviderLicensesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1845,18 +2426,18 @@ class CommunityProviderLicensesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityProviderLicenses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesCommunityProviderLicensesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
+    public function keyChangesCommunityProviderLicensesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiCommunityProviderLicenseKeyChange[]';
         $request = $this->keyChangesCommunityProviderLicensesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1900,18 +2481,18 @@ class CommunityProviderLicensesApi
     /**
      * Create request for operation 'keyChangesCommunityProviderLicenses'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityProviderLicenses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesCommunityProviderLicensesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
+    public function keyChangesCommunityProviderLicensesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityProviderLicenses'][0])
     {
 
 

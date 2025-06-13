@@ -310,16 +310,8 @@ class EdFiObjectiveAssessmentScore implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'maximum_score', the character length must be smaller than or equal to 35.";
         }
 
-        if (!is_null($this->container['maximum_score']) && (mb_strlen($this->container['maximum_score']) < 1)) {
-            $invalidProperties[] = "invalid value for 'maximum_score', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['minimum_score']) && (mb_strlen($this->container['minimum_score']) > 35)) {
             $invalidProperties[] = "invalid value for 'minimum_score', the character length must be smaller than or equal to 35.";
-        }
-
-        if (!is_null($this->container['minimum_score']) && (mb_strlen($this->container['minimum_score']) < 1)) {
-            $invalidProperties[] = "invalid value for 'minimum_score', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -438,9 +430,6 @@ class EdFiObjectiveAssessmentScore implements ModelInterface, ArrayAccess, \Json
         if (!is_null($maximum_score) && (mb_strlen($maximum_score) > 35)) {
             throw new \InvalidArgumentException('invalid length for $maximum_score when calling EdFiObjectiveAssessmentScore., must be smaller than or equal to 35.');
         }
-        if (!is_null($maximum_score) && (mb_strlen($maximum_score) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $maximum_score when calling EdFiObjectiveAssessmentScore., must be bigger than or equal to 1.');
-        }
 
         $this->container['maximum_score'] = $maximum_score;
 
@@ -478,9 +467,6 @@ class EdFiObjectiveAssessmentScore implements ModelInterface, ArrayAccess, \Json
         }
         if (!is_null($minimum_score) && (mb_strlen($minimum_score) > 35)) {
             throw new \InvalidArgumentException('invalid length for $minimum_score when calling EdFiObjectiveAssessmentScore., must be smaller than or equal to 35.');
-        }
-        if (!is_null($minimum_score) && (mb_strlen($minimum_score) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $minimum_score when calling EdFiObjectiveAssessmentScore., must be bigger than or equal to 1.');
         }
 
         $this->container['minimum_score'] = $minimum_score;

@@ -338,16 +338,16 @@ class EdFiStudentAssessmentItem implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = "invalid value for 'assessment_response', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['assessment_response']) && (mb_strlen($this->container['assessment_response']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assessment_response', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['descriptive_feedback']) && (mb_strlen($this->container['descriptive_feedback']) > 1024)) {
             $invalidProperties[] = "invalid value for 'descriptive_feedback', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['descriptive_feedback']) && (mb_strlen($this->container['descriptive_feedback']) < 1)) {
-            $invalidProperties[] = "invalid value for 'descriptive_feedback', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['raw_score_result']) && ($this->container['raw_score_result'] > 9999999999.99999)) {
+            $invalidProperties[] = "invalid value for 'raw_score_result', must be smaller than or equal to 9999999999.99999.";
+        }
+
+        if (!is_null($this->container['raw_score_result']) && ($this->container['raw_score_result'] < -9999999999.99999)) {
+            $invalidProperties[] = "invalid value for 'raw_score_result', must be bigger than or equal to -9999999999.99999.";
         }
 
         if (!is_null($this->container['time_assessed']) && (mb_strlen($this->container['time_assessed']) > 30)) {
@@ -473,9 +473,6 @@ class EdFiStudentAssessmentItem implements ModelInterface, ArrayAccess, \JsonSer
         if (!is_null($assessment_response) && (mb_strlen($assessment_response) > 255)) {
             throw new \InvalidArgumentException('invalid length for $assessment_response when calling EdFiStudentAssessmentItem., must be smaller than or equal to 255.');
         }
-        if (!is_null($assessment_response) && (mb_strlen($assessment_response) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assessment_response when calling EdFiStudentAssessmentItem., must be bigger than or equal to 1.');
-        }
 
         $this->container['assessment_response'] = $assessment_response;
 
@@ -513,9 +510,6 @@ class EdFiStudentAssessmentItem implements ModelInterface, ArrayAccess, \JsonSer
         }
         if (!is_null($descriptive_feedback) && (mb_strlen($descriptive_feedback) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $descriptive_feedback when calling EdFiStudentAssessmentItem., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($descriptive_feedback) && (mb_strlen($descriptive_feedback) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $descriptive_feedback when calling EdFiStudentAssessmentItem., must be bigger than or equal to 1.');
         }
 
         $this->container['descriptive_feedback'] = $descriptive_feedback;
@@ -586,6 +580,14 @@ class EdFiStudentAssessmentItem implements ModelInterface, ArrayAccess, \JsonSer
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($raw_score_result) && ($raw_score_result > 9999999999.99999)) {
+            throw new \InvalidArgumentException('invalid value for $raw_score_result when calling EdFiStudentAssessmentItem., must be smaller than or equal to 9999999999.99999.');
+        }
+        if (!is_null($raw_score_result) && ($raw_score_result < -9999999999.99999)) {
+            throw new \InvalidArgumentException('invalid value for $raw_score_result when calling EdFiStudentAssessmentItem., must be bigger than or equal to -9999999999.99999.');
+        }
+
         $this->container['raw_score_result'] = $raw_score_result;
 
         return $this;
@@ -604,7 +606,7 @@ class EdFiStudentAssessmentItem implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets time_assessed
      *
-     * @param string|null $time_assessed The overall time a student actually spent during the assessment item.
+     * @param string|null $time_assessed The overall time that a student actually spent on the assessment item expressed in minutes.
      *
      * @return self
      */

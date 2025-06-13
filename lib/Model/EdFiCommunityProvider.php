@@ -420,10 +420,6 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'name_of_institution', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['name_of_institution']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name_of_institution', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['operational_status_descriptor']) && (mb_strlen($this->container['operational_status_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'operational_status_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -448,10 +444,6 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
 
         if (!is_null($this->container['short_name_of_institution']) && (mb_strlen($this->container['short_name_of_institution']) > 75)) {
             $invalidProperties[] = "invalid value for 'short_name_of_institution', the character length must be smaller than or equal to 75.";
-        }
-
-        if (!is_null($this->container['short_name_of_institution']) && (mb_strlen($this->container['short_name_of_institution']) < 1)) {
-            $invalidProperties[] = "invalid value for 'short_name_of_institution', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['web_site']) && (mb_strlen($this->container['web_site']) > 255)) {
@@ -544,7 +536,7 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets community_provider_id
      *
-     * @param int $community_provider_id The identifier assigned to a community provider.
+     * @param int $community_provider_id The identifier assigned to a community provider. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -779,9 +771,6 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
         if ((mb_strlen($name_of_institution) > 75)) {
             throw new \InvalidArgumentException('invalid length for $name_of_institution when calling EdFiCommunityProvider., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($name_of_institution) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name_of_institution when calling EdFiCommunityProvider., must be bigger than or equal to 1.');
-        }
 
         $this->container['name_of_institution'] = $name_of_institution;
 
@@ -991,9 +980,6 @@ class EdFiCommunityProvider implements ModelInterface, ArrayAccess, \JsonSeriali
         }
         if (!is_null($short_name_of_institution) && (mb_strlen($short_name_of_institution) > 75)) {
             throw new \InvalidArgumentException('invalid length for $short_name_of_institution when calling EdFiCommunityProvider., must be smaller than or equal to 75.');
-        }
-        if (!is_null($short_name_of_institution) && (mb_strlen($short_name_of_institution) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $short_name_of_institution when calling EdFiCommunityProvider., must be bigger than or equal to 1.');
         }
 
         $this->container['short_name_of_institution'] = $short_name_of_institution;

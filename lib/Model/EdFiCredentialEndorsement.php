@@ -281,10 +281,6 @@ class EdFiCredentialEndorsement implements ModelInterface, ArrayAccess, \JsonSer
             $invalidProperties[] = "invalid value for 'credential_endorsement', the character length must be smaller than or equal to 255.";
         }
 
-        if ((mb_strlen($this->container['credential_endorsement']) < 1)) {
-            $invalidProperties[] = "invalid value for 'credential_endorsement', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -324,9 +320,6 @@ class EdFiCredentialEndorsement implements ModelInterface, ArrayAccess, \JsonSer
         }
         if ((mb_strlen($credential_endorsement) > 255)) {
             throw new \InvalidArgumentException('invalid length for $credential_endorsement when calling EdFiCredentialEndorsement., must be smaller than or equal to 255.');
-        }
-        if ((mb_strlen($credential_endorsement) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $credential_endorsement when calling EdFiCredentialEndorsement., must be bigger than or equal to 1.');
         }
 
         $this->container['credential_endorsement'] = $credential_endorsement;

@@ -340,8 +340,12 @@ class EdFiStaffAbsenceEvent implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'absence_event_reason', the character length must be smaller than or equal to 40.";
         }
 
-        if (!is_null($this->container['absence_event_reason']) && (mb_strlen($this->container['absence_event_reason']) < 1)) {
-            $invalidProperties[] = "invalid value for 'absence_event_reason', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['hours_absent']) && ($this->container['hours_absent'] > 1.0E+16)) {
+            $invalidProperties[] = "invalid value for 'hours_absent', must be smaller than or equal to 1.0E+16.";
+        }
+
+        if (!is_null($this->container['hours_absent']) && ($this->container['hours_absent'] < -1.0E+16)) {
+            $invalidProperties[] = "invalid value for 'hours_absent', must be bigger than or equal to -1.0E+16.";
         }
 
         return $invalidProperties;
@@ -503,9 +507,6 @@ class EdFiStaffAbsenceEvent implements ModelInterface, ArrayAccess, \JsonSeriali
         if (!is_null($absence_event_reason) && (mb_strlen($absence_event_reason) > 40)) {
             throw new \InvalidArgumentException('invalid length for $absence_event_reason when calling EdFiStaffAbsenceEvent., must be smaller than or equal to 40.');
         }
-        if (!is_null($absence_event_reason) && (mb_strlen($absence_event_reason) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $absence_event_reason when calling EdFiStaffAbsenceEvent., must be bigger than or equal to 1.');
-        }
 
         $this->container['absence_event_reason'] = $absence_event_reason;
 
@@ -541,6 +542,14 @@ class EdFiStaffAbsenceEvent implements ModelInterface, ArrayAccess, \JsonSeriali
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($hours_absent) && ($hours_absent > 1.0E+16)) {
+            throw new \InvalidArgumentException('invalid value for $hours_absent when calling EdFiStaffAbsenceEvent., must be smaller than or equal to 1.0E+16.');
+        }
+        if (!is_null($hours_absent) && ($hours_absent < -1.0E+16)) {
+            throw new \InvalidArgumentException('invalid value for $hours_absent when calling EdFiStaffAbsenceEvent., must be bigger than or equal to -1.0E+16.');
+        }
+
         $this->container['hours_absent'] = $hours_absent;
 
         return $this;

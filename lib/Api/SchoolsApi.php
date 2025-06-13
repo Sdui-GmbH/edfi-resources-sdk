@@ -83,6 +83,9 @@ class SchoolsApi
         'getSchoolsById' => [
             'application/json',
         ],
+        'getSchoolsPartitions' => [
+            'application/json',
+        ],
         'keyChangesSchools' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class SchoolsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSchools'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiSchoolDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiSchoolDelete[]
      */
-    public function deletesSchools($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
+    public function deletesSchools($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
     {
         list($response) = $this->deletesSchoolsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class SchoolsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSchools'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiSchoolDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiSchoolDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesSchoolsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
+    public function deletesSchoolsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
     {
         $request = $this->deletesSchoolsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class SchoolsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSchools'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesSchoolsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
+    public function deletesSchoolsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
     {
         return $this->deletesSchoolsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class SchoolsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSchools'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesSchoolsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
+    public function deletesSchoolsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiSchoolDelete[]';
         $request = $this->deletesSchoolsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class SchoolsApi
     /**
      * Create request for operation 'deletesSchools'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesSchools'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesSchoolsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
+    public function deletesSchoolsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesSchools'][0])
     {
 
 
@@ -759,13 +762,15 @@ class SchoolsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $school_id The identifier assigned to a school. (optional)
-     * @param  int $local_education_agency_id The identifier assigned to a local education agency. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
      * @param  int $charter_approval_school_year The school year in which a charter school was initially approved. (optional)
      * @param  string $administrative_funding_control_descriptor The type of education institution as classified by its funding source, for example public or private. (optional)
      * @param  string $charter_approval_agency_type_descriptor The type of agency that approved the establishment or continuation of a charter school. (optional)
@@ -774,16 +779,23 @@ class SchoolsApi
      * @param  string $magnet_special_program_emphasis_school_descriptor A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). (optional)
      * @param  string $school_type_descriptor The type of education institution as classified by its primary focus. (optional)
      * @param  string $title_i_part_a_school_designation_descriptor Denotes the Title I Part A designation for the school. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchools'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiSchool[]
+     * @return |\Resources\Model\EdFiSchool[]
      */
-    public function getSchools($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchools'][0])
+    public function getSchools($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getSchools'][0])
     {
-        list($response) = $this->getSchoolsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $use_snapshot, $contentType);
+        list($response) = $this->getSchoolsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
         return $response;
     }
 
@@ -792,13 +804,15 @@ class SchoolsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $school_id The identifier assigned to a school. (optional)
-     * @param  int $local_education_agency_id The identifier assigned to a local education agency. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
      * @param  int $charter_approval_school_year The school year in which a charter school was initially approved. (optional)
      * @param  string $administrative_funding_control_descriptor The type of education institution as classified by its funding source, for example public or private. (optional)
      * @param  string $charter_approval_agency_type_descriptor The type of agency that approved the establishment or continuation of a charter school. (optional)
@@ -807,16 +821,23 @@ class SchoolsApi
      * @param  string $magnet_special_program_emphasis_school_descriptor A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). (optional)
      * @param  string $school_type_descriptor The type of education institution as classified by its primary focus. (optional)
      * @param  string $title_i_part_a_school_designation_descriptor Denotes the Title I Part A designation for the school. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchools'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiSchool[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiSchool[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSchoolsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchools'][0])
+    public function getSchoolsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getSchools'][0])
     {
-        $request = $this->getSchoolsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $use_snapshot, $contentType);
+        $request = $this->getSchoolsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -932,13 +953,15 @@ class SchoolsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $school_id The identifier assigned to a school. (optional)
-     * @param  int $local_education_agency_id The identifier assigned to a local education agency. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
      * @param  int $charter_approval_school_year The school year in which a charter school was initially approved. (optional)
      * @param  string $administrative_funding_control_descriptor The type of education institution as classified by its funding source, for example public or private. (optional)
      * @param  string $charter_approval_agency_type_descriptor The type of agency that approved the establishment or continuation of a charter school. (optional)
@@ -947,15 +970,22 @@ class SchoolsApi
      * @param  string $magnet_special_program_emphasis_school_descriptor A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). (optional)
      * @param  string $school_type_descriptor The type of education institution as classified by its primary focus. (optional)
      * @param  string $title_i_part_a_school_designation_descriptor Denotes the Title I Part A designation for the school. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchools'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSchoolsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchools'][0])
+    public function getSchoolsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getSchools'][0])
     {
-        return $this->getSchoolsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $use_snapshot, $contentType)
+        return $this->getSchoolsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -968,13 +998,15 @@ class SchoolsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $school_id The identifier assigned to a school. (optional)
-     * @param  int $local_education_agency_id The identifier assigned to a local education agency. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
      * @param  int $charter_approval_school_year The school year in which a charter school was initially approved. (optional)
      * @param  string $administrative_funding_control_descriptor The type of education institution as classified by its funding source, for example public or private. (optional)
      * @param  string $charter_approval_agency_type_descriptor The type of agency that approved the establishment or continuation of a charter school. (optional)
@@ -983,16 +1015,23 @@ class SchoolsApi
      * @param  string $magnet_special_program_emphasis_school_descriptor A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). (optional)
      * @param  string $school_type_descriptor The type of education institution as classified by its primary focus. (optional)
      * @param  string $title_i_part_a_school_designation_descriptor Denotes the Title I Part A designation for the school. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchools'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSchoolsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchools'][0])
+    public function getSchoolsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getSchools'][0])
     {
         $returnType = '\Resources\Model\EdFiSchool[]';
-        $request = $this->getSchoolsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $use_snapshot, $contentType);
+        $request = $this->getSchoolsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1033,13 +1072,15 @@ class SchoolsApi
     /**
      * Create request for operation 'getSchools'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $school_id The identifier assigned to a school. (optional)
-     * @param  int $local_education_agency_id The identifier assigned to a local education agency. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
      * @param  int $charter_approval_school_year The school year in which a charter school was initially approved. (optional)
      * @param  string $administrative_funding_control_descriptor The type of education institution as classified by its funding source, for example public or private. (optional)
      * @param  string $charter_approval_agency_type_descriptor The type of agency that approved the establishment or continuation of a charter school. (optional)
@@ -1048,13 +1089,20 @@ class SchoolsApi
      * @param  string $magnet_special_program_emphasis_school_descriptor A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). (optional)
      * @param  string $school_type_descriptor The type of education institution as classified by its primary focus. (optional)
      * @param  string $title_i_part_a_school_designation_descriptor Denotes the Title I Part A designation for the school. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchools'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSchoolsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchools'][0])
+    public function getSchoolsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getSchools'][0])
     {
 
 
@@ -1063,6 +1111,11 @@ class SchoolsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling SchoolsApi.getSchools, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling SchoolsApi.getSchools, must be bigger than or equal to 0.');
         }
         
 
@@ -1099,7 +1152,32 @@ class SchoolsApi
             throw new \InvalidArgumentException('invalid length for "$title_i_part_a_school_designation_descriptor" when calling SchoolsApi.getSchools, must be smaller than or equal to 306.');
         }
         
+        if ($operational_status_descriptor !== null && strlen($operational_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$operational_status_descriptor" when calling SchoolsApi.getSchools, must be smaller than or equal to 306.');
+        }
+        
 
+        if ($name_of_institution !== null && strlen($name_of_institution) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$name_of_institution" when calling SchoolsApi.getSchools, must be smaller than or equal to 75.');
+        }
+        
+        if ($short_name_of_institution !== null && strlen($short_name_of_institution) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$short_name_of_institution" when calling SchoolsApi.getSchools, must be smaller than or equal to 75.');
+        }
+        
+        if ($web_site !== null && strlen($web_site) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$web_site" when calling SchoolsApi.getSchools, must be smaller than or equal to 255.');
+        }
+        
+
+        if ($education_organization_identification_system_descriptor !== null && strlen($education_organization_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$education_organization_identification_system_descriptor" when calling SchoolsApi.getSchools, must be smaller than or equal to 306.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling SchoolsApi.getSchools, must be smaller than or equal to 60.');
+        }
+        
 
         $resourcePath = '/ed-fi/schools';
         $formParams = [];
@@ -1121,6 +1199,24 @@ class SchoolsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1243,6 +1339,69 @@ class SchoolsApi
             true, // explode
             false // required
         ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $operational_status_descriptor,
+            'operationalStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $name_of_institution,
+            'nameOfInstitution', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $short_name_of_institution,
+            'shortNameOfInstitution', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $web_site,
+            'webSite', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_identification_system_descriptor,
+            'educationOrganizationIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
         // header params
         if ($use_snapshot !== null) {
@@ -1320,7 +1479,7 @@ class SchoolsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiSchool
+     * @return |\Resources\Model\EdFiSchool
      */
     public function getSchoolsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolsById'][0])
     {
@@ -1340,7 +1499,7 @@ class SchoolsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiSchool, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiSchool, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSchoolsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getSchoolsById'][0])
     {
@@ -1641,23 +1800,670 @@ class SchoolsApi
     }
 
     /**
+     * Operation getSchoolsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $charter_approval_school_year The school year in which a charter school was initially approved. (optional)
+     * @param  string $administrative_funding_control_descriptor The type of education institution as classified by its funding source, for example public or private. (optional)
+     * @param  string $charter_approval_agency_type_descriptor The type of agency that approved the establishment or continuation of a charter school. (optional)
+     * @param  string $charter_status_descriptor A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. (optional)
+     * @param  string $internet_access_descriptor The type of Internet access available. (optional)
+     * @param  string $magnet_special_program_emphasis_school_descriptor A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). (optional)
+     * @param  string $school_type_descriptor The type of education institution as classified by its primary focus. (optional)
+     * @param  string $title_i_part_a_school_designation_descriptor Denotes the Title I Part A designation for the school. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getSchoolsPartitions($number = null, $min_change_version = null, $max_change_version = null, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getSchoolsPartitions'][0])
+    {
+        list($response) = $this->getSchoolsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getSchoolsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $charter_approval_school_year The school year in which a charter school was initially approved. (optional)
+     * @param  string $administrative_funding_control_descriptor The type of education institution as classified by its funding source, for example public or private. (optional)
+     * @param  string $charter_approval_agency_type_descriptor The type of agency that approved the establishment or continuation of a charter school. (optional)
+     * @param  string $charter_status_descriptor A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. (optional)
+     * @param  string $internet_access_descriptor The type of Internet access available. (optional)
+     * @param  string $magnet_special_program_emphasis_school_descriptor A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). (optional)
+     * @param  string $school_type_descriptor The type of education institution as classified by its primary focus. (optional)
+     * @param  string $title_i_part_a_school_designation_descriptor Denotes the Title I Part A designation for the school. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSchoolsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getSchoolsPartitions'][0])
+    {
+        $request = $this->getSchoolsPartitionsRequest($number, $min_change_version, $max_change_version, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getSchoolsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $charter_approval_school_year The school year in which a charter school was initially approved. (optional)
+     * @param  string $administrative_funding_control_descriptor The type of education institution as classified by its funding source, for example public or private. (optional)
+     * @param  string $charter_approval_agency_type_descriptor The type of agency that approved the establishment or continuation of a charter school. (optional)
+     * @param  string $charter_status_descriptor A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. (optional)
+     * @param  string $internet_access_descriptor The type of Internet access available. (optional)
+     * @param  string $magnet_special_program_emphasis_school_descriptor A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). (optional)
+     * @param  string $school_type_descriptor The type of education institution as classified by its primary focus. (optional)
+     * @param  string $title_i_part_a_school_designation_descriptor Denotes the Title I Part A designation for the school. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSchoolsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getSchoolsPartitions'][0])
+    {
+        return $this->getSchoolsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getSchoolsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $charter_approval_school_year The school year in which a charter school was initially approved. (optional)
+     * @param  string $administrative_funding_control_descriptor The type of education institution as classified by its funding source, for example public or private. (optional)
+     * @param  string $charter_approval_agency_type_descriptor The type of agency that approved the establishment or continuation of a charter school. (optional)
+     * @param  string $charter_status_descriptor A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. (optional)
+     * @param  string $internet_access_descriptor The type of Internet access available. (optional)
+     * @param  string $magnet_special_program_emphasis_school_descriptor A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). (optional)
+     * @param  string $school_type_descriptor The type of education institution as classified by its primary focus. (optional)
+     * @param  string $title_i_part_a_school_designation_descriptor Denotes the Title I Part A designation for the school. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getSchoolsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getSchoolsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getSchoolsPartitionsRequest($number, $min_change_version, $max_change_version, $school_id, $local_education_agency_id, $charter_approval_school_year, $administrative_funding_control_descriptor, $charter_approval_agency_type_descriptor, $charter_status_descriptor, $internet_access_descriptor, $magnet_special_program_emphasis_school_descriptor, $school_type_descriptor, $title_i_part_a_school_designation_descriptor, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getSchoolsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $local_education_agency_id The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. (optional)
+     * @param  int $charter_approval_school_year The school year in which a charter school was initially approved. (optional)
+     * @param  string $administrative_funding_control_descriptor The type of education institution as classified by its funding source, for example public or private. (optional)
+     * @param  string $charter_approval_agency_type_descriptor The type of agency that approved the establishment or continuation of a charter school. (optional)
+     * @param  string $charter_status_descriptor A school or agency providing free public elementary or secondary education to eligible students under a specific charter granted by the state legislature or other appropriate authority and designated by such authority to be a charter school. (optional)
+     * @param  string $internet_access_descriptor The type of Internet access available. (optional)
+     * @param  string $magnet_special_program_emphasis_school_descriptor A school that has been designed: 1) to attract students of different racial/ethnic backgrounds for the purpose of reducing, preventing, or eliminating racial isolation; and/or 2) to provide an academic or social focus on a particular theme (e.g., science/math, performing arts, gifted/talented, or foreign language). (optional)
+     * @param  string $school_type_descriptor The type of education institution as classified by its primary focus. (optional)
+     * @param  string $title_i_part_a_school_designation_descriptor Denotes the Title I Part A designation for the school. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSchoolsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getSchoolsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $school_id = null, $local_education_agency_id = null, $charter_approval_school_year = null, $administrative_funding_control_descriptor = null, $charter_approval_agency_type_descriptor = null, $charter_status_descriptor = null, $internet_access_descriptor = null, $magnet_special_program_emphasis_school_descriptor = null, $school_type_descriptor = null, $title_i_part_a_school_designation_descriptor = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getSchoolsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling SchoolsApi.getSchoolsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+
+
+        if ($administrative_funding_control_descriptor !== null && strlen($administrative_funding_control_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$administrative_funding_control_descriptor" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($charter_approval_agency_type_descriptor !== null && strlen($charter_approval_agency_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$charter_approval_agency_type_descriptor" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($charter_status_descriptor !== null && strlen($charter_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$charter_status_descriptor" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($internet_access_descriptor !== null && strlen($internet_access_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$internet_access_descriptor" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($magnet_special_program_emphasis_school_descriptor !== null && strlen($magnet_special_program_emphasis_school_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$magnet_special_program_emphasis_school_descriptor" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($school_type_descriptor !== null && strlen($school_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$school_type_descriptor" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($title_i_part_a_school_designation_descriptor !== null && strlen($title_i_part_a_school_designation_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$title_i_part_a_school_designation_descriptor" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($operational_status_descriptor !== null && strlen($operational_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$operational_status_descriptor" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($name_of_institution !== null && strlen($name_of_institution) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$name_of_institution" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($short_name_of_institution !== null && strlen($short_name_of_institution) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$short_name_of_institution" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($web_site !== null && strlen($web_site) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$web_site" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+        if ($education_organization_identification_system_descriptor !== null && strlen($education_organization_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$education_organization_identification_system_descriptor" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling SchoolsApi.getSchoolsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        $resourcePath = '/ed-fi/schools/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_id,
+            'schoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $local_education_agency_id,
+            'localEducationAgencyId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $charter_approval_school_year,
+            'charterApprovalSchoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $administrative_funding_control_descriptor,
+            'administrativeFundingControlDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $charter_approval_agency_type_descriptor,
+            'charterApprovalAgencyTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $charter_status_descriptor,
+            'charterStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $internet_access_descriptor,
+            'internetAccessDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $magnet_special_program_emphasis_school_descriptor,
+            'magnetSpecialProgramEmphasisSchoolDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_type_descriptor,
+            'schoolTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $title_i_part_a_school_designation_descriptor,
+            'titleIPartASchoolDesignationDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $operational_status_descriptor,
+            'operationalStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $name_of_institution,
+            'nameOfInstitution', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $short_name_of_institution,
+            'shortNameOfInstitution', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $web_site,
+            'webSite', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_identification_system_descriptor,
+            'educationOrganizationIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesSchools
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSchools'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiSchoolKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiSchoolKeyChange[]
      */
-    public function keyChangesSchools($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
+    public function keyChangesSchools($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
     {
         list($response) = $this->keyChangesSchoolsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1668,19 +2474,19 @@ class SchoolsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSchools'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiSchoolKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiSchoolKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesSchoolsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
+    public function keyChangesSchoolsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
     {
         $request = $this->keyChangesSchoolsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1798,18 +2604,18 @@ class SchoolsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSchools'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesSchoolsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
+    public function keyChangesSchoolsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
     {
         return $this->keyChangesSchoolsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1824,18 +2630,18 @@ class SchoolsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSchools'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesSchoolsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
+    public function keyChangesSchoolsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiSchoolKeyChange[]';
         $request = $this->keyChangesSchoolsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1879,18 +2685,18 @@ class SchoolsApi
     /**
      * Create request for operation 'keyChangesSchools'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesSchools'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesSchoolsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
+    public function keyChangesSchoolsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesSchools'][0])
     {
 
 

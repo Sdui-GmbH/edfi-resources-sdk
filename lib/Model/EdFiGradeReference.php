@@ -375,10 +375,6 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'grading_period_name', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['grading_period_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'grading_period_name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['grading_period_school_year'] === null) {
             $invalidProperties[] = "'grading_period_school_year' can't be null";
         }
@@ -387,10 +383,6 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($this->container['local_course_code']) > 60)) {
             $invalidProperties[] = "invalid value for 'local_course_code', the character length must be smaller than or equal to 60.";
-        }
-
-        if ((mb_strlen($this->container['local_course_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'local_course_code', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['school_id'] === null) {
@@ -406,10 +398,6 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'section_identifier', the character length must be smaller than or equal to 255.";
         }
 
-        if ((mb_strlen($this->container['section_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'section_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['session_name'] === null) {
             $invalidProperties[] = "'session_name' can't be null";
         }
@@ -417,19 +405,11 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'session_name', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['session_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'session_name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['student_unique_id'] === null) {
             $invalidProperties[] = "'student_unique_id' can't be null";
         }
         if ((mb_strlen($this->container['student_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if ((mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -460,7 +440,7 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date Month, day, and year of the student's entry or assignment to the section.
+     * @param \DateTime $begin_date Month, day, and year of the student's entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -561,9 +541,6 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
         if ((mb_strlen($grading_period_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $grading_period_name when calling EdFiGradeReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($grading_period_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $grading_period_name when calling EdFiGradeReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['grading_period_name'] = $grading_period_name;
 
@@ -622,9 +599,6 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
         if ((mb_strlen($local_course_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $local_course_code when calling EdFiGradeReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($local_course_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $local_course_code when calling EdFiGradeReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['local_course_code'] = $local_course_code;
 
@@ -644,7 +618,7 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets school_id
      *
-     * @param int $school_id The identifier assigned to a school.
+     * @param int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -710,9 +684,6 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
         if ((mb_strlen($section_identifier) > 255)) {
             throw new \InvalidArgumentException('invalid length for $section_identifier when calling EdFiGradeReference., must be smaller than or equal to 255.');
         }
-        if ((mb_strlen($section_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $section_identifier when calling EdFiGradeReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['section_identifier'] = $section_identifier;
 
@@ -744,9 +715,6 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
         if ((mb_strlen($session_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $session_name when calling EdFiGradeReference., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($session_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $session_name when calling EdFiGradeReference., must be bigger than or equal to 1.');
-        }
 
         $this->container['session_name'] = $session_name;
 
@@ -777,9 +745,6 @@ class EdFiGradeReference implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling EdFiGradeReference., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling EdFiGradeReference., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

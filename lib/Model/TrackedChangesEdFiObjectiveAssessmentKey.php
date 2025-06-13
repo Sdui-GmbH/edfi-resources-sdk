@@ -292,16 +292,8 @@ class TrackedChangesEdFiObjectiveAssessmentKey implements ModelInterface, ArrayA
             $invalidProperties[] = "invalid value for 'identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['identification_code']) && (mb_strlen($this->container['identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['assessment_identifier']) && (mb_strlen($this->container['assessment_identifier']) > 60)) {
             $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['assessment_identifier']) && (mb_strlen($this->container['assessment_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['namespace']) && (mb_strlen($this->container['namespace']) > 255)) {
@@ -352,9 +344,6 @@ class TrackedChangesEdFiObjectiveAssessmentKey implements ModelInterface, ArrayA
         if ((mb_strlen($identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $identification_code when calling TrackedChangesEdFiObjectiveAssessmentKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $identification_code when calling TrackedChangesEdFiObjectiveAssessmentKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['identification_code'] = $identification_code;
 
@@ -385,9 +374,6 @@ class TrackedChangesEdFiObjectiveAssessmentKey implements ModelInterface, ArrayA
         }
         if ((mb_strlen($assessment_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling TrackedChangesEdFiObjectiveAssessmentKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($assessment_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling TrackedChangesEdFiObjectiveAssessmentKey., must be bigger than or equal to 1.');
         }
 
         $this->container['assessment_identifier'] = $assessment_identifier;

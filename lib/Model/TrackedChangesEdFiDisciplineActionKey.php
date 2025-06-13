@@ -292,16 +292,8 @@ class TrackedChangesEdFiDisciplineActionKey implements ModelInterface, ArrayAcce
             $invalidProperties[] = "invalid value for 'discipline_action_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if (!is_null($this->container['discipline_action_identifier']) && (mb_strlen($this->container['discipline_action_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'discipline_action_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -343,9 +335,6 @@ class TrackedChangesEdFiDisciplineActionKey implements ModelInterface, ArrayAcce
         }
         if ((mb_strlen($discipline_action_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $discipline_action_identifier when calling TrackedChangesEdFiDisciplineActionKey., must be smaller than or equal to 36.');
-        }
-        if ((mb_strlen($discipline_action_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $discipline_action_identifier when calling TrackedChangesEdFiDisciplineActionKey., must be bigger than or equal to 1.');
         }
 
         $this->container['discipline_action_identifier'] = $discipline_action_identifier;
@@ -404,9 +393,6 @@ class TrackedChangesEdFiDisciplineActionKey implements ModelInterface, ArrayAcce
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiDisciplineActionKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiDisciplineActionKey., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

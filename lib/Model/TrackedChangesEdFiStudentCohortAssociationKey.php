@@ -299,16 +299,8 @@ class TrackedChangesEdFiStudentCohortAssociationKey implements ModelInterface, A
             $invalidProperties[] = "invalid value for 'cohort_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if (!is_null($this->container['cohort_identifier']) && (mb_strlen($this->container['cohort_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'cohort_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -339,7 +331,7 @@ class TrackedChangesEdFiStudentCohortAssociationKey implements ModelInterface, A
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The month, day, and year on which the student was first identified as part of the cohort.
+     * @param \DateTime|null $begin_date The month, day, and year on which the student was first identified as part of the cohort.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -377,9 +369,6 @@ class TrackedChangesEdFiStudentCohortAssociationKey implements ModelInterface, A
         }
         if ((mb_strlen($cohort_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $cohort_identifier when calling TrackedChangesEdFiStudentCohortAssociationKey., must be smaller than or equal to 36.');
-        }
-        if ((mb_strlen($cohort_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $cohort_identifier when calling TrackedChangesEdFiStudentCohortAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['cohort_identifier'] = $cohort_identifier;
@@ -438,9 +427,6 @@ class TrackedChangesEdFiStudentCohortAssociationKey implements ModelInterface, A
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentCohortAssociationKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentCohortAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

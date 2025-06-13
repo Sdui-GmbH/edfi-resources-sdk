@@ -278,10 +278,6 @@ class TrackedChangesEdFiLearningStandardKey implements ModelInterface, ArrayAcce
             $invalidProperties[] = "invalid value for 'learning_standard_id', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['learning_standard_id']) && (mb_strlen($this->container['learning_standard_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'learning_standard_id', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -321,9 +317,6 @@ class TrackedChangesEdFiLearningStandardKey implements ModelInterface, ArrayAcce
         }
         if ((mb_strlen($learning_standard_id) > 60)) {
             throw new \InvalidArgumentException('invalid length for $learning_standard_id when calling TrackedChangesEdFiLearningStandardKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($learning_standard_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $learning_standard_id when calling TrackedChangesEdFiLearningStandardKey., must be bigger than or equal to 1.');
         }
 
         $this->container['learning_standard_id'] = $learning_standard_id;

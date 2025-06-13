@@ -431,7 +431,7 @@ class EdFiEducationOrganizationInterventionPrescriptionAssociation implements Mo
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date The begin date of the period during which the intervention prescription is available.
+     * @param \DateTime|null $begin_date The begin date of the period during which the intervention prescription is available.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -465,7 +465,7 @@ class EdFiEducationOrganizationInterventionPrescriptionAssociation implements Mo
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The end date of the period during which the intervention prescription is available.
+     * @param \DateTime|null $end_date The end date of the period during which the intervention prescription is available.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

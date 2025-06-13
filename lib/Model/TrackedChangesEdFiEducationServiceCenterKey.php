@@ -302,7 +302,7 @@ class TrackedChangesEdFiEducationServiceCenterKey implements ModelInterface, Arr
     /**
      * Sets education_service_center_id
      *
-     * @param int|null $education_service_center_id The identifier assigned to an education service center.
+     * @param int|null $education_service_center_id The identifier assigned to an education service center. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */

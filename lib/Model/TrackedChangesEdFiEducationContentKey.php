@@ -278,10 +278,6 @@ class TrackedChangesEdFiEducationContentKey implements ModelInterface, ArrayAcce
             $invalidProperties[] = "invalid value for 'content_identifier', the character length must be smaller than or equal to 225.";
         }
 
-        if (!is_null($this->container['content_identifier']) && (mb_strlen($this->container['content_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'content_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -321,9 +317,6 @@ class TrackedChangesEdFiEducationContentKey implements ModelInterface, ArrayAcce
         }
         if ((mb_strlen($content_identifier) > 225)) {
             throw new \InvalidArgumentException('invalid length for $content_identifier when calling TrackedChangesEdFiEducationContentKey., must be smaller than or equal to 225.');
-        }
-        if ((mb_strlen($content_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $content_identifier when calling TrackedChangesEdFiEducationContentKey., must be bigger than or equal to 1.');
         }
 
         $this->container['content_identifier'] = $content_identifier;

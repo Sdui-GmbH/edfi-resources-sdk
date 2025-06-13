@@ -83,6 +83,9 @@ class StudentGradebookEntriesApi
         'getStudentGradebookEntriesById' => [
             'application/json',
         ],
+        'getStudentGradebookEntriesPartitions' => [
+            'application/json',
+        ],
         'keyChangesStudentGradebookEntries' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StudentGradebookEntriesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentGradebookEntries'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]
      */
-    public function deletesStudentGradebookEntries($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
+    public function deletesStudentGradebookEntries($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
     {
         list($response) = $this->deletesStudentGradebookEntriesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StudentGradebookEntriesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentGradebookEntries'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStudentGradebookEntriesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
+    public function deletesStudentGradebookEntriesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
     {
         $request = $this->deletesStudentGradebookEntriesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StudentGradebookEntriesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentGradebookEntries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentGradebookEntriesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
+    public function deletesStudentGradebookEntriesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
     {
         return $this->deletesStudentGradebookEntriesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StudentGradebookEntriesApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentGradebookEntries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentGradebookEntriesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
+    public function deletesStudentGradebookEntriesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentGradebookEntryDelete[]';
         $request = $this->deletesStudentGradebookEntriesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StudentGradebookEntriesApi
     /**
      * Create request for operation 'deletesStudentGradebookEntries'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentGradebookEntries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStudentGradebookEntriesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
+    public function deletesStudentGradebookEntriesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentGradebookEntries'][0])
     {
 
 
@@ -759,11 +762,13 @@ class StudentGradebookEntriesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $gradebook_entry_identifier A unique number or alphanumeric code assigned to a gradebook entry by the source system. (optional)
      * @param  string $namespace Namespace URI for the source of the gradebook entry. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -782,11 +787,11 @@ class StudentGradebookEntriesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentGradebookEntry[]
+     * @return |\Resources\Model\EdFiStudentGradebookEntry[]
      */
-    public function getStudentGradebookEntries($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
+    public function getStudentGradebookEntries($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
     {
-        list($response) = $this->getStudentGradebookEntriesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType);
+        list($response) = $this->getStudentGradebookEntriesWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -795,11 +800,13 @@ class StudentGradebookEntriesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $gradebook_entry_identifier A unique number or alphanumeric code assigned to a gradebook entry by the source system. (optional)
      * @param  string $namespace Namespace URI for the source of the gradebook entry. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -818,11 +825,11 @@ class StudentGradebookEntriesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentGradebookEntry[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentGradebookEntry[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentGradebookEntriesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
+    public function getStudentGradebookEntriesWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
     {
-        $request = $this->getStudentGradebookEntriesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType);
+        $request = $this->getStudentGradebookEntriesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -938,11 +945,13 @@ class StudentGradebookEntriesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $gradebook_entry_identifier A unique number or alphanumeric code assigned to a gradebook entry by the source system. (optional)
      * @param  string $namespace Namespace URI for the source of the gradebook entry. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -962,9 +971,9 @@ class StudentGradebookEntriesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentGradebookEntriesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
+    public function getStudentGradebookEntriesAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
     {
-        return $this->getStudentGradebookEntriesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType)
+        return $this->getStudentGradebookEntriesAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -977,11 +986,13 @@ class StudentGradebookEntriesApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $gradebook_entry_identifier A unique number or alphanumeric code assigned to a gradebook entry by the source system. (optional)
      * @param  string $namespace Namespace URI for the source of the gradebook entry. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -1001,10 +1012,10 @@ class StudentGradebookEntriesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentGradebookEntriesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
+    public function getStudentGradebookEntriesAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentGradebookEntry[]';
-        $request = $this->getStudentGradebookEntriesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType);
+        $request = $this->getStudentGradebookEntriesRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1045,11 +1056,13 @@ class StudentGradebookEntriesApi
     /**
      * Create request for operation 'getStudentGradebookEntries'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $gradebook_entry_identifier A unique number or alphanumeric code assigned to a gradebook entry by the source system. (optional)
      * @param  string $namespace Namespace URI for the source of the gradebook entry. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -1069,7 +1082,7 @@ class StudentGradebookEntriesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentGradebookEntriesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
+    public function getStudentGradebookEntriesRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntries'][0])
     {
 
 
@@ -1078,6 +1091,11 @@ class StudentGradebookEntriesApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StudentGradebookEntriesApi.getStudentGradebookEntries, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StudentGradebookEntriesApi.getStudentGradebookEntries, must be bigger than or equal to 0.');
         }
         
 
@@ -1142,6 +1160,24 @@ class StudentGradebookEntriesApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1368,7 +1404,7 @@ class StudentGradebookEntriesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentGradebookEntry
+     * @return |\Resources\Model\EdFiStudentGradebookEntry
      */
     public function getStudentGradebookEntriesById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntriesById'][0])
     {
@@ -1388,7 +1424,7 @@ class StudentGradebookEntriesApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentGradebookEntry, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentGradebookEntry, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentGradebookEntriesByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntriesById'][0])
     {
@@ -1689,23 +1725,595 @@ class StudentGradebookEntriesApi
     }
 
     /**
+     * Operation getStudentGradebookEntriesPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $gradebook_entry_identifier A unique number or alphanumeric code assigned to a gradebook entry by the source system. (optional)
+     * @param  string $namespace Namespace URI for the source of the gradebook entry. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $assignment_late_status_descriptor Status of whether the assignment was submitted after the due date and/or marked as. (optional)
+     * @param  string $competency_level_descriptor The competency level assessed for the student for the referenced learning objective. (optional)
+     * @param  string $submission_status_descriptor The status of the student&#39;s submission. (optional)
+     * @param  \DateTime $date_fulfilled The date an assignment was turned in or the date of an assessment. (optional)
+     * @param  string $diagnostic_statement A statement provided by the teacher that provides information in addition to the grade or assessment score. (optional)
+     * @param  string $id  (optional)
+     * @param  string $letter_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $numeric_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $points_earned The points earned for the submission. With extra credit, the points earned may exceed the max points. (optional)
+     * @param  string $time_fulfilled The time an assignment was turned in on the date fulfilled. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentGradebookEntriesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStudentGradebookEntriesPartitions($number = null, $min_change_version = null, $max_change_version = null, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntriesPartitions'][0])
+    {
+        list($response) = $this->getStudentGradebookEntriesPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStudentGradebookEntriesPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $gradebook_entry_identifier A unique number or alphanumeric code assigned to a gradebook entry by the source system. (optional)
+     * @param  string $namespace Namespace URI for the source of the gradebook entry. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $assignment_late_status_descriptor Status of whether the assignment was submitted after the due date and/or marked as. (optional)
+     * @param  string $competency_level_descriptor The competency level assessed for the student for the referenced learning objective. (optional)
+     * @param  string $submission_status_descriptor The status of the student&#39;s submission. (optional)
+     * @param  \DateTime $date_fulfilled The date an assignment was turned in or the date of an assessment. (optional)
+     * @param  string $diagnostic_statement A statement provided by the teacher that provides information in addition to the grade or assessment score. (optional)
+     * @param  string $id  (optional)
+     * @param  string $letter_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $numeric_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $points_earned The points earned for the submission. With extra credit, the points earned may exceed the max points. (optional)
+     * @param  string $time_fulfilled The time an assignment was turned in on the date fulfilled. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentGradebookEntriesPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStudentGradebookEntriesPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntriesPartitions'][0])
+    {
+        $request = $this->getStudentGradebookEntriesPartitionsRequest($number, $min_change_version, $max_change_version, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStudentGradebookEntriesPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $gradebook_entry_identifier A unique number or alphanumeric code assigned to a gradebook entry by the source system. (optional)
+     * @param  string $namespace Namespace URI for the source of the gradebook entry. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $assignment_late_status_descriptor Status of whether the assignment was submitted after the due date and/or marked as. (optional)
+     * @param  string $competency_level_descriptor The competency level assessed for the student for the referenced learning objective. (optional)
+     * @param  string $submission_status_descriptor The status of the student&#39;s submission. (optional)
+     * @param  \DateTime $date_fulfilled The date an assignment was turned in or the date of an assessment. (optional)
+     * @param  string $diagnostic_statement A statement provided by the teacher that provides information in addition to the grade or assessment score. (optional)
+     * @param  string $id  (optional)
+     * @param  string $letter_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $numeric_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $points_earned The points earned for the submission. With extra credit, the points earned may exceed the max points. (optional)
+     * @param  string $time_fulfilled The time an assignment was turned in on the date fulfilled. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentGradebookEntriesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentGradebookEntriesPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntriesPartitions'][0])
+    {
+        return $this->getStudentGradebookEntriesPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStudentGradebookEntriesPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $gradebook_entry_identifier A unique number or alphanumeric code assigned to a gradebook entry by the source system. (optional)
+     * @param  string $namespace Namespace URI for the source of the gradebook entry. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $assignment_late_status_descriptor Status of whether the assignment was submitted after the due date and/or marked as. (optional)
+     * @param  string $competency_level_descriptor The competency level assessed for the student for the referenced learning objective. (optional)
+     * @param  string $submission_status_descriptor The status of the student&#39;s submission. (optional)
+     * @param  \DateTime $date_fulfilled The date an assignment was turned in or the date of an assessment. (optional)
+     * @param  string $diagnostic_statement A statement provided by the teacher that provides information in addition to the grade or assessment score. (optional)
+     * @param  string $id  (optional)
+     * @param  string $letter_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $numeric_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $points_earned The points earned for the submission. With extra credit, the points earned may exceed the max points. (optional)
+     * @param  string $time_fulfilled The time an assignment was turned in on the date fulfilled. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentGradebookEntriesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentGradebookEntriesPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntriesPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStudentGradebookEntriesPartitionsRequest($number, $min_change_version, $max_change_version, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStudentGradebookEntriesPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $gradebook_entry_identifier A unique number or alphanumeric code assigned to a gradebook entry by the source system. (optional)
+     * @param  string $namespace Namespace URI for the source of the gradebook entry. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $assignment_late_status_descriptor Status of whether the assignment was submitted after the due date and/or marked as. (optional)
+     * @param  string $competency_level_descriptor The competency level assessed for the student for the referenced learning objective. (optional)
+     * @param  string $submission_status_descriptor The status of the student&#39;s submission. (optional)
+     * @param  \DateTime $date_fulfilled The date an assignment was turned in or the date of an assessment. (optional)
+     * @param  string $diagnostic_statement A statement provided by the teacher that provides information in addition to the grade or assessment score. (optional)
+     * @param  string $id  (optional)
+     * @param  string $letter_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $numeric_grade_earned A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)
+     * @param  float $points_earned The points earned for the submission. With extra credit, the points earned may exceed the max points. (optional)
+     * @param  string $time_fulfilled The time an assignment was turned in on the date fulfilled. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentGradebookEntriesPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStudentGradebookEntriesPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $gradebook_entry_identifier = null, $namespace = null, $student_unique_id = null, $assignment_late_status_descriptor = null, $competency_level_descriptor = null, $submission_status_descriptor = null, $date_fulfilled = null, $diagnostic_statement = null, $id = null, $letter_grade_earned = null, $numeric_grade_earned = null, $points_earned = null, $time_fulfilled = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentGradebookEntriesPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentGradebookEntriesApi.getStudentGradebookEntriesPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentGradebookEntriesApi.getStudentGradebookEntriesPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($gradebook_entry_identifier !== null && strlen($gradebook_entry_identifier) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$gradebook_entry_identifier" when calling StudentGradebookEntriesApi.getStudentGradebookEntriesPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($namespace !== null && strlen($namespace) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$namespace" when calling StudentGradebookEntriesApi.getStudentGradebookEntriesPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentGradebookEntriesApi.getStudentGradebookEntriesPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($assignment_late_status_descriptor !== null && strlen($assignment_late_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$assignment_late_status_descriptor" when calling StudentGradebookEntriesApi.getStudentGradebookEntriesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($competency_level_descriptor !== null && strlen($competency_level_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$competency_level_descriptor" when calling StudentGradebookEntriesApi.getStudentGradebookEntriesPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($submission_status_descriptor !== null && strlen($submission_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$submission_status_descriptor" when calling StudentGradebookEntriesApi.getStudentGradebookEntriesPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($diagnostic_statement !== null && strlen($diagnostic_statement) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$diagnostic_statement" when calling StudentGradebookEntriesApi.getStudentGradebookEntriesPartitions, must be smaller than or equal to 1024.');
+        }
+        
+
+        if ($letter_grade_earned !== null && strlen($letter_grade_earned) > 20) {
+            throw new \InvalidArgumentException('invalid length for "$letter_grade_earned" when calling StudentGradebookEntriesApi.getStudentGradebookEntriesPartitions, must be smaller than or equal to 20.');
+        }
+        
+
+
+
+
+
+        $resourcePath = '/ed-fi/studentGradebookEntries/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $gradebook_entry_identifier,
+            'gradebookEntryIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $namespace,
+            'namespace', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assignment_late_status_descriptor,
+            'assignmentLateStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $competency_level_descriptor,
+            'competencyLevelDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $submission_status_descriptor,
+            'submissionStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $date_fulfilled,
+            'dateFulfilled', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $diagnostic_statement,
+            'diagnosticStatement', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $letter_grade_earned,
+            'letterGradeEarned', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $numeric_grade_earned,
+            'numericGradeEarned', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $points_earned,
+            'pointsEarned', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $time_fulfilled,
+            'timeFulfilled', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStudentGradebookEntries
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentGradebookEntries'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]
      */
-    public function keyChangesStudentGradebookEntries($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
+    public function keyChangesStudentGradebookEntries($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
     {
         list($response) = $this->keyChangesStudentGradebookEntriesWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1716,19 +2324,19 @@ class StudentGradebookEntriesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentGradebookEntries'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStudentGradebookEntriesWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
+    public function keyChangesStudentGradebookEntriesWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
     {
         $request = $this->keyChangesStudentGradebookEntriesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1846,18 +2454,18 @@ class StudentGradebookEntriesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentGradebookEntries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentGradebookEntriesAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
+    public function keyChangesStudentGradebookEntriesAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
     {
         return $this->keyChangesStudentGradebookEntriesAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1872,18 +2480,18 @@ class StudentGradebookEntriesApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentGradebookEntries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentGradebookEntriesAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
+    public function keyChangesStudentGradebookEntriesAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentGradebookEntryKeyChange[]';
         $request = $this->keyChangesStudentGradebookEntriesRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1927,18 +2535,18 @@ class StudentGradebookEntriesApi
     /**
      * Create request for operation 'keyChangesStudentGradebookEntries'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentGradebookEntries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStudentGradebookEntriesRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
+    public function keyChangesStudentGradebookEntriesRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentGradebookEntries'][0])
     {
 
 

@@ -309,10 +309,6 @@ class EdFiGeneralStudentProgramAssociationProgramParticipationStatus implements 
             $invalidProperties[] = "invalid value for 'designated_by', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['designated_by']) && (mb_strlen($this->container['designated_by']) < 1)) {
-            $invalidProperties[] = "invalid value for 'designated_by', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -372,7 +368,7 @@ class EdFiGeneralStudentProgramAssociationProgramParticipationStatus implements 
     /**
      * Sets status_begin_date
      *
-     * @param \DateTime $status_begin_date The date the student's program participation status began.
+     * @param \DateTime $status_begin_date The date the student's program participation status began.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -418,9 +414,6 @@ class EdFiGeneralStudentProgramAssociationProgramParticipationStatus implements 
         if (!is_null($designated_by) && (mb_strlen($designated_by) > 60)) {
             throw new \InvalidArgumentException('invalid length for $designated_by when calling EdFiGeneralStudentProgramAssociationProgramParticipationStatus., must be smaller than or equal to 60.');
         }
-        if (!is_null($designated_by) && (mb_strlen($designated_by) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $designated_by when calling EdFiGeneralStudentProgramAssociationProgramParticipationStatus., must be bigger than or equal to 1.');
-        }
 
         $this->container['designated_by'] = $designated_by;
 
@@ -440,7 +433,7 @@ class EdFiGeneralStudentProgramAssociationProgramParticipationStatus implements 
     /**
      * Sets status_end_date
      *
-     * @param \DateTime|null $status_end_date The date the student's program participation status ended.
+     * @param \DateTime|null $status_end_date The date the student's program participation status ended.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

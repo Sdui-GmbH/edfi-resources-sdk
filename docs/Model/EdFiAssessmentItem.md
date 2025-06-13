@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **assessment_reference** | [**\Resources\Model\EdFiAssessmentReference**](EdFiAssessmentReference.md) |  |
 **assessment_item_category_descriptor** | **string** | Category or type of the assessment item. | [optional]
 **assessment_item_uri** | **string** | The URI (typical a URL) pointing to the entry in an assessment item bank, which describes this content item. | [optional]
-**expected_time_assessed** | **string** | The duration of time allotted for the assessment item. | [optional]
+**expected_time_assessed** | **string** | The duration allotted for the assessment item expressed in minutes. | [optional]
 **item_text** | **string** | The text of the item. | [optional]
 **learning_standards** | [**\Resources\Model\EdFiAssessmentItemLearningStandard[]**](EdFiAssessmentItemLearningStandard.md) | An unordered collection of assessmentItemLearningStandards. Learning standard tested by this item. | [optional]
 **max_raw_score** | **float** | The maximum raw score achievable across all assessment items that are correct and scored at the maximum. | [optional]

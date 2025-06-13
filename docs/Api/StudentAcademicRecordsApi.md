@@ -1,6 +1,6 @@
 # Resources\StudentAcademicRecordsApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if t
 | [**deletesStudentAcademicRecords()**](StudentAcademicRecordsApi.md#deletesStudentAcademicRecords) | **GET** /ed-fi/studentAcademicRecords/deletes | Retrieves deleted resources based on change version. |
 | [**getStudentAcademicRecords()**](StudentAcademicRecordsApi.md#getStudentAcademicRecords) | **GET** /ed-fi/studentAcademicRecords | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getStudentAcademicRecordsById()**](StudentAcademicRecordsApi.md#getStudentAcademicRecordsById) | **GET** /ed-fi/studentAcademicRecords/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getStudentAcademicRecordsPartitions()**](StudentAcademicRecordsApi.md#getStudentAcademicRecordsPartitions) | **GET** /ed-fi/studentAcademicRecords/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesStudentAcademicRecords()**](StudentAcademicRecordsApi.md#keyChangesStudentAcademicRecords) | **GET** /ed-fi/studentAcademicRecords/keyChanges | Retrieves resources key changes based on change version. |
 | [**postStudentAcademicRecord()**](StudentAcademicRecordsApi.md#postStudentAcademicRecord) | **POST** /ed-fi/studentAcademicRecords | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putStudentAcademicRecord()**](StudentAcademicRecordsApi.md#putStudentAcademicRecord) | **PUT** /ed-fi/studentAcademicRecords/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\StudentAcademicRecordsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getStudentAcademicRecords()`
 
 ```php
-getStudentAcademicRecords($offset, $limit, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot): \Resources\Model\EdFiStudentAcademicRecord[]
+getStudentAcademicRecords($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot): \Resources\Model\EdFiStudentAcademicRecord[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,11 +172,13 @@ $apiInstance = new Resources\Api\StudentAcademicRecordsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $term_descriptor = 'term_descriptor_example'; // string | The term for the session during the school year.
 $education_organization_id = 56; // int | The identifier assigned to an education organization.
 $school_year = 56; // int | The identifier for the school year.
@@ -197,7 +200,7 @@ $session_earned_credits = 3.4; // float | The value of credits or units of value
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentAcademicRecords($offset, $limit, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot);
+    $result = $apiInstance->getStudentAcademicRecords($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentAcademicRecordsApi->getStudentAcademicRecords: ', $e->getMessage(), PHP_EOL;
@@ -208,11 +211,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **term_descriptor** | **string**| The term for the session during the school year. | [optional] |
 | **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
 | **school_year** | **int**| The identifier for the school year. | [optional] |
@@ -314,6 +319,108 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getStudentAcademicRecordsPartitions()`
+
+```php
+getStudentAcademicRecordsPartitions($number, $min_change_version, $max_change_version, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\StudentAcademicRecordsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$term_descriptor = 'term_descriptor_example'; // string | The term for the session during the school year.
+$education_organization_id = 56; // int | The identifier assigned to an education organization.
+$school_year = 56; // int | The identifier for the school year.
+$student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
+$cumulative_earned_credit_type_descriptor = 'cumulative_earned_credit_type_descriptor_example'; // string | The type of credits or units of value awarded for the completion of a course.
+$cumulative_attempted_credit_type_descriptor = 'cumulative_attempted_credit_type_descriptor_example'; // string | The type of credits or units of value awarded for the completion of a course.
+$session_earned_credit_type_descriptor = 'session_earned_credit_type_descriptor_example'; // string | The type of credits or units of value awarded for the completion of a course.
+$session_attempted_credit_type_descriptor = 'session_attempted_credit_type_descriptor_example'; // string | The type of credits or units of value awarded for the completion of a course.
+$cumulative_attempted_credit_conversion = 3.4; // float | Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units.
+$cumulative_attempted_credits = 3.4; // float | The value of credits or units of value awarded for the completion of a course.
+$cumulative_earned_credit_conversion = 3.4; // float | Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units.
+$cumulative_earned_credits = 3.4; // float | The value of credits or units of value awarded for the completion of a course.
+$id = 'id_example'; // string | 
+$projected_graduation_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The month and year the student is projected to graduate.
+$session_attempted_credit_conversion = 3.4; // float | Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units.
+$session_attempted_credits = 3.4; // float | The value of credits or units of value awarded for the completion of a course.
+$session_earned_credit_conversion = 3.4; // float | Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units.
+$session_earned_credits = 3.4; // float | The value of credits or units of value awarded for the completion of a course.
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+
+try {
+    $result = $apiInstance->getStudentAcademicRecordsPartitions($number, $min_change_version, $max_change_version, $term_descriptor, $education_organization_id, $school_year, $student_unique_id, $cumulative_earned_credit_type_descriptor, $cumulative_attempted_credit_type_descriptor, $session_earned_credit_type_descriptor, $session_attempted_credit_type_descriptor, $cumulative_attempted_credit_conversion, $cumulative_attempted_credits, $cumulative_earned_credit_conversion, $cumulative_earned_credits, $id, $projected_graduation_date, $session_attempted_credit_conversion, $session_attempted_credits, $session_earned_credit_conversion, $session_earned_credits, $use_snapshot);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling StudentAcademicRecordsApi->getStudentAcademicRecordsPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **term_descriptor** | **string**| The term for the session during the school year. | [optional] |
+| **education_organization_id** | **int**| The identifier assigned to an education organization. | [optional] |
+| **school_year** | **int**| The identifier for the school year. | [optional] |
+| **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
+| **cumulative_earned_credit_type_descriptor** | **string**| The type of credits or units of value awarded for the completion of a course. | [optional] |
+| **cumulative_attempted_credit_type_descriptor** | **string**| The type of credits or units of value awarded for the completion of a course. | [optional] |
+| **session_earned_credit_type_descriptor** | **string**| The type of credits or units of value awarded for the completion of a course. | [optional] |
+| **session_attempted_credit_type_descriptor** | **string**| The type of credits or units of value awarded for the completion of a course. | [optional] |
+| **cumulative_attempted_credit_conversion** | **float**| Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. | [optional] |
+| **cumulative_attempted_credits** | **float**| The value of credits or units of value awarded for the completion of a course. | [optional] |
+| **cumulative_earned_credit_conversion** | **float**| Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. | [optional] |
+| **cumulative_earned_credits** | **float**| The value of credits or units of value awarded for the completion of a course. | [optional] |
+| **id** | **string**|  | [optional] |
+| **projected_graduation_date** | **\DateTime**| The month and year the student is projected to graduate. | [optional] |
+| **session_attempted_credit_conversion** | **float**| Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. | [optional] |
+| **session_attempted_credits** | **float**| The value of credits or units of value awarded for the completion of a course. | [optional] |
+| **session_earned_credit_conversion** | **float**| Conversion factor that when multiplied by the number of credits is equivalent to Carnegie units. | [optional] |
+| **session_earned_credits** | **float**| The value of credits or units of value awarded for the completion of a course. | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesStudentAcademicRecords()`
 
 ```php
@@ -341,11 +448,11 @@ $apiInstance = new Resources\Api\StudentAcademicRecordsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -360,11 +467,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

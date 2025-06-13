@@ -83,6 +83,9 @@ class StudentSpecialEducationProgramAssociationsApi
         'getStudentSpecialEducationProgramAssociationsById' => [
             'application/json',
         ],
+        'getStudentSpecialEducationProgramAssociationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStudentSpecialEducationProgramAssociations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramAssociationDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramAssociationDelete[]
      */
-    public function deletesStudentSpecialEducationProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramAssociations'][0])
+    public function deletesStudentSpecialEducationProgramAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramAssociations'][0])
     {
         list($response) = $this->deletesStudentSpecialEducationProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStudentSpecialEducationProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramAssociations'][0])
+    public function deletesStudentSpecialEducationProgramAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramAssociations'][0])
     {
         $request = $this->deletesStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentSpecialEducationProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramAssociations'][0])
+    public function deletesStudentSpecialEducationProgramAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramAssociations'][0])
     {
         return $this->deletesStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramAssociations'][0])
+    public function deletesStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramAssociationDelete[]';
         $request = $this->deletesStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StudentSpecialEducationProgramAssociationsApi
     /**
      * Create request for operation 'deletesStudentSpecialEducationProgramAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStudentSpecialEducationProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramAssociations'][0])
+    public function deletesStudentSpecialEducationProgramAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramAssociations'][0])
     {
 
 
@@ -759,12 +762,14 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
@@ -773,26 +778,32 @@ class StudentSpecialEducationProgramAssociationsApi
      * @param  string $special_education_exit_reason_descriptor The reason why a person stops receiving special education services. (optional)
      * @param  string $special_education_setting_descriptor The major instructional setting (more than 50 percent of a student&#39;s special education program). (optional)
      * @param  bool $idea_eligibility Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional)
-     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP. (optional)
-     * @param  \DateTime $iep_end_date The end date of the most recent IEP. (optional)
+     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  \DateTime $iep_review_date The date of the last IEP review. (optional)
      * @param  \DateTime $last_evaluation_date The date of the last special education evaluation. (optional)
      * @param  bool $medically_fragile Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. (optional)
      * @param  bool $multiply_disabled Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional)
+     * @param  float $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. (optional)
      * @param  float $school_hours_per_week Indicate the total number of hours of instructional time per week for the school that the student attends. (optional)
+     * @param  bool $shortened_school_day_indicator Indicator that the student&#39;s IEP requires a shortened school day. (optional)
      * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
      * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
      * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentSpecialEducationProgramAssociation[]
+     * @return |\Resources\Model\EdFiStudentSpecialEducationProgramAssociation[]
      */
-    public function getStudentSpecialEducationProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
+    public function getStudentSpecialEducationProgramAssociations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $reduction_in_hours_per_week_compared_to_peers = null, $school_hours_per_week = null, $shortened_school_day_indicator = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
     {
-        list($response) = $this->getStudentSpecialEducationProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $use_snapshot, $contentType);
+        list($response) = $this->getStudentSpecialEducationProgramAssociationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -801,12 +812,14 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
@@ -815,26 +828,32 @@ class StudentSpecialEducationProgramAssociationsApi
      * @param  string $special_education_exit_reason_descriptor The reason why a person stops receiving special education services. (optional)
      * @param  string $special_education_setting_descriptor The major instructional setting (more than 50 percent of a student&#39;s special education program). (optional)
      * @param  bool $idea_eligibility Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional)
-     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP. (optional)
-     * @param  \DateTime $iep_end_date The end date of the most recent IEP. (optional)
+     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  \DateTime $iep_review_date The date of the last IEP review. (optional)
      * @param  \DateTime $last_evaluation_date The date of the last special education evaluation. (optional)
      * @param  bool $medically_fragile Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. (optional)
      * @param  bool $multiply_disabled Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional)
+     * @param  float $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. (optional)
      * @param  float $school_hours_per_week Indicate the total number of hours of instructional time per week for the school that the student attends. (optional)
+     * @param  bool $shortened_school_day_indicator Indicator that the student&#39;s IEP requires a shortened school day. (optional)
      * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
      * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
      * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentSpecialEducationProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentSpecialEducationProgramAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentSpecialEducationProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
+    public function getStudentSpecialEducationProgramAssociationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $reduction_in_hours_per_week_compared_to_peers = null, $school_hours_per_week = null, $shortened_school_day_indicator = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
     {
-        $request = $this->getStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $use_snapshot, $contentType);
+        $request = $this->getStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -950,12 +969,14 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
@@ -964,25 +985,31 @@ class StudentSpecialEducationProgramAssociationsApi
      * @param  string $special_education_exit_reason_descriptor The reason why a person stops receiving special education services. (optional)
      * @param  string $special_education_setting_descriptor The major instructional setting (more than 50 percent of a student&#39;s special education program). (optional)
      * @param  bool $idea_eligibility Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional)
-     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP. (optional)
-     * @param  \DateTime $iep_end_date The end date of the most recent IEP. (optional)
+     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  \DateTime $iep_review_date The date of the last IEP review. (optional)
      * @param  \DateTime $last_evaluation_date The date of the last special education evaluation. (optional)
      * @param  bool $medically_fragile Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. (optional)
      * @param  bool $multiply_disabled Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional)
+     * @param  float $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. (optional)
      * @param  float $school_hours_per_week Indicate the total number of hours of instructional time per week for the school that the student attends. (optional)
+     * @param  bool $shortened_school_day_indicator Indicator that the student&#39;s IEP requires a shortened school day. (optional)
      * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
      * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
      * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSpecialEducationProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
+    public function getStudentSpecialEducationProgramAssociationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $reduction_in_hours_per_week_compared_to_peers = null, $school_hours_per_week = null, $shortened_school_day_indicator = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
     {
-        return $this->getStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $use_snapshot, $contentType)
+        return $this->getStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -995,12 +1022,14 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
@@ -1009,26 +1038,32 @@ class StudentSpecialEducationProgramAssociationsApi
      * @param  string $special_education_exit_reason_descriptor The reason why a person stops receiving special education services. (optional)
      * @param  string $special_education_setting_descriptor The major instructional setting (more than 50 percent of a student&#39;s special education program). (optional)
      * @param  bool $idea_eligibility Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional)
-     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP. (optional)
-     * @param  \DateTime $iep_end_date The end date of the most recent IEP. (optional)
+     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  \DateTime $iep_review_date The date of the last IEP review. (optional)
      * @param  \DateTime $last_evaluation_date The date of the last special education evaluation. (optional)
      * @param  bool $medically_fragile Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. (optional)
      * @param  bool $multiply_disabled Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional)
+     * @param  float $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. (optional)
      * @param  float $school_hours_per_week Indicate the total number of hours of instructional time per week for the school that the student attends. (optional)
+     * @param  bool $shortened_school_day_indicator Indicator that the student&#39;s IEP requires a shortened school day. (optional)
      * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
      * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
      * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
+    public function getStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $reduction_in_hours_per_week_compared_to_peers = null, $school_hours_per_week = null, $shortened_school_day_indicator = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentSpecialEducationProgramAssociation[]';
-        $request = $this->getStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $school_hours_per_week, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $use_snapshot, $contentType);
+        $request = $this->getStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1069,12 +1104,14 @@ class StudentSpecialEducationProgramAssociationsApi
     /**
      * Create request for operation 'getStudentSpecialEducationProgramAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
@@ -1083,23 +1120,29 @@ class StudentSpecialEducationProgramAssociationsApi
      * @param  string $special_education_exit_reason_descriptor The reason why a person stops receiving special education services. (optional)
      * @param  string $special_education_setting_descriptor The major instructional setting (more than 50 percent of a student&#39;s special education program). (optional)
      * @param  bool $idea_eligibility Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional)
-     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP. (optional)
-     * @param  \DateTime $iep_end_date The end date of the most recent IEP. (optional)
+     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  \DateTime $iep_review_date The date of the last IEP review. (optional)
      * @param  \DateTime $last_evaluation_date The date of the last special education evaluation. (optional)
      * @param  bool $medically_fragile Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. (optional)
      * @param  bool $multiply_disabled Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional)
+     * @param  float $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. (optional)
      * @param  float $school_hours_per_week Indicate the total number of hours of instructional time per week for the school that the student attends. (optional)
+     * @param  bool $shortened_school_day_indicator Indicator that the student&#39;s IEP requires a shortened school day. (optional)
      * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
      * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
      * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentSpecialEducationProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $school_hours_per_week = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
+    public function getStudentSpecialEducationProgramAssociationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $reduction_in_hours_per_week_compared_to_peers = null, $school_hours_per_week = null, $shortened_school_day_indicator = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociations'][0])
     {
 
 
@@ -1108,6 +1151,11 @@ class StudentSpecialEducationProgramAssociationsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociations, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociations, must be bigger than or equal to 0.');
         }
         
 
@@ -1145,10 +1193,19 @@ class StudentSpecialEducationProgramAssociationsApi
 
 
 
+
+
         if ($special_education_exit_explained !== null && strlen($special_education_exit_explained) > 1024) {
             throw new \InvalidArgumentException('invalid length for "$special_education_exit_explained" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociations, must be smaller than or equal to 1024.');
         }
         
+
+        if ($reason_exited_descriptor !== null && strlen($reason_exited_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$reason_exited_descriptor" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociations, must be smaller than or equal to 306.');
+        }
+        
+
+
 
 
 
@@ -1172,6 +1229,24 @@ class StudentSpecialEducationProgramAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1341,9 +1416,27 @@ class StudentSpecialEducationProgramAssociationsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $reduction_in_hours_per_week_compared_to_peers,
+            'reductionInHoursPerWeekComparedToPeers', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $school_hours_per_week,
             'schoolHoursPerWeek', // param base name
             'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $shortened_school_day_indicator,
+            'shortenedSchoolDayIndicator', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1371,6 +1464,42 @@ class StudentSpecialEducationProgramAssociationsApi
             $special_education_hours_per_week,
             'specialEducationHoursPerWeek', // param base name
             'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $reason_exited_descriptor,
+            'reasonExitedDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $served_outside_of_regular_session,
+            'servedOutsideOfRegularSession', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1452,7 +1581,7 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentSpecialEducationProgramAssociation
+     * @return |\Resources\Model\EdFiStudentSpecialEducationProgramAssociation
      */
     public function getStudentSpecialEducationProgramAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociationsById'][0])
     {
@@ -1472,7 +1601,7 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentSpecialEducationProgramAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentSpecialEducationProgramAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentSpecialEducationProgramAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociationsById'][0])
     {
@@ -1773,23 +1902,772 @@ class StudentSpecialEducationProgramAssociationsApi
     }
 
     /**
+     * Operation getStudentSpecialEducationProgramAssociationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $special_education_exit_reason_descriptor The reason why a person stops receiving special education services. (optional)
+     * @param  string $special_education_setting_descriptor The major instructional setting (more than 50 percent of a student&#39;s special education program). (optional)
+     * @param  bool $idea_eligibility Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional)
+     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_review_date The date of the last IEP review. (optional)
+     * @param  \DateTime $last_evaluation_date The date of the last special education evaluation. (optional)
+     * @param  bool $medically_fragile Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. (optional)
+     * @param  bool $multiply_disabled Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional)
+     * @param  float $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. (optional)
+     * @param  float $school_hours_per_week Indicate the total number of hours of instructional time per week for the school that the student attends. (optional)
+     * @param  bool $shortened_school_day_indicator Indicator that the student&#39;s IEP requires a shortened school day. (optional)
+     * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
+     * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
+     * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStudentSpecialEducationProgramAssociationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $reduction_in_hours_per_week_compared_to_peers = null, $school_hours_per_week = null, $shortened_school_day_indicator = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociationsPartitions'][0])
+    {
+        list($response) = $this->getStudentSpecialEducationProgramAssociationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStudentSpecialEducationProgramAssociationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $special_education_exit_reason_descriptor The reason why a person stops receiving special education services. (optional)
+     * @param  string $special_education_setting_descriptor The major instructional setting (more than 50 percent of a student&#39;s special education program). (optional)
+     * @param  bool $idea_eligibility Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional)
+     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_review_date The date of the last IEP review. (optional)
+     * @param  \DateTime $last_evaluation_date The date of the last special education evaluation. (optional)
+     * @param  bool $medically_fragile Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. (optional)
+     * @param  bool $multiply_disabled Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional)
+     * @param  float $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. (optional)
+     * @param  float $school_hours_per_week Indicate the total number of hours of instructional time per week for the school that the student attends. (optional)
+     * @param  bool $shortened_school_day_indicator Indicator that the student&#39;s IEP requires a shortened school day. (optional)
+     * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
+     * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
+     * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStudentSpecialEducationProgramAssociationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $reduction_in_hours_per_week_compared_to_peers = null, $school_hours_per_week = null, $shortened_school_day_indicator = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociationsPartitions'][0])
+    {
+        $request = $this->getStudentSpecialEducationProgramAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStudentSpecialEducationProgramAssociationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $special_education_exit_reason_descriptor The reason why a person stops receiving special education services. (optional)
+     * @param  string $special_education_setting_descriptor The major instructional setting (more than 50 percent of a student&#39;s special education program). (optional)
+     * @param  bool $idea_eligibility Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional)
+     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_review_date The date of the last IEP review. (optional)
+     * @param  \DateTime $last_evaluation_date The date of the last special education evaluation. (optional)
+     * @param  bool $medically_fragile Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. (optional)
+     * @param  bool $multiply_disabled Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional)
+     * @param  float $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. (optional)
+     * @param  float $school_hours_per_week Indicate the total number of hours of instructional time per week for the school that the student attends. (optional)
+     * @param  bool $shortened_school_day_indicator Indicator that the student&#39;s IEP requires a shortened school day. (optional)
+     * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
+     * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
+     * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentSpecialEducationProgramAssociationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $reduction_in_hours_per_week_compared_to_peers = null, $school_hours_per_week = null, $shortened_school_day_indicator = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociationsPartitions'][0])
+    {
+        return $this->getStudentSpecialEducationProgramAssociationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStudentSpecialEducationProgramAssociationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $special_education_exit_reason_descriptor The reason why a person stops receiving special education services. (optional)
+     * @param  string $special_education_setting_descriptor The major instructional setting (more than 50 percent of a student&#39;s special education program). (optional)
+     * @param  bool $idea_eligibility Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional)
+     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_review_date The date of the last IEP review. (optional)
+     * @param  \DateTime $last_evaluation_date The date of the last special education evaluation. (optional)
+     * @param  bool $medically_fragile Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. (optional)
+     * @param  bool $multiply_disabled Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional)
+     * @param  float $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. (optional)
+     * @param  float $school_hours_per_week Indicate the total number of hours of instructional time per week for the school that the student attends. (optional)
+     * @param  bool $shortened_school_day_indicator Indicator that the student&#39;s IEP requires a shortened school day. (optional)
+     * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
+     * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
+     * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentSpecialEducationProgramAssociationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $reduction_in_hours_per_week_compared_to_peers = null, $school_hours_per_week = null, $shortened_school_day_indicator = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStudentSpecialEducationProgramAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $begin_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $special_education_exit_reason_descriptor, $special_education_setting_descriptor, $idea_eligibility, $iep_begin_date, $iep_end_date, $iep_review_date, $last_evaluation_date, $medically_fragile, $multiply_disabled, $reduction_in_hours_per_week_compared_to_peers, $school_hours_per_week, $shortened_school_day_indicator, $special_education_exit_date, $special_education_exit_explained, $special_education_hours_per_week, $reason_exited_descriptor, $end_date, $id, $served_outside_of_regular_session, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStudentSpecialEducationProgramAssociationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $special_education_exit_reason_descriptor The reason why a person stops receiving special education services. (optional)
+     * @param  string $special_education_setting_descriptor The major instructional setting (more than 50 percent of a student&#39;s special education program). (optional)
+     * @param  bool $idea_eligibility Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional)
+     * @param  \DateTime $iep_begin_date The effective date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_end_date The end date of the most recent IEP.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  \DateTime $iep_review_date The date of the last IEP review. (optional)
+     * @param  \DateTime $last_evaluation_date The date of the last special education evaluation. (optional)
+     * @param  bool $medically_fragile Indicates whether the student receiving special education and related services is: 1) in the age range of birth to 22 years, and 2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and 3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and 4) lives with ongoing threat to his or her continued well-being. Aligns with federal requirements. (optional)
+     * @param  bool $multiply_disabled Indicates whether the student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional)
+     * @param  float $reduction_in_hours_per_week_compared_to_peers Records the number of hours reduced for the shortened school day for the IEP student as compared to peers in regular education. (optional)
+     * @param  float $school_hours_per_week Indicate the total number of hours of instructional time per week for the school that the student attends. (optional)
+     * @param  bool $shortened_school_day_indicator Indicator that the student&#39;s IEP requires a shortened school day. (optional)
+     * @param  \DateTime $special_education_exit_date The  month, day and year on which a person stops receiving special education services. (optional)
+     * @param  string $special_education_exit_explained Explanation on why a person stops receiving special education services. (optional)
+     * @param  float $special_education_hours_per_week The number of hours per week for special education instruction and therapy. (optional)
+     * @param  string $reason_exited_descriptor The reason the student left the program within a school or district. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which the student exited the program or stopped receiving services.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $served_outside_of_regular_session Indicates whether the student received services during the summer session or between sessions. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStudentSpecialEducationProgramAssociationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $special_education_exit_reason_descriptor = null, $special_education_setting_descriptor = null, $idea_eligibility = null, $iep_begin_date = null, $iep_end_date = null, $iep_review_date = null, $last_evaluation_date = null, $medically_fragile = null, $multiply_disabled = null, $reduction_in_hours_per_week_compared_to_peers = null, $school_hours_per_week = null, $shortened_school_day_indicator = null, $special_education_exit_date = null, $special_education_exit_explained = null, $special_education_hours_per_week = null, $reason_exited_descriptor = null, $end_date = null, $id = null, $served_outside_of_regular_session = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramAssociationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+
+
+        if ($program_name !== null && strlen($program_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$program_name" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($program_type_descriptor !== null && strlen($program_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_type_descriptor" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociationsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($special_education_exit_reason_descriptor !== null && strlen($special_education_exit_reason_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$special_education_exit_reason_descriptor" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($special_education_setting_descriptor !== null && strlen($special_education_setting_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$special_education_setting_descriptor" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+        if ($special_education_exit_explained !== null && strlen($special_education_exit_explained) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$special_education_exit_explained" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociationsPartitions, must be smaller than or equal to 1024.');
+        }
+        
+
+        if ($reason_exited_descriptor !== null && strlen($reason_exited_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$reason_exited_descriptor" when calling StudentSpecialEducationProgramAssociationsApi.getStudentSpecialEducationProgramAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+
+        $resourcePath = '/ed-fi/studentSpecialEducationProgramAssociations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $begin_date,
+            'beginDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_education_organization_id,
+            'programEducationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_name,
+            'programName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_type_descriptor,
+            'programTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $special_education_exit_reason_descriptor,
+            'specialEducationExitReasonDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $special_education_setting_descriptor,
+            'specialEducationSettingDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idea_eligibility,
+            'ideaEligibility', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iep_begin_date,
+            'iepBeginDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iep_end_date,
+            'iepEndDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $iep_review_date,
+            'iepReviewDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $last_evaluation_date,
+            'lastEvaluationDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $medically_fragile,
+            'medicallyFragile', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $multiply_disabled,
+            'multiplyDisabled', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $reduction_in_hours_per_week_compared_to_peers,
+            'reductionInHoursPerWeekComparedToPeers', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_hours_per_week,
+            'schoolHoursPerWeek', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $shortened_school_day_indicator,
+            'shortenedSchoolDayIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $special_education_exit_date,
+            'specialEducationExitDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $special_education_exit_explained,
+            'specialEducationExitExplained', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $special_education_hours_per_week,
+            'specialEducationHoursPerWeek', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $reason_exited_descriptor,
+            'reasonExitedDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $served_outside_of_regular_session,
+            'servedOutsideOfRegularSession', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStudentSpecialEducationProgramAssociations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramAssociationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramAssociationKeyChange[]
      */
-    public function keyChangesStudentSpecialEducationProgramAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'][0])
+    public function keyChangesStudentSpecialEducationProgramAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'][0])
     {
         list($response) = $this->keyChangesStudentSpecialEducationProgramAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1800,19 +2678,19 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStudentSpecialEducationProgramAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'][0])
+    public function keyChangesStudentSpecialEducationProgramAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'][0])
     {
         $request = $this->keyChangesStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1930,18 +2808,18 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentSpecialEducationProgramAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'][0])
+    public function keyChangesStudentSpecialEducationProgramAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'][0])
     {
         return $this->keyChangesStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1956,18 +2834,18 @@ class StudentSpecialEducationProgramAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'][0])
+    public function keyChangesStudentSpecialEducationProgramAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramAssociationKeyChange[]';
         $request = $this->keyChangesStudentSpecialEducationProgramAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -2011,18 +2889,18 @@ class StudentSpecialEducationProgramAssociationsApi
     /**
      * Create request for operation 'keyChangesStudentSpecialEducationProgramAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStudentSpecialEducationProgramAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'][0])
+    public function keyChangesStudentSpecialEducationProgramAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramAssociations'][0])
     {
 
 

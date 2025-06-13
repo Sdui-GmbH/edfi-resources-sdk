@@ -313,10 +313,6 @@ class EdFiStudentCTEProgramAssociationCTEProgramService implements ModelInterfac
             $invalidProperties[] = "invalid value for 'cip_code', the character length must be smaller than or equal to 120.";
         }
 
-        if (!is_null($this->container['cip_code']) && (mb_strlen($this->container['cip_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'cip_code', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -395,9 +391,6 @@ class EdFiStudentCTEProgramAssociationCTEProgramService implements ModelInterfac
         if (!is_null($cip_code) && (mb_strlen($cip_code) > 120)) {
             throw new \InvalidArgumentException('invalid length for $cip_code when calling EdFiStudentCTEProgramAssociationCTEProgramService., must be smaller than or equal to 120.');
         }
-        if (!is_null($cip_code) && (mb_strlen($cip_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $cip_code when calling EdFiStudentCTEProgramAssociationCTEProgramService., must be bigger than or equal to 1.');
-        }
 
         $this->container['cip_code'] = $cip_code;
 
@@ -451,7 +444,7 @@ class EdFiStudentCTEProgramAssociationCTEProgramService implements ModelInterfac
     /**
      * Sets service_begin_date
      *
-     * @param \DateTime|null $service_begin_date First date the student was in this option for the current school year.
+     * @param \DateTime|null $service_begin_date First date the student was in this option for the current school year.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -485,7 +478,7 @@ class EdFiStudentCTEProgramAssociationCTEProgramService implements ModelInterfac
     /**
      * Sets service_end_date
      *
-     * @param \DateTime|null $service_end_date Last date the student was in this option for the current school year.
+     * @param \DateTime|null $service_end_date Last date the student was in this option for the current school year.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

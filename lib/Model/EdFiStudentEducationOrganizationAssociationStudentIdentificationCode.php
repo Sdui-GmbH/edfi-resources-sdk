@@ -302,19 +302,11 @@ class EdFiStudentEducationOrganizationAssociationStudentIdentificationCode imple
             $invalidProperties[] = "invalid value for 'assigning_organization_identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['assigning_organization_identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assigning_organization_identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['identification_code'] === null) {
             $invalidProperties[] = "'identification_code' can't be null";
         }
         if ((mb_strlen($this->container['identification_code']) > 60)) {
             $invalidProperties[] = "invalid value for 'identification_code', the character length must be smaller than or equal to 60.";
-        }
-
-        if ((mb_strlen($this->container['identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'identification_code', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -388,9 +380,6 @@ class EdFiStudentEducationOrganizationAssociationStudentIdentificationCode imple
         if ((mb_strlen($assigning_organization_identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $assigning_organization_identification_code when calling EdFiStudentEducationOrganizationAssociationStudentIdentificationCode., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($assigning_organization_identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assigning_organization_identification_code when calling EdFiStudentEducationOrganizationAssociationStudentIdentificationCode., must be bigger than or equal to 1.');
-        }
 
         $this->container['assigning_organization_identification_code'] = $assigning_organization_identification_code;
 
@@ -421,9 +410,6 @@ class EdFiStudentEducationOrganizationAssociationStudentIdentificationCode imple
         }
         if ((mb_strlen($identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiStudentEducationOrganizationAssociationStudentIdentificationCode., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $identification_code when calling EdFiStudentEducationOrganizationAssociationStudentIdentificationCode., must be bigger than or equal to 1.');
         }
 
         $this->container['identification_code'] = $identification_code;

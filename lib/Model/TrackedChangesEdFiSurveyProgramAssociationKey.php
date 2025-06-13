@@ -306,10 +306,6 @@ class TrackedChangesEdFiSurveyProgramAssociationKey implements ModelInterface, A
             $invalidProperties[] = "invalid value for 'program_name', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['program_name']) && (mb_strlen($this->container['program_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'program_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['program_type_descriptor']) && (mb_strlen($this->container['program_type_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'program_type_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -324,10 +320,6 @@ class TrackedChangesEdFiSurveyProgramAssociationKey implements ModelInterface, A
 
         if (!is_null($this->container['survey_identifier']) && (mb_strlen($this->container['survey_identifier']) > 60)) {
             $invalidProperties[] = "invalid value for 'survey_identifier', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['survey_identifier']) && (mb_strlen($this->container['survey_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'survey_identifier', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -396,9 +388,6 @@ class TrackedChangesEdFiSurveyProgramAssociationKey implements ModelInterface, A
         }
         if ((mb_strlen($program_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $program_name when calling TrackedChangesEdFiSurveyProgramAssociationKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($program_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $program_name when calling TrackedChangesEdFiSurveyProgramAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['program_name'] = $program_name;
@@ -495,9 +484,6 @@ class TrackedChangesEdFiSurveyProgramAssociationKey implements ModelInterface, A
         }
         if ((mb_strlen($survey_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $survey_identifier when calling TrackedChangesEdFiSurveyProgramAssociationKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($survey_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $survey_identifier when calling TrackedChangesEdFiSurveyProgramAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['survey_identifier'] = $survey_identifier;

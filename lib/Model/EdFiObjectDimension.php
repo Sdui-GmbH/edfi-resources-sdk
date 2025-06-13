@@ -323,10 +323,6 @@ class EdFiObjectDimension implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'code', the character length must be smaller than or equal to 16.";
         }
 
-        if ((mb_strlen($this->container['code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['fiscal_year'] === null) {
             $invalidProperties[] = "'fiscal_year' can't be null";
         }
@@ -340,10 +336,6 @@ class EdFiObjectDimension implements ModelInterface, ArrayAccess, \JsonSerializa
 
         if (!is_null($this->container['code_name']) && (mb_strlen($this->container['code_name']) > 100)) {
             $invalidProperties[] = "invalid value for 'code_name', the character length must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['code_name']) && (mb_strlen($this->container['code_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'code_name', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -412,9 +404,6 @@ class EdFiObjectDimension implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ((mb_strlen($code) > 16)) {
             throw new \InvalidArgumentException('invalid length for $code when calling EdFiObjectDimension., must be smaller than or equal to 16.');
-        }
-        if ((mb_strlen($code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling EdFiObjectDimension., must be bigger than or equal to 1.');
         }
 
         $this->container['code'] = $code;
@@ -488,9 +477,6 @@ class EdFiObjectDimension implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if (!is_null($code_name) && (mb_strlen($code_name) > 100)) {
             throw new \InvalidArgumentException('invalid length for $code_name when calling EdFiObjectDimension., must be smaller than or equal to 100.');
-        }
-        if (!is_null($code_name) && (mb_strlen($code_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $code_name when calling EdFiObjectDimension., must be bigger than or equal to 1.');
         }
 
         $this->container['code_name'] = $code_name;

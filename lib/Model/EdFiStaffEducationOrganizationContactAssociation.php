@@ -344,10 +344,6 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
             $invalidProperties[] = "invalid value for 'contact_title', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['contact_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'contact_title', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['education_organization_reference'] === null) {
             $invalidProperties[] = "'education_organization_reference' can't be null";
         }
@@ -435,9 +431,6 @@ class EdFiStaffEducationOrganizationContactAssociation implements ModelInterface
         }
         if ((mb_strlen($contact_title) > 75)) {
             throw new \InvalidArgumentException('invalid length for $contact_title when calling EdFiStaffEducationOrganizationContactAssociation., must be smaller than or equal to 75.');
-        }
-        if ((mb_strlen($contact_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $contact_title when calling EdFiStaffEducationOrganizationContactAssociation., must be bigger than or equal to 1.');
         }
 
         $this->container['contact_title'] = $contact_title;

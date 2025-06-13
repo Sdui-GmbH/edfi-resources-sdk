@@ -83,6 +83,9 @@ class StudentSchoolAssociationsApi
         'getStudentSchoolAssociationsById' => [
             'application/json',
         ],
+        'getStudentSchoolAssociationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStudentSchoolAssociations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSchoolAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentSchoolAssociationDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentSchoolAssociationDelete[]
      */
-    public function deletesStudentSchoolAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSchoolAssociations'][0])
+    public function deletesStudentSchoolAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSchoolAssociations'][0])
     {
         list($response) = $this->deletesStudentSchoolAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSchoolAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentSchoolAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentSchoolAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStudentSchoolAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSchoolAssociations'][0])
+    public function deletesStudentSchoolAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSchoolAssociations'][0])
     {
         $request = $this->deletesStudentSchoolAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSchoolAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentSchoolAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSchoolAssociations'][0])
+    public function deletesStudentSchoolAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSchoolAssociations'][0])
     {
         return $this->deletesStudentSchoolAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSchoolAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentSchoolAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSchoolAssociations'][0])
+    public function deletesStudentSchoolAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSchoolAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentSchoolAssociationDelete[]';
         $request = $this->deletesStudentSchoolAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StudentSchoolAssociationsApi
     /**
      * Create request for operation 'deletesStudentSchoolAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSchoolAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStudentSchoolAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSchoolAssociations'][0])
+    public function deletesStudentSchoolAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSchoolAssociations'][0])
     {
 
 
@@ -759,20 +762,22 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $calendar_code The identifier for the calendar. (optional)
      * @param  int $school_year The school year associated with the student&#39;s enrollment. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $graduation_plan_type_descriptor The type of academic plan the student is following for graduation. (optional)
      * @param  int $graduation_school_year The school year the student is expected to graduate. (optional)
-     * @param  int $next_year_school_id The identifier assigned to a school. (optional)
+     * @param  int $next_year_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $class_of_school_year Projected high school graduation year. (optional)
      * @param  string $enrollment_type_descriptor The type of enrollment reflected by the StudentSchoolAssociation. (optional)
      * @param  string $entry_grade_level_reason_descriptor The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. (optional)
@@ -783,7 +788,7 @@ class StudentSchoolAssociationsApi
      * @param  string $residency_status_descriptor An indication of the location of a persons legal residence relative to (within or outside of) the boundaries of the public school attended and its administrative unit. (optional)
      * @param  string $school_choice_basis_descriptor The legal basis for the school choice enrollment according to local, state or federal policy or regulation. (The descriptor provides the list of available bases specific to the state (optional)
      * @param  bool $employed_while_enrolled An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. (optional)
-     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student. (optional)
+     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  float $full_time_equivalency The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. (optional)
      * @param  string $id  (optional)
      * @param  bool $primary_school Indicates if a given enrollment record should be considered the primary record for a student. (optional)
@@ -796,11 +801,11 @@ class StudentSchoolAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentSchoolAssociation[]
+     * @return |\Resources\Model\EdFiStudentSchoolAssociation[]
      */
-    public function getStudentSchoolAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociations'][0])
+    public function getStudentSchoolAssociations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociations'][0])
     {
-        list($response) = $this->getStudentSchoolAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType);
+        list($response) = $this->getStudentSchoolAssociationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -809,20 +814,22 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $calendar_code The identifier for the calendar. (optional)
      * @param  int $school_year The school year associated with the student&#39;s enrollment. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $graduation_plan_type_descriptor The type of academic plan the student is following for graduation. (optional)
      * @param  int $graduation_school_year The school year the student is expected to graduate. (optional)
-     * @param  int $next_year_school_id The identifier assigned to a school. (optional)
+     * @param  int $next_year_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $class_of_school_year Projected high school graduation year. (optional)
      * @param  string $enrollment_type_descriptor The type of enrollment reflected by the StudentSchoolAssociation. (optional)
      * @param  string $entry_grade_level_reason_descriptor The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. (optional)
@@ -833,7 +840,7 @@ class StudentSchoolAssociationsApi
      * @param  string $residency_status_descriptor An indication of the location of a persons legal residence relative to (within or outside of) the boundaries of the public school attended and its administrative unit. (optional)
      * @param  string $school_choice_basis_descriptor The legal basis for the school choice enrollment according to local, state or federal policy or regulation. (The descriptor provides the list of available bases specific to the state (optional)
      * @param  bool $employed_while_enrolled An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. (optional)
-     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student. (optional)
+     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  float $full_time_equivalency The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. (optional)
      * @param  string $id  (optional)
      * @param  bool $primary_school Indicates if a given enrollment record should be considered the primary record for a student. (optional)
@@ -846,11 +853,11 @@ class StudentSchoolAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentSchoolAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentSchoolAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentSchoolAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociations'][0])
+    public function getStudentSchoolAssociationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociations'][0])
     {
-        $request = $this->getStudentSchoolAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType);
+        $request = $this->getStudentSchoolAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -966,20 +973,22 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $calendar_code The identifier for the calendar. (optional)
      * @param  int $school_year The school year associated with the student&#39;s enrollment. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $graduation_plan_type_descriptor The type of academic plan the student is following for graduation. (optional)
      * @param  int $graduation_school_year The school year the student is expected to graduate. (optional)
-     * @param  int $next_year_school_id The identifier assigned to a school. (optional)
+     * @param  int $next_year_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $class_of_school_year Projected high school graduation year. (optional)
      * @param  string $enrollment_type_descriptor The type of enrollment reflected by the StudentSchoolAssociation. (optional)
      * @param  string $entry_grade_level_reason_descriptor The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. (optional)
@@ -990,7 +999,7 @@ class StudentSchoolAssociationsApi
      * @param  string $residency_status_descriptor An indication of the location of a persons legal residence relative to (within or outside of) the boundaries of the public school attended and its administrative unit. (optional)
      * @param  string $school_choice_basis_descriptor The legal basis for the school choice enrollment according to local, state or federal policy or regulation. (The descriptor provides the list of available bases specific to the state (optional)
      * @param  bool $employed_while_enrolled An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. (optional)
-     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student. (optional)
+     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  float $full_time_equivalency The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. (optional)
      * @param  string $id  (optional)
      * @param  bool $primary_school Indicates if a given enrollment record should be considered the primary record for a student. (optional)
@@ -1004,9 +1013,9 @@ class StudentSchoolAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSchoolAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociations'][0])
+    public function getStudentSchoolAssociationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociations'][0])
     {
-        return $this->getStudentSchoolAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType)
+        return $this->getStudentSchoolAssociationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1019,20 +1028,22 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $calendar_code The identifier for the calendar. (optional)
      * @param  int $school_year The school year associated with the student&#39;s enrollment. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $graduation_plan_type_descriptor The type of academic plan the student is following for graduation. (optional)
      * @param  int $graduation_school_year The school year the student is expected to graduate. (optional)
-     * @param  int $next_year_school_id The identifier assigned to a school. (optional)
+     * @param  int $next_year_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $class_of_school_year Projected high school graduation year. (optional)
      * @param  string $enrollment_type_descriptor The type of enrollment reflected by the StudentSchoolAssociation. (optional)
      * @param  string $entry_grade_level_reason_descriptor The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. (optional)
@@ -1043,7 +1054,7 @@ class StudentSchoolAssociationsApi
      * @param  string $residency_status_descriptor An indication of the location of a persons legal residence relative to (within or outside of) the boundaries of the public school attended and its administrative unit. (optional)
      * @param  string $school_choice_basis_descriptor The legal basis for the school choice enrollment according to local, state or federal policy or regulation. (The descriptor provides the list of available bases specific to the state (optional)
      * @param  bool $employed_while_enrolled An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. (optional)
-     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student. (optional)
+     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  float $full_time_equivalency The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. (optional)
      * @param  string $id  (optional)
      * @param  bool $primary_school Indicates if a given enrollment record should be considered the primary record for a student. (optional)
@@ -1057,10 +1068,10 @@ class StudentSchoolAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSchoolAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociations'][0])
+    public function getStudentSchoolAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentSchoolAssociation[]';
-        $request = $this->getStudentSchoolAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType);
+        $request = $this->getStudentSchoolAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1101,20 +1112,22 @@ class StudentSchoolAssociationsApi
     /**
      * Create request for operation 'getStudentSchoolAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
      * @param  string $calendar_code The identifier for the calendar. (optional)
      * @param  int $school_year The school year associated with the student&#39;s enrollment. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $graduation_plan_type_descriptor The type of academic plan the student is following for graduation. (optional)
      * @param  int $graduation_school_year The school year the student is expected to graduate. (optional)
-     * @param  int $next_year_school_id The identifier assigned to a school. (optional)
+     * @param  int $next_year_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $class_of_school_year Projected high school graduation year. (optional)
      * @param  string $enrollment_type_descriptor The type of enrollment reflected by the StudentSchoolAssociation. (optional)
      * @param  string $entry_grade_level_reason_descriptor The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. (optional)
@@ -1125,7 +1138,7 @@ class StudentSchoolAssociationsApi
      * @param  string $residency_status_descriptor An indication of the location of a persons legal residence relative to (within or outside of) the boundaries of the public school attended and its administrative unit. (optional)
      * @param  string $school_choice_basis_descriptor The legal basis for the school choice enrollment according to local, state or federal policy or regulation. (The descriptor provides the list of available bases specific to the state (optional)
      * @param  bool $employed_while_enrolled An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. (optional)
-     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student. (optional)
+     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  float $full_time_equivalency The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. (optional)
      * @param  string $id  (optional)
      * @param  bool $primary_school Indicates if a given enrollment record should be considered the primary record for a student. (optional)
@@ -1139,7 +1152,7 @@ class StudentSchoolAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentSchoolAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociations'][0])
+    public function getStudentSchoolAssociationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociations'][0])
     {
 
 
@@ -1148,6 +1161,11 @@ class StudentSchoolAssociationsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociations, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociations, must be bigger than or equal to 0.');
         }
         
 
@@ -1235,6 +1253,24 @@ class StudentSchoolAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1587,7 +1623,7 @@ class StudentSchoolAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentSchoolAssociation
+     * @return |\Resources\Model\EdFiStudentSchoolAssociation
      */
     public function getStudentSchoolAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociationsById'][0])
     {
@@ -1607,7 +1643,7 @@ class StudentSchoolAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentSchoolAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentSchoolAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentSchoolAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociationsById'][0])
     {
@@ -1908,23 +1944,814 @@ class StudentSchoolAssociationsApi
     }
 
     /**
+     * Operation getStudentSchoolAssociationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $calendar_code The identifier for the calendar. (optional)
+     * @param  int $school_year The school year associated with the student&#39;s enrollment. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $graduation_plan_type_descriptor The type of academic plan the student is following for graduation. (optional)
+     * @param  int $graduation_school_year The school year the student is expected to graduate. (optional)
+     * @param  int $next_year_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $class_of_school_year Projected high school graduation year. (optional)
+     * @param  string $enrollment_type_descriptor The type of enrollment reflected by the StudentSchoolAssociation. (optional)
+     * @param  string $entry_grade_level_reason_descriptor The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. (optional)
+     * @param  string $entry_type_descriptor The process by which a student enters a school during a given academic session. (optional)
+     * @param  string $exit_withdraw_type_descriptor The circumstances under which the student exited from membership in an educational institution. (optional)
+     * @param  string $entry_grade_level_descriptor The grade level or primary instructional level at which a student enters and receives services in a school or an educational institution during a given academic session. (optional)
+     * @param  string $next_year_grade_level_descriptor The anticipated grade level for the student for the next school year. (optional)
+     * @param  string $residency_status_descriptor An indication of the location of a persons legal residence relative to (within or outside of) the boundaries of the public school attended and its administrative unit. (optional)
+     * @param  string $school_choice_basis_descriptor The legal basis for the school choice enrollment according to local, state or federal policy or regulation. (The descriptor provides the list of available bases specific to the state (optional)
+     * @param  bool $employed_while_enrolled An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. (optional)
+     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  float $full_time_equivalency The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $primary_school Indicates if a given enrollment record should be considered the primary record for a student. (optional)
+     * @param  bool $repeat_grade_indicator An indicator of whether the student is enrolling to repeat a grade level, either by failure or an agreement to hold the student back. (optional)
+     * @param  bool $school_choice An indication of whether the student enrolled in this school under the provisions for public school choice (optional)
+     * @param  bool $school_choice_transfer An indication of whether students transferred in or out of the school did so during the school year under the provisions for public school choice in accordance with Title I, Part A, Section 1116. (optional)
+     * @param  bool $term_completion_indicator Idicates whether or not a student completed the most recent school term. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSchoolAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStudentSchoolAssociationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociationsPartitions'][0])
+    {
+        list($response) = $this->getStudentSchoolAssociationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStudentSchoolAssociationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $calendar_code The identifier for the calendar. (optional)
+     * @param  int $school_year The school year associated with the student&#39;s enrollment. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $graduation_plan_type_descriptor The type of academic plan the student is following for graduation. (optional)
+     * @param  int $graduation_school_year The school year the student is expected to graduate. (optional)
+     * @param  int $next_year_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $class_of_school_year Projected high school graduation year. (optional)
+     * @param  string $enrollment_type_descriptor The type of enrollment reflected by the StudentSchoolAssociation. (optional)
+     * @param  string $entry_grade_level_reason_descriptor The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. (optional)
+     * @param  string $entry_type_descriptor The process by which a student enters a school during a given academic session. (optional)
+     * @param  string $exit_withdraw_type_descriptor The circumstances under which the student exited from membership in an educational institution. (optional)
+     * @param  string $entry_grade_level_descriptor The grade level or primary instructional level at which a student enters and receives services in a school or an educational institution during a given academic session. (optional)
+     * @param  string $next_year_grade_level_descriptor The anticipated grade level for the student for the next school year. (optional)
+     * @param  string $residency_status_descriptor An indication of the location of a persons legal residence relative to (within or outside of) the boundaries of the public school attended and its administrative unit. (optional)
+     * @param  string $school_choice_basis_descriptor The legal basis for the school choice enrollment according to local, state or federal policy or regulation. (The descriptor provides the list of available bases specific to the state (optional)
+     * @param  bool $employed_while_enrolled An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. (optional)
+     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  float $full_time_equivalency The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $primary_school Indicates if a given enrollment record should be considered the primary record for a student. (optional)
+     * @param  bool $repeat_grade_indicator An indicator of whether the student is enrolling to repeat a grade level, either by failure or an agreement to hold the student back. (optional)
+     * @param  bool $school_choice An indication of whether the student enrolled in this school under the provisions for public school choice (optional)
+     * @param  bool $school_choice_transfer An indication of whether students transferred in or out of the school did so during the school year under the provisions for public school choice in accordance with Title I, Part A, Section 1116. (optional)
+     * @param  bool $term_completion_indicator Idicates whether or not a student completed the most recent school term. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSchoolAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStudentSchoolAssociationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociationsPartitions'][0])
+    {
+        $request = $this->getStudentSchoolAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStudentSchoolAssociationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $calendar_code The identifier for the calendar. (optional)
+     * @param  int $school_year The school year associated with the student&#39;s enrollment. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $graduation_plan_type_descriptor The type of academic plan the student is following for graduation. (optional)
+     * @param  int $graduation_school_year The school year the student is expected to graduate. (optional)
+     * @param  int $next_year_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $class_of_school_year Projected high school graduation year. (optional)
+     * @param  string $enrollment_type_descriptor The type of enrollment reflected by the StudentSchoolAssociation. (optional)
+     * @param  string $entry_grade_level_reason_descriptor The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. (optional)
+     * @param  string $entry_type_descriptor The process by which a student enters a school during a given academic session. (optional)
+     * @param  string $exit_withdraw_type_descriptor The circumstances under which the student exited from membership in an educational institution. (optional)
+     * @param  string $entry_grade_level_descriptor The grade level or primary instructional level at which a student enters and receives services in a school or an educational institution during a given academic session. (optional)
+     * @param  string $next_year_grade_level_descriptor The anticipated grade level for the student for the next school year. (optional)
+     * @param  string $residency_status_descriptor An indication of the location of a persons legal residence relative to (within or outside of) the boundaries of the public school attended and its administrative unit. (optional)
+     * @param  string $school_choice_basis_descriptor The legal basis for the school choice enrollment according to local, state or federal policy or regulation. (The descriptor provides the list of available bases specific to the state (optional)
+     * @param  bool $employed_while_enrolled An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. (optional)
+     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  float $full_time_equivalency The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $primary_school Indicates if a given enrollment record should be considered the primary record for a student. (optional)
+     * @param  bool $repeat_grade_indicator An indicator of whether the student is enrolling to repeat a grade level, either by failure or an agreement to hold the student back. (optional)
+     * @param  bool $school_choice An indication of whether the student enrolled in this school under the provisions for public school choice (optional)
+     * @param  bool $school_choice_transfer An indication of whether students transferred in or out of the school did so during the school year under the provisions for public school choice in accordance with Title I, Part A, Section 1116. (optional)
+     * @param  bool $term_completion_indicator Idicates whether or not a student completed the most recent school term. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSchoolAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentSchoolAssociationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociationsPartitions'][0])
+    {
+        return $this->getStudentSchoolAssociationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStudentSchoolAssociationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $calendar_code The identifier for the calendar. (optional)
+     * @param  int $school_year The school year associated with the student&#39;s enrollment. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $graduation_plan_type_descriptor The type of academic plan the student is following for graduation. (optional)
+     * @param  int $graduation_school_year The school year the student is expected to graduate. (optional)
+     * @param  int $next_year_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $class_of_school_year Projected high school graduation year. (optional)
+     * @param  string $enrollment_type_descriptor The type of enrollment reflected by the StudentSchoolAssociation. (optional)
+     * @param  string $entry_grade_level_reason_descriptor The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. (optional)
+     * @param  string $entry_type_descriptor The process by which a student enters a school during a given academic session. (optional)
+     * @param  string $exit_withdraw_type_descriptor The circumstances under which the student exited from membership in an educational institution. (optional)
+     * @param  string $entry_grade_level_descriptor The grade level or primary instructional level at which a student enters and receives services in a school or an educational institution during a given academic session. (optional)
+     * @param  string $next_year_grade_level_descriptor The anticipated grade level for the student for the next school year. (optional)
+     * @param  string $residency_status_descriptor An indication of the location of a persons legal residence relative to (within or outside of) the boundaries of the public school attended and its administrative unit. (optional)
+     * @param  string $school_choice_basis_descriptor The legal basis for the school choice enrollment according to local, state or federal policy or regulation. (The descriptor provides the list of available bases specific to the state (optional)
+     * @param  bool $employed_while_enrolled An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. (optional)
+     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  float $full_time_equivalency The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $primary_school Indicates if a given enrollment record should be considered the primary record for a student. (optional)
+     * @param  bool $repeat_grade_indicator An indicator of whether the student is enrolling to repeat a grade level, either by failure or an agreement to hold the student back. (optional)
+     * @param  bool $school_choice An indication of whether the student enrolled in this school under the provisions for public school choice (optional)
+     * @param  bool $school_choice_transfer An indication of whether students transferred in or out of the school did so during the school year under the provisions for public school choice in accordance with Title I, Part A, Section 1116. (optional)
+     * @param  bool $term_completion_indicator Idicates whether or not a student completed the most recent school term. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSchoolAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentSchoolAssociationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStudentSchoolAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $entry_date, $school_id, $student_unique_id, $calendar_code, $school_year, $education_organization_id, $graduation_plan_type_descriptor, $graduation_school_year, $next_year_school_id, $class_of_school_year, $enrollment_type_descriptor, $entry_grade_level_reason_descriptor, $entry_type_descriptor, $exit_withdraw_type_descriptor, $entry_grade_level_descriptor, $next_year_grade_level_descriptor, $residency_status_descriptor, $school_choice_basis_descriptor, $employed_while_enrolled, $exit_withdraw_date, $full_time_equivalency, $id, $primary_school, $repeat_grade_indicator, $school_choice, $school_choice_transfer, $term_completion_indicator, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStudentSchoolAssociationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student&#39;s enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $calendar_code The identifier for the calendar. (optional)
+     * @param  int $school_year The school year associated with the student&#39;s enrollment. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $graduation_plan_type_descriptor The type of academic plan the student is following for graduation. (optional)
+     * @param  int $graduation_school_year The school year the student is expected to graduate. (optional)
+     * @param  int $next_year_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $class_of_school_year Projected high school graduation year. (optional)
+     * @param  string $enrollment_type_descriptor The type of enrollment reflected by the StudentSchoolAssociation. (optional)
+     * @param  string $entry_grade_level_reason_descriptor The primary reason as to why a staff member determined that a student should be promoted or not (or be demoted) at the end of a given school term. (optional)
+     * @param  string $entry_type_descriptor The process by which a student enters a school during a given academic session. (optional)
+     * @param  string $exit_withdraw_type_descriptor The circumstances under which the student exited from membership in an educational institution. (optional)
+     * @param  string $entry_grade_level_descriptor The grade level or primary instructional level at which a student enters and receives services in a school or an educational institution during a given academic session. (optional)
+     * @param  string $next_year_grade_level_descriptor The anticipated grade level for the student for the next school year. (optional)
+     * @param  string $residency_status_descriptor An indication of the location of a persons legal residence relative to (within or outside of) the boundaries of the public school attended and its administrative unit. (optional)
+     * @param  string $school_choice_basis_descriptor The legal basis for the school choice enrollment according to local, state or federal policy or regulation. (The descriptor provides the list of available bases specific to the state (optional)
+     * @param  bool $employed_while_enrolled An individual who is a paid employee or works in his or her own business, profession, or farm and at the same time is enrolled in secondary, postsecondary, or adult education. (optional)
+     * @param  \DateTime $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  float $full_time_equivalency The full-time equivalent ratio for the student s assignment to a school for services or instruction. For example, a full-time student would have an FTE value of 1 while a half-time student would have an FTE value of 0.5. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $primary_school Indicates if a given enrollment record should be considered the primary record for a student. (optional)
+     * @param  bool $repeat_grade_indicator An indicator of whether the student is enrolling to repeat a grade level, either by failure or an agreement to hold the student back. (optional)
+     * @param  bool $school_choice An indication of whether the student enrolled in this school under the provisions for public school choice (optional)
+     * @param  bool $school_choice_transfer An indication of whether students transferred in or out of the school did so during the school year under the provisions for public school choice in accordance with Title I, Part A, Section 1116. (optional)
+     * @param  bool $term_completion_indicator Idicates whether or not a student completed the most recent school term. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSchoolAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStudentSchoolAssociationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $entry_date = null, $school_id = null, $student_unique_id = null, $calendar_code = null, $school_year = null, $education_organization_id = null, $graduation_plan_type_descriptor = null, $graduation_school_year = null, $next_year_school_id = null, $class_of_school_year = null, $enrollment_type_descriptor = null, $entry_grade_level_reason_descriptor = null, $entry_type_descriptor = null, $exit_withdraw_type_descriptor = null, $entry_grade_level_descriptor = null, $next_year_grade_level_descriptor = null, $residency_status_descriptor = null, $school_choice_basis_descriptor = null, $employed_while_enrolled = null, $exit_withdraw_date = null, $full_time_equivalency = null, $id = null, $primary_school = null, $repeat_grade_indicator = null, $school_choice = null, $school_choice_transfer = null, $term_completion_indicator = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSchoolAssociationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($calendar_code !== null && strlen($calendar_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$calendar_code" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+        if ($graduation_plan_type_descriptor !== null && strlen($graduation_plan_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$graduation_plan_type_descriptor" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+        if ($enrollment_type_descriptor !== null && strlen($enrollment_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$enrollment_type_descriptor" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($entry_grade_level_reason_descriptor !== null && strlen($entry_grade_level_reason_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$entry_grade_level_reason_descriptor" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($entry_type_descriptor !== null && strlen($entry_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$entry_type_descriptor" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($exit_withdraw_type_descriptor !== null && strlen($exit_withdraw_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$exit_withdraw_type_descriptor" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($entry_grade_level_descriptor !== null && strlen($entry_grade_level_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$entry_grade_level_descriptor" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($next_year_grade_level_descriptor !== null && strlen($next_year_grade_level_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$next_year_grade_level_descriptor" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($residency_status_descriptor !== null && strlen($residency_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$residency_status_descriptor" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($school_choice_basis_descriptor !== null && strlen($school_choice_basis_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$school_choice_basis_descriptor" when calling StudentSchoolAssociationsApi.getStudentSchoolAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/studentSchoolAssociations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $entry_date,
+            'entryDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_id,
+            'schoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $calendar_code,
+            'calendarCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_year,
+            'schoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $graduation_plan_type_descriptor,
+            'graduationPlanTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $graduation_school_year,
+            'graduationSchoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $next_year_school_id,
+            'nextYearSchoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $class_of_school_year,
+            'classOfSchoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $enrollment_type_descriptor,
+            'enrollmentTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $entry_grade_level_reason_descriptor,
+            'entryGradeLevelReasonDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $entry_type_descriptor,
+            'entryTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exit_withdraw_type_descriptor,
+            'exitWithdrawTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $entry_grade_level_descriptor,
+            'entryGradeLevelDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $next_year_grade_level_descriptor,
+            'nextYearGradeLevelDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $residency_status_descriptor,
+            'residencyStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_choice_basis_descriptor,
+            'schoolChoiceBasisDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $employed_while_enrolled,
+            'employedWhileEnrolled', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exit_withdraw_date,
+            'exitWithdrawDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $full_time_equivalency,
+            'fullTimeEquivalency', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $primary_school,
+            'primarySchool', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $repeat_grade_indicator,
+            'repeatGradeIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_choice,
+            'schoolChoice', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_choice_transfer,
+            'schoolChoiceTransfer', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $term_completion_indicator,
+            'termCompletionIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStudentSchoolAssociations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSchoolAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentSchoolAssociationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentSchoolAssociationKeyChange[]
      */
-    public function keyChangesStudentSchoolAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSchoolAssociations'][0])
+    public function keyChangesStudentSchoolAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSchoolAssociations'][0])
     {
         list($response) = $this->keyChangesStudentSchoolAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1935,19 +2762,19 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSchoolAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentSchoolAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentSchoolAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStudentSchoolAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSchoolAssociations'][0])
+    public function keyChangesStudentSchoolAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSchoolAssociations'][0])
     {
         $request = $this->keyChangesStudentSchoolAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -2065,18 +2892,18 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSchoolAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentSchoolAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSchoolAssociations'][0])
+    public function keyChangesStudentSchoolAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSchoolAssociations'][0])
     {
         return $this->keyChangesStudentSchoolAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -2091,18 +2918,18 @@ class StudentSchoolAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSchoolAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentSchoolAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSchoolAssociations'][0])
+    public function keyChangesStudentSchoolAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSchoolAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentSchoolAssociationKeyChange[]';
         $request = $this->keyChangesStudentSchoolAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -2146,18 +2973,18 @@ class StudentSchoolAssociationsApi
     /**
      * Create request for operation 'keyChangesStudentSchoolAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSchoolAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStudentSchoolAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSchoolAssociations'][0])
+    public function keyChangesStudentSchoolAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSchoolAssociations'][0])
     {
 
 

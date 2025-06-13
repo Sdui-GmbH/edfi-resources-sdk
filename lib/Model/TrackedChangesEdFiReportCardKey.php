@@ -317,16 +317,8 @@ class TrackedChangesEdFiReportCardKey implements ModelInterface, ArrayAccess, \J
             $invalidProperties[] = "invalid value for 'grading_period_name', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['grading_period_name']) && (mb_strlen($this->container['grading_period_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'grading_period_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -427,9 +419,6 @@ class TrackedChangesEdFiReportCardKey implements ModelInterface, ArrayAccess, \J
         if ((mb_strlen($grading_period_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $grading_period_name when calling TrackedChangesEdFiReportCardKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($grading_period_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $grading_period_name when calling TrackedChangesEdFiReportCardKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['grading_period_name'] = $grading_period_name;
 
@@ -449,7 +438,7 @@ class TrackedChangesEdFiReportCardKey implements ModelInterface, ArrayAccess, \J
     /**
      * Sets grading_period_school_id
      *
-     * @param int|null $grading_period_school_id The identifier assigned to a school.
+     * @param int|null $grading_period_school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -514,9 +503,6 @@ class TrackedChangesEdFiReportCardKey implements ModelInterface, ArrayAccess, \J
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiReportCardKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiReportCardKey., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

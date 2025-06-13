@@ -366,6 +366,22 @@ class TpdmEvaluationObjective implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'evaluation_type_descriptor', the character length must be smaller than or equal to 306.";
         }
 
+        if (!is_null($this->container['max_rating']) && ($this->container['max_rating'] > 999.999)) {
+            $invalidProperties[] = "invalid value for 'max_rating', must be smaller than or equal to 999.999.";
+        }
+
+        if (!is_null($this->container['max_rating']) && ($this->container['max_rating'] < -999.999)) {
+            $invalidProperties[] = "invalid value for 'max_rating', must be bigger than or equal to -999.999.";
+        }
+
+        if (!is_null($this->container['min_rating']) && ($this->container['min_rating'] > 999.999)) {
+            $invalidProperties[] = "invalid value for 'min_rating', must be smaller than or equal to 999.999.";
+        }
+
+        if (!is_null($this->container['min_rating']) && ($this->container['min_rating'] < -999.999)) {
+            $invalidProperties[] = "invalid value for 'min_rating', must be bigger than or equal to -999.999.";
+        }
+
         return $invalidProperties;
     }
 
@@ -574,6 +590,14 @@ class TpdmEvaluationObjective implements ModelInterface, ArrayAccess, \JsonSeria
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($max_rating) && ($max_rating > 999.999)) {
+            throw new \InvalidArgumentException('invalid value for $max_rating when calling TpdmEvaluationObjective., must be smaller than or equal to 999.999.');
+        }
+        if (!is_null($max_rating) && ($max_rating < -999.999)) {
+            throw new \InvalidArgumentException('invalid value for $max_rating when calling TpdmEvaluationObjective., must be bigger than or equal to -999.999.');
+        }
+
         $this->container['max_rating'] = $max_rating;
 
         return $this;
@@ -608,6 +632,14 @@ class TpdmEvaluationObjective implements ModelInterface, ArrayAccess, \JsonSeria
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($min_rating) && ($min_rating > 999.999)) {
+            throw new \InvalidArgumentException('invalid value for $min_rating when calling TpdmEvaluationObjective., must be smaller than or equal to 999.999.');
+        }
+        if (!is_null($min_rating) && ($min_rating < -999.999)) {
+            throw new \InvalidArgumentException('invalid value for $min_rating when calling TpdmEvaluationObjective., must be bigger than or equal to -999.999.');
+        }
+
         $this->container['min_rating'] = $min_rating;
 
         return $this;

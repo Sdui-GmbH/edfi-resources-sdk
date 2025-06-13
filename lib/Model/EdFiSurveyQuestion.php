@@ -344,10 +344,6 @@ class EdFiSurveyQuestion implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'question_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['question_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'question_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['survey_reference'] === null) {
             $invalidProperties[] = "'survey_reference' can't be null";
         }
@@ -363,10 +359,6 @@ class EdFiSurveyQuestion implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($this->container['question_text']) > 1024)) {
             $invalidProperties[] = "invalid value for 'question_text', the character length must be smaller than or equal to 1024.";
-        }
-
-        if ((mb_strlen($this->container['question_text']) < 1)) {
-            $invalidProperties[] = "invalid value for 'question_text', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -435,9 +427,6 @@ class EdFiSurveyQuestion implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($question_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $question_code when calling EdFiSurveyQuestion., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($question_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $question_code when calling EdFiSurveyQuestion., must be bigger than or equal to 1.');
         }
 
         $this->container['question_code'] = $question_code;
@@ -581,9 +570,6 @@ class EdFiSurveyQuestion implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($question_text) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $question_text when calling EdFiSurveyQuestion., must be smaller than or equal to 1024.');
-        }
-        if ((mb_strlen($question_text) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $question_text when calling EdFiSurveyQuestion., must be bigger than or equal to 1.');
         }
 
         $this->container['question_text'] = $question_text;

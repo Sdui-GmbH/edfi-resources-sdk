@@ -63,6 +63,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
         'student_reference' => '\Resources\Model\EdFiStudentReference',
         'behavior_detailed_description' => 'string',
         'discipline_incident_participation_codes' => '\Resources\Model\EdFiStudentDisciplineIncidentBehaviorAssociationDisciplineIncidentParticipationCode[]',
+        'weapons' => '\Resources\Model\EdFiStudentDisciplineIncidentBehaviorAssociationWeapon[]',
         '_etag' => 'string',
         '_last_modified_date' => '\DateTime'
     ];
@@ -81,6 +82,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
         'student_reference' => null,
         'behavior_detailed_description' => null,
         'discipline_incident_participation_codes' => null,
+        'weapons' => null,
         '_etag' => null,
         '_last_modified_date' => 'date-time'
     ];
@@ -97,6 +99,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
         'student_reference' => false,
         'behavior_detailed_description' => true,
         'discipline_incident_participation_codes' => false,
+        'weapons' => false,
         '_etag' => false,
         '_last_modified_date' => false
     ];
@@ -193,6 +196,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
         'student_reference' => 'studentReference',
         'behavior_detailed_description' => 'behaviorDetailedDescription',
         'discipline_incident_participation_codes' => 'disciplineIncidentParticipationCodes',
+        'weapons' => 'weapons',
         '_etag' => '_etag',
         '_last_modified_date' => '_lastModifiedDate'
     ];
@@ -209,6 +213,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
         'student_reference' => 'setStudentReference',
         'behavior_detailed_description' => 'setBehaviorDetailedDescription',
         'discipline_incident_participation_codes' => 'setDisciplineIncidentParticipationCodes',
+        'weapons' => 'setWeapons',
         '_etag' => 'setEtag',
         '_last_modified_date' => 'setLastModifiedDate'
     ];
@@ -225,6 +230,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
         'student_reference' => 'getStudentReference',
         'behavior_detailed_description' => 'getBehaviorDetailedDescription',
         'discipline_incident_participation_codes' => 'getDisciplineIncidentParticipationCodes',
+        'weapons' => 'getWeapons',
         '_etag' => 'getEtag',
         '_last_modified_date' => 'getLastModifiedDate'
     ];
@@ -292,6 +298,7 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
         $this->setIfExists('student_reference', $data ?? [], null);
         $this->setIfExists('behavior_detailed_description', $data ?? [], null);
         $this->setIfExists('discipline_incident_participation_codes', $data ?? [], null);
+        $this->setIfExists('weapons', $data ?? [], null);
         $this->setIfExists('_etag', $data ?? [], null);
         $this->setIfExists('_last_modified_date', $data ?? [], null);
     }
@@ -338,10 +345,6 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
         }
         if (!is_null($this->container['behavior_detailed_description']) && (mb_strlen($this->container['behavior_detailed_description']) > 1024)) {
             $invalidProperties[] = "invalid value for 'behavior_detailed_description', the character length must be smaller than or equal to 1024.";
-        }
-
-        if (!is_null($this->container['behavior_detailed_description']) && (mb_strlen($this->container['behavior_detailed_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'behavior_detailed_description', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -503,9 +506,6 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
         if (!is_null($behavior_detailed_description) && (mb_strlen($behavior_detailed_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $behavior_detailed_description when calling EdFiStudentDisciplineIncidentBehaviorAssociation., must be smaller than or equal to 1024.');
         }
-        if (!is_null($behavior_detailed_description) && (mb_strlen($behavior_detailed_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $behavior_detailed_description when calling EdFiStudentDisciplineIncidentBehaviorAssociation., must be bigger than or equal to 1.');
-        }
 
         $this->container['behavior_detailed_description'] = $behavior_detailed_description;
 
@@ -535,6 +535,33 @@ class EdFiStudentDisciplineIncidentBehaviorAssociation implements ModelInterface
             throw new \InvalidArgumentException('non-nullable discipline_incident_participation_codes cannot be null');
         }
         $this->container['discipline_incident_participation_codes'] = $discipline_incident_participation_codes;
+
+        return $this;
+    }
+
+    /**
+     * Gets weapons
+     *
+     * @return \Resources\Model\EdFiStudentDisciplineIncidentBehaviorAssociationWeapon[]|null
+     */
+    public function getWeapons()
+    {
+        return $this->container['weapons'];
+    }
+
+    /**
+     * Sets weapons
+     *
+     * @param \Resources\Model\EdFiStudentDisciplineIncidentBehaviorAssociationWeapon[]|null $weapons An unordered collection of studentDisciplineIncidentBehaviorAssociationWeapons. Identifies the type(s) of weapon used by the student during a discipline incident. The Federal Gun-Free Schools Act requires states to report the number of students expelled for bringing firearms to school by type of firearm.
+     *
+     * @return self
+     */
+    public function setWeapons($weapons)
+    {
+        if (is_null($weapons)) {
+            throw new \InvalidArgumentException('non-nullable weapons cannot be null');
+        }
+        $this->container['weapons'] = $weapons;
 
         return $this;
     }

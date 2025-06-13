@@ -386,10 +386,6 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'discipline_action_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if ((mb_strlen($this->container['discipline_action_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'discipline_action_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['discipline_date'] === null) {
             $invalidProperties[] = "'discipline_date' can't be null";
         }
@@ -402,8 +398,16 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['student_reference'] === null) {
             $invalidProperties[] = "'student_reference' can't be null";
         }
+        if (!is_null($this->container['actual_discipline_action_length']) && ($this->container['actual_discipline_action_length'] > 999.99)) {
+            $invalidProperties[] = "invalid value for 'actual_discipline_action_length', must be smaller than or equal to 999.99.";
+        }
+
         if (!is_null($this->container['actual_discipline_action_length']) && ($this->container['actual_discipline_action_length'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'actual_discipline_action_length', must be bigger than or equal to 0.0.";
+        }
+
+        if (!is_null($this->container['discipline_action_length']) && ($this->container['discipline_action_length'] > 999.99)) {
+            $invalidProperties[] = "invalid value for 'discipline_action_length', must be smaller than or equal to 999.99.";
         }
 
         if (!is_null($this->container['discipline_action_length']) && ($this->container['discipline_action_length'] < 0.0)) {
@@ -480,9 +484,6 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if ((mb_strlen($discipline_action_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $discipline_action_identifier when calling EdFiDisciplineAction., must be smaller than or equal to 36.');
-        }
-        if ((mb_strlen($discipline_action_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $discipline_action_identifier when calling EdFiDisciplineAction., must be bigger than or equal to 1.');
         }
 
         $this->container['discipline_action_identifier'] = $discipline_action_identifier;
@@ -655,6 +656,9 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
             }
         }
 
+        if (!is_null($actual_discipline_action_length) && ($actual_discipline_action_length > 999.99)) {
+            throw new \InvalidArgumentException('invalid value for $actual_discipline_action_length when calling EdFiDisciplineAction., must be smaller than or equal to 999.99.');
+        }
         if (!is_null($actual_discipline_action_length) && ($actual_discipline_action_length < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $actual_discipline_action_length when calling EdFiDisciplineAction., must be bigger than or equal to 0.0.');
         }
@@ -694,6 +698,9 @@ class EdFiDisciplineAction implements ModelInterface, ArrayAccess, \JsonSerializ
             }
         }
 
+        if (!is_null($discipline_action_length) && ($discipline_action_length > 999.99)) {
+            throw new \InvalidArgumentException('invalid value for $discipline_action_length when calling EdFiDisciplineAction., must be smaller than or equal to 999.99.');
+        }
         if (!is_null($discipline_action_length) && ($discipline_action_length < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $discipline_action_length when calling EdFiDisciplineAction., must be bigger than or equal to 0.0.');
         }

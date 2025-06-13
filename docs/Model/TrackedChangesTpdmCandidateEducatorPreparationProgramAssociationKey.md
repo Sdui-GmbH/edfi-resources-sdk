@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**begin_date** | **\DateTime** | The begin date for the association. | [optional]
+**begin_date** | **\DateTime** | The begin date for the association.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. | [optional]
 **candidate_identifier** | **string** | A unique alphanumeric code assigned to a candidate. | [optional]
 **education_organization_id** | **int** | The identifier assigned to an education organization. | [optional]
 **program_name** | **string** | The name of the Educator Preparation Program. | [optional]

@@ -83,6 +83,9 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
         'getStudentSpecialEducationProgramEligibilityAssociationsById' => [
             'application/json',
         ],
+        'getStudentSpecialEducationProgramEligibilityAssociationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStudentSpecialEducationProgramEligibilityAssociations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete[]
      */
-    public function deletesStudentSpecialEducationProgramEligibilityAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function deletesStudentSpecialEducationProgramEligibilityAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
         list($response) = $this->deletesStudentSpecialEducationProgramEligibilityAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStudentSpecialEducationProgramEligibilityAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function deletesStudentSpecialEducationProgramEligibilityAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
         $request = $this->deletesStudentSpecialEducationProgramEligibilityAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentSpecialEducationProgramEligibilityAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function deletesStudentSpecialEducationProgramEligibilityAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
         return $this->deletesStudentSpecialEducationProgramEligibilityAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentSpecialEducationProgramEligibilityAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function deletesStudentSpecialEducationProgramEligibilityAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationDelete[]';
         $request = $this->deletesStudentSpecialEducationProgramEligibilityAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
     /**
      * Create request for operation 'deletesStudentSpecialEducationProgramEligibilityAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStudentSpecialEducationProgramEligibilityAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function deletesStudentSpecialEducationProgramEligibilityAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
 
 
@@ -759,13 +762,16 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  \DateTime $consent_to_evaluation_received_date Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -790,11 +796,11 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[]
+     * @return |\Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[]
      */
-    public function getStudentSpecialEducationProgramEligibilityAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function getStudentSpecialEducationProgramEligibilityAssociations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
-        list($response) = $this->getStudentSpecialEducationProgramEligibilityAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType);
+        list($response) = $this->getStudentSpecialEducationProgramEligibilityAssociationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -803,13 +809,16 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  \DateTime $consent_to_evaluation_received_date Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -834,11 +843,11 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentSpecialEducationProgramEligibilityAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function getStudentSpecialEducationProgramEligibilityAssociationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
-        $request = $this->getStudentSpecialEducationProgramEligibilityAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType);
+        $request = $this->getStudentSpecialEducationProgramEligibilityAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -954,13 +963,16 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  \DateTime $consent_to_evaluation_received_date Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -986,9 +998,9 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSpecialEducationProgramEligibilityAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function getStudentSpecialEducationProgramEligibilityAssociationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
-        return $this->getStudentSpecialEducationProgramEligibilityAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType)
+        return $this->getStudentSpecialEducationProgramEligibilityAssociationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1001,13 +1013,16 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  \DateTime $consent_to_evaluation_received_date Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -1033,10 +1048,10 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSpecialEducationProgramEligibilityAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function getStudentSpecialEducationProgramEligibilityAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation[]';
-        $request = $this->getStudentSpecialEducationProgramEligibilityAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType);
+        $request = $this->getStudentSpecialEducationProgramEligibilityAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1077,13 +1092,16 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
     /**
      * Create request for operation 'getStudentSpecialEducationProgramEligibilityAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  \DateTime $consent_to_evaluation_received_date Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
      * @param  string $program_type_descriptor The type of program. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
@@ -1109,7 +1127,7 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentSpecialEducationProgramEligibilityAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function getStudentSpecialEducationProgramEligibilityAssociationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
 
 
@@ -1120,6 +1138,12 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociations, must be bigger than or equal to 0.');
         }
         
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociations, must be bigger than or equal to 0.');
+        }
+        
+
 
 
 
@@ -1197,6 +1221,24 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $min_change_version,
             'minChangeVersion', // param base name
             'integer', // openApiType
@@ -1235,6 +1277,15 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $education_organization_id,
             'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_education_organization_id,
+            'programEducationOrganizationId', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1488,7 +1539,7 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation
+     * @return |\Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation
      */
     public function getStudentSpecialEducationProgramEligibilityAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsById'][0])
     {
@@ -1508,7 +1559,7 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentSpecialEducationProgramEligibilityAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentSpecialEducationProgramEligibilityAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsById'][0])
     {
@@ -1809,23 +1860,730 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
     }
 
     /**
+     * Operation getStudentSpecialEducationProgramEligibilityAssociationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $consent_to_evaluation_received_date Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $eligibility_delay_reason_descriptor The reason why the eligibility determination was completed beyond the required timeframe. (optional)
+     * @param  string $eligibility_evaluation_type_descriptor Indicates if this is an initial evaluation or a reevaluation. (optional)
+     * @param  string $evaluation_delay_reason_descriptor Refers to the justification as to why the evaluation report was completed beyond the state-established timeframe. This descriptor field will have allowed reasons as descriptor values. (optional)
+     * @param  string $idea_part_descriptor Indicates if the evaluation is done under Part B IDEA or Part C IDEA. (optional)
+     * @param  \DateTime $consent_to_evaluation_date The date on which the student&#39;s parent gave a consent (Parent Consent Date). (optional)
+     * @param  \DateTime $eligibility_conference_date The month, day, and year when the eligibility conference is held between the parent(s)/guardian(s) and the educational organization responsible staff member(s) to review and make decision on special education related services eligibility. (optional)
+     * @param  \DateTime $eligibility_determination_date Indicates the month, day, and year the local education agency (LEA) held the admission, review, and dismissal committee meeting regarding the child&#39;s eligibility determination for special education and related services. An individualized education plan (IEP) would be developed and implemented for a child admitted into special education on this same date. (optional)
+     * @param  \DateTime $eligibility_evaluation_date Indicates the month, day, and year when the written individual evaluation report was completed. (optional)
+     * @param  bool $evaluation_complete_indicator Indicates the evaluation completed status. (optional)
+     * @param  int $evaluation_delay_days Indicates the number of student absences, if any, beginning the first instructional day following the date on which the local education agency (LEA) received written parental or guardian consent for the evaluation. (optional)
+     * @param  string $evaluation_late_reason Refers to additional information for delay in doing the evaluation. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $idea_indicator Indicates whether or not the student was determined eligible as a result of an evaluation. (optional)
+     * @param  \DateTime $original_eci_services_date The month, date, and year when an infant or toddler, from birth through age 2, began participating in the early childhood intervention (ECI) program. (optional)
+     * @param  \DateTime $transition_conference_date Indicates the month, day, and year when the transition conference was held (for a child receiving early childhood intervention (ECI) services) among the lead agency, the family, and the local education agency (LEA) where the child resides to discuss the child&#39;s potential eligibility for early childhood special education (ECSE) services. (optional)
+     * @param  \DateTime $transition_notification_date Indicates the month, day, and year the LEA Notification of Potentially Eligible for Special Education Services was sent by the early childhood intervention (ECI) contractor to the local education agency (LEA) to notify them that a child enrolled in ECI will shortly reach the age of eligibility for Part B services and the child is potentially eligible for services under Part B, early childhood special education (ECSE). The LEA Notification constitutes a referral to the LEA for an initial evaluation and eligibility determination of the child which the parent or guardian may opt out from the referral. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStudentSpecialEducationProgramEligibilityAssociationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsPartitions'][0])
+    {
+        list($response) = $this->getStudentSpecialEducationProgramEligibilityAssociationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStudentSpecialEducationProgramEligibilityAssociationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $consent_to_evaluation_received_date Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $eligibility_delay_reason_descriptor The reason why the eligibility determination was completed beyond the required timeframe. (optional)
+     * @param  string $eligibility_evaluation_type_descriptor Indicates if this is an initial evaluation or a reevaluation. (optional)
+     * @param  string $evaluation_delay_reason_descriptor Refers to the justification as to why the evaluation report was completed beyond the state-established timeframe. This descriptor field will have allowed reasons as descriptor values. (optional)
+     * @param  string $idea_part_descriptor Indicates if the evaluation is done under Part B IDEA or Part C IDEA. (optional)
+     * @param  \DateTime $consent_to_evaluation_date The date on which the student&#39;s parent gave a consent (Parent Consent Date). (optional)
+     * @param  \DateTime $eligibility_conference_date The month, day, and year when the eligibility conference is held between the parent(s)/guardian(s) and the educational organization responsible staff member(s) to review and make decision on special education related services eligibility. (optional)
+     * @param  \DateTime $eligibility_determination_date Indicates the month, day, and year the local education agency (LEA) held the admission, review, and dismissal committee meeting regarding the child&#39;s eligibility determination for special education and related services. An individualized education plan (IEP) would be developed and implemented for a child admitted into special education on this same date. (optional)
+     * @param  \DateTime $eligibility_evaluation_date Indicates the month, day, and year when the written individual evaluation report was completed. (optional)
+     * @param  bool $evaluation_complete_indicator Indicates the evaluation completed status. (optional)
+     * @param  int $evaluation_delay_days Indicates the number of student absences, if any, beginning the first instructional day following the date on which the local education agency (LEA) received written parental or guardian consent for the evaluation. (optional)
+     * @param  string $evaluation_late_reason Refers to additional information for delay in doing the evaluation. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $idea_indicator Indicates whether or not the student was determined eligible as a result of an evaluation. (optional)
+     * @param  \DateTime $original_eci_services_date The month, date, and year when an infant or toddler, from birth through age 2, began participating in the early childhood intervention (ECI) program. (optional)
+     * @param  \DateTime $transition_conference_date Indicates the month, day, and year when the transition conference was held (for a child receiving early childhood intervention (ECI) services) among the lead agency, the family, and the local education agency (LEA) where the child resides to discuss the child&#39;s potential eligibility for early childhood special education (ECSE) services. (optional)
+     * @param  \DateTime $transition_notification_date Indicates the month, day, and year the LEA Notification of Potentially Eligible for Special Education Services was sent by the early childhood intervention (ECI) contractor to the local education agency (LEA) to notify them that a child enrolled in ECI will shortly reach the age of eligibility for Part B services and the child is potentially eligible for services under Part B, early childhood special education (ECSE). The LEA Notification constitutes a referral to the LEA for an initial evaluation and eligibility determination of the child which the parent or guardian may opt out from the referral. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStudentSpecialEducationProgramEligibilityAssociationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsPartitions'][0])
+    {
+        $request = $this->getStudentSpecialEducationProgramEligibilityAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStudentSpecialEducationProgramEligibilityAssociationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $consent_to_evaluation_received_date Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $eligibility_delay_reason_descriptor The reason why the eligibility determination was completed beyond the required timeframe. (optional)
+     * @param  string $eligibility_evaluation_type_descriptor Indicates if this is an initial evaluation or a reevaluation. (optional)
+     * @param  string $evaluation_delay_reason_descriptor Refers to the justification as to why the evaluation report was completed beyond the state-established timeframe. This descriptor field will have allowed reasons as descriptor values. (optional)
+     * @param  string $idea_part_descriptor Indicates if the evaluation is done under Part B IDEA or Part C IDEA. (optional)
+     * @param  \DateTime $consent_to_evaluation_date The date on which the student&#39;s parent gave a consent (Parent Consent Date). (optional)
+     * @param  \DateTime $eligibility_conference_date The month, day, and year when the eligibility conference is held between the parent(s)/guardian(s) and the educational organization responsible staff member(s) to review and make decision on special education related services eligibility. (optional)
+     * @param  \DateTime $eligibility_determination_date Indicates the month, day, and year the local education agency (LEA) held the admission, review, and dismissal committee meeting regarding the child&#39;s eligibility determination for special education and related services. An individualized education plan (IEP) would be developed and implemented for a child admitted into special education on this same date. (optional)
+     * @param  \DateTime $eligibility_evaluation_date Indicates the month, day, and year when the written individual evaluation report was completed. (optional)
+     * @param  bool $evaluation_complete_indicator Indicates the evaluation completed status. (optional)
+     * @param  int $evaluation_delay_days Indicates the number of student absences, if any, beginning the first instructional day following the date on which the local education agency (LEA) received written parental or guardian consent for the evaluation. (optional)
+     * @param  string $evaluation_late_reason Refers to additional information for delay in doing the evaluation. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $idea_indicator Indicates whether or not the student was determined eligible as a result of an evaluation. (optional)
+     * @param  \DateTime $original_eci_services_date The month, date, and year when an infant or toddler, from birth through age 2, began participating in the early childhood intervention (ECI) program. (optional)
+     * @param  \DateTime $transition_conference_date Indicates the month, day, and year when the transition conference was held (for a child receiving early childhood intervention (ECI) services) among the lead agency, the family, and the local education agency (LEA) where the child resides to discuss the child&#39;s potential eligibility for early childhood special education (ECSE) services. (optional)
+     * @param  \DateTime $transition_notification_date Indicates the month, day, and year the LEA Notification of Potentially Eligible for Special Education Services was sent by the early childhood intervention (ECI) contractor to the local education agency (LEA) to notify them that a child enrolled in ECI will shortly reach the age of eligibility for Part B services and the child is potentially eligible for services under Part B, early childhood special education (ECSE). The LEA Notification constitutes a referral to the LEA for an initial evaluation and eligibility determination of the child which the parent or guardian may opt out from the referral. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentSpecialEducationProgramEligibilityAssociationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsPartitions'][0])
+    {
+        return $this->getStudentSpecialEducationProgramEligibilityAssociationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStudentSpecialEducationProgramEligibilityAssociationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $consent_to_evaluation_received_date Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $eligibility_delay_reason_descriptor The reason why the eligibility determination was completed beyond the required timeframe. (optional)
+     * @param  string $eligibility_evaluation_type_descriptor Indicates if this is an initial evaluation or a reevaluation. (optional)
+     * @param  string $evaluation_delay_reason_descriptor Refers to the justification as to why the evaluation report was completed beyond the state-established timeframe. This descriptor field will have allowed reasons as descriptor values. (optional)
+     * @param  string $idea_part_descriptor Indicates if the evaluation is done under Part B IDEA or Part C IDEA. (optional)
+     * @param  \DateTime $consent_to_evaluation_date The date on which the student&#39;s parent gave a consent (Parent Consent Date). (optional)
+     * @param  \DateTime $eligibility_conference_date The month, day, and year when the eligibility conference is held between the parent(s)/guardian(s) and the educational organization responsible staff member(s) to review and make decision on special education related services eligibility. (optional)
+     * @param  \DateTime $eligibility_determination_date Indicates the month, day, and year the local education agency (LEA) held the admission, review, and dismissal committee meeting regarding the child&#39;s eligibility determination for special education and related services. An individualized education plan (IEP) would be developed and implemented for a child admitted into special education on this same date. (optional)
+     * @param  \DateTime $eligibility_evaluation_date Indicates the month, day, and year when the written individual evaluation report was completed. (optional)
+     * @param  bool $evaluation_complete_indicator Indicates the evaluation completed status. (optional)
+     * @param  int $evaluation_delay_days Indicates the number of student absences, if any, beginning the first instructional day following the date on which the local education agency (LEA) received written parental or guardian consent for the evaluation. (optional)
+     * @param  string $evaluation_late_reason Refers to additional information for delay in doing the evaluation. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $idea_indicator Indicates whether or not the student was determined eligible as a result of an evaluation. (optional)
+     * @param  \DateTime $original_eci_services_date The month, date, and year when an infant or toddler, from birth through age 2, began participating in the early childhood intervention (ECI) program. (optional)
+     * @param  \DateTime $transition_conference_date Indicates the month, day, and year when the transition conference was held (for a child receiving early childhood intervention (ECI) services) among the lead agency, the family, and the local education agency (LEA) where the child resides to discuss the child&#39;s potential eligibility for early childhood special education (ECSE) services. (optional)
+     * @param  \DateTime $transition_notification_date Indicates the month, day, and year the LEA Notification of Potentially Eligible for Special Education Services was sent by the early childhood intervention (ECI) contractor to the local education agency (LEA) to notify them that a child enrolled in ECI will shortly reach the age of eligibility for Part B services and the child is potentially eligible for services under Part B, early childhood special education (ECSE). The LEA Notification constitutes a referral to the LEA for an initial evaluation and eligibility determination of the child which the parent or guardian may opt out from the referral. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentSpecialEducationProgramEligibilityAssociationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStudentSpecialEducationProgramEligibilityAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $consent_to_evaluation_received_date, $education_organization_id, $program_education_organization_id, $program_name, $program_type_descriptor, $student_unique_id, $eligibility_delay_reason_descriptor, $eligibility_evaluation_type_descriptor, $evaluation_delay_reason_descriptor, $idea_part_descriptor, $consent_to_evaluation_date, $eligibility_conference_date, $eligibility_determination_date, $eligibility_evaluation_date, $evaluation_complete_indicator, $evaluation_delay_days, $evaluation_late_reason, $id, $idea_indicator, $original_eci_services_date, $transition_conference_date, $transition_notification_date, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStudentSpecialEducationProgramEligibilityAssociationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $consent_to_evaluation_received_date Indicates the date on which the local education agency received written consent for the evaluation from the student&#39;s parent or guardian. This is the first day of the evaluation timeframe. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  string $eligibility_delay_reason_descriptor The reason why the eligibility determination was completed beyond the required timeframe. (optional)
+     * @param  string $eligibility_evaluation_type_descriptor Indicates if this is an initial evaluation or a reevaluation. (optional)
+     * @param  string $evaluation_delay_reason_descriptor Refers to the justification as to why the evaluation report was completed beyond the state-established timeframe. This descriptor field will have allowed reasons as descriptor values. (optional)
+     * @param  string $idea_part_descriptor Indicates if the evaluation is done under Part B IDEA or Part C IDEA. (optional)
+     * @param  \DateTime $consent_to_evaluation_date The date on which the student&#39;s parent gave a consent (Parent Consent Date). (optional)
+     * @param  \DateTime $eligibility_conference_date The month, day, and year when the eligibility conference is held between the parent(s)/guardian(s) and the educational organization responsible staff member(s) to review and make decision on special education related services eligibility. (optional)
+     * @param  \DateTime $eligibility_determination_date Indicates the month, day, and year the local education agency (LEA) held the admission, review, and dismissal committee meeting regarding the child&#39;s eligibility determination for special education and related services. An individualized education plan (IEP) would be developed and implemented for a child admitted into special education on this same date. (optional)
+     * @param  \DateTime $eligibility_evaluation_date Indicates the month, day, and year when the written individual evaluation report was completed. (optional)
+     * @param  bool $evaluation_complete_indicator Indicates the evaluation completed status. (optional)
+     * @param  int $evaluation_delay_days Indicates the number of student absences, if any, beginning the first instructional day following the date on which the local education agency (LEA) received written parental or guardian consent for the evaluation. (optional)
+     * @param  string $evaluation_late_reason Refers to additional information for delay in doing the evaluation. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $idea_indicator Indicates whether or not the student was determined eligible as a result of an evaluation. (optional)
+     * @param  \DateTime $original_eci_services_date The month, date, and year when an infant or toddler, from birth through age 2, began participating in the early childhood intervention (ECI) program. (optional)
+     * @param  \DateTime $transition_conference_date Indicates the month, day, and year when the transition conference was held (for a child receiving early childhood intervention (ECI) services) among the lead agency, the family, and the local education agency (LEA) where the child resides to discuss the child&#39;s potential eligibility for early childhood special education (ECSE) services. (optional)
+     * @param  \DateTime $transition_notification_date Indicates the month, day, and year the LEA Notification of Potentially Eligible for Special Education Services was sent by the early childhood intervention (ECI) contractor to the local education agency (LEA) to notify them that a child enrolled in ECI will shortly reach the age of eligibility for Part B services and the child is potentially eligible for services under Part B, early childhood special education (ECSE). The LEA Notification constitutes a referral to the LEA for an initial evaluation and eligibility determination of the child which the parent or guardian may opt out from the referral. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStudentSpecialEducationProgramEligibilityAssociationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $consent_to_evaluation_received_date = null, $education_organization_id = null, $program_education_organization_id = null, $program_name = null, $program_type_descriptor = null, $student_unique_id = null, $eligibility_delay_reason_descriptor = null, $eligibility_evaluation_type_descriptor = null, $evaluation_delay_reason_descriptor = null, $idea_part_descriptor = null, $consent_to_evaluation_date = null, $eligibility_conference_date = null, $eligibility_determination_date = null, $eligibility_evaluation_date = null, $evaluation_complete_indicator = null, $evaluation_delay_days = null, $evaluation_late_reason = null, $id = null, $idea_indicator = null, $original_eci_services_date = null, $transition_conference_date = null, $transition_notification_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSpecialEducationProgramEligibilityAssociationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+
+
+        if ($program_name !== null && strlen($program_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$program_name" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($program_type_descriptor !== null && strlen($program_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_type_descriptor" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociationsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($eligibility_delay_reason_descriptor !== null && strlen($eligibility_delay_reason_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$eligibility_delay_reason_descriptor" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($eligibility_evaluation_type_descriptor !== null && strlen($eligibility_evaluation_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$eligibility_evaluation_type_descriptor" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($evaluation_delay_reason_descriptor !== null && strlen($evaluation_delay_reason_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$evaluation_delay_reason_descriptor" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($idea_part_descriptor !== null && strlen($idea_part_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$idea_part_descriptor" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+
+
+        if ($evaluation_late_reason !== null && strlen($evaluation_late_reason) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$evaluation_late_reason" when calling StudentSpecialEducationProgramEligibilityAssociationsApi.getStudentSpecialEducationProgramEligibilityAssociationsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/studentSpecialEducationProgramEligibilityAssociations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $consent_to_evaluation_received_date,
+            'consentToEvaluationReceivedDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_education_organization_id,
+            'programEducationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_name,
+            'programName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_type_descriptor,
+            'programTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eligibility_delay_reason_descriptor,
+            'eligibilityDelayReasonDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eligibility_evaluation_type_descriptor,
+            'eligibilityEvaluationTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_delay_reason_descriptor,
+            'evaluationDelayReasonDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idea_part_descriptor,
+            'ideaPartDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $consent_to_evaluation_date,
+            'consentToEvaluationDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eligibility_conference_date,
+            'eligibilityConferenceDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eligibility_determination_date,
+            'eligibilityDeterminationDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $eligibility_evaluation_date,
+            'eligibilityEvaluationDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_complete_indicator,
+            'evaluationCompleteIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_delay_days,
+            'evaluationDelayDays', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_late_reason,
+            'evaluationLateReason', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idea_indicator,
+            'ideaIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $original_eci_services_date,
+            'originalECIServicesDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $transition_conference_date,
+            'transitionConferenceDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $transition_notification_date,
+            'transitionNotificationDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStudentSpecialEducationProgramEligibilityAssociations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange[]
      */
-    public function keyChangesStudentSpecialEducationProgramEligibilityAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function keyChangesStudentSpecialEducationProgramEligibilityAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
         list($response) = $this->keyChangesStudentSpecialEducationProgramEligibilityAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1836,19 +2594,19 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStudentSpecialEducationProgramEligibilityAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function keyChangesStudentSpecialEducationProgramEligibilityAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
         $request = $this->keyChangesStudentSpecialEducationProgramEligibilityAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1966,18 +2724,18 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentSpecialEducationProgramEligibilityAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function keyChangesStudentSpecialEducationProgramEligibilityAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
         return $this->keyChangesStudentSpecialEducationProgramEligibilityAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1992,18 +2750,18 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentSpecialEducationProgramEligibilityAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function keyChangesStudentSpecialEducationProgramEligibilityAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentSpecialEducationProgramEligibilityAssociationKeyChange[]';
         $request = $this->keyChangesStudentSpecialEducationProgramEligibilityAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -2047,18 +2805,18 @@ class StudentSpecialEducationProgramEligibilityAssociationsApi
     /**
      * Create request for operation 'keyChangesStudentSpecialEducationProgramEligibilityAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStudentSpecialEducationProgramEligibilityAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'][0])
+    public function keyChangesStudentSpecialEducationProgramEligibilityAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSpecialEducationProgramEligibilityAssociations'][0])
     {
 
 

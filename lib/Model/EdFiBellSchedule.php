@@ -358,10 +358,6 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'bell_schedule_name', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['bell_schedule_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'bell_schedule_name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['class_periods'] === null) {
             $invalidProperties[] = "'class_periods' can't be null";
         }
@@ -370,10 +366,6 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($this->container['alternate_day_name']) && (mb_strlen($this->container['alternate_day_name']) > 20)) {
             $invalidProperties[] = "invalid value for 'alternate_day_name', the character length must be smaller than or equal to 20.";
-        }
-
-        if (!is_null($this->container['alternate_day_name']) && (mb_strlen($this->container['alternate_day_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'alternate_day_name', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -442,9 +434,6 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($bell_schedule_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $bell_schedule_name when calling EdFiBellSchedule., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($bell_schedule_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $bell_schedule_name when calling EdFiBellSchedule., must be bigger than or equal to 1.');
         }
 
         $this->container['bell_schedule_name'] = $bell_schedule_name;
@@ -537,9 +526,6 @@ class EdFiBellSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($alternate_day_name) && (mb_strlen($alternate_day_name) > 20)) {
             throw new \InvalidArgumentException('invalid length for $alternate_day_name when calling EdFiBellSchedule., must be smaller than or equal to 20.');
-        }
-        if (!is_null($alternate_day_name) && (mb_strlen($alternate_day_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $alternate_day_name when calling EdFiBellSchedule., must be bigger than or equal to 1.');
         }
 
         $this->container['alternate_day_name'] = $alternate_day_name;

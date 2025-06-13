@@ -83,6 +83,9 @@ class ContactsApi
         'getContactsById' => [
             'application/json',
         ],
+        'getContactsPartitions' => [
+            'application/json',
+        ],
         'keyChangesContacts' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class ContactsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesContacts'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiContactDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiContactDelete[]
      */
-    public function deletesContacts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
+    public function deletesContacts($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
     {
         list($response) = $this->deletesContactsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class ContactsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesContacts'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiContactDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiContactDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesContactsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
+    public function deletesContactsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
     {
         $request = $this->deletesContactsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class ContactsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesContacts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesContactsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
+    public function deletesContactsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
     {
         return $this->deletesContactsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class ContactsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesContacts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesContactsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
+    public function deletesContactsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiContactDelete[]';
         $request = $this->deletesContactsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class ContactsApi
     /**
      * Create request for operation 'deletesContacts'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesContacts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesContactsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
+    public function deletesContactsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesContacts'][0])
     {
 
 
@@ -759,11 +762,13 @@ class ContactsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
@@ -785,11 +790,11 @@ class ContactsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiContact[]
+     * @return |\Resources\Model\EdFiContact[]
      */
-    public function getContacts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
+    public function getContacts($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
     {
-        list($response) = $this->getContactsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
+        list($response) = $this->getContactsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -798,11 +803,13 @@ class ContactsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
@@ -824,11 +831,11 @@ class ContactsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiContact[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiContact[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getContactsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
+    public function getContactsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
     {
-        $request = $this->getContactsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
+        $request = $this->getContactsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -944,11 +951,13 @@ class ContactsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
@@ -971,9 +980,9 @@ class ContactsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
+    public function getContactsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
     {
-        return $this->getContactsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType)
+        return $this->getContactsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -986,11 +995,13 @@ class ContactsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
@@ -1013,10 +1024,10 @@ class ContactsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
+    public function getContactsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
     {
         $returnType = '\Resources\Model\EdFiContact[]';
-        $request = $this->getContactsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
+        $request = $this->getContactsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1057,11 +1068,13 @@ class ContactsApi
     /**
      * Create request for operation 'getContacts'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
      * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
      * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
@@ -1084,7 +1097,7 @@ class ContactsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getContactsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
+    public function getContactsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContacts'][0])
     {
 
 
@@ -1093,6 +1106,11 @@ class ContactsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling ContactsApi.getContacts, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling ContactsApi.getContacts, must be bigger than or equal to 0.');
         }
         
 
@@ -1181,6 +1199,24 @@ class ContactsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1434,7 +1470,7 @@ class ContactsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiContact
+     * @return |\Resources\Model\EdFiContact
      */
     public function getContactsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getContactsById'][0])
     {
@@ -1454,7 +1490,7 @@ class ContactsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiContact, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiContact, HTTP status code, HTTP response headers (array of strings)
      */
     public function getContactsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getContactsById'][0])
     {
@@ -1755,23 +1791,661 @@ class ContactsApi
     }
 
     /**
+     * Operation getContactsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $highest_completed_level_of_education_descriptor The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received). (optional)
+     * @param  string $sex_descriptor A person&#39;s birth sex. (optional)
+     * @param  string $first_name A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)
+     * @param  string $gender_identity The gender the contact identifies themselves as. (optional)
+     * @param  string $generation_code_suffix An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)
+     * @param  string $id  (optional)
+     * @param  string $last_surname The name borne in common by members of a family. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $maiden_name The individual&#39;s maiden name. (optional)
+     * @param  string $middle_name A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)
+     * @param  string $personal_title_prefix A prefix used to denote the title, degree, position, or seniority of the individual. (optional)
+     * @param  string $preferred_first_name The first name the individual prefers, if different from their legal first name (optional)
+     * @param  string $preferred_last_surname The last name the individual prefers, if different from their legal last name (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getContactsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getContactsPartitions($number = null, $min_change_version = null, $max_change_version = null, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContactsPartitions'][0])
+    {
+        list($response) = $this->getContactsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getContactsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $highest_completed_level_of_education_descriptor The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received). (optional)
+     * @param  string $sex_descriptor A person&#39;s birth sex. (optional)
+     * @param  string $first_name A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)
+     * @param  string $gender_identity The gender the contact identifies themselves as. (optional)
+     * @param  string $generation_code_suffix An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)
+     * @param  string $id  (optional)
+     * @param  string $last_surname The name borne in common by members of a family. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $maiden_name The individual&#39;s maiden name. (optional)
+     * @param  string $middle_name A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)
+     * @param  string $personal_title_prefix A prefix used to denote the title, degree, position, or seniority of the individual. (optional)
+     * @param  string $preferred_first_name The first name the individual prefers, if different from their legal first name (optional)
+     * @param  string $preferred_last_surname The last name the individual prefers, if different from their legal last name (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getContactsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getContactsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContactsPartitions'][0])
+    {
+        $request = $this->getContactsPartitionsRequest($number, $min_change_version, $max_change_version, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getContactsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $highest_completed_level_of_education_descriptor The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received). (optional)
+     * @param  string $sex_descriptor A person&#39;s birth sex. (optional)
+     * @param  string $first_name A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)
+     * @param  string $gender_identity The gender the contact identifies themselves as. (optional)
+     * @param  string $generation_code_suffix An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)
+     * @param  string $id  (optional)
+     * @param  string $last_surname The name borne in common by members of a family. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $maiden_name The individual&#39;s maiden name. (optional)
+     * @param  string $middle_name A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)
+     * @param  string $personal_title_prefix A prefix used to denote the title, degree, position, or seniority of the individual. (optional)
+     * @param  string $preferred_first_name The first name the individual prefers, if different from their legal first name (optional)
+     * @param  string $preferred_last_surname The last name the individual prefers, if different from their legal last name (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getContactsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getContactsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContactsPartitions'][0])
+    {
+        return $this->getContactsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getContactsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $highest_completed_level_of_education_descriptor The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received). (optional)
+     * @param  string $sex_descriptor A person&#39;s birth sex. (optional)
+     * @param  string $first_name A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)
+     * @param  string $gender_identity The gender the contact identifies themselves as. (optional)
+     * @param  string $generation_code_suffix An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)
+     * @param  string $id  (optional)
+     * @param  string $last_surname The name borne in common by members of a family. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $maiden_name The individual&#39;s maiden name. (optional)
+     * @param  string $middle_name A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)
+     * @param  string $personal_title_prefix A prefix used to denote the title, degree, position, or seniority of the individual. (optional)
+     * @param  string $preferred_first_name The first name the individual prefers, if different from their legal first name (optional)
+     * @param  string $preferred_last_surname The last name the individual prefers, if different from their legal last name (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getContactsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getContactsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContactsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getContactsPartitionsRequest($number, $min_change_version, $max_change_version, $contact_unique_id, $person_id, $source_system_descriptor, $highest_completed_level_of_education_descriptor, $sex_descriptor, $first_name, $gender_identity, $generation_code_suffix, $id, $last_surname, $login_id, $maiden_name, $middle_name, $personal_title_prefix, $preferred_first_name, $preferred_last_surname, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getContactsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $contact_unique_id A unique alphanumeric code assigned to a contact. (optional)
+     * @param  string $person_id A unique alphanumeric code assigned to a person. (optional)
+     * @param  string $source_system_descriptor This descriptor defines the originating record source system for the person. (optional)
+     * @param  string $highest_completed_level_of_education_descriptor The extent of formal instruction an individual has received (e.g., the highest grade in school completed or its equivalent or the highest degree received). (optional)
+     * @param  string $sex_descriptor A person&#39;s birth sex. (optional)
+     * @param  string $first_name A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)
+     * @param  string $gender_identity The gender the contact identifies themselves as. (optional)
+     * @param  string $generation_code_suffix An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)
+     * @param  string $id  (optional)
+     * @param  string $last_surname The name borne in common by members of a family. (optional)
+     * @param  string $login_id The login ID for the user; used for security access control interface. (optional)
+     * @param  string $maiden_name The individual&#39;s maiden name. (optional)
+     * @param  string $middle_name A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)
+     * @param  string $personal_title_prefix A prefix used to denote the title, degree, position, or seniority of the individual. (optional)
+     * @param  string $preferred_first_name The first name the individual prefers, if different from their legal first name (optional)
+     * @param  string $preferred_last_surname The last name the individual prefers, if different from their legal last name (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getContactsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getContactsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $contact_unique_id = null, $person_id = null, $source_system_descriptor = null, $highest_completed_level_of_education_descriptor = null, $sex_descriptor = null, $first_name = null, $gender_identity = null, $generation_code_suffix = null, $id = null, $last_surname = null, $login_id = null, $maiden_name = null, $middle_name = null, $personal_title_prefix = null, $preferred_first_name = null, $preferred_last_surname = null, $use_snapshot = false, string $contentType = self::contentTypes['getContactsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling ContactsApi.getContactsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($contact_unique_id !== null && strlen($contact_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$contact_unique_id" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($person_id !== null && strlen($person_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$person_id" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($source_system_descriptor !== null && strlen($source_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$source_system_descriptor" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($highest_completed_level_of_education_descriptor !== null && strlen($highest_completed_level_of_education_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$highest_completed_level_of_education_descriptor" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($sex_descriptor !== null && strlen($sex_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$sex_descriptor" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($first_name !== null && strlen($first_name) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$first_name" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($gender_identity !== null && strlen($gender_identity) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$gender_identity" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($generation_code_suffix !== null && strlen($generation_code_suffix) > 10) {
+            throw new \InvalidArgumentException('invalid length for "$generation_code_suffix" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 10.');
+        }
+        
+
+        if ($last_surname !== null && strlen($last_surname) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$last_surname" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($login_id !== null && strlen($login_id) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$login_id" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($maiden_name !== null && strlen($maiden_name) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$maiden_name" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($middle_name !== null && strlen($middle_name) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$middle_name" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($personal_title_prefix !== null && strlen($personal_title_prefix) > 30) {
+            throw new \InvalidArgumentException('invalid length for "$personal_title_prefix" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 30.');
+        }
+        
+        if ($preferred_first_name !== null && strlen($preferred_first_name) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$preferred_first_name" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($preferred_last_surname !== null && strlen($preferred_last_surname) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$preferred_last_surname" when calling ContactsApi.getContactsPartitions, must be smaller than or equal to 75.');
+        }
+        
+
+
+        $resourcePath = '/ed-fi/contacts/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $contact_unique_id,
+            'contactUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $person_id,
+            'personId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_system_descriptor,
+            'sourceSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $highest_completed_level_of_education_descriptor,
+            'highestCompletedLevelOfEducationDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sex_descriptor,
+            'sexDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $first_name,
+            'firstName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $gender_identity,
+            'genderIdentity', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $generation_code_suffix,
+            'generationCodeSuffix', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $last_surname,
+            'lastSurname', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $login_id,
+            'loginId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $maiden_name,
+            'maidenName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $middle_name,
+            'middleName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $personal_title_prefix,
+            'personalTitlePrefix', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $preferred_first_name,
+            'preferredFirstName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $preferred_last_surname,
+            'preferredLastSurname', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesContacts
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesContacts'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiContactKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiContactKeyChange[]
      */
-    public function keyChangesContacts($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
+    public function keyChangesContacts($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
     {
         list($response) = $this->keyChangesContactsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1782,19 +2456,19 @@ class ContactsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesContacts'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiContactKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiContactKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesContactsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
+    public function keyChangesContactsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
     {
         $request = $this->keyChangesContactsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1912,18 +2586,18 @@ class ContactsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesContacts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesContactsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
+    public function keyChangesContactsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
     {
         return $this->keyChangesContactsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1938,18 +2612,18 @@ class ContactsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesContacts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesContactsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
+    public function keyChangesContactsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiContactKeyChange[]';
         $request = $this->keyChangesContactsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1993,18 +2667,18 @@ class ContactsApi
     /**
      * Create request for operation 'keyChangesContacts'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesContacts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesContactsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
+    public function keyChangesContactsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesContacts'][0])
     {
 
 

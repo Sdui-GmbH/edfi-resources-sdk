@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **do_not_publish_indicator** | **bool** | An indication that the address should not be published. | [optional]
 **latitude** | **string** | The geographic latitude of the physical address. | [optional]
 **longitude** | **string** | The geographic longitude of the physical address. | [optional]
-**name_of_county** | **string** | The name of the county, parish, borough, or comparable unit (within a state) in                       &#39;which an address is located. | [optional]
+**name_of_county** | **string** | The name of the county, parish, borough, or comparable unit (within a state) in which an address is located. | [optional]
 **postal_code** | **string** | The five or nine digit zip code or overseas postal code portion of an address. |
 **street_number_name** | **string** | The street number and street name or post office box number of an address. |
 **periods** | [**\Resources\Model\EdFiStaffEducationOrganizationContactAssociationAddressPeriod[]**](EdFiStaffEducationOrganizationContactAssociationAddressPeriod.md) | An unordered collection of staffEducationOrganizationContactAssociationAddressPeriods. The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address. | [optional]

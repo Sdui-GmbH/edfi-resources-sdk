@@ -393,10 +393,6 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'credential_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['credential_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'credential_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['state_of_issue_state_abbreviation_descriptor'] === null) {
             $invalidProperties[] = "'state_of_issue_state_abbreviation_descriptor' can't be null";
         }
@@ -503,9 +499,6 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($credential_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $credential_identifier when calling EdFiCredential., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($credential_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $credential_identifier when calling EdFiCredential., must be bigger than or equal to 1.');
         }
 
         $this->container['credential_identifier'] = $credential_identifier;
@@ -653,7 +646,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets effective_date
      *
-     * @param \DateTime|null $effective_date The year, month and day on which an active credential held by an individual was issued.
+     * @param \DateTime|null $effective_date The year, month and day on which an active credential held by an individual was issued.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -714,7 +707,7 @@ class EdFiCredential implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiration_date
      *
-     * @param \DateTime|null $expiration_date The month, day, and year on which an active credential held by an individual will expire.
+     * @param \DateTime|null $expiration_date The month, day, and year on which an active credential held by an individual will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

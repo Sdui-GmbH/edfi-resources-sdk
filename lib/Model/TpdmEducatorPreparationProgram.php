@@ -359,10 +359,6 @@ class TpdmEducatorPreparationProgram implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'program_id', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['program_id']) && (mb_strlen($this->container['program_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'program_id', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -593,9 +589,6 @@ class TpdmEducatorPreparationProgram implements ModelInterface, ArrayAccess, \Js
         }
         if (!is_null($program_id) && (mb_strlen($program_id) > 20)) {
             throw new \InvalidArgumentException('invalid length for $program_id when calling TpdmEducatorPreparationProgram., must be smaller than or equal to 20.');
-        }
-        if (!is_null($program_id) && (mb_strlen($program_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $program_id when calling TpdmEducatorPreparationProgram., must be bigger than or equal to 1.');
         }
 
         $this->container['program_id'] = $program_id;

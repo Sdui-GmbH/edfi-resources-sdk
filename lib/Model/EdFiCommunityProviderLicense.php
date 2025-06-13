@@ -379,10 +379,6 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'licensing_organization', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['licensing_organization']) < 1)) {
-            $invalidProperties[] = "invalid value for 'licensing_organization', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['community_provider_reference'] === null) {
             $invalidProperties[] = "'community_provider_reference' can't be null";
         }
@@ -498,9 +494,6 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
         if ((mb_strlen($licensing_organization) > 75)) {
             throw new \InvalidArgumentException('invalid length for $licensing_organization when calling EdFiCommunityProviderLicense., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($licensing_organization) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $licensing_organization when calling EdFiCommunityProviderLicense., must be bigger than or equal to 1.');
-        }
 
         $this->container['licensing_organization'] = $licensing_organization;
 
@@ -581,7 +574,7 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets license_effective_date
      *
-     * @param \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.
+     * @param \DateTime $license_effective_date The month, day, and year on which a license is active or becomes effective.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -608,7 +601,7 @@ class EdFiCommunityProviderLicense implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets license_expiration_date
      *
-     * @param \DateTime|null $license_expiration_date The month, day, and year on which a license will expire.
+     * @param \DateTime|null $license_expiration_date The month, day, and year on which a license will expire.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

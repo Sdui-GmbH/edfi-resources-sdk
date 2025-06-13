@@ -309,16 +309,8 @@ class EdFiStudentEducationOrganizationAssociationStudentIndicator implements Mod
             $invalidProperties[] = "invalid value for 'indicator_name', the character length must be smaller than or equal to 200.";
         }
 
-        if ((mb_strlen($this->container['indicator_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'indicator_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['designated_by']) && (mb_strlen($this->container['designated_by']) > 60)) {
             $invalidProperties[] = "invalid value for 'designated_by', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['designated_by']) && (mb_strlen($this->container['designated_by']) < 1)) {
-            $invalidProperties[] = "invalid value for 'designated_by', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['indicator'] === null) {
@@ -328,16 +320,8 @@ class EdFiStudentEducationOrganizationAssociationStudentIndicator implements Mod
             $invalidProperties[] = "invalid value for 'indicator', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['indicator']) < 1)) {
-            $invalidProperties[] = "invalid value for 'indicator', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['indicator_group']) && (mb_strlen($this->container['indicator_group']) > 200)) {
             $invalidProperties[] = "invalid value for 'indicator_group', the character length must be smaller than or equal to 200.";
-        }
-
-        if (!is_null($this->container['indicator_group']) && (mb_strlen($this->container['indicator_group']) < 1)) {
-            $invalidProperties[] = "invalid value for 'indicator_group', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -380,9 +364,6 @@ class EdFiStudentEducationOrganizationAssociationStudentIndicator implements Mod
         if ((mb_strlen($indicator_name) > 200)) {
             throw new \InvalidArgumentException('invalid length for $indicator_name when calling EdFiStudentEducationOrganizationAssociationStudentIndicator., must be smaller than or equal to 200.');
         }
-        if ((mb_strlen($indicator_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $indicator_name when calling EdFiStudentEducationOrganizationAssociationStudentIndicator., must be bigger than or equal to 1.');
-        }
 
         $this->container['indicator_name'] = $indicator_name;
 
@@ -421,9 +402,6 @@ class EdFiStudentEducationOrganizationAssociationStudentIndicator implements Mod
         if (!is_null($designated_by) && (mb_strlen($designated_by) > 60)) {
             throw new \InvalidArgumentException('invalid length for $designated_by when calling EdFiStudentEducationOrganizationAssociationStudentIndicator., must be smaller than or equal to 60.');
         }
-        if (!is_null($designated_by) && (mb_strlen($designated_by) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $designated_by when calling EdFiStudentEducationOrganizationAssociationStudentIndicator., must be bigger than or equal to 1.');
-        }
 
         $this->container['designated_by'] = $designated_by;
 
@@ -454,9 +432,6 @@ class EdFiStudentEducationOrganizationAssociationStudentIndicator implements Mod
         }
         if ((mb_strlen($indicator) > 60)) {
             throw new \InvalidArgumentException('invalid length for $indicator when calling EdFiStudentEducationOrganizationAssociationStudentIndicator., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($indicator) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $indicator when calling EdFiStudentEducationOrganizationAssociationStudentIndicator., must be bigger than or equal to 1.');
         }
 
         $this->container['indicator'] = $indicator;
@@ -495,9 +470,6 @@ class EdFiStudentEducationOrganizationAssociationStudentIndicator implements Mod
         }
         if (!is_null($indicator_group) && (mb_strlen($indicator_group) > 200)) {
             throw new \InvalidArgumentException('invalid length for $indicator_group when calling EdFiStudentEducationOrganizationAssociationStudentIndicator., must be smaller than or equal to 200.');
-        }
-        if (!is_null($indicator_group) && (mb_strlen($indicator_group) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $indicator_group when calling EdFiStudentEducationOrganizationAssociationStudentIndicator., must be bigger than or equal to 1.');
         }
 
         $this->container['indicator_group'] = $indicator_group;

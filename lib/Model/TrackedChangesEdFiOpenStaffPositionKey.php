@@ -285,10 +285,6 @@ class TrackedChangesEdFiOpenStaffPositionKey implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'requisition_number', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['requisition_number']) && (mb_strlen($this->container['requisition_number']) < 1)) {
-            $invalidProperties[] = "invalid value for 'requisition_number', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -328,9 +324,6 @@ class TrackedChangesEdFiOpenStaffPositionKey implements ModelInterface, ArrayAcc
         }
         if ((mb_strlen($requisition_number) > 20)) {
             throw new \InvalidArgumentException('invalid length for $requisition_number when calling TrackedChangesEdFiOpenStaffPositionKey., must be smaller than or equal to 20.');
-        }
-        if ((mb_strlen($requisition_number) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $requisition_number when calling TrackedChangesEdFiOpenStaffPositionKey., must be bigger than or equal to 1.');
         }
 
         $this->container['requisition_number'] = $requisition_number;

@@ -336,10 +336,6 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'feeder_relationship_description', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['feeder_relationship_description']) && (mb_strlen($this->container['feeder_relationship_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'feeder_relationship_description', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -395,7 +391,7 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The month, day, and year of the first day of the feeder school association.
+     * @param \DateTime $begin_date The month, day, and year of the first day of the feeder school association.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -476,7 +472,7 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The month, day, and year of the last day of the feeder school association.
+     * @param \DateTime|null $end_date The month, day, and year of the last day of the feeder school association.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -528,9 +524,6 @@ class EdFiFeederSchoolAssociation implements ModelInterface, ArrayAccess, \JsonS
         }
         if (!is_null($feeder_relationship_description) && (mb_strlen($feeder_relationship_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $feeder_relationship_description when calling EdFiFeederSchoolAssociation., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($feeder_relationship_description) && (mb_strlen($feeder_relationship_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $feeder_relationship_description when calling EdFiFeederSchoolAssociation., must be bigger than or equal to 1.');
         }
 
         $this->container['feeder_relationship_description'] = $feeder_relationship_description;

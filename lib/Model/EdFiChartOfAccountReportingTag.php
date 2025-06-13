@@ -292,10 +292,6 @@ class EdFiChartOfAccountReportingTag implements ModelInterface, ArrayAccess, \Js
             $invalidProperties[] = "invalid value for 'tag_value', the character length must be smaller than or equal to 100.";
         }
 
-        if (!is_null($this->container['tag_value']) && (mb_strlen($this->container['tag_value']) < 1)) {
-            $invalidProperties[] = "invalid value for 'tag_value', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -373,9 +369,6 @@ class EdFiChartOfAccountReportingTag implements ModelInterface, ArrayAccess, \Js
         }
         if (!is_null($tag_value) && (mb_strlen($tag_value) > 100)) {
             throw new \InvalidArgumentException('invalid length for $tag_value when calling EdFiChartOfAccountReportingTag., must be smaller than or equal to 100.');
-        }
-        if (!is_null($tag_value) && (mb_strlen($tag_value) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $tag_value when calling EdFiChartOfAccountReportingTag., must be bigger than or equal to 1.');
         }
 
         $this->container['tag_value'] = $tag_value;

@@ -295,10 +295,6 @@ class EdFiBalanceSheetDimensionReference implements ModelInterface, ArrayAccess,
             $invalidProperties[] = "invalid value for 'code', the character length must be smaller than or equal to 16.";
         }
 
-        if ((mb_strlen($this->container['code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['fiscal_year'] === null) {
             $invalidProperties[] = "'fiscal_year' can't be null";
         }
@@ -349,9 +345,6 @@ class EdFiBalanceSheetDimensionReference implements ModelInterface, ArrayAccess,
         }
         if ((mb_strlen($code) > 16)) {
             throw new \InvalidArgumentException('invalid length for $code when calling EdFiBalanceSheetDimensionReference., must be smaller than or equal to 16.');
-        }
-        if ((mb_strlen($code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $code when calling EdFiBalanceSheetDimensionReference., must be bigger than or equal to 1.');
         }
 
         $this->container['code'] = $code;

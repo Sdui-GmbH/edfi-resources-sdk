@@ -281,10 +281,6 @@ class EdFiEducationContentAuthor implements ModelInterface, ArrayAccess, \JsonSe
             $invalidProperties[] = "invalid value for 'author', the character length must be smaller than or equal to 100.";
         }
 
-        if ((mb_strlen($this->container['author']) < 1)) {
-            $invalidProperties[] = "invalid value for 'author', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -324,9 +320,6 @@ class EdFiEducationContentAuthor implements ModelInterface, ArrayAccess, \JsonSe
         }
         if ((mb_strlen($author) > 100)) {
             throw new \InvalidArgumentException('invalid length for $author when calling EdFiEducationContentAuthor., must be smaller than or equal to 100.');
-        }
-        if ((mb_strlen($author) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $author when calling EdFiEducationContentAuthor., must be bigger than or equal to 1.');
         }
 
         $this->container['author'] = $author;

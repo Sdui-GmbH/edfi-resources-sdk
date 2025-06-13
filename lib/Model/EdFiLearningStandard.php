@@ -399,19 +399,11 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'learning_standard_id', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['learning_standard_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'learning_standard_id', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['content_standard'] === null) {
             $invalidProperties[] = "'content_standard' can't be null";
         }
         if (!is_null($this->container['course_title']) && (mb_strlen($this->container['course_title']) > 60)) {
             $invalidProperties[] = "invalid value for 'course_title', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['course_title']) && (mb_strlen($this->container['course_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'course_title', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['description'] === null) {
@@ -421,20 +413,12 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1024.";
         }
 
-        if ((mb_strlen($this->container['description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['learning_standard_category_descriptor']) && (mb_strlen($this->container['learning_standard_category_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'learning_standard_category_descriptor', the character length must be smaller than or equal to 306.";
         }
 
         if (!is_null($this->container['learning_standard_item_code']) && (mb_strlen($this->container['learning_standard_item_code']) > 60)) {
             $invalidProperties[] = "invalid value for 'learning_standard_item_code', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['learning_standard_item_code']) && (mb_strlen($this->container['learning_standard_item_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'learning_standard_item_code', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['learning_standard_scope_descriptor']) && (mb_strlen($this->container['learning_standard_scope_descriptor']) > 306)) {
@@ -454,10 +438,6 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
 
         if (!is_null($this->container['success_criteria']) && (mb_strlen($this->container['success_criteria']) > 150)) {
             $invalidProperties[] = "invalid value for 'success_criteria', the character length must be smaller than or equal to 150.";
-        }
-
-        if (!is_null($this->container['success_criteria']) && (mb_strlen($this->container['success_criteria']) < 1)) {
-            $invalidProperties[] = "invalid value for 'success_criteria', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['uri']) && (mb_strlen($this->container['uri']) > 255)) {
@@ -589,9 +569,6 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
         if ((mb_strlen($learning_standard_id) > 60)) {
             throw new \InvalidArgumentException('invalid length for $learning_standard_id when calling EdFiLearningStandard., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($learning_standard_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $learning_standard_id when calling EdFiLearningStandard., must be bigger than or equal to 1.');
-        }
 
         $this->container['learning_standard_id'] = $learning_standard_id;
 
@@ -684,9 +661,6 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
         if (!is_null($course_title) && (mb_strlen($course_title) > 60)) {
             throw new \InvalidArgumentException('invalid length for $course_title when calling EdFiLearningStandard., must be smaller than or equal to 60.');
         }
-        if (!is_null($course_title) && (mb_strlen($course_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $course_title when calling EdFiLearningStandard., must be bigger than or equal to 1.');
-        }
 
         $this->container['course_title'] = $course_title;
 
@@ -717,9 +691,6 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if ((mb_strlen($description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $description when calling EdFiLearningStandard., must be smaller than or equal to 1024.');
-        }
-        if ((mb_strlen($description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling EdFiLearningStandard., must be bigger than or equal to 1.');
         }
 
         $this->container['description'] = $description;
@@ -823,9 +794,6 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if (!is_null($learning_standard_item_code) && (mb_strlen($learning_standard_item_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $learning_standard_item_code when calling EdFiLearningStandard., must be smaller than or equal to 60.');
-        }
-        if (!is_null($learning_standard_item_code) && (mb_strlen($learning_standard_item_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $learning_standard_item_code when calling EdFiLearningStandard., must be bigger than or equal to 1.');
         }
 
         $this->container['learning_standard_item_code'] = $learning_standard_item_code;
@@ -936,9 +904,6 @@ class EdFiLearningStandard implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if (!is_null($success_criteria) && (mb_strlen($success_criteria) > 150)) {
             throw new \InvalidArgumentException('invalid length for $success_criteria when calling EdFiLearningStandard., must be smaller than or equal to 150.');
-        }
-        if (!is_null($success_criteria) && (mb_strlen($success_criteria) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $success_criteria when calling EdFiLearningStandard., must be bigger than or equal to 1.');
         }
 
         $this->container['success_criteria'] = $success_criteria;

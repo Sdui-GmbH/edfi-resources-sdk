@@ -298,10 +298,6 @@ class EdFiInterventionPrescriptionReference implements ModelInterface, ArrayAcce
             $invalidProperties[] = "invalid value for 'intervention_prescription_identification_code', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['intervention_prescription_identification_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'intervention_prescription_identification_code', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -368,9 +364,6 @@ class EdFiInterventionPrescriptionReference implements ModelInterface, ArrayAcce
         }
         if ((mb_strlen($intervention_prescription_identification_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $intervention_prescription_identification_code when calling EdFiInterventionPrescriptionReference., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($intervention_prescription_identification_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $intervention_prescription_identification_code when calling EdFiInterventionPrescriptionReference., must be bigger than or equal to 1.');
         }
 
         $this->container['intervention_prescription_identification_code'] = $intervention_prescription_identification_code;

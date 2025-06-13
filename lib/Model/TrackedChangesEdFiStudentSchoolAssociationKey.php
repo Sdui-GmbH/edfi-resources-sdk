@@ -292,10 +292,6 @@ class TrackedChangesEdFiStudentSchoolAssociationKey implements ModelInterface, A
             $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be smaller than or equal to 32.";
         }
 
-        if (!is_null($this->container['student_unique_id']) && (mb_strlen($this->container['student_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'student_unique_id', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -324,7 +320,7 @@ class TrackedChangesEdFiStudentSchoolAssociationKey implements ModelInterface, A
     /**
      * Sets entry_date
      *
-     * @param \DateTime|null $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school.
+     * @param \DateTime|null $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student's enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -351,7 +347,7 @@ class TrackedChangesEdFiStudentSchoolAssociationKey implements ModelInterface, A
     /**
      * Sets school_id
      *
-     * @param int|null $school_id The identifier assigned to a school.
+     * @param int|null $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -389,9 +385,6 @@ class TrackedChangesEdFiStudentSchoolAssociationKey implements ModelInterface, A
         }
         if ((mb_strlen($student_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentSchoolAssociationKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($student_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $student_unique_id when calling TrackedChangesEdFiStudentSchoolAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['student_unique_id'] = $student_unique_id;

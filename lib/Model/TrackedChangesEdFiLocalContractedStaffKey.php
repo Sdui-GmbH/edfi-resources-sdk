@@ -306,10 +306,6 @@ class TrackedChangesEdFiLocalContractedStaffKey implements ModelInterface, Array
             $invalidProperties[] = "invalid value for 'account_identifier', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['account_identifier']) && (mb_strlen($this->container['account_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'account_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['fiscal_year']) && ($this->container['fiscal_year'] > 2040)) {
             $invalidProperties[] = "invalid value for 'fiscal_year', must be smaller than or equal to 2040.";
         }
@@ -320,10 +316,6 @@ class TrackedChangesEdFiLocalContractedStaffKey implements ModelInterface, Array
 
         if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -392,9 +384,6 @@ class TrackedChangesEdFiLocalContractedStaffKey implements ModelInterface, Array
         }
         if ((mb_strlen($account_identifier) > 50)) {
             throw new \InvalidArgumentException('invalid length for $account_identifier when calling TrackedChangesEdFiLocalContractedStaffKey., must be smaller than or equal to 50.');
-        }
-        if ((mb_strlen($account_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $account_identifier when calling TrackedChangesEdFiLocalContractedStaffKey., must be bigger than or equal to 1.');
         }
 
         $this->container['account_identifier'] = $account_identifier;
@@ -488,9 +477,6 @@ class TrackedChangesEdFiLocalContractedStaffKey implements ModelInterface, Array
         }
         if ((mb_strlen($staff_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiLocalContractedStaffKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($staff_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiLocalContractedStaffKey., must be bigger than or equal to 1.');
         }
 
         $this->container['staff_unique_id'] = $staff_unique_id;

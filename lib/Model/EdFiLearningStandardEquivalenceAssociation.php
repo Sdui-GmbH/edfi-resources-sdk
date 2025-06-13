@@ -351,10 +351,6 @@ class EdFiLearningStandardEquivalenceAssociation implements ModelInterface, Arra
             $invalidProperties[] = "invalid value for 'learning_standard_equivalence_strength_description', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['learning_standard_equivalence_strength_description']) && (mb_strlen($this->container['learning_standard_equivalence_strength_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'learning_standard_equivalence_strength_description', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['learning_standard_equivalence_strength_descriptor']) && (mb_strlen($this->container['learning_standard_equivalence_strength_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'learning_standard_equivalence_strength_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -554,9 +550,6 @@ class EdFiLearningStandardEquivalenceAssociation implements ModelInterface, Arra
         }
         if (!is_null($learning_standard_equivalence_strength_description) && (mb_strlen($learning_standard_equivalence_strength_description) > 255)) {
             throw new \InvalidArgumentException('invalid length for $learning_standard_equivalence_strength_description when calling EdFiLearningStandardEquivalenceAssociation., must be smaller than or equal to 255.');
-        }
-        if (!is_null($learning_standard_equivalence_strength_description) && (mb_strlen($learning_standard_equivalence_strength_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $learning_standard_equivalence_strength_description when calling EdFiLearningStandardEquivalenceAssociation., must be bigger than or equal to 1.');
         }
 
         $this->container['learning_standard_equivalence_strength_description'] = $learning_standard_equivalence_strength_description;

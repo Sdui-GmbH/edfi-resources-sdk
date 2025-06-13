@@ -389,8 +389,12 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'summary_evaluation_comment', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['summary_evaluation_comment']) && (mb_strlen($this->container['summary_evaluation_comment']) < 1)) {
-            $invalidProperties[] = "invalid value for 'summary_evaluation_comment', the character length must be bigger than or equal to 1.";
+        if (!is_null($this->container['summary_evaluation_numeric_rating']) && ($this->container['summary_evaluation_numeric_rating'] > 999.999)) {
+            $invalidProperties[] = "invalid value for 'summary_evaluation_numeric_rating', must be smaller than or equal to 999.999.";
+        }
+
+        if (!is_null($this->container['summary_evaluation_numeric_rating']) && ($this->container['summary_evaluation_numeric_rating'] < -999.999)) {
+            $invalidProperties[] = "invalid value for 'summary_evaluation_numeric_rating', must be bigger than or equal to -999.999.";
         }
 
         if (!is_null($this->container['summary_evaluation_rating_level_descriptor']) && (mb_strlen($this->container['summary_evaluation_rating_level_descriptor']) > 306)) {
@@ -587,7 +591,7 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets evaluation_duration
      *
-     * @param int|null $evaluation_duration The actual or estimated number of clock minutes during which the evaluation was conducted.
+     * @param int|null $evaluation_duration The actual number of minutes to conduct the evaluation.
      *
      * @return self
      */
@@ -726,9 +730,6 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
         if (!is_null($summary_evaluation_comment) && (mb_strlen($summary_evaluation_comment) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $summary_evaluation_comment when calling EdFiStudentProgramEvaluation., must be smaller than or equal to 1024.');
         }
-        if (!is_null($summary_evaluation_comment) && (mb_strlen($summary_evaluation_comment) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $summary_evaluation_comment when calling EdFiStudentProgramEvaluation., must be bigger than or equal to 1.');
-        }
 
         $this->container['summary_evaluation_comment'] = $summary_evaluation_comment;
 
@@ -764,6 +765,14 @@ class EdFiStudentProgramEvaluation implements ModelInterface, ArrayAccess, \Json
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($summary_evaluation_numeric_rating) && ($summary_evaluation_numeric_rating > 999.999)) {
+            throw new \InvalidArgumentException('invalid value for $summary_evaluation_numeric_rating when calling EdFiStudentProgramEvaluation., must be smaller than or equal to 999.999.');
+        }
+        if (!is_null($summary_evaluation_numeric_rating) && ($summary_evaluation_numeric_rating < -999.999)) {
+            throw new \InvalidArgumentException('invalid value for $summary_evaluation_numeric_rating when calling EdFiStudentProgramEvaluation., must be bigger than or equal to -999.999.');
+        }
+
         $this->container['summary_evaluation_numeric_rating'] = $summary_evaluation_numeric_rating;
 
         return $this;

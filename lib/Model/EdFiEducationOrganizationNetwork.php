@@ -385,10 +385,6 @@ class EdFiEducationOrganizationNetwork implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = "invalid value for 'name_of_institution', the character length must be smaller than or equal to 75.";
         }
 
-        if ((mb_strlen($this->container['name_of_institution']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name_of_institution', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['network_purpose_descriptor'] === null) {
             $invalidProperties[] = "'network_purpose_descriptor' can't be null";
         }
@@ -402,10 +398,6 @@ class EdFiEducationOrganizationNetwork implements ModelInterface, ArrayAccess, \
 
         if (!is_null($this->container['short_name_of_institution']) && (mb_strlen($this->container['short_name_of_institution']) > 75)) {
             $invalidProperties[] = "invalid value for 'short_name_of_institution', the character length must be smaller than or equal to 75.";
-        }
-
-        if (!is_null($this->container['short_name_of_institution']) && (mb_strlen($this->container['short_name_of_institution']) < 1)) {
-            $invalidProperties[] = "invalid value for 'short_name_of_institution', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['web_site']) && (mb_strlen($this->container['web_site']) > 255)) {
@@ -498,7 +490,7 @@ class EdFiEducationOrganizationNetwork implements ModelInterface, ArrayAccess, \
     /**
      * Sets education_organization_network_id
      *
-     * @param int $education_organization_network_id The identifier assigned to a network of education organizations.
+     * @param int $education_organization_network_id The identifier assigned to a network of education organizations. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -672,9 +664,6 @@ class EdFiEducationOrganizationNetwork implements ModelInterface, ArrayAccess, \
         if ((mb_strlen($name_of_institution) > 75)) {
             throw new \InvalidArgumentException('invalid length for $name_of_institution when calling EdFiEducationOrganizationNetwork., must be smaller than or equal to 75.');
         }
-        if ((mb_strlen($name_of_institution) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name_of_institution when calling EdFiEducationOrganizationNetwork., must be bigger than or equal to 1.');
-        }
 
         $this->container['name_of_institution'] = $name_of_institution;
 
@@ -781,9 +770,6 @@ class EdFiEducationOrganizationNetwork implements ModelInterface, ArrayAccess, \
         }
         if (!is_null($short_name_of_institution) && (mb_strlen($short_name_of_institution) > 75)) {
             throw new \InvalidArgumentException('invalid length for $short_name_of_institution when calling EdFiEducationOrganizationNetwork., must be smaller than or equal to 75.');
-        }
-        if (!is_null($short_name_of_institution) && (mb_strlen($short_name_of_institution) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $short_name_of_institution when calling EdFiEducationOrganizationNetwork., must be bigger than or equal to 1.');
         }
 
         $this->container['short_name_of_institution'] = $short_name_of_institution;

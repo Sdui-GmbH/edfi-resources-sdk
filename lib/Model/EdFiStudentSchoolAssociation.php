@@ -502,6 +502,10 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'exit_withdraw_type_descriptor', the character length must be smaller than or equal to 306.";
         }
 
+        if (!is_null($this->container['full_time_equivalency']) && ($this->container['full_time_equivalency'] > 9.9999)) {
+            $invalidProperties[] = "invalid value for 'full_time_equivalency', must be smaller than or equal to 9.9999.";
+        }
+
         if (!is_null($this->container['full_time_equivalency']) && ($this->container['full_time_equivalency'] < 0.0)) {
             $invalidProperties[] = "invalid value for 'full_time_equivalency', must be bigger than or equal to 0.0.";
         }
@@ -573,7 +577,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets entry_date
      *
-     * @param \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school.
+     * @param \DateTime $entry_date The month, day, and year on which an individual enters and begins to receive instructional services in a school for each school year. The EntryDate value should be the date the student enrolled, or when the student's enrollment materially changed, such as with a grade promotion.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -1022,7 +1026,7 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets exit_withdraw_date
      *
-     * @param \DateTime|null $exit_withdraw_date The recorded exit or withdraw date for the student.
+     * @param \DateTime|null $exit_withdraw_date The recorded exit or withdraw date for the student.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -1111,6 +1115,9 @@ class EdFiStudentSchoolAssociation implements ModelInterface, ArrayAccess, \Json
             }
         }
 
+        if (!is_null($full_time_equivalency) && ($full_time_equivalency > 9.9999)) {
+            throw new \InvalidArgumentException('invalid value for $full_time_equivalency when calling EdFiStudentSchoolAssociation., must be smaller than or equal to 9.9999.');
+        }
         if (!is_null($full_time_equivalency) && ($full_time_equivalency < 0.0)) {
             throw new \InvalidArgumentException('invalid value for $full_time_equivalency when calling EdFiStudentSchoolAssociation., must be bigger than or equal to 0.0.');
         }

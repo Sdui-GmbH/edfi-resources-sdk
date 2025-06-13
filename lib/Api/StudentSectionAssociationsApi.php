@@ -83,6 +83,9 @@ class StudentSectionAssociationsApi
         'getStudentSectionAssociationsById' => [
             'application/json',
         ],
+        'getStudentSectionAssociationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStudentSectionAssociations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StudentSectionAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSectionAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentSectionAssociationDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentSectionAssociationDelete[]
      */
-    public function deletesStudentSectionAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAssociations'][0])
+    public function deletesStudentSectionAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAssociations'][0])
     {
         list($response) = $this->deletesStudentSectionAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StudentSectionAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSectionAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentSectionAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentSectionAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStudentSectionAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAssociations'][0])
+    public function deletesStudentSectionAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAssociations'][0])
     {
         $request = $this->deletesStudentSectionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StudentSectionAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSectionAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentSectionAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAssociations'][0])
+    public function deletesStudentSectionAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAssociations'][0])
     {
         return $this->deletesStudentSectionAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StudentSectionAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSectionAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStudentSectionAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAssociations'][0])
+    public function deletesStudentSectionAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentSectionAssociationDelete[]';
         $request = $this->deletesStudentSectionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StudentSectionAssociationsApi
     /**
      * Create request for operation 'deletesStudentSectionAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStudentSectionAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStudentSectionAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAssociations'][0])
+    public function deletesStudentSectionAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStudentSectionAssociations'][0])
     {
 
 
@@ -759,21 +762,28 @@ class StudentSectionAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $session_name The identifier for the calendar for the academic session. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $dual_credit_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $attempt_status_descriptor An indication of the student&#39;s completion status for the section. (optional)
+     * @param  string $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution. (optional)
+     * @param  string $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program. (optional)
      * @param  string $repeat_identifier_descriptor An indication as to whether a student has previously taken a given course. (optional)
-     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section. (optional)
+     * @param  bool $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion. (optional)
+     * @param  bool $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation. (optional)
+     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  bool $homeroom_indicator Indicates the section is the student&#39;s homeroom. Homeroom period may the convention for taking daily attendance. (optional)
      * @param  string $id  (optional)
      * @param  bool $teacher_student_data_link_exclusion Indicates that the student-section combination is excluded from calculation of value-added or growth attribution calculations used for a particular teacher evaluation. (optional)
@@ -782,11 +792,11 @@ class StudentSectionAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentSectionAssociation[]
+     * @return |\Resources\Model\EdFiStudentSectionAssociation[]
      */
-    public function getStudentSectionAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $attempt_status_descriptor = null, $repeat_identifier_descriptor = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociations'][0])
+    public function getStudentSectionAssociations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $dual_credit_education_organization_id = null, $attempt_status_descriptor = null, $dual_credit_institution_descriptor = null, $dual_credit_type_descriptor = null, $repeat_identifier_descriptor = null, $dual_credit_indicator = null, $dual_high_school_credit_indicator = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociations'][0])
     {
-        list($response) = $this->getStudentSectionAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $attempt_status_descriptor, $repeat_identifier_descriptor, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType);
+        list($response) = $this->getStudentSectionAssociationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $dual_credit_education_organization_id, $attempt_status_descriptor, $dual_credit_institution_descriptor, $dual_credit_type_descriptor, $repeat_identifier_descriptor, $dual_credit_indicator, $dual_high_school_credit_indicator, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -795,21 +805,28 @@ class StudentSectionAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $session_name The identifier for the calendar for the academic session. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $dual_credit_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $attempt_status_descriptor An indication of the student&#39;s completion status for the section. (optional)
+     * @param  string $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution. (optional)
+     * @param  string $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program. (optional)
      * @param  string $repeat_identifier_descriptor An indication as to whether a student has previously taken a given course. (optional)
-     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section. (optional)
+     * @param  bool $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion. (optional)
+     * @param  bool $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation. (optional)
+     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  bool $homeroom_indicator Indicates the section is the student&#39;s homeroom. Homeroom period may the convention for taking daily attendance. (optional)
      * @param  string $id  (optional)
      * @param  bool $teacher_student_data_link_exclusion Indicates that the student-section combination is excluded from calculation of value-added or growth attribution calculations used for a particular teacher evaluation. (optional)
@@ -818,11 +835,11 @@ class StudentSectionAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentSectionAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentSectionAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStudentSectionAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $attempt_status_descriptor = null, $repeat_identifier_descriptor = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociations'][0])
+    public function getStudentSectionAssociationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $dual_credit_education_organization_id = null, $attempt_status_descriptor = null, $dual_credit_institution_descriptor = null, $dual_credit_type_descriptor = null, $repeat_identifier_descriptor = null, $dual_credit_indicator = null, $dual_high_school_credit_indicator = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociations'][0])
     {
-        $request = $this->getStudentSectionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $attempt_status_descriptor, $repeat_identifier_descriptor, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType);
+        $request = $this->getStudentSectionAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $dual_credit_education_organization_id, $attempt_status_descriptor, $dual_credit_institution_descriptor, $dual_credit_type_descriptor, $repeat_identifier_descriptor, $dual_credit_indicator, $dual_high_school_credit_indicator, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -938,21 +955,28 @@ class StudentSectionAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $session_name The identifier for the calendar for the academic session. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $dual_credit_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $attempt_status_descriptor An indication of the student&#39;s completion status for the section. (optional)
+     * @param  string $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution. (optional)
+     * @param  string $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program. (optional)
      * @param  string $repeat_identifier_descriptor An indication as to whether a student has previously taken a given course. (optional)
-     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section. (optional)
+     * @param  bool $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion. (optional)
+     * @param  bool $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation. (optional)
+     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  bool $homeroom_indicator Indicates the section is the student&#39;s homeroom. Homeroom period may the convention for taking daily attendance. (optional)
      * @param  string $id  (optional)
      * @param  bool $teacher_student_data_link_exclusion Indicates that the student-section combination is excluded from calculation of value-added or growth attribution calculations used for a particular teacher evaluation. (optional)
@@ -962,9 +986,9 @@ class StudentSectionAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSectionAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $attempt_status_descriptor = null, $repeat_identifier_descriptor = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociations'][0])
+    public function getStudentSectionAssociationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $dual_credit_education_organization_id = null, $attempt_status_descriptor = null, $dual_credit_institution_descriptor = null, $dual_credit_type_descriptor = null, $repeat_identifier_descriptor = null, $dual_credit_indicator = null, $dual_high_school_credit_indicator = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociations'][0])
     {
-        return $this->getStudentSectionAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $attempt_status_descriptor, $repeat_identifier_descriptor, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType)
+        return $this->getStudentSectionAssociationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $dual_credit_education_organization_id, $attempt_status_descriptor, $dual_credit_institution_descriptor, $dual_credit_type_descriptor, $repeat_identifier_descriptor, $dual_credit_indicator, $dual_high_school_credit_indicator, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -977,21 +1001,28 @@ class StudentSectionAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $session_name The identifier for the calendar for the academic session. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $dual_credit_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $attempt_status_descriptor An indication of the student&#39;s completion status for the section. (optional)
+     * @param  string $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution. (optional)
+     * @param  string $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program. (optional)
      * @param  string $repeat_identifier_descriptor An indication as to whether a student has previously taken a given course. (optional)
-     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section. (optional)
+     * @param  bool $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion. (optional)
+     * @param  bool $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation. (optional)
+     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  bool $homeroom_indicator Indicates the section is the student&#39;s homeroom. Homeroom period may the convention for taking daily attendance. (optional)
      * @param  string $id  (optional)
      * @param  bool $teacher_student_data_link_exclusion Indicates that the student-section combination is excluded from calculation of value-added or growth attribution calculations used for a particular teacher evaluation. (optional)
@@ -1001,10 +1032,10 @@ class StudentSectionAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStudentSectionAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $attempt_status_descriptor = null, $repeat_identifier_descriptor = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociations'][0])
+    public function getStudentSectionAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $dual_credit_education_organization_id = null, $attempt_status_descriptor = null, $dual_credit_institution_descriptor = null, $dual_credit_type_descriptor = null, $repeat_identifier_descriptor = null, $dual_credit_indicator = null, $dual_high_school_credit_indicator = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStudentSectionAssociation[]';
-        $request = $this->getStudentSectionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $attempt_status_descriptor, $repeat_identifier_descriptor, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType);
+        $request = $this->getStudentSectionAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $dual_credit_education_organization_id, $attempt_status_descriptor, $dual_credit_institution_descriptor, $dual_credit_type_descriptor, $repeat_identifier_descriptor, $dual_credit_indicator, $dual_high_school_credit_indicator, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1045,21 +1076,28 @@ class StudentSectionAssociationsApi
     /**
      * Create request for operation 'getStudentSectionAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  int $school_year The identifier for the school year. (optional)
      * @param  string $section_identifier The local identifier assigned to a section. (optional)
      * @param  string $session_name The identifier for the calendar for the academic session. (optional)
      * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $dual_credit_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $attempt_status_descriptor An indication of the student&#39;s completion status for the section. (optional)
+     * @param  string $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution. (optional)
+     * @param  string $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program. (optional)
      * @param  string $repeat_identifier_descriptor An indication as to whether a student has previously taken a given course. (optional)
-     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section. (optional)
+     * @param  bool $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion. (optional)
+     * @param  bool $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation. (optional)
+     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  bool $homeroom_indicator Indicates the section is the student&#39;s homeroom. Homeroom period may the convention for taking daily attendance. (optional)
      * @param  string $id  (optional)
      * @param  bool $teacher_student_data_link_exclusion Indicates that the student-section combination is excluded from calculation of value-added or growth attribution calculations used for a particular teacher evaluation. (optional)
@@ -1069,7 +1107,7 @@ class StudentSectionAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStudentSectionAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $attempt_status_descriptor = null, $repeat_identifier_descriptor = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociations'][0])
+    public function getStudentSectionAssociationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $dual_credit_education_organization_id = null, $attempt_status_descriptor = null, $dual_credit_institution_descriptor = null, $dual_credit_type_descriptor = null, $repeat_identifier_descriptor = null, $dual_credit_indicator = null, $dual_high_school_credit_indicator = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociations'][0])
     {
 
 
@@ -1078,6 +1116,11 @@ class StudentSectionAssociationsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StudentSectionAssociationsApi.getStudentSectionAssociations, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StudentSectionAssociationsApi.getStudentSectionAssociations, must be bigger than or equal to 0.');
         }
         
 
@@ -1102,14 +1145,25 @@ class StudentSectionAssociationsApi
             throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentSectionAssociationsApi.getStudentSectionAssociations, must be smaller than or equal to 32.');
         }
         
+
         if ($attempt_status_descriptor !== null && strlen($attempt_status_descriptor) > 306) {
             throw new \InvalidArgumentException('invalid length for "$attempt_status_descriptor" when calling StudentSectionAssociationsApi.getStudentSectionAssociations, must be smaller than or equal to 306.');
+        }
+        
+        if ($dual_credit_institution_descriptor !== null && strlen($dual_credit_institution_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$dual_credit_institution_descriptor" when calling StudentSectionAssociationsApi.getStudentSectionAssociations, must be smaller than or equal to 306.');
+        }
+        
+        if ($dual_credit_type_descriptor !== null && strlen($dual_credit_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$dual_credit_type_descriptor" when calling StudentSectionAssociationsApi.getStudentSectionAssociations, must be smaller than or equal to 306.');
         }
         
         if ($repeat_identifier_descriptor !== null && strlen($repeat_identifier_descriptor) > 306) {
             throw new \InvalidArgumentException('invalid length for "$repeat_identifier_descriptor" when calling StudentSectionAssociationsApi.getStudentSectionAssociations, must be smaller than or equal to 306.');
         }
         
+
+
 
 
 
@@ -1136,6 +1190,24 @@ class StudentSectionAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1233,8 +1305,35 @@ class StudentSectionAssociationsApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dual_credit_education_organization_id,
+            'dualCreditEducationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $attempt_status_descriptor,
             'attemptStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dual_credit_institution_descriptor,
+            'dualCreditInstitutionDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dual_credit_type_descriptor,
+            'dualCreditTypeDescriptor', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1245,6 +1344,24 @@ class StudentSectionAssociationsApi
             $repeat_identifier_descriptor,
             'repeatIdentifierDescriptor', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dual_credit_indicator,
+            'dualCreditIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dual_high_school_credit_indicator,
+            'dualHighSchoolCreditIndicator', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1362,7 +1479,7 @@ class StudentSectionAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStudentSectionAssociation
+     * @return |\Resources\Model\EdFiStudentSectionAssociation
      */
     public function getStudentSectionAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociationsById'][0])
     {
@@ -1382,7 +1499,7 @@ class StudentSectionAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStudentSectionAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStudentSectionAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStudentSectionAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociationsById'][0])
     {
@@ -1683,23 +1800,670 @@ class StudentSectionAssociationsApi
     }
 
     /**
+     * Operation getStudentSectionAssociationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $dual_credit_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $attempt_status_descriptor An indication of the student&#39;s completion status for the section. (optional)
+     * @param  string $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution. (optional)
+     * @param  string $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program. (optional)
+     * @param  string $repeat_identifier_descriptor An indication as to whether a student has previously taken a given course. (optional)
+     * @param  bool $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion. (optional)
+     * @param  bool $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation. (optional)
+     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  bool $homeroom_indicator Indicates the section is the student&#39;s homeroom. Homeroom period may the convention for taking daily attendance. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $teacher_student_data_link_exclusion Indicates that the student-section combination is excluded from calculation of value-added or growth attribution calculations used for a particular teacher evaluation. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSectionAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStudentSectionAssociationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $dual_credit_education_organization_id = null, $attempt_status_descriptor = null, $dual_credit_institution_descriptor = null, $dual_credit_type_descriptor = null, $repeat_identifier_descriptor = null, $dual_credit_indicator = null, $dual_high_school_credit_indicator = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociationsPartitions'][0])
+    {
+        list($response) = $this->getStudentSectionAssociationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $dual_credit_education_organization_id, $attempt_status_descriptor, $dual_credit_institution_descriptor, $dual_credit_type_descriptor, $repeat_identifier_descriptor, $dual_credit_indicator, $dual_high_school_credit_indicator, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStudentSectionAssociationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $dual_credit_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $attempt_status_descriptor An indication of the student&#39;s completion status for the section. (optional)
+     * @param  string $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution. (optional)
+     * @param  string $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program. (optional)
+     * @param  string $repeat_identifier_descriptor An indication as to whether a student has previously taken a given course. (optional)
+     * @param  bool $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion. (optional)
+     * @param  bool $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation. (optional)
+     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  bool $homeroom_indicator Indicates the section is the student&#39;s homeroom. Homeroom period may the convention for taking daily attendance. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $teacher_student_data_link_exclusion Indicates that the student-section combination is excluded from calculation of value-added or growth attribution calculations used for a particular teacher evaluation. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSectionAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStudentSectionAssociationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $dual_credit_education_organization_id = null, $attempt_status_descriptor = null, $dual_credit_institution_descriptor = null, $dual_credit_type_descriptor = null, $repeat_identifier_descriptor = null, $dual_credit_indicator = null, $dual_high_school_credit_indicator = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociationsPartitions'][0])
+    {
+        $request = $this->getStudentSectionAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $dual_credit_education_organization_id, $attempt_status_descriptor, $dual_credit_institution_descriptor, $dual_credit_type_descriptor, $repeat_identifier_descriptor, $dual_credit_indicator, $dual_high_school_credit_indicator, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStudentSectionAssociationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $dual_credit_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $attempt_status_descriptor An indication of the student&#39;s completion status for the section. (optional)
+     * @param  string $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution. (optional)
+     * @param  string $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program. (optional)
+     * @param  string $repeat_identifier_descriptor An indication as to whether a student has previously taken a given course. (optional)
+     * @param  bool $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion. (optional)
+     * @param  bool $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation. (optional)
+     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  bool $homeroom_indicator Indicates the section is the student&#39;s homeroom. Homeroom period may the convention for taking daily attendance. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $teacher_student_data_link_exclusion Indicates that the student-section combination is excluded from calculation of value-added or growth attribution calculations used for a particular teacher evaluation. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSectionAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentSectionAssociationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $dual_credit_education_organization_id = null, $attempt_status_descriptor = null, $dual_credit_institution_descriptor = null, $dual_credit_type_descriptor = null, $repeat_identifier_descriptor = null, $dual_credit_indicator = null, $dual_high_school_credit_indicator = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociationsPartitions'][0])
+    {
+        return $this->getStudentSectionAssociationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $dual_credit_education_organization_id, $attempt_status_descriptor, $dual_credit_institution_descriptor, $dual_credit_type_descriptor, $repeat_identifier_descriptor, $dual_credit_indicator, $dual_high_school_credit_indicator, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStudentSectionAssociationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $dual_credit_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $attempt_status_descriptor An indication of the student&#39;s completion status for the section. (optional)
+     * @param  string $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution. (optional)
+     * @param  string $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program. (optional)
+     * @param  string $repeat_identifier_descriptor An indication as to whether a student has previously taken a given course. (optional)
+     * @param  bool $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion. (optional)
+     * @param  bool $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation. (optional)
+     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  bool $homeroom_indicator Indicates the section is the student&#39;s homeroom. Homeroom period may the convention for taking daily attendance. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $teacher_student_data_link_exclusion Indicates that the student-section combination is excluded from calculation of value-added or growth attribution calculations used for a particular teacher evaluation. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSectionAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStudentSectionAssociationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $dual_credit_education_organization_id = null, $attempt_status_descriptor = null, $dual_credit_institution_descriptor = null, $dual_credit_type_descriptor = null, $repeat_identifier_descriptor = null, $dual_credit_indicator = null, $dual_high_school_credit_indicator = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStudentSectionAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $begin_date, $local_course_code, $school_id, $school_year, $section_identifier, $session_name, $student_unique_id, $dual_credit_education_organization_id, $attempt_status_descriptor, $dual_credit_institution_descriptor, $dual_credit_type_descriptor, $repeat_identifier_descriptor, $dual_credit_indicator, $dual_high_school_credit_indicator, $end_date, $homeroom_indicator, $id, $teacher_student_data_link_exclusion, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStudentSectionAssociationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  \DateTime $begin_date Month, day, and year of the student&#39;s entry or assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  string $local_course_code The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  int $school_year The identifier for the school year. (optional)
+     * @param  string $section_identifier The local identifier assigned to a section. (optional)
+     * @param  string $session_name The identifier for the calendar for the academic session. (optional)
+     * @param  string $student_unique_id A unique alphanumeric code assigned to a student. (optional)
+     * @param  int $dual_credit_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $attempt_status_descriptor An indication of the student&#39;s completion status for the section. (optional)
+     * @param  string $dual_credit_institution_descriptor Descriptor for the postsecondary institution offering college credit. This descriptor may be used to select a postsecondary institution that is not defined as an education organization, and/or select a general type of postsecondary institution. (optional)
+     * @param  string $dual_credit_type_descriptor For a student taking a dual credit course in a college or high school setting, indicates the type of dual credit program. (optional)
+     * @param  string $repeat_identifier_descriptor An indication as to whether a student has previously taken a given course. (optional)
+     * @param  bool $dual_credit_indicator Indicates whether the student assigned to the section is to receive dual credit upon successful completion. (optional)
+     * @param  bool $dual_high_school_credit_indicator Indicates whether successful completion of the course will result in credits toward high school graduation. (optional)
+     * @param  \DateTime $end_date Month, day, and year of the withdrawal or exit of the student from the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  bool $homeroom_indicator Indicates the section is the student&#39;s homeroom. Homeroom period may the convention for taking daily attendance. (optional)
+     * @param  string $id  (optional)
+     * @param  bool $teacher_student_data_link_exclusion Indicates that the student-section combination is excluded from calculation of value-added or growth attribution calculations used for a particular teacher evaluation. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStudentSectionAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStudentSectionAssociationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $begin_date = null, $local_course_code = null, $school_id = null, $school_year = null, $section_identifier = null, $session_name = null, $student_unique_id = null, $dual_credit_education_organization_id = null, $attempt_status_descriptor = null, $dual_credit_institution_descriptor = null, $dual_credit_type_descriptor = null, $repeat_identifier_descriptor = null, $dual_credit_indicator = null, $dual_high_school_credit_indicator = null, $end_date = null, $homeroom_indicator = null, $id = null, $teacher_student_data_link_exclusion = null, $use_snapshot = false, string $contentType = self::contentTypes['getStudentSectionAssociationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentSectionAssociationsApi.getStudentSectionAssociationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StudentSectionAssociationsApi.getStudentSectionAssociationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+        if ($local_course_code !== null && strlen($local_course_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$local_course_code" when calling StudentSectionAssociationsApi.getStudentSectionAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+        if ($section_identifier !== null && strlen($section_identifier) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$section_identifier" when calling StudentSectionAssociationsApi.getStudentSectionAssociationsPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($session_name !== null && strlen($session_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$session_name" when calling StudentSectionAssociationsApi.getStudentSectionAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($student_unique_id !== null && strlen($student_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$student_unique_id" when calling StudentSectionAssociationsApi.getStudentSectionAssociationsPartitions, must be smaller than or equal to 32.');
+        }
+        
+
+        if ($attempt_status_descriptor !== null && strlen($attempt_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$attempt_status_descriptor" when calling StudentSectionAssociationsApi.getStudentSectionAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($dual_credit_institution_descriptor !== null && strlen($dual_credit_institution_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$dual_credit_institution_descriptor" when calling StudentSectionAssociationsApi.getStudentSectionAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($dual_credit_type_descriptor !== null && strlen($dual_credit_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$dual_credit_type_descriptor" when calling StudentSectionAssociationsApi.getStudentSectionAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($repeat_identifier_descriptor !== null && strlen($repeat_identifier_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$repeat_identifier_descriptor" when calling StudentSectionAssociationsApi.getStudentSectionAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/studentSectionAssociations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $begin_date,
+            'beginDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $local_course_code,
+            'localCourseCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_id,
+            'schoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_year,
+            'schoolYear', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $section_identifier,
+            'sectionIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $session_name,
+            'sessionName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $student_unique_id,
+            'studentUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dual_credit_education_organization_id,
+            'dualCreditEducationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $attempt_status_descriptor,
+            'attemptStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dual_credit_institution_descriptor,
+            'dualCreditInstitutionDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dual_credit_type_descriptor,
+            'dualCreditTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $repeat_identifier_descriptor,
+            'repeatIdentifierDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dual_credit_indicator,
+            'dualCreditIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dual_high_school_credit_indicator,
+            'dualHighSchoolCreditIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $homeroom_indicator,
+            'homeroomIndicator', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $teacher_student_data_link_exclusion,
+            'teacherStudentDataLinkExclusion', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStudentSectionAssociations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSectionAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStudentSectionAssociationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStudentSectionAssociationKeyChange[]
      */
-    public function keyChangesStudentSectionAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAssociations'][0])
+    public function keyChangesStudentSectionAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAssociations'][0])
     {
         list($response) = $this->keyChangesStudentSectionAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1710,19 +2474,19 @@ class StudentSectionAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSectionAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStudentSectionAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStudentSectionAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStudentSectionAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAssociations'][0])
+    public function keyChangesStudentSectionAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAssociations'][0])
     {
         $request = $this->keyChangesStudentSectionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1840,18 +2604,18 @@ class StudentSectionAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSectionAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentSectionAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAssociations'][0])
+    public function keyChangesStudentSectionAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAssociations'][0])
     {
         return $this->keyChangesStudentSectionAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1866,18 +2630,18 @@ class StudentSectionAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSectionAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStudentSectionAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAssociations'][0])
+    public function keyChangesStudentSectionAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStudentSectionAssociationKeyChange[]';
         $request = $this->keyChangesStudentSectionAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1921,18 +2685,18 @@ class StudentSectionAssociationsApi
     /**
      * Create request for operation 'keyChangesStudentSectionAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStudentSectionAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStudentSectionAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAssociations'][0])
+    public function keyChangesStudentSectionAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStudentSectionAssociations'][0])
     {
 
 

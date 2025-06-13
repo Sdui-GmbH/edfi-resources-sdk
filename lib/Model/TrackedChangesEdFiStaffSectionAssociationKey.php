@@ -320,32 +320,16 @@ class TrackedChangesEdFiStaffSectionAssociationKey implements ModelInterface, Ar
             $invalidProperties[] = "invalid value for 'local_course_code', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['local_course_code']) && (mb_strlen($this->container['local_course_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'local_course_code', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['section_identifier']) && (mb_strlen($this->container['section_identifier']) > 255)) {
             $invalidProperties[] = "invalid value for 'section_identifier', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['section_identifier']) && (mb_strlen($this->container['section_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'section_identifier', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['session_name']) && (mb_strlen($this->container['session_name']) > 60)) {
             $invalidProperties[] = "invalid value for 'session_name', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['session_name']) && (mb_strlen($this->container['session_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'session_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -376,7 +360,7 @@ class TrackedChangesEdFiStaffSectionAssociationKey implements ModelInterface, Ar
     /**
      * Sets begin_date
      *
-     * @param \DateTime|null $begin_date Month, day, and year of a teacher's assignment to the section.
+     * @param \DateTime|null $begin_date Month, day, and year of a teacher's assignment to the section.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -415,9 +399,6 @@ class TrackedChangesEdFiStaffSectionAssociationKey implements ModelInterface, Ar
         if ((mb_strlen($local_course_code) > 60)) {
             throw new \InvalidArgumentException('invalid length for $local_course_code when calling TrackedChangesEdFiStaffSectionAssociationKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($local_course_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $local_course_code when calling TrackedChangesEdFiStaffSectionAssociationKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['local_course_code'] = $local_course_code;
 
@@ -437,7 +418,7 @@ class TrackedChangesEdFiStaffSectionAssociationKey implements ModelInterface, Ar
     /**
      * Sets school_id
      *
-     * @param int|null $school_id The identifier assigned to a school.
+     * @param int|null $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication.
      *
      * @return self
      */
@@ -503,9 +484,6 @@ class TrackedChangesEdFiStaffSectionAssociationKey implements ModelInterface, Ar
         if ((mb_strlen($section_identifier) > 255)) {
             throw new \InvalidArgumentException('invalid length for $section_identifier when calling TrackedChangesEdFiStaffSectionAssociationKey., must be smaller than or equal to 255.');
         }
-        if ((mb_strlen($section_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $section_identifier when calling TrackedChangesEdFiStaffSectionAssociationKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['section_identifier'] = $section_identifier;
 
@@ -537,9 +515,6 @@ class TrackedChangesEdFiStaffSectionAssociationKey implements ModelInterface, Ar
         if ((mb_strlen($session_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $session_name when calling TrackedChangesEdFiStaffSectionAssociationKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($session_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $session_name when calling TrackedChangesEdFiStaffSectionAssociationKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['session_name'] = $session_name;
 
@@ -570,9 +545,6 @@ class TrackedChangesEdFiStaffSectionAssociationKey implements ModelInterface, Ar
         }
         if ((mb_strlen($staff_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiStaffSectionAssociationKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($staff_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiStaffSectionAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['staff_unique_id'] = $staff_unique_id;

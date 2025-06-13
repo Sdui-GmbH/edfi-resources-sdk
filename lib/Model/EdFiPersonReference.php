@@ -295,10 +295,6 @@ class EdFiPersonReference implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'person_id', the character length must be smaller than or equal to 32.";
         }
 
-        if ((mb_strlen($this->container['person_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'person_id', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['source_system_descriptor'] === null) {
             $invalidProperties[] = "'source_system_descriptor' can't be null";
         }
@@ -345,9 +341,6 @@ class EdFiPersonReference implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if ((mb_strlen($person_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $person_id when calling EdFiPersonReference., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($person_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $person_id when calling EdFiPersonReference., must be bigger than or equal to 1.');
         }
 
         $this->container['person_id'] = $person_id;

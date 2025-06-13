@@ -93,7 +93,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.ed-fi.org:443/v7.1/api/data/v3';
+    protected $host = 'https://api.ed-fi.org:443/v7.3/api/data/v3';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -472,7 +472,7 @@ class Configuration
     {
         return [
             [
-                "url" => "https://api.ed-fi.org:443/v7.1/api/data/v3",
+                "url" => "https://api.ed-fi.org:443/v7.3/api/data/v3",
                 "description" => "No description provided",
             ]
         ];

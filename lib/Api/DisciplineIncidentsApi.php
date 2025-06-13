@@ -83,6 +83,9 @@ class DisciplineIncidentsApi
         'getDisciplineIncidentsById' => [
             'application/json',
         ],
+        'getDisciplineIncidentsPartitions' => [
+            'application/json',
+        ],
         'keyChangesDisciplineIncidents' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class DisciplineIncidentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineIncidents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[]
      */
-    public function deletesDisciplineIncidents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
+    public function deletesDisciplineIncidents($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
     {
         list($response) = $this->deletesDisciplineIncidentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class DisciplineIncidentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineIncidents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesDisciplineIncidentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
+    public function deletesDisciplineIncidentsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
     {
         $request = $this->deletesDisciplineIncidentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class DisciplineIncidentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineIncidents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesDisciplineIncidentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
+    public function deletesDisciplineIncidentsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
     {
         return $this->deletesDisciplineIncidentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class DisciplineIncidentsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineIncidents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesDisciplineIncidentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
+    public function deletesDisciplineIncidentsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineIncidentDelete[]';
         $request = $this->deletesDisciplineIncidentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class DisciplineIncidentsApi
     /**
      * Create request for operation 'deletesDisciplineIncidents'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesDisciplineIncidents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesDisciplineIncidentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
+    public function deletesDisciplineIncidentsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesDisciplineIncidents'][0])
     {
 
 
@@ -759,13 +762,15 @@ class DisciplineIncidentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $incident_identifier A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $incident_location_descriptor Identifies where the discipline incident occurred and whether or not it occurred on school. (optional)
      * @param  string $reporter_description_descriptor Information on the type of individual who reported the discipline incident. When known and/or if useful, use a more specific option code (e.g., \&quot;Counselor\&quot; rather than \&quot;Professional Staff\&quot;). (optional)
      * @param  string $case_number The case number assigned to the DisciplineIncident by law enforcement or other organization. (optional)
@@ -781,11 +786,11 @@ class DisciplineIncidentsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiDisciplineIncident[]
+     * @return |\Resources\Model\EdFiDisciplineIncident[]
      */
-    public function getDisciplineIncidents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
+    public function getDisciplineIncidents($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
     {
-        list($response) = $this->getDisciplineIncidentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType);
+        list($response) = $this->getDisciplineIncidentsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -794,13 +799,15 @@ class DisciplineIncidentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $incident_identifier A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $incident_location_descriptor Identifies where the discipline incident occurred and whether or not it occurred on school. (optional)
      * @param  string $reporter_description_descriptor Information on the type of individual who reported the discipline incident. When known and/or if useful, use a more specific option code (e.g., \&quot;Counselor\&quot; rather than \&quot;Professional Staff\&quot;). (optional)
      * @param  string $case_number The case number assigned to the DisciplineIncident by law enforcement or other organization. (optional)
@@ -816,11 +823,11 @@ class DisciplineIncidentsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiDisciplineIncident[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiDisciplineIncident[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDisciplineIncidentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
+    public function getDisciplineIncidentsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
     {
-        $request = $this->getDisciplineIncidentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType);
+        $request = $this->getDisciplineIncidentsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -936,13 +943,15 @@ class DisciplineIncidentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $incident_identifier A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $incident_location_descriptor Identifies where the discipline incident occurred and whether or not it occurred on school. (optional)
      * @param  string $reporter_description_descriptor Information on the type of individual who reported the discipline incident. When known and/or if useful, use a more specific option code (e.g., \&quot;Counselor\&quot; rather than \&quot;Professional Staff\&quot;). (optional)
      * @param  string $case_number The case number assigned to the DisciplineIncident by law enforcement or other organization. (optional)
@@ -959,9 +968,9 @@ class DisciplineIncidentsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDisciplineIncidentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
+    public function getDisciplineIncidentsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
     {
-        return $this->getDisciplineIncidentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType)
+        return $this->getDisciplineIncidentsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -974,13 +983,15 @@ class DisciplineIncidentsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $incident_identifier A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $incident_location_descriptor Identifies where the discipline incident occurred and whether or not it occurred on school. (optional)
      * @param  string $reporter_description_descriptor Information on the type of individual who reported the discipline incident. When known and/or if useful, use a more specific option code (e.g., \&quot;Counselor\&quot; rather than \&quot;Professional Staff\&quot;). (optional)
      * @param  string $case_number The case number assigned to the DisciplineIncident by law enforcement or other organization. (optional)
@@ -997,10 +1008,10 @@ class DisciplineIncidentsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDisciplineIncidentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
+    public function getDisciplineIncidentsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
     {
         $returnType = '\Resources\Model\EdFiDisciplineIncident[]';
-        $request = $this->getDisciplineIncidentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType);
+        $request = $this->getDisciplineIncidentsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1041,13 +1052,15 @@ class DisciplineIncidentsApi
     /**
      * Create request for operation 'getDisciplineIncidents'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $incident_identifier A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. (optional)
-     * @param  int $school_id The identifier assigned to a school. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
      * @param  string $incident_location_descriptor Identifies where the discipline incident occurred and whether or not it occurred on school. (optional)
      * @param  string $reporter_description_descriptor Information on the type of individual who reported the discipline incident. When known and/or if useful, use a more specific option code (e.g., \&quot;Counselor\&quot; rather than \&quot;Professional Staff\&quot;). (optional)
      * @param  string $case_number The case number assigned to the DisciplineIncident by law enforcement or other organization. (optional)
@@ -1064,7 +1077,7 @@ class DisciplineIncidentsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDisciplineIncidentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
+    public function getDisciplineIncidentsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidents'][0])
     {
 
 
@@ -1073,6 +1086,11 @@ class DisciplineIncidentsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling DisciplineIncidentsApi.getDisciplineIncidents, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling DisciplineIncidentsApi.getDisciplineIncidents, must be bigger than or equal to 0.');
         }
         
 
@@ -1130,6 +1148,24 @@ class DisciplineIncidentsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1347,7 +1383,7 @@ class DisciplineIncidentsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiDisciplineIncident
+     * @return |\Resources\Model\EdFiDisciplineIncident
      */
     public function getDisciplineIncidentsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidentsById'][0])
     {
@@ -1367,7 +1403,7 @@ class DisciplineIncidentsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiDisciplineIncident, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiDisciplineIncident, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDisciplineIncidentsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidentsById'][0])
     {
@@ -1668,23 +1704,574 @@ class DisciplineIncidentsApi
     }
 
     /**
+     * Operation getDisciplineIncidentsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $incident_identifier A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $incident_location_descriptor Identifies where the discipline incident occurred and whether or not it occurred on school. (optional)
+     * @param  string $reporter_description_descriptor Information on the type of individual who reported the discipline incident. When known and/or if useful, use a more specific option code (e.g., \&quot;Counselor\&quot; rather than \&quot;Professional Staff\&quot;). (optional)
+     * @param  string $case_number The case number assigned to the DisciplineIncident by law enforcement or other organization. (optional)
+     * @param  string $id  (optional)
+     * @param  float $incident_cost The value of any quantifiable monetary loss directly resulting from the discipline incident. Examples include the value of repairs necessitated by vandalism of a school facility, or the value of personnel resources used for repairs or consumed by the incident. (optional)
+     * @param  \DateTime $incident_date The month, day, and year on which the discipline incident occurred. (optional)
+     * @param  string $incident_description The description for an incident. (optional)
+     * @param  string $incident_time An indication of the time of day the incident took place. (optional)
+     * @param  bool $reported_to_law_enforcement Indicator of whether the incident was reported to law enforcement. (optional)
+     * @param  string $reporter_name Identifies the reporter of the discipline incident by name. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineIncidentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getDisciplineIncidentsPartitions($number = null, $min_change_version = null, $max_change_version = null, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidentsPartitions'][0])
+    {
+        list($response) = $this->getDisciplineIncidentsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getDisciplineIncidentsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $incident_identifier A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $incident_location_descriptor Identifies where the discipline incident occurred and whether or not it occurred on school. (optional)
+     * @param  string $reporter_description_descriptor Information on the type of individual who reported the discipline incident. When known and/or if useful, use a more specific option code (e.g., \&quot;Counselor\&quot; rather than \&quot;Professional Staff\&quot;). (optional)
+     * @param  string $case_number The case number assigned to the DisciplineIncident by law enforcement or other organization. (optional)
+     * @param  string $id  (optional)
+     * @param  float $incident_cost The value of any quantifiable monetary loss directly resulting from the discipline incident. Examples include the value of repairs necessitated by vandalism of a school facility, or the value of personnel resources used for repairs or consumed by the incident. (optional)
+     * @param  \DateTime $incident_date The month, day, and year on which the discipline incident occurred. (optional)
+     * @param  string $incident_description The description for an incident. (optional)
+     * @param  string $incident_time An indication of the time of day the incident took place. (optional)
+     * @param  bool $reported_to_law_enforcement Indicator of whether the incident was reported to law enforcement. (optional)
+     * @param  string $reporter_name Identifies the reporter of the discipline incident by name. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineIncidentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getDisciplineIncidentsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidentsPartitions'][0])
+    {
+        $request = $this->getDisciplineIncidentsPartitionsRequest($number, $min_change_version, $max_change_version, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getDisciplineIncidentsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $incident_identifier A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $incident_location_descriptor Identifies where the discipline incident occurred and whether or not it occurred on school. (optional)
+     * @param  string $reporter_description_descriptor Information on the type of individual who reported the discipline incident. When known and/or if useful, use a more specific option code (e.g., \&quot;Counselor\&quot; rather than \&quot;Professional Staff\&quot;). (optional)
+     * @param  string $case_number The case number assigned to the DisciplineIncident by law enforcement or other organization. (optional)
+     * @param  string $id  (optional)
+     * @param  float $incident_cost The value of any quantifiable monetary loss directly resulting from the discipline incident. Examples include the value of repairs necessitated by vandalism of a school facility, or the value of personnel resources used for repairs or consumed by the incident. (optional)
+     * @param  \DateTime $incident_date The month, day, and year on which the discipline incident occurred. (optional)
+     * @param  string $incident_description The description for an incident. (optional)
+     * @param  string $incident_time An indication of the time of day the incident took place. (optional)
+     * @param  bool $reported_to_law_enforcement Indicator of whether the incident was reported to law enforcement. (optional)
+     * @param  string $reporter_name Identifies the reporter of the discipline incident by name. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineIncidentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getDisciplineIncidentsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidentsPartitions'][0])
+    {
+        return $this->getDisciplineIncidentsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getDisciplineIncidentsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $incident_identifier A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $incident_location_descriptor Identifies where the discipline incident occurred and whether or not it occurred on school. (optional)
+     * @param  string $reporter_description_descriptor Information on the type of individual who reported the discipline incident. When known and/or if useful, use a more specific option code (e.g., \&quot;Counselor\&quot; rather than \&quot;Professional Staff\&quot;). (optional)
+     * @param  string $case_number The case number assigned to the DisciplineIncident by law enforcement or other organization. (optional)
+     * @param  string $id  (optional)
+     * @param  float $incident_cost The value of any quantifiable monetary loss directly resulting from the discipline incident. Examples include the value of repairs necessitated by vandalism of a school facility, or the value of personnel resources used for repairs or consumed by the incident. (optional)
+     * @param  \DateTime $incident_date The month, day, and year on which the discipline incident occurred. (optional)
+     * @param  string $incident_description The description for an incident. (optional)
+     * @param  string $incident_time An indication of the time of day the incident took place. (optional)
+     * @param  bool $reported_to_law_enforcement Indicator of whether the incident was reported to law enforcement. (optional)
+     * @param  string $reporter_name Identifies the reporter of the discipline incident by name. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineIncidentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getDisciplineIncidentsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidentsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getDisciplineIncidentsPartitionsRequest($number, $min_change_version, $max_change_version, $incident_identifier, $school_id, $incident_location_descriptor, $reporter_description_descriptor, $case_number, $id, $incident_cost, $incident_date, $incident_description, $incident_time, $reported_to_law_enforcement, $reporter_name, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getDisciplineIncidentsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $incident_identifier A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire discipline incident even if it included multiple offenses and multiple offenders. (optional)
+     * @param  int $school_id The identifier assigned to a school. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $incident_location_descriptor Identifies where the discipline incident occurred and whether or not it occurred on school. (optional)
+     * @param  string $reporter_description_descriptor Information on the type of individual who reported the discipline incident. When known and/or if useful, use a more specific option code (e.g., \&quot;Counselor\&quot; rather than \&quot;Professional Staff\&quot;). (optional)
+     * @param  string $case_number The case number assigned to the DisciplineIncident by law enforcement or other organization. (optional)
+     * @param  string $id  (optional)
+     * @param  float $incident_cost The value of any quantifiable monetary loss directly resulting from the discipline incident. Examples include the value of repairs necessitated by vandalism of a school facility, or the value of personnel resources used for repairs or consumed by the incident. (optional)
+     * @param  \DateTime $incident_date The month, day, and year on which the discipline incident occurred. (optional)
+     * @param  string $incident_description The description for an incident. (optional)
+     * @param  string $incident_time An indication of the time of day the incident took place. (optional)
+     * @param  bool $reported_to_law_enforcement Indicator of whether the incident was reported to law enforcement. (optional)
+     * @param  string $reporter_name Identifies the reporter of the discipline incident by name. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDisciplineIncidentsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getDisciplineIncidentsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $incident_identifier = null, $school_id = null, $incident_location_descriptor = null, $reporter_description_descriptor = null, $case_number = null, $id = null, $incident_cost = null, $incident_date = null, $incident_description = null, $incident_time = null, $reported_to_law_enforcement = null, $reporter_name = null, $use_snapshot = false, string $contentType = self::contentTypes['getDisciplineIncidentsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling DisciplineIncidentsApi.getDisciplineIncidentsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling DisciplineIncidentsApi.getDisciplineIncidentsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($incident_identifier !== null && strlen($incident_identifier) > 36) {
+            throw new \InvalidArgumentException('invalid length for "$incident_identifier" when calling DisciplineIncidentsApi.getDisciplineIncidentsPartitions, must be smaller than or equal to 36.');
+        }
+        
+
+        if ($incident_location_descriptor !== null && strlen($incident_location_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$incident_location_descriptor" when calling DisciplineIncidentsApi.getDisciplineIncidentsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($reporter_description_descriptor !== null && strlen($reporter_description_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$reporter_description_descriptor" when calling DisciplineIncidentsApi.getDisciplineIncidentsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($case_number !== null && strlen($case_number) > 20) {
+            throw new \InvalidArgumentException('invalid length for "$case_number" when calling DisciplineIncidentsApi.getDisciplineIncidentsPartitions, must be smaller than or equal to 20.');
+        }
+        
+
+
+
+        if ($incident_description !== null && strlen($incident_description) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$incident_description" when calling DisciplineIncidentsApi.getDisciplineIncidentsPartitions, must be smaller than or equal to 1024.');
+        }
+        
+
+
+        if ($reporter_name !== null && strlen($reporter_name) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$reporter_name" when calling DisciplineIncidentsApi.getDisciplineIncidentsPartitions, must be smaller than or equal to 75.');
+        }
+        
+
+
+        $resourcePath = '/ed-fi/disciplineIncidents/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $incident_identifier,
+            'incidentIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $school_id,
+            'schoolId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $incident_location_descriptor,
+            'incidentLocationDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $reporter_description_descriptor,
+            'reporterDescriptionDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $case_number,
+            'caseNumber', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $incident_cost,
+            'incidentCost', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $incident_date,
+            'incidentDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $incident_description,
+            'incidentDescription', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $incident_time,
+            'incidentTime', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $reported_to_law_enforcement,
+            'reportedToLawEnforcement', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $reporter_name,
+            'reporterName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesDisciplineIncidents
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineIncidents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]
      */
-    public function keyChangesDisciplineIncidents($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
+    public function keyChangesDisciplineIncidents($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
     {
         list($response) = $this->keyChangesDisciplineIncidentsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1695,19 +2282,19 @@ class DisciplineIncidentsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineIncidents'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesDisciplineIncidentsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
+    public function keyChangesDisciplineIncidentsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
     {
         $request = $this->keyChangesDisciplineIncidentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1825,18 +2412,18 @@ class DisciplineIncidentsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineIncidents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesDisciplineIncidentsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
+    public function keyChangesDisciplineIncidentsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
     {
         return $this->keyChangesDisciplineIncidentsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1851,18 +2438,18 @@ class DisciplineIncidentsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineIncidents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesDisciplineIncidentsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
+    public function keyChangesDisciplineIncidentsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiDisciplineIncidentKeyChange[]';
         $request = $this->keyChangesDisciplineIncidentsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1906,18 +2493,18 @@ class DisciplineIncidentsApi
     /**
      * Create request for operation 'keyChangesDisciplineIncidents'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesDisciplineIncidents'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesDisciplineIncidentsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
+    public function keyChangesDisciplineIncidentsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesDisciplineIncidents'][0])
     {
 
 

@@ -292,16 +292,8 @@ class TrackedChangesEdFiAssessmentScoreRangeLearningStandardKey implements Model
             $invalidProperties[] = "invalid value for 'score_range_id', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['score_range_id']) && (mb_strlen($this->container['score_range_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'score_range_id', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['assessment_identifier']) && (mb_strlen($this->container['assessment_identifier']) > 60)) {
             $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be smaller than or equal to 60.";
-        }
-
-        if (!is_null($this->container['assessment_identifier']) && (mb_strlen($this->container['assessment_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assessment_identifier', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['namespace']) && (mb_strlen($this->container['namespace']) > 255)) {
@@ -352,9 +344,6 @@ class TrackedChangesEdFiAssessmentScoreRangeLearningStandardKey implements Model
         if ((mb_strlen($score_range_id) > 60)) {
             throw new \InvalidArgumentException('invalid length for $score_range_id when calling TrackedChangesEdFiAssessmentScoreRangeLearningStandardKey., must be smaller than or equal to 60.');
         }
-        if ((mb_strlen($score_range_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $score_range_id when calling TrackedChangesEdFiAssessmentScoreRangeLearningStandardKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['score_range_id'] = $score_range_id;
 
@@ -385,9 +374,6 @@ class TrackedChangesEdFiAssessmentScoreRangeLearningStandardKey implements Model
         }
         if ((mb_strlen($assessment_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling TrackedChangesEdFiAssessmentScoreRangeLearningStandardKey., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($assessment_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assessment_identifier when calling TrackedChangesEdFiAssessmentScoreRangeLearningStandardKey., must be bigger than or equal to 1.');
         }
 
         $this->container['assessment_identifier'] = $assessment_identifier;

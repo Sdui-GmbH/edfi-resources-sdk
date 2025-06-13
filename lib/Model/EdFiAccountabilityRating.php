@@ -344,10 +344,6 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'rating_title', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['rating_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'rating_title', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['education_organization_reference'] === null) {
             $invalidProperties[] = "'education_organization_reference' can't be null";
         }
@@ -361,24 +357,12 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "invalid value for 'rating', the character length must be smaller than or equal to 35.";
         }
 
-        if ((mb_strlen($this->container['rating']) < 1)) {
-            $invalidProperties[] = "invalid value for 'rating', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['rating_organization']) && (mb_strlen($this->container['rating_organization']) > 35)) {
             $invalidProperties[] = "invalid value for 'rating_organization', the character length must be smaller than or equal to 35.";
         }
 
-        if (!is_null($this->container['rating_organization']) && (mb_strlen($this->container['rating_organization']) < 1)) {
-            $invalidProperties[] = "invalid value for 'rating_organization', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['rating_program']) && (mb_strlen($this->container['rating_program']) > 30)) {
             $invalidProperties[] = "invalid value for 'rating_program', the character length must be smaller than or equal to 30.";
-        }
-
-        if (!is_null($this->container['rating_program']) && (mb_strlen($this->container['rating_program']) < 1)) {
-            $invalidProperties[] = "invalid value for 'rating_program', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -447,9 +431,6 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
         }
         if ((mb_strlen($rating_title) > 60)) {
             throw new \InvalidArgumentException('invalid length for $rating_title when calling EdFiAccountabilityRating., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($rating_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $rating_title when calling EdFiAccountabilityRating., must be bigger than or equal to 1.');
         }
 
         $this->container['rating_title'] = $rating_title;
@@ -536,9 +517,6 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
         if ((mb_strlen($rating) > 35)) {
             throw new \InvalidArgumentException('invalid length for $rating when calling EdFiAccountabilityRating., must be smaller than or equal to 35.');
         }
-        if ((mb_strlen($rating) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $rating when calling EdFiAccountabilityRating., must be bigger than or equal to 1.');
-        }
 
         $this->container['rating'] = $rating;
 
@@ -611,9 +589,6 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
         if (!is_null($rating_organization) && (mb_strlen($rating_organization) > 35)) {
             throw new \InvalidArgumentException('invalid length for $rating_organization when calling EdFiAccountabilityRating., must be smaller than or equal to 35.');
         }
-        if (!is_null($rating_organization) && (mb_strlen($rating_organization) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $rating_organization when calling EdFiAccountabilityRating., must be bigger than or equal to 1.');
-        }
 
         $this->container['rating_organization'] = $rating_organization;
 
@@ -651,9 +626,6 @@ class EdFiAccountabilityRating implements ModelInterface, ArrayAccess, \JsonSeri
         }
         if (!is_null($rating_program) && (mb_strlen($rating_program) > 30)) {
             throw new \InvalidArgumentException('invalid length for $rating_program when calling EdFiAccountabilityRating., must be smaller than or equal to 30.');
-        }
-        if (!is_null($rating_program) && (mb_strlen($rating_program) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $rating_program when calling EdFiAccountabilityRating., must be bigger than or equal to 1.');
         }
 
         $this->container['rating_program'] = $rating_program;

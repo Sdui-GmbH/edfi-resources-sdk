@@ -347,10 +347,6 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
             $invalidProperties[] = "invalid value for 'score_range_id', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['score_range_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'score_range_id', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['assessment_reference'] === null) {
             $invalidProperties[] = "'assessment_reference' can't be null";
         }
@@ -365,19 +361,11 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
             $invalidProperties[] = "invalid value for 'maximum_score', the character length must be smaller than or equal to 35.";
         }
 
-        if ((mb_strlen($this->container['maximum_score']) < 1)) {
-            $invalidProperties[] = "invalid value for 'maximum_score', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['minimum_score'] === null) {
             $invalidProperties[] = "'minimum_score' can't be null";
         }
         if ((mb_strlen($this->container['minimum_score']) > 35)) {
             $invalidProperties[] = "invalid value for 'minimum_score', the character length must be smaller than or equal to 35.";
-        }
-
-        if ((mb_strlen($this->container['minimum_score']) < 1)) {
-            $invalidProperties[] = "invalid value for 'minimum_score', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -473,9 +461,6 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
         }
         if ((mb_strlen($score_range_id) > 60)) {
             throw new \InvalidArgumentException('invalid length for $score_range_id when calling EdFiAssessmentScoreRangeLearningStandard., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($score_range_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $score_range_id when calling EdFiAssessmentScoreRangeLearningStandard., must be bigger than or equal to 1.');
         }
 
         $this->container['score_range_id'] = $score_range_id;
@@ -600,9 +585,6 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
         if ((mb_strlen($maximum_score) > 35)) {
             throw new \InvalidArgumentException('invalid length for $maximum_score when calling EdFiAssessmentScoreRangeLearningStandard., must be smaller than or equal to 35.');
         }
-        if ((mb_strlen($maximum_score) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $maximum_score when calling EdFiAssessmentScoreRangeLearningStandard., must be bigger than or equal to 1.');
-        }
 
         $this->container['maximum_score'] = $maximum_score;
 
@@ -633,9 +615,6 @@ class EdFiAssessmentScoreRangeLearningStandard implements ModelInterface, ArrayA
         }
         if ((mb_strlen($minimum_score) > 35)) {
             throw new \InvalidArgumentException('invalid length for $minimum_score when calling EdFiAssessmentScoreRangeLearningStandard., must be smaller than or equal to 35.');
-        }
-        if ((mb_strlen($minimum_score) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $minimum_score when calling EdFiAssessmentScoreRangeLearningStandard., must be bigger than or equal to 1.');
         }
 
         $this->container['minimum_score'] = $minimum_score;

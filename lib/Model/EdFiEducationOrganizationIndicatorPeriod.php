@@ -312,7 +312,7 @@ class EdFiEducationOrganizationIndicatorPeriod implements ModelInterface, ArrayA
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date The month, day, and year for the start of the period.
+     * @param \DateTime $begin_date The month, day, and year for the start of the period.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -339,7 +339,7 @@ class EdFiEducationOrganizationIndicatorPeriod implements ModelInterface, ArrayA
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The month, day, and year for the end of the period.
+     * @param \DateTime|null $end_date The month, day, and year for the end of the period.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

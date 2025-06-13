@@ -83,6 +83,9 @@ class AssessmentScoreRangeLearningStandardsApi
         'getAssessmentScoreRangeLearningStandardsById' => [
             'application/json',
         ],
+        'getAssessmentScoreRangeLearningStandardsPartitions' => [
+            'application/json',
+        ],
         'keyChangesAssessmentScoreRangeLearningStandards' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessmentScoreRangeLearningStandards'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete[]
      */
-    public function deletesAssessmentScoreRangeLearningStandards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentScoreRangeLearningStandards'][0])
+    public function deletesAssessmentScoreRangeLearningStandards($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentScoreRangeLearningStandards'][0])
     {
         list($response) = $this->deletesAssessmentScoreRangeLearningStandardsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessmentScoreRangeLearningStandards'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesAssessmentScoreRangeLearningStandardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentScoreRangeLearningStandards'][0])
+    public function deletesAssessmentScoreRangeLearningStandardsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentScoreRangeLearningStandards'][0])
     {
         $request = $this->deletesAssessmentScoreRangeLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessmentScoreRangeLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesAssessmentScoreRangeLearningStandardsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentScoreRangeLearningStandards'][0])
+    public function deletesAssessmentScoreRangeLearningStandardsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentScoreRangeLearningStandards'][0])
     {
         return $this->deletesAssessmentScoreRangeLearningStandardsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessmentScoreRangeLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesAssessmentScoreRangeLearningStandardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentScoreRangeLearningStandards'][0])
+    public function deletesAssessmentScoreRangeLearningStandardsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentScoreRangeLearningStandards'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardDelete[]';
         $request = $this->deletesAssessmentScoreRangeLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class AssessmentScoreRangeLearningStandardsApi
     /**
      * Create request for operation 'deletesAssessmentScoreRangeLearningStandards'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesAssessmentScoreRangeLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesAssessmentScoreRangeLearningStandardsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentScoreRangeLearningStandards'][0])
+    public function deletesAssessmentScoreRangeLearningStandardsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesAssessmentScoreRangeLearningStandards'][0])
     {
 
 
@@ -759,11 +762,13 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $score_range_id A unique number or alphanumeric code assigned to the score range associated with one or more learning standards. (optional)
      * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
      * @param  string $namespace Namespace for the assessment. (optional)
@@ -777,11 +782,11 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiAssessmentScoreRangeLearningStandard[]
+     * @return |\Resources\Model\EdFiAssessmentScoreRangeLearningStandard[]
      */
-    public function getAssessmentScoreRangeLearningStandards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandards'][0])
+    public function getAssessmentScoreRangeLearningStandards($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandards'][0])
     {
-        list($response) = $this->getAssessmentScoreRangeLearningStandardsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType);
+        list($response) = $this->getAssessmentScoreRangeLearningStandardsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -790,11 +795,13 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $score_range_id A unique number or alphanumeric code assigned to the score range associated with one or more learning standards. (optional)
      * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
      * @param  string $namespace Namespace for the assessment. (optional)
@@ -808,11 +815,11 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiAssessmentScoreRangeLearningStandard[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiAssessmentScoreRangeLearningStandard[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAssessmentScoreRangeLearningStandardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandards'][0])
+    public function getAssessmentScoreRangeLearningStandardsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandards'][0])
     {
-        $request = $this->getAssessmentScoreRangeLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType);
+        $request = $this->getAssessmentScoreRangeLearningStandardsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -928,11 +935,13 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $score_range_id A unique number or alphanumeric code assigned to the score range associated with one or more learning standards. (optional)
      * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
      * @param  string $namespace Namespace for the assessment. (optional)
@@ -947,9 +956,9 @@ class AssessmentScoreRangeLearningStandardsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAssessmentScoreRangeLearningStandardsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandards'][0])
+    public function getAssessmentScoreRangeLearningStandardsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandards'][0])
     {
-        return $this->getAssessmentScoreRangeLearningStandardsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType)
+        return $this->getAssessmentScoreRangeLearningStandardsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -962,11 +971,13 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $score_range_id A unique number or alphanumeric code assigned to the score range associated with one or more learning standards. (optional)
      * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
      * @param  string $namespace Namespace for the assessment. (optional)
@@ -981,10 +992,10 @@ class AssessmentScoreRangeLearningStandardsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAssessmentScoreRangeLearningStandardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandards'][0])
+    public function getAssessmentScoreRangeLearningStandardsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandards'][0])
     {
         $returnType = '\Resources\Model\EdFiAssessmentScoreRangeLearningStandard[]';
-        $request = $this->getAssessmentScoreRangeLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType);
+        $request = $this->getAssessmentScoreRangeLearningStandardsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1025,11 +1036,13 @@ class AssessmentScoreRangeLearningStandardsApi
     /**
      * Create request for operation 'getAssessmentScoreRangeLearningStandards'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $score_range_id A unique number or alphanumeric code assigned to the score range associated with one or more learning standards. (optional)
      * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
      * @param  string $namespace Namespace for the assessment. (optional)
@@ -1044,7 +1057,7 @@ class AssessmentScoreRangeLearningStandardsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAssessmentScoreRangeLearningStandardsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandards'][0])
+    public function getAssessmentScoreRangeLearningStandardsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandards'][0])
     {
 
 
@@ -1053,6 +1066,11 @@ class AssessmentScoreRangeLearningStandardsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandards, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandards, must be bigger than or equal to 0.');
         }
         
 
@@ -1109,6 +1127,24 @@ class AssessmentScoreRangeLearningStandardsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1290,7 +1326,7 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiAssessmentScoreRangeLearningStandard
+     * @return |\Resources\Model\EdFiAssessmentScoreRangeLearningStandard
      */
     public function getAssessmentScoreRangeLearningStandardsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandardsById'][0])
     {
@@ -1310,7 +1346,7 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiAssessmentScoreRangeLearningStandard, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiAssessmentScoreRangeLearningStandard, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAssessmentScoreRangeLearningStandardsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandardsById'][0])
     {
@@ -1611,23 +1647,517 @@ class AssessmentScoreRangeLearningStandardsApi
     }
 
     /**
+     * Operation getAssessmentScoreRangeLearningStandardsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $score_range_id A unique number or alphanumeric code assigned to the score range associated with one or more learning standards. (optional)
+     * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
+     * @param  string $namespace Namespace for the assessment. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an objective assessment by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $assessment_reporting_method_descriptor The assessment reporting method defined (e.g., scale score, RIT scale score) associated with the referenced learning standard(s). (optional)
+     * @param  string $id  (optional)
+     * @param  string $maximum_score The maximum score in the score range. (optional)
+     * @param  string $minimum_score The minimum score in the score range. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentScoreRangeLearningStandardsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getAssessmentScoreRangeLearningStandardsPartitions($number = null, $min_change_version = null, $max_change_version = null, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandardsPartitions'][0])
+    {
+        list($response) = $this->getAssessmentScoreRangeLearningStandardsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAssessmentScoreRangeLearningStandardsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $score_range_id A unique number or alphanumeric code assigned to the score range associated with one or more learning standards. (optional)
+     * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
+     * @param  string $namespace Namespace for the assessment. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an objective assessment by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $assessment_reporting_method_descriptor The assessment reporting method defined (e.g., scale score, RIT scale score) associated with the referenced learning standard(s). (optional)
+     * @param  string $id  (optional)
+     * @param  string $maximum_score The maximum score in the score range. (optional)
+     * @param  string $minimum_score The minimum score in the score range. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentScoreRangeLearningStandardsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAssessmentScoreRangeLearningStandardsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandardsPartitions'][0])
+    {
+        $request = $this->getAssessmentScoreRangeLearningStandardsPartitionsRequest($number, $min_change_version, $max_change_version, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAssessmentScoreRangeLearningStandardsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $score_range_id A unique number or alphanumeric code assigned to the score range associated with one or more learning standards. (optional)
+     * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
+     * @param  string $namespace Namespace for the assessment. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an objective assessment by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $assessment_reporting_method_descriptor The assessment reporting method defined (e.g., scale score, RIT scale score) associated with the referenced learning standard(s). (optional)
+     * @param  string $id  (optional)
+     * @param  string $maximum_score The maximum score in the score range. (optional)
+     * @param  string $minimum_score The minimum score in the score range. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentScoreRangeLearningStandardsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAssessmentScoreRangeLearningStandardsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandardsPartitions'][0])
+    {
+        return $this->getAssessmentScoreRangeLearningStandardsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAssessmentScoreRangeLearningStandardsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $score_range_id A unique number or alphanumeric code assigned to the score range associated with one or more learning standards. (optional)
+     * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
+     * @param  string $namespace Namespace for the assessment. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an objective assessment by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $assessment_reporting_method_descriptor The assessment reporting method defined (e.g., scale score, RIT scale score) associated with the referenced learning standard(s). (optional)
+     * @param  string $id  (optional)
+     * @param  string $maximum_score The maximum score in the score range. (optional)
+     * @param  string $minimum_score The minimum score in the score range. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentScoreRangeLearningStandardsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAssessmentScoreRangeLearningStandardsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandardsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getAssessmentScoreRangeLearningStandardsPartitionsRequest($number, $min_change_version, $max_change_version, $score_range_id, $assessment_identifier, $namespace, $identification_code, $assessment_reporting_method_descriptor, $id, $maximum_score, $minimum_score, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAssessmentScoreRangeLearningStandardsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $score_range_id A unique number or alphanumeric code assigned to the score range associated with one or more learning standards. (optional)
+     * @param  string $assessment_identifier A unique number or alphanumeric code assigned to an assessment. (optional)
+     * @param  string $namespace Namespace for the assessment. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code assigned to an objective assessment by a school, school system, a state, or other agency or entity. (optional)
+     * @param  string $assessment_reporting_method_descriptor The assessment reporting method defined (e.g., scale score, RIT scale score) associated with the referenced learning standard(s). (optional)
+     * @param  string $id  (optional)
+     * @param  string $maximum_score The maximum score in the score range. (optional)
+     * @param  string $minimum_score The minimum score in the score range. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssessmentScoreRangeLearningStandardsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAssessmentScoreRangeLearningStandardsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $score_range_id = null, $assessment_identifier = null, $namespace = null, $identification_code = null, $assessment_reporting_method_descriptor = null, $id = null, $maximum_score = null, $minimum_score = null, $use_snapshot = false, string $contentType = self::contentTypes['getAssessmentScoreRangeLearningStandardsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandardsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandardsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($score_range_id !== null && strlen($score_range_id) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$score_range_id" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandardsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($assessment_identifier !== null && strlen($assessment_identifier) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$assessment_identifier" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandardsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($namespace !== null && strlen($namespace) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$namespace" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandardsPartitions, must be smaller than or equal to 255.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandardsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($assessment_reporting_method_descriptor !== null && strlen($assessment_reporting_method_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$assessment_reporting_method_descriptor" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandardsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($maximum_score !== null && strlen($maximum_score) > 35) {
+            throw new \InvalidArgumentException('invalid length for "$maximum_score" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandardsPartitions, must be smaller than or equal to 35.');
+        }
+        
+        if ($minimum_score !== null && strlen($minimum_score) > 35) {
+            throw new \InvalidArgumentException('invalid length for "$minimum_score" when calling AssessmentScoreRangeLearningStandardsApi.getAssessmentScoreRangeLearningStandardsPartitions, must be smaller than or equal to 35.');
+        }
+        
+
+
+        $resourcePath = '/ed-fi/assessmentScoreRangeLearningStandards/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $score_range_id,
+            'scoreRangeId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assessment_identifier,
+            'assessmentIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $namespace,
+            'namespace', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $assessment_reporting_method_descriptor,
+            'assessmentReportingMethodDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $maximum_score,
+            'maximumScore', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $minimum_score,
+            'minimumScore', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesAssessmentScoreRangeLearningStandards
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange[]
      */
-    public function keyChangesAssessmentScoreRangeLearningStandards($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'][0])
+    public function keyChangesAssessmentScoreRangeLearningStandards($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'][0])
     {
         list($response) = $this->keyChangesAssessmentScoreRangeLearningStandardsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1638,19 +2168,19 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesAssessmentScoreRangeLearningStandardsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'][0])
+    public function keyChangesAssessmentScoreRangeLearningStandardsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'][0])
     {
         $request = $this->keyChangesAssessmentScoreRangeLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1768,18 +2298,18 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesAssessmentScoreRangeLearningStandardsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'][0])
+    public function keyChangesAssessmentScoreRangeLearningStandardsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'][0])
     {
         return $this->keyChangesAssessmentScoreRangeLearningStandardsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1794,18 +2324,18 @@ class AssessmentScoreRangeLearningStandardsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesAssessmentScoreRangeLearningStandardsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'][0])
+    public function keyChangesAssessmentScoreRangeLearningStandardsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiAssessmentScoreRangeLearningStandardKeyChange[]';
         $request = $this->keyChangesAssessmentScoreRangeLearningStandardsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1849,18 +2379,18 @@ class AssessmentScoreRangeLearningStandardsApi
     /**
      * Create request for operation 'keyChangesAssessmentScoreRangeLearningStandards'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesAssessmentScoreRangeLearningStandardsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'][0])
+    public function keyChangesAssessmentScoreRangeLearningStandardsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesAssessmentScoreRangeLearningStandards'][0])
     {
 
 

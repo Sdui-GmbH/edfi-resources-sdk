@@ -295,16 +295,8 @@ class EdFiAssessmentItemPossibleResponse implements ModelInterface, ArrayAccess,
             $invalidProperties[] = "invalid value for 'response_value', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['response_value']) < 1)) {
-            $invalidProperties[] = "invalid value for 'response_value', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['response_description']) && (mb_strlen($this->container['response_description']) > 1024)) {
             $invalidProperties[] = "invalid value for 'response_description', the character length must be smaller than or equal to 1024.";
-        }
-
-        if (!is_null($this->container['response_description']) && (mb_strlen($this->container['response_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'response_description', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -346,9 +338,6 @@ class EdFiAssessmentItemPossibleResponse implements ModelInterface, ArrayAccess,
         }
         if ((mb_strlen($response_value) > 60)) {
             throw new \InvalidArgumentException('invalid length for $response_value when calling EdFiAssessmentItemPossibleResponse., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($response_value) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $response_value when calling EdFiAssessmentItemPossibleResponse., must be bigger than or equal to 1.');
         }
 
         $this->container['response_value'] = $response_value;
@@ -421,9 +410,6 @@ class EdFiAssessmentItemPossibleResponse implements ModelInterface, ArrayAccess,
         }
         if (!is_null($response_description) && (mb_strlen($response_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $response_description when calling EdFiAssessmentItemPossibleResponse., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($response_description) && (mb_strlen($response_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $response_description when calling EdFiAssessmentItemPossibleResponse., must be bigger than or equal to 1.');
         }
 
         $this->container['response_description'] = $response_description;

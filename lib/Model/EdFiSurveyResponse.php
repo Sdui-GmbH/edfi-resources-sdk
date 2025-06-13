@@ -379,10 +379,6 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'survey_response_identifier', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['survey_response_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'survey_response_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['survey_reference'] === null) {
             $invalidProperties[] = "'survey_reference' can't be null";
         }
@@ -400,10 +396,6 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
 
         if (!is_null($this->container['location']) && (mb_strlen($this->container['location']) > 75)) {
             $invalidProperties[] = "invalid value for 'location', the character length must be smaller than or equal to 75.";
-        }
-
-        if (!is_null($this->container['location']) && (mb_strlen($this->container['location']) < 1)) {
-            $invalidProperties[] = "invalid value for 'location', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['response_date'] === null) {
@@ -475,9 +467,6 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         }
         if ((mb_strlen($survey_response_identifier) > 60)) {
             throw new \InvalidArgumentException('invalid length for $survey_response_identifier when calling EdFiSurveyResponse., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($survey_response_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $survey_response_identifier when calling EdFiSurveyResponse., must be bigger than or equal to 1.');
         }
 
         $this->container['survey_response_identifier'] = $survey_response_identifier;
@@ -704,9 +693,6 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         if (!is_null($location) && (mb_strlen($location) > 75)) {
             throw new \InvalidArgumentException('invalid length for $location when calling EdFiSurveyResponse., must be smaller than or equal to 75.');
         }
-        if (!is_null($location) && (mb_strlen($location) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $location when calling EdFiSurveyResponse., must be bigger than or equal to 1.');
-        }
 
         $this->container['location'] = $location;
 
@@ -753,7 +739,7 @@ class EdFiSurveyResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets response_time
      *
-     * @param int|null $response_time The amount of time (in seconds) it took for the respondent to complete the survey.
+     * @param int|null $response_time The amount of time in seconds it took for the respondent to complete the survey.
      *
      * @return self
      */

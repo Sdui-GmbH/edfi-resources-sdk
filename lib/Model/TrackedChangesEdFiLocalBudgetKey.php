@@ -299,10 +299,6 @@ class TrackedChangesEdFiLocalBudgetKey implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = "invalid value for 'account_identifier', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['account_identifier']) && (mb_strlen($this->container['account_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'account_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['fiscal_year']) && ($this->container['fiscal_year'] > 2040)) {
             $invalidProperties[] = "invalid value for 'fiscal_year', must be smaller than or equal to 2040.";
         }
@@ -377,9 +373,6 @@ class TrackedChangesEdFiLocalBudgetKey implements ModelInterface, ArrayAccess, \
         }
         if ((mb_strlen($account_identifier) > 50)) {
             throw new \InvalidArgumentException('invalid length for $account_identifier when calling TrackedChangesEdFiLocalBudgetKey., must be smaller than or equal to 50.');
-        }
-        if ((mb_strlen($account_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $account_identifier when calling TrackedChangesEdFiLocalBudgetKey., must be bigger than or equal to 1.');
         }
 
         $this->container['account_identifier'] = $account_identifier;

@@ -387,7 +387,7 @@ class EdFiStaffCohortAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets begin_date
      *
-     * @param \DateTime $begin_date Start date for the association of staff to this cohort.
+     * @param \DateTime $begin_date Start date for the association of staff to this cohort.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class EdFiStaffCohortAssociation implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date End date for the association of staff to this cohort.
+     * @param \DateTime|null $end_date End date for the association of staff to this cohort.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

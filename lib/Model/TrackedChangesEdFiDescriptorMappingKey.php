@@ -307,10 +307,6 @@ class TrackedChangesEdFiDescriptorMappingKey implements ModelInterface, ArrayAcc
             $invalidProperties[] = "invalid value for 'mapped_value', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['mapped_value']) && (mb_strlen($this->container['mapped_value']) < 1)) {
-            $invalidProperties[] = "invalid value for 'mapped_value', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['namespace']) && (mb_strlen($this->container['namespace']) > 255)) {
             $invalidProperties[] = "invalid value for 'namespace', the character length must be smaller than or equal to 255.";
         }
@@ -321,10 +317,6 @@ class TrackedChangesEdFiDescriptorMappingKey implements ModelInterface, ArrayAcc
 
         if (!is_null($this->container['value']) && (mb_strlen($this->container['value']) > 50)) {
             $invalidProperties[] = "invalid value for 'value', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['value']) && (mb_strlen($this->container['value']) < 1)) {
-            $invalidProperties[] = "invalid value for 'value', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -401,9 +393,6 @@ class TrackedChangesEdFiDescriptorMappingKey implements ModelInterface, ArrayAcc
         if ((mb_strlen($mapped_value) > 50)) {
             throw new \InvalidArgumentException('invalid length for $mapped_value when calling TrackedChangesEdFiDescriptorMappingKey., must be smaller than or equal to 50.');
         }
-        if ((mb_strlen($mapped_value) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $mapped_value when calling TrackedChangesEdFiDescriptorMappingKey., must be bigger than or equal to 1.');
-        }
 
         $this->container['mapped_value'] = $mapped_value;
 
@@ -468,9 +457,6 @@ class TrackedChangesEdFiDescriptorMappingKey implements ModelInterface, ArrayAcc
         }
         if ((mb_strlen($value) > 50)) {
             throw new \InvalidArgumentException('invalid length for $value when calling TrackedChangesEdFiDescriptorMappingKey., must be smaller than or equal to 50.');
-        }
-        if ((mb_strlen($value) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $value when calling TrackedChangesEdFiDescriptorMappingKey., must be bigger than or equal to 1.');
         }
 
         $this->container['value'] = $value;

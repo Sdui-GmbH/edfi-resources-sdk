@@ -292,16 +292,8 @@ class TrackedChangesEdFiStaffEducationOrganizationContactAssociationKey implemen
             $invalidProperties[] = "invalid value for 'contact_title', the character length must be smaller than or equal to 75.";
         }
 
-        if (!is_null($this->container['contact_title']) && (mb_strlen($this->container['contact_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'contact_title', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) > 32)) {
             $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be smaller than or equal to 32.";
-        }
-
-        if (!is_null($this->container['staff_unique_id']) && (mb_strlen($this->container['staff_unique_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'staff_unique_id', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -343,9 +335,6 @@ class TrackedChangesEdFiStaffEducationOrganizationContactAssociationKey implemen
         }
         if ((mb_strlen($contact_title) > 75)) {
             throw new \InvalidArgumentException('invalid length for $contact_title when calling TrackedChangesEdFiStaffEducationOrganizationContactAssociationKey., must be smaller than or equal to 75.');
-        }
-        if ((mb_strlen($contact_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $contact_title when calling TrackedChangesEdFiStaffEducationOrganizationContactAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['contact_title'] = $contact_title;
@@ -404,9 +393,6 @@ class TrackedChangesEdFiStaffEducationOrganizationContactAssociationKey implemen
         }
         if ((mb_strlen($staff_unique_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiStaffEducationOrganizationContactAssociationKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($staff_unique_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $staff_unique_id when calling TrackedChangesEdFiStaffEducationOrganizationContactAssociationKey., must be bigger than or equal to 1.');
         }
 
         $this->container['staff_unique_id'] = $staff_unique_id;

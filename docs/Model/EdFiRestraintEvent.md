@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **restraint_event_identifier** | **string** | A unique number or alphanumeric code assigned to a restraint event by a school, school system, state, or other agency or entity. |
+**discipline_incident_reference** | [**\Resources\Model\EdFiDisciplineIncidentReference**](EdFiDisciplineIncidentReference.md) |  | [optional]
 **school_reference** | [**\Resources\Model\EdFiSchoolReference**](EdFiSchoolReference.md) |  |
 **student_reference** | [**\Resources\Model\EdFiStudentReference**](EdFiStudentReference.md) |  |
 **educational_environment_descriptor** | **string** | The setting where the RestraintEvent was exercised. | [optional]

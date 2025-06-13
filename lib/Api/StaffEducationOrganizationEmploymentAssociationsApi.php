@@ -83,6 +83,9 @@ class StaffEducationOrganizationEmploymentAssociationsApi
         'getStaffEducationOrganizationEmploymentAssociationsById' => [
             'application/json',
         ],
+        'getStaffEducationOrganizationEmploymentAssociationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesStaffEducationOrganizationEmploymentAssociations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationDelete[]
      */
-    public function deletesStaffEducationOrganizationEmploymentAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'][0])
+    public function deletesStaffEducationOrganizationEmploymentAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'][0])
     {
         list($response) = $this->deletesStaffEducationOrganizationEmploymentAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesStaffEducationOrganizationEmploymentAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'][0])
+    public function deletesStaffEducationOrganizationEmploymentAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'][0])
     {
         $request = $this->deletesStaffEducationOrganizationEmploymentAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStaffEducationOrganizationEmploymentAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'][0])
+    public function deletesStaffEducationOrganizationEmploymentAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'][0])
     {
         return $this->deletesStaffEducationOrganizationEmploymentAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesStaffEducationOrganizationEmploymentAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'][0])
+    public function deletesStaffEducationOrganizationEmploymentAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationDelete[]';
         $request = $this->deletesStaffEducationOrganizationEmploymentAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class StaffEducationOrganizationEmploymentAssociationsApi
     /**
      * Create request for operation 'deletesStaffEducationOrganizationEmploymentAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesStaffEducationOrganizationEmploymentAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'][0])
+    public function deletesStaffEducationOrganizationEmploymentAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesStaffEducationOrganizationEmploymentAssociations'][0])
     {
 
 
@@ -759,13 +762,15 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $employment_status_descriptor Reflects the type of employment or contract. (optional)
-     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position. (optional)
+     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
      * @param  string $credential_identifier Identifier or serial number assigned to the credential. (optional)
@@ -774,7 +779,7 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      * @param  string $separation_reason_descriptor Reason for terminating the employment. (optional)
      * @param  float $annual_wage Annual wage associated with the employment position being reported. (optional)
      * @param  string $department The department or suborganization the employee/contractor is associated with in the education organization. (optional)
-     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid). (optional)
+     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  float $full_time_equivalency The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting. (optional)
      * @param  float $hourly_wage Hourly wage associated with the employment position being reported. (optional)
      * @param  string $id  (optional)
@@ -784,11 +789,11 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociation[]
+     * @return |\Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociation[]
      */
-    public function getStaffEducationOrganizationEmploymentAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociations'][0])
+    public function getStaffEducationOrganizationEmploymentAssociations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociations'][0])
     {
-        list($response) = $this->getStaffEducationOrganizationEmploymentAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType);
+        list($response) = $this->getStaffEducationOrganizationEmploymentAssociationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -797,13 +802,15 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $employment_status_descriptor Reflects the type of employment or contract. (optional)
-     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position. (optional)
+     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
      * @param  string $credential_identifier Identifier or serial number assigned to the credential. (optional)
@@ -812,7 +819,7 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      * @param  string $separation_reason_descriptor Reason for terminating the employment. (optional)
      * @param  float $annual_wage Annual wage associated with the employment position being reported. (optional)
      * @param  string $department The department or suborganization the employee/contractor is associated with in the education organization. (optional)
-     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid). (optional)
+     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  float $full_time_equivalency The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting. (optional)
      * @param  float $hourly_wage Hourly wage associated with the employment position being reported. (optional)
      * @param  string $id  (optional)
@@ -822,11 +829,11 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociation[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociation[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStaffEducationOrganizationEmploymentAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociations'][0])
+    public function getStaffEducationOrganizationEmploymentAssociationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociations'][0])
     {
-        $request = $this->getStaffEducationOrganizationEmploymentAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType);
+        $request = $this->getStaffEducationOrganizationEmploymentAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -942,13 +949,15 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $employment_status_descriptor Reflects the type of employment or contract. (optional)
-     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position. (optional)
+     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
      * @param  string $credential_identifier Identifier or serial number assigned to the credential. (optional)
@@ -957,7 +966,7 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      * @param  string $separation_reason_descriptor Reason for terminating the employment. (optional)
      * @param  float $annual_wage Annual wage associated with the employment position being reported. (optional)
      * @param  string $department The department or suborganization the employee/contractor is associated with in the education organization. (optional)
-     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid). (optional)
+     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  float $full_time_equivalency The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting. (optional)
      * @param  float $hourly_wage Hourly wage associated with the employment position being reported. (optional)
      * @param  string $id  (optional)
@@ -968,9 +977,9 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStaffEducationOrganizationEmploymentAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociations'][0])
+    public function getStaffEducationOrganizationEmploymentAssociationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociations'][0])
     {
-        return $this->getStaffEducationOrganizationEmploymentAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType)
+        return $this->getStaffEducationOrganizationEmploymentAssociationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -983,13 +992,15 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $employment_status_descriptor Reflects the type of employment or contract. (optional)
-     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position. (optional)
+     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
      * @param  string $credential_identifier Identifier or serial number assigned to the credential. (optional)
@@ -998,7 +1009,7 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      * @param  string $separation_reason_descriptor Reason for terminating the employment. (optional)
      * @param  float $annual_wage Annual wage associated with the employment position being reported. (optional)
      * @param  string $department The department or suborganization the employee/contractor is associated with in the education organization. (optional)
-     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid). (optional)
+     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  float $full_time_equivalency The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting. (optional)
      * @param  float $hourly_wage Hourly wage associated with the employment position being reported. (optional)
      * @param  string $id  (optional)
@@ -1009,10 +1020,10 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStaffEducationOrganizationEmploymentAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociations'][0])
+    public function getStaffEducationOrganizationEmploymentAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociations'][0])
     {
         $returnType = '\Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociation[]';
-        $request = $this->getStaffEducationOrganizationEmploymentAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType);
+        $request = $this->getStaffEducationOrganizationEmploymentAssociationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1053,13 +1064,15 @@ class StaffEducationOrganizationEmploymentAssociationsApi
     /**
      * Create request for operation 'getStaffEducationOrganizationEmploymentAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  string $employment_status_descriptor Reflects the type of employment or contract. (optional)
-     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position. (optional)
+     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
      * @param  string $credential_identifier Identifier or serial number assigned to the credential. (optional)
@@ -1068,7 +1081,7 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      * @param  string $separation_reason_descriptor Reason for terminating the employment. (optional)
      * @param  float $annual_wage Annual wage associated with the employment position being reported. (optional)
      * @param  string $department The department or suborganization the employee/contractor is associated with in the education organization. (optional)
-     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid). (optional)
+     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
      * @param  float $full_time_equivalency The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting. (optional)
      * @param  float $hourly_wage Hourly wage associated with the employment position being reported. (optional)
      * @param  string $id  (optional)
@@ -1079,7 +1092,7 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStaffEducationOrganizationEmploymentAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociations'][0])
+    public function getStaffEducationOrganizationEmploymentAssociationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociations'][0])
     {
 
 
@@ -1088,6 +1101,11 @@ class StaffEducationOrganizationEmploymentAssociationsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociations, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociations, must be bigger than or equal to 0.');
         }
         
 
@@ -1151,6 +1169,24 @@ class StaffEducationOrganizationEmploymentAssociationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1395,7 +1431,7 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociation
+     * @return |\Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociation
      */
     public function getStaffEducationOrganizationEmploymentAssociationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsById'][0])
     {
@@ -1415,7 +1451,7 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiStaffEducationOrganizationEmploymentAssociation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getStaffEducationOrganizationEmploymentAssociationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsById'][0])
     {
@@ -1716,23 +1752,622 @@ class StaffEducationOrganizationEmploymentAssociationsApi
     }
 
     /**
+     * Operation getStaffEducationOrganizationEmploymentAssociationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $employment_status_descriptor Reflects the type of employment or contract. (optional)
+     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
+     * @param  string $credential_identifier Identifier or serial number assigned to the credential. (optional)
+     * @param  string $state_of_issue_state_abbreviation_descriptor The abbreviation for the name of the state (within the United States) or extra-state jurisdiction in which a license/credential was issued. (optional)
+     * @param  string $separation_descriptor Type of employment separation. (optional)
+     * @param  string $separation_reason_descriptor Reason for terminating the employment. (optional)
+     * @param  float $annual_wage Annual wage associated with the employment position being reported. (optional)
+     * @param  string $department The department or suborganization the employee/contractor is associated with in the education organization. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  float $full_time_equivalency The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting. (optional)
+     * @param  float $hourly_wage Hourly wage associated with the employment position being reported. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $offer_date Date at which the staff member was made an official offer for this employment. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getStaffEducationOrganizationEmploymentAssociationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsPartitions'][0])
+    {
+        list($response) = $this->getStaffEducationOrganizationEmploymentAssociationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getStaffEducationOrganizationEmploymentAssociationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $employment_status_descriptor Reflects the type of employment or contract. (optional)
+     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
+     * @param  string $credential_identifier Identifier or serial number assigned to the credential. (optional)
+     * @param  string $state_of_issue_state_abbreviation_descriptor The abbreviation for the name of the state (within the United States) or extra-state jurisdiction in which a license/credential was issued. (optional)
+     * @param  string $separation_descriptor Type of employment separation. (optional)
+     * @param  string $separation_reason_descriptor Reason for terminating the employment. (optional)
+     * @param  float $annual_wage Annual wage associated with the employment position being reported. (optional)
+     * @param  string $department The department or suborganization the employee/contractor is associated with in the education organization. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  float $full_time_equivalency The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting. (optional)
+     * @param  float $hourly_wage Hourly wage associated with the employment position being reported. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $offer_date Date at which the staff member was made an official offer for this employment. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getStaffEducationOrganizationEmploymentAssociationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsPartitions'][0])
+    {
+        $request = $this->getStaffEducationOrganizationEmploymentAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getStaffEducationOrganizationEmploymentAssociationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $employment_status_descriptor Reflects the type of employment or contract. (optional)
+     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
+     * @param  string $credential_identifier Identifier or serial number assigned to the credential. (optional)
+     * @param  string $state_of_issue_state_abbreviation_descriptor The abbreviation for the name of the state (within the United States) or extra-state jurisdiction in which a license/credential was issued. (optional)
+     * @param  string $separation_descriptor Type of employment separation. (optional)
+     * @param  string $separation_reason_descriptor Reason for terminating the employment. (optional)
+     * @param  float $annual_wage Annual wage associated with the employment position being reported. (optional)
+     * @param  string $department The department or suborganization the employee/contractor is associated with in the education organization. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  float $full_time_equivalency The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting. (optional)
+     * @param  float $hourly_wage Hourly wage associated with the employment position being reported. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $offer_date Date at which the staff member was made an official offer for this employment. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStaffEducationOrganizationEmploymentAssociationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsPartitions'][0])
+    {
+        return $this->getStaffEducationOrganizationEmploymentAssociationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getStaffEducationOrganizationEmploymentAssociationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $employment_status_descriptor Reflects the type of employment or contract. (optional)
+     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
+     * @param  string $credential_identifier Identifier or serial number assigned to the credential. (optional)
+     * @param  string $state_of_issue_state_abbreviation_descriptor The abbreviation for the name of the state (within the United States) or extra-state jurisdiction in which a license/credential was issued. (optional)
+     * @param  string $separation_descriptor Type of employment separation. (optional)
+     * @param  string $separation_reason_descriptor Reason for terminating the employment. (optional)
+     * @param  float $annual_wage Annual wage associated with the employment position being reported. (optional)
+     * @param  string $department The department or suborganization the employee/contractor is associated with in the education organization. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  float $full_time_equivalency The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting. (optional)
+     * @param  float $hourly_wage Hourly wage associated with the employment position being reported. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $offer_date Date at which the staff member was made an official offer for this employment. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getStaffEducationOrganizationEmploymentAssociationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getStaffEducationOrganizationEmploymentAssociationsPartitionsRequest($number, $min_change_version, $max_change_version, $employment_status_descriptor, $hire_date, $education_organization_id, $staff_unique_id, $credential_identifier, $state_of_issue_state_abbreviation_descriptor, $separation_descriptor, $separation_reason_descriptor, $annual_wage, $department, $end_date, $full_time_equivalency, $hourly_wage, $id, $offer_date, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getStaffEducationOrganizationEmploymentAssociationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  string $employment_status_descriptor Reflects the type of employment or contract. (optional)
+     * @param  \DateTime $hire_date The month, day, and year on which an individual was hired for a position.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  int $education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $staff_unique_id A unique alphanumeric code assigned to a staff. (optional)
+     * @param  string $credential_identifier Identifier or serial number assigned to the credential. (optional)
+     * @param  string $state_of_issue_state_abbreviation_descriptor The abbreviation for the name of the state (within the United States) or extra-state jurisdiction in which a license/credential was issued. (optional)
+     * @param  string $separation_descriptor Type of employment separation. (optional)
+     * @param  string $separation_reason_descriptor Reason for terminating the employment. (optional)
+     * @param  float $annual_wage Annual wage associated with the employment position being reported. (optional)
+     * @param  string $department The department or suborganization the employee/contractor is associated with in the education organization. (optional)
+     * @param  \DateTime $end_date The month, day, and year on which a contract between an individual and a governing authority ends or is terminated under the provisions of the contract (or the date on which the agreement is made invalid).  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines. (optional)
+     * @param  float $full_time_equivalency The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting. (optional)
+     * @param  float $hourly_wage Hourly wage associated with the employment position being reported. (optional)
+     * @param  string $id  (optional)
+     * @param  \DateTime $offer_date Date at which the staff member was made an official offer for this employment. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getStaffEducationOrganizationEmploymentAssociationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $employment_status_descriptor = null, $hire_date = null, $education_organization_id = null, $staff_unique_id = null, $credential_identifier = null, $state_of_issue_state_abbreviation_descriptor = null, $separation_descriptor = null, $separation_reason_descriptor = null, $annual_wage = null, $department = null, $end_date = null, $full_time_equivalency = null, $hourly_wage = null, $id = null, $offer_date = null, $use_snapshot = false, string $contentType = self::contentTypes['getStaffEducationOrganizationEmploymentAssociationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+        if ($employment_status_descriptor !== null && strlen($employment_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$employment_status_descriptor" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+
+        if ($staff_unique_id !== null && strlen($staff_unique_id) > 32) {
+            throw new \InvalidArgumentException('invalid length for "$staff_unique_id" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociationsPartitions, must be smaller than or equal to 32.');
+        }
+        
+        if ($credential_identifier !== null && strlen($credential_identifier) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$credential_identifier" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($state_of_issue_state_abbreviation_descriptor !== null && strlen($state_of_issue_state_abbreviation_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$state_of_issue_state_abbreviation_descriptor" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($separation_descriptor !== null && strlen($separation_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$separation_descriptor" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($separation_reason_descriptor !== null && strlen($separation_reason_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$separation_reason_descriptor" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($department !== null && strlen($department) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$department" when calling StaffEducationOrganizationEmploymentAssociationsApi.getStaffEducationOrganizationEmploymentAssociationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+
+
+
+
+
+
+        $resourcePath = '/ed-fi/staffEducationOrganizationEmploymentAssociations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $employment_status_descriptor,
+            'employmentStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $hire_date,
+            'hireDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_id,
+            'educationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $staff_unique_id,
+            'staffUniqueId', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $credential_identifier,
+            'credentialIdentifier', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $state_of_issue_state_abbreviation_descriptor,
+            'stateOfIssueStateAbbreviationDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $separation_descriptor,
+            'separationDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $separation_reason_descriptor,
+            'separationReasonDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $annual_wage,
+            'annualWage', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $department,
+            'department', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_date,
+            'endDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $full_time_equivalency,
+            'fullTimeEquivalency', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $hourly_wage,
+            'hourlyWage', // param base name
+            'number', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offer_date,
+            'offerDate', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesStaffEducationOrganizationEmploymentAssociations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange[]
      */
-    public function keyChangesStaffEducationOrganizationEmploymentAssociations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'][0])
+    public function keyChangesStaffEducationOrganizationEmploymentAssociations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'][0])
     {
         list($response) = $this->keyChangesStaffEducationOrganizationEmploymentAssociationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1743,19 +2378,19 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesStaffEducationOrganizationEmploymentAssociationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'][0])
+    public function keyChangesStaffEducationOrganizationEmploymentAssociationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'][0])
     {
         $request = $this->keyChangesStaffEducationOrganizationEmploymentAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1873,18 +2508,18 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStaffEducationOrganizationEmploymentAssociationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'][0])
+    public function keyChangesStaffEducationOrganizationEmploymentAssociationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'][0])
     {
         return $this->keyChangesStaffEducationOrganizationEmploymentAssociationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1899,18 +2534,18 @@ class StaffEducationOrganizationEmploymentAssociationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesStaffEducationOrganizationEmploymentAssociationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'][0])
+    public function keyChangesStaffEducationOrganizationEmploymentAssociationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiStaffEducationOrganizationEmploymentAssociationKeyChange[]';
         $request = $this->keyChangesStaffEducationOrganizationEmploymentAssociationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1954,18 +2589,18 @@ class StaffEducationOrganizationEmploymentAssociationsApi
     /**
      * Create request for operation 'keyChangesStaffEducationOrganizationEmploymentAssociations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesStaffEducationOrganizationEmploymentAssociationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'][0])
+    public function keyChangesStaffEducationOrganizationEmploymentAssociationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesStaffEducationOrganizationEmploymentAssociations'][0])
     {
 
 

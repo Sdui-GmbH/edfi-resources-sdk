@@ -284,6 +284,14 @@ class EdFiStateEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
         if ($this->container['fiscal_year'] === null) {
             $invalidProperties[] = "'fiscal_year' can't be null";
         }
+        if (!is_null($this->container['federal_programs_funding_allocation']) && ($this->container['federal_programs_funding_allocation'] > 922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'federal_programs_funding_allocation', must be smaller than or equal to 922337203685477.6.";
+        }
+
+        if (!is_null($this->container['federal_programs_funding_allocation']) && ($this->container['federal_programs_funding_allocation'] < -922337203685477.6)) {
+            $invalidProperties[] = "invalid value for 'federal_programs_funding_allocation', must be bigger than or equal to -922337203685477.6.";
+        }
+
         return $invalidProperties;
     }
 
@@ -355,6 +363,14 @@ class EdFiStateEducationAgencyFederalFunds implements ModelInterface, ArrayAcces
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
+
+        if (!is_null($federal_programs_funding_allocation) && ($federal_programs_funding_allocation > 922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $federal_programs_funding_allocation when calling EdFiStateEducationAgencyFederalFunds., must be smaller than or equal to 922337203685477.6.');
+        }
+        if (!is_null($federal_programs_funding_allocation) && ($federal_programs_funding_allocation < -922337203685477.6)) {
+            throw new \InvalidArgumentException('invalid value for $federal_programs_funding_allocation when calling EdFiStateEducationAgencyFederalFunds., must be bigger than or equal to -922337203685477.6.');
+        }
+
         $this->container['federal_programs_funding_allocation'] = $federal_programs_funding_allocation;
 
         return $this;

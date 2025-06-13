@@ -369,7 +369,7 @@ class TpdmCandidateEducatorPreparationProgramAssociationDegreeSpecialization imp
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date The month, day, and year on which the Teacher Candidate exited the declared specialization.
+     * @param \DateTime|null $end_date The month, day, and year on which the Teacher Candidate exited the declared specialization.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */

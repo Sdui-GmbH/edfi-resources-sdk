@@ -373,24 +373,12 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
             $invalidProperties[] = "invalid value for 'achievement_category_system', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['achievement_category_system']) && (mb_strlen($this->container['achievement_category_system']) < 1)) {
-            $invalidProperties[] = "invalid value for 'achievement_category_system', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['achievement_title']) && (mb_strlen($this->container['achievement_title']) > 60)) {
             $invalidProperties[] = "invalid value for 'achievement_title', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['achievement_title']) && (mb_strlen($this->container['achievement_title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'achievement_title', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['criteria']) && (mb_strlen($this->container['criteria']) > 150)) {
             $invalidProperties[] = "invalid value for 'criteria', the character length must be smaller than or equal to 150.";
-        }
-
-        if (!is_null($this->container['criteria']) && (mb_strlen($this->container['criteria']) < 1)) {
-            $invalidProperties[] = "invalid value for 'criteria', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['criteria_url']) && (mb_strlen($this->container['criteria_url']) > 255)) {
@@ -405,10 +393,6 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
             $invalidProperties[] = "invalid value for 'evidence_statement', the character length must be smaller than or equal to 150.";
         }
 
-        if (!is_null($this->container['evidence_statement']) && (mb_strlen($this->container['evidence_statement']) < 1)) {
-            $invalidProperties[] = "invalid value for 'evidence_statement', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['image_url']) && (mb_strlen($this->container['image_url']) > 255)) {
             $invalidProperties[] = "invalid value for 'image_url', the character length must be smaller than or equal to 255.";
         }
@@ -421,10 +405,6 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
             $invalidProperties[] = "invalid value for 'issuer_name', the character length must be smaller than or equal to 150.";
         }
 
-        if (!is_null($this->container['issuer_name']) && (mb_strlen($this->container['issuer_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'issuer_name', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['issuer_origin_url']) && (mb_strlen($this->container['issuer_origin_url']) > 255)) {
             $invalidProperties[] = "invalid value for 'issuer_origin_url', the character length must be smaller than or equal to 255.";
         }
@@ -435,10 +415,6 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
 
         if (!is_null($this->container['recognition_description']) && (mb_strlen($this->container['recognition_description']) > 80)) {
             $invalidProperties[] = "invalid value for 'recognition_description', the character length must be smaller than or equal to 80.";
-        }
-
-        if (!is_null($this->container['recognition_description']) && (mb_strlen($this->container['recognition_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'recognition_description', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -557,9 +533,6 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
         if (!is_null($achievement_category_system) && (mb_strlen($achievement_category_system) > 60)) {
             throw new \InvalidArgumentException('invalid length for $achievement_category_system when calling EdFiStudentAcademicRecordRecognition., must be smaller than or equal to 60.');
         }
-        if (!is_null($achievement_category_system) && (mb_strlen($achievement_category_system) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $achievement_category_system when calling EdFiStudentAcademicRecordRecognition., must be bigger than or equal to 1.');
-        }
 
         $this->container['achievement_category_system'] = $achievement_category_system;
 
@@ -598,9 +571,6 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
         if (!is_null($achievement_title) && (mb_strlen($achievement_title) > 60)) {
             throw new \InvalidArgumentException('invalid length for $achievement_title when calling EdFiStudentAcademicRecordRecognition., must be smaller than or equal to 60.');
         }
-        if (!is_null($achievement_title) && (mb_strlen($achievement_title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $achievement_title when calling EdFiStudentAcademicRecordRecognition., must be bigger than or equal to 1.');
-        }
 
         $this->container['achievement_title'] = $achievement_title;
 
@@ -638,9 +608,6 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
         }
         if (!is_null($criteria) && (mb_strlen($criteria) > 150)) {
             throw new \InvalidArgumentException('invalid length for $criteria when calling EdFiStudentAcademicRecordRecognition., must be smaller than or equal to 150.');
-        }
-        if (!is_null($criteria) && (mb_strlen($criteria) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $criteria when calling EdFiStudentAcademicRecordRecognition., must be bigger than or equal to 1.');
         }
 
         $this->container['criteria'] = $criteria;
@@ -721,9 +688,6 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
         if (!is_null($evidence_statement) && (mb_strlen($evidence_statement) > 150)) {
             throw new \InvalidArgumentException('invalid length for $evidence_statement when calling EdFiStudentAcademicRecordRecognition., must be smaller than or equal to 150.');
         }
-        if (!is_null($evidence_statement) && (mb_strlen($evidence_statement) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $evidence_statement when calling EdFiStudentAcademicRecordRecognition., must be bigger than or equal to 1.');
-        }
 
         $this->container['evidence_statement'] = $evidence_statement;
 
@@ -803,9 +767,6 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
         if (!is_null($issuer_name) && (mb_strlen($issuer_name) > 150)) {
             throw new \InvalidArgumentException('invalid length for $issuer_name when calling EdFiStudentAcademicRecordRecognition., must be smaller than or equal to 150.');
         }
-        if (!is_null($issuer_name) && (mb_strlen($issuer_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $issuer_name when calling EdFiStudentAcademicRecordRecognition., must be bigger than or equal to 1.');
-        }
 
         $this->container['issuer_name'] = $issuer_name;
 
@@ -866,7 +827,7 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
     /**
      * Sets recognition_award_date
      *
-     * @param \DateTime|null $recognition_award_date The date the recognition was awarded or earned.
+     * @param \DateTime|null $recognition_award_date The date the recognition was awarded or earned.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -900,7 +861,7 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
     /**
      * Sets recognition_award_expires_date
      *
-     * @param \DateTime|null $recognition_award_expires_date Date on which the recognition expires.
+     * @param \DateTime|null $recognition_award_expires_date Date on which the recognition expires.  Note: Date interpretation may vary. Ed-Fi recommends inclusive dates, but states may define dates as inclusive or exclusive. For calculations, align with local guidelines.
      *
      * @return self
      */
@@ -952,9 +913,6 @@ class EdFiStudentAcademicRecordRecognition implements ModelInterface, ArrayAcces
         }
         if (!is_null($recognition_description) && (mb_strlen($recognition_description) > 80)) {
             throw new \InvalidArgumentException('invalid length for $recognition_description when calling EdFiStudentAcademicRecordRecognition., must be smaller than or equal to 80.');
-        }
-        if (!is_null($recognition_description) && (mb_strlen($recognition_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $recognition_description when calling EdFiStudentAcademicRecordRecognition., must be bigger than or equal to 1.');
         }
 
         $this->container['recognition_description'] = $recognition_description;

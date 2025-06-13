@@ -337,10 +337,6 @@ class EdFiCompetencyObjective implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'objective', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['objective']) < 1)) {
-            $invalidProperties[] = "invalid value for 'objective', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['objective_grade_level_descriptor'] === null) {
             $invalidProperties[] = "'objective_grade_level_descriptor' can't be null";
         }
@@ -355,24 +351,12 @@ class EdFiCompetencyObjective implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = "invalid value for 'competency_objective_id', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['competency_objective_id']) && (mb_strlen($this->container['competency_objective_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'competency_objective_id', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) > 1024)) {
             $invalidProperties[] = "invalid value for 'description', the character length must be smaller than or equal to 1024.";
         }
 
-        if (!is_null($this->container['description']) && (mb_strlen($this->container['description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'description', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['success_criteria']) && (mb_strlen($this->container['success_criteria']) > 150)) {
             $invalidProperties[] = "invalid value for 'success_criteria', the character length must be smaller than or equal to 150.";
-        }
-
-        if (!is_null($this->container['success_criteria']) && (mb_strlen($this->container['success_criteria']) < 1)) {
-            $invalidProperties[] = "invalid value for 'success_criteria', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -441,9 +425,6 @@ class EdFiCompetencyObjective implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if ((mb_strlen($objective) > 60)) {
             throw new \InvalidArgumentException('invalid length for $objective when calling EdFiCompetencyObjective., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($objective) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $objective when calling EdFiCompetencyObjective., must be bigger than or equal to 1.');
         }
 
         $this->container['objective'] = $objective;
@@ -541,9 +522,6 @@ class EdFiCompetencyObjective implements ModelInterface, ArrayAccess, \JsonSeria
         if (!is_null($competency_objective_id) && (mb_strlen($competency_objective_id) > 60)) {
             throw new \InvalidArgumentException('invalid length for $competency_objective_id when calling EdFiCompetencyObjective., must be smaller than or equal to 60.');
         }
-        if (!is_null($competency_objective_id) && (mb_strlen($competency_objective_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $competency_objective_id when calling EdFiCompetencyObjective., must be bigger than or equal to 1.');
-        }
 
         $this->container['competency_objective_id'] = $competency_objective_id;
 
@@ -582,9 +560,6 @@ class EdFiCompetencyObjective implements ModelInterface, ArrayAccess, \JsonSeria
         if (!is_null($description) && (mb_strlen($description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $description when calling EdFiCompetencyObjective., must be smaller than or equal to 1024.');
         }
-        if (!is_null($description) && (mb_strlen($description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $description when calling EdFiCompetencyObjective., must be bigger than or equal to 1.');
-        }
 
         $this->container['description'] = $description;
 
@@ -622,9 +597,6 @@ class EdFiCompetencyObjective implements ModelInterface, ArrayAccess, \JsonSeria
         }
         if (!is_null($success_criteria) && (mb_strlen($success_criteria) > 150)) {
             throw new \InvalidArgumentException('invalid length for $success_criteria when calling EdFiCompetencyObjective., must be smaller than or equal to 150.');
-        }
-        if (!is_null($success_criteria) && (mb_strlen($success_criteria) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $success_criteria when calling EdFiCompetencyObjective., must be bigger than or equal to 1.');
         }
 
         $this->container['success_criteria'] = $success_criteria;

@@ -344,10 +344,6 @@ class EdFiCohort implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'cohort_identifier', the character length must be smaller than or equal to 36.";
         }
 
-        if ((mb_strlen($this->container['cohort_identifier']) < 1)) {
-            $invalidProperties[] = "invalid value for 'cohort_identifier', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['education_organization_reference'] === null) {
             $invalidProperties[] = "'education_organization_reference' can't be null";
         }
@@ -357,10 +353,6 @@ class EdFiCohort implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (!is_null($this->container['cohort_description']) && (mb_strlen($this->container['cohort_description']) > 1024)) {
             $invalidProperties[] = "invalid value for 'cohort_description', the character length must be smaller than or equal to 1024.";
-        }
-
-        if (!is_null($this->container['cohort_description']) && (mb_strlen($this->container['cohort_description']) < 1)) {
-            $invalidProperties[] = "invalid value for 'cohort_description', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['cohort_scope_descriptor']) && (mb_strlen($this->container['cohort_scope_descriptor']) > 306)) {
@@ -440,9 +432,6 @@ class EdFiCohort implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($cohort_identifier) > 36)) {
             throw new \InvalidArgumentException('invalid length for $cohort_identifier when calling EdFiCohort., must be smaller than or equal to 36.');
-        }
-        if ((mb_strlen($cohort_identifier) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $cohort_identifier when calling EdFiCohort., must be bigger than or equal to 1.');
         }
 
         $this->container['cohort_identifier'] = $cohort_identifier;
@@ -546,9 +535,6 @@ class EdFiCohort implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($cohort_description) && (mb_strlen($cohort_description) > 1024)) {
             throw new \InvalidArgumentException('invalid length for $cohort_description when calling EdFiCohort., must be smaller than or equal to 1024.');
-        }
-        if (!is_null($cohort_description) && (mb_strlen($cohort_description) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $cohort_description when calling EdFiCohort., must be bigger than or equal to 1.');
         }
 
         $this->container['cohort_description'] = $cohort_description;

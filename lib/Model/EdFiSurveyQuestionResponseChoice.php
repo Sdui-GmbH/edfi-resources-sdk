@@ -303,10 +303,6 @@ class EdFiSurveyQuestionResponseChoice implements ModelInterface, ArrayAccess, \
             $invalidProperties[] = "invalid value for 'text_value', the character length must be smaller than or equal to 255.";
         }
 
-        if (!is_null($this->container['text_value']) && (mb_strlen($this->container['text_value']) < 1)) {
-            $invalidProperties[] = "invalid value for 'text_value', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -422,9 +418,6 @@ class EdFiSurveyQuestionResponseChoice implements ModelInterface, ArrayAccess, \
         }
         if (!is_null($text_value) && (mb_strlen($text_value) > 255)) {
             throw new \InvalidArgumentException('invalid length for $text_value when calling EdFiSurveyQuestionResponseChoice., must be smaller than or equal to 255.');
-        }
-        if (!is_null($text_value) && (mb_strlen($text_value) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $text_value when calling EdFiSurveyQuestionResponseChoice., must be bigger than or equal to 1.');
         }
 
         $this->container['text_value'] = $text_value;

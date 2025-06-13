@@ -384,10 +384,6 @@ class TrackedChangesTpdmEvaluationObjectiveRatingKey implements ModelInterface, 
             $invalidProperties[] = "invalid value for 'person_id', the character length must be smaller than or equal to 32.";
         }
 
-        if (!is_null($this->container['person_id']) && (mb_strlen($this->container['person_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'person_id', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['source_system_descriptor']) && (mb_strlen($this->container['source_system_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'source_system_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -707,9 +703,6 @@ class TrackedChangesTpdmEvaluationObjectiveRatingKey implements ModelInterface, 
         }
         if ((mb_strlen($person_id) > 32)) {
             throw new \InvalidArgumentException('invalid length for $person_id when calling TrackedChangesTpdmEvaluationObjectiveRatingKey., must be smaller than or equal to 32.');
-        }
-        if ((mb_strlen($person_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $person_id when calling TrackedChangesTpdmEvaluationObjectiveRatingKey., must be bigger than or equal to 1.');
         }
 
         $this->container['person_id'] = $person_id;

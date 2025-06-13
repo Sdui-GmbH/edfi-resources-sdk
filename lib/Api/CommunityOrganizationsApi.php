@@ -83,6 +83,9 @@ class CommunityOrganizationsApi
         'getCommunityOrganizationsById' => [
             'application/json',
         ],
+        'getCommunityOrganizationsPartitions' => [
+            'application/json',
+        ],
         'keyChangesCommunityOrganizations' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class CommunityOrganizationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiCommunityOrganizationDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiCommunityOrganizationDelete[]
      */
-    public function deletesCommunityOrganizations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityOrganizations'][0])
+    public function deletesCommunityOrganizations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityOrganizations'][0])
     {
         list($response) = $this->deletesCommunityOrganizationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class CommunityOrganizationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiCommunityOrganizationDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiCommunityOrganizationDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesCommunityOrganizationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityOrganizations'][0])
+    public function deletesCommunityOrganizationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityOrganizations'][0])
     {
         $request = $this->deletesCommunityOrganizationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class CommunityOrganizationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesCommunityOrganizationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityOrganizations'][0])
+    public function deletesCommunityOrganizationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityOrganizations'][0])
     {
         return $this->deletesCommunityOrganizationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class CommunityOrganizationsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesCommunityOrganizationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityOrganizations'][0])
+    public function deletesCommunityOrganizationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityOrganizations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiCommunityOrganizationDelete[]';
         $request = $this->deletesCommunityOrganizationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class CommunityOrganizationsApi
     /**
      * Create request for operation 'deletesCommunityOrganizations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesCommunityOrganizationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityOrganizations'][0])
+    public function deletesCommunityOrganizationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesCommunityOrganizations'][0])
     {
 
 
@@ -759,22 +762,31 @@ class CommunityOrganizationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiCommunityOrganization[]
+     * @return |\Resources\Model\EdFiCommunityOrganization[]
      */
-    public function getCommunityOrganizations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
+    public function getCommunityOrganizations($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
     {
-        list($response) = $this->getCommunityOrganizationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $use_snapshot, $contentType);
+        list($response) = $this->getCommunityOrganizationsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $community_organization_id, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
         return $response;
     }
 
@@ -783,22 +795,31 @@ class CommunityOrganizationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiCommunityOrganization[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiCommunityOrganization[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCommunityOrganizationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
+    public function getCommunityOrganizationsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
     {
-        $request = $this->getCommunityOrganizationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $use_snapshot, $contentType);
+        $request = $this->getCommunityOrganizationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $community_organization_id, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -914,21 +935,30 @@ class CommunityOrganizationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommunityOrganizationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
+    public function getCommunityOrganizationsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
     {
-        return $this->getCommunityOrganizationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $use_snapshot, $contentType)
+        return $this->getCommunityOrganizationsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $community_organization_id, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -941,22 +971,31 @@ class CommunityOrganizationsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCommunityOrganizationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
+    public function getCommunityOrganizationsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
     {
         $returnType = '\Resources\Model\EdFiCommunityOrganization[]';
-        $request = $this->getCommunityOrganizationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $community_organization_id, $use_snapshot, $contentType);
+        $request = $this->getCommunityOrganizationsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $community_organization_id, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -997,19 +1036,28 @@ class CommunityOrganizationsApi
     /**
      * Create request for operation 'getCommunityOrganizations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
-     * @param  int $community_organization_id The identifier assigned to a community organization. (optional)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCommunityOrganizationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
+    public function getCommunityOrganizationsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $community_organization_id = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getCommunityOrganizations'][0])
     {
 
 
@@ -1021,10 +1069,40 @@ class CommunityOrganizationsApi
         }
         
 
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling CommunityOrganizationsApi.getCommunityOrganizations, must be bigger than or equal to 0.');
+        }
+        
 
 
 
 
+        if ($operational_status_descriptor !== null && strlen($operational_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$operational_status_descriptor" when calling CommunityOrganizationsApi.getCommunityOrganizations, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($name_of_institution !== null && strlen($name_of_institution) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$name_of_institution" when calling CommunityOrganizationsApi.getCommunityOrganizations, must be smaller than or equal to 75.');
+        }
+        
+        if ($short_name_of_institution !== null && strlen($short_name_of_institution) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$short_name_of_institution" when calling CommunityOrganizationsApi.getCommunityOrganizations, must be smaller than or equal to 75.');
+        }
+        
+        if ($web_site !== null && strlen($web_site) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$web_site" when calling CommunityOrganizationsApi.getCommunityOrganizations, must be smaller than or equal to 255.');
+        }
+        
+
+        if ($education_organization_identification_system_descriptor !== null && strlen($education_organization_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$education_organization_identification_system_descriptor" when calling CommunityOrganizationsApi.getCommunityOrganizations, must be smaller than or equal to 306.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling CommunityOrganizationsApi.getCommunityOrganizations, must be smaller than or equal to 60.');
+        }
+        
 
         $resourcePath = '/ed-fi/communityOrganizations';
         $formParams = [];
@@ -1046,6 +1124,24 @@ class CommunityOrganizationsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1083,6 +1179,69 @@ class CommunityOrganizationsApi
             $community_organization_id,
             'communityOrganizationId', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $operational_status_descriptor,
+            'operationalStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $name_of_institution,
+            'nameOfInstitution', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $short_name_of_institution,
+            'shortNameOfInstitution', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $web_site,
+            'webSite', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_identification_system_descriptor,
+            'educationOrganizationIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1164,7 +1323,7 @@ class CommunityOrganizationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiCommunityOrganization
+     * @return |\Resources\Model\EdFiCommunityOrganization
      */
     public function getCommunityOrganizationsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizationsById'][0])
     {
@@ -1184,7 +1343,7 @@ class CommunityOrganizationsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiCommunityOrganization, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiCommunityOrganization, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCommunityOrganizationsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getCommunityOrganizationsById'][0])
     {
@@ -1485,23 +1644,514 @@ class CommunityOrganizationsApi
     }
 
     /**
+     * Operation getCommunityOrganizationsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getCommunityOrganizationsPartitions($number = null, $min_change_version = null, $max_change_version = null, $community_organization_id = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getCommunityOrganizationsPartitions'][0])
+    {
+        list($response) = $this->getCommunityOrganizationsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $community_organization_id, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCommunityOrganizationsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCommunityOrganizationsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $community_organization_id = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getCommunityOrganizationsPartitions'][0])
+    {
+        $request = $this->getCommunityOrganizationsPartitionsRequest($number, $min_change_version, $max_change_version, $community_organization_id, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCommunityOrganizationsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCommunityOrganizationsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $community_organization_id = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getCommunityOrganizationsPartitions'][0])
+    {
+        return $this->getCommunityOrganizationsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $community_organization_id, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCommunityOrganizationsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCommunityOrganizationsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $community_organization_id = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getCommunityOrganizationsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getCommunityOrganizationsPartitionsRequest($number, $min_change_version, $max_change_version, $community_organization_id, $operational_status_descriptor, $id, $name_of_institution, $short_name_of_institution, $web_site, $use_snapshot, $education_organization_identification_system_descriptor, $identification_code, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCommunityOrganizationsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $community_organization_id The identifier assigned to a community organization. It must be distinct from any other identifier assigned to educational organizations, such as a LocalEducationAgencyId, to prevent duplication. (optional)
+     * @param  string $operational_status_descriptor The current operational status of the education organization (e.g., active, inactive). (optional)
+     * @param  string $id  (optional)
+     * @param  string $name_of_institution The full, legally accepted name of the institution. (optional)
+     * @param  string $short_name_of_institution A short name for the institution. (optional)
+     * @param  string $web_site The public web site address (URL) for the education organization. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $education_organization_identification_system_descriptor The school system, state, or agency assigning the identification code. (optional)
+     * @param  string $identification_code A unique number or alphanumeric code that is assigned to an education organization by a school, school system, state, or other agency or entity. (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCommunityOrganizationsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCommunityOrganizationsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $community_organization_id = null, $operational_status_descriptor = null, $id = null, $name_of_institution = null, $short_name_of_institution = null, $web_site = null, $use_snapshot = false, $education_organization_identification_system_descriptor = null, $identification_code = null, string $contentType = self::contentTypes['getCommunityOrganizationsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling CommunityOrganizationsApi.getCommunityOrganizationsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling CommunityOrganizationsApi.getCommunityOrganizationsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+        if ($operational_status_descriptor !== null && strlen($operational_status_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$operational_status_descriptor" when calling CommunityOrganizationsApi.getCommunityOrganizationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+
+        if ($name_of_institution !== null && strlen($name_of_institution) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$name_of_institution" when calling CommunityOrganizationsApi.getCommunityOrganizationsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($short_name_of_institution !== null && strlen($short_name_of_institution) > 75) {
+            throw new \InvalidArgumentException('invalid length for "$short_name_of_institution" when calling CommunityOrganizationsApi.getCommunityOrganizationsPartitions, must be smaller than or equal to 75.');
+        }
+        
+        if ($web_site !== null && strlen($web_site) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$web_site" when calling CommunityOrganizationsApi.getCommunityOrganizationsPartitions, must be smaller than or equal to 255.');
+        }
+        
+
+        if ($education_organization_identification_system_descriptor !== null && strlen($education_organization_identification_system_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$education_organization_identification_system_descriptor" when calling CommunityOrganizationsApi.getCommunityOrganizationsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($identification_code !== null && strlen($identification_code) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$identification_code" when calling CommunityOrganizationsApi.getCommunityOrganizationsPartitions, must be smaller than or equal to 60.');
+        }
+        
+
+        $resourcePath = '/ed-fi/communityOrganizations/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $community_organization_id,
+            'communityOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $operational_status_descriptor,
+            'operationalStatusDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $name_of_institution,
+            'nameOfInstitution', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $short_name_of_institution,
+            'shortNameOfInstitution', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $web_site,
+            'webSite', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $education_organization_identification_system_descriptor,
+            'educationOrganizationIdentificationSystemDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $identification_code,
+            'identificationCode', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesCommunityOrganizations
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiCommunityOrganizationKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiCommunityOrganizationKeyChange[]
      */
-    public function keyChangesCommunityOrganizations($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityOrganizations'][0])
+    public function keyChangesCommunityOrganizations($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityOrganizations'][0])
     {
         list($response) = $this->keyChangesCommunityOrganizationsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1512,19 +2162,19 @@ class CommunityOrganizationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiCommunityOrganizationKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiCommunityOrganizationKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesCommunityOrganizationsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityOrganizations'][0])
+    public function keyChangesCommunityOrganizationsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityOrganizations'][0])
     {
         $request = $this->keyChangesCommunityOrganizationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1642,18 +2292,18 @@ class CommunityOrganizationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesCommunityOrganizationsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityOrganizations'][0])
+    public function keyChangesCommunityOrganizationsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityOrganizations'][0])
     {
         return $this->keyChangesCommunityOrganizationsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1668,18 +2318,18 @@ class CommunityOrganizationsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesCommunityOrganizationsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityOrganizations'][0])
+    public function keyChangesCommunityOrganizationsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityOrganizations'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiCommunityOrganizationKeyChange[]';
         $request = $this->keyChangesCommunityOrganizationsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1723,18 +2373,18 @@ class CommunityOrganizationsApi
     /**
      * Create request for operation 'keyChangesCommunityOrganizations'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesCommunityOrganizations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesCommunityOrganizationsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityOrganizations'][0])
+    public function keyChangesCommunityOrganizationsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesCommunityOrganizations'][0])
     {
 
 

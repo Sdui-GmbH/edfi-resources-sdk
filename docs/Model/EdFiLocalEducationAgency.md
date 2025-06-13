@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | [optional]
 **categories** | [**\Resources\Model\EdFiEducationOrganizationCategory[]**](EdFiEducationOrganizationCategory.md) | An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state. |
-**local_education_agency_id** | **int** | The identifier assigned to a local education agency. |
+**local_education_agency_id** | **int** | The identifier assigned to a local education agency. It must be distinct from any other identifier assigned to educational organizations, such as a SchoolId, to prevent duplication. |
 **education_service_center_reference** | [**\Resources\Model\EdFiEducationServiceCenterReference**](EdFiEducationServiceCenterReference.md) |  | [optional]
 **parent_local_education_agency_reference** | [**\Resources\Model\EdFiLocalEducationAgencyReference**](EdFiLocalEducationAgencyReference.md) |  | [optional]
 **state_education_agency_reference** | [**\Resources\Model\EdFiStateEducationAgencyReference**](EdFiStateEducationAgencyReference.md) |  | [optional]

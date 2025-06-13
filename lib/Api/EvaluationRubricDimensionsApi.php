@@ -83,6 +83,9 @@ class EvaluationRubricDimensionsApi
         'getEvaluationRubricDimensionsById' => [
             'application/json',
         ],
+        'getEvaluationRubricDimensionsPartitions' => [
+            'application/json',
+        ],
         'keyChangesEvaluationRubricDimensions' => [
             'application/json',
         ],
@@ -376,19 +379,19 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRubricDimensions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]
+     * @return |\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]
      */
-    public function deletesEvaluationRubricDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
+    public function deletesEvaluationRubricDimensions($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
     {
         list($response) = $this->deletesEvaluationRubricDimensionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -399,19 +402,19 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRubricDimensions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletesEvaluationRubricDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
+    public function deletesEvaluationRubricDimensionsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
     {
         $request = $this->deletesEvaluationRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -529,18 +532,18 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRubricDimensions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesEvaluationRubricDimensionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
+    public function deletesEvaluationRubricDimensionsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
     {
         return $this->deletesEvaluationRubricDimensionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -555,18 +558,18 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves deleted resources based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRubricDimensions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletesEvaluationRubricDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
+    public function deletesEvaluationRubricDimensionsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionDelete[]';
         $request = $this->deletesEvaluationRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -610,18 +613,18 @@ class EvaluationRubricDimensionsApi
     /**
      * Create request for operation 'deletesEvaluationRubricDimensions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletesEvaluationRubricDimensions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletesEvaluationRubricDimensionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
+    public function deletesEvaluationRubricDimensionsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['deletesEvaluationRubricDimensions'][0])
     {
 
 
@@ -759,11 +762,13 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  int $evaluation_rubric_rating The numeric rating associated with the evaluation rubric dimension. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_evaluation_element_title The name or title of the program evaluation element. (optional)
@@ -781,11 +786,11 @@ class EvaluationRubricDimensionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiEvaluationRubricDimension[]
+     * @return |\Resources\Model\EdFiEvaluationRubricDimension[]
      */
-    public function getEvaluationRubricDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
+    public function getEvaluationRubricDimensions($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
     {
-        list($response) = $this->getEvaluationRubricDimensionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType);
+        list($response) = $this->getEvaluationRubricDimensionsWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType);
         return $response;
     }
 
@@ -794,11 +799,13 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  int $evaluation_rubric_rating The numeric rating associated with the evaluation rubric dimension. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_evaluation_element_title The name or title of the program evaluation element. (optional)
@@ -816,11 +823,11 @@ class EvaluationRubricDimensionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiEvaluationRubricDimension[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiEvaluationRubricDimension[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEvaluationRubricDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
+    public function getEvaluationRubricDimensionsWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
     {
-        $request = $this->getEvaluationRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType);
+        $request = $this->getEvaluationRubricDimensionsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -936,11 +943,13 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  int $evaluation_rubric_rating The numeric rating associated with the evaluation rubric dimension. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_evaluation_element_title The name or title of the program evaluation element. (optional)
@@ -959,9 +968,9 @@ class EvaluationRubricDimensionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEvaluationRubricDimensionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
+    public function getEvaluationRubricDimensionsAsync($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
     {
-        return $this->getEvaluationRubricDimensionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType)
+        return $this->getEvaluationRubricDimensionsAsyncWithHttpInfo($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -974,11 +983,13 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  int $evaluation_rubric_rating The numeric rating associated with the evaluation rubric dimension. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_evaluation_element_title The name or title of the program evaluation element. (optional)
@@ -997,10 +1008,10 @@ class EvaluationRubricDimensionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEvaluationRubricDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
+    public function getEvaluationRubricDimensionsAsyncWithHttpInfo($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
     {
         $returnType = '\Resources\Model\EdFiEvaluationRubricDimension[]';
-        $request = $this->getEvaluationRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType);
+        $request = $this->getEvaluationRubricDimensionsRequest($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1041,11 +1052,13 @@ class EvaluationRubricDimensionsApi
     /**
      * Create request for operation 'getEvaluationRubricDimensions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
+     * @param  string $page_token The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. (optional)
+     * @param  int $page_size The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  int $evaluation_rubric_rating The numeric rating associated with the evaluation rubric dimension. (optional)
      * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
      * @param  string $program_evaluation_element_title The name or title of the program evaluation element. (optional)
@@ -1064,7 +1077,7 @@ class EvaluationRubricDimensionsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEvaluationRubricDimensionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
+    public function getEvaluationRubricDimensionsRequest($offset = null, $limit = 25, $page_token = null, $page_size = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensions'][0])
     {
 
 
@@ -1073,6 +1086,11 @@ class EvaluationRubricDimensionsApi
         }
         if ($limit !== null && $limit < 0) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensions, must be bigger than or equal to 0.');
+        }
+        
+
+        if ($page_size !== null && $page_size < 0) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensions, must be bigger than or equal to 0.');
         }
         
 
@@ -1136,6 +1154,24 @@ class EvaluationRubricDimensionsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $limit,
             'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_size,
+            'pageSize', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1353,7 +1389,7 @@ class EvaluationRubricDimensionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\EdFiEvaluationRubricDimension
+     * @return |\Resources\Model\EdFiEvaluationRubricDimension
      */
     public function getEvaluationRubricDimensionsById($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensionsById'][0])
     {
@@ -1373,7 +1409,7 @@ class EvaluationRubricDimensionsApi
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\EdFiEvaluationRubricDimension, HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\EdFiEvaluationRubricDimension, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEvaluationRubricDimensionsByIdWithHttpInfo($id, $if_none_match = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensionsById'][0])
     {
@@ -1674,23 +1710,580 @@ class EvaluationRubricDimensionsApi
     }
 
     /**
+     * Operation getEvaluationRubricDimensionsPartitions
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $evaluation_rubric_rating The numeric rating associated with the evaluation rubric dimension. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_evaluation_element_title The name or title of the program evaluation element. (optional)
+     * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
+     * @param  string $program_evaluation_title An assigned unique identifier for the student program evaluation. (optional)
+     * @param  string $program_evaluation_type_descriptor The type of program evaluation conducted. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $evaluation_rubric_rating_level_descriptor The rating level achieved for the evaluation rubric dimension. (optional)
+     * @param  string $evaluation_criterion_description The evaluation criterion description for the evaluation rubric dimension. (optional)
+     * @param  string $id  (optional)
+     * @param  int $rubric_dimension_sort_order The sort order of the rubric dimension. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRubricDimensionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return |\Resources\Model\GetAcademicWeeksPartitions200Response
+     */
+    public function getEvaluationRubricDimensionsPartitions($number = null, $min_change_version = null, $max_change_version = null, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensionsPartitions'][0])
+    {
+        list($response) = $this->getEvaluationRubricDimensionsPartitionsWithHttpInfo($number, $min_change_version, $max_change_version, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getEvaluationRubricDimensionsPartitionsWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $evaluation_rubric_rating The numeric rating associated with the evaluation rubric dimension. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_evaluation_element_title The name or title of the program evaluation element. (optional)
+     * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
+     * @param  string $program_evaluation_title An assigned unique identifier for the student program evaluation. (optional)
+     * @param  string $program_evaluation_type_descriptor The type of program evaluation conducted. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $evaluation_rubric_rating_level_descriptor The rating level achieved for the evaluation rubric dimension. (optional)
+     * @param  string $evaluation_criterion_description The evaluation criterion description for the evaluation rubric dimension. (optional)
+     * @param  string $id  (optional)
+     * @param  int $rubric_dimension_sort_order The sort order of the rubric dimension. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRubricDimensionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of |\Resources\Model\GetAcademicWeeksPartitions200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEvaluationRubricDimensionsPartitionsWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensionsPartitions'][0])
+    {
+        $request = $this->getEvaluationRubricDimensionsPartitionsRequest($number, $min_change_version, $max_change_version, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Resources\Model\GetAcademicWeeksPartitions200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Resources\Model\GetAcademicWeeksPartitions200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Resources\Model\GetAcademicWeeksPartitions200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Resources\Model\GetAcademicWeeksPartitions200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEvaluationRubricDimensionsPartitionsAsync
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $evaluation_rubric_rating The numeric rating associated with the evaluation rubric dimension. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_evaluation_element_title The name or title of the program evaluation element. (optional)
+     * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
+     * @param  string $program_evaluation_title An assigned unique identifier for the student program evaluation. (optional)
+     * @param  string $program_evaluation_type_descriptor The type of program evaluation conducted. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $evaluation_rubric_rating_level_descriptor The rating level achieved for the evaluation rubric dimension. (optional)
+     * @param  string $evaluation_criterion_description The evaluation criterion description for the evaluation rubric dimension. (optional)
+     * @param  string $id  (optional)
+     * @param  int $rubric_dimension_sort_order The sort order of the rubric dimension. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRubricDimensionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEvaluationRubricDimensionsPartitionsAsync($number = null, $min_change_version = null, $max_change_version = null, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensionsPartitions'][0])
+    {
+        return $this->getEvaluationRubricDimensionsPartitionsAsyncWithHttpInfo($number, $min_change_version, $max_change_version, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEvaluationRubricDimensionsPartitionsAsyncWithHttpInfo
+     *
+     * Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $evaluation_rubric_rating The numeric rating associated with the evaluation rubric dimension. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_evaluation_element_title The name or title of the program evaluation element. (optional)
+     * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
+     * @param  string $program_evaluation_title An assigned unique identifier for the student program evaluation. (optional)
+     * @param  string $program_evaluation_type_descriptor The type of program evaluation conducted. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $evaluation_rubric_rating_level_descriptor The rating level achieved for the evaluation rubric dimension. (optional)
+     * @param  string $evaluation_criterion_description The evaluation criterion description for the evaluation rubric dimension. (optional)
+     * @param  string $id  (optional)
+     * @param  int $rubric_dimension_sort_order The sort order of the rubric dimension. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRubricDimensionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEvaluationRubricDimensionsPartitionsAsyncWithHttpInfo($number = null, $min_change_version = null, $max_change_version = null, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensionsPartitions'][0])
+    {
+        $returnType = '\Resources\Model\GetAcademicWeeksPartitions200Response';
+        $request = $this->getEvaluationRubricDimensionsPartitionsRequest($number, $min_change_version, $max_change_version, $evaluation_rubric_rating, $program_education_organization_id, $program_evaluation_element_title, $program_evaluation_period_descriptor, $program_evaluation_title, $program_evaluation_type_descriptor, $program_name, $program_type_descriptor, $evaluation_rubric_rating_level_descriptor, $evaluation_criterion_description, $id, $rubric_dimension_sort_order, $use_snapshot, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEvaluationRubricDimensionsPartitions'
+     *
+     * @param  int $number The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. (optional)
+     * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
+     * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
+     * @param  int $evaluation_rubric_rating The numeric rating associated with the evaluation rubric dimension. (optional)
+     * @param  int $program_education_organization_id The identifier assigned to an education organization. (optional)
+     * @param  string $program_evaluation_element_title The name or title of the program evaluation element. (optional)
+     * @param  string $program_evaluation_period_descriptor The name of the period for the program evaluation. (optional)
+     * @param  string $program_evaluation_title An assigned unique identifier for the student program evaluation. (optional)
+     * @param  string $program_evaluation_type_descriptor The type of program evaluation conducted. (optional)
+     * @param  string $program_name The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)
+     * @param  string $program_type_descriptor The type of program. (optional)
+     * @param  string $evaluation_rubric_rating_level_descriptor The rating level achieved for the evaluation rubric dimension. (optional)
+     * @param  string $evaluation_criterion_description The evaluation criterion description for the evaluation rubric dimension. (optional)
+     * @param  string $id  (optional)
+     * @param  int $rubric_dimension_sort_order The sort order of the rubric dimension. (optional)
+     * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEvaluationRubricDimensionsPartitions'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEvaluationRubricDimensionsPartitionsRequest($number = null, $min_change_version = null, $max_change_version = null, $evaluation_rubric_rating = null, $program_education_organization_id = null, $program_evaluation_element_title = null, $program_evaluation_period_descriptor = null, $program_evaluation_title = null, $program_evaluation_type_descriptor = null, $program_name = null, $program_type_descriptor = null, $evaluation_rubric_rating_level_descriptor = null, $evaluation_criterion_description = null, $id = null, $rubric_dimension_sort_order = null, $use_snapshot = false, string $contentType = self::contentTypes['getEvaluationRubricDimensionsPartitions'][0])
+    {
+
+        if ($number !== null && $number > 200) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensionsPartitions, must be smaller than or equal to 200.');
+        }
+        if ($number !== null && $number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$number" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensionsPartitions, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+
+        if ($program_evaluation_element_title !== null && strlen($program_evaluation_element_title) > 50) {
+            throw new \InvalidArgumentException('invalid length for "$program_evaluation_element_title" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensionsPartitions, must be smaller than or equal to 50.');
+        }
+        
+        if ($program_evaluation_period_descriptor !== null && strlen($program_evaluation_period_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_evaluation_period_descriptor" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($program_evaluation_title !== null && strlen($program_evaluation_title) > 50) {
+            throw new \InvalidArgumentException('invalid length for "$program_evaluation_title" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensionsPartitions, must be smaller than or equal to 50.');
+        }
+        
+        if ($program_evaluation_type_descriptor !== null && strlen($program_evaluation_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_evaluation_type_descriptor" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($program_name !== null && strlen($program_name) > 60) {
+            throw new \InvalidArgumentException('invalid length for "$program_name" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensionsPartitions, must be smaller than or equal to 60.');
+        }
+        
+        if ($program_type_descriptor !== null && strlen($program_type_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$program_type_descriptor" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($evaluation_rubric_rating_level_descriptor !== null && strlen($evaluation_rubric_rating_level_descriptor) > 306) {
+            throw new \InvalidArgumentException('invalid length for "$evaluation_rubric_rating_level_descriptor" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensionsPartitions, must be smaller than or equal to 306.');
+        }
+        
+        if ($evaluation_criterion_description !== null && strlen($evaluation_criterion_description) > 1024) {
+            throw new \InvalidArgumentException('invalid length for "$evaluation_criterion_description" when calling EvaluationRubricDimensionsApi.getEvaluationRubricDimensionsPartitions, must be smaller than or equal to 1024.');
+        }
+        
+
+
+
+
+        $resourcePath = '/ed-fi/evaluationRubricDimensions/partitions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $number,
+            'number', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $min_change_version,
+            'minChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $max_change_version,
+            'maxChangeVersion', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_rubric_rating,
+            'evaluationRubricRating', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_education_organization_id,
+            'programEducationOrganizationId', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_evaluation_element_title,
+            'programEvaluationElementTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_evaluation_period_descriptor,
+            'programEvaluationPeriodDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_evaluation_title,
+            'programEvaluationTitle', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_evaluation_type_descriptor,
+            'programEvaluationTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_name,
+            'programName', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $program_type_descriptor,
+            'programTypeDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_rubric_rating_level_descriptor,
+            'evaluationRubricRatingLevelDescriptor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $evaluation_criterion_description,
+            'evaluationCriterionDescription', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $rubric_dimension_sort_order,
+            'rubricDimensionSortOrder', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // header params
+        if ($use_snapshot !== null) {
+            $headerParams['Use-Snapshot'] = ObjectSerializer::toHeaderValue($use_snapshot);
+        }
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation keyChangesEvaluationRubricDimensions
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRubricDimensions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]
+     * @return |\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]
      */
-    public function keyChangesEvaluationRubricDimensions($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
+    public function keyChangesEvaluationRubricDimensions($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
     {
         list($response) = $this->keyChangesEvaluationRubricDimensionsWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
         return $response;
@@ -1701,19 +2294,19 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRubricDimensions'] to see the possible values for this operation
      *
      * @throws \Resources\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of |\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function keyChangesEvaluationRubricDimensionsWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
+    public function keyChangesEvaluationRubricDimensionsWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
     {
         $request = $this->keyChangesEvaluationRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
 
@@ -1831,18 +2424,18 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRubricDimensions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesEvaluationRubricDimensionsAsync($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
+    public function keyChangesEvaluationRubricDimensionsAsync($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
     {
         return $this->keyChangesEvaluationRubricDimensionsAsyncWithHttpInfo($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType)
             ->then(
@@ -1857,18 +2450,18 @@ class EvaluationRubricDimensionsApi
      *
      * Retrieves resources key changes based on change version.
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRubricDimensions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function keyChangesEvaluationRubricDimensionsAsyncWithHttpInfo($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
+    public function keyChangesEvaluationRubricDimensionsAsyncWithHttpInfo($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
     {
         $returnType = '\Resources\Model\TrackedChangesEdFiEvaluationRubricDimensionKeyChange[]';
         $request = $this->keyChangesEvaluationRubricDimensionsRequest($offset, $limit, $min_change_version, $max_change_version, $total_count, $use_snapshot, $contentType);
@@ -1912,18 +2505,18 @@ class EvaluationRubricDimensionsApi
     /**
      * Create request for operation 'keyChangesEvaluationRubricDimensions'
      *
-     * @param  int $offset Indicates how many items should be skipped before returning results. (optional, default to 0)
+     * @param  int $offset Indicates how many items should be skipped before returning results. (optional)
      * @param  int $limit Indicates the maximum number of items that should be returned in the results. (optional, default to 25)
      * @param  int $min_change_version Used in synchronization to set sequence minimum ChangeVersion (optional)
      * @param  int $max_change_version Used in synchronization to set sequence maximum ChangeVersion (optional)
-     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)
+     * @param  bool $total_count Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). (optional, default to false)
      * @param  bool $use_snapshot Indicates if the configured Snapshot should be used. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['keyChangesEvaluationRubricDimensions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function keyChangesEvaluationRubricDimensionsRequest($offset = 0, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
+    public function keyChangesEvaluationRubricDimensionsRequest($offset = null, $limit = 25, $min_change_version = null, $max_change_version = null, $total_count = false, $use_snapshot = false, string $contentType = self::contentTypes['keyChangesEvaluationRubricDimensions'][0])
     {
 
 

@@ -1,6 +1,6 @@
 # Resources\StudentGradebookEntriesApi
 
-All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if the operation defines another base path.
+All URIs are relative to https://api.ed-fi.org:443/v7.3/api/data/v3, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://api.ed-fi.org:443/v7.1/api/data/v3, except if t
 | [**deletesStudentGradebookEntries()**](StudentGradebookEntriesApi.md#deletesStudentGradebookEntries) | **GET** /ed-fi/studentGradebookEntries/deletes | Retrieves deleted resources based on change version. |
 | [**getStudentGradebookEntries()**](StudentGradebookEntriesApi.md#getStudentGradebookEntries) | **GET** /ed-fi/studentGradebookEntries | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
 | [**getStudentGradebookEntriesById()**](StudentGradebookEntriesApi.md#getStudentGradebookEntriesById) | **GET** /ed-fi/studentGradebookEntries/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**getStudentGradebookEntriesPartitions()**](StudentGradebookEntriesApi.md#getStudentGradebookEntriesPartitions) | **GET** /ed-fi/studentGradebookEntries/partitions | Retrieves a set of page tokens to be used for efficient client-side parallel processing. |
 | [**keyChangesStudentGradebookEntries()**](StudentGradebookEntriesApi.md#keyChangesStudentGradebookEntries) | **GET** /ed-fi/studentGradebookEntries/keyChanges | Retrieves resources key changes based on change version. |
 | [**postStudentGradebookEntry()**](StudentGradebookEntriesApi.md#postStudentGradebookEntry) | **POST** /ed-fi/studentGradebookEntries | Creates or updates resources based on the natural key values of the supplied resource. |
 | [**putStudentGradebookEntry()**](StudentGradebookEntriesApi.md#putStudentGradebookEntry) | **PUT** /ed-fi/studentGradebookEntries/{id} | Updates a resource based on the resource identifier. |
@@ -101,11 +102,11 @@ $apiInstance = new Resources\Api\StudentGradebookEntriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -120,11 +121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type
@@ -147,7 +148,7 @@ try {
 ## `getStudentGradebookEntries()`
 
 ```php
-getStudentGradebookEntries($offset, $limit, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot): \Resources\Model\EdFiStudentGradebookEntry[]
+getStudentGradebookEntries($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot): \Resources\Model\EdFiStudentGradebookEntry[]
 ```
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -171,11 +172,13 @@ $apiInstance = new Resources\Api\StudentGradebookEntriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
+$page_token = 'page_token_example'; // string | The token of the page to retrieve, obtained either from the \"Next-Page-Token\" header of the previous request, or from the \"partitions\" endpoint for the resource. Cannot be used with limit/offset paging.
+$page_size = 25; // int | The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $gradebook_entry_identifier = 'gradebook_entry_identifier_example'; // string | A unique number or alphanumeric code assigned to a gradebook entry by the source system.
 $namespace = 'namespace_example'; // string | Namespace URI for the source of the gradebook entry.
 $student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
@@ -192,7 +195,7 @@ $time_fulfilled = 'time_fulfilled_example'; // string | The time an assignment w
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
-    $result = $apiInstance->getStudentGradebookEntries($offset, $limit, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot);
+    $result = $apiInstance->getStudentGradebookEntries($offset, $limit, $page_token, $page_size, $min_change_version, $max_change_version, $total_count, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StudentGradebookEntriesApi->getStudentGradebookEntries: ', $e->getMessage(), PHP_EOL;
@@ -203,11 +206,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **page_token** | **string**| The token of the page to retrieve, obtained either from the \&quot;Next-Page-Token\&quot; header of the previous request, or from the \&quot;partitions\&quot; endpoint for the resource. Cannot be used with limit/offset paging. | [optional] |
+| **page_size** | **int**| The maximum number of items to retrieve in the page. For use with pageToken (cursor paging) only. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **gradebook_entry_identifier** | **string**| A unique number or alphanumeric code assigned to a gradebook entry by the source system. | [optional] |
 | **namespace** | **string**| Namespace URI for the source of the gradebook entry. | [optional] |
 | **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
@@ -304,6 +309,98 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getStudentGradebookEntriesPartitions()`
+
+```php
+getStudentGradebookEntriesPartitions($number, $min_change_version, $max_change_version, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot): \Resources\Model\GetAcademicWeeksPartitions200Response
+```
+
+Retrieves a set of page tokens to be used for efficient client-side parallel processing.
+
+Computes an evenly distributed set of partitions over the accessible data and returns a set of page tokens, each representing the first page of one of the partitions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials
+$config = Resources\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Resources\Api\StudentGradebookEntriesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$number = 56; // int | The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items.
+$min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
+$max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
+$gradebook_entry_identifier = 'gradebook_entry_identifier_example'; // string | A unique number or alphanumeric code assigned to a gradebook entry by the source system.
+$namespace = 'namespace_example'; // string | Namespace URI for the source of the gradebook entry.
+$student_unique_id = 'student_unique_id_example'; // string | A unique alphanumeric code assigned to a student.
+$assignment_late_status_descriptor = 'assignment_late_status_descriptor_example'; // string | Status of whether the assignment was submitted after the due date and/or marked as.
+$competency_level_descriptor = 'competency_level_descriptor_example'; // string | The competency level assessed for the student for the referenced learning objective.
+$submission_status_descriptor = 'submission_status_descriptor_example'; // string | The status of the student's submission.
+$date_fulfilled = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date an assignment was turned in or the date of an assessment.
+$diagnostic_statement = 'diagnostic_statement_example'; // string | A statement provided by the teacher that provides information in addition to the grade or assessment score.
+$id = 'id_example'; // string | 
+$letter_grade_earned = 'letter_grade_earned_example'; // string | A final or interim (grading period) indicator of student performance in a class as submitted by the instructor.
+$numeric_grade_earned = 3.4; // float | A final or interim (grading period) indicator of student performance in a class as submitted by the instructor.
+$points_earned = 3.4; // float | The points earned for the submission. With extra credit, the points earned may exceed the max points.
+$time_fulfilled = 'time_fulfilled_example'; // string | The time an assignment was turned in on the date fulfilled.
+$use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
+
+try {
+    $result = $apiInstance->getStudentGradebookEntriesPartitions($number, $min_change_version, $max_change_version, $gradebook_entry_identifier, $namespace, $student_unique_id, $assignment_late_status_descriptor, $competency_level_descriptor, $submission_status_descriptor, $date_fulfilled, $diagnostic_statement, $id, $letter_grade_earned, $numeric_grade_earned, $points_earned, $time_fulfilled, $use_snapshot);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling StudentGradebookEntriesApi->getStudentGradebookEntriesPartitions: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **number** | **int**| The number of evenly distributed partitions to provide for client-side parallel processing. If unspecified, a reasonable set of partitions will be determined based on the total number of accessible items. | [optional] |
+| **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
+| **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
+| **gradebook_entry_identifier** | **string**| A unique number or alphanumeric code assigned to a gradebook entry by the source system. | [optional] |
+| **namespace** | **string**| Namespace URI for the source of the gradebook entry. | [optional] |
+| **student_unique_id** | **string**| A unique alphanumeric code assigned to a student. | [optional] |
+| **assignment_late_status_descriptor** | **string**| Status of whether the assignment was submitted after the due date and/or marked as. | [optional] |
+| **competency_level_descriptor** | **string**| The competency level assessed for the student for the referenced learning objective. | [optional] |
+| **submission_status_descriptor** | **string**| The status of the student&#39;s submission. | [optional] |
+| **date_fulfilled** | **\DateTime**| The date an assignment was turned in or the date of an assessment. | [optional] |
+| **diagnostic_statement** | **string**| A statement provided by the teacher that provides information in addition to the grade or assessment score. | [optional] |
+| **id** | **string**|  | [optional] |
+| **letter_grade_earned** | **string**| A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. | [optional] |
+| **numeric_grade_earned** | **float**| A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. | [optional] |
+| **points_earned** | **float**| The points earned for the submission. With extra credit, the points earned may exceed the max points. | [optional] |
+| **time_fulfilled** | **string**| The time an assignment was turned in on the date fulfilled. | [optional] |
+| **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
+
+### Return type
+
+[**\Resources\Model\GetAcademicWeeksPartitions200Response**](../Model/GetAcademicWeeksPartitions200Response.md)
+
+### Authorization
+
+[oauth2_client_credentials](../../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `keyChangesStudentGradebookEntries()`
 
 ```php
@@ -331,11 +428,11 @@ $apiInstance = new Resources\Api\StudentGradebookEntriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$offset = 0; // int | Indicates how many items should be skipped before returning results.
+$offset = 56; // int | Indicates how many items should be skipped before returning results.
 $limit = 25; // int | Indicates the maximum number of items that should be returned in the results.
 $min_change_version = 56; // int | Used in synchronization to set sequence minimum ChangeVersion
 $max_change_version = 56; // int | Used in synchronization to set sequence maximum ChangeVersion
-$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided.
+$total_count = false; // bool | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. Must be false when using cursor paging (with pageToken).
 $use_snapshot = false; // bool | Indicates if the configured Snapshot should be used.
 
 try {
@@ -350,11 +447,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **offset** | **int**| Indicates how many items should be skipped before returning results. | [optional] |
 | **limit** | **int**| Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
 | **min_change_version** | **int**| Used in synchronization to set sequence minimum ChangeVersion | [optional] |
 | **max_change_version** | **int**| Used in synchronization to set sequence maximum ChangeVersion | [optional] |
-| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **total_count** | **bool**| Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. Must be false when using cursor paging (with pageToken). | [optional] [default to false] |
 | **use_snapshot** | **bool**| Indicates if the configured Snapshot should be used. | [optional] [default to false] |
 
 ### Return type

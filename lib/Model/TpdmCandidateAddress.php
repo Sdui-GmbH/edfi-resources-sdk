@@ -404,19 +404,11 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'postal_code', the character length must be smaller than or equal to 17.";
         }
 
-        if ((mb_strlen($this->container['postal_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'postal_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['street_number_name'] === null) {
             $invalidProperties[] = "'street_number_name' can't be null";
         }
         if ((mb_strlen($this->container['street_number_name']) > 150)) {
             $invalidProperties[] = "invalid value for 'street_number_name', the character length must be smaller than or equal to 150.";
-        }
-
-        if ((mb_strlen($this->container['street_number_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'street_number_name', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['locale_descriptor']) && (mb_strlen($this->container['locale_descriptor']) > 306)) {
@@ -427,24 +419,12 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'apartment_room_suite_number', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['apartment_room_suite_number']) && (mb_strlen($this->container['apartment_room_suite_number']) < 1)) {
-            $invalidProperties[] = "invalid value for 'apartment_room_suite_number', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['building_site_number']) && (mb_strlen($this->container['building_site_number']) > 20)) {
             $invalidProperties[] = "invalid value for 'building_site_number', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['building_site_number']) && (mb_strlen($this->container['building_site_number']) < 1)) {
-            $invalidProperties[] = "invalid value for 'building_site_number', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['congressional_district']) && (mb_strlen($this->container['congressional_district']) > 30)) {
             $invalidProperties[] = "invalid value for 'congressional_district', the character length must be smaller than or equal to 30.";
-        }
-
-        if (!is_null($this->container['congressional_district']) && (mb_strlen($this->container['congressional_district']) < 1)) {
-            $invalidProperties[] = "invalid value for 'congressional_district', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['county_fips_code']) && (mb_strlen($this->container['county_fips_code']) > 5)) {
@@ -459,24 +439,12 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = "invalid value for 'latitude', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['latitude']) && (mb_strlen($this->container['latitude']) < 1)) {
-            $invalidProperties[] = "invalid value for 'latitude', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['longitude']) && (mb_strlen($this->container['longitude']) > 20)) {
             $invalidProperties[] = "invalid value for 'longitude', the character length must be smaller than or equal to 20.";
         }
 
-        if (!is_null($this->container['longitude']) && (mb_strlen($this->container['longitude']) < 1)) {
-            $invalidProperties[] = "invalid value for 'longitude', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['name_of_county']) && (mb_strlen($this->container['name_of_county']) > 30)) {
             $invalidProperties[] = "invalid value for 'name_of_county', the character length must be smaller than or equal to 30.";
-        }
-
-        if (!is_null($this->container['name_of_county']) && (mb_strlen($this->container['name_of_county']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name_of_county', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -615,9 +583,6 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
         if ((mb_strlen($postal_code) > 17)) {
             throw new \InvalidArgumentException('invalid length for $postal_code when calling TpdmCandidateAddress., must be smaller than or equal to 17.');
         }
-        if ((mb_strlen($postal_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $postal_code when calling TpdmCandidateAddress., must be bigger than or equal to 1.');
-        }
 
         $this->container['postal_code'] = $postal_code;
 
@@ -648,9 +613,6 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if ((mb_strlen($street_number_name) > 150)) {
             throw new \InvalidArgumentException('invalid length for $street_number_name when calling TpdmCandidateAddress., must be smaller than or equal to 150.');
-        }
-        if ((mb_strlen($street_number_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $street_number_name when calling TpdmCandidateAddress., must be bigger than or equal to 1.');
         }
 
         $this->container['street_number_name'] = $street_number_name;
@@ -728,9 +690,6 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
         if (!is_null($apartment_room_suite_number) && (mb_strlen($apartment_room_suite_number) > 50)) {
             throw new \InvalidArgumentException('invalid length for $apartment_room_suite_number when calling TpdmCandidateAddress., must be smaller than or equal to 50.');
         }
-        if (!is_null($apartment_room_suite_number) && (mb_strlen($apartment_room_suite_number) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $apartment_room_suite_number when calling TpdmCandidateAddress., must be bigger than or equal to 1.');
-        }
 
         $this->container['apartment_room_suite_number'] = $apartment_room_suite_number;
 
@@ -769,9 +728,6 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
         if (!is_null($building_site_number) && (mb_strlen($building_site_number) > 20)) {
             throw new \InvalidArgumentException('invalid length for $building_site_number when calling TpdmCandidateAddress., must be smaller than or equal to 20.');
         }
-        if (!is_null($building_site_number) && (mb_strlen($building_site_number) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $building_site_number when calling TpdmCandidateAddress., must be bigger than or equal to 1.');
-        }
 
         $this->container['building_site_number'] = $building_site_number;
 
@@ -809,9 +765,6 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if (!is_null($congressional_district) && (mb_strlen($congressional_district) > 30)) {
             throw new \InvalidArgumentException('invalid length for $congressional_district when calling TpdmCandidateAddress., must be smaller than or equal to 30.');
-        }
-        if (!is_null($congressional_district) && (mb_strlen($congressional_district) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $congressional_district when calling TpdmCandidateAddress., must be bigger than or equal to 1.');
         }
 
         $this->container['congressional_district'] = $congressional_district;
@@ -926,9 +879,6 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
         if (!is_null($latitude) && (mb_strlen($latitude) > 20)) {
             throw new \InvalidArgumentException('invalid length for $latitude when calling TpdmCandidateAddress., must be smaller than or equal to 20.');
         }
-        if (!is_null($latitude) && (mb_strlen($latitude) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $latitude when calling TpdmCandidateAddress., must be bigger than or equal to 1.');
-        }
 
         $this->container['latitude'] = $latitude;
 
@@ -967,9 +917,6 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
         if (!is_null($longitude) && (mb_strlen($longitude) > 20)) {
             throw new \InvalidArgumentException('invalid length for $longitude when calling TpdmCandidateAddress., must be smaller than or equal to 20.');
         }
-        if (!is_null($longitude) && (mb_strlen($longitude) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $longitude when calling TpdmCandidateAddress., must be bigger than or equal to 1.');
-        }
 
         $this->container['longitude'] = $longitude;
 
@@ -989,7 +936,7 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets name_of_county
      *
-     * @param string|null $name_of_county The name of the county, parish, borough, or comparable unit (within a state) in                       'which an address is located.
+     * @param string|null $name_of_county The name of the county, parish, borough, or comparable unit (within a state) in which an address is located.
      *
      * @return self
      */
@@ -1007,9 +954,6 @@ class TpdmCandidateAddress implements ModelInterface, ArrayAccess, \JsonSerializ
         }
         if (!is_null($name_of_county) && (mb_strlen($name_of_county) > 30)) {
             throw new \InvalidArgumentException('invalid length for $name_of_county when calling TpdmCandidateAddress., must be smaller than or equal to 30.');
-        }
-        if (!is_null($name_of_county) && (mb_strlen($name_of_county) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name_of_county when calling TpdmCandidateAddress., must be bigger than or equal to 1.');
         }
 
         $this->container['name_of_county'] = $name_of_county;

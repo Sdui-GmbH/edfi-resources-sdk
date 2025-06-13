@@ -65,6 +65,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
         'barrier_to_internet_access_in_residence_descriptor' => 'string',
         'cohort_years' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationCohortYear[]',
         'disabilities' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationDisability[]',
+        'displaced_students' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationDisplacedStudent[]',
         'electronic_mails' => '\Resources\Model\EdFiStudentEducationOrganizationAssociationElectronicMail[]',
         'gender_identity' => 'string',
         'hispanic_latino_ethnicity' => 'bool',
@@ -107,6 +108,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
         'barrier_to_internet_access_in_residence_descriptor' => null,
         'cohort_years' => null,
         'disabilities' => null,
+        'displaced_students' => null,
         'electronic_mails' => null,
         'gender_identity' => null,
         'hispanic_latino_ethnicity' => null,
@@ -147,6 +149,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
         'barrier_to_internet_access_in_residence_descriptor' => true,
         'cohort_years' => false,
         'disabilities' => false,
+        'displaced_students' => false,
         'electronic_mails' => false,
         'gender_identity' => true,
         'hispanic_latino_ethnicity' => true,
@@ -267,6 +270,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
         'barrier_to_internet_access_in_residence_descriptor' => 'barrierToInternetAccessInResidenceDescriptor',
         'cohort_years' => 'cohortYears',
         'disabilities' => 'disabilities',
+        'displaced_students' => 'displacedStudents',
         'electronic_mails' => 'electronicMails',
         'gender_identity' => 'genderIdentity',
         'hispanic_latino_ethnicity' => 'hispanicLatinoEthnicity',
@@ -307,6 +311,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
         'barrier_to_internet_access_in_residence_descriptor' => 'setBarrierToInternetAccessInResidenceDescriptor',
         'cohort_years' => 'setCohortYears',
         'disabilities' => 'setDisabilities',
+        'displaced_students' => 'setDisplacedStudents',
         'electronic_mails' => 'setElectronicMails',
         'gender_identity' => 'setGenderIdentity',
         'hispanic_latino_ethnicity' => 'setHispanicLatinoEthnicity',
@@ -347,6 +352,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
         'barrier_to_internet_access_in_residence_descriptor' => 'getBarrierToInternetAccessInResidenceDescriptor',
         'cohort_years' => 'getCohortYears',
         'disabilities' => 'getDisabilities',
+        'displaced_students' => 'getDisplacedStudents',
         'electronic_mails' => 'getElectronicMails',
         'gender_identity' => 'getGenderIdentity',
         'hispanic_latino_ethnicity' => 'getHispanicLatinoEthnicity',
@@ -438,6 +444,7 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
         $this->setIfExists('barrier_to_internet_access_in_residence_descriptor', $data ?? [], null);
         $this->setIfExists('cohort_years', $data ?? [], null);
         $this->setIfExists('disabilities', $data ?? [], null);
+        $this->setIfExists('displaced_students', $data ?? [], null);
         $this->setIfExists('electronic_mails', $data ?? [], null);
         $this->setIfExists('gender_identity', $data ?? [], null);
         $this->setIfExists('hispanic_latino_ethnicity', $data ?? [], null);
@@ -521,10 +528,6 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
             $invalidProperties[] = "invalid value for 'login_id', the character length must be smaller than or equal to 60.";
         }
 
-        if (!is_null($this->container['login_id']) && (mb_strlen($this->container['login_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'login_id', the character length must be bigger than or equal to 1.";
-        }
-
         if (!is_null($this->container['primary_learning_device_access_descriptor']) && (mb_strlen($this->container['primary_learning_device_access_descriptor']) > 306)) {
             $invalidProperties[] = "invalid value for 'primary_learning_device_access_descriptor', the character length must be smaller than or equal to 306.";
         }
@@ -539,10 +542,6 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
 
         if (!is_null($this->container['profile_thumbnail']) && (mb_strlen($this->container['profile_thumbnail']) > 255)) {
             $invalidProperties[] = "invalid value for 'profile_thumbnail', the character length must be smaller than or equal to 255.";
-        }
-
-        if (!is_null($this->container['profile_thumbnail']) && (mb_strlen($this->container['profile_thumbnail']) < 1)) {
-            $invalidProperties[] = "invalid value for 'profile_thumbnail', the character length must be bigger than or equal to 1.";
         }
 
         if (!is_null($this->container['sex_descriptor']) && (mb_strlen($this->container['sex_descriptor']) > 306)) {
@@ -791,6 +790,33 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
             throw new \InvalidArgumentException('non-nullable disabilities cannot be null');
         }
         $this->container['disabilities'] = $disabilities;
+
+        return $this;
+    }
+
+    /**
+     * Gets displaced_students
+     *
+     * @return \Resources\Model\EdFiStudentEducationOrganizationAssociationDisplacedStudent[]|null
+     */
+    public function getDisplacedStudents()
+    {
+        return $this->container['displaced_students'];
+    }
+
+    /**
+     * Sets displaced_students
+     *
+     * @param \Resources\Model\EdFiStudentEducationOrganizationAssociationDisplacedStudent[]|null $displaced_students An unordered collection of studentEducationOrganizationAssociationDisplacedStudents. Information about student who was enrolled, or eligible for enrollment, but has temporarily or permanently enrolled in another school or district because of a crisis-related disruption in educational services.
+     *
+     * @return self
+     */
+    public function setDisplacedStudents($displaced_students)
+    {
+        if (is_null($displaced_students)) {
+            throw new \InvalidArgumentException('non-nullable displaced_students cannot be null');
+        }
+        $this->container['displaced_students'] = $displaced_students;
 
         return $this;
     }
@@ -1128,9 +1154,6 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
         if (!is_null($login_id) && (mb_strlen($login_id) > 60)) {
             throw new \InvalidArgumentException('invalid length for $login_id when calling EdFiStudentEducationOrganizationAssociation., must be smaller than or equal to 60.');
         }
-        if (!is_null($login_id) && (mb_strlen($login_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $login_id when calling EdFiStudentEducationOrganizationAssociation., must be bigger than or equal to 1.');
-        }
 
         $this->container['login_id'] = $login_id;
 
@@ -1282,9 +1305,6 @@ class EdFiStudentEducationOrganizationAssociation implements ModelInterface, Arr
         }
         if (!is_null($profile_thumbnail) && (mb_strlen($profile_thumbnail) > 255)) {
             throw new \InvalidArgumentException('invalid length for $profile_thumbnail when calling EdFiStudentEducationOrganizationAssociation., must be smaller than or equal to 255.');
-        }
-        if (!is_null($profile_thumbnail) && (mb_strlen($profile_thumbnail) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $profile_thumbnail when calling EdFiStudentEducationOrganizationAssociation., must be bigger than or equal to 1.');
         }
 
         $this->container['profile_thumbnail'] = $profile_thumbnail;

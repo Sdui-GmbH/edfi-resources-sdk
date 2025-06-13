@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **publication_year** | **int** | The year at which this content was first published. | [optional]
 **publisher** | **string** | The organization credited with publishing the resource. | [optional]
 **short_description** | **string** | A short description or name of the entity. | [optional]
-**time_required** | **string** | Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience. | [optional]
+**time_required** | **string** | Approximate or typical time that it takes to work with or through this learning resource for the typical intended target audience expressed in minutes. | [optional]
 **use_rights_url** | **string** | The URL where the owner specifies permissions for using the resource. | [optional]
 **version** | **string** | The version identifier for the content. | [optional]
 **_etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional]

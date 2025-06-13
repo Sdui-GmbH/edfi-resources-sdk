@@ -323,10 +323,6 @@ class EdFiClassPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'class_period_name', the character length must be smaller than or equal to 60.";
         }
 
-        if ((mb_strlen($this->container['class_period_name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'class_period_name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['school_reference'] === null) {
             $invalidProperties[] = "'school_reference' can't be null";
         }
@@ -396,9 +392,6 @@ class EdFiClassPeriod implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ((mb_strlen($class_period_name) > 60)) {
             throw new \InvalidArgumentException('invalid length for $class_period_name when calling EdFiClassPeriod., must be smaller than or equal to 60.');
-        }
-        if ((mb_strlen($class_period_name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $class_period_name when calling EdFiClassPeriod., must be bigger than or equal to 1.');
         }
 
         $this->container['class_period_name'] = $class_period_name;
